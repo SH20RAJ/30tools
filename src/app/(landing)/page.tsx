@@ -6,8 +6,20 @@ import { HomeFAQ } from "@/components/landing/HomeFAQ";
 import toolsData from "@/constants/tools.json";
 import translateEngine from "@/lib/translate";
 
+interface ToolCategory {
+  key: string;
+  iconKey: string;
+  name: string;
+  description: string;
+  tools: any[];
+}
+
+interface LandingPageProps {
+  searchParams: Promise<{ lang?: string }>;
+}
+
 const TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
-	(total, category) => total + (category.tools?.length || 0),
+	(total, category: any) => total + (category.tools?.length || 0),
 	0,
 );
 
@@ -29,7 +41,7 @@ export const metadata = {
 	},
 };
 
-export default async function LandingPage({ searchParams }) {
+export default async function LandingPage({ searchParams }: LandingPageProps) {
 	const params = await searchParams;
 	const lang = params.lang || "en";
 
@@ -59,7 +71,7 @@ export default async function LandingPage({ searchParams }) {
 
 	const toolCategories = isEnglish
 		? priorityOrder.map((key) => {
-				const cat = toolsData.categories[key];
+				const cat = (toolsData.categories as any)[key];
 				if (!cat) return null;
 				return {
 					key,
@@ -67,11 +79,11 @@ export default async function LandingPage({ searchParams }) {
 					name: cat.name,
 					description: cat.description,
 					tools: cat.tools || [],
-				};
+				} as ToolCategory;
 			})
 		: await Promise.all(
 				priorityOrder.map(async (key) => {
-					const cat = toolsData.categories[key];
+					const cat = (toolsData.categories as any)[key];
 					if (!cat) return null;
 
 					const [translatedName, translatedDesc] = await Promise.all([
@@ -85,11 +97,11 @@ export default async function LandingPage({ searchParams }) {
 						name: translatedName,
 						description: translatedDesc,
 						tools: cat.tools || [],
-					};
+					} as ToolCategory;
 				}),
 			);
 
-	const filteredCategories = toolCategories.filter(Boolean);
+	const filteredCategories = toolCategories.filter((c): c is ToolCategory => c !== null);
 
 	return (
 		<main className="bg-background min-h-screen relative overflow-hidden">

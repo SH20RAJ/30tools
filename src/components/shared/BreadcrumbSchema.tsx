@@ -1,4 +1,13 @@
-export default function BreadcrumbSchema({ items }) {
+interface BreadcrumbItem {
+  name: string;
+  url: string;
+}
+
+interface BreadcrumbSchemaProps {
+  items: BreadcrumbItem[];
+}
+
+export default function BreadcrumbSchema({ items }: BreadcrumbSchemaProps) {
 	if (!items || items.length === 0) return null;
 
 	const breadcrumbData = {

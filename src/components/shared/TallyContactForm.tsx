@@ -2,6 +2,14 @@
 
 import { useEffect } from "react";
 
+declare global {
+  interface Window {
+    Tally?: {
+      loadEmbeds: () => void;
+    };
+  }
+}
+
 export default function TallyContactForm() {
 	useEffect(() => {
 		// Load Tally embed script

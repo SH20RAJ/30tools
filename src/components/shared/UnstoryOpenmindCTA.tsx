@@ -63,7 +63,6 @@ const communityStats = [
 ];
 
 export default function UnstoryOpenmindCTA() {
-	return null;
 	const [currentTestimonial, setCurrentTestimonial] = useState(0);
 	const [isHovered, setIsHovered] = useState(false);
 
@@ -100,8 +99,8 @@ export default function UnstoryOpenmindCTA() {
 					{/* Header Section */}
 					<div className="text-center mb-8">
 						<div className="flex justify-center mb-4">
-							<div className="w-16 h-16 bg-background">
-								<Heart className="w-8 h-8 text-white" />
+							<div className="w-16 h-16 bg-background rounded-full flex items-center justify-center">
+								<Heart className="w-8 h-8 text-primary" />
 							</div>
 						</div>
 
@@ -113,7 +112,7 @@ export default function UnstoryOpenmindCTA() {
 							Find Your Calm & Share Your Story
 						</Badge>
 
-						<h2 className="text-3xl md:text-4xl font-bold mb-4 bg-muted/20 ">
+						<h2 className="text-3xl md:text-4xl font-bold mb-4">
 							Join Unstory Openmind
 						</h2>
 
@@ -133,10 +132,10 @@ export default function UnstoryOpenmindCTA() {
 							return (
 								<div
 									key={index}
-									className="text-center p-6 sm border border-white/20 dark:border-gray-700/30 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 group"
+									className="text-center p-6 rounded-2xl border border-white/20 dark:border-gray-700/30 hover:bg-white/70 dark:hover:bg-gray-800/50 transition-all duration-300 group"
 								>
-									<div className="w-12 h-12 bg-background:scale-110 transition-transform duration-300">
-										<IconComponent className="w-6 h-6 text-white" />
+									<div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300">
+										<IconComponent className="w-6 h-6 text-primary" />
 									</div>
 									<h3 className="font-semibold text-foreground mb-2">
 										{feature.title}
@@ -156,7 +155,7 @@ export default function UnstoryOpenmindCTA() {
 							return (
 								<div
 									key={index}
-									className="text-center p-4 sm"
+									className="text-center p-4 rounded-xl bg-background/40"
 								>
 									<IconComponent className="w-5 h-5 text-primary dark:text-primary mx-auto mb-1" />
 									<div className="text-lg font-bold text-foreground">
@@ -171,7 +170,7 @@ export default function UnstoryOpenmindCTA() {
 					</div>
 
 					{/* Testimonial Carousel */}
-					<div className="mb-8 p-6 sm border border-white/30 dark:border-gray-700/20">
+					<div className="mb-8 p-6 rounded-2xl border border-white/30 dark:border-gray-700/20 bg-background/30 backdrop-blur-sm">
 						<div className="text-center min-h-[100px] flex flex-col justify-center">
 							<MessageCircle className="w-8 h-8 text-primary mx-auto mb-3" />
 							<blockquote className="text-lg italic text-foreground mb-3 transition-all duration-500">
@@ -188,9 +187,9 @@ export default function UnstoryOpenmindCTA() {
 								<button
 									key={index}
 									onClick={() => setCurrentTestimonial(index)}
-									className={`w-2 h-2 sition-all duration-300 ${
+									className={`w-2 h-2 rounded-full transition-all duration-300 ${
 										index === currentTestimonial
-											? "bg-muted/500 w-6"
+											? "bg-primary w-6"
 											: "bg-gray-300 dark:bg-gray-600"
 									}`}
 								/>
@@ -199,14 +198,14 @@ export default function UnstoryOpenmindCTA() {
 					</div>
 
 					{/* Instagram Embed */}
-					<div className="mb-8">
+					<div className="mb-8 flex justify-center">
 						<InstagramEmbed />
 					</div>
 
 					{/* Call to Action */}
 					<div className="text-center">
 						<div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-							<Button asChild size="lg" className="bg-background[200px] group">
+							<Button asChild size="lg" className="rounded-full px-8 min-w-[200px] group">
 								<a
 									href="https://unstory.live"
 									target="_blank"
@@ -222,7 +221,7 @@ export default function UnstoryOpenmindCTA() {
 							<Button
 								variant="outline"
 								size="lg"
-								className="border-2 border-border dark:border-border hover:bg-muted/50 dark:hover:bg-primary/20 min-w-[200px] group"
+								className="rounded-full px-8 border-2 border-primary/20 dark:border-primary/20 hover:bg-primary/5 min-w-[200px] group"
 							>
 								<PenTool className="w-5 h-5 mr-2" />
 								Start Writing

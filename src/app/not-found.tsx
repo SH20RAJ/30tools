@@ -9,7 +9,11 @@ import {
 	CardTitle,
 } from "@/components/ui/card";
 
-export default async function NotFoundPage({ searchParams }) {
+interface NotFoundPageProps {
+  searchParams?: Promise<any> | any;
+}
+
+export default async function NotFoundPage({ searchParams }: NotFoundPageProps) {
 	// Root component doesn't receive searchParams by default, but error pages might.
 	// We handle searchParams safely to avoid crashes in Edge Runtime.
 	const _params = searchParams ? await searchParams : {};
@@ -62,7 +66,7 @@ export default async function NotFoundPage({ searchParams }) {
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 sparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>
@@ -81,7 +85,7 @@ export default async function NotFoundPage({ searchParams }) {
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 sparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>
@@ -100,7 +104,7 @@ export default async function NotFoundPage({ searchParams }) {
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 sparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>
@@ -119,7 +123,7 @@ export default async function NotFoundPage({ searchParams }) {
 									</CardDescription>
 								</CardHeader>
 								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 sparent group-hover:bg-primary/10 transition-colors">
+									<div className="w-full flex items-center justify-between p-2 rounded-lg bg-transparent group-hover:bg-primary/10 transition-colors">
 										<span className="text-sm">Try it</span>
 										<ArrowRightIcon className="w-4 h-4" />
 									</div>

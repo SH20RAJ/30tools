@@ -1,4 +1,6 @@
-export default function robots() {
+import { MetadataRoute } from "next";
+
+export default function robots(): MetadataRoute.Robots {
 	const baseUrl = "https://30tools.com";
 
 	return {
