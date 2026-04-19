@@ -97,16 +97,18 @@ const jsonLdSchemas = {
 
 export default function SEOToolsLayout({ children }) {
 	return (
-		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
+		<>
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<GoogleNavbar />
-			<main className="flex-1">{children}</main>
-			<GoogleFooter />
+			{children}
+		</>
+	);
+}
+ />
 		</div>
 	);
 }

@@ -71,17 +71,17 @@ export function AppleFooter({ categories = [] }) {
 					</div>
 
 					<div>
-						<h4 className="text-[12px] font-semibold mb-4">Developer</h4>
+						<h4 className="text-[12px] font-semibold mb-4">Open Source</h4>
 						<ul className="space-y-2">
 							<li>
 								<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex items-center gap-1">
-									GitHub <ArrowUpRight className="h-3 w-3" />
+									GitHub Repository <ArrowUpRight className="h-3 w-3" />
 								</a>
 							</li>
 							<li>
-								<Link href="/blog" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity">
-									Blog
-								</Link>
+								<a href="https://github.com/sh20raj/30tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex items-center gap-1">
+									Contribute <ArrowUpRight className="h-3 w-3" />
+								</a>
 							</li>
 						</ul>
 					</div>
