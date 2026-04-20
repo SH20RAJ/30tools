@@ -8,15 +8,21 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
+import { getAllTools, getRouteById } from "@/lib/tools";
 
 interface NotFoundPageProps {
-  searchParams?: Promise<any> | any;
+	searchParams?: Promise<any> | any;
 }
 
 export default async function NotFoundPage({ searchParams }: NotFoundPageProps) {
 	// Root component doesn't receive searchParams by default, but error pages might.
 	// We handle searchParams safely to avoid crashes in Edge Runtime.
 	const _params = searchParams ? await searchParams : {};
+
+	const popularTools = getAllTools()
+		.filter((t) => t.popular)
+		.slice(0, 4);
+
 	return (
 		<div className="container mx-auto px-4 py-16 max-w-4xl">
 			<div className="text-center space-y-8">
@@ -35,14 +41,14 @@ export default async function NotFoundPage({ searchParams }: NotFoundPageProps) 
 				{/* Action Buttons */}
 				<div className="flex flex-col sm:flex-row gap-4 justify-center">
 					<Button asChild size="lg">
-						<Link href="/">
+						<Link href={STATIC_ROUTES.HOME}>
 							<HomeIcon className="w-4 h-4 mr-2" />
 							Go Home
 						</Link>
 					</Button>
 
 					<Button asChild variant="outline" size="lg">
-						<Link href="/search">
+						<Link href={getRouteById("search")}>
 							<SearchIcon className="w-4 h-4 mr-2" />
 							Search Tools
 						</Link>
@@ -55,81 +61,26 @@ export default async function NotFoundPage({ searchParams }: NotFoundPageProps) 
 						Popular Tools
 					</h3>
 					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-						<Link href="/color-converter" className="block">
-							<Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
-								<CardHeader className="pb-3">
-									<CardTitle className="text-base group-hover:text-primary transition-colors">
-										Color Picker
-									</CardTitle>
-									<CardDescription className="text-sm group-hover:text-foreground transition-colors">
-										Pick and convert colors
-									</CardDescription>
-								</CardHeader>
-								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
-										<span className="text-sm">Try it</span>
-										<ArrowRightIcon className="w-4 h-4" />
-									</div>
-								</CardContent>
-							</Card>
-						</Link>
-
-						<Link href="/password-generator" className="block">
-							<Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
-								<CardHeader className="pb-3">
-									<CardTitle className="text-base group-hover:text-primary transition-colors">
-										Password Generator
-									</CardTitle>
-									<CardDescription className="text-sm group-hover:text-foreground transition-colors">
-										Generate secure passwords
-									</CardDescription>
-								</CardHeader>
-								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
-										<span className="text-sm">Try it</span>
-										<ArrowRightIcon className="w-4 h-4" />
-									</div>
-								</CardContent>
-							</Card>
-						</Link>
-
-						<Link href="/qr-code-generator" className="block">
-							<Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
-								<CardHeader className="pb-3">
-									<CardTitle className="text-base group-hover:text-primary transition-colors">
-										QR Code Generator
-									</CardTitle>
-									<CardDescription className="text-sm group-hover:text-foreground transition-colors">
-										Create QR codes instantly
-									</CardDescription>
-								</CardHeader>
-								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
-										<span className="text-sm">Try it</span>
-										<ArrowRightIcon className="w-4 h-4" />
-									</div>
-								</CardContent>
-							</Card>
-						</Link>
-
-						<Link href="/base64-encode" className="block">
-							<Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
-								<CardHeader className="pb-3">
-									<CardTitle className="text-base group-hover:text-primary transition-colors">
-										Base64 Encoder
-									</CardTitle>
-									<CardDescription className="text-sm group-hover:text-foreground transition-colors">
-										Encode and decode Base64
-									</CardDescription>
-								</CardHeader>
-								<CardContent className="pt-0">
-									<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
-										<span className="text-sm">Try it</span>
-										<ArrowRightIcon className="w-4 h-4" />
-									</div>
-								</CardContent>
-							</Card>
-						</Link>
+						{popularTools.map((tool) => (
+							<Link key={tool.id} href={tool.route} className="block">
+								<Card className="hover:shadow-md transition-shadow cursor-pointer group h-full">
+									<CardHeader className="pb-3">
+										<CardTitle className="text-base group-hover:text-primary transition-colors">
+											{tool.name}
+										</CardTitle>
+										<CardDescription className="text-sm group-hover:text-foreground transition-colors line-clamp-2">
+											{tool.description}
+										</CardDescription>
+									</CardHeader>
+									<CardContent className="pt-0">
+										<div className="w-full flex items-center justify-between p-2 rounded-none bg-transparent group-hover:bg-primary/10 transition-colors">
+											<span className="text-sm">Try it</span>
+											<ArrowRightIcon className="w-4 h-4" />
+										</div>
+									</CardContent>
+								</Card>
+							</Link>
+						))}
 					</div>
 				</div>
 			</div>

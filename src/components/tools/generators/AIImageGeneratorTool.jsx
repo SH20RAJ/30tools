@@ -19,6 +19,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
+import { getRouteById } from "@/lib/tools";
 import { toast } from "sonner";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
@@ -380,7 +381,7 @@ export default function AIImageGeneratorTool() {
 				{/* Header */}
 				<div className="mb-8">
 					<Link
-						href="/other-tools"
+						href={getRouteById("other-tools")}
 						className="inline-flex items-center text-sm text-muted-foreground hover:text-foreground mb-6"
 					>
 						<ArrowLeftIcon className="mr-2 h-4 w-4" />

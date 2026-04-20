@@ -14,6 +14,7 @@ import {
 	TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
+import { STATIC_ROUTES } from "@/lib/tools";
 
 function SearchInput() {
 	const router = useRouter();
@@ -23,9 +24,9 @@ function SearchInput() {
 	const handleSearch = (e: React.FormEvent) => {
 		e.preventDefault();
 		if (query.trim()) {
-			router.push(`/search?q=${encodeURIComponent(query)}`);
+			router.push(`${STATIC_ROUTES.SEARCH}?q=${encodeURIComponent(query)}`);
 		} else {
-			router.push("/search");
+			router.push(STATIC_ROUTES.SEARCH);
 		}
 	};
 
@@ -59,7 +60,7 @@ export function AppleNavbar() {
 				e.preventDefault();
 				const searchInput = document.querySelector('input[placeholder*="Search"]') as HTMLInputElement;
 				if (searchInput) searchInput.focus();
-				else router.push("/search");
+				else router.push(STATIC_ROUTES.SEARCH);
 			}
 		};
 		window.addEventListener("keydown", handleKeyDown);
@@ -71,10 +72,10 @@ export function AppleNavbar() {
 	}, [router]);
 
 	const navLinks = [
-		{ name: "All Tools", href: "/search" },
-		{ name: "Image", href: "/search?category=image" },
-		{ name: "PDF", href: "/search?category=pdf" },
-		{ name: "Video", href: "/search?category=video" },
+		{ name: "All Tools", href: STATIC_ROUTES.SEARCH },
+		{ name: "Image", href: `${STATIC_ROUTES.SEARCH}?category=image` },
+		{ name: "PDF", href: `${STATIC_ROUTES.SEARCH}?category=pdf` },
+		{ name: "Video", href: `${STATIC_ROUTES.SEARCH}?category=video` },
 	];
 
 	return (
@@ -91,7 +92,7 @@ export function AppleNavbar() {
 					{/* Left: Logo & Nav */}
 					<div className="flex items-center gap-8">
 						<Link
-							href="/"
+							href={STATIC_ROUTES.HOME}
 							className="flex items-center gap-2 hover:opacity-80 transition-opacity"
 						>
 							<span className="text-xl font-bold tracking-tight text-foreground">
@@ -140,11 +141,11 @@ export function AppleNavbar() {
 							<Tooltip>
 								<TooltipTrigger asChild>
 									<Link
-										href="/search"
+										href={STATIC_ROUTES.SEARCH}
 										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-none transition-all"
 										aria-label="Browse all tools"
 									>
-										<LayoutGrid className="h-5 w-5" />
+										<LayoutGrid className="h-5 w-4" />
 									</Link>
 								</TooltipTrigger>
 								<TooltipContent>Browse All</TooltipContent>
@@ -169,7 +170,7 @@ export function AppleNavbar() {
 								onSubmit={(e) => {
 									e.preventDefault();
 									const q = (e.currentTarget.elements.namedItem("q") as HTMLInputElement).value;
-									router.push(`/search?q=${encodeURIComponent(q)}`);
+									router.push(`${STATIC_ROUTES.SEARCH}?q=${encodeURIComponent(q)}`);
 									setMobileMenuOpen(false);
 								}}
 								className="relative"

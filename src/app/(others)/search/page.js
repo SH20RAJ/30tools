@@ -3,6 +3,7 @@ import toolsData from "@/constants/tools.json";
 import { Input } from "@/components/ui/input";
 import { Search, Grid, List } from "lucide-react";
 import Link from "next/link";
+import { STATIC_ROUTES } from "@/lib/tools";
 
 export const metadata = {
 	title: "Search All Tools - Free Online Tools - No Signup | 30tools",
@@ -55,7 +56,7 @@ export default async function SearchPage({ searchParams }) {
 					Find the perfect tool for your task. Browse through our collection of {Object.values(toolsData.categories).reduce((acc, cat) => acc + (cat.tools?.length || 0), 0)}+ free online tools.
 				</p>
 
-				<form action="/search" method="GET" className="relative w-full max-w-2xl group">
+				<form action={STATIC_ROUTES.SEARCH} method="GET" className="relative w-full max-w-2xl group">
 					<div className="relative">
 						<Search className="absolute left-4 top-1/2 -transpace-y-1/2 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
 						<Input
@@ -78,7 +79,7 @@ export default async function SearchPage({ searchParams }) {
 					{allCategories.slice(0, 8).map((cat) => (
 						<Link
 							key={cat.key}
-							href={`/search?category=${cat.key}${query ? `&q=${query}` : ""}`}
+							href={`${STATIC_ROUTES.SEARCH}?category=${cat.key}${query ? `&q=${query}` : ""}`}
 							className={`px-4 py-2 text-sm font-medium transition-all ${(categoryKey === cat.key || (!categoryKey && cat.key === "all"))
 									? "bg-primary text-primary-foreground shadow-md"
 									: "bg-secondary text-secondary-foreground hover:bg-secondary/80"
@@ -89,7 +90,7 @@ export default async function SearchPage({ searchParams }) {
 					))}
 					{allCategories.length > 8 && (
 						<Link
-							href="/search"
+							href={STATIC_ROUTES.SEARCH}
 							className="px-4 py-2 text-sm font-medium bg-secondary text-secondary-foreground hover:bg-secondary/80 transition-all"
 						>
 							More...
@@ -119,7 +120,7 @@ export default async function SearchPage({ searchParams }) {
 					<h3 className="text-xl font-bold mb-2">No tools found</h3>
 					<p className="text-muted-foreground mb-6">We couldn't find any tools matching your search criteria.</p>
 					<Link
-						href="/search"
+						href={STATIC_ROUTES.SEARCH}
 						className="inline-flex items-center justify-center bg-primary text-primary-foreground px-8 py-3 font-bold hover:opacity-90 transition-all"
 					>
 						Browse All Tools

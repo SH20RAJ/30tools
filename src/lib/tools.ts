@@ -1,5 +1,14 @@
 import toolsData from "@/constants/tools.json";
 
+export const STATIC_ROUTES = {
+	HOME: "/",
+	SEARCH: "/search",
+	CONTACT: "/contact",
+	PRIVACY: "/privacy",
+	TERMS: "/terms",
+	ABOUT: "/about",
+};
+
 export interface Tool {
 	id: string;
 	name: string;
@@ -48,6 +57,15 @@ export function getAllCategories(): Category[] {
 
 export function getCategoryBySlug(slug: string): Category | undefined {
 	return getAllCategories().find((category) => category.slug === slug);
+}
+
+/**
+ * Returns the route for a tool by its ID.
+ * If the ID is not found, returns "/" as a fallback.
+ */
+export function getRouteById(id: string): string {
+	const tool = getToolById(id);
+	return tool ? tool.route : "/";
 }
 
 export function getRelatedTools(tool: Tool, limit: number = 10): Tool[] {

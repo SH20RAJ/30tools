@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { getRouteById } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "Free Privacy Policy Online - No Signup | 30tools",
@@ -69,9 +71,9 @@ export default function PrivacyPage() {
           <h2>Contact Us</h2>
           <p>
             If you have questions about privacy, please visit our{' '}
-            <a href="/contact" className="text-primary hover:underline">
+            <Link href={getRouteById("contact")} className="text-primary hover:underline">
               Contact
-            </a>{' '}
+            </Link>{' '}
             page.
           </p>
         </div>

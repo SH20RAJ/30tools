@@ -3,6 +3,7 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
 import { LanguageSelector } from "@/components/shared/LanguageSelector";
+import { getRouteById } from "@/lib/tools";
 
 const languages = [
 	{ name: "English", code: "en" },
@@ -24,10 +25,10 @@ const languages = [
 
 export function AppleFooter({ categories = [] }) {
 	const footerNav = [
-		{ name: "About", href: "/about" },
-		{ name: "Privacy Policy", href: "/privacy" },
-		{ name: "Terms", href: "/terms" },
-		{ name: "Contact", href: "/contact" },
+		{ name: "About", href: getRouteById("about") },
+		{ name: "Privacy Policy", href: getRouteById("privacy") },
+		{ name: "Terms", href: getRouteById("terms") },
+		{ name: "Contact", href: getRouteById("contact") },
 	];
 
 	return (
@@ -35,7 +36,7 @@ export function AppleFooter({ categories = [] }) {
 			<div className="container mx-auto px-4 max-w-5xl">
 				<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
 					<div className="col-span-2 lg:col-span-1">
-						<Link href="/" className="text-lg font-semibold tracking-tight mb-4 block">
+						<Link href={STATIC_ROUTES.HOME} className="text-lg font-semibold tracking-tight mb-4 block">
 							30tools
 						</Link>
 						<p className="text-[12px] leading-relaxed opacity-90 max-w-xs">
@@ -97,9 +98,9 @@ export function AppleFooter({ categories = [] }) {
 						Copyright © 2026 30tools Inc. All rights reserved.
 					</p>
 					<div className="flex gap-6 opacity-90">
-						<Link href="/privacy" className="text-[12px] hover:underline underline-offset-4">Privacy Policy</Link>
-						<Link href="/terms" className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
-						<Link href="/contact" className="text-[12px] hover:underline underline-offset-4">Contact</Link>
+						<Link href={getRouteById("privacy")} className="text-[12px] hover:underline underline-offset-4">Privacy Policy</Link>
+						<Link href={getRouteById("terms")} className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
+						<Link href={getRouteById("contact")} className="text-[12px] hover:underline underline-offset-4">Contact</Link>
 					</div>
 				</div>
 			</div>

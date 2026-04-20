@@ -20,7 +20,7 @@ export default function ProgressiveToolNotice({ toolId }: { toolId: string }) {
 				</CardDescription>
 			</CardHeader>
 			<CardContent className="flex flex-wrap gap-3 text-sm">
-				<Link className="text-primary underline-offset-4 hover:underline" href="/search">
+				<Link className="text-primary underline-offset-4 hover:underline" href={STATIC_ROUTES.SEARCH}>
 					Browse all tools
 				</Link>
 				<span className="text-muted-foreground">·</span>

@@ -5,6 +5,8 @@ import { HomeSEOContent } from "@/components/landing/HomeSEOContent";
 import { HomeFAQ } from "@/components/landing/HomeFAQ";
 import toolsData from "@/constants/tools.json";
 import translateEngine from "@/lib/translate";
+import Link from "next/link";
+import { STATIC_ROUTES } from "@/lib/tools";
 
 interface ToolCategory {
   key: string;
@@ -132,12 +134,12 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 						<div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />
 						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Ready to work faster?</h2>
 						<p className="text-xl opacity-80 mb-10 text-background/90">Start using any of our 600+ tools today. No accounts, no hassle.</p>
-						<a 
-							href="/search" 
+						<Link 
+							href={STATIC_ROUTES.SEARCH} 
 							className="inline-flex h-14 items-center justify-center rounded-none bg-background text-foreground px-10 text-lg font-bold hover:scale-105 transition-transform"
 						>
 							Browse All Tools
-						</a>
+						</Link>
 					</div>
 				</section>
 			</div>

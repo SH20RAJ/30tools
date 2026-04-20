@@ -282,7 +282,7 @@ END:VCARD`;
 			<div className="container mx-auto px-4 py-8 max-w-7xl">
 				{/* Header */}
 				<div className="mb-8">
-					<Link href="/">
+					<Link href={STATIC_ROUTES.HOME}>
 						<Button variant="ghost" className="mb-4">
 							<ArrowLeftIcon className="h-4 w-4 mr-2" />
 							Back to Home

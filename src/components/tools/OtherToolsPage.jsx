@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useMemo, useState } from "react";
+import { STATIC_ROUTES } from "@/lib/tools";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -286,13 +287,13 @@ export default function OtherToolsPage({ categories, otherTools }) {
 						categories or suggest a new tool for our collection.
 					</p>
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
-						<Link href="/search">
+						<Link href={STATIC_ROUTES.SEARCH}>
 							<Button size="lg" className="bg-primary hover:bg-primary/90">
 								<Search className="w-4 h-4 mr-2" />
 								Browse All Tools
 							</Button>
 						</Link>
-						<Link href="/contact">
+						<Link href={STATIC_ROUTES.CONTACT}>
 							<Button variant="outline" size="lg">
 								Suggest a Tool
 							</Button>

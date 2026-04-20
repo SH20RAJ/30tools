@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import { STATIC_ROUTES } from "@/lib/tools";
 
 interface ErrorProps {
   error: Error & { digest?: string };
@@ -30,7 +31,7 @@ export default function Error({ error, reset }: ErrorProps) {
 						Try again
 					</button>
 					<Link
-						href="/"
+						href={STATIC_ROUTES.HOME}
 						className="border border-border px-4 py-2 text-sm font-medium transition-colors hover:bg-muted"
 					>
 						Go home

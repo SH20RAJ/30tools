@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { getRouteById } from "@/lib/tools";
 
 export const metadata: Metadata = {
   title: "Free Terms of Use Online - No Signup | 30tools",
@@ -70,9 +72,9 @@ export default function TermsPage() {
           <h2>Contact</h2>
           <p>
             If you have questions about these Terms, please visit our{' '}
-            <a href="/contact" className="text-primary hover:underline">
+            <Link href={getRouteById("contact")} className="text-primary hover:underline">
               Contact
-            </a>{' '}
+            </Link>{' '}
             page.
           </p>
         </div>

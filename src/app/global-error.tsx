@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { STATIC_ROUTES } from "@/lib/tools";
 
 export default function GlobalError() {
 	return (
@@ -15,7 +16,7 @@ export default function GlobalError() {
 						</p>
 						<div className="flex items-center justify-center">
 							<Link
-								href="/"
+								href={STATIC_ROUTES.HOME}
 								className="bg-primary text-primary-foreground px-4 py-2 text-sm font-medium transition-opacity hover:opacity-90"
 							>
 								Return home
