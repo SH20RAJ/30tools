@@ -46,6 +46,10 @@ export function getAllCategories(): Category[] {
 	return Object.values(categories);
 }
 
+export function getCategoryBySlug(slug: string): Category | undefined {
+	return getAllCategories().find((category) => category.slug === slug);
+}
+
 export function getRelatedTools(tool: Tool, limit: number = 10): Tool[] {
 	if (!tool) return [];
 	const allTools = getAllTools();

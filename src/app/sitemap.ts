@@ -63,6 +63,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		priority: 0.8,
 	}));
 
+	const toolGuidesIndex: MetadataRoute.Sitemap = [
+		{
+			url: `${BASE_URL}/tool-guides`,
+			lastModified: currentDate,
+			changeFrequency: "weekly",
+			priority: 0.85,
+		},
+	];
+
+	const toolGuideCategoryPages: MetadataRoute.Sitemap = allCategories.map((category) => ({
+		url: `${BASE_URL}/tool-guides/${category.slug}`,
+		lastModified: currentDate,
+		changeFrequency: "weekly",
+		priority: 0.8,
+	}));
+
 	const blogSitemaps: MetadataRoute.Sitemap = blogArticles.map((article) => ({
 		url: `${BASE_URL}/blog/${article.slug}`,
 		lastModified: currentDate,
@@ -70,5 +86,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		priority: 0.7,
 	}));
 
-	return [...staticPages, ...categoryPages, ...toolPages, ...contentPages, ...blogSitemaps];
+	return [...staticPages, ...categoryPages, ...toolPages, ...contentPages, ...toolGuidesIndex, ...toolGuideCategoryPages, ...blogSitemaps];
 }
