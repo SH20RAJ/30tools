@@ -82,7 +82,7 @@ export default function BlogPage() {
 								</h2>
 								<p className="mt-3 text-muted-foreground">{article.description}</p>
 								<p className="mt-4 text-sm font-medium text-primary">
-									Read guide ->
+									Read guide →
 								</p>
 							</Link>
 						))}
