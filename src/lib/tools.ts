@@ -9,6 +9,10 @@ export const STATIC_ROUTES = {
 	ABOUT: "/about",
 };
 
+export const SUPPORTED_LANGUAGES = [
+	"en", "es", "fr", "de", "hi", "it", "pt", "ja", "zh", "ko", "ru", "tr", "vi", "id"
+];
+
 export interface Tool {
 	id: string;
 	name: string;

@@ -202,7 +202,13 @@ const nextConfig = {
 	},
 
 	async rewrites() {
-		return slugRewrites;
+		return [
+			...slugRewrites,
+			{
+				source: "/sitemap-index.xml",
+				destination: "/sitemap.xml",
+			},
+		];
 	},
 
 	// Turbopack configuration (empty to silence Next.js 16 warning)
