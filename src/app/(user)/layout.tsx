@@ -2,12 +2,13 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
 	title: "User Area | 30tools",
-	description: "Manage your 30tools account and dashboard from the user area.",
+	description:
+		"Manage your 30tools account, saved preferences, and dashboard settings.",
 	keywords:
-		"30tools account, user dashboard, profile settings, creator dashboard",
+		"30tools account, user dashboard, profile settings, creator dashboard, saved tools, tool preferences",
 	openGraph: {
 		title: "User Area | 30tools",
-		description: "Manage your 30tools account and dashboard.",
+		description: "Manage your 30tools account, preferences, and dashboard.",
 		url: "https://30tools.com/account",
 		siteName: "30tools",
 		type: "website",

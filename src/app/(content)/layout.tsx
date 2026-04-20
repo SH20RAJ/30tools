@@ -3,13 +3,13 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
 	title: "Blog & Guides | 30tools",
 	description:
-		"Read practical guides, tutorials, and tool comparisons from 30tools for text, video, PDF, and productivity workflows.",
+		"Practical guides, step-by-step tutorials, and tool comparisons from 30tools. Learn how to compress images, merge PDFs, download videos, optimize SEO, and boost productivity with free online tools.",
 	keywords:
-		"30tools blog, online tools guides, productivity tutorials, downloader guides, text tool tutorials",
+		"30tools blog, online tools guides, productivity tutorials, downloader guides, text tool tutorials, image compression guide, pdf merge tutorial, video download how to, seo tips, free tools blog",
 	openGraph: {
 		title: "Blog & Guides | 30tools",
 		description:
-			"Read practical guides, tutorials, and tool comparisons from 30tools.",
+			"Practical guides, tutorials, and tool comparisons for free online productivity tools.",
 		url: "https://30tools.com/blog",
 		siteName: "30tools",
 		type: "website",
