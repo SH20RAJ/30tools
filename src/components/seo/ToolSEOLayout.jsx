@@ -2,7 +2,6 @@ import {
 	AuthorBio,
 	BreadcrumbsEnhanced,
 	FAQSection,
-	ReviewSnippets,
 	ToolFeatures,
 	UserComments,
 } from "@/components/seo";
@@ -51,9 +50,6 @@ export default function ToolSEOLayout({
 
 						{/* Tool Features */}
 						<ToolFeatures tool={mergedTool} />
-
-						{/* Reviews/Trust */}
-						<ReviewSnippets tool={mergedTool} />
 
 						{/* FAQs */}
 						<FAQSection

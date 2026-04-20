@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-	title: "Free Online Tools Hub - 30tools",
+	title: "Free Online Tools Hub | 30tools",
 	description:
 		"Explore the 30tools landing hub for fast, private, and free online tools across image, PDF, video, text, and developer categories.",
 	keywords:
 		"free online tools hub, 30tools homepage, online utility tools, browser based tools",
 	openGraph: {
-		title: "Free Online Tools Hub - 30tools",
+		title: "Free Online Tools Hub | 30tools",
 		description:
 			"Explore fast, private, and free online tools across multiple categories.",
 		url: "https://30tools.com",

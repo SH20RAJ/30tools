@@ -273,41 +273,8 @@ export default function ReviewSnippets({
 	const reviews = SAMPLE_REVIEWS[toolId] || SAMPLE_REVIEWS.default;
 	const displayedReviews = reviews.slice(0, limit);
 
-	// Calculate aggregate rating
 	const avgRating =
 		reviews.reduce((sum, review) => sum + review.rating, 0) / reviews.length;
-	const totalReviews = reviews.length * 67; // Simulate more reviews
-
-	// Generate structured data for reviews
-	const reviewSchema = {
-		"@context": "https://schema.org",
-		"@type": "Product",
-		name: toolId
-			? `${toolId.replace("-", " ")} Tool`
-			: "30tools Online Toolkit",
-		aggregateRating: {
-			"@type": "AggregateRating",
-			ratingValue: avgRating.toFixed(1),
-			reviewCount: totalReviews,
-			bestRating: "5",
-			worstRating: "1",
-		},
-		review: displayedReviews.map((review) => ({
-			"@type": "Review",
-			author: {
-				"@type": "Person",
-				name: review.author,
-			},
-			reviewRating: {
-				"@type": "Rating",
-				ratingValue: review.rating,
-				bestRating: "5",
-				worstRating: "1",
-			},
-			reviewBody: review.content,
-			datePublished: review.date,
-		})),
-	};
 
 	const renderGrid = () => (
 		<div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -337,12 +304,6 @@ export default function ReviewSnippets({
 
 	return (
 		<>
-			{/* Schema.org structured data */}
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewSchema) }}
-			/>
-
 			<section
 				className="py-12 bg-gradient-to-br from-muted/30 to-muted/10"
 				aria-labelledby="reviews-heading"
@@ -362,7 +323,7 @@ export default function ReviewSnippets({
 									</span>
 								</div>
 								<div className="text-muted-foreground">
-									Based on {totalReviews.toLocaleString()}+ reviews
+									Based on {reviews.length} reviews
 								</div>
 							</div>
 						)}

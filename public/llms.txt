@@ -1,6 +1,6 @@
 # 30tools
 
-> 30tools is a free online toolkit with 194+ browser-based tools for PDF, image, video, audio, text, SEO, and developer workflows.
+> 30tools is a free online toolkit with 365+ browser-based tools for PDF, image, video, audio, text, SEO, and developer workflows.
 
 Canonical: https://30tools.com
 Search: https://30tools.com/search

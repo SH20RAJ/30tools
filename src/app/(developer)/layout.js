@@ -1,14 +1,13 @@
-
 export const metadata = {
-	title: "Free Developer Tools Online - No Signup",
+	title: "Free Developer Tools Online - No Signup | 30tools",
 	description:
-		"Essential free developer tools: Format JSON, Decode JWT tokens, Encode Base64, and more. 100% free, no signup required. Secure client-side processing for all utilities.",
+		"Free developer tools for JSON formatting, Base64 encoding/decoding, JWT decoding, hash generation, regex testing, and more. Secure client-side processing — your code never leaves the browser. No signup required.",
 	keywords:
-		"developer tools, json formatter, jwt decoder, base64 encoder, hash generator, free developer utilities, online coding tools, debug jwt, validate json",
+		"developer tools, json formatter, jwt decoder, base64 encoder, base64 decoder, hash generator, regex tester, css minifier, html validator, free developer utilities, online coding tools, debug jwt, validate json, url encoder, developer toolkit",
 	openGraph: {
-		title: "Developer Tools - Free Online Developer Utilities",
+		title: "Free Developer Tools Online - No Signup | 30tools",
 		description:
-			"Essential developer tools for JSON formatting, hash generation, and more.",
+			"Essential developer tools for JSON, JWT, Base64, hashing, and more. Secure client-side processing with no signup.",
 		url: "https://30tools.com/developer-tools",
 		siteName: "30tools",
 		images: [

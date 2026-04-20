@@ -1,14 +1,13 @@
-
 export const metadata = {
-	title: "Free Audio Tools Online - No Signup",
+	title: "Free Audio Tools Online - No Signup | 30tools",
 	description:
-		"Free online audio tools: AI Text to Speech converter, audio compression, and format conversion. Generate natural voiceovers instantly. 100% free, no signup required.",
+		"Free online audio tools including AI text-to-speech, audio format conversion, and audio compression. Generate natural voiceovers, convert between MP3/WAV/OGG, and optimize audio files instantly. No signup, 100% browser-based processing.",
 	keywords:
-		"audio tools, text to speech, tts, ai voice generator, audio compressor, audio converter, free audio tools",
+		"audio tools, text to speech, tts, ai voice generator, audio compressor, audio converter, mp3 converter, wav to mp3, free audio tools online, text to speech free, audio format converter, online audio processing",
 	openGraph: {
-		title: "Audio Tools - Free AI Text to Speech & Audio Processing",
+		title: "Free Audio Tools Online - No Signup | 30tools",
 		description:
-			"Generate natural voiceovers and process audio files for free.",
+			"Free AI text-to-speech, audio conversion, and compression tools. Generate voiceovers and process audio files instantly in your browser.",
 		url: "https://30tools.com/audio-tools",
 		siteName: "30tools",
 		images: [
