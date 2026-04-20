@@ -4,13 +4,13 @@ import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 export const metadata = {
 	title: "Free SEO Tools Online - No Signup | 30tools",
 	description:
-		"Boost your rankings with our free SEO tools. Keyword planner, backlink checker, site audit, and more. 100% free, no signup required.",
+		"Boost your search rankings with 17+ free SEO tools — site audit, keyword research, backlink checker, meta tag generator, schema markup builder, robots.txt & sitemap generator. No signup, 100% browser-based analysis.",
 	keywords:
-		"seo tools, keyword research tool, backlink checker, seo audit tool, free seo software, google seo tools, website analyzer",
+		"seo tools, keyword research tool, backlink checker, seo audit tool, free seo software, google seo tools, website analyzer, meta tag generator, schema markup generator, robots.txt generator, sitemap generator, serp preview, seo score checker, on page seo checker, free online seo tools",
 	openGraph: {
-		title: "SEO Tools - Free Online SEO Suite",
+		title: "Free SEO Tools Online - No Signup | 30tools",
 		description:
-			"Boost your rankings with our free SEO tools. Keyword planner, backlink checker, site audit, and more.",
+			"17+ free SEO tools for site audits, keyword research, schema markup, and meta tag optimization. No signup required.",
 		url: "https://30tools.com/seo-tools",
 		siteName: "30tools",
 		images: [
@@ -25,7 +25,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "SEO Tools - Free Online SEO Suite",
+		title: "Free SEO Tools Online - No Signup | 30tools",
 		description:
 			"Boost your rankings with our free SEO tools. Keyword planner, backlink checker, site audit, and more.",
 		images: ["/og-image.jpg"],

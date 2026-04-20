@@ -16,7 +16,7 @@ export const viewport: Viewport = {
 	initialScale: 1,
 	maximumScale: 5,
 };
-const DEFAULT_DESCRIPTION = `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, and more. No registration required. Privacy-focused, fast, and secure.`;
+const DEFAULT_DESCRIPTION = `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, text processing, and more. No registration required. Privacy-focused, fast, and secure browser-based processing.`;
 
 const siteVerification = {
 	...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 		default: "Free Online Tools - No Signup | 30tools",
 		template: "%s | 30tools",
 	},
-	description: `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, and more. 100% free, no signup required. Privacy-focused, fast, and secure.`,
+	description: `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, text processing, and more. 100% free, no signup required. Privacy-focused, fast, and secure browser-based processing.`,
 	keywords: [
 		// Primary keywords
 		"free online tools",

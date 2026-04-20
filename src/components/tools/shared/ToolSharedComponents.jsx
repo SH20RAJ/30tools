@@ -1,36 +1,47 @@
-import { Check, Download, Shield, Zap } from "lucide-react";
+import { Check, Download, Shield, Zap, Globe, Lock } from "lucide-react";
 
 export const ToolTrust = () => {
 	return (
-		<section className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-12 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 border border-primary/10 ">
+		<section
+			aria-label="Trust indicators"
+			className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-12 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 border border-primary/10"
+		>
 			<div className="text-center space-y-4 group">
 				<div className="w-16 h-16 bg-primary/10 items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
 					<Zap className="w-8 h-8" />
 				</div>
-				<h3 className="font-bold text-xl tracking-tight">Instant Results</h3>
+				<h3 className="font-bold text-xl tracking-tight">
+					Instant Browser Processing
+				</h3>
 				<p className="text-sm text-muted-foreground leading-relaxed">
-					Real-time processing with zero latency. No waiting, just instant
-					professional output.
+					Results appear the moment you act — no server queues, no loading
+					spinners. All processing runs locally for zero-latency professional
+					output.
 				</p>
 			</div>
 			<div className="text-center space-y-4 group">
 				<div className="w-16 h-16 bg-primary/10 items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
-					<Shield className="w-8 h-8" />
+					<Lock className="w-8 h-8" />
 				</div>
-				<h3 className="font-bold text-xl tracking-tight">Maximum Privacy</h3>
+				<h3 className="font-bold text-xl tracking-tight">
+					Privacy-First by Design
+				</h3>
 				<p className="text-sm text-muted-foreground leading-relaxed">
-					All processing is done locally in your browser. We never store or see
-					your sensitive data.
+					Your files and data never leave your browser. We do not store, log, or
+					track anything you process — guaranteed by architecture, not policy.
 				</p>
 			</div>
 			<div className="text-center space-y-4 group">
 				<div className="w-16 h-16 bg-primary/10 items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
-					<Download className="w-8 h-8" />
+					<Globe className="w-8 h-8" />
 				</div>
-				<h3 className="font-bold text-xl tracking-tight">Free Forever</h3>
+				<h3 className="font-bold text-xl tracking-tight">
+					Free Forever, No Signup
+				</h3>
 				<p className="text-sm text-muted-foreground leading-relaxed">
-					No signups, no hidden costs, and no limits. Use our professional tools
-					as much as you need.
+					No registration, no hidden costs, no premium tiers, and no daily
+					limits. 365+ professional tools available to everyone, everywhere, at
+					zero cost.
 				</p>
 			</div>
 		</section>
@@ -40,10 +51,15 @@ export const ToolTrust = () => {
 export const ToolFeatures = ({ features }) => {
 	if (!features || features.length === 0) return null;
 	return (
-		<section className="scroll-mt-24">
-			<h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12">
+		<section className="scroll-mt-24" aria-label="Features and benefits">
+			<h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
 				Key Features & Benefits
 			</h2>
+			<p className="text-muted-foreground mb-12 max-w-3xl">
+				Every feature is designed to deliver professional results with maximum
+				speed and minimum friction. No compromises on quality, privacy, or
+				accessibility.
+			</p>
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
 				{features.map((feature, idx) => (
 					<div
@@ -66,10 +82,18 @@ export const ToolFeatures = ({ features }) => {
 export const ToolSteps = ({ steps, toolName }) => {
 	if (!steps || steps.length === 0) return null;
 	return (
-		<section className="scroll-mt-24">
-			<h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12">
-				How to Use {toolName}
+		<section
+			className="scroll-mt-24"
+			aria-label={`How to use ${toolName} step by step`}
+		>
+			<h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">
+				How to Use {toolName} — Step by Step
 			</h2>
+			<p className="text-muted-foreground mb-12 max-w-3xl">
+				Follow these simple steps to get your result in under 30 seconds. No
+				signup, no install, no learning curve — just paste, process, and
+				download.
+			</p>
 			<div className="grid grid-cols-1 md:grid-cols-3 gap-8">
 				{steps.map((step, idx) => (
 					<div
@@ -82,9 +106,7 @@ export const ToolSteps = ({ steps, toolName }) => {
 						<h3 className="text-2xl font-bold mb-4 mt-2 tracking-tight">
 							{step.name}
 						</h3>
-						<p className="text-muted-foreground leading-relaxed">
-							{step.text}
-						</p>
+						<p className="text-muted-foreground leading-relaxed">{step.text}</p>
 					</div>
 				))}
 			</div>
@@ -95,13 +117,21 @@ export const ToolSteps = ({ steps, toolName }) => {
 export const ToolFAQ = ({ faqs, toolName }) => {
 	if (!faqs || faqs.length === 0) return null;
 	return (
-		<section className="scroll-mt-24">
-			<h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-12 flex items-center gap-4">
+		<section
+			className="scroll-mt-24"
+			aria-label={`Frequently asked questions about ${toolName}`}
+		>
+			<h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 flex items-center gap-4">
 				<div className="w-10 h-10 items-center justify-center">
 					<Check className="w-6 h-6 text-primary" />
 				</div>
-				Frequently Asked Questions
+				{toolName} — Frequently Asked Questions
 			</h2>
+			<p className="text-muted-foreground mb-12 max-w-3xl">
+				Got questions about {toolName}? Here are clear, honest answers to the
+				most common questions about pricing, privacy, compatibility, and
+				features.
+			</p>
 			<div className="space-y-6">
 				{faqs.map((faq, idx) => (
 					<div

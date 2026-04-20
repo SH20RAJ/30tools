@@ -1,14 +1,13 @@
-
 export const metadata = {
 	title: "Free Video Tools Online - No Signup | 30tools",
 	description:
-		"Free online video tools: Terabox video player and downloader, video compression, and format conversion. 100% free, no signup required. High-speed, secure, and no installation required.",
+		"Free online video tools: play and download Terabox videos, compress video files for web, convert between MP4/AVI/MOV/WEBM/GIF, trim clips, and extract audio. Browser-based processing with no upload to cloud. No signup, no watermarks.",
 	keywords:
-		"video tools, terabox downloader, terabox player online, video compressor, video converter, free video tools",
+		"video tools, terabox downloader, terabox player online, video compressor, video converter, free video tools, mp4 converter, video to gif, trim video online, extract audio from video, webm converter, video format converter, compress video for web",
 	openGraph: {
-		title: "Video Tools - Terabox Player & Video Utilities",
+		title: "Free Video Tools Online - No Signup | 30tools",
 		description:
-			"Play Terabox videos online, download content, and optimize your media files for free.",
+			"Play Terabox videos, compress, convert, and trim video files for free. Browser-based, no signup, no watermarks.",
 		url: "https://30tools.com/video-tools",
 		siteName: "30tools",
 		images: [

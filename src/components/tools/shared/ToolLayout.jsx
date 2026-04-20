@@ -21,28 +21,40 @@ function ToolArticle({ content }) {
 				{lines.map((line, i) => {
 					if (line.startsWith("## ")) {
 						return (
-							<h2 key={i} className="text-3xl md:text-5xl font-extrabold tracking-tight mt-16 mb-8 text-foreground">
+							<h2
+								key={i}
+								className="text-3xl md:text-5xl font-extrabold tracking-tight mt-16 mb-8 text-foreground"
+							>
 								{line.replace("## ", "")}
 							</h2>
 						);
 					}
 					if (line.startsWith("### ")) {
 						return (
-							<h3 key={i} className="text-2xl md:text-3xl font-bold tracking-tight mt-12 mb-6 text-foreground/90">
+							<h3
+								key={i}
+								className="text-2xl md:text-3xl font-bold tracking-tight mt-12 mb-6 text-foreground/90"
+							>
 								{line.replace("### ", "")}
 							</h3>
 						);
 					}
 					if (line.startsWith("- ")) {
 						return (
-							<li key={i} className="text-lg text-muted-foreground ml-6 list-disc">
+							<li
+								key={i}
+								className="text-lg text-muted-foreground ml-6 list-disc"
+							>
 								{line.replace("- ", "")}
 							</li>
 						);
 					}
 					if (line.trim() === "") return <div key={i} className="h-4" />;
 					return (
-						<p key={i} className="text-xl text-muted-foreground leading-relaxed">
+						<p
+							key={i}
+							className="text-xl text-muted-foreground leading-relaxed"
+						>
 							{line}
 						</p>
 					);
@@ -81,7 +93,12 @@ export default function ToolLayout({
 }) {
 	// Dynamically enrich tool data if SEO content is missing
 	const enrichedTool = { ...tool };
-	if (!enrichedTool.features || !enrichedTool.faqs || !enrichedTool.howTo || !enrichedTool.article) {
+	if (
+		!enrichedTool.features ||
+		!enrichedTool.faqs ||
+		!enrichedTool.howTo ||
+		!enrichedTool.article
+	) {
 		const dynamicContent = getDynamicSEOContent(tool);
 		if (!enrichedTool.features) enrichedTool.features = dynamicContent.features;
 		if (!enrichedTool.howTo) enrichedTool.howTo = dynamicContent.howTo;
@@ -99,23 +116,28 @@ export default function ToolLayout({
 		<div className="min-h-screen bg-background text-foreground selection:bg-primary/20 ambient-glow">
 			<StructuredData tool={enrichedTool} />
 			<div className="container mx-auto px-4 pt-8">
-				<BreadcrumbsEnhanced 
-					customBreadcrumbs={breadcrumbs} 
+				<BreadcrumbsEnhanced
+					customBreadcrumbs={breadcrumbs}
 					suppressSchema={true}
 				/>
 			</div>
 
 			<main className="container mx-auto px-4 py-16 max-w-6xl space-y-32">
-				{/* Hero Section */}
 				<section className="text-center space-y-8 max-w-4xl mx-auto animate-in">
 					<h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight bg-gradient-to-b from-foreground to-foreground/70">
 						{enrichedTool.name}
 					</h1>
 					<p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
 						{enrichedTool.description}
-						{!String(enrichedTool.description || "").includes("privacy-friendly browser-based workflows")
-							? " Runs in your browser with no signup."
-							: " Free online utility — fast, private, and built for real workflows."}
+						{!String(enrichedTool.description || "").includes(
+							"privacy-friendly browser-based workflows",
+						)
+							? " Free, private, and runs entirely in your browser — no signup needed."
+							: " Fast, private, and built for real workflows — completely free."}
+					</p>
+					<p className="text-base text-muted-foreground/70 max-w-xl mx-auto">
+						Part of 30tools — 365+ free online tools for image, PDF, video,
+						audio, text, SEO, and developer workflows. No registration required.
 					</p>
 				</section>
 
@@ -133,7 +155,10 @@ export default function ToolLayout({
 
 					<div className="grid grid-cols-1 gap-32">
 						<ToolFeatures features={enrichedTool.features} />
-						<ToolSteps steps={enrichedTool.howTo?.steps} toolName={enrichedTool.name} />
+						<ToolSteps
+							steps={enrichedTool.howTo?.steps}
+							toolName={enrichedTool.name}
+						/>
 						<ToolFAQ faqs={enrichedTool.faqs} toolName={enrichedTool.name} />
 					</div>
 				</div>

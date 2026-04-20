@@ -1,14 +1,13 @@
-
 export const metadata = {
 	title: "Free Utility Tools Online - No Signup | 30tools",
 	description:
-		"Essential utility tools for everyday tasks: Internet Speed Test, URL Shortener, and IndexNow integration. 100% free, no signup required. Fast, free, and accurate.",
+		"Free online utility tools: internet speed test, URL shortener, password generator, QR code maker, color converter, unit converter, calculators, and 85+ more. Everything runs in your browser — no signup, no tracking, no limits.",
 	keywords:
-		"utility tools, internet speed test, url shortener, indexnow, free online utilities, network tools, link management",
+		"utility tools, internet speed test, url shortener, password generator, qr code generator, color converter, unit converter, bmi calculator, percentage calculator, free online utilities, network tools, link management, online calculator, base converter, hex to rgb",
 	openGraph: {
-		title: "Utility Tools - Free Online Productivity Suite",
+		title: "Free Utility Tools Online - No Signup | 30tools",
 		description:
-			"Essential utility tools: Speed Test, URL Shortener, and more.",
+			"85+ free utility tools — speed test, password generator, QR codes, converters, and calculators. No signup required.",
 		url: "https://30tools.com/utility-tools",
 		siteName: "30tools",
 		images: [

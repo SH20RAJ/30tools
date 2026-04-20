@@ -1,14 +1,13 @@
-
 export const metadata = {
 	title: "Free Image Tools Online - No Signup | 30tools",
 	description:
-		"Free online image tools: Remove backgrounds, resize photos, convert formats, generate logos, and enhance quality with AI. 100% free, no signup required.",
+		"Free online image tools: remove backgrounds with AI, compress and resize photos, convert between PNG/JPG/WEBP/SVG, enhance image quality, and generate logos. Batch processing supported. No signup, no watermarks, browser-based.",
 	keywords:
-		"image tools, background remover, photo enhancer, image converter, image resizer, logo generator, free photo editor online, ai image tools",
+		"image tools, background remover, photo enhancer, image converter, image resizer, logo generator, free photo editor online, ai image tools, image compressor free, png to jpg converter, webp converter, batch image resize, remove background online free, image format converter",
 	openGraph: {
-		title: "Image Tools - Free AI Photo Editing Suite",
+		title: "Free Image Tools Online - No Signup | 30tools",
 		description:
-			"Edit, convert, and enhance your photos with our free AI-powered tools.",
+			"Remove backgrounds, compress, resize, and convert images with free AI-powered tools. Batch processing, no watermarks, no signup.",
 		url: "https://30tools.com/image-tools",
 		siteName: "30tools",
 		images: [
