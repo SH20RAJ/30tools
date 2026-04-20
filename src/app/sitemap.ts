@@ -35,6 +35,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.7,
 		},
 		{
+			url: `${BASE_URL}/privacy`,
+			lastModified: currentDate,
+			changeFrequency: "monthly",
+			priority: 0.7,
+		},
+		{
+			url: `${BASE_URL}/terms`,
+			lastModified: currentDate,
+			changeFrequency: "monthly",
+			priority: 0.7,
+		},
+		{
 			url: `${BASE_URL}/blog`,
 			lastModified: currentDate,
 			changeFrequency: "daily",
@@ -42,12 +54,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		},
 	];
 
-	const toolPages: MetadataRoute.Sitemap = allTools.map((tool) => ({
-		url: `${BASE_URL}${tool.route}`,
-		lastModified: currentDate,
-		changeFrequency: "weekly",
-		priority: tool.popular ? 0.9 : 0.8,
-	}));
+	const toolPages: MetadataRoute.Sitemap = allTools.flatMap((tool) => {
+		const slugs = new Set([
+			tool.route,
+			...(tool.extraSlugs ?? []),
+		].map((slug) => (slug.startsWith("/") ? slug : `/${slug}`)));
+
+		return Array.from(slugs).map((route) => ({
+			url: `${BASE_URL}${route}`,
+			lastModified: currentDate,
+			changeFrequency: "weekly",
+			priority: tool.popular ? 0.9 : 0.8,
+		}));
+	});
 
 	const categoryPages: MetadataRoute.Sitemap = allCategories.map((cat) => ({
 		url: `${BASE_URL}/${cat.slug}`,
