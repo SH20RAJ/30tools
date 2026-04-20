@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllTools } from "@/lib/tools";
+import { useCasePages, comparisonPages, blogArticles } from "@/constants/content-pages";
 
 const BASE_URL = "https://30tools.com";
 
@@ -55,5 +56,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		priority: 0.85,
 	}));
 
-	return [...staticPages, ...categoryPages, ...toolPages];
+	const contentPages: MetadataRoute.Sitemap = [...useCasePages, ...comparisonPages].map((page) => ({
+		url: `${BASE_URL}/${page.slug}`,
+		lastModified: currentDate,
+		changeFrequency: "weekly",
+		priority: 0.8,
+	}));
+
+	const blogSitemaps: MetadataRoute.Sitemap = blogArticles.map((article) => ({
+		url: `${BASE_URL}/blog/${article.slug}`,
+		lastModified: currentDate,
+		changeFrequency: "monthly",
+		priority: 0.7,
+	}));
+
+	return [...staticPages, ...categoryPages, ...toolPages, ...contentPages, ...blogSitemaps];
 }
