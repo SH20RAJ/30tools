@@ -2,7 +2,7 @@
   "metadata": {
     "version": "11.0",
     "lastUpdated": "2026-04-14",
-    "totalTools": 365,
+    "totalTools": 375,
     "totalCategories": 11
   },
   "categories": {
@@ -716,6 +716,13 @@
           ],
           "popular": false,
           "category": "image"
+        },
+        {
+          "id": "image-tools",
+          "name": "Free Image Tools Online",
+          "description": "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
+          "route": "/image-tools",
+          "category": "image"
         }
       ]
     },
@@ -1114,6 +1121,13 @@
           ],
           "popular": true,
           "category": "pdf"
+        },
+        {
+          "id": "pdf-tools",
+          "name": "PDF Tools",
+          "description": "Merge, split, compress, and manipulate PDF documents",
+          "route": "/pdf-tools",
+          "category": "pdf"
         }
       ]
     },
@@ -1188,6 +1202,13 @@
             "terabox-video-saver"
           ],
           "popular": true,
+          "category": "video"
+        },
+        {
+          "id": "video-tools",
+          "name": "Video Tools",
+          "description": "Compress videos, convert formats, and create GIFs",
+          "route": "/video-tools",
           "category": "video"
         }
       ]
@@ -1667,6 +1688,13 @@
             "text-to-speech-ai"
           ],
           "popular": true,
+          "category": "audio"
+        },
+        {
+          "id": "audio-tools",
+          "name": "Audio Tools",
+          "description": "Compress and convert audio files between formats",
+          "route": "/audio-tools",
           "category": "audio"
         }
       ]
@@ -4866,6 +4894,13 @@
           "extraSlugs": [],
           "popular": false,
           "category": "utilities"
+        },
+        {
+          "id": "text-tools",
+          "name": "Text Tools",
+          "description": "Format, convert, and manipulate text content",
+          "route": "/text-tools",
+          "category": "utilities"
         }
       ]
     },
@@ -5171,6 +5206,47 @@
             "contact"
           ],
           "category": "others"
+        },
+        {
+          "id": "search",
+          "name": "Search All Tools",
+          "description": "Search and browse our collection of 300+ free online tools. 100% free, no signup required.",
+          "route": "/search",
+          "category": "others"
+        },
+        {
+          "id": "generators",
+          "name": "Fun Generators",
+          "description": "Create viral content with AI-powered fun generators",
+          "route": "/generators",
+          "category": "others"
+        },
+        {
+          "id": "developer-tools",
+          "name": "Developer Tools",
+          "description": "Format JSON, generate hashes, and developer utilities",
+          "route": "/developer-tools",
+          "category": "others"
+        }
+      ]
+    },
+    "company": {
+      "name": "Company",
+      "slug": "company",
+      "tools": [
+        {
+          "id": "privacy",
+          "name": "Free Privacy Policy Online",
+          "description": "Read the 30tools Privacy Policy. We explain what data we collect, how we protect it, and how our privacy-first browser-based tools work. No signup required.",
+          "route": "/privacy",
+          "category": "company"
+        },
+        {
+          "id": "terms",
+          "name": "Free Terms of Use Online",
+          "description": "Read the 30tools Terms of Use. Our privacy-first online toolkit is free, browser-based, and available without registration.",
+          "route": "/terms",
+          "category": "company"
         }
       ]
     }
