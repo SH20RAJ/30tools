@@ -8,7 +8,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from "@/components/ui/card";
-import { getAllTools, getRouteById } from "@/lib/tools";
+import { getAllTools, getRouteById, STATIC_ROUTES } from "@/lib/tools";
 
 interface NotFoundPageProps {
 	searchParams?: Promise<any> | any;

@@ -278,7 +278,7 @@ export default function GuitarTunerTool() {
 										{closestNote ? closestNote.note : "-"}
 									</div>
 									<div className="text-2xl font-mono text-muted-foreground mb-12">
-										{pitch > 0 ? \`\${pitch.toFixed(1)} Hz\` : "Waiting for sound..."}
+										{pitch > 0 ? `${pitch.toFixed(1)} Hz` : "Waiting for sound..."}
 									</div>
 									
 									{/* Tuning Meter */}
@@ -287,7 +287,7 @@ export default function GuitarTunerTool() {
 											<div className="absolute top-0 bottom-0 left-1/2 w-0.5 bg-foreground -translate-x-1/2 scale-y-150 z-10" />
 											<div 
 												className={`absolute top-0 bottom-0 w-2.5 -translate-x-1/2 transition-all duration-75 ${getTuningColor()}`}
-												style={{ left: \`\${50 + cents}%\` }}
+												style={{ left: `${50 + cents}%` }}
 											/>
 										</div>
 										<div className="flex justify-between w-full text-xs text-muted-foreground font-mono px-2">
