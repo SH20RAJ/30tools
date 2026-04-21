@@ -3188,36 +3188,48 @@
                 {
                     "id": "izlesene-video-downloader",
                     "name": "Izlesene Video Downloader",
-                    "description": "The ultimate tool for downloading videos from Izlesene.",
+                    "description": "Download videos from Izlesene in high quality instantly. Our free online tool makes it easy to save your favorite Turkish videos and clips for offline viewing without any signup.",
                     "route": "/izlesene-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-izlesene-downloader-online",
+                        "save-izlesene-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "kickstarter-video-downloader",
                     "name": "Kickstarter Video Downloader",
-                    "description": "Save Kickstarter project videos to your device easily.",
+                    "description": "Save Kickstarter project videos and pitch clips to your device easily. Our free online downloader helps you keep campaign media for reference and offline viewing.",
                     "route": "/kickstarter-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-kickstarter-video-downloader-online",
+                        "save-kickstarter-campaign-videos"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "kwai-video-downloader",
                     "name": "Kwai Video Downloader",
-                    "description": "Save your favorite Kwai videos to your device easily.",
+                    "description": "Save your favorite Kwai videos without watermark instantly. Our free online tool helps you download trending clips and funny videos from Kwai in high-definition quality.",
                     "route": "/kwai-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-kwai-downloader-no-watermark",
+                        "save-kwai-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "likee-video-downloader",
                     "name": "Likee Video Downloader",
-                    "description": "Save your favorite Likee videos to your device easily.",
+                    "description": "Save your favorite Likee videos without watermark easily. Our free online downloader preserves high video quality and works instantly in your browser on all devices.",
                     "route": "/likee-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-likee-downloader-no-watermark",
+                        "save-likee-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
@@ -3248,45 +3260,60 @@
                 {
                     "id": "mashable-video-downloader",
                     "name": "Mashable Video Downloader",
-                    "description": "Download Mashable videos online with our free tool.",
+                    "description": "Download Mashable videos and news clips online with our free tool. Save high-quality content for offline viewing instantly in your browser without any signup.",
                     "route": "/mashable-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-mashable-downloader-online",
+                        "save-mashable-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "mixcloud-video-downloader",
                     "name": "Mixcloud Video Downloader",
-                    "description": "The easiest way to download Mixcloud videos and audio online.",
+                    "description": "The easiest way to download Mixcloud audio and video content online. Our free tool helps you save high-quality mixes and tracks for offline listening anywhere.",
                     "route": "/mixcloud-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-mixcloud-downloader-online",
+                        "save-mixcloud-audio-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "mxtakatak-video-downloader",
                     "name": "MxTakatak Video Downloader",
-                    "description": "Save your favorite MxTakatak videos to your device.",
+                    "description": "Save your favorite MxTakatak videos without watermark instantly. Our free online tool helps you download viral clips and funny videos from Takatak in high quality.",
                     "route": "/mxtakatak-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-takatak-downloader-no-watermark",
+                        "save-mxtakatak-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "ninegag-video-downloader",
                     "name": "NineGag Video Downloader",
-                    "description": "Save your favorite NineGag videos to your device easily.",
+                    "description": "Save your favorite 9GAG videos and memes to your device easily. Our free online downloader preserves original quality and works instantly in your browser.",
                     "route": "/ninegag-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-9gag-downloader-online",
+                        "save-9gag-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "odnoklassniki-video-downloader",
                     "name": "Odnoklassniki Video Downloader",
-                    "description": "Save Odnoklassniki videos directly to your device easily.",
+                    "description": "Save OK.ru (Odnoklassniki) videos directly to your device easily. Our free online tool helps you download movies, clips, and user videos in high resolution instantly.",
                     "route": "/odnoklassniki-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-ok-ru-downloader-online",
+                        "save-odnoklassniki-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
@@ -3349,9 +3376,12 @@
                 {
                     "id": "periscope-video-downloader",
                     "name": "Periscope Video Downloader",
-                    "description": "Download Periscope videos and live streams easily.",
+                    "description": "Download Periscope videos and live stream replays easily. Our free online tool helps you save historical broadcast content for offline viewing before it disappears.",
                     "route": "/periscope-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-periscope-downloader-online",
+                        "save-periscope-replays-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
@@ -3403,9 +3433,12 @@
                 {
                     "id": "puhutv-video-downloader",
                     "name": "PuhuTv Video Downloader",
-                    "description": "Download PuhuTv videos online with our free tool.",
+                    "description": "Download videos from PuhuTv in high resolution instantly. Our free online tool makes it easy to save your favorite Turkish series and movies for offline viewing.",
                     "route": "/puhutv-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-puhutv-downloader-online",
+                        "save-puhutv-series-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
@@ -3421,18 +3454,24 @@
                 {
                     "id": "rumble-video-downloader",
                     "name": "Rumble Video Downloader",
-                    "description": "The ultimate tool for downloading videos from Rumble.",
+                    "description": "The ultimate tool for downloading videos from Rumble in HD quality. Our free online downloader is fast, secure, and works on all devices without any signup.",
                     "route": "/rumble-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-rumble-downloader-online",
+                        "save-rumble-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "sharechat-video-downloader",
                     "name": "ShareChat Video Downloader",
-                    "description": "Save your favorite ShareChat videos to your device easily.",
+                    "description": "Save your favorite ShareChat videos without watermark instantly. Our free online tool helps you download viral Indian content and funny videos in high-definition quality.",
                     "route": "/sharechat-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-sharechat-downloader-no-watermark",
+                        "save-sharechat-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
@@ -3452,45 +3491,60 @@
                 {
                     "id": "soundcloud-video-downloader",
                     "name": "Soundcloud Video Downloader",
-                    "description": "The easiest way to download Soundcloud content online.",
+                    "description": "The easiest way to download SoundCloud audio and video content online for free. Save high-quality tracks and clips for offline listening in your browser without any signup.",
                     "route": "/soundcloud-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-soundcloud-downloader-online",
+                        "save-soundcloud-tracks-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "streamable-video-downloader",
                     "name": "Streamable Video Downloader",
-                    "description": "Download Streamable videos online with our free tool.",
+                    "description": "Download Streamable videos in high definition instantly. Our free online tool helps you save viral clips and sports highlights for offline viewing without any signup.",
                     "route": "/streamable-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-streamable-downloader-online",
+                        "save-streamable-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "ted-video-downloader",
                     "name": "Ted Video Downloader",
-                    "description": "Save Ted talk videos directly to your device easily.",
+                    "description": "Save TED Talk videos directly to your device easily. Our free online downloader helps you keep inspirational talks and educational content for offline viewing in high quality.",
                     "route": "/ted-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-ted-talks-downloader-online",
+                        "save-ted-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "telegram-video-downloader",
                     "name": "Telegram Video Downloader",
-                    "description": "The ultimate tool for downloading videos from Telegram.",
+                    "description": "The ultimate tool for downloading videos and media from Telegram channels and groups. Save high-quality content for offline viewing instantly in your browser.",
                     "route": "/telegram-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-telegram-downloader-online",
+                        "save-telegram-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "threads-video-downloader",
                     "name": "Threads Video Downloader",
-                    "description": "Save your favorite Threads videos to your device easily.",
+                    "description": "Save your favorite Threads videos and clips to your device easily. Our free online tool preserves original video quality and works instantly in your browser on all devices.",
                     "route": "/threads-video-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-threads-downloader-online",
+                        "save-threads-videos-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
@@ -3640,7 +3694,7 @@
                 {
                     "id": "mp4-to-mp3",
                     "name": "Mp4 To Mp3",
-                    "description": "Free Mp4 To Mp3 online. Mp4 To Mp3 allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Convert MP4 videos to high-quality MP3 audio instantly. Our free online converter is perfect for extracting audio from social media clips and videos without any loss in sound quality.",
                     "route": "/mp4-to-mp3",
                     "extraSlugs": [
                         "avi-file-to-mp4-online",
@@ -3667,226 +3721,252 @@
                         "tiktok-to-mp3-online",
                         "wav-file-to-mp3-online",
                         "webm-file-to-mp4-online",
-                        "youtube-to-mp3-high-quality"
+                        "youtube-to-mp3-high-quality",
+                        "extract-audio-from-mp4-online"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "free-mp3-extractor",
                     "name": "Free Mp3 Extractor",
-                    "description": "Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Extract MP3 audio from any video file instantly. Our free online tool supports multiple video formats and provides high-bitrate audio downloads for a premium listening experience.",
                     "route": "/free-mp3-extractor",
                     "extraSlugs": [
-                        "free-mp3-extractor"
+                        "free-mp3-extractor",
+                        "extract-audio-from-video-free"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "fb-video-saver",
                     "name": "Fb Video Saver",
-                    "description": "Free Fb Video Saver online. Fb Video Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Save Facebook videos and stories directly to your device. Our free online saver allows you to download public content in high definition without needing an account.",
                     "route": "/fb-video-saver",
                     "extraSlugs": [
                         "download-fb-video",
                         "fb-story-saver",
                         "fb-video-saver",
-                        "insta-video-saver"
+                        "insta-video-saver",
+                        "facebook-media-downloader"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "reddit-media-saver",
                     "name": "Reddit Media Saver",
-                    "description": "Free Reddit Media Saver online. Reddit Media Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing.",
                     "route": "/reddit-media-saver",
                     "extraSlugs": [
                         "instagram-media-saver",
                         "reddit-media-saver",
-                        "twitter-media-saver"
+                        "twitter-media-saver",
+                        "reddit-video-downloader-hd"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "shrink-mp3-size",
                     "name": "Shrink Mp3 Size",
-                    "description": "Free Shrink Mp3 Size online. Shrink Mp3 Size allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Reduce the file size of your MP3 audio while maintaining great sound quality. Our free online compressor is perfect for optimizing audio for web use and mobile devices.",
                     "route": "/shrink-mp3-size",
                     "extraSlugs": [
-                        "shrink-mp3-size"
+                        "shrink-mp3-size",
+                        "compress-mp3-online-free"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "modify-mp3-file",
                     "name": "Modify Mp3 File",
-                    "description": "Free Modify Mp3 File online. Modify Mp3 File allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Trim, cut, and edit your MP3 files instantly. Our free online audio editor helps you create ringtones and clean up recordings with a simple, browser-based interface.",
                     "route": "/modify-mp3-file",
                     "extraSlugs": [
                         "cut-mp3-file",
-                        "modify-mp3-file"
+                        "modify-mp3-file",
+                        "online-mp3-trimmer"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-fb-stories-anonymous",
                     "name": "Save Fb Stories Anonymous",
-                    "description": "Free Save Fb Stories Anonymous online. Save Fb Stories Anonymous allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Download and view Facebook stories anonymously. Our free online tool helps you save story content without notifying the creator. 100% private and secure.",
                     "route": "/save-fb-stories-anonymous",
                     "extraSlugs": [
-                        "save-fb-stories-anonymous"
+                        "save-fb-stories-anonymous",
+                        "view-facebook-stories-privately"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-instagram-clips",
                     "name": "Save Instagram Clips",
-                    "description": "Free Save Instagram Clips online. Save Instagram Clips allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Save Instagram clips, videos, and photos to your device instantly. Our free online downloader supports all public IG content and provides high-quality MP4/JPG files.",
                     "route": "/save-instagram-clips",
                     "extraSlugs": [
                         "save-instagram-clips",
-                        "save-instagram-photos"
+                        "save-instagram-photos",
+                        "download-ig-videos-free"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "ig-highlights-saver",
                     "name": "Ig Highlights Saver",
-                    "description": "Free Ig Highlights Saver online. Ig Highlights Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Download Instagram story highlights to your device easily. Our free online tool helps you archive your favorite moments and creators' content in high quality.",
                     "route": "/ig-highlights-saver",
                     "extraSlugs": [
-                        "ig-highlights-saver"
+                        "ig-highlights-saver",
+                        "download-instagram-highlights-online"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-insta-pfp",
                     "name": "Save Insta Pfp",
-                    "description": "Free Save Insta Pfp online. Save Insta Pfp allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "View and download Instagram profile pictures in full resolution. Our free online tool provides high-quality DP downloads for any public Instagram account.",
                     "route": "/save-insta-pfp",
                     "extraSlugs": [
-                        "save-insta-pfp"
+                        "save-insta-pfp",
+                        "download-instagram-profile-picture-hd"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "insta-reels-saver",
                     "name": "Insta Reels Saver",
-                    "description": "Free Insta Reels Saver online. Insta Reels Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation.",
                     "route": "/insta-reels-saver",
                     "extraSlugs": [
-                        "insta-reels-saver"
+                        "insta-reels-saver",
+                        "download-ig-reels-hd"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-reels-video",
                     "name": "Save Reels Video",
-                    "description": "Free Save Reels Video online. Save Reels Video allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Download viral Reels from Instagram and other platforms instantly. Our free online tool provides high-speed downloads for all your favorite short-form video content.",
                     "route": "/save-reels-video",
                     "extraSlugs": [
-                        "save-reels-video"
+                        "save-reels-video",
+                        "download-viral-reels-online"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-twitter-videos",
                     "name": "Save Twitter Videos",
-                    "description": "Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing.",
                     "route": "/save-twitter-videos",
                     "extraSlugs": [
                         "save-snapchat-videos",
-                        "save-twitter-videos"
+                        "save-twitter-videos",
+                        "twitter-video-downloader-hd"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "tiktok-saver-no-watermark",
                     "name": "Tiktok Saver No Watermark",
-                    "description": "Free Tiktok Saver No Watermark online. Tiktok Saver No Watermark allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Download TikTok videos without the annoying watermark. Our free online tool provides clean, high-definition MP4 files for your personal archive or social media projects.",
                     "route": "/tiktok-saver-no-watermark",
                     "extraSlugs": [
                         "no-watermark-tiktok",
                         "tiktok-mp3-saver",
-                        "tiktok-saver-no-watermark"
+                        "tiktok-saver-no-watermark",
+                        "download-clean-tiktok-video"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-tiktok-mp4",
                     "name": "Save Tiktok Mp4",
-                    "description": "Free Save Tiktok Mp4 online. Save Tiktok Mp4 allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Save TikTok videos as high-quality MP4 files instantly. Our free online downloader is fast, secure, and works on all devices without any signup or software.",
                     "route": "/save-tiktok-mp4",
                     "extraSlugs": [
                         "save-tiktok-mp4",
-                        "save-tiktok-music"
+                        "save-tiktok-music",
+                        "tiktok-to-mp4-online"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-ig-content",
                     "name": "Save Ig Content",
-                    "description": "Free Save Ig Content online. Save Ig Content allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Download any public Instagram content—photos, videos, reels, and stories—to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
                     "route": "/save-ig-content",
                     "extraSlugs": [
-                        "save-ig-content"
+                        "save-ig-content",
+                        "instagram-media-downloader-all"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "mp3-from-tiktok",
                     "name": "Mp3 From Tiktok",
-                    "description": "Free Mp3 From Tiktok online. Mp3 From Tiktok allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Extract high-quality MP3 audio from any TikTok video instantly. Perfect for saving viral sounds, music, and voiceovers for offline listening or creative projects.",
                     "route": "/mp3-from-tiktok",
                     "extraSlugs": [
-                        "mp3-from-tiktok"
+                        "mp3-from-tiktok",
+                        "tiktok-audio-extractor-online"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "pinterest-clip-saver",
                     "name": "Pinterest Clip Saver",
-                    "description": "Free Pinterest Clip Saver online. Pinterest Clip Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Save Pinterest video clips and GIFs to your device easily. Our free online tool helps you download inspirational content for offline viewing and project reference.",
                     "route": "/pinterest-clip-saver",
                     "extraSlugs": [
-                        "pinterest-clip-saver"
+                        "pinterest-clip-saver",
+                        "download-pinterest-videos-online"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "snapchat-saver-online",
                     "name": "Snapchat Saver Online",
-                    "description": "Free Snapchat Saver Online online. Snapchat Saver Online allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Download Snapchat stories and spotlight videos in high quality. Our free online tool helps you save ephemeral content before it disappears forever.",
                     "route": "/snapchat-saver-online",
                     "extraSlugs": [
-                        "snapchat-saver-online"
+                        "snapchat-saver-online",
+                        "save-snapchat-stories-free"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "save-snaps-to-gallery",
                     "name": "Save Snaps To Gallery",
-                    "description": "Free Save Snaps To Gallery online. Save Snaps To Gallery allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+                    "description": "Save public Snapchat snaps and videos directly to your phone gallery. Our free online tool works in your browser on all mobile devices and desktop computers.",
                     "route": "/save-snaps-to-gallery",
                     "extraSlugs": [
-                        "save-snaps-to-gallery"
+                        "save-snaps-to-gallery",
+                        "download-snapchat-videos-hd"
                     ],
                     "category": "downloaders"
                 },
                 {
                     "id": "facebook-story-downloader",
                     "name": "Facebook Story Downloader",
-                    "description": "Free Facebook Story Downloader online tool. Fast and secure.",
+                    "description": "Download Facebook stories in high resolution instantly. Our free online tool helps you save story content for offline viewing without any signup or account login.",
                     "route": "/facebook-story-downloader",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "free-facebook-story-downloader-online",
+                        "save-fb-stories-hd"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 },
                 {
                     "id": "downloaders",
                     "name": "Downloaders",
-                    "description": "Free Downloaders online tool. Fast and secure.",
+                    "description": "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free.",
                     "route": "/downloaders",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "all-social-media-downloader",
+                        "free-online-video-saver"
+                    ],
                     "popular": false,
                     "category": "downloaders"
                 }
@@ -3925,11 +4005,12 @@
                 {
                     "id": "angle-converter",
                     "name": "Angle Converter",
-                    "description": "Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert between degrees, radians, gradians, and more instantly. Our free online Angle Converter is perfect for students, engineers, and mathematicians. Fast and accurate.",
                     "route": "/angle-converter",
                     "extraSlugs": [
                         "free-angle-converter-online",
-                        "angle-converter-tool"
+                        "angle-converter-tool",
+                        "convert-degrees-to-radians"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -3937,11 +4018,12 @@
                 {
                     "id": "apparent-power-converter",
                     "name": "Apparent Power Converter",
-                    "description": "Free apparent power converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert between volt-amperes (VA), millivolt-amperes, and more instantly. Our free online tool is perfect for electrical engineers and technicians.",
                     "route": "/apparent-power-converter",
                     "extraSlugs": [
                         "free-apparent-power-converter-online",
-                        "apparent-power-converter-tool"
+                        "apparent-power-converter-tool",
+                        "convert-va-to-kva"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -3949,11 +4031,12 @@
                 {
                     "id": "area-converter",
                     "name": "Area Converter",
-                    "description": "Free area converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert between square meters, square feet, acres, and more instantly. Our free online Area Converter is perfect for real estate, construction, and design projects.",
                     "route": "/area-converter",
                     "extraSlugs": [
                         "free-area-converter-online",
-                        "area-converter-tool"
+                        "area-converter-tool",
+                        "convert-acres-to-hectares"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -3961,11 +4044,12 @@
                 {
                     "id": "average-calculator",
                     "name": "Average Calculator",
-                    "description": "Free average calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Calculate the mean, median, mode, and range of any dataset instantly. Our free online Average Calculator helps you analyze statistics and numeric data in seconds.",
                     "route": "/average-calculator",
                     "extraSlugs": [
                         "free-average-calculator-online",
-                        "average-calculator-tool"
+                        "average-calculator-tool",
+                        "mean-median-mode-calculator"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -3973,12 +4057,13 @@
                 {
                     "id": "base64-decode",
                     "name": "Base64 Decode",
-                    "description": "Free base64 decode tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device.",
                     "route": "/base64-decode",
                     "extraSlugs": [
                         "base64-decode-tool",
                         "decode-base64-string",
-                        "free-base64-decode-online"
+                        "free-base64-decode-online",
+                        "online-base64-decoder"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -3986,12 +4071,13 @@
                 {
                     "id": "base64-encode",
                     "name": "Base64 Encode",
-                    "description": "Free base64 encode tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Encode plain text into Base64 format instantly. Our free online tool is perfect for developers, data transmission, and secure character representation in web URLs.",
                     "route": "/base64-encode",
                     "extraSlugs": [
                         "base64-encode-tool",
                         "encode-base64-online",
-                        "free-base64-encode-online"
+                        "free-base64-encode-online",
+                        "online-base64-encoder"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -3999,11 +4085,12 @@
                 {
                     "id": "charge-converter",
                     "name": "Charge Converter",
-                    "description": "Free charge converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert between coulombs, millicoulombs, and other electrical charge units instantly. Our free online tool provides quick and accurate physics base transformations.",
                     "route": "/charge-converter",
                     "extraSlugs": [
                         "free-charge-converter-online",
-                        "charge-converter-tool"
+                        "charge-converter-tool",
+                        "convert-coulomb-to-ampere-hour"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4011,7 +4098,7 @@
                 {
                     "id": "color-converter",
                     "name": "Color Converter",
-                    "description": "Free color converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with precision.",
                     "route": "/color-converter",
                     "extraSlugs": [
                         "color-code-converter",
@@ -4020,7 +4107,8 @@
                         "create-color-scheme",
                         "free-color-converter-online",
                         "rgb-color-selector",
-                        "website-color-palette"
+                        "website-color-palette",
+                        "convert-hex-to-rgb-online"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4028,11 +4116,12 @@
                 {
                     "id": "confidence-interval-calculator",
                     "name": "Confidence Interval Calculator",
-                    "description": "Free confidence interval calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Calculate the confidence interval for your statistical data instantly. Our free online tool helps you understand data precision and margin of error in your research.",
                     "route": "/confidence-interval-calculator",
                     "extraSlugs": [
                         "free-confidence-interval-calculator-online",
-                        "confidence-interval-calculator-tool"
+                        "confidence-interval-calculator-tool",
+                        "statistical-margin-of-error-calculator"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4040,11 +4129,12 @@
                 {
                     "id": "convert-srt-to-vtt",
                     "name": "Convert SRT to VTT",
-                    "description": "Free convert srt to vtt tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert subtitle files from SRT to VTT format instantly. Our free online tool ensures compatibility with web-based video players and modern streaming platforms.",
                     "route": "/convert-srt-to-vtt",
                     "extraSlugs": [
                         "free-convert-srt-to-vtt-online",
-                        "convert-srt-to-vtt-tool"
+                        "convert-srt-to-vtt-tool",
+                        "vtt-subtitle-converter"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4052,11 +4142,12 @@
                 {
                     "id": "convert-vtt-to-srt",
                     "name": "Convert VTT to SRT",
-                    "description": "Free convert vtt to srt tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert subtitle files from VTT to SRT format instantly. Our free online tool makes it easy to use web captions with traditional desktop video players.",
                     "route": "/convert-vtt-to-srt",
                     "extraSlugs": [
                         "free-convert-vtt-to-srt-online",
-                        "convert-vtt-to-srt-tool"
+                        "convert-vtt-to-srt-tool",
+                        "srt-subtitle-converter"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4064,11 +4155,12 @@
                 {
                     "id": "cpm-calculator",
                     "name": "CPM Calculator",
-                    "description": "Free cpm calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency.",
                     "route": "/cpm-calculator",
                     "extraSlugs": [
                         "free-cpm-calculator-online",
-                        "cpm-calculator-tool"
+                        "cpm-calculator-tool",
+                        "advertising-cost-calculator"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4076,11 +4168,12 @@
                 {
                     "id": "credit-card-generator",
                     "name": "Credit Card Generator",
-                    "description": "Free credit card generator tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Generate valid dummy credit card numbers for software testing and data validation. Our free online tool provides numbers that pass Luhn algorithm checks without being real cards.",
                     "route": "/credit-card-generator",
                     "extraSlugs": [
                         "free-credit-card-generator-online",
-                        "credit-card-generator-tool"
+                        "credit-card-generator-tool",
+                        "test-credit-card-numbers"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4088,11 +4181,12 @@
                 {
                     "id": "credit-card-validator",
                     "name": "Credit Card Validator",
-                    "description": "Free credit card validator tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Check if a credit card number is valid using the Luhn algorithm instantly. Our free online tool helps you verify card formats and identify card types for testing purposes.",
                     "route": "/credit-card-validator",
                     "extraSlugs": [
                         "free-credit-card-validator-online",
-                        "credit-card-validator-tool"
+                        "credit-card-validator-tool",
+                        "luhn-algorithm-checker"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4100,11 +4194,12 @@
                 {
                     "id": "currency-converter",
                     "name": "Currency Converter",
-                    "description": "Free currency converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert currencies with real-time exchange rates instantly. Our free online tool supports all major global currencies for travel, business, and financial planning.",
                     "route": "/currency-converter",
                     "extraSlugs": [
                         "free-currency-converter-online",
-                        "currency-converter-tool"
+                        "currency-converter-tool",
+                        "live-exchange-rates-calculator"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4112,12 +4207,12 @@
                 {
                     "id": "current-converter",
                     "name": "Current Converter",
-                    "description": "Free current converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert between amperes, milliamperes, and other electrical current units instantly. Our free online tool is perfect for electronics and electrical engineering tasks.",
                     "route": "/current-converter",
                     "extraSlugs": [
                         "free-current-converter-online",
                         "current-converter-tool",
-                        "current-epoch-time"
+                        "convert-amps-to-milliamps"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4125,11 +4220,12 @@
                 {
                     "id": "digital-converter",
                     "name": "Digital Converter",
-                    "description": "Free digital converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert between bytes, kilobytes, megabytes, and gigabytes instantly. Our free online tool helps you understand data storage and file sizes in seconds.",
                     "route": "/digital-converter",
                     "extraSlugs": [
                         "free-digital-converter-online",
-                        "digital-converter-tool"
+                        "digital-converter-tool",
+                        "data-storage-unit-converter"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4137,11 +4233,12 @@
                 {
                     "id": "disclaimer-generator",
                     "name": "Disclaimer Generator",
-                    "description": "Free disclaimer generator tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal requirements.",
                     "route": "/disclaimer-generator",
                     "extraSlugs": [
                         "free-disclaimer-generator-online",
-                        "disclaimer-generator-tool"
+                        "disclaimer-generator-tool",
+                        "website-legal-disclaimer-maker"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4149,11 +4246,12 @@
                 {
                     "id": "discount-calculator",
                     "name": "Discount Calculator",
-                    "description": "Free discount calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Calculate the final price after discounts and taxes instantly. Our free online tool helps you find the best deals and savings while shopping.",
                     "route": "/discount-calculator",
                     "extraSlugs": [
                         "free-discount-calculator-online",
-                        "discount-calculator-tool"
+                        "discount-calculator-tool",
+                        "percentage-off-calculator"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4161,11 +4259,12 @@
                 {
                     "id": "dns-records-checker",
                     "name": "DNS Records Checker",
-                    "description": "Free dns records checker tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Retrieve all DNS records (A, MX, TXT, CNAME) for any domain instantly. Our free online tool helps you troubleshoot website hosting and email configuration issues.",
                     "route": "/dns-records-checker",
                     "extraSlugs": [
                         "free-dns-records-checker-online",
-                        "dns-records-checker-tool"
+                        "dns-records-checker-tool",
+                        "lookup-domain-dns-records"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4173,12 +4272,12 @@
                 {
                     "id": "domain-age-checker",
                     "name": "Domain Age Checker",
-                    "description": "Free domain age checker tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Find the exact age of any domain name instantly. Our free online tool helps with SEO research, domain appraisal, and competitive analysis.",
                     "route": "/domain-age-checker",
                     "extraSlugs": [
                         "free-domain-age-checker-online",
                         "domain-age-checker-tool",
-                        "verify-email-domain-validity"
+                        "check-website-creation-date"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -4186,11 +4285,12 @@
                 {
                     "id": "domain-to-ip-converter",
                     "name": "Domain to IP Converter",
-                    "description": "Free domain to ip converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Find the IP address of any website instantly. Our free online tool helps you identify server locations and troubleshoot network connectivity issues.",
                     "route": "/domain-to-ip-converter",
                     "extraSlugs": [
                         "free-domain-to-ip-converter-online",
-                        "domain-to-ip-converter-tool"
+                        "domain-to-ip-converter-tool",
+                        "find-website-ip-address"
                     ],
                     "popular": false,
                     "category": "utilities"
