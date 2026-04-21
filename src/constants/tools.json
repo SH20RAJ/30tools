@@ -133,7 +133,7 @@
                 {
                     "id": "ai-voice-generator",
                     "name": "AI Voice Generator",
-                    "description": "Convert text to natural-sounding speech with AI. Enter your text and download the audio instantly.",
+                    "description": "Convert text to natural-sounding AI voices instantly. Our free text-to-speech tool offers multiple languages and accents for professional voiceovers, accessibility, and creative projects. No signup required.",
                     "route": "/ai-voice-generator",
                     "extraSlugs": [
                         "ai-voice-changer",
@@ -144,7 +144,9 @@
                         "realistic-voice-generator",
                         "record-voice-online",
                         "text-to-speech-robotic-voice-free",
-                        "voice-recorder"
+                        "voice-recorder",
+                        "natural-sounding-ai-voices",
+                        "ai-speech-synthesis-online"
                     ],
                     "popular": true,
                     "category": "generators"
@@ -152,9 +154,15 @@
                 {
                     "id": "lorem-ipsum-generator",
                     "name": "Lorem Ipsum Generator",
-                    "description": "Free Lorem Ipsum Generator online tool. Fast and secure.",
+                    "description": "Generate custom Lorem Ipsum placeholder text for your designs and layouts. Fast, free, and secure dummy text generator for designers and developers. Customize paragraphs, sentences, or words instantly.",
                     "route": "/lorem-ipsum-generator",
-                    "extraSlugs": [],
+                    "extraSlugs": [
+                        "dummy-text-maker",
+                        "placeholder-text-generator",
+                        "blind-text-generator",
+                        "lipsum-generator",
+                        "standard-lorem-ipsum-text"
+                    ],
                     "popular": false,
                     "category": "generators"
                 }
@@ -169,7 +177,7 @@
                 {
                     "id": "background-remover",
                     "name": "Background Remover",
-                    "description": "Remove image backgrounds automatically with AI",
+                    "description": "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based, and no signup needed.",
                     "route": "/background-remover",
                     "extraSlugs": [
                         "remove-background-from-signature-free",
@@ -177,7 +185,8 @@
                         "picture-background-eraser",
                         "duplicate-line-remover",
                         "background-gradient-tool",
-                        "background-gradient-creator"
+                        "background-gradient-creator",
+                        "ai-background-eraser-online"
                     ],
                     "popular": true,
                     "category": "image"
@@ -185,7 +194,7 @@
                 {
                     "id": "base64-to-image-converter",
                     "name": "Base64 to Image Converter",
-                    "description": "Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+                    "description": "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
                     "route": "/base64-to-image-converter",
                     "extraSlugs": [
                         "add-text-to-image",
@@ -1709,7 +1718,9 @@
                         "ukulele-tuner-online"
                     ],
                     "popular": false,
-                    "category": "audio"
+                    "category": "audio",
+                    "seoTitle": "Free Guitar Tuner Online - No Signup | 30tools",
+                    "seoDescription": "Tune your guitar online for free with our accurate microphone-based guitar tuner. No signup required. Works for acoustic, electric, and bass guitars with standard and drop tunings."
                 }
             ]
         },
