@@ -976,6 +976,19 @@
                     ],
                     "popular": false,
                     "category": "text"
+                },
+                {
+                    "id": "markdown-to-text",
+                    "name": "Markdown to Text",
+                    "description": "Convert Markdown formatted text to clean plain text instantly. Perfect for cleaning up content from ChatGPT, Claude, and GitHub.",
+                    "route": "/markdown-to-text",
+                    "extraSlugs": [
+                        "markdown-to-plain-text",
+                        "remove-markdown-formatting",
+                        "md-to-txt-converter"
+                    ],
+                    "popular": false,
+                    "category": "text"
                 }
             ]
         },
@@ -3894,7 +3907,7 @@
                 {
                     "id": "save-ig-content",
                     "name": "Save Ig Content",
-                    "description": "Download any public Instagram content—photos, videos, reels, and stories—to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
+                    "description": "Download any public Instagram content\u2014photos, videos, reels, and stories\u2014to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
                     "route": "/save-ig-content",
                     "extraSlugs": [
                         "save-ig-content",
