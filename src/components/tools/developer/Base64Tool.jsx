@@ -17,6 +17,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useCallback, useState } from "react";
+import { STATIC_ROUTES } from "@/lib/tools";
 import SocialShareButtons from "@/components/shared/SocialShareButtons";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";

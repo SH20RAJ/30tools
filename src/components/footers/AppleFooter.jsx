@@ -3,7 +3,7 @@
 import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
 import { LanguageSelector } from "@/components/shared/LanguageSelector";
-import { getRouteById } from "@/lib/tools";
+import { getRouteById, STATIC_ROUTES } from "@/lib/tools";
 
 const languages = [
 	{ name: "English", code: "en" },

@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import { STATIC_ROUTES } from "@/lib/tools";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {

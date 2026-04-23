@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { STATIC_ROUTES } from "@/lib/tools";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export default function ProgressiveToolNotice({ toolId }: { toolId: string }) {

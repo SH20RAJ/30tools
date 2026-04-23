@@ -14,7 +14,8 @@ import {
 	ZapIcon,
 } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
+import { STATIC_ROUTES } from "@/lib/tools";
 import SocialShareButtons from "@/components/shared/SocialShareButtons";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
