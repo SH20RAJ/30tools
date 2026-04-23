@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free JSON Viewer Online - No Signup | 30tools",
-	description:
-		"Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"json viewer, free online tool, no signup, developer, json viewer online, 30tools",
+	title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
+	description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	keywords: "json viewer, free json viewer, online json viewer, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-viewer",
 	},
 	openGraph: {
-		title: "Free JSON Viewer Online - No Signup | 30tools",
-		description:
-			"Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
+		description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/json-viewer",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JSON Viewer Online - No Signup | 30tools",
-		description:
-			"Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
+		description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,86 +28,29 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "json-viewer",
-		name: "JSON Viewer",
-		description:
-			"Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/json-viewer",
-		extraSlugs: [
-			"anonymous-ig-viewer",
-			"camera-metadata-viewer",
-			"facebook-story-viewer-download",
-			"free-json-viewer-online",
-			"ig-dp-viewer",
-			"ig-profile-picture-viewer",
-			"insta-dp-viewer",
-			"insta-story-viewer",
-			"insta-viewer",
-			"instagram-profile-picture-viewer",
-			"json-viewer-online",
-			"json-viewer-tool",
-			"profile-pic-viewer-instagram",
-			"story-viewer-without-account",
-		],
-		popular: false,
-		category: "developer",
-	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "JSON Viewer",
-			url: "/json-viewer",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+        "id": "json-viewer",
+        "name": "JSON Viewer",
+        "description": "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows.",
+        "route": "/json-viewer",
+        "extraSlugs": [
+                "anonymous-ig-viewer",
+                "camera-metadata-viewer",
+                "facebook-story-viewer-download",
+                "free-json-viewer-online",
+                "ig-dp-viewer",
+                "ig-profile-picture-viewer",
+                "insta-dp-viewer",
+                "insta-story-viewer",
+                "insta-viewer",
+                "instagram-profile-picture-viewer",
+                "json-viewer-online",
+                "json-viewer-tool",
+                "profile-pic-viewer-instagram",
+                "story-viewer-without-account"
+        ],
+        "popular": false,
+        "category": "developer"
+};
 
 	return (
 		<>
@@ -120,9 +60,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "JSON Viewer",
-						description:
-							"Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/json-viewer",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -131,12 +70,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="json-viewer" />
+			<ToolLayout tool={{ ...tool, category: "developer" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

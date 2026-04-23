@@ -1,32 +1,63 @@
-import CuratedContentPage from "@/components/content/CuratedContentPage";
-import { getComparisonPageBySlug } from "@/constants/content-pages";
-import { notFound } from "next/navigation";
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import Fragment from "react";
 
-const slug = "top-10-free-online-tools-for-seo";
-const page = getComparisonPageBySlug(slug);
 
 export const metadata = {
-	title: "Top 10 Free Online Tools for SEO (2026) | 30tools",
-	description:
-		"A ranked list of the top 10 free online SEO tools for keyword research, audits, metadata, and sitemap workflows.",
-	keywords:
-		"top 10 free online tools for seo, free seo tools list, best seo tools online free, seo audit tools, 30tools",
+	title: "Top 10 Free Online Tools for SEO (2026) | 30tools Expert Guide",
+	description: "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
+	keywords: "top 10 free online tools for seo (2026), top 10 free online tools for seo (2026) guide, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/top-10-free-online-tools-for-seo",
 	},
 	openGraph: {
-		title: "Top 10 Free Online Tools for SEO (2026) | 30tools",
-		description:
-			"Ranked free SEO tools for technical checks, keyword planning, metadata, and crawl management.",
+		title: "Top 10 Free Online Tools for SEO (2026) | 30tools Expert Guide",
+		description: "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
 		url: "https://30tools.com/top-10-free-online-tools-for-seo",
-		type: "article",
+		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Top 10 Free Online Tools for SEO (2026) | 30tools Expert Guide",
+		description: "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
 
-export default function Top10FreeOnlineToolsForSeoPage() {
-	if (!page) return notFound();
+export default async function ToolPage() {
+	const tool = {
+        "id": "top-10-free-online-tools-for-seo",
+        "name": "Top 10 Free Online Tools for SEO (2026)",
+        "description": "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
+        "route": "/top-10-free-online-tools-for-seo",
+        "extraSlugs": [],
+        "popular": false,
+        "category": "content"
+};
 
-	return <CuratedContentPage page={page} baseUrl="https://30tools.com" />;
+	return (
+		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "SoftwareApplication",
+						name: tool.name,
+						description: tool.description,
+						url: "https://30tools.com/top-10-free-online-tools-for-seo",
+						applicationCategory: "UtilitiesApplication",
+						operatingSystem: "Any",
+						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+					}),
+				}}
+			/>
+
+			<ToolLayout tool={{ ...tool, category: "content" }}>
+				<div className='min-h-[100px]'  />
+			</ToolLayout>
+		</>
+	);
 }

@@ -12,8 +12,25 @@ interface MetadataProps {
 	path?: string;
 	image?: string;
 	noIndex?: boolean;
-	locale?: string;
+	lang?: string;
 }
+
+const SUPPORTED_LANGS = [
+	"en",
+	"es",
+	"fr",
+	"de",
+	"hi",
+	"it",
+	"pt",
+	"ja",
+	"zh",
+	"ko",
+	"ru",
+	"tr",
+	"vi",
+	"id",
+];
 
 /**
  * Generate standard metadata for a page
@@ -24,22 +41,36 @@ export function generateMetadata({
 	path = "",
 	image = "/og-image.jpg",
 	noIndex = false,
-	locale = "en",
+	lang = "en",
 }: MetadataProps): Metadata {
-	const url = `${BASE_URL}${path.startsWith("/") ? path : `/${path}`}`;
+	const cleanPath = path.startsWith("/") ? path : `/${path}`;
+	const separator = cleanPath.includes("?") ? "&" : "?";
+	const canonicalUrl =
+		lang && lang !== "en"
+			? `${BASE_URL}${cleanPath}${separator}lang=${lang}`
+			: `${BASE_URL}${cleanPath}`;
+
+	const languages: Record<string, string> = {};
+	for (const l of SUPPORTED_LANGS) {
+		languages[l] =
+			l === "en"
+				? `${BASE_URL}${cleanPath}`
+				: `${BASE_URL}${cleanPath}${separator}lang=${l}`;
+	}
 
 	return {
 		title,
 		description,
 		alternates: {
-			canonical: url,
+			canonical: canonicalUrl,
+			languages,
 		},
 		openGraph: {
 			title,
 			description,
-			url,
+			url: canonicalUrl,
 			siteName: "30tools",
-			locale: locale === "en" ? "en_US" : locale,
+			locale: lang === "en" ? "en_US" : lang,
 			type: "website",
 			images: [
 				{

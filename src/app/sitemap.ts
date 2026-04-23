@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllTools, SUPPORTED_LANGUAGES } from "@/lib/tools";
-import { useCasePages, comparisonPages, blogArticles } from "@/constants/content-pages";
 
 const BASE_URL = "https://30tools.com";
 
@@ -35,8 +34,8 @@ export default function sitemap({ id }: { id: string }): MetadataRoute.Sitemap {
 			priority: 0.85,
 		}));
 
-		const contentPages: MetadataRoute.Sitemap = [...useCasePages, ...comparisonPages].map((page) => ({
-			url: `${BASE_URL}/${page.slug}`,
+		const contentPages: MetadataRoute.Sitemap = allTools.filter(t => t.category === "content").map((page) => ({
+			url: `${BASE_URL}${page.route}`,
 			lastModified: currentDate,
 			changeFrequency: "weekly",
 			priority: 0.8,
@@ -53,8 +52,8 @@ export default function sitemap({ id }: { id: string }): MetadataRoute.Sitemap {
 			priority: 0.8,
 		}));
 
-		const blogSitemaps: MetadataRoute.Sitemap = blogArticles.map((article) => ({
-			url: `${BASE_URL}/blog/${article.slug}`,
+		const blogSitemaps: MetadataRoute.Sitemap = allTools.filter(t => t.category === "blog").map((article) => ({
+			url: `${BASE_URL}${article.route}`,
 			lastModified: currentDate,
 			changeFrequency: "monthly",
 			priority: 0.7,
@@ -65,39 +64,33 @@ export default function sitemap({ id }: { id: string }): MetadataRoute.Sitemap {
 
 	const isDefaultEn = id === "en";
 	if (isDefaultEn || SUPPORTED_LANGUAGES.includes(id)) {
-		const toolPages: MetadataRoute.Sitemap = allTools.flatMap((tool) => {
-			const slugs = new Set([
-				tool.route,
-				...(tool.extraSlugs ?? []),
-			].map((slug) => (slug.startsWith("/") ? slug : `/${slug}`)));
+		const toolPages: MetadataRoute.Sitemap = allTools.map((tool) => {
+			const route = tool.route.startsWith("/") ? tool.route : `/${tool.route}`;
+			const separator = route.includes("?") ? "&" : "?";
+			let targetUrl = `${BASE_URL}${route}`;
+			
+			if (!isDefaultEn) {
+				targetUrl = `${targetUrl}${separator}lang=${id}`;
+			}
 
-			return Array.from(slugs).map((route) => {
-				const separator = route.includes("?") ? "&" : "?";
-				let targetUrl = `${BASE_URL}${route}`;
-				
-				if (!isDefaultEn) {
-					targetUrl = `${targetUrl}${separator}lang=${id}`;
-				}
-
-				// Build alternates. Next.js supports object shape for alternates languages
-				const alternatesLanguages: Record<string, string> = {
-					en: `${BASE_URL}${route}`
-				};
-				
-				SUPPORTED_LANGUAGES.filter(l => l !== "en").forEach((lang) => {
-					alternatesLanguages[lang] = `${BASE_URL}${route}${separator}lang=${lang}`;
-				});
-
-				return {
-					url: targetUrl,
-					lastModified: currentDate,
-					changeFrequency: "weekly",
-					priority: tool.popular ? 0.9 : 0.8,
-					alternates: {
-						languages: alternatesLanguages
-					}
-				};
+			// Build alternates. Next.js supports object shape for alternates languages
+			const alternatesLanguages: Record<string, string> = {
+				en: `${BASE_URL}${route}`
+			};
+			
+			SUPPORTED_LANGUAGES.filter(l => l !== "en").forEach((lang) => {
+				alternatesLanguages[lang] = `${BASE_URL}${route}${separator}lang=${lang}`;
 			});
+
+			return {
+				url: targetUrl,
+				lastModified: currentDate,
+				changeFrequency: "weekly",
+				priority: tool.popular ? 0.9 : 0.8,
+				alternates: {
+					languages: alternatesLanguages
+				}
+			};
 		});
 
 		return toolPages;

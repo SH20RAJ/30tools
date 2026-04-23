@@ -1,7 +1,6 @@
 "use client";
 
 import { Download, FileText, Loader2, Minimize2 } from "lucide-react";
-import { PDFDocument } from "pdf-lib";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
@@ -32,6 +31,9 @@ export default function PdfCompressor() {
 
 		setIsProcessing(true);
 		try {
+			// Lazy load heavy library
+			const { PDFDocument } = await import("pdf-lib");
+			
 			const fileBuffer = await file.arrayBuffer();
 			// Load the PDF
 			const pdfDoc = await PDFDocument.load(fileBuffer);

@@ -7,6 +7,7 @@ import toolsData from "@/constants/tools.json";
 import translateEngine from "@/lib/translate";
 import Link from "next/link";
 import { STATIC_ROUTES } from "@/lib/tools";
+import StructuredData from "@/components/shared/StructuredData";
 
 interface ToolCategory {
   key: string;
@@ -25,23 +26,17 @@ const TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
 	0,
 );
 
-export const metadata = {
-	title: `30tools - The Premium Free Online Toolkit (No Signup)`,
-	description: `Access ${TOOL_COUNT}+ pro-grade online tools for Image, PDF, Video, Audio, and SEO. Secure, private, and 100% free with no registration required.`,
-	keywords: [
-		"free online tools",
-		"private web tools",
-		"online toolkit no signup",
-		"pro image compressor",
-		"fast pdf tools",
-		"video conversion toolkit",
-		"developer utilities online",
-		"30tools",
-	].join(", "),
-	alternates: {
-		canonical: "https://30tools.com/",
-	},
-};
+import { generateMetadata as baseGenerateMetadata } from "@/lib/seo";
+
+export async function generateMetadata({ searchParams }: LandingPageProps): Promise<any> {
+	const { lang = "en" } = await searchParams;
+	return baseGenerateMetadata({
+		title: "30tools - The Premium Free Online Toolkit (No Signup)",
+		description: `Access ${TOOL_COUNT}+ pro-grade online tools for Image, PDF, Video, Audio, and SEO. Secure, private, and 100% free with no registration required.`,
+		path: "/",
+		lang,
+	});
+}
 
 export default async function LandingPage({ searchParams }: LandingPageProps) {
 	const params = await searchParams;
@@ -107,6 +102,7 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 
 	return (
 		<main className="bg-background min-h-screen relative overflow-hidden">
+			<StructuredData isHome={true} />
 			{/* Global Decorative Gradients */}
 			<div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-cute opacity-20 -z-10" />
 			

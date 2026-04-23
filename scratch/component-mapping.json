@@ -1,0 +1,546 @@
+{
+    "othertoolspage.jsx": {
+        "path": "@/components/tools/OtherToolsPage",
+        "name": "OtherToolsPage"
+    },
+    "builtinmarkup.tsx": {
+        "path": "@/components/tools/built-ins/BuiltInMarkup",
+        "name": "BuiltInMarkup"
+    },
+    "universalunitconverter.tsx": {
+        "path": "@/components/tools/built-ins/UniversalUnitConverter",
+        "name": "UniversalUnitConverter"
+    },
+    "builtinsafehttp.tsx": {
+        "path": "@/components/tools/built-ins/BuiltInSafeHttp",
+        "name": "BuiltInSafeHttp"
+    },
+    "builtinserialization.tsx": {
+        "path": "@/components/tools/built-ins/BuiltInSerialization",
+        "name": "BuiltInSerialization"
+    },
+    "builtincalculators.tsx": {
+        "path": "@/components/tools/built-ins/BuiltInCalculators",
+        "name": "BuiltInCalculators"
+    },
+    "toolimplementation.tsx": {
+        "path": "@/components/tools/implementations/ToolImplementation",
+        "name": "ToolImplementation"
+    },
+    "remainingtools.tsx": {
+        "path": "@/components/tools/impl/RemainingTools",
+        "name": "RemainingTools"
+    },
+    "logogenerator": {
+        "path": "@/components/tools/image/LogoGeneratorTool",
+        "name": "LogoGeneratorTool"
+    },
+    "favicongenerator": {
+        "path": "@/components/tools/image/FaviconGeneratorTool",
+        "name": "FaviconGeneratorTool"
+    },
+    "cssgradient": {
+        "path": "@/components/tools/design/CSSGradientTool",
+        "name": "CSSGradientTool"
+    },
+    "mcpserver": {
+        "path": "@/components/tools/developer/McpServerTool",
+        "name": "McpServerTool"
+    },
+    "apikeytester.jsx": {
+        "path": "@/components/tools/developer/ApiKeyTester",
+        "name": "ApiKeyTester"
+    },
+    "jsonminifier": {
+        "path": "@/components/tools/developer/JSONMinifierTool",
+        "name": "JSONMinifierTool"
+    },
+    "base64": {
+        "path": "@/components/tools/developer/Base64Tool",
+        "name": "Base64Tool"
+    },
+    "jsontoschema": {
+        "path": "@/components/tools/developer/JSONToSchemaTool",
+        "name": "JSONToSchemaTool"
+    },
+    "codeminifier.tsx": {
+        "path": "@/components/tools/developer/CodeMinifier",
+        "name": "CodeMinifier"
+    },
+    "jwtdecoder": {
+        "path": "@/components/tools/developer/JWTDecoderTool",
+        "name": "JWTDecoder"
+    },
+    "jsonformatter": {
+        "path": "@/components/tools/code/JsonFormatterTool",
+        "name": "JsonFormatterTool"
+    },
+    "jsontotsv": {
+        "path": "@/components/tools/developer/JSONToTSVTool",
+        "name": "JSONToTSVTool"
+    },
+    "videowatermarkremover": {
+        "path": "@/components/tools/video/VideoWatermarkRemoverTool",
+        "name": "VideoWatermarkRemoverTool"
+    },
+    "teraboxplayer": {
+        "path": "@/components/tools/video/TeraboxPlayerTool",
+        "name": "TeraboxPlayerTool"
+    },
+    "teraboxvideoplayer.jsx": {
+        "path": "@/components/tools/video/terabox/TeraboxVideoPlayer",
+        "name": "TeraboxVideoPlayer"
+    },
+    "tiktokdownloader": {
+        "path": "@/components/tools/video/TikTokDownloaderTool",
+        "name": "TikTokDownloaderTool"
+    },
+    "aivideosummarizer": {
+        "path": "@/components/tools/video/AiVideoSummarizerTool",
+        "name": "AiVideoSummarizerTool"
+    },
+    "teraboxplayertool-fixed.jsx": {
+        "path": "@/components/tools/video/TeraboxPlayerTool-fixed",
+        "name": "TeraboxPlayerTool"
+    },
+    "facelessvideogenerator": {
+        "path": "@/components/tools/video/FacelessVideoGeneratorTool",
+        "name": "FacelessVideoGeneratorTool"
+    },
+    "teraboxadvancedtools.jsx": {
+        "path": "@/components/tools/video/terabox/TeraboxAdvancedTools",
+        "name": "TeraboxAdvancedTools"
+    },
+    "teraboxembedtools.jsx": {
+        "path": "@/components/tools/video/terabox/TeraboxEmbedTools",
+        "name": "TeraboxEmbedTools"
+    },
+    "teraboxurlinput.jsx": {
+        "path": "@/components/tools/video/terabox/TeraboxUrlInput",
+        "name": "TeraboxUrlInput"
+    },
+    "teraboxsharingtools.jsx": {
+        "path": "@/components/tools/video/terabox/TeraboxSharingTools",
+        "name": "TeraboxSharingTools"
+    },
+    "teraboxvideoinfo.jsx": {
+        "path": "@/components/tools/video/terabox/TeraboxVideoInfo",
+        "name": "TeraboxVideoInfo"
+    },
+    "teraboxplayerselector.jsx": {
+        "path": "@/components/tools/video/terabox/TeraboxPlayerSelector",
+        "name": "TeraboxPlayerSelector"
+    },
+    "texttonumberconverter.jsx": {
+        "path": "@/components/tools/converter/TextToNumberConverter",
+        "name": "TextToNumberConverter"
+    },
+    "dataconverter.jsx": {
+        "path": "@/components/tools/converter/DataConverter",
+        "name": "DataConverter"
+    },
+    "numberbaseconverter.jsx": {
+        "path": "@/components/tools/converter/NumberBaseConverter",
+        "name": "NumberBaseConverter"
+    },
+    "hashgenerator": {
+        "path": "@/components/tools/security/HashGeneratorTool",
+        "name": "HashGeneratorTool"
+    },
+    "passwordchecker": {
+        "path": "@/components/tools/security/PasswordCheckerTool",
+        "name": "PasswordCheckerTool"
+    },
+    "passwordgenerator": {
+        "path": "@/components/tools/utilities/PasswordGeneratorTool",
+        "name": "PasswordGeneratorTool"
+    },
+    "indexnowclient.jsx": {
+        "path": "@/components/tools/general/IndexNowClient",
+        "name": "IndexNowClient"
+    },
+    "websiteanalyzer": {
+        "path": "@/components/tools/web/WebsiteAnalyzerTool",
+        "name": "WebsiteAnalyzerTool"
+    },
+    "sqlformatter": {
+        "path": "@/components/tools/code/SQLFormatterTool",
+        "name": "SQLFormatter"
+    },
+    "textcaseconverter": {
+        "path": "@/components/tools/code/TextCaseConverterTool",
+        "name": "TextCaseConverterTool"
+    },
+    "regextester": {
+        "path": "@/components/tools/text/RegexTesterTool",
+        "name": "RegexTesterTool"
+    },
+    "pdfprotector.jsx": {
+        "path": "@/components/tools/pdf/PdfProtector",
+        "name": "PdfProtector"
+    },
+    "wordtopdf": {
+        "path": "@/components/tools/pdf/WordToPDFTool",
+        "name": "WordToPDFTool"
+    },
+    "pdfmerger.jsx": {
+        "path": "@/components/tools/pdf/PdfMerger",
+        "name": "PdfMerger"
+    },
+    "imagestopdf.jsx": {
+        "path": "@/components/tools/pdf/ImagesToPdf",
+        "name": "ImagesToPdf"
+    },
+    "imagetopdf": {
+        "path": "@/components/tools/pdf/ImageToPDFTool",
+        "name": "ImageToPDFTool"
+    },
+    "pdfsplitter.jsx": {
+        "path": "@/components/tools/pdf/PdfSplitter",
+        "name": "PdfSplitter"
+    },
+    "pdfmerger": {
+        "path": "@/components/tools/pdf/PDFMergerTool",
+        "name": "PDFMergerTool"
+    },
+    "pdfreader.jsx": {
+        "path": "@/components/tools/pdf/PdfReader",
+        "name": "PdfReader"
+    },
+    "pdfprotect": {
+        "path": "@/components/tools/pdf/PdfProtectTool",
+        "name": "PdfProtectTool"
+    },
+    "pdfeditor": {
+        "path": "@/components/tools/pdf/PDFEditorTool",
+        "name": "PDFEditorTool"
+    },
+    "pdfcompressor": {
+        "path": "@/components/tools/pdf/PdfCompressorTool",
+        "name": "PdfCompressorTool"
+    },
+    "pdftoword": {
+        "path": "@/components/tools/pdf/PDFToWordTool",
+        "name": "PDFToWordTool"
+    },
+    "pdfunlocker": {
+        "path": "@/components/tools/pdf/PdfUnlockerTool",
+        "name": "PdfUnlockerTool"
+    },
+    "pdftoimage": {
+        "path": "@/components/tools/pdf/PdfToImageTool",
+        "name": "PdfToImageTool"
+    },
+    "pdfcompressor.jsx": {
+        "path": "@/components/tools/pdf/PdfCompressor",
+        "name": "PdfCompressor"
+    },
+    "pdfsplitter": {
+        "path": "@/components/tools/pdf/PdfSplitterTool",
+        "name": "PdfSplitterTool"
+    },
+    "baseconverter.tsx": {
+        "path": "@/components/tools/shared/BaseConverter",
+        "name": "BaseConverter"
+    },
+    "variantlinks.jsx": {
+        "path": "@/components/tools/shared/VariantLinks",
+        "name": "VariantLinks"
+    },
+    "toollayout.jsx": {
+        "path": "@/components/tools/shared/ToolLayout",
+        "name": "ToolLayout"
+    },
+    "toolinteractiveplaceholder.jsx": {
+        "path": "@/components/tools/shared/ToolInteractivePlaceholder",
+        "name": "ToolInteractivePlaceholder"
+    },
+    "toolplaceholderpage.tsx": {
+        "path": "@/components/tools/shared/ToolPlaceholderPage",
+        "name": "ToolPlaceholderPage"
+    },
+    "registeredtoolmount.tsx": {
+        "path": "@/components/tools/shared/RegisteredToolMount",
+        "name": "RegisteredToolMount"
+    },
+    "standardconverter.tsx": {
+        "path": "@/components/tools/shared/StandardConverter",
+        "name": "StandardConverter"
+    },
+    "youtubescriptgenerator.jsx": {
+        "path": "@/components/tools/youtube/YouTubeScriptGenerator",
+        "name": "YouTubeScriptGenerator"
+    },
+    "youtubedownloader.jsx": {
+        "path": "@/components/tools/youtube/YouTubeDownloader",
+        "name": "YouTubeDownloader"
+    },
+    "youtubeshortsdownloader.jsx": {
+        "path": "@/components/tools/youtube/YouTubeShortsDownloader",
+        "name": "YouTubeShortsDownloader"
+    },
+    "toolskeleton.jsx": {
+        "path": "@/components/tools/youtube/ToolSkeleton",
+        "name": "ToolSkeleton"
+    },
+    "youtubevideosummarizer.jsx": {
+        "path": "@/components/tools/youtube/YouTubeVideoSummarizer",
+        "name": "YouTubeVideoSummarizer"
+    },
+    "youtubetrendsanalyzer": {
+        "path": "@/components/tools/youtube/YouTubeTrendsAnalyzerTool",
+        "name": "YouTubeTrendsAnalyzerTool"
+    },
+    "youtubechannelidfinder": {
+        "path": "@/components/tools/youtube/YouTubeChannelIDFinderTool",
+        "name": "YouTubeChannelIDFinderTool"
+    },
+    "youtubesummarygenerator.jsx": {
+        "path": "@/components/tools/youtube/YouTubeSummaryGenerator",
+        "name": "YouTubeSummaryGenerator"
+    },
+    "youtubevideoanalytics": {
+        "path": "@/components/tools/youtube/YouTubeVideoAnalyticsTool",
+        "name": "YouTubeVideoAnalyticsTool"
+    },
+    "compression-new.jsx": {
+        "path": "@/components/tools/image/compression-new",
+        "name": "ImageCompressionTool"
+    },
+    "imageresizer": {
+        "path": "@/components/tools/image/ImageResizerTool",
+        "name": "ImageResizerTool"
+    },
+    "backgroundremover": {
+        "path": "@/components/tools/image/BackgroundRemoverTool",
+        "name": "BackgroundRemoverTool"
+    },
+    "exifreader": {
+        "path": "@/components/tools/image/ExifReaderTool",
+        "name": "ExifReaderTool"
+    },
+    "imagecompressor": {
+        "path": "@/components/tools/image/ImageCompressorTool",
+        "name": "ImageCompressorTool"
+    },
+    "imageconverter": {
+        "path": "@/components/tools/image/ImageConverterTool",
+        "name": "ImageConverterTool"
+    },
+    "photoenhancer": {
+        "path": "@/components/tools/image/PhotoEnhancerTool",
+        "name": "PhotoEnhancerTool"
+    },
+    "ogimagegenerator.jsx": {
+        "path": "@/components/tools/image/OgImageGenerator/OgImageGenerator",
+        "name": "OgImageGenerator"
+    },
+    "utmbuilder": {
+        "path": "@/components/tools/utilities/UTMBuilderTool",
+        "name": "UTMBuilderTool"
+    },
+    "phonevalidator": {
+        "path": "@/components/tools/utilities/PhoneValidatorTool",
+        "name": "PhoneValidatorTool"
+    },
+    "urlshortener": {
+        "path": "@/components/tools/utilities/URLShortenerTool",
+        "name": "URLShortenerTool"
+    },
+    "internetspeedtest": {
+        "path": "@/components/tools/utilities/InternetSpeedTestTool",
+        "name": "InternetSpeedTestTool"
+    },
+    "notes": {
+        "path": "@/components/tools/utilities/NotesTool",
+        "name": "NotesTool"
+    },
+    "qrgenerator": {
+        "path": "@/components/tools/utilities/QrGeneratorTool",
+        "name": "QrGeneratorTool"
+    },
+    "whatsappdpdownloader": {
+        "path": "@/components/tools/utilities/WhatsAppDPDownloaderTool",
+        "name": "WhatsAppDPDownloaderTool"
+    },
+    "iplocationfinder": {
+        "path": "@/components/tools/utilities/IPLocationFinderTool",
+        "name": "IPLocationFinderTool"
+    },
+    "mailtolinkgenerator": {
+        "path": "@/components/tools/utilities/MailtoLinkGeneratorTool",
+        "name": "MailtoLinkGeneratorTool"
+    },
+    "qrcodegenerator": {
+        "path": "@/components/tools/text/QRCodeGeneratorTool",
+        "name": "QRCodeGeneratorTool"
+    },
+    "useragentparser": {
+        "path": "@/components/tools/utilities/UserAgentParserTool",
+        "name": "UserAgentParserTool"
+    },
+    "texttospeech": {
+        "path": "@/components/tools/audio/TextToSpeechTool",
+        "name": "TextToSpeechTool"
+    },
+    "guitartuner": {
+        "path": "@/components/tools/audio/GuitarTunerTool",
+        "name": "GuitarTunerTool"
+    },
+    "loremipsumgenerator": {
+        "path": "@/components/tools/generators/LoremIpsumGeneratorTool",
+        "name": "LoremIpsumGeneratorTool"
+    },
+    "aivoicegenerator": {
+        "path": "@/components/tools/generators/AIVoiceGeneratorTool",
+        "name": "AIVoiceGeneratorTool"
+    },
+    "aiimagegenerator": {
+        "path": "@/components/tools/generators/AIImageGeneratorTool",
+        "name": "AIImageGeneratorTool"
+    },
+    "textreverser.jsx": {
+        "path": "@/components/tools/text/TextReverser",
+        "name": "TextReverser"
+    },
+    "linesorter": {
+        "path": "@/components/tools/text/LineSorterTool",
+        "name": "LineSorterTool"
+    },
+    "textencoder.jsx": {
+        "path": "@/components/tools/text/TextEncoder",
+        "name": "TextEncoder"
+    },
+    "textreverser": {
+        "path": "@/components/tools/text/TextReverserTool",
+        "name": "TextReverserTool"
+    },
+    "textencoder": {
+        "path": "@/components/tools/text/TextEncoderTool",
+        "name": "TextEncoderTool"
+    },
+    "caseconverter.tsx": {
+        "path": "@/components/tools/text/CaseConverter",
+        "name": "CaseConverter"
+    },
+    "loremipsumgenerator.jsx": {
+        "path": "@/components/tools/text/LoremIpsumGenerator",
+        "name": "LoremIpsumGenerator"
+    },
+    "removeduplicates": {
+        "path": "@/components/tools/text/RemoveDuplicatesTool",
+        "name": "RemoveDuplicatesTool"
+    },
+    "urlextractor": {
+        "path": "@/components/tools/text/URLExtractorTool",
+        "name": "URLExtractorTool"
+    },
+    "backwardstextgenerator.tsx": {
+        "path": "@/components/tools/text/BackwardsTextGenerator",
+        "name": "BackwardsTextGenerator"
+    },
+    "linesorter.jsx": {
+        "path": "@/components/tools/text/LineSorter",
+        "name": "LineSorter"
+    },
+    "markdowntotext.jsx": {
+        "path": "@/components/tools/text/MarkdownToText",
+        "name": "MarkdownToText"
+    },
+    "removeduplicates.jsx": {
+        "path": "@/components/tools/text/RemoveDuplicates",
+        "name": "RemoveDuplicates"
+    },
+    "base64quick": {
+        "path": "@/components/tools/implementations/Base64QuickTool",
+        "name": "Base64QuickTool"
+    },
+    "datainterchange": {
+        "path": "@/components/tools/implementations/DataInterchangeTool",
+        "name": "DataInterchangeTool"
+    },
+    "physicalunitconverter.tsx": {
+        "path": "@/components/tools/implementations/PhysicalUnitConverter",
+        "name": "PhysicalUnitConverter"
+    },
+    "calculatorsuite.tsx": {
+        "path": "@/components/tools/implementations/CalculatorSuite",
+        "name": "CalculatorSuite"
+    },
+    "wordcounter": {
+        "path": "@/components/tools/implementations/WordCounterTool",
+        "name": "WordCounterTool"
+    },
+    "currencyconverter": {
+        "path": "@/components/tools/implementations/CurrencyConverterTool",
+        "name": "CurrencyConverterTool"
+    },
+    "codesquash": {
+        "path": "@/components/tools/implementations/CodeSquashTool",
+        "name": "CodeSquashTool"
+    },
+    "canvasimageworkbench.tsx": {
+        "path": "@/components/tools/implementations/CanvasImageWorkbench",
+        "name": "CanvasImageWorkbench"
+    },
+    "subtitleconvert": {
+        "path": "@/components/tools/implementations/SubtitleConvertTool",
+        "name": "SubtitleConvertTool"
+    },
+    "progressivetoolnotice.tsx": {
+        "path": "@/components/tools/implementations/ProgressiveToolNotice",
+        "name": "ProgressiveToolNotice"
+    },
+    "colorrgbhex": {
+        "path": "@/components/tools/implementations/ColorRgbHexTool",
+        "name": "ColorRgbHexTool"
+    },
+    "seotoolssuite.tsx": {
+        "path": "@/components/tools/implementations/SeoToolsSuite",
+        "name": "SeoToolsSuite"
+    },
+    "jsonschemainfer": {
+        "path": "@/components/tools/implementations/JsonSchemaInferTool",
+        "name": "JsonSchemaInferTool"
+    },
+    "textmanipsuite.tsx": {
+        "path": "@/components/tools/implementations/TextManipSuite",
+        "name": "TextManipSuite"
+    },
+    "safehttppanel.tsx": {
+        "path": "@/components/tools/implementations/SafeHttpPanel",
+        "name": "SafeHttpPanel"
+    },
+    "jsonworkbench": {
+        "path": "@/components/tools/implementations/JsonWorkbenchTool",
+        "name": "JsonWorkbenchTool"
+    },
+    "youtubesuite.tsx": {
+        "path": "@/components/tools/implementations/YouTubeSuite",
+        "name": "YouTubeSuite"
+    },
+    "domainip": {
+        "path": "@/components/tools/implementations/DomainIpTool",
+        "name": "DomainIpTool"
+    },
+    "seotoolkit.jsx": {
+        "path": "@/components/tools/seo/SeoToolkit",
+        "name": "SeoToolkit"
+    },
+    "sitemapgenerator": {
+        "path": "@/components/tools/seo/SitemapGeneratorTool",
+        "name": "SitemapGeneratorTool"
+    },
+    "visualsitemap": {
+        "path": "@/components/tools/seo/VisualSitemapTool",
+        "name": "VisualSitemapTool"
+    },
+    "keyword": {
+        "path": "@/components/tools/seo/KeywordTool",
+        "name": "KeywordTool"
+    },
+    "downloader": {
+        "path": "@/components/tools/downloaders/DownloaderEngine",
+        "name": "DownloaderEngine"
+    }
+}

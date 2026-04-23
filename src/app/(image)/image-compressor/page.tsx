@@ -1,20 +1,17 @@
-import { Metadata } from "next";
-import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
 
-export const metadata: Metadata = {
-	title: "Free Online Bulk Image Compressor - Reduce JPEG, PNG & WebP Size",
-	description:
-		"Compress multiple images up to 90% without losing quality. Best bulk image optimizer for JPEG, PNG, and WebP. Reduce image size from MB to KB instantly. Fast, secure, and no signup required.",
-	keywords:
-		"bulk image compressor, compress jpeg png without losing quality, reduce image size in kb, image optimizer online, webp compressor, tinyjpg alternative, shrink image file size, 30tools",
+
+export const metadata = {
+	title: "Free Image Compressor Online – Fast & No Signup | 30tools",
+	description: "Compress images to reduce file size while maintaining quality 100% free, fast, and no signup required.",
+	keywords: "image compressor, free image compressor, online image compressor, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-compressor",
 	},
 	openGraph: {
-		title: "Bulk Image Compressor Online - Reduce JPEG, PNG & WebP Size",
-		description:
-			"Compress multiple images up to 90% without quality loss. Best bulk image optimizer for JPEG, PNG, and WebP instantly. No signup required.",
+		title: "Free Image Compressor Online – Fast & No Signup | 30tools",
+		description: "Compress images to reduce file size while maintaining quality 100% free, fast, and no signup required.",
 		url: "https://30tools.com/image-compressor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -22,9 +19,8 @@ export const metadata: Metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Online Bulk Image Compressor - 30tools",
-		description:
-			"Compress multiple images up to 90% without quality loss. Reduce image size from MB to KB instantly.",
+		title: "Free Image Compressor Online – Fast & No Signup | 30tools",
+		description: "Compress images to reduce file size while maintaining quality 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -32,258 +28,23 @@ export const metadata: Metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "image-compressor",
-		name: "Image Compressor",
-		description:
-			"Compress images to reduce file size while maintaining quality",
-		route: "/image-compressor",
-		extraSlugs: [
-			"audio-compressor",
-			"compress-image-to-50kb",
-			"css-compressor",
-			"free-image-compressor",
-			"js-compressor-minifier",
-			"shrink-image-file-size-free",
-			"video-compressor",
-			"web-code-compressor",
-		],
-		popular: true,
-		category: "image",
-		features: [
-			"Bulk Compression: Compress multiple images at the same time to speed up your workflow.",
-			"Lossless Optimization: Reduce file size significantly without visible loss in image quality.",
-			"Format Support: Works with JPEG, PNG, and WebP images.",
-			"Privacy First: All compression happens locally in your browser. No files are uploaded to our servers.",
-		],
-		howTo: {
-			name: "How to Compress Images Online",
-			steps: [
-				{
-					name: "Upload Images",
-					text: "Drag and drop your JPEG, PNG, or WebP files into the upload area. You can select multiple files at once.",
-				},
-				{
-					name: "Adjust Quality",
-					text: "Use the slider to set your desired compression level. A lower quality percentage means a smaller file size.",
-				},
-				{
-					name: "Download",
-					text: "Review the size savings and click 'Download All' to save your compressed images.",
-				},
-			],
-		},
-		faqs: [
-			{
-				question: "Will compressing my image reduce its quality?",
-				answer: "Our tool uses advanced optimization algorithms to reduce the file size by stripping out unnecessary metadata and intelligently compressing the image data. In most cases, the quality difference is imperceptible to the human eye.",
-			},
-			{
-				question: "Is there a limit to how many images I can compress?",
-				answer: "No, there are no artificial limits. Since the processing happens on your device, you can compress as many images as you need for free.",
-			},
-			{
-				question: "Are my images stored on your servers?",
-				answer: "Absolutely not. The Image Compressor works entirely within your web browser. Your photos never leave your computer, ensuring complete privacy and security.",
-			},
-		],
-	};
-	const breadcrumbs = [
-		{
-			name: "Image Tools",
-			url: "/image-tools",
-		},
-		{
-			name: "Image Compressor",
-			url: "/image-compressor",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "background-remover",
-			name: "Background Remover",
-			description: "Remove image backgrounds automatically with AI",
-			route: "/background-remover",
-			extraSlugs: [
-				"remove-background-from-signature-free",
-				"transparent-background-maker",
-				"picture-background-eraser",
-				"duplicate-line-remover",
-				"background-gradient-tool",
-				"background-gradient-creator",
-			],
-			popular: true,
-			category: "image",
-		},
-		{
-			id: "base64-to-image-converter",
-			name: "Base64 to Image Converter",
-			description:
-				"Free base64 to image converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/base64-to-image-converter",
-			extraSlugs: [
-				"add-text-to-image",
-				"all-in-one-unit-converter",
-				"audio-converter",
-				"audio-converter-mp3",
-				"avi-file-to-mp4-online",
-				"avi-to-mp4-converter",
-				"avi-video-converter",
-				"base64-encoder-decoder",
-				"base64-image",
-				"base64-to-image",
-				"base64-to-image-converter-tool",
-				"base64-to-text",
-				"base64-tool",
-				"change-audio-format",
-				"change-avi-to-mp4",
-				"change-flv-to-mp4",
-				"change-image-dimensions",
-				"change-m4a-to-mp3",
-				"change-mkv-to-mp4",
-				"change-mov-to-mp4",
-				"change-ogg-to-mp3",
-				"change-pdf-orientation",
-				"change-video-type",
-				"change-wav-to-mp3",
-				"change-webm-to-mp4",
-				"click-to-chat-whatsapp",
-				"compress-files-to-zip",
-				"compress-ogg-to-mp3",
-				"compress-wav-to-mp3",
-				"convert-audio-format",
-				"convert-image-to-jpg",
-				"convert-picture-to-string",
-				"convert-video-format",
-				"date-to-epoch",
-				"decode-base64-image",
-				"document-converter",
-				"docx-to-pdf-converter",
-				"ebook-format-converter",
-				"encode-image-base64",
-				"epoch-converter",
-				"epoch-to-datetime",
-				"epub-converter",
-				"file-converter",
-				"fit-photo-to-instagram-story",
-				"flv-file-to-mp4-online",
-				"flv-to-mp4-converter",
-				"flv-video-converter",
-				"folder-to-zip-converter",
-				"format-html-css-js",
-				"format-sql-online",
-				"free-base64-to-image-converter-online",
-				"image-format-changer",
-				"image-to-base64",
-				"image-to-pdf-converter",
-				"insta-story-size-converter",
-				"instagram-reels-to-mp4",
-				"m4a-audio-converter",
-				"m4a-file-to-mp3-online",
-				"m4a-to-mp3-converter",
-				"m4a-to-mp3-online",
-				"md-html-converter",
-				"md-to-txt-converter",
-				"measurement-converter",
-				"metric-imperial-converter",
-				"mkv-file-to-mp4-online",
-				"mkv-to-mp4-converter",
-				"mkv-video-converter",
-				"mov-file-to-mp4-online",
-				"mov-to-mp4",
-				"mov-to-mp4-converter",
-				"mov-video-converter",
-				"movie-to-mp3-converter",
-				"mp3-converter",
-				"mp3-converter-online",
-				"mp4-audio-converter",
-				"mp4-converter-online",
-				"mp4-to-mp3",
-				"ogg-audio-converter",
-				"ogg-file-to-mp3-online",
-				"ogg-to-mp3-converter",
-				"pdf-to-docx-converter",
-				"pdf-to-epub-converter",
-				"photos-to-pdf-converter",
-				"pptx-to-pdf-converter",
-				"quicktime-to-mp4",
-				"readme-to-html",
-				"save-snaps-to-gallery",
-				"text-fo-base64",
-				"tiktok-aspect-ratio-converter",
-				"tiktok-mp3-converter",
-				"tiktok-music-converter",
-				"tiktok-to-mp3-online",
-				"timestamp-converter",
-				"timezone-converter",
-				"unit-converter",
-				"unix-timestamp-to-date",
-				"uppercase-to-lowercase",
-				"url-string-converter",
-				"url-to-pdf-converter",
-				"usd-to-eur-converter",
-				"video-converter",
-				"video-to-mp3-converter",
-				"wav-audio-converter",
-				"wav-file-to-mp3-online",
-				"wav-to-mp3-converter",
-				"webm-file-to-mp4-online",
-				"webm-to-mp4-converter",
-				"webm-video-converter",
-				"world-clock-converter",
-				"xlsx-to-pdf-converter",
-				"youtube-to-mp3-high-quality",
-				"youtube-to-mp4-converter",
-			],
-			popular: false,
-			category: "image",
-		},
-		{
-			id: "convert-to-ico",
-			name: "Convert to ICO",
-			description:
-				"Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/convert-to-ico",
-			extraSlugs: [
-				"convert-audio-format",
-				"convert-avi-to-mp4",
-				"convert-doc-to-pdf",
-				"convert-epoch-time",
-				"convert-flv-to-mp4",
-				"convert-html-to-pdf",
-				"convert-landscape-to-portrait-video",
-				"convert-m4a-to-mp3",
-				"convert-md-to-html",
-				"convert-mkv-to-mp4",
-				"convert-money-online",
-				"convert-mov-to-mp4",
-				"convert-mp4-to-gif",
-				"convert-mp4-to-mp3",
-				"convert-mp4-video-to-mp3",
-				"convert-ogg-to-mp3",
-				"convert-pdf-to-doc",
-				"convert-picture-to-string",
-				"convert-png-to-favicon",
-				"convert-ppt-to-pdf",
-				"convert-string-to-binary",
-				"convert-text-case",
-				"convert-text-to-audio",
-				"convert-tiktok-to-mp3",
-				"convert-time-across-zones",
-				"convert-time-to-timestamp",
-				"convert-to-epub-online",
-				"convert-to-ico-tool",
-				"convert-units-online",
-				"convert-video-file-to-mp3",
-				"convert-video-format",
-				"convert-wav-to-mp3",
-				"convert-webm-to-mp4",
-				"convert-xls-to-pdf",
-				"free-convert-to-ico-online",
-			],
-			popular: false,
-			category: "image",
-		},
-	];
+        "id": "image-compressor",
+        "name": "Image Compressor",
+        "description": "Compress images to reduce file size while maintaining quality",
+        "route": "/image-compressor",
+        "extraSlugs": [
+                "audio-compressor",
+                "compress-image-to-50kb",
+                "css-compressor",
+                "free-image-compressor",
+                "js-compressor-minifier",
+                "shrink-image-file-size-free",
+                "video-compressor",
+                "web-code-compressor"
+        ],
+        "popular": true,
+        "category": "image"
+};
 
 	return (
 		<>
@@ -293,9 +54,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Image Compressor",
-						description:
-							"Compress images to reduce file size while maintaining quality",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/image-compressor",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -304,12 +64,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ImageCompressorTool />
+			<ToolLayout tool={{ ...tool, category: "image" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

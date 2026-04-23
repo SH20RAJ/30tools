@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free JSON Validator Online - No Signup | 30tools",
-	description:
-		"Free json validator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"json validator, free online tool, no signup, developer, json validator online, 30tools",
+	title: "Free JSON Validator Online – Fast & No Signup | 30tools",
+	description: "Validate your JSON data for syntax errors and structural integrity instantly. Our free online tool helps you catch bugs and ensure your JSON is RFC-compliant. 100% free, fast, and no signup required.",
+	keywords: "json validator, free json validator, online json validator, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-validator",
 	},
 	openGraph: {
-		title: "Free JSON Validator Online - No Signup | 30tools",
-		description:
-			"Free json validator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free JSON Validator Online – Fast & No Signup | 30tools",
+		description: "Validate your JSON data for syntax errors and structural integrity instantly. Our free online tool helps you catch bugs and ensure your JSON is RFC-compliant. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/json-validator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JSON Validator Online - No Signup | 30tools",
-		description:
-			"Free json validator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free JSON Validator Online – Fast & No Signup | 30tools",
+		description: "Validate your JSON data for syntax errors and structural integrity instantly. Our free online tool helps you catch bugs and ensure your JSON is RFC-compliant. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,77 +28,21 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "json-validator",
-		name: "JSON Validator",
-		description:
-			"Free json validator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/json-validator",
-		extraSlugs: [
-			"complex-regex-validator",
-			"free-json-validator-online",
-			"json-ld-validator",
-			"json-validator-tool",
-			"regular-expression-validator",
-		],
-		popular: false,
-		category: "developer",
-	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "JSON Validator",
-			url: "/json-validator",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+        "id": "json-validator",
+        "name": "JSON Validator",
+        "description": "Validate your JSON data for syntax errors and structural integrity instantly. Our free online tool helps you catch bugs and ensure your JSON is RFC-compliant.",
+        "route": "/json-validator",
+        "extraSlugs": [
+                "complex-regex-validator",
+                "free-json-validator-online",
+                "json-ld-validator",
+                "json-validator-tool",
+                "regular-expression-validator",
+                "json-syntax-checker"
+        ],
+        "popular": false,
+        "category": "developer"
+};
 
 	return (
 		<>
@@ -111,9 +52,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "JSON Validator",
-						description:
-							"Free json validator tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/json-validator",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -122,12 +62,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="json-validator" />
+			<ToolLayout tool={{ ...tool, category: "developer" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

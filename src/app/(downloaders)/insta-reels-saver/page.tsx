@@ -1,19 +1,17 @@
-import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+
 
 export const metadata = {
-	title: "Free Insta Reels Saver Online - No Signup | 30tools",
-	description:
-		"Free Insta Reels Saver online. Insta Reels Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"insta reels saver, free online tool, no signup, downloaders, insta reels saver online, 30tools",
+	title: "Free Insta Reels Saver Online – Fast & No Signup | 30tools",
+	description: "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation. 100% free, fast, and no signup required.",
+	keywords: "insta reels saver, free insta reels saver, online insta reels saver, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/insta-reels-saver",
 	},
 	openGraph: {
-		title: "Free Insta Reels Saver Online - No Signup | 30tools",
-		description:
-			"Free Insta Reels Saver online. Insta Reels Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Insta Reels Saver Online – Fast & No Signup | 30tools",
+		description: "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/insta-reels-saver",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Insta Reels Saver Online - No Signup | 30tools",
-		description:
-			"Free Insta Reels Saver online. Insta Reels Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Insta Reels Saver Online – Fast & No Signup | 30tools",
+		description: "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,54 +28,17 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "insta-reels-saver",
-		name: "Insta Reels Saver",
-		description:
-			"Free Insta Reels Saver online. Insta Reels Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		route: "/insta-reels-saver",
-		extraSlugs: ["insta-reels-saver"],
-		category: "downloaders",
-	};
-	const breadcrumbs = [
-		{
-			name: "Downloaders Tools",
-			url: "/downloaders-tools",
-		},
-		{
-			name: "Insta Reels Saver",
-			url: "/insta-reels-saver",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "akillitv-video-downloader",
-			name: "AkilliTv Video Downloader",
-			description:
-				"Download AkilliTv videos easily with our free online downloader.",
-			route: "/akillitv-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bandcamp-video-downloader",
-			name: "Bandcamp Video Downloader",
-			description: "The easiest way to download Bandcamp videos online.",
-			route: "/bandcamp-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bilibili-video-downloader",
-			name: "Bilibili Video Downloader",
-			description: "Download Bilibili videos online with ease.",
-			route: "/bilibili-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-	];
+        "id": "insta-reels-saver",
+        "name": "Insta Reels Saver",
+        "description": "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation.",
+        "route": "/insta-reels-saver",
+        "extraSlugs": [
+                "insta-reels-saver",
+                "download-ig-reels-hd"
+        ],
+        "popular": false,
+        "category": "downloaders"
+};
 
 	return (
 		<>
@@ -88,9 +48,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Insta Reels Saver",
-						description:
-							"Free Insta Reels Saver online. Insta Reels Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/insta-reels-saver",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -99,12 +58,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<DownloaderEngine placeholder="Enter URL to download..." />
+			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
+				<DownloaderEngine toolName="Insta Reels Saver" />
 			</ToolLayout>
 		</>
 	);

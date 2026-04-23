@@ -119,3 +119,7 @@ export const blogs = [
 		date: "2025-01-06",
 	},
 ];
+
+export const getBlogArticleBySlug = (slug: string) => {
+	return blogs.find((blog) => blog.slug === slug);
+};

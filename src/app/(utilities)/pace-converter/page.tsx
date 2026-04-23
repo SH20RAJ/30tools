@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free Pace Converter Online - No Signup | 30tools",
-	description:
-		"Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"pace converter, free online tool, no signup, utilities, pace converter online, 30tools",
+	title: "Free Pace Converter Online – Fast & No Signup | 30tools",
+	description: "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	keywords: "pace converter, free pace converter, online pace converter, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pace-converter",
 	},
 	openGraph: {
-		title: "Free Pace Converter Online - No Signup | 30tools",
-		description:
-			"Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Pace Converter Online – Fast & No Signup | 30tools",
+		description: "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/pace-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Pace Converter Online - No Signup | 30tools",
-		description:
-			"Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Pace Converter Online – Fast & No Signup | 30tools",
+		description: "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,57 +28,17 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "pace-converter",
-		name: "Pace Converter",
-		description:
-			"Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/pace-converter",
-		extraSlugs: ["free-pace-converter-online", "pace-converter-tool"],
-		popular: false,
-		category: "utilities",
-	};
-	const breadcrumbs = [
-		{
-			name: "Utilities Tools",
-			url: "/utilities-tools",
-		},
-		{
-			name: "Pace Converter",
-			url: "/pace-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "adsense-calculator",
-			name: "Adsense Calculator",
-			description:
-				"Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/adsense-calculator",
-			extraSlugs: ["free-adsense-calculator-online", "adsense-calculator-tool"],
-			popular: false,
-			category: "utilities",
-		},
-		{
-			id: "age-calculator",
-			name: "Age Calculator",
-			description:
-				"Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/age-calculator",
-			extraSlugs: ["free-age-calculator-online", "age-calculator-tool"],
-			popular: false,
-			category: "utilities",
-		},
-		{
-			id: "angle-converter",
-			name: "Angle Converter",
-			description:
-				"Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/angle-converter",
-			extraSlugs: ["free-angle-converter-online", "angle-converter-tool"],
-			popular: false,
-			category: "utilities",
-		},
-	];
+        "id": "pace-converter",
+        "name": "Pace Converter",
+        "description": "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+        "route": "/pace-converter",
+        "extraSlugs": [
+                "free-pace-converter-online",
+                "pace-converter-tool"
+        ],
+        "popular": false,
+        "category": "utilities"
+};
 
 	return (
 		<>
@@ -91,9 +48,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Pace Converter",
-						description:
-							"Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/pace-converter",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -102,12 +58,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="pace-converter" />
+			<ToolLayout tool={{ ...tool, category: "utilities" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

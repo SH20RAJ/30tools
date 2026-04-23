@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { AppleFooter } from "@/components/footers/AppleFooter";
 import { AppleNavbar } from "@/components/navigation/AppleNavbar";
-import { blogArticles } from "@/constants/content-pages";
+import { blogs } from "@/constants/blog-data";
 
 export const metadata = {
 	title: "Blog & Guides for Free Online Tools | 30tools",
@@ -24,7 +24,7 @@ export const metadata = {
 };
 
 export default function BlogPage() {
-	const sortedArticles = [...blogArticles].sort((a, b) =>
+	const sortedArticles = [...blogs].sort((a, b) =>
 		new Date(b.date).getTime() - new Date(a.date).getTime(),
 	);
 

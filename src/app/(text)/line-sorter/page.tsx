@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import LineSorterTool from "@/components/tools/text/LineSorterTool";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free Line Sorter Online - No Signup | 30tools",
-	description:
-		"Sort lists alphabetically or by length 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"line sorter, free online tool, no signup, text, line sorter online, 30tools",
+	title: "Free Line Sorter Online – Fast & No Signup | 30tools",
+	description: "Sort lists, names, or lines alphabetically or by length instantly. Our free online Line Sorter helps you organize data for cleaner documentation and code. Privacy-friendly and fast. 100% free, fast, and no signup required.",
+	keywords: "line sorter, free line sorter, online line sorter, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/line-sorter",
 	},
 	openGraph: {
-		title: "Free Line Sorter Online - No Signup | 30tools",
-		description:
-			"Sort lists alphabetically or by length 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Line Sorter Online – Fast & No Signup | 30tools",
+		description: "Sort lists, names, or lines alphabetically or by length instantly. Our free online Line Sorter helps you organize data for cleaner documentation and code. Privacy-friendly and fast. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/line-sorter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Line Sorter Online - No Signup | 30tools",
-		description:
-			"Sort lists alphabetically or by length 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Line Sorter Online – Fast & No Signup | 30tools",
+		description: "Sort lists, names, or lines alphabetically or by length instantly. Our free online Line Sorter helps you organize data for cleaner documentation and code. Privacy-friendly and fast. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,114 +28,18 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "line-sorter",
-		name: "Line Sorter",
-		description: "Sort lists alphabetically or by length",
-		route: "/line-sorter",
-		extraSlugs: ["alphabetize-list-online-free", "sort-lines-alphabetically"],
-		popular: false,
-		category: "text",
-	};
-	const breadcrumbs = [
-		{
-			name: "Text Tools",
-			url: "/text-tools",
-		},
-		{
-			name: "Line Sorter",
-			url: "/line-sorter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "markdown-to-text",
-			name: "AI-to-Text Converter (Markdown Stripper)",
-			description:
-				"Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.",
-			route: "/markdown-to-text",
-			extraSlugs: [
-				"add-text-to-pdf",
-				"ai-text-rewriter",
-				"alt-text-checker",
-				"beautify-text",
-				"calculate-text-complexity",
-				"calculate-text-length",
-				"capitalize-text-online",
-				"chatgpt-text-converter",
-				"clean-markdown-text",
-				"clean-up-text-from-chatgpt-markdown",
-				"convert-markdown-to-plain-text",
-				"deduplicate-text-online",
-				"delete-duplicate-text",
-				"encrypt-text-online",
-				"extract-links-from-text",
-				"extract-text-from-pdf",
-				"fake-text-message-maker",
-				"filler-text-maker",
-				"filter-emails-from-text",
-				"find-emails-in-text",
-				"find-text-differences",
-				"fix-text-spacing",
-				"format-text-online",
-				"generate-images-from-text",
-				"generate-placeholder-text",
-				"humanize-chatgpt-text",
-				"instagram-fancy-text",
-				"listen-to-text",
-				"make-ai-text-human",
-				"markdown-parser-online",
-				"markdown-to-html",
-				"markdown-to-plain-text",
-				"pdf-to-text-converter",
-				"read-text-aloud",
-				"remove-markdown-formatting",
-				"render-markdown-html",
-				"seo-text-analyzer",
-				"strip-markdown-online",
-				"strip-markdown-syntax",
-				"text-analysis-tool",
-				"text-case-converter",
-				"text-cleaner-tool",
-				"text-comparison-tool",
-				"text-diff",
-				"text-formatter",
-				"text-to-image-ai",
-				"text-to-speech-ai",
-				"text-tools",
-			],
-			popular: true,
-			category: "text",
-		},
-		{
-			id: "article-rewriter",
-			name: "Article Rewriter",
-			description:
-				"Free article rewriter tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/article-rewriter",
-			extraSlugs: ["free-article-rewriter-online", "article-rewriter-tool"],
-			popular: false,
-			category: "text",
-		},
-		{
-			id: "backwards-text-generator",
-			name: "Backwards Text Generator",
-			description:
-				"Generate backwards text instantly. Our free reverse text tool flips characters, words, or entire paragraphs. Perfect for Instagram, Discord, and creative writing.",
-			route: "/backwards-text-generator",
-			extraSlugs: [
-				"dummy-text-generator",
-				"fake-text-message-maker",
-				"filler-text-maker",
-				"free-backwards-text-generator-online",
-				"mirror-text-generator",
-				"random-text-generator",
-				"reverse-text-generator",
-				"stylish-text-generator",
-			],
-			popular: true,
-			category: "text",
-		},
-	];
+        "id": "line-sorter",
+        "name": "Line Sorter",
+        "description": "Sort lists, names, or lines alphabetically or by length instantly. Our free online Line Sorter helps you organize data for cleaner documentation and code. Privacy-friendly and fast.",
+        "route": "/line-sorter",
+        "extraSlugs": [
+                "alphabetize-list-online-free",
+                "sort-lines-alphabetically",
+                "online-list-sorter"
+        ],
+        "popular": false,
+        "category": "text"
+};
 
 	return (
 		<>
@@ -148,8 +49,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Line Sorter",
-						description: "Sort lists alphabetically or by length",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/line-sorter",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -158,12 +59,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<LineSorterTool />
+			<ToolLayout tool={{ ...tool, category: "text" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

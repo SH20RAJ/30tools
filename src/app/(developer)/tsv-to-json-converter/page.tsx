@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free TSV to JSON Converter Online - No Signup | 30tools",
-	description:
-		"Free tsv to json converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"tsv to json converter, free online tool, no signup, developer, tsv to json converter online, 30tools",
+	title: "Free TSV to JSON Converter Online – Fast & No Signup | 30tools",
+	description: "Convert Tab-Separated Values (TSV) into JSON format instantly. Our free online tool makes it easy to transform structured data for web applications and API development. 100% free, fast, and no signup required.",
+	keywords: "tsv to json converter, free tsv to json converter, online tsv to json converter, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/tsv-to-json-converter",
 	},
 	openGraph: {
-		title: "Free TSV to JSON Converter Online - No Signup | 30tools",
-		description:
-			"Free tsv to json converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free TSV to JSON Converter Online – Fast & No Signup | 30tools",
+		description: "Convert Tab-Separated Values (TSV) into JSON format instantly. Our free online tool makes it easy to transform structured data for web applications and API development. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/tsv-to-json-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free TSV to JSON Converter Online - No Signup | 30tools",
-		description:
-			"Free tsv to json converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free TSV to JSON Converter Online – Fast & No Signup | 30tools",
+		description: "Convert Tab-Separated Values (TSV) into JSON format instantly. Our free online tool makes it easy to transform structured data for web applications and API development. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,74 +28,18 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "tsv-to-json-converter",
-		name: "TSV to JSON Converter",
-		description:
-			"Free tsv to json converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/tsv-to-json-converter",
-		extraSlugs: [
-			"free-tsv-to-json-converter-online",
-			"tsv-to-json-converter-tool",
-		],
-		popular: false,
-		category: "developer",
-	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "TSV to JSON Converter",
-			url: "/tsv-to-json-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+        "id": "tsv-to-json-converter",
+        "name": "TSV to JSON Converter",
+        "description": "Convert Tab-Separated Values (TSV) into JSON format instantly. Our free online tool makes it easy to transform structured data for web applications and API development.",
+        "route": "/tsv-to-json-converter",
+        "extraSlugs": [
+                "free-tsv-to-json-converter-online",
+                "tsv-to-json-converter-tool",
+                "tab-separated-to-json-online"
+        ],
+        "popular": false,
+        "category": "developer"
+};
 
 	return (
 		<>
@@ -108,9 +49,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "TSV to JSON Converter",
-						description:
-							"Free tsv to json converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/tsv-to-json-converter",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -119,12 +59,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="tsv-to-json-converter" />
+			<ToolLayout tool={{ ...tool, category: "developer" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

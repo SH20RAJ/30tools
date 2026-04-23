@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free Temperature Converter Online - No Signup | 30tools",
-	description:
-		"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
-	keywords:
-		"temperature converter, celsius to fahrenheit, kelvin converter, rankine, free online, 30tools",
+	title: "Free Temperature Converter Online – Fast & No Signup | 30tools",
+	description: "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	keywords: "temperature converter, free temperature converter, online temperature converter, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/temperature-converter",
 	},
 	openGraph: {
-		title: "Free Temperature Converter Online - No Signup | 30tools",
-		description:
-			"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
+		title: "Free Temperature Converter Online – Fast & No Signup | 30tools",
+		description: "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/temperature-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Temperature Converter Online - No Signup | 30tools",
-		description:
-			"Convert Celsius, Fahrenheit, Kelvin, and Rankine in your browser. Accurate offsets, instant results, no uploads, and no account required.",
+		title: "Free Temperature Converter Online – Fast & No Signup | 30tools",
+		description: "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,60 +28,17 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "temperature-converter",
-		name: "Temperature Converter",
-		description:
-			"Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/temperature-converter",
-		extraSlugs: [
-			"free-temperature-converter-online",
-			"temperature-converter-tool",
-		],
-		popular: false,
-		category: "utilities",
-	};
-	const breadcrumbs = [
-		{
-			name: "Utilities Tools",
-			url: "/utilities-tools",
-		},
-		{
-			name: "Temperature Converter",
-			url: "/temperature-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "adsense-calculator",
-			name: "Adsense Calculator",
-			description:
-				"Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/adsense-calculator",
-			extraSlugs: ["free-adsense-calculator-online", "adsense-calculator-tool"],
-			popular: false,
-			category: "utilities",
-		},
-		{
-			id: "age-calculator",
-			name: "Age Calculator",
-			description:
-				"Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/age-calculator",
-			extraSlugs: ["free-age-calculator-online", "age-calculator-tool"],
-			popular: false,
-			category: "utilities",
-		},
-		{
-			id: "angle-converter",
-			name: "Angle Converter",
-			description:
-				"Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/angle-converter",
-			extraSlugs: ["free-angle-converter-online", "angle-converter-tool"],
-			popular: false,
-			category: "utilities",
-		},
-	];
+        "id": "temperature-converter",
+        "name": "Temperature Converter",
+        "description": "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+        "route": "/temperature-converter",
+        "extraSlugs": [
+                "free-temperature-converter-online",
+                "temperature-converter-tool"
+        ],
+        "popular": false,
+        "category": "utilities"
+};
 
 	return (
 		<>
@@ -94,9 +48,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Temperature Converter",
-						description:
-							"Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/temperature-converter",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -105,12 +58,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="temperature-converter" />
+			<ToolLayout tool={{ ...tool, category: "utilities" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

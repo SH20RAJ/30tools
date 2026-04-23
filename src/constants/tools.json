@@ -150,21 +150,6 @@
                     ],
                     "popular": true,
                     "category": "generators"
-                },
-                {
-                    "id": "lorem-ipsum-generator",
-                    "name": "Lorem Ipsum Generator",
-                    "description": "Generate custom Lorem Ipsum placeholder text for your designs and layouts. Fast, free, and secure dummy text generator for designers and developers. Customize paragraphs, sentences, or words instantly.",
-                    "route": "/lorem-ipsum-generator",
-                    "extraSlugs": [
-                        "dummy-text-maker",
-                        "placeholder-text-generator",
-                        "blind-text-generator",
-                        "lipsum-generator",
-                        "standard-lorem-ipsum-text"
-                    ],
-                    "popular": false,
-                    "category": "generators"
                 }
             ]
         },
@@ -800,10 +785,14 @@
                     "description": "Generate custom Lorem Ipsum text for your designs.",
                     "route": "/lorem-ipsum",
                     "extraSlugs": [
+                        "placeholder-text-generator",
+                        "lipsum-generator",
                         "lorem-ipsum-generator",
-                        "lorem-ipsum-generator-for-figma",
+                        "blind-text-generator",
+                        "dummy-text-maker",
+                        "standard-lorem-ipsum-text",
                         "lorem-ipsum-text-copy",
-                        "placeholder-text-generator"
+                        "lorem-ipsum-generator-for-figma"
                     ],
                     "popular": false,
                     "category": "text"
@@ -1234,7 +1223,7 @@
                         "x-video-downloader"
                     ],
                     "popular": true,
-                    "category": "video"
+                    "category": "downloaders"
                 },
                 {
                     "id": "terabox-downloader",
@@ -5510,6 +5499,84 @@
                     "category": "company"
                 }
             ]
+        },
+        "content": {
+            "name": "Guides & Comparisons",
+            "slug": "guides",
+            "icon": "BookOpenIcon",
+            "description": "Expert guides and tool comparisons",
+            "tools": [
+                {
+                    "id": "best-free-tools-for-students",
+                    "name": "Best Free Tools for Students (2026)",
+                    "description": "Discover the best free tools for students in 2026. Improve writing, formatting, assignments, and study productivity with no-signup online tools.",
+                    "route": "/best-free-tools-for-students",
+                    "category": "content"
+                },
+                {
+                    "id": "tools-for-developers",
+                    "name": "Tools for Developers - Free Online Stack",
+                    "description": "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
+                    "route": "/tools-for-developers",
+                    "category": "content"
+                },
+                {
+                    "id": "seo-tools-free-online",
+                    "name": "SEO Tools Free Online - Ranked Picks (2026)",
+                    "description": "Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks. Built for creators, agencies, and developers.",
+                    "route": "/seo-tools-free-online",
+                    "category": "content"
+                },
+                {
+                    "id": "ai-tools-alternatives-free",
+                    "name": "AI Tools Alternatives Free - Practical Picks",
+                    "description": "Explore free AI tool alternatives for writing, image creation, voice generation, and content ideation without subscriptions.",
+                    "route": "/ai-tools-alternatives-free",
+                    "category": "content"
+                },
+                {
+                    "id": "best-free-alternative-to-chatgpt",
+                    "name": "Best Free Alternative to ChatGPT for Daily Tasks",
+                    "description": "Looking for a free ChatGPT alternative? Build a focused stack for writing, metadata, image generation, and voice tasks with free online tools.",
+                    "route": "/best-free-alternative-to-chatgpt",
+                    "category": "content"
+                },
+                {
+                    "id": "top-10-free-online-tools-for-seo",
+                    "name": "Top 10 Free Online Tools for SEO (2026)",
+                    "description": "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
+                    "route": "/top-10-free-online-tools-for-seo",
+                    "category": "content"
+                },
+                {
+                    "id": "top-10-json-tools-online",
+                    "name": "Top 10 JSON Tools Online for Faster Developer Workflows",
+                    "description": "A practical list of the top 10 JSON tools online for formatting, validation, conversion, and schema-ready payload workflows.",
+                    "route": "/top-10-json-tools-online",
+                    "category": "content"
+                },
+                {
+                    "id": "how-to-format-json-properly",
+                    "name": "How to Format JSON Properly (Without Breaking Data)",
+                    "description": "Learn how to format JSON correctly with a simple workflow for validation, cleanup, and conversion-safe output.",
+                    "route": "/how-to-format-json-properly",
+                    "category": "content"
+                },
+                {
+                    "id": "best-free-converters-in-2026",
+                    "name": "Best Free Converters in 2026 (File, Data, and Media)",
+                    "description": "The best free converters in 2026 for JSON, CSV, XML, images, and documents. No signup required.",
+                    "route": "/best-free-converters-in-2026",
+                    "category": "content"
+                }
+            ]
+        },
+        "blog": {
+            "name": "Blog",
+            "slug": "blog",
+            "icon": "DocumentTextIcon",
+            "description": "Tech blog and tool deep-dives",
+            "tools": []
         }
     }
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppleFooter } from "@/components/footers/AppleFooter";
 import { AppleNavbar } from "@/components/navigation/AppleNavbar";
-import { blogArticles, getBlogArticleBySlug } from "@/constants/content-pages";
+import { blogs, getBlogArticleBySlug } from "@/constants/blog-data";
 import { getToolByRoute } from "@/lib/tools";
 
 interface BlogArticlePageProps {
@@ -10,7 +10,7 @@ interface BlogArticlePageProps {
 }
 
 export async function generateStaticParams() {
-	return blogArticles.map((article) => ({ slug: article.slug }));
+	return blogs.map((article) => ({ slug: article.slug }));
 }
 
 export async function generateMetadata({ params }: BlogArticlePageProps) {

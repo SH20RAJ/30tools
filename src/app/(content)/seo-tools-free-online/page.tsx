@@ -1,32 +1,63 @@
-import CuratedContentPage from "@/components/content/CuratedContentPage";
-import { getUseCasePageBySlug } from "@/constants/content-pages";
-import { notFound } from "next/navigation";
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import Fragment from "react";
 
-const slug = "seo-tools-free-online";
-const page = getUseCasePageBySlug(slug);
 
 export const metadata = {
-	title: "SEO Tools Free Online - Ranked Picks (2026) | 30tools",
-	description:
-		"Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks.",
-	keywords:
-		"seo tools free online, free seo tools, keyword research tools free, meta tag generator online, 30tools",
+	title: "SEO Tools Free Online - Ranked Picks (2026) | 30tools Expert Guide",
+	description: "Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks. Built for creators, agencies, and developers.",
+	keywords: "seo tools free online - ranked picks (2026), seo tools free online - ranked picks (2026) guide, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/seo-tools-free-online",
 	},
 	openGraph: {
-		title: "SEO Tools Free Online - Ranked Picks (2026) | 30tools",
-		description:
-			"A practical free SEO toolkit for technical checks, metadata, and content optimization.",
+		title: "SEO Tools Free Online - Ranked Picks (2026) | 30tools Expert Guide",
+		description: "Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks. Built for creators, agencies, and developers.",
 		url: "https://30tools.com/seo-tools-free-online",
-		type: "article",
+		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "SEO Tools Free Online - Ranked Picks (2026) | 30tools Expert Guide",
+		description: "Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks. Built for creators, agencies, and developers.",
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
 
-export default function SeoToolsFreeOnlinePage() {
-	if (!page) return notFound();
+export default async function ToolPage() {
+	const tool = {
+        "id": "seo-tools-free-online",
+        "name": "SEO Tools Free Online - Ranked Picks (2026)",
+        "description": "Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks. Built for creators, agencies, and developers.",
+        "route": "/seo-tools-free-online",
+        "extraSlugs": [],
+        "popular": false,
+        "category": "content"
+};
 
-	return <CuratedContentPage page={page} baseUrl="https://30tools.com" />;
+	return (
+		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "SoftwareApplication",
+						name: tool.name,
+						description: tool.description,
+						url: "https://30tools.com/seo-tools-free-online",
+						applicationCategory: "UtilitiesApplication",
+						operatingSystem: "Any",
+						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+					}),
+				}}
+			/>
+
+			<ToolLayout tool={{ ...tool, category: "content" }}>
+				<div className='min-h-[100px]'  />
+			</ToolLayout>
+		</>
+	);
 }

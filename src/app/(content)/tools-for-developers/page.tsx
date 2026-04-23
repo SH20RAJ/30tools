@@ -1,32 +1,63 @@
-import CuratedContentPage from "@/components/content/CuratedContentPage";
-import { getUseCasePageBySlug } from "@/constants/content-pages";
-import { notFound } from "next/navigation";
+import ToolLayout from "@/components/tools/shared/ToolLayout";
+import Fragment from "react";
 
-const slug = "tools-for-developers";
-const page = getUseCasePageBySlug(slug);
 
 export const metadata = {
-	title: "Tools for Developers - Free Online Stack | 30tools",
-	description:
-		"A practical collection of free tools for developers: JSON utilities, encoding, validators, and conversion helpers.",
-	keywords:
-		"tools for developers, free developer tools online, json formatter, json validator, base64 tool, 30tools",
+	title: "Tools for Developers - Free Online Stack | 30tools Expert Guide",
+	description: "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
+	keywords: "tools for developers - free online stack, tools for developers - free online stack guide, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/tools-for-developers",
 	},
 	openGraph: {
-		title: "Tools for Developers - Free Online Stack | 30tools",
-		description:
-			"Use this curated developer stack for JSON work, data conversion, and utility workflows.",
+		title: "Tools for Developers - Free Online Stack | 30tools Expert Guide",
+		description: "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
 		url: "https://30tools.com/tools-for-developers",
-		type: "article",
+		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Tools for Developers - Free Online Stack | 30tools Expert Guide",
+		description: "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
+		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
 
-export default function ToolsForDevelopersPage() {
-	if (!page) return notFound();
+export default async function ToolPage() {
+	const tool = {
+        "id": "tools-for-developers",
+        "name": "Tools for Developers - Free Online Stack",
+        "description": "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
+        "route": "/tools-for-developers",
+        "extraSlugs": [],
+        "popular": false,
+        "category": "content"
+};
 
-	return <CuratedContentPage page={page} baseUrl="https://30tools.com" />;
+	return (
+		<>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "SoftwareApplication",
+						name: tool.name,
+						description: tool.description,
+						url: "https://30tools.com/tools-for-developers",
+						applicationCategory: "UtilitiesApplication",
+						operatingSystem: "Any",
+						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+					}),
+				}}
+			/>
+
+			<ToolLayout tool={{ ...tool, category: "content" }}>
+				<div className='min-h-[100px]'  />
+			</ToolLayout>
+		</>
+	);
 }

@@ -332,7 +332,6 @@ export default async function RootLayout({
 			</head>
 			<body className="ds-page font-sans antialiased">
 				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<StructuredData includeFAQ={false} />
 					<AppleNavbar />
 					{children}
 					<AppleFooter categories={categories} />

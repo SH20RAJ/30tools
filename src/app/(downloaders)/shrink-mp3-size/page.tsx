@@ -1,19 +1,17 @@
-import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+
 
 export const metadata = {
-	title: "Free Shrink Mp3 Size Online - No Signup | 30tools",
-	description:
-		"Free Shrink Mp3 Size online. Shrink Mp3 Size allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"shrink mp3 size, free online tool, no signup, downloaders, shrink mp3 size online, 30tools",
+	title: "Free Shrink Mp3 Size Online – Fast & No Signup | 30tools",
+	description: "Reduce the file size of your MP3 audio while maintaining great sound quality. Our free online compressor is perfect for optimizing audio for web use and mobile devices. 100% free, fast, and no signup required.",
+	keywords: "shrink mp3 size, free shrink mp3 size, online shrink mp3 size, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/shrink-mp3-size",
 	},
 	openGraph: {
-		title: "Free Shrink Mp3 Size Online - No Signup | 30tools",
-		description:
-			"Free Shrink Mp3 Size online. Shrink Mp3 Size allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Shrink Mp3 Size Online – Fast & No Signup | 30tools",
+		description: "Reduce the file size of your MP3 audio while maintaining great sound quality. Our free online compressor is perfect for optimizing audio for web use and mobile devices. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/shrink-mp3-size",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Shrink Mp3 Size Online - No Signup | 30tools",
-		description:
-			"Free Shrink Mp3 Size online. Shrink Mp3 Size allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Shrink Mp3 Size Online – Fast & No Signup | 30tools",
+		description: "Reduce the file size of your MP3 audio while maintaining great sound quality. Our free online compressor is perfect for optimizing audio for web use and mobile devices. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,54 +28,17 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "shrink-mp3-size",
-		name: "Shrink Mp3 Size",
-		description:
-			"Free Shrink Mp3 Size online. Shrink Mp3 Size allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		route: "/shrink-mp3-size",
-		extraSlugs: ["shrink-mp3-size"],
-		category: "downloaders",
-	};
-	const breadcrumbs = [
-		{
-			name: "Downloaders Tools",
-			url: "/downloaders-tools",
-		},
-		{
-			name: "Shrink Mp3 Size",
-			url: "/shrink-mp3-size",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "akillitv-video-downloader",
-			name: "AkilliTv Video Downloader",
-			description:
-				"Download AkilliTv videos easily with our free online downloader.",
-			route: "/akillitv-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bandcamp-video-downloader",
-			name: "Bandcamp Video Downloader",
-			description: "The easiest way to download Bandcamp videos online.",
-			route: "/bandcamp-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bilibili-video-downloader",
-			name: "Bilibili Video Downloader",
-			description: "Download Bilibili videos online with ease.",
-			route: "/bilibili-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-	];
+        "id": "shrink-mp3-size",
+        "name": "Shrink Mp3 Size",
+        "description": "Reduce the file size of your MP3 audio while maintaining great sound quality. Our free online compressor is perfect for optimizing audio for web use and mobile devices.",
+        "route": "/shrink-mp3-size",
+        "extraSlugs": [
+                "shrink-mp3-size",
+                "compress-mp3-online-free"
+        ],
+        "popular": false,
+        "category": "downloaders"
+};
 
 	return (
 		<>
@@ -88,9 +48,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Shrink Mp3 Size",
-						description:
-							"Free Shrink Mp3 Size online. Shrink Mp3 Size allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/shrink-mp3-size",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -99,12 +58,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<DownloaderEngine placeholder="Enter URL to download..." />
+			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
+				<DownloaderEngine toolName="Shrink Mp3 Size" />
 			</ToolLayout>
 		</>
 	);

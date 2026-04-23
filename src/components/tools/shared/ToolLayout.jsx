@@ -106,6 +106,32 @@ export default function ToolLayout({
 		if (!enrichedTool.article) enrichedTool.article = dynamicContent.article;
 	}
 
+	// Replace ${name} placeholders in the enriched data
+	const toolName = enrichedTool.name;
+	if (enrichedTool.article) {
+		enrichedTool.article = enrichedTool.article.replace(/\${name}/g, toolName);
+	}
+	if (enrichedTool.features) {
+		enrichedTool.features = enrichedTool.features.map(f => f.replace(/\${name}/g, toolName));
+	}
+	if (enrichedTool.faqs) {
+		enrichedTool.faqs = enrichedTool.faqs.map(faq => ({
+			question: faq.question.replace(/\${name}/g, toolName),
+			answer: faq.answer.replace(/\${name}/g, toolName),
+		}));
+	}
+	if (enrichedTool.howTo) {
+		enrichedTool.howTo = {
+			...enrichedTool.howTo,
+			name: enrichedTool.howTo.name?.replace(/\${name}/g, toolName),
+			steps: enrichedTool.howTo.steps?.map(s => ({
+				...s,
+				name: s.name.replace(/\${name}/g, toolName),
+				text: s.text.replace(/\${name}/g, toolName),
+			})),
+		};
+	}
+
 	// Ensure at least 10 related tools
 	const finalRelatedTools =
 		relatedTools.length < 10

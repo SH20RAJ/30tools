@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free Word Counter Online - No Signup | 30tools",
-	description:
-		"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
-	keywords:
-		"word counter, character counter, paragraph count, essay length, SEO word count, free online, 30tools",
+	title: "Free Word Counter Online – Fast & No Signup | 30tools",
+	description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
+	keywords: "word counter, free word counter, online word counter, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/word-counter",
 	},
 	openGraph: {
-		title: "Free Word Counter Online - No Signup | 30tools",
-		description:
-			"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
+		title: "Free Word Counter Online – Fast & No Signup | 30tools",
+		description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/word-counter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Word Counter Online - No Signup | 30tools",
-		description:
-			"Count words, characters, sentences, and paragraphs for essays, SEO copy, and social posts. Live tallies in your browser with no uploads or sign-in.",
+		title: "Free Word Counter Online – Fast & No Signup | 30tools",
+		description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,121 +28,21 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "word-counter",
-		name: "Word Counter",
-		description:
-			"Free word counter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/word-counter",
-		extraSlugs: [
-			"character-counter",
-			"essay-word-counter",
-			"free-word-counter-online",
-			"letter-counter",
-			"word-counter-tool",
-		],
-		popular: false,
-		category: "text",
-	};
-	const breadcrumbs = [
-		{
-			name: "Text Tools",
-			url: "/text-tools",
-		},
-		{
-			name: "Word Counter",
-			url: "/word-counter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "markdown-to-text",
-			name: "AI-to-Text Converter (Markdown Stripper)",
-			description:
-				"Clean up AI-generated content from ChatGPT, Claude, and Grok. Convert Markdown into clean, readable plain text instantly. Perfect for emails and social sharing.",
-			route: "/markdown-to-text",
-			extraSlugs: [
-				"add-text-to-pdf",
-				"ai-text-rewriter",
-				"alt-text-checker",
-				"beautify-text",
-				"calculate-text-complexity",
-				"calculate-text-length",
-				"capitalize-text-online",
-				"chatgpt-text-converter",
-				"clean-markdown-text",
-				"clean-up-text-from-chatgpt-markdown",
-				"convert-markdown-to-plain-text",
-				"deduplicate-text-online",
-				"delete-duplicate-text",
-				"encrypt-text-online",
-				"extract-links-from-text",
-				"extract-text-from-pdf",
-				"fake-text-message-maker",
-				"filler-text-maker",
-				"filter-emails-from-text",
-				"find-emails-in-text",
-				"find-text-differences",
-				"fix-text-spacing",
-				"format-text-online",
-				"generate-images-from-text",
-				"generate-placeholder-text",
-				"humanize-chatgpt-text",
-				"instagram-fancy-text",
-				"listen-to-text",
-				"make-ai-text-human",
-				"markdown-parser-online",
-				"markdown-to-html",
-				"markdown-to-plain-text",
-				"pdf-to-text-converter",
-				"read-text-aloud",
-				"remove-markdown-formatting",
-				"render-markdown-html",
-				"seo-text-analyzer",
-				"strip-markdown-online",
-				"strip-markdown-syntax",
-				"text-analysis-tool",
-				"text-case-converter",
-				"text-cleaner-tool",
-				"text-comparison-tool",
-				"text-diff",
-				"text-formatter",
-				"text-to-image-ai",
-				"text-to-speech-ai",
-				"text-tools",
-			],
-			popular: true,
-			category: "text",
-		},
-		{
-			id: "article-rewriter",
-			name: "Article Rewriter",
-			description:
-				"Free article rewriter tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/article-rewriter",
-			extraSlugs: ["free-article-rewriter-online", "article-rewriter-tool"],
-			popular: false,
-			category: "text",
-		},
-		{
-			id: "backwards-text-generator",
-			name: "Backwards Text Generator",
-			description:
-				"Generate backwards text instantly. Our free reverse text tool flips characters, words, or entire paragraphs. Perfect for Instagram, Discord, and creative writing.",
-			route: "/backwards-text-generator",
-			extraSlugs: [
-				"dummy-text-generator",
-				"fake-text-message-maker",
-				"filler-text-maker",
-				"free-backwards-text-generator-online",
-				"mirror-text-generator",
-				"random-text-generator",
-				"reverse-text-generator",
-				"stylish-text-generator",
-			],
-			popular: true,
-			category: "text",
-		},
-	];
+        "id": "word-counter",
+        "name": "Word Counter",
+        "description": "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private.",
+        "route": "/word-counter",
+        "extraSlugs": [
+                "character-counter",
+                "essay-word-counter",
+                "free-word-counter-online",
+                "letter-counter",
+                "word-counter-tool",
+                "analyze-text-length"
+        ],
+        "popular": false,
+        "category": "text"
+};
 
 	return (
 		<>
@@ -155,9 +52,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Word Counter",
-						description:
-							"Free word counter tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/word-counter",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -166,12 +62,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="word-counter" />
+			<ToolLayout tool={{ ...tool, category: "text" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

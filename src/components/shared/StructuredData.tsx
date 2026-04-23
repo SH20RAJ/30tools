@@ -16,9 +16,16 @@ const categoryLookup = Object.fromEntries(
 interface StructuredDataProps {
 	tool?: Tool;
 	includeFAQ?: boolean;
+	isHome?: boolean;
+	isArchive?: boolean;
 }
 
-export default function StructuredData({ tool, includeFAQ = true }: StructuredDataProps) {
+export default function StructuredData({ 
+	tool, 
+	includeFAQ = true,
+	isHome = false,
+	isArchive = false,
+}: StructuredDataProps) {
 	if (tool) {
 		const categoryDetails =
 			categoryLookup[tool.category] || categoryLookup[tool.categorySlug || ""] || null;
@@ -185,85 +192,131 @@ export default function StructuredData({ tool, includeFAQ = true }: StructuredDa
 		},
 	};
 
-	const breadcrumbStructuredData = {
-		"@context": "https://schema.org",
-		"@type": "BreadcrumbList",
-		itemListElement: [
-			{
-				"@type": "ListItem",
-				position: 1,
-				name: "Home",
-				item: BASE_URL,
-			},
-			{
-				"@type": "ListItem",
-				position: 2,
-				name: "Tools",
-				item: `${BASE_URL}/search`,
-			},
-		],
-	};
+	if (isHome) {
+		const breadcrumbStructuredData = {
+			"@context": "https://schema.org",
+			"@type": "BreadcrumbList",
+			itemListElement: [
+				{
+					"@type": "ListItem",
+					position: 1,
+					name: "Home",
+					item: BASE_URL,
+				},
+			],
+		};
 
-	const toolsCollectionStructuredData = {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: `Free Online Tools Collection - ${TOOL_COUNT}+ Professional Tools`,
-		description: `Comprehensive collection of ${TOOL_COUNT}+ free online tools for image processing, PDF editing, video conversion, text manipulation, SEO, and developer utilities.`,
-		url: BASE_URL,
-		mainEntity: {
-			"@type": "ItemList",
-			numberOfItems: CATEGORY_COUNT,
-			itemListElement: allCategories.map((category, index) => ({
-				"@type": "ListItem",
-				position: index + 1,
-				item: {
-					"@type": "CollectionPage",
-					name: category.name,
-					url: `${BASE_URL}/${category.slug}`,
-					description: category.description,
+		const faqStructuredData = {
+			"@context": "https://schema.org",
+			"@type": "FAQPage",
+			mainEntity: [
+				{
+					"@type": "Question",
+					name: "Are the tools on 30tools really free?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Yes, all tools on 30tools are free to use. Most tools run directly in the browser and do not require registration.",
+					},
 				},
-			})),
-		},
-	};
+				{
+					"@type": "Question",
+					name: "Do I need to create an account to use the tools?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "No account creation is required for the core tool experience. You can open a tool page and start using it immediately.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "Are my files safe when using 30tools?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: "Privacy is a core focus. Many tools process files directly in the browser, which reduces the need to upload personal files to a server.",
+					},
+				},
+				{
+					"@type": "Question",
+					name: "What types of tools are available on 30tools?",
+					acceptedAnswer: {
+						"@type": "Answer",
+						text: `30tools offers ${TOOL_COUNT}+ tools across ${CATEGORY_COUNT} categories, including image processing, PDF workflows, video tools, text tools, audio tools, SEO utilities, and developer tools.`,
+					},
+				},
+			],
+		};
 
-	const faqStructuredData = {
-		"@context": "https://schema.org",
-		"@type": "FAQPage",
-		mainEntity: [
-			{
-				"@type": "Question",
-				name: "Are the tools on 30tools really free?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: "Yes, all tools on 30tools are free to use. Most tools run directly in the browser and do not require registration.",
-				},
+		return (
+			<>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(websiteStructuredData),
+					}}
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(organizationStructuredData),
+					}}
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(breadcrumbStructuredData),
+					}}
+				/>
+				{includeFAQ && (
+					<script
+						type="application/ld+json"
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify(faqStructuredData),
+						}}
+					/>
+				)}
+			</>
+		);
+	}
+
+	if (isArchive) {
+		const toolsCollectionStructuredData = {
+			"@context": "https://schema.org",
+			"@type": "CollectionPage",
+			name: `Free Online Tools Collection - ${TOOL_COUNT}+ Professional Tools`,
+			description: `Comprehensive collection of ${TOOL_COUNT}+ free online tools for image processing, PDF editing, video conversion, text manipulation, SEO, and developer utilities.`,
+			url: BASE_URL,
+			mainEntity: {
+				"@type": "ItemList",
+				numberOfItems: CATEGORY_COUNT,
+				itemListElement: allCategories.map((category, index) => ({
+					"@type": "ListItem",
+					position: index + 1,
+					item: {
+						"@type": "CollectionPage",
+						name: category.name,
+						url: `${BASE_URL}/${category.slug}`,
+						description: category.description,
+					},
+				})),
 			},
-			{
-				"@type": "Question",
-				name: "Do I need to create an account to use the tools?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: "No account creation is required for the core tool experience. You can open a tool page and start using it immediately.",
-				},
-			},
-			{
-				"@type": "Question",
-				name: "Are my files safe when using 30tools?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: "Privacy is a core focus. Many tools process files directly in the browser, which reduces the need to upload personal files to a server.",
-				},
-			},
-			{
-				"@type": "Question",
-				name: "What types of tools are available on 30tools?",
-				acceptedAnswer: {
-					"@type": "Answer",
-					text: `30tools offers ${TOOL_COUNT}+ tools across ${CATEGORY_COUNT} categories, including image processing, PDF workflows, video tools, text tools, audio tools, SEO utilities, and developer tools.`,
-				},
-			},
-		],
-	};
+		};
+
+		return (
+			<>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(websiteStructuredData),
+					}}
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(toolsCollectionStructuredData),
+					}}
+				/>
+			</>
+		);
+	}
 
 	return (
 		<>
@@ -279,26 +332,6 @@ export default function StructuredData({ tool, includeFAQ = true }: StructuredDa
 					__html: JSON.stringify(organizationStructuredData),
 				}}
 			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(breadcrumbStructuredData),
-				}}
-			/>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(toolsCollectionStructuredData),
-				}}
-			/>
-			{includeFAQ && (
-				<script
-					type="application/ld+json"
-					dangerouslySetInnerHTML={{
-						__html: JSON.stringify(faqStructuredData),
-					}}
-				/>
-			)}
 		</>
 	);
 }

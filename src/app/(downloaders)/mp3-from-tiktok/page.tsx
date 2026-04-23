@@ -1,19 +1,17 @@
-import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+
 
 export const metadata = {
-	title: "Free Mp3 From Tiktok Online - No Signup | 30tools",
-	description:
-		"Free Mp3 From Tiktok online. Mp3 From Tiktok allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"mp3 from tiktok, free online tool, no signup, downloaders, mp3 from tiktok online, 30tools",
+	title: "Free Mp3 From Tiktok Online – Fast & No Signup | 30tools",
+	description: "Extract high-quality MP3 audio from any TikTok video instantly. Perfect for saving viral sounds, music, and voiceovers for offline listening or creative projects. 100% free, fast, and no signup required.",
+	keywords: "mp3 from tiktok, free mp3 from tiktok, online mp3 from tiktok, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/mp3-from-tiktok",
 	},
 	openGraph: {
-		title: "Free Mp3 From Tiktok Online - No Signup | 30tools",
-		description:
-			"Free Mp3 From Tiktok online. Mp3 From Tiktok allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Mp3 From Tiktok Online – Fast & No Signup | 30tools",
+		description: "Extract high-quality MP3 audio from any TikTok video instantly. Perfect for saving viral sounds, music, and voiceovers for offline listening or creative projects. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/mp3-from-tiktok",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Mp3 From Tiktok Online - No Signup | 30tools",
-		description:
-			"Free Mp3 From Tiktok online. Mp3 From Tiktok allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Mp3 From Tiktok Online – Fast & No Signup | 30tools",
+		description: "Extract high-quality MP3 audio from any TikTok video instantly. Perfect for saving viral sounds, music, and voiceovers for offline listening or creative projects. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,54 +28,17 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "mp3-from-tiktok",
-		name: "Mp3 From Tiktok",
-		description:
-			"Free Mp3 From Tiktok online. Mp3 From Tiktok allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		route: "/mp3-from-tiktok",
-		extraSlugs: ["mp3-from-tiktok"],
-		category: "downloaders",
-	};
-	const breadcrumbs = [
-		{
-			name: "Downloaders Tools",
-			url: "/downloaders-tools",
-		},
-		{
-			name: "Mp3 From Tiktok",
-			url: "/mp3-from-tiktok",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "akillitv-video-downloader",
-			name: "AkilliTv Video Downloader",
-			description:
-				"Download AkilliTv videos easily with our free online downloader.",
-			route: "/akillitv-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bandcamp-video-downloader",
-			name: "Bandcamp Video Downloader",
-			description: "The easiest way to download Bandcamp videos online.",
-			route: "/bandcamp-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bilibili-video-downloader",
-			name: "Bilibili Video Downloader",
-			description: "Download Bilibili videos online with ease.",
-			route: "/bilibili-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-	];
+        "id": "mp3-from-tiktok",
+        "name": "Mp3 From Tiktok",
+        "description": "Extract high-quality MP3 audio from any TikTok video instantly. Perfect for saving viral sounds, music, and voiceovers for offline listening or creative projects.",
+        "route": "/mp3-from-tiktok",
+        "extraSlugs": [
+                "mp3-from-tiktok",
+                "tiktok-audio-extractor-online"
+        ],
+        "popular": false,
+        "category": "downloaders"
+};
 
 	return (
 		<>
@@ -88,9 +48,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Mp3 From Tiktok",
-						description:
-							"Free Mp3 From Tiktok online. Mp3 From Tiktok allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/mp3-from-tiktok",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -99,12 +58,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<DownloaderEngine placeholder="Enter URL to download..." />
+			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
+				<DownloaderEngine toolName="Mp3 From Tiktok" />
 			</ToolLayout>
 		</>
 	);

@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free Base64 Decode Online - No Signup | 30tools",
-	description:
-		"Free base64 decode tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"base64 decode, free online tool, no signup, utilities, base64 decode online, 30tools",
+	title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
+	description: "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device. 100% free, fast, and no signup required.",
+	keywords: "base64 decode, free base64 decode, online base64 decode, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/base64-decode",
 	},
 	openGraph: {
-		title: "Free Base64 Decode Online - No Signup | 30tools",
-		description:
-			"Free base64 decode tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
+		description: "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/base64-decode",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Base64 Decode Online - No Signup | 30tools",
-		description:
-			"Free base64 decode tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
+		description: "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,61 +28,19 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "base64-decode",
-		name: "Base64 Decode",
-		description:
-			"Free base64 decode tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/base64-decode",
-		extraSlugs: [
-			"base64-decode-tool",
-			"decode-base64-string",
-			"free-base64-decode-online",
-		],
-		popular: false,
-		category: "utilities",
-	};
-	const breadcrumbs = [
-		{
-			name: "Utilities Tools",
-			url: "/utilities-tools",
-		},
-		{
-			name: "Base64 Decode",
-			url: "/base64-decode",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "adsense-calculator",
-			name: "Adsense Calculator",
-			description:
-				"Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/adsense-calculator",
-			extraSlugs: ["free-adsense-calculator-online", "adsense-calculator-tool"],
-			popular: false,
-			category: "utilities",
-		},
-		{
-			id: "age-calculator",
-			name: "Age Calculator",
-			description:
-				"Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/age-calculator",
-			extraSlugs: ["free-age-calculator-online", "age-calculator-tool"],
-			popular: false,
-			category: "utilities",
-		},
-		{
-			id: "angle-converter",
-			name: "Angle Converter",
-			description:
-				"Free angle converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-			route: "/angle-converter",
-			extraSlugs: ["free-angle-converter-online", "angle-converter-tool"],
-			popular: false,
-			category: "utilities",
-		},
-	];
+        "id": "base64-decode",
+        "name": "Base64 Decode",
+        "description": "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device.",
+        "route": "/base64-decode",
+        "extraSlugs": [
+                "base64-decode-tool",
+                "decode-base64-string",
+                "free-base64-decode-online",
+                "online-base64-decoder"
+        ],
+        "popular": false,
+        "category": "utilities"
+};
 
 	return (
 		<>
@@ -95,9 +50,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Base64 Decode",
-						description:
-							"Free base64 decode tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/base64-decode",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -106,12 +60,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="base64-decode" />
+			<ToolLayout tool={{ ...tool, category: "utilities" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

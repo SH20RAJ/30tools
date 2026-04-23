@@ -44,7 +44,7 @@ export interface Category {
 export const categories = toolsData.categories as unknown as Record<string, Category>;
 
 export function getAllTools(): Tool[] {
-	return Object.values(categories).flatMap((cat) => cat.tools);
+	return Object.values(categories).flatMap((cat) => cat?.tools || []);
 }
 
 export function getToolByRoute(route: string): Tool | undefined {
@@ -72,10 +72,47 @@ export function getRouteById(id: string): string {
 	return tool ? tool.route : "/";
 }
 
+let cachedAllTools: Tool[] | null = null;
+
 export function getRelatedTools(tool: Tool, limit: number = 10): Tool[] {
 	if (!tool) return [];
-	const allTools = getAllTools();
-	return allTools
-		.filter((t) => t.id !== tool.id && t.category === tool.category)
+	
+	if (!cachedAllTools) {
+		cachedAllTools = getAllTools();
+	}
+	
+	// Fast filter to same category or popular tools first
+	const sameCategory = cachedAllTools.filter(t => t.category === tool.category && t.id !== tool.id);
+	const popularOthers = cachedAllTools.filter(t => t.category !== tool.category && t.popular && t.id !== tool.id);
+	
+	const pool = [...sameCategory, ...popularOthers];
+	
+	// Define clusters based on common intent keywords
+	const intents = ["converter", "downloader", "generator", "tester", "validator", "compressor", "calculator"];
+	const toolIntent = intents.find(intent => 
+		tool.id.toLowerCase().includes(intent) || 
+		tool.name.toLowerCase().includes(intent)
+	);
+
+	return pool
+		.sort((a, b) => {
+			// 1. Same category is highest priority
+			if (a.category === tool.category && b.category !== tool.category) return -1;
+			if (b.category === tool.category && a.category !== tool.category) return 1;
+
+			// 2. Same intent is second priority
+			if (toolIntent) {
+				const aHasIntent = a.id.toLowerCase().includes(toolIntent) || a.name.toLowerCase().includes(toolIntent);
+				const bHasIntent = b.id.toLowerCase().includes(toolIntent) || b.name.toLowerCase().includes(toolIntent);
+				if (aHasIntent && !bHasIntent) return -1;
+				if (bHasIntent && !aHasIntent) return 1;
+			}
+
+			// 3. Popular tools are third priority
+			if (a.popular && !b.popular) return -1;
+			if (b.popular && !a.popular) return 1;
+
+			return 0;
+		})
 		.slice(0, limit);
 }

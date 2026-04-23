@@ -1,19 +1,17 @@
-import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+
 
 export const metadata = {
-	title: "Free Free Mp3 Extractor Online - No Signup | 30tools",
-	description:
-		"Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"free mp3 extractor, free online tool, no signup, downloaders, free mp3 extractor online, 30tools",
+	title: "Free Free Mp3 Extractor Online – Fast & No Signup | 30tools",
+	description: "Extract MP3 audio from any video file instantly. Our free online tool supports multiple video formats and provides high-bitrate audio downloads for a premium listening experience. 100% free, fast, and no signup required.",
+	keywords: "free mp3 extractor, free free mp3 extractor, online free mp3 extractor, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/free-mp3-extractor",
 	},
 	openGraph: {
-		title: "Free Free Mp3 Extractor Online - No Signup | 30tools",
-		description:
-			"Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Free Mp3 Extractor Online – Fast & No Signup | 30tools",
+		description: "Extract MP3 audio from any video file instantly. Our free online tool supports multiple video formats and provides high-bitrate audio downloads for a premium listening experience. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/free-mp3-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Free Mp3 Extractor Online - No Signup | 30tools",
-		description:
-			"Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Free Mp3 Extractor Online – Fast & No Signup | 30tools",
+		description: "Extract MP3 audio from any video file instantly. Our free online tool supports multiple video formats and provides high-bitrate audio downloads for a premium listening experience. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,54 +28,17 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "free-mp3-extractor",
-		name: "Free Mp3 Extractor",
-		description:
-			"Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		route: "/free-mp3-extractor",
-		extraSlugs: ["free-mp3-extractor"],
-		category: "downloaders",
-	};
-	const breadcrumbs = [
-		{
-			name: "Downloaders Tools",
-			url: "/downloaders-tools",
-		},
-		{
-			name: "Free Mp3 Extractor",
-			url: "/free-mp3-extractor",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "akillitv-video-downloader",
-			name: "AkilliTv Video Downloader",
-			description:
-				"Download AkilliTv videos easily with our free online downloader.",
-			route: "/akillitv-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bandcamp-video-downloader",
-			name: "Bandcamp Video Downloader",
-			description: "The easiest way to download Bandcamp videos online.",
-			route: "/bandcamp-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bilibili-video-downloader",
-			name: "Bilibili Video Downloader",
-			description: "Download Bilibili videos online with ease.",
-			route: "/bilibili-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-	];
+        "id": "free-mp3-extractor",
+        "name": "Free Mp3 Extractor",
+        "description": "Extract MP3 audio from any video file instantly. Our free online tool supports multiple video formats and provides high-bitrate audio downloads for a premium listening experience.",
+        "route": "/free-mp3-extractor",
+        "extraSlugs": [
+                "free-mp3-extractor",
+                "extract-audio-from-video-free"
+        ],
+        "popular": false,
+        "category": "downloaders"
+};
 
 	return (
 		<>
@@ -88,9 +48,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Free Mp3 Extractor",
-						description:
-							"Free Free Mp3 Extractor online. Free Mp3 Extractor allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/free-mp3-extractor",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -99,12 +58,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<DownloaderEngine placeholder="Enter URL to download..." />
+			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
+				<DownloaderEngine toolName="Free Mp3 Extractor" />
 			</ToolLayout>
 		</>
 	);

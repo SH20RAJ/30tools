@@ -1,19 +1,17 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import ToolImplementation from "@/components/tools/implementations/ToolImplementation";
+import ToolInteractivePlaceholder from "@/components/tools/shared/ToolInteractivePlaceholder";
+
 
 export const metadata = {
-	title: "Free XML to JSON Converter Online - No Signup | 30tools",
-	description:
-		"Free xml to json converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"xml to json converter, free online tool, no signup, developer, xml to json converter online, 30tools",
+	title: "Free XML to JSON Converter Online – Fast & No Signup | 30tools",
+	description: "Convert XML documents to JSON format instantly. Our free online converter handles complex XML hierarchies to provide clean, developer-friendly JSON output for web apps. 100% free, fast, and no signup required.",
+	keywords: "xml to json converter, free xml to json converter, online xml to json converter, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/xml-to-json-converter",
 	},
 	openGraph: {
-		title: "Free XML to JSON Converter Online - No Signup | 30tools",
-		description:
-			"Free xml to json converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free XML to JSON Converter Online – Fast & No Signup | 30tools",
+		description: "Convert XML documents to JSON format instantly. Our free online converter handles complex XML hierarchies to provide clean, developer-friendly JSON output for web apps. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/xml-to-json-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free XML to JSON Converter Online - No Signup | 30tools",
-		description:
-			"Free xml to json converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free XML to JSON Converter Online – Fast & No Signup | 30tools",
+		description: "Convert XML documents to JSON format instantly. Our free online converter handles complex XML hierarchies to provide clean, developer-friendly JSON output for web apps. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,74 +28,18 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "xml-to-json-converter",
-		name: "XML to JSON Converter",
-		description:
-			"Free xml to json converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		route: "/xml-to-json-converter",
-		extraSlugs: [
-			"free-xml-to-json-converter-online",
-			"xml-to-json-converter-tool",
-		],
-		popular: false,
-		category: "developer",
-	};
-	const breadcrumbs = [
-		{
-			name: "Developer Tools",
-			url: "/developer-tools",
-		},
-		{
-			name: "XML to JSON Converter",
-			url: "/xml-to-json-converter",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "amazon-ses-api-key-tester",
-			name: "Amazon SES API Key Tester",
-			description:
-				"Test your Amazon SES credentials with the send email endpoint.",
-			route: "/api-key-tester/amazon-ses",
-			extraSlugs: [
-				"api-docs",
-				"api-endpoint-tester",
-				"api-tester",
-				"debug-api-requests",
-				"font-tester-tool",
-				"regex-flags-tester",
-				"regex-match-tester",
-				"regex-replace-tester",
-				"regex-tester",
-				"test-rest-api-online",
-			],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "anthropic-api-key-tester",
-			name: "Anthropic Claude API Key Tester",
-			description:
-				"Test your Anthropic Claude API key with the messages endpoint.",
-			route: "/api-key-tester/anthropic",
-			extraSlugs: ["validate-claude-api-key-online", "anthropic-api-tester"],
-			popular: false,
-			category: "developer",
-		},
-		{
-			id: "api-key-tester",
-			name: "API Key Tester",
-			description:
-				"Securely test API keys for OpenAI, Stripe, and 30+ other services directly in your browser or terminal.",
-			route: "/api-key-tester",
-			extraSlugs: [
-				"test-openai-api-key-online-safely",
-				"validate-api-keys-safely",
-			],
-			popular: true,
-			category: "developer",
-		},
-	];
+        "id": "xml-to-json-converter",
+        "name": "XML to JSON Converter",
+        "description": "Convert XML documents to JSON format instantly. Our free online converter handles complex XML hierarchies to provide clean, developer-friendly JSON output for web apps.",
+        "route": "/xml-to-json-converter",
+        "extraSlugs": [
+                "free-xml-to-json-converter-online",
+                "xml-to-json-converter-tool",
+                "convert-xml-to-json-online"
+        ],
+        "popular": false,
+        "category": "developer"
+};
 
 	return (
 		<>
@@ -108,9 +49,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "XML to JSON Converter",
-						description:
-							"Free xml to json converter tool to process your data instantly with privacy-friendly browser-based workflows.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/xml-to-json-converter",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -119,12 +59,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<ToolImplementation toolId="xml-to-json-converter" />
+			<ToolLayout tool={{ ...tool, category: "developer" }}>
+				<ToolInteractivePlaceholder />
 			</ToolLayout>
 		</>
 	);

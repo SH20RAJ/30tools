@@ -1,19 +1,17 @@
-import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+
 
 export const metadata = {
-	title: "Free Save Twitter Videos Online - No Signup | 30tools",
-	description:
-		"Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"save twitter videos, free online tool, no signup, downloaders, save twitter videos online, 30tools",
+	title: "Free Save Twitter Videos Online – Fast & No Signup | 30tools",
+	description: "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing. 100% free, fast, and no signup required.",
+	keywords: "save twitter videos, free save twitter videos, online save twitter videos, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-twitter-videos",
 	},
 	openGraph: {
-		title: "Free Save Twitter Videos Online - No Signup | 30tools",
-		description:
-			"Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Save Twitter Videos Online – Fast & No Signup | 30tools",
+		description: "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/save-twitter-videos",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Save Twitter Videos Online - No Signup | 30tools",
-		description:
-			"Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Save Twitter Videos Online – Fast & No Signup | 30tools",
+		description: "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,54 +28,18 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "save-twitter-videos",
-		name: "Save Twitter Videos",
-		description:
-			"Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		route: "/save-twitter-videos",
-		extraSlugs: ["save-snapchat-videos", "save-twitter-videos"],
-		category: "downloaders",
-	};
-	const breadcrumbs = [
-		{
-			name: "Downloaders Tools",
-			url: "/downloaders-tools",
-		},
-		{
-			name: "Save Twitter Videos",
-			url: "/save-twitter-videos",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "akillitv-video-downloader",
-			name: "AkilliTv Video Downloader",
-			description:
-				"Download AkilliTv videos easily with our free online downloader.",
-			route: "/akillitv-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bandcamp-video-downloader",
-			name: "Bandcamp Video Downloader",
-			description: "The easiest way to download Bandcamp videos online.",
-			route: "/bandcamp-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bilibili-video-downloader",
-			name: "Bilibili Video Downloader",
-			description: "Download Bilibili videos online with ease.",
-			route: "/bilibili-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-	];
+        "id": "save-twitter-videos",
+        "name": "Save Twitter Videos",
+        "description": "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing.",
+        "route": "/save-twitter-videos",
+        "extraSlugs": [
+                "save-snapchat-videos",
+                "save-twitter-videos",
+                "twitter-video-downloader-hd"
+        ],
+        "popular": false,
+        "category": "downloaders"
+};
 
 	return (
 		<>
@@ -88,9 +49,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Save Twitter Videos",
-						description:
-							"Free Save Twitter Videos online. Save Twitter Videos allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/save-twitter-videos",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -99,12 +59,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<DownloaderEngine placeholder="Enter URL to download..." />
+			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
+				<DownloaderEngine toolName="Save Twitter Videos" />
 			</ToolLayout>
 		</>
 	);

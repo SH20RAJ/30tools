@@ -1,19 +1,17 @@
-import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+
 
 export const metadata = {
-	title: "Free Reddit Media Saver Online - No Signup | 30tools",
-	description:
-		"Free Reddit Media Saver online. Reddit Media Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"reddit media saver, free online tool, no signup, downloaders, reddit media saver online, 30tools",
+	title: "Free Reddit Media Saver Online – Fast & No Signup | 30tools",
+	description: "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing. 100% free, fast, and no signup required.",
+	keywords: "reddit media saver, free reddit media saver, online reddit media saver, no signup, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/reddit-media-saver",
 	},
 	openGraph: {
-		title: "Free Reddit Media Saver Online - No Signup | 30tools",
-		description:
-			"Free Reddit Media Saver online. Reddit Media Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Reddit Media Saver Online – Fast & No Signup | 30tools",
+		description: "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/reddit-media-saver",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Reddit Media Saver Online - No Signup | 30tools",
-		description:
-			"Free Reddit Media Saver online. Reddit Media Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser. 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Reddit Media Saver Online – Fast & No Signup | 30tools",
+		description: "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -31,58 +28,19 @@ export const metadata = {
 
 export default async function ToolPage() {
 	const tool = {
-		id: "reddit-media-saver",
-		name: "Reddit Media Saver",
-		description:
-			"Free Reddit Media Saver online. Reddit Media Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		route: "/reddit-media-saver",
-		extraSlugs: [
-			"instagram-media-saver",
-			"reddit-media-saver",
-			"twitter-media-saver",
-		],
-		category: "downloaders",
-	};
-	const breadcrumbs = [
-		{
-			name: "Downloaders Tools",
-			url: "/downloaders-tools",
-		},
-		{
-			name: "Reddit Media Saver",
-			url: "/reddit-media-saver",
-		},
-	];
-	const relatedTools = [
-		{
-			id: "akillitv-video-downloader",
-			name: "AkilliTv Video Downloader",
-			description:
-				"Download AkilliTv videos easily with our free online downloader.",
-			route: "/akillitv-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bandcamp-video-downloader",
-			name: "Bandcamp Video Downloader",
-			description: "The easiest way to download Bandcamp videos online.",
-			route: "/bandcamp-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-		{
-			id: "bilibili-video-downloader",
-			name: "Bilibili Video Downloader",
-			description: "Download Bilibili videos online with ease.",
-			route: "/bilibili-video-downloader",
-			extraSlugs: [],
-			popular: false,
-			category: "downloaders",
-		},
-	];
+        "id": "reddit-media-saver",
+        "name": "Reddit Media Saver",
+        "description": "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing.",
+        "route": "/reddit-media-saver",
+        "extraSlugs": [
+                "instagram-media-saver",
+                "reddit-media-saver",
+                "twitter-media-saver",
+                "reddit-video-downloader-hd"
+        ],
+        "popular": false,
+        "category": "downloaders"
+};
 
 	return (
 		<>
@@ -92,9 +50,8 @@ export default async function ToolPage() {
 					__html: JSON.stringify({
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
-						name: "Reddit Media Saver",
-						description:
-							"Free Reddit Media Saver online. Reddit Media Saver allows you to save social media content quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
+						name: tool.name,
+						description: tool.description,
 						url: "https://30tools.com/reddit-media-saver",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
@@ -103,12 +60,8 @@ export default async function ToolPage() {
 				}}
 			/>
 
-			<ToolLayout
-				tool={tool}
-				breadcrumbs={breadcrumbs}
-				relatedTools={relatedTools}
-			>
-				<DownloaderEngine placeholder="Enter URL to download..." />
+			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
+				<DownloaderEngine toolName="Reddit Media Saver" />
 			</ToolLayout>
 		</>
 	);
