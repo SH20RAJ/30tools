@@ -52,7 +52,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
 	if (!article) return notFound();
 
-	const featuredTools = article.featuredToolRoutes
+	const featuredTools = (article.featuredToolRoutes || [])
 		.map((route) => getToolByRoute(route))
 		.filter(Boolean);
 
@@ -86,16 +86,16 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 						{article.title}
 					</h1>
 					<p className="mt-4 text-sm text-muted-foreground">
-						Published {article.date} • {article.readTimeMinutes} min read
+						Published {article.date} • {article.readTimeMinutes || 5} min read
 					</p>
 					<p className="mt-8 text-lg leading-relaxed text-muted-foreground">
-						{article.intro}
+						{article.intro || article.description}
 					</p>
 
 					<div className="mt-10 space-y-10">
-						{article.sections.map((section) => {
-							const sectionTools = section.toolRoutes
-								.map((route) => getToolByRoute(route))
+						{(article.sections || []).map((section: any) => {
+							const sectionTools = (section.toolRoutes || [])
+								.map((route: string) => getToolByRoute(route))
 								.filter(Boolean);
 
 							return (
@@ -104,7 +104,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 										{section.heading}
 									</h2>
 									<div className="mt-4 space-y-4">
-										{section.paragraphs.map((paragraph) => (
+										{(section.paragraphs || []).map((paragraph: string) => (
 											<p key={paragraph} className="text-muted-foreground leading-relaxed">
 												{paragraph}
 											</p>
@@ -129,17 +129,19 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 						})}
 					</div>
 
-					<section className="mt-12 rounded-2xl border border-border/60 bg-card/50 p-6 md:p-8">
-						<h2 className="text-2xl font-semibold tracking-tight">FAQ</h2>
-						<div className="mt-6 space-y-5">
-							{article.faqs.map((faq) => (
-								<div key={faq.question}>
-									<h3 className="font-medium">{faq.question}</h3>
-									<p className="text-muted-foreground mt-2">{faq.answer}</p>
-								</div>
-							))}
-						</div>
-					</section>
+					{(article.faqs || []).length > 0 && (
+						<section className="mt-12 rounded-2xl border border-border/60 bg-card/50 p-6 md:p-8">
+							<h2 className="text-2xl font-semibold tracking-tight">FAQ</h2>
+							<div className="mt-6 space-y-5">
+								{article.faqs.map((faq: any) => (
+									<div key={faq.question}>
+										<h3 className="font-medium">{faq.question}</h3>
+										<p className="text-muted-foreground mt-2">{faq.answer}</p>
+									</div>
+								))}
+							</div>
+						</section>
+					)}
 
 					<section className="mt-12 rounded-2xl border border-border/60 bg-card/50 p-6 md:p-8">
 						<h2 className="text-2xl font-semibold tracking-tight">Featured Tools</h2>

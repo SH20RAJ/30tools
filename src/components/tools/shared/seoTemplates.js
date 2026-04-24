@@ -758,11 +758,11 @@ export const getDynamicSEOContent = (tool) => {
 };
 
 const DOWNLOADER_ARTICLE = `
-## Why use our ${name}?
+## Why use our \${name}?
 
-Our ${name} gives you a fast, reliable, and private way to save online content for offline access. Whether you're commuting, dealing with slow internet, or archiving media for later, this tool delivers a seamless, 100% free experience with no compromises on quality.
+Our \${name} gives you a fast, reliable, and private way to save online content for offline access. Whether you're commuting, dealing with slow internet, or archiving media for later, this tool delivers a seamless, 100% free experience with no compromises on quality.
 
-### Key Benefits of using ${name}:
+### Key Benefits of using \${name}:
 - **No Installation Required**: Run everything directly in your browser — no apps, no extensions, no setup.
 - **Privacy First**: We do not store your download history, personal data, or source URLs. Every session is ephemeral and secure.
 - **High-Speed Processing**: Our server engine resolves links and delivers files in seconds, even for long videos or high-resolution images.
@@ -770,20 +770,20 @@ Our ${name} gives you a fast, reliable, and private way to save online content f
 - **HD & 4K Quality**: Automatically detects the highest available resolution so you never settle for blurry output.
 - **No Limits**: Download as many files as you want. We don't cap your usage or throttle your speed.
 
-### Practical Use Cases for ${name}
+### Practical Use Cases for \${name}
 - **Content Archiving**: Save your favorite social media posts before they are deleted or hidden by algorithms.
 - **Offline Viewing**: Prepare for long flights or areas with poor connectivity by saving videos directly to your device.
 - **Creative Inspiration**: Keep a local library of high-quality media for your own design, editing, or research projects.
 - **Data Saving**: Avoid re-streaming the same content multiple times and save on your mobile data plan.
 
-### How ${name} Compares to Alternatives
+### How \${name} Compares to Alternatives
 Unlike many downloader sites that bombard you with intrusive pop-ups, require expensive monthly subscriptions for HD access, or inject annoying watermarks into your files, 30tools keeps the experience clean, honest, and fast. We believe that basic digital tools should be accessible to everyone without a paywall or data harvesting.
 
 ### Supported Platforms & Media Types
-${name} is part of a broad ecosystem that supports 30+ social media and content platforms. Whether you are looking for MP4 videos, MP3 audio, high-res thumbnails, or multi-slide carousels, our engine handles the heavy lifting of link resolution and file delivery. We continuously update our scrapers to ensure compatibility with the latest platform changes.
+\${name} is part of a broad ecosystem that supports 30+ social media and content platforms. Whether you are looking for MP4 videos, MP3 audio, high-res thumbnails, or multi-slide carousels, our engine handles the heavy lifting of link resolution and file delivery. We continuously update our scrapers to ensure compatibility with the latest platform changes.
 
 ### Secure, Private, and Anonymous
-Your security is our priority. We use industry-standard HTTPS encryption for all traffic. Because we don't require a login, your identity is never linked to the content you save. Use ${name} with the confidence that your digital footprint remains minimal.
+Your security is our priority. We use industry-standard HTTPS encryption for all traffic. Because we don't require a login, your identity is never linked to the content you save. Use \${name} with the confidence that your digital footprint remains minimal.
 `;
 
 const IMAGE_ARTICLE = `

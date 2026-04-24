@@ -173,3 +173,5 @@ export const DownloaderEngine = ({ placeholder, buttonText }) => {
 		</div>
 	);
 };
+
+export default DownloaderEngine;
