@@ -19,6 +19,8 @@ const STATIC_PAGES = new Set([
 	"/api-docs",
 	"/blog",
 	"/blog/",
+	"/sitemap.xml",
+	"/sitemap-index.xml",
 ]);
 
 function normalizePath(input) {
