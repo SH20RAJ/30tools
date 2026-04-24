@@ -102,9 +102,7 @@ export default function SEOToolsLayout({ children }) {
 					__html: JSON.stringify(jsonLdSchemas.collectionPage),
 				}}
 			/>
-			<AppleNavbar />
 			<main className="flex-1">{children}</main>
-			<AppleFooter categories={categories} />
 		</div>
 	);
 }
