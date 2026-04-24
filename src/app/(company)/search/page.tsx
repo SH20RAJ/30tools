@@ -1,5 +1,3 @@
-import { AppleNavbar } from "@/components/navigation/AppleNavbar";
-import { AppleFooter } from "@/components/footers/AppleFooter";
 import SearchContent from "./SearchContent";
 
 export const metadata = {
@@ -10,11 +8,9 @@ export const metadata = {
 export default function SearchPage() {
     return (
         <div className="min-h-screen bg-background flex flex-col">
-            <AppleNavbar />
             <main className="flex-1">
                 <SearchContent />
             </main>
-            <AppleFooter />
         </div>
     );
 }

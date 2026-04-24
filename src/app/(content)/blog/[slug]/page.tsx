@@ -1,7 +1,5 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AppleFooter } from "@/components/footers/AppleFooter";
-import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 import { blogs, getBlogArticleBySlug } from "@/constants/blog-data";
 import { getToolByRoute } from "@/lib/tools";
 
@@ -76,7 +74,6 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
 	return (
 		<div className="min-h-screen bg-background text-foreground flex flex-col">
-			<AppleNavbar />
 			<main className="flex-1">
 				<article className="container mx-auto max-w-4xl px-4 py-14 md:py-20">
 					<p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">
@@ -171,7 +168,6 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 					</section>
 				</article>
 			</main>
-			<AppleFooter />
 
 			<script
 				type="application/ld+json"

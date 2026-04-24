@@ -1,6 +1,4 @@
 import Link from "next/link";
-import { AppleFooter } from "@/components/footers/AppleFooter";
-import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 import type { Tool, Category } from "@/lib/tools";
 
 interface ToolCategoryGuidePageProps {
@@ -11,7 +9,6 @@ interface ToolCategoryGuidePageProps {
 export default function ToolCategoryGuidePage({ category, relatedCategories }: ToolCategoryGuidePageProps) {
 	return (
 		<div className="min-h-screen bg-background text-foreground flex flex-col">
-			<AppleNavbar />
 			<main className="flex-1">
 				<section className="border-b border-border/40 bg-gradient-to-b from-primary/5 to-transparent">
 					<div className="container mx-auto max-w-6xl px-4 py-14 md:py-20">
@@ -120,7 +117,6 @@ export default function ToolCategoryGuidePage({ category, relatedCategories }: T
 					</div>
 				</section>
 			</main>
-			<AppleFooter />
 		</div>
 	);
 }

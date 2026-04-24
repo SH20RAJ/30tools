@@ -1,5 +1,4 @@
-import { AppleFooter } from "@/components/footers/AppleFooter";
-import { AppleNavbar } from "@/components/navigation/AppleNavbar";
+
 
 export const metadata = {
 	title: "Free SEO Tools Online - No Signup | 30tools",
