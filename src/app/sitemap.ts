@@ -52,13 +52,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		};
 	});
 
-	// 4. Blog & Content
-	const blogPages: MetadataRoute.Sitemap = allTools.filter(t => t.category === "blog" || t.category === "content").map((page) => ({
-		url: `${BASE_URL}${page.route}`,
+	// 4. Tool Guides Index
+	const toolGuidesIndex: MetadataRoute.Sitemap = [
+		{ url: `${BASE_URL}/tool-guides`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.85 },
+	];
+
+	// 5. Tool Guide Category Pages
+	const toolGuideCategoryPages: MetadataRoute.Sitemap = allCategories.map((category) => ({
+		url: `${BASE_URL}/tool-guides/${category.slug}`,
 		lastModified: currentDate,
 		changeFrequency: "weekly",
 		priority: 0.8,
 	}));
 
-	return [...staticPages, ...categoryPages, ...toolPages, ...blogPages];
+	// 6. Blog & Content
+	const blogPages: MetadataRoute.Sitemap = allTools
+		.filter(t => t.category === "blog" || t.category === "content")
+		.map((page) => ({
+			url: `${BASE_URL}${page.route}`,
+			lastModified: currentDate,
+			changeFrequency: "weekly",
+			priority: 0.8,
+		}));
+
+	try {
+		return [
+			...staticPages, 
+			...categoryPages, 
+			...toolPages, 
+			...toolGuidesIndex, 
+			...toolGuideCategoryPages, 
+			...blogPages
+		];
+	} catch (error) {
+		console.error("Sitemap generation error:", error);
+		return [...staticPages, ...categoryPages]; // Fallback to safe core pages
+	}
 }
