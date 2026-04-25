@@ -67,6 +67,8 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 			"image/tiff": { ext: ".tiff", name: "TIFF", icon: "📋" },
 			"image/heic": { ext: ".heic", name: "HEIC", icon: "📱" },
 			"image/heif": { ext: ".heif", name: "HEIF", icon: "📱" },
+			"image/x-icon": { ext: ".ico", name: "ICO", icon: "🔲" },
+			"image/vnd.microsoft.icon": { ext: ".ico", name: "ICO", icon: "🔲" },
 		},
 		output: {
 			jpeg: {
@@ -125,10 +127,10 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 
 	const processFiles = (fileList) => {
 		const validFiles = fileList.filter((file) => {
-			const isValidFormat = Object.keys(supportedFormats.input).some(
-				(format) =>
-					file.type === format ||
-					file.name.toLowerCase().endsWith(format.split("/")[1]),
+			const isValidFormat = Object.entries(supportedFormats.input).some(
+				([mime, info]) =>
+					file.type === mime ||
+					info.ext.split("/").some((ext) => file.name.toLowerCase().endsWith(ext)),
 			);
 			return isValidFormat && file.size <= 50 * 1024 * 1024; // 50MB limit
 		});
