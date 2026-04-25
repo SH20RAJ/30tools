@@ -55,6 +55,18 @@ const YouTubeChannelIDFinderTool = dynamic(
 	() => import("@/components/tools/youtube/YouTubeChannelIDFinderTool.jsx"),
 	{ ssr: false },
 );
+const DownloaderEngine = dynamic(
+	() => import("@/components/tools/downloaders/DownloaderEngine.jsx"),
+	{ ssr: false },
+);
+const WordToNumberConverter = dynamic(
+	() => import("@/components/tools/converter/TextToNumberConverter.jsx"),
+	{ ssr: false },
+);
+const MarkdownToText = dynamic(
+	() => import("@/components/tools/text/MarkdownToText.jsx"),
+	{ ssr: false },
+);
 
 const JSON_FORMATTER_IDS = new Set(["json-editor", "json-viewer", "json-validator"]);
 
@@ -864,10 +876,14 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "text-to-slug-converter") return <SlugMount />;
 	if (toolId === "text-to-hashtags-converter") return <TagsFromText prefix="#" />;
 	if (toolId === "text-to-tags-converter") return <TagsFromText prefix="" />;
-	if (toolId === "base64-encode" || toolId === "base64-decode") return <Base64Tool />;
+	if (toolId === "base64-encode" || toolId === "base64-decode" || toolId === "base64-tool") return <Base64Tool />;
 	if (toolId === "md5-generator") return <HashGeneratorTool />;
-	if (toolId === "qr-code-generator") return <QrGeneratorTool />;
-	if (toolId === "youtube-channel-id-extractor") return <YouTubeChannelIDFinderTool />;
+	if (toolId === "qr-code-generator" || toolId === "qr-code-decoder") return <QrGeneratorTool />;
+	if (toolId === "youtube-channel-id-extractor" || toolId === "youtube-channel-id-finder") return <YouTubeChannelIDFinderTool />;
+	if (toolId === "word-to-number-converter") return <WordToNumberConverter />;
+	if (toolId === "markdown-to-text") return <MarkdownToText />;
+
+	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 
 	if (toolId === "number-to-roman-numerals") return <RomanMount toRoman={true} />;
 	if (toolId === "roman-numerals-to-number") return <RomanMount toRoman={false} />;
