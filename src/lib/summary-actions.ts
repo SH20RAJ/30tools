@@ -259,7 +259,8 @@ Format: ["keyword1", "keyword2", "keyword3", ...]`;
 
 		// Try to parse JSON from the response
 		try {
-			const keywordsMatch = result.content.match(/\[([^\]]+)\]/);
+			const content = result.content || "";
+			const keywordsMatch = content.match(/\[([^\]]+)\]/);
 			if (keywordsMatch) {
 				const keywords = JSON.parse(keywordsMatch[0]);
 				return { success: true, keywords: keywords };
@@ -272,7 +273,7 @@ Format: ["keyword1", "keyword2", "keyword3", ...]`;
 		}
 
 		// Fallback: extract keywords manually
-		const keywords = result.content
+		const keywords = (result.content || "")
 			.split("\n")
 			.map((line) =>
 				line

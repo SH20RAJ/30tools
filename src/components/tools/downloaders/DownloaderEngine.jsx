@@ -18,8 +18,9 @@ import { Input } from "@/components/ui/input";
  * @param {Object} props
  * @param {string} [props.placeholder]
  * @param {string} [props.buttonText]
+ * @param {string} [props.toolName]
  */
-export const DownloaderEngine = ({ placeholder, buttonText }) => {
+export const DownloaderEngine = ({ placeholder, buttonText, toolName }) => {
 	const [url, setUrl] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [videoData, setVideoData] = useState(null);

@@ -70,7 +70,7 @@ export default function GuitarTunerTool() {
 	const audioCtxRef = useRef<AudioContext | null>(null);
 	const analyserRef = useRef<AnalyserNode | null>(null);
 	const streamRef = useRef<MediaStream | null>(null);
-	const requestRef = useRef<number>();
+	const requestRef = useRef<number | null>(null);
 
 	useEffect(() => {
 		return () => {

@@ -23,6 +23,7 @@ export interface Tool {
 	popular?: boolean;
 	seoTitle?: string;
 	seoDescription?: string;
+	categoryKey?: string;
 	categoryName?: string;
 	categorySlug?: string;
 	features?: string[];

@@ -1,4 +1,23 @@
-export const blogs = [
+export interface BlogArticle {
+	slug: string;
+	title: string;
+	description: string;
+	date: string;
+	featuredToolRoutes?: string[];
+	readTimeMinutes?: number;
+	intro?: string;
+	sections?: {
+		heading: string;
+		paragraphs: string[];
+		toolRoutes?: string[];
+	}[];
+	faqs?: {
+		question: string;
+		answer: string;
+	}[];
+}
+
+export const blogs: BlogArticle[] = [
 	{
 		slug: "how-to-download-tiktok-videos-without-watermark",
 		title: "How to Download TikTok Videos Without Watermark (2026 Guide)",

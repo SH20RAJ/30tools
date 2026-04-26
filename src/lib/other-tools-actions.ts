@@ -29,7 +29,7 @@ const mainCategories = [
 	"youtube",
 ];
 
-const typedCategories = toolsData.categories as Record<string, Category>;
+const typedCategories = toolsData.categories as unknown as Record<string, Category>;
 
 export async function getOtherTools() {
 	try {

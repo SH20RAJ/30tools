@@ -24,6 +24,9 @@ const iconMap = {
 	seo: <Search className="h-6 w-6" />,
 };
 
+/**
+ * @param {{ categories: any[], lang: string }} props
+ */
 export function ToolDirectory({ categories = [], lang = "en" }) {
 	return (
 		<div className="space-y-32">

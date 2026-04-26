@@ -110,7 +110,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
 									{sectionTools.length > 0 && (
 										<div className="mt-5 flex flex-wrap gap-3">
-											{sectionTools.map((tool) => (
+											{sectionTools.map((tool: any) => (
 												<Link
 													key={tool!.route}
 													href={tool!.route}
@@ -130,7 +130,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 						<section className="mt-12 rounded-2xl border border-border/60 bg-card/50 p-6 md:p-8">
 							<h2 className="text-2xl font-semibold tracking-tight">FAQ</h2>
 							<div className="mt-6 space-y-5">
-								{article.faqs.map((faq: any) => (
+								{(article.faqs || []).map((faq: any) => (
 									<div key={faq.question}>
 										<h3 className="font-medium">{faq.question}</h3>
 										<p className="text-muted-foreground mt-2">{faq.answer}</p>
@@ -143,7 +143,7 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 					<section className="mt-12 rounded-2xl border border-border/60 bg-card/50 p-6 md:p-8">
 						<h2 className="text-2xl font-semibold tracking-tight">Featured Tools</h2>
 						<div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
-							{featuredTools.map((tool) => (
+							{featuredTools.map((tool: any) => (
 								<Link
 									key={tool!.route}
 									href={tool!.route}

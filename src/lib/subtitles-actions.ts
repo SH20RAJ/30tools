@@ -14,7 +14,7 @@ export async function extractYouTubeVideoId(url: string): Promise<YouTubeVideoId
 		console.log("🔍 Extracting video ID from URL:", url);
 
 		if (!url) {
-			return { error: "Please provide a YouTube URL" };
+			return { success: false, error: "Please provide a YouTube URL" };
 		}
 
 		// Remove any whitespace
@@ -124,11 +124,9 @@ export interface ProcessedSubtitles {
 	metadata: any;
 }
 
-export interface SubtitleResult {
-	success?: boolean;
-	data?: ProcessedSubtitles;
-	error?: string;
-}
+export type SubtitleResult = 
+	| { success: true; data: ProcessedSubtitles; error?: never }
+	| { success: false; error: string; data?: never };
 
 // Server action to download subtitles using multiple methods
 export async function downloadYouTubeSubtitles(url: string, language: string = "en"): Promise<SubtitleResult> {
@@ -137,13 +135,13 @@ export async function downloadYouTubeSubtitles(url: string, language: string = "
 		console.log("🌐 Requested language:", language);
 
 		if (!url) {
-			return { error: "Please provide a YouTube URL" };
+			return { success: false, error: "Please provide a YouTube URL" };
 		}
 
 		// Extract video ID
 		const videoIdResult = await extractYouTubeVideoId(url);
 		if (!videoIdResult.success || !videoIdResult.videoId) {
-			return { error: videoIdResult.error };
+			return { success: false, error: videoIdResult.error || "Failed to extract video ID" };
 		}
 
 		const videoId = videoIdResult.videoId;
@@ -195,6 +193,7 @@ export async function downloadYouTubeSubtitles(url: string, language: string = "
 		if (!subtitleData?.segments || subtitleData.segments.length === 0) {
 			console.log("❌ No subtitles found from any source");
 			return {
+				success: false,
 				error:
 					"No subtitles found for this video. The video may not have captions or they may not be available in the selected language.",
 			};
@@ -220,6 +219,7 @@ export async function downloadYouTubeSubtitles(url: string, language: string = "
 	} catch (error) {
 		console.error("❌ Error downloading subtitles:", error);
 		return {
+			success: false,
 			error:
 				"Failed to download subtitles. Please check the video URL and try again.",
 		};

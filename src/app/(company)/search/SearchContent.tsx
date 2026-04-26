@@ -13,10 +13,10 @@ function SearchResults() {
 	const initialQuery = searchParams.get("q") || "";
 	
 	const [query, setQuery] = useState(initialQuery);
-	const [results, setResults] = useState([]);
+	const [results, setResults] = useState<any[]>([]);
 	const [loading, setLoading] = useState(true);
 	const [activeCategory, setActiveCategory] = useState("all");
-	const [categories, setCategories] = useState([]);
+	const [categories, setCategories] = useState<string[]>([]);
 
 	useEffect(() => {
 		const fetchResults = async () => {

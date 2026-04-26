@@ -23,6 +23,9 @@ const languages = [
 	{ name: "Polski", code: "pl" },
 ];
 
+/**
+ * @param {{ categories: any[] }} props
+ */
 export function AppleFooter({ categories = [] }) {
 	const footerNav = [
 		{ name: "About", href: getRouteById("about") },
