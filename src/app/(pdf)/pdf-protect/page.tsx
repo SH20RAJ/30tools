@@ -1,17 +1,20 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
+import { getToolById } from "@/lib/tools";
+import { notFound } from "next/navigation";
 
 
 export const metadata = {
 	title: "Free PDF Password Protect Online – Fast & No Signup | 30tools",
-	description: "Add password protection to PDF files 100% free, fast, and no signup required.",
-	keywords: "pdf password protect, free pdf password protect, online pdf password protect, no signup, 30tools",
+	description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
+	keywords: "pdf protect, password protect pdf, encrypt pdf, secure pdf, online pdf protection, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pdf-protect",
 	},
 	openGraph: {
 		title: "Free PDF Password Protect Online – Fast & No Signup | 30tools",
-		description: "Add password protection to PDF files 100% free, fast, and no signup required.",
+		description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
 		url: "https://30tools.com/pdf-protect",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,67 +23,24 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free PDF Password Protect Online – Fast & No Signup | 30tools",
-		description: "Add password protection to PDF files 100% free, fast, and no signup required.",
+		description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "pdf-protect",
-        "name": "PDF Password Protect",
-        "description": "Add password protection to PDF files",
-        "route": "/pdf-protect",
-        "extraSlugs": [
-                "check-password-security",
-                "check-pwned-password",
-                "configurable-password-tool",
-                "create-strong-password",
-                "custom-password-maker",
-                "data-breach-password-search",
-                "generate-secure-password",
-                "have-i-been-pwned-password",
-                "lock-pdf-from-editing-free",
-                "password-breach-checker",
-                "password-generator2",
-                "password-leak-check",
-                "password-protect-pdf",
-                "password-protect-pdf-online",
-                "password-safety-checker",
-                "password-strength-checker",
-                "password-tester-online",
-                "pdf-password-remover",
-                "remove-pdf-password",
-                "secure-password-creator",
-                "test-password-strength",
-                "verify-password-safety"
-        ],
-        "popular": false,
-        "category": "pdf"
-};
+	const tool = getToolById("pdf-protect");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
 		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/pdf-protect",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "pdf" }}>
+			<ToolSEOLayout toolId={tool.id}>
 				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
+			</ToolSEOLayout>
 		</>
 	);
 }

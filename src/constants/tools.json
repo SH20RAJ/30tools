@@ -1185,8 +1185,29 @@
                 {
                     "id": "pdf-protect",
                     "name": "PDF Password Protect",
-                    "description": "Add password protection to PDF files",
+                    "description": "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
                     "route": "/pdf-protect",
+                    "features": [
+                        "Strong 128-bit AES encryption for PDF security",
+                        "Set custom passwords to restrict opening and viewing",
+                        "100% private: all encryption happens in your browser",
+                        "No file size limits or registration required",
+                        "Works on all devices and operating systems"
+                    ],
+                    "howTo": {
+                        "name": "How to password protect a PDF",
+                        "steps": [
+                            { "name": "Upload PDF", "text": "Select the PDF document you want to secure." },
+                            { "name": "Set Password", "text": "Enter a strong, unique password for your document." },
+                            { "name": "Encrypt", "text": "Click 'Protect PDF' to encrypt your file instantly." },
+                            { "name": "Download", "text": "Save the password-protected PDF to your computer." }
+                        ]
+                    },
+                    "faqs": [
+                        { "question": "How secure is the PDF protection?", "answer": "We use industry-standard encryption methods to secure your PDF files. However, always remember to use a strong, unique password." },
+                        { "question": "Can I recover a forgotten PDF password?", "answer": "No. For security reasons, we do not store your passwords or your files. If you lose the password, you won't be able to open the file." },
+                        { "question": "Is it safe to upload my bank statements here?", "answer": "Our tool is uniquely safe because it doesn't upload your file at all. The encryption is done by your own browser locally." }
+                    ],
                     "extraSlugs": [
                         "check-password-security",
                         "check-pwned-password",
