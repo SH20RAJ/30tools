@@ -45,6 +45,22 @@ const ImageConverterTool = dynamic(
 	() => import("@/components/tools/image/ImageConverterTool.jsx"),
 	{ ssr: false },
 );
+const ImageCompressorTool = dynamic(
+	() => import("@/components/tools/image/ImageCompressorTool.jsx"),
+	{ ssr: false },
+);
+const FaviconGeneratorTool = dynamic(
+	() => import("@/components/tools/image/FaviconGeneratorTool.jsx"),
+	{ ssr: false },
+);
+const PDFEditorTool = dynamic(
+	() => import("@/components/tools/pdf/PDFEditorTool.jsx"),
+	{ ssr: false },
+);
+const BackgroundRemoverTool = dynamic(() => import("@/components/tools/image/BackgroundRemoverTool.jsx"), { ssr: false });
+const ExifReaderTool = dynamic(() => import("@/components/tools/image/ExifReaderTool.jsx"), { ssr: false });
+const LogoGeneratorTool = dynamic(() => import("@/components/tools/image/LogoGeneratorTool.jsx"), { ssr: false });
+const PhotoEnhancerTool = dynamic(() => import("@/components/tools/image/PhotoEnhancerTool.jsx"), { ssr: false });
 const ImageResizerTool = dynamic(() => import("@/components/tools/image/ImageResizerTool.jsx"), {
 	ssr: false,
 });
@@ -73,6 +89,26 @@ const ImageToPDF = dynamic(
 );
 const PDFToImage = dynamic(
 	() => import("@/components/tools/pdf/PDFToImage.tsx"),
+	{ ssr: false },
+);
+const PDFProtect = dynamic(
+	() => import("@/components/tools/pdf/PDFProtect.tsx"),
+	{ ssr: false },
+);
+const PDFUnlock = dynamic(
+	() => import("@/components/tools/pdf/PDFUnlock.tsx"),
+	{ ssr: false },
+);
+const PDFMerger = dynamic(
+	() => import("@/components/tools/pdf/PDFMerger.tsx"),
+	{ ssr: false },
+);
+const PDFSplitter = dynamic(
+	() => import("@/components/tools/pdf/PDFSplitter.tsx"),
+	{ ssr: false },
+);
+const ImageToBase64Tool = dynamic(
+	() => import("@/components/tools/image/ImageToBase64Tool.tsx"),
 	{ ssr: false },
 );
 const Base64ToImageTool = dynamic(
@@ -122,7 +158,7 @@ const SERIAL_IDS = new Set([
 	"json-to-xml-converter",
 ]);
 
-const IMAGE_RESIZER_IDS = new Set(["rotate-image", "flip-image", "image-cropper", "image-enlarger"]);
+const IMAGE_RESIZER_IDS = new Set(["rotate-image", "flip-image", "image-cropper", "image-enlarger", "image-resizer"]);
 
 function titleCaseId(id: string) {
 	return id
@@ -866,6 +902,14 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 
 	const imgFmt = IMAGE_FORMAT_TOOL_MAP[toolId as keyof typeof IMAGE_FORMAT_TOOL_MAP];
 	if (imgFmt) return <ImageConverterTool defaultOutputFormat={imgFmt} />;
+	if (toolId === "image-converter") return <ImageConverterTool />;
+	if (toolId === "image-compressor") return <ImageCompressorTool />;
+	if (toolId === "favicon-generator") return <FaviconGeneratorTool />;
+	if (toolId === "background-remover") return <BackgroundRemoverTool />;
+	if (toolId === "exif-reader") return <ExifReaderTool />;
+	if (toolId === "logo-generator") return <LogoGeneratorTool />;
+	if (toolId === "photo-enhancer") return <PhotoEnhancerTool />;
+	if (toolId === "pdf-editor") return <PDFEditorTool />;
 
 	if (IMAGE_RESIZER_IDS.has(toolId)) return <ImageResizerTool />;
 
@@ -890,6 +934,7 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "text-to-tags-converter") return <TagsFromText prefix="" />;
 	if (toolId === "base64-encode" || toolId === "base64-decode" || toolId === "base64-tool") return <Base64Tool />;
 	if (toolId === "base64-to-image-converter") return <Base64ToImageTool />;
+	if (toolId === "image-to-base64-converter") return <ImageToBase64Tool />;
 	if (toolId === "md5-generator") return <HashGeneratorTool />;
 	if (toolId === "qr-code-generator" || toolId === "qr-code-decoder") return <QrGeneratorTool />;
 	if (toolId === "youtube-channel-id-extractor" || toolId === "youtube-channel-id-finder") return <YouTubeChannelIDFinderTool />;
@@ -897,6 +942,10 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "markdown-to-text") return <MarkdownToText />;
 	if (toolId === "image-to-pdf") return <ImageToPDF />;
 	if (toolId === "pdf-to-image") return <PDFToImage />;
+	if (toolId === "pdf-protect") return <PDFProtect />;
+	if (toolId === "pdf-unlocker") return <PDFUnlock />;
+	if (toolId === "pdf-merger") return <PDFMerger />;
+	if (toolId === "pdf-splitter") return <PDFSplitter />;
 
 	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 

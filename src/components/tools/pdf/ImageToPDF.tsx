@@ -1,7 +1,6 @@
 "use client";
 
-import { useState, useCallback, useRef } from "react";
-import { PDFDocument, PageSizes } from "pdf-lib";
+import { useState, useCallback, useRef, useEffect } from "react";
 import { 
     Upload, 
     FileText, 
@@ -21,6 +20,12 @@ import { toast } from "sonner";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Label } from "@/components/ui/label";
 
+declare global {
+    interface Window {
+        PDFLib: any;
+    }
+}
+
 interface ImageFile {
     id: string;
     file: File;
@@ -28,12 +33,31 @@ interface ImageFile {
 }
 
 export default function ImageToPDF() {
+    const [pdflib, setPdflib] = useState<any>(null);
     const [images, setImages] = useState<ImageFile[]>([]);
     const [isProcessing, setIsProcessing] = useState(false);
     const [pageSize, setPageSize] = useState<"A4" | "AUTO">("AUTO");
     const [orientation, setOrientation] = useState<"PORTRAIT" | "LANDSCAPE">("PORTRAIT");
     const [margin, setMargin] = useState<"NONE" | "SMALL" | "LARGE">("NONE");
     const fileInputRef = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        const loadPdfLib = async () => {
+            if (window.PDFLib) {
+                setPdflib(window.PDFLib);
+                return;
+            }
+
+            const script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
+            script.async = true;
+            script.onload = () => {
+                setPdflib(window.PDFLib);
+            };
+            document.head.appendChild(script);
+        };
+        loadPdfLib();
+    }, []);
 
     const onFileChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
         if (e.target.files) {
@@ -50,7 +74,6 @@ export default function ImageToPDF() {
     const removeImage = (id: string) => {
         setImages(prev => {
             const filtered = prev.filter(img => img.id !== id);
-            // Revoke the URL to avoid memory leaks
             const removed = prev.find(img => img.id === id);
             if (removed) URL.revokeObjectURL(removed.preview);
             return filtered;
@@ -67,6 +90,7 @@ export default function ImageToPDF() {
     };
 
     const generatePDF = async () => {
+        if (!pdflib) return;
         if (images.length === 0) {
             toast.error("Please add at least one image");
             return;
@@ -74,6 +98,7 @@ export default function ImageToPDF() {
 
         setIsProcessing(true);
         try {
+            const { PDFDocument, PageSizes } = pdflib;
             const pdfDoc = await PDFDocument.create();
 
             for (const img of images) {
@@ -85,8 +110,6 @@ export default function ImageToPDF() {
                 } else if (img.file.type === "image/png") {
                     embeddedImage = await pdfDoc.embedPng(imageBytes);
                 } else {
-                    // Fallback for other formats - might need a converter but pdf-lib prefers jpg/png
-                    // We'll skip or notify for now. WebP is not directly supported by pdf-lib yet.
                     toast.warning(`Format ${img.file.type} might not be supported. Skipping ${img.file.name}`);
                     continue;
                 }
@@ -103,7 +126,6 @@ export default function ImageToPDF() {
 
                 const page = pdfDoc.addPage([pageWidth, pageHeight]);
                 
-                // Calculate scaling and position based on margins
                 const m = margin === "NONE" ? 0 : margin === "SMALL" ? 20 : 50;
                 const availableWidth = pageWidth - (m * 2);
                 const availableHeight = pageHeight - (m * 2);
@@ -153,6 +175,11 @@ export default function ImageToPDF() {
                         <p className="text-sm text-muted-foreground">Transform your images into professional PDF documents</p>
                     </div>
                 </div>
+                {!pdflib && (
+                    <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <Loader2 className="h-3 w-3 animate-spin" /> Loading PDF Library...
+                    </div>
+                )}
                 <div className="flex items-center gap-2">
                     <Button 
                         variant="outline" 
@@ -162,7 +189,7 @@ export default function ImageToPDF() {
                         <Plus className="mr-2 h-4 w-4" /> Add Images
                     </Button>
                     <Button 
-                        disabled={images.length === 0 || isProcessing}
+                        disabled={images.length === 0 || isProcessing || !pdflib}
                         onClick={generatePDF}
                         className="rounded-none bg-primary hover:bg-primary/90"
                     >
@@ -318,7 +345,7 @@ export default function ImageToPDF() {
                                 </div>
                                 <Button 
                                     className="w-full rounded-none h-12 font-bold uppercase tracking-widest"
-                                    disabled={images.length === 0 || isProcessing}
+                                    disabled={images.length === 0 || isProcessing || !pdflib}
                                     onClick={generatePDF}
                                 >
                                     {isProcessing ? "Processing..." : "Generate PDF"}
