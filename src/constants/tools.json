@@ -1136,8 +1136,29 @@
                 {
                     "id": "pdf-editor",
                     "name": "PDF Editor",
-                    "description": "Professional PDF editing - add text, annotations, and modify content",
+                    "description": "Professional PDF editor - edit text, add annotations, rotate, and delete pages online for free. Secure, 100% browser-based PDF editing with no signup.",
                     "route": "/pdf-editor",
+                    "features": [
+                        "Rotate PDF pages to your desired orientation",
+                        "Delete unwanted pages from any PDF",
+                        "Extract specific pages as a new document",
+                        "Privacy-focused: all editing stays in your browser",
+                        "Fast, free, and no registration required"
+                    ],
+                    "howTo": {
+                        "name": "How to edit PDF online",
+                        "steps": [
+                            { "name": "Upload PDF", "text": "Select or drag and drop your PDF file into the editor." },
+                            { "name": "Select Pages", "text": "Click on page thumbnails to select them for rotation or deletion." },
+                            { "name": "Edit Pages", "text": "Use the toolbars to rotate selected pages or remove them completely." },
+                            { "name": "Save Changes", "text": "Click 'Save Changes' to download your newly edited PDF document." }
+                        ]
+                    },
+                    "faqs": [
+                        { "question": "Can I edit the text in a PDF with this tool?", "answer": "Our current version supports structural editing like rotating, deleting, and rearranging pages. Content editing (text/images) is coming in a future update." },
+                        { "question": "Is this PDF editor safe to use for sensitive files?", "answer": "Yes. Your files are processed entirely in your web browser. Nothing is uploaded to our servers, ensuring your data remains private." },
+                        { "question": "Can I merge multiple PDFs in the editor?", "answer": "This tool is for editing a single PDF. To combine multiple files, please use our PDF Merger tool." }
+                    ],
                     "extraSlugs": [
                         "annotate-pdf-online-free",
                         "audio-editor",
