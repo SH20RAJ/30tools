@@ -181,6 +181,26 @@
                     "name": "Base64 to Image Converter",
                     "description": "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
                     "route": "/base64-to-image-converter",
+                    "features": [
+                        "Instant decoding of Base64 strings to images",
+                        "Supports PNG, JPG, WEBP, and GIF formats",
+                        "Live preview as you paste or type",
+                        "One-click download of the decoded image",
+                        "Secure 100% local browser-based processing"
+                    ],
+                    "howTo": {
+                        "name": "How to convert Base64 to image",
+                        "steps": [
+                            { "name": "Paste Base64", "text": "Paste your Base64 string into the input text area. It can be a raw string or a full data URI." },
+                            { "name": "Preview Image", "text": "The tool will automatically decode the string and show an instant preview of the image." },
+                            { "name": "Download", "text": "Click the 'Download Image' button to save the decoded file to your device." }
+                        ]
+                    },
+                    "faqs": [
+                        { "question": "What image formats can I decode from Base64?", "answer": "You can decode common formats like PNG, JPG, WEBP, and GIF. The tool automatically detects the format from the data." },
+                        { "question": "Is it safe to decode sensitive images here?", "answer": "Yes. The decoding happens entirely in your browser using JavaScript. No data is sent to our servers, making it 100% private." },
+                        { "question": "Does it support data URI schemes?", "answer": "Yes, it supports both raw Base64 strings and those prefixed with 'data:image/...;base64,'." }
+                    ],
                     "extraSlugs": [
                         "add-text-to-image",
                         "all-in-one-unit-converter",
@@ -406,8 +426,29 @@
                 {
                     "id": "image-compressor",
                     "name": "Image Compressor",
-                    "description": "Compress images to reduce file size while maintaining quality",
+                    "description": "Compress images online for free without losing quality. Reduce file size of JPG, PNG, and WebP images instantly. Secure, browser-based processing.",
                     "route": "/image-compressor",
+                    "features": [
+                        "Intelligent compression for JPEG, PNG, and WebP",
+                        "Adjustable quality slider for precise control",
+                        "Batch compression for multiple images",
+                        "Live preview of file size savings",
+                        "100% private, local processing in your browser"
+                    ],
+                    "howTo": {
+                        "name": "How to compress images",
+                        "steps": [
+                            { "name": "Upload Images", "text": "Select or drag and drop your images into the compression area." },
+                            { "name": "Adjust Quality", "text": "Use the target quality slider to balance between file size and image clarity." },
+                            { "name": "Optimize", "text": "Click 'Optimise' to start the compression process for all images." },
+                            { "name": "Download", "text": "Save the compressed images individually or all at once." }
+                        ]
+                    },
+                    "faqs": [
+                        { "question": "Does compressing an image reduce its quality?", "answer": "Yes, but our tool uses optimized algorithms to minimize quality loss while significantly reducing file size. You can control this using the quality slider." },
+                        { "question": "Is there a limit to how many images I can compress?", "answer": "No, you can compress as many images as you need, and even do them in batches." },
+                        { "question": "Are my photos uploaded to your server?", "answer": "No. All compression is handled locally in your browser using JavaScript. Your photos never leave your computer." }
+                    ],
                     "extraSlugs": [
                         "audio-compressor",
                         "compress-image-to-50kb",
@@ -990,8 +1031,30 @@
                 {
                     "id": "image-to-pdf",
                     "name": "Image to PDF",
-                    "description": "Convert multiple images to a single PDF document",
+                    "description": "Convert multiple images to a single PDF document 100% free. Supports JPG, PNG, WEBP and more. Privacy-first local processing with no signup required.",
                     "route": "/image-to-pdf",
+                    "features": [
+                        "Batch convert multiple images to one PDF",
+                        "Supports JPG, PNG, WEBP, and more",
+                        "Drag and drop to reorder pages",
+                        "100% browser-based processing for privacy",
+                        "No file size limits or registration required"
+                    ],
+                    "howTo": {
+                        "name": "How to convert images to PDF",
+                        "steps": [
+                            { "name": "Upload Images", "text": "Click 'Upload' or drag and drop your images into the tool." },
+                            { "name": "Reorder Pages", "text": "Drag and drop the uploaded images to set your preferred page order." },
+                            { "name": "Generate PDF", "text": "Click 'Generate PDF' to combine your images into a single document." },
+                            { "name": "Download", "text": "Save your newly created PDF file to your device instantly." }
+                        ]
+                    },
+                    "faqs": [
+                        { "question": "Is this image to PDF converter free?", "answer": "Yes, our tool is 100% free with no hidden costs, limits, or signup required." },
+                        { "question": "Are my images secure?", "answer": "Absolutely. All processing happens locally in your web browser. Your images are never uploaded to our servers, ensuring total privacy." },
+                        { "question": "What image formats are supported?", "answer": "We support all common image formats including JPG, PNG, WEBP, and more." },
+                        { "question": "Can I reorder the images before generating the PDF?", "answer": "Yes, you can easily drag and drop the selected images to reorder them before clicking generate." }
+                    ],
                     "extraSlugs": [
                         "add-page-numbers-to-pdf-online",
                         "add-password-to-pdf",
@@ -1151,8 +1214,30 @@
                 {
                     "id": "word-to-pdf",
                     "name": "Word to PDF",
-                    "description": "Convert Word documents to PDF format",
+                    "description": "Convert Word documents (.docx) to high-quality PDF files online for free. Privacy-first, browser-based conversion with no signup required.",
                     "route": "/word-to-pdf",
+                    "features": [
+                        "Convert .docx to professional PDF instantly",
+                        "High-resolution rendering for sharp text",
+                        "Privacy-focused local browser processing",
+                        "No file size limits or registration needed",
+                        "Preserves formatting, tables, and images"
+                    ],
+                    "howTo": {
+                        "name": "How to convert Word to PDF",
+                        "steps": [
+                            { "name": "Upload Word File", "text": "Select or drag and drop your .docx Word document." },
+                            { "name": "Preview Content", "text": "Our tool will show you a live preview of the document before conversion." },
+                            { "name": "Convert to PDF", "text": "Click the 'Convert to PDF' button to start the process." },
+                            { "name": "Download PDF", "text": "Once finished, download your new PDF file to your device." }
+                        ]
+                    },
+                    "faqs": [
+                        { "question": "Can I convert .doc files to PDF?", "answer": "Currently, we support the modern .docx format. For older .doc files, please save them as .docx in Word first before converting." },
+                        { "question": "Is the Word to PDF converter free?", "answer": "Yes, it is completely free to use with no hidden fees or daily limits." },
+                        { "question": "Will my document formatting be preserved?", "answer": "Yes, our converter is designed to preserve fonts, tables, and layout as closely as possible." },
+                        { "question": "Is it safe to convert private documents?", "answer": "Absolutely. The conversion is performed entirely within your web browser. Your document is never uploaded to our servers." }
+                    ],
                     "extraSlugs": [
                         "convert-docx-to-pdf-free-no-limit",
                         "word-to-pdf-converter-online"

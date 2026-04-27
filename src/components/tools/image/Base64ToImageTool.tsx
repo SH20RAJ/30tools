@@ -1,139 +1,215 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import { useState, useCallback } from "react";
+import { 
+    Upload, 
+    Download, 
+    Image as ImageIcon, 
+    FileText,
+    Loader2,
+    Settings2,
+    Code,
+    CheckCircle2,
+    Monitor,
+    Zap,
+    Trash2
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Textarea } from "@/components/ui/textarea";
-import { Copy, Download, Image as ImageIcon, Trash2 } from "lucide-react";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
 import { toast } from "sonner";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function Base64ToImageTool() {
-  const [base64String, setBase64String] = useState("");
-
-  const imageSrc = useMemo(() => {
-    const trimmed = base64String.trim();
-    if (!trimmed) return null;
+    const [base64, setBase64] = useState("");
+    const [preview, setPreview] = useState<string | null>(null);
+    const [isProcessing, setIsProcessing] = useState(false);
     
-    // Check if it already has the data URI scheme
-    if (trimmed.startsWith("data:image/")) {
-      return trimmed;
-    }
+    const handleDecode = () => {
+        if (!base64.trim()) return;
+        
+        setIsProcessing(true);
+        try {
+            let src = base64.trim();
+            // Handle raw base64 by prepending data uri prefix if missing
+            if (!src.startsWith("data:image/")) {
+                src = `data:image/png;base64,${src}`;
+            }
+            
+            // Validate by creating an image object
+            const img = new Image();
+            img.onload = () => {
+                setPreview(src);
+                setIsProcessing(false);
+                toast.success("Image decoded successfully");
+            };
+            img.onerror = () => {
+                setIsProcessing(false);
+                toast.error("Invalid Base64 string or image format");
+                setPreview(null);
+            };
+            img.src = src;
+        } catch (error) {
+            setIsProcessing(false);
+            toast.error("Failed to decode Base64");
+            setPreview(null);
+        }
+    };
 
-    // Try to guess the image type or default to png
-    let mimeType = "image/png";
-    if (trimmed.startsWith("/") || trimmed.startsWith("iVBORw0KGgo")) mimeType = "image/png";
-    else if (trimmed.startsWith("/9j/") || trimmed.startsWith("/9j/4")) mimeType = "image/jpeg";
-    else if (trimmed.startsWith("R0lGODlh")) mimeType = "image/gif";
-    else if (trimmed.startsWith("UklGR")) mimeType = "image/webp";
+    const downloadImage = () => {
+        if (!preview) return;
+        const link = document.createElement("a");
+        link.href = preview;
+        link.download = `decoded-image-${Date.now()}.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    };
 
-    return `data:${mimeType};base64,${trimmed}`;
-  }, [base64String]);
+    const clearAll = () => {
+        setBase64("");
+        setPreview(null);
+    };
 
-  const handleDownload = () => {
-    if (!imageSrc) return;
-    try {
-      const a = document.createElement("a");
-      a.href = imageSrc;
-      // Get extension from mime type
-      const match = imageSrc.match(/data:image\/([a-zA-Z0-9]+);base64,/);
-      const ext = match ? match[1] : "png";
-      a.download = `decoded-image.${ext}`;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-      toast.success("Image downloaded successfully!");
-    } catch (e) {
-      toast.error("Failed to download image. Invalid Base64.");
-    }
-  };
-
-  const handleCopy = () => {
-    if (!base64String) return;
-    navigator.clipboard.writeText(base64String);
-    toast.success("Base64 copied to clipboard");
-  };
-
-  return (
-    <div className="max-w-5xl mx-auto space-y-6">
-      <Card>
-        <CardHeader>
-          <CardTitle>Base64 to Image Decoder</CardTitle>
-          <CardDescription>
-            Paste your Base64 string below to view and download the image. Processing is done securely in your browser.
-          </CardDescription>
-        </CardHeader>
-        <CardContent className="space-y-6">
-          <div className="grid md:grid-cols-2 gap-6">
-            {/* Input Section */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">Base64 String</label>
-                <div className="flex gap-2">
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={handleCopy}
-                    disabled={!base64String}
-                    className="h-8 text-muted-foreground"
-                  >
-                    <Copy className="w-4 h-4 mr-2" />
-                    Copy
-                  </Button>
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
-                    onClick={() => setBase64String("")}
-                    disabled={!base64String}
-                    className="h-8 text-destructive hover:text-destructive/90"
-                  >
-                    <Trash2 className="w-4 h-4 mr-2" />
-                    Clear
-                  </Button>
+    return (
+        <div className="space-y-8 animate-in fade-in duration-700">
+            {/* Header Section */}
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+                <div className="flex items-center gap-4">
+                    <div className="p-3 bg-primary/10 text-primary">
+                        <ImageIcon className="h-6 w-6" />
+                    </div>
+                    <div>
+                        <h2 className="text-2xl font-bold">Base64 to Image</h2>
+                        <p className="text-sm text-muted-foreground">Decode Base64 strings or data URIs back into viewable image files</p>
+                    </div>
                 </div>
-              </div>
-              <Textarea
-                placeholder="Paste Base64 string here (e.g., data:image/png;base64,iVBORw0KGgo...)"
-                className="min-h-[300px] font-mono text-xs resize-none"
-                value={base64String}
-                onChange={(e) => setBase64String(e.target.value)}
-              />
+                <div className="flex items-center gap-2">
+                    <Button 
+                        variant="ghost" 
+                        onClick={clearAll}
+                        className="rounded-none hover:bg-destructive/10 hover:text-destructive text-[10px] font-bold uppercase"
+                    >
+                        <Trash2 className="h-3 w-3 mr-2" /> Clear All
+                    </Button>
+                    <Button 
+                        disabled={!base64.trim() || isProcessing}
+                        onClick={handleDecode}
+                        className="rounded-none bg-primary hover:bg-primary/90"
+                    >
+                        {isProcessing ? (
+                            <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Decoding...</>
+                        ) : (
+                            <><Zap className="mr-2 h-4 w-4" /> Decode Image</>
+                        )}
+                    </Button>
+                </div>
             </div>
 
-            {/* Preview Section */}
-            <div className="space-y-3">
-              <div className="flex items-center justify-between">
-                <label className="text-sm font-medium">Image Preview</label>
-                <Button 
-                  size="sm" 
-                  onClick={handleDownload}
-                  disabled={!imageSrc}
-                  className="h-8"
-                >
-                  <Download className="w-4 h-4 mr-2" />
-                  Download Image
-                </Button>
-              </div>
-              <div className="border rounded-md min-h-[300px] bg-muted/30 flex items-center justify-center p-4 relative overflow-hidden">
-                {imageSrc ? (
-                  <img
-                    src={imageSrc}
-                    alt="Decoded from Base64"
-                    className="max-w-full max-h-[400px] object-contain shadow-sm border bg-white"
-                    onError={() => {
-                      toast.error("Invalid Base64 string or format not supported.");
-                    }}
-                  />
-                ) : (
-                  <div className="flex flex-col items-center justify-center text-muted-foreground space-y-2">
-                    <ImageIcon className="w-12 h-12 opacity-20" />
-                    <p className="text-sm">Preview will appear here</p>
-                  </div>
-                )}
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+                {/* Main Content Area */}
+                <div className="lg:col-span-3 space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        {/* Editor Column */}
+                        <div className="space-y-4">
+                            <Card className="rounded-none border-border/40 bg-card/40">
+                                <CardHeader className="pb-4 border-b border-border/40 flex flex-row items-center justify-between py-3">
+                                    <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                                        <Code className="h-3 w-3" /> Base64 String
+                                    </Label>
+                                    <Badge variant="outline" className="rounded-none h-5 text-[10px] font-bold uppercase border-primary/20 text-primary">Input</Badge>
+                                </CardHeader>
+                                <CardContent className="p-0">
+                                    <Textarea 
+                                        value={base64} 
+                                        onChange={(e) => setBase64(e.target.value)}
+                                        placeholder="Paste your data:image/png;base64... string here"
+                                        className="rounded-none min-h-[500px] border-none focus-visible:ring-0 font-mono text-[10px] p-6 bg-transparent resize-none leading-relaxed"
+                                    />
+                                </CardContent>
+                            </Card>
+                        </div>
+
+                        {/* Preview Column */}
+                        <div className="space-y-4">
+                            <Card className={`rounded-none border-border/40 overflow-hidden min-h-[500px] flex flex-col ${preview ? 'bg-white' : 'bg-card/40'}`}>
+                                <CardHeader className="pb-4 border-b border-border/40 flex flex-row items-center justify-between py-3 bg-muted/30">
+                                    <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
+                                        <Monitor className="h-3 w-3" /> Image Preview
+                                    </Label>
+                                    {preview && (
+                                        <Button 
+                                            variant="ghost" 
+                                            size="sm" 
+                                            onClick={downloadImage}
+                                            className="h-8 text-[10px] font-bold uppercase bg-primary/10 text-primary hover:bg-primary/20"
+                                        >
+                                            <Download className="h-3 w-3 mr-2" /> Download
+                                        </Button>
+                                    )}
+                                </CardHeader>
+                                <CardContent className="flex-1 flex flex-col items-center justify-center p-8">
+                                    {preview ? (
+                                        <div className="relative group max-w-full animate-in zoom-in-95 duration-500">
+                                            <img 
+                                                src={preview} 
+                                                alt="Decoded" 
+                                                className="max-h-[400px] w-auto object-contain shadow-2xl"
+                                            />
+                                            <div className="absolute -bottom-4 -right-4 bg-primary text-white p-2 shadow-xl">
+                                                <CheckCircle2 className="h-5 w-5" />
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="text-center space-y-4 opacity-20">
+                                            <ImageIcon className="h-24 w-24 mx-auto" />
+                                            <p className="text-xs font-bold uppercase tracking-widest">No Image Decoded</p>
+                                        </div>
+                                    )}
+                                </CardContent>
+                            </Card>
+                        </div>
+                    </div>
+                </div>
+
+                {/* Sidebar Info */}
+                <div className="space-y-6">
+                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                        <CardHeader className="pb-4 border-b border-border/40">
+                            <CardTitle className="text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
+                                <Settings2 className="h-4 w-4 text-primary" /> Help
+                            </CardTitle>
+                        </CardHeader>
+                        <CardContent className="pt-6 space-y-6">
+                            <div className="space-y-2">
+                                <h5 className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Supported Formats</h5>
+                                <p className="text-xs text-muted-foreground leading-relaxed">
+                                    Supports all common image types encoded in Base64, including PNG, JPEG, WEBP, GIF, and SVG.
+                                </p>
+                            </div>
+                            <div className="space-y-2">
+                                <h5 className="text-[10px] font-bold text-muted-foreground uppercase tracking-widest">Prefix Handling</h5>
+                                <p className="text-xs text-muted-foreground leading-relaxed">
+                                    You can paste raw Base64 data or full Data URIs starting with <code>data:image/...</code>. Our decoder handles both.
+                                </p>
+                            </div>
+                        </CardContent>
+                    </Card>
+
+                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                        <CardContent className="p-6">
+                            <div className="flex items-center gap-3 mb-4">
+                                <FileText className="h-5 w-5 text-primary" />
+                                <h4 className="text-sm font-bold uppercase tracking-widest">Local Privacy</h4>
+                            </div>
+                            <p className="text-xs text-muted-foreground leading-relaxed">
+                                Your sensitive data stays in your browser. We never transmit your Base64 strings to any external servers.
+                            </p>
+                        </CardContent>
+                    </Card>
+                </div>
             </div>
-          </div>
-        </CardContent>
-      </Card>
-    </div>
-  );
+        </div>
+    );
 }

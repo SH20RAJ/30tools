@@ -1,17 +1,20 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
+import { getToolById } from "@/lib/tools";
+import { notFound } from "next/navigation";
 
 
 export const metadata = {
 	title: "Free Base64 to Image Converter Online – Fast & No Signup | 30tools",
-	description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder. 100% free, fast, and no signup required.",
-	keywords: "base64 to image converter, free base64 to image converter, online base64 to image converter, no signup, 30tools",
+	description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
+	keywords: "base64 to image converter, free base64 to image converter, online base64 to image converter, no signup, 30tools, base64 decoder",
 	alternates: {
 		canonical: "https://30tools.com/base64-to-image-converter",
 	},
 	openGraph: {
 		title: "Free Base64 to Image Converter Online – Fast & No Signup | 30tools",
-		description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder. 100% free, fast, and no signup required.",
+		description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
 		url: "https://30tools.com/base64-to-image-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,157 +23,25 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Base64 to Image Converter Online – Fast & No Signup | 30tools",
-		description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder. 100% free, fast, and no signup required.",
+		description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "base64-to-image-converter",
-        "name": "Base64 to Image Converter",
-        "description": "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
-        "route": "/base64-to-image-converter",
-        "extraSlugs": [
-                "add-text-to-image",
-                "all-in-one-unit-converter",
-                "audio-converter",
-                "audio-converter-mp3",
-                "avi-file-to-mp4-online",
-                "avi-to-mp4-converter",
-                "avi-video-converter",
-                "base64-encoder-decoder",
-                "base64-image",
-                "base64-to-image",
-                "base64-to-image-converter-tool",
-                "base64-to-text",
-                "base64-tool",
-                "change-audio-format",
-                "change-avi-to-mp4",
-                "change-flv-to-mp4",
-                "change-image-dimensions",
-                "change-m4a-to-mp3",
-                "change-mkv-to-mp4",
-                "change-mov-to-mp4",
-                "change-ogg-to-mp3",
-                "change-pdf-orientation",
-                "change-video-type",
-                "change-wav-to-mp3",
-                "change-webm-to-mp4",
-                "click-to-chat-whatsapp",
-                "compress-files-to-zip",
-                "compress-ogg-to-mp3",
-                "compress-wav-to-mp3",
-                "convert-audio-format",
-                "convert-image-to-jpg",
-                "convert-picture-to-string",
-                "convert-video-format",
-                "date-to-epoch",
-                "decode-base64-image",
-                "document-converter",
-                "docx-to-pdf-converter",
-                "ebook-format-converter",
-                "encode-image-base64",
-                "epoch-converter",
-                "epoch-to-datetime",
-                "epub-converter",
-                "file-converter",
-                "fit-photo-to-instagram-story",
-                "flv-file-to-mp4-online",
-                "flv-to-mp4-converter",
-                "flv-video-converter",
-                "folder-to-zip-converter",
-                "format-html-css-js",
-                "format-sql-online",
-                "free-base64-to-image-converter-online",
-                "image-format-changer",
-                "image-to-base64",
-                "image-to-pdf-converter",
-                "insta-story-size-converter",
-                "instagram-reels-to-mp4",
-                "m4a-audio-converter",
-                "m4a-file-to-mp3-online",
-                "m4a-to-mp3-converter",
-                "m4a-to-mp3-online",
-                "md-html-converter",
-                "md-to-txt-converter",
-                "measurement-converter",
-                "metric-imperial-converter",
-                "mkv-file-to-mp4-online",
-                "mkv-to-mp4-converter",
-                "mkv-video-converter",
-                "mov-file-to-mp4-online",
-                "mov-to-mp4",
-                "mov-to-mp4-converter",
-                "mov-video-converter",
-                "movie-to-mp3-converter",
-                "mp3-converter",
-                "mp3-converter-online",
-                "mp4-audio-converter",
-                "mp4-converter-online",
-                "mp4-to-mp3",
-                "ogg-audio-converter",
-                "ogg-file-to-mp3-online",
-                "ogg-to-mp3-converter",
-                "pdf-to-docx-converter",
-                "pdf-to-epub-converter",
-                "photos-to-pdf-converter",
-                "pptx-to-pdf-converter",
-                "quicktime-to-mp4",
-                "readme-to-html",
-                "save-snaps-to-gallery",
-                "text-fo-base64",
-                "tiktok-aspect-ratio-converter",
-                "tiktok-mp3-converter",
-                "tiktok-music-converter",
-                "tiktok-to-mp3-online",
-                "timestamp-converter",
-                "timezone-converter",
-                "unit-converter",
-                "unix-timestamp-to-date",
-                "uppercase-to-lowercase",
-                "url-string-converter",
-                "url-to-pdf-converter",
-                "usd-to-eur-converter",
-                "video-converter",
-                "video-to-mp3-converter",
-                "wav-audio-converter",
-                "wav-file-to-mp3-online",
-                "wav-to-mp3-converter",
-                "webm-file-to-mp4-online",
-                "webm-to-mp4-converter",
-                "webm-video-converter",
-                "world-clock-converter",
-                "xlsx-to-pdf-converter",
-                "youtube-to-mp3-high-quality",
-                "youtube-to-mp4-converter"
-        ],
-        "popular": false,
-        "category": "image"
-};
+	const tool = getToolById("base64-to-image-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
 		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/base64-to-image-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
+			<ToolSEOLayout toolId={tool.id}>
 				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
+			</ToolSEOLayout>
 		</>
 	);
 }
+

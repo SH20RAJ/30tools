@@ -1,17 +1,20 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
+import { getToolById } from "@/lib/tools";
+import { notFound } from "next/navigation";
 
 
 export const metadata = {
 	title: "Free Word to PDF Online – Fast & No Signup | 30tools",
-	description: "Convert Word documents to PDF format 100% free, fast, and no signup required.",
-	keywords: "word to pdf, free word to pdf, online word to pdf, no signup, 30tools",
+	description: "Convert Word documents (.docx) to PDF format 100% free. Fast, high-quality, and privacy-focused conversion with no signup required.",
+	keywords: "word to pdf, free word to pdf, online word to pdf, no signup, 30tools, docx to pdf, convert docx to pdf",
 	alternates: {
 		canonical: "https://30tools.com/word-to-pdf",
 	},
 	openGraph: {
 		title: "Free Word to PDF Online – Fast & No Signup | 30tools",
-		description: "Convert Word documents to PDF format 100% free, fast, and no signup required.",
+		description: "Convert Word documents (.docx) to PDF format 100% free. Fast, high-quality, and privacy-focused conversion with no signup required.",
 		url: "https://30tools.com/word-to-pdf",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,47 +23,25 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Word to PDF Online – Fast & No Signup | 30tools",
-		description: "Convert Word documents to PDF format 100% free, fast, and no signup required.",
+		description: "Convert Word documents (.docx) to PDF format 100% free. Fast, high-quality, and privacy-focused conversion with no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "word-to-pdf",
-        "name": "Word to PDF",
-        "description": "Convert Word documents to PDF format",
-        "route": "/word-to-pdf",
-        "extraSlugs": [
-                "convert-docx-to-pdf-free-no-limit",
-                "word-to-pdf-converter-online"
-        ],
-        "popular": true,
-        "category": "pdf"
-};
+	const tool = getToolById("word-to-pdf");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
 		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/word-to-pdf",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "pdf" }}>
+			<ToolSEOLayout toolId={tool.id}>
 				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
+			</ToolSEOLayout>
 		</>
 	);
 }
+

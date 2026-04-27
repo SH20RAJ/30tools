@@ -143,6 +143,18 @@ const PDFCompressor = dynamic(
 	() => import("@/components/tools/pdf/PDFCompressor"),
 	{ ssr: false },
 );
+const PDFRotation = dynamic(
+	() => import("@/components/tools/pdf/PDFRotation"),
+	{ ssr: false },
+);
+const PDFPageDelete = dynamic(
+	() => import("@/components/tools/pdf/PDFPageDelete.tsx"),
+	{ ssr: false },
+);
+const PDFRearrange = dynamic(
+	() => import("@/components/tools/pdf/PDFRearrange.tsx"),
+	{ ssr: false },
+);
 const ImageToBase64Tool = dynamic(
 	() => import("@/components/tools/image/ImageToBase64Tool"),
 	{ ssr: false },
@@ -991,6 +1003,9 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "html-to-pdf") return <HTMLToPDF />;
 	if (toolId === "pdf-editor") return <PDFEditor />;
 	if (toolId === "pdf-size-reducer") return <PDFCompressor />;
+	if (toolId === "pdf-rotation") return <PDFRotation />;
+	if (toolId === "delete-pdf-pages") return <PDFPageDelete />;
+	if (toolId === "rearrange-pdf") return <PDFRearrange />;
 
 	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 
