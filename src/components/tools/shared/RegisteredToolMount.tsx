@@ -71,6 +71,14 @@ const ImageToPDF = dynamic(
 	() => import("@/components/tools/pdf/ImageToPDF.tsx"),
 	{ ssr: false },
 );
+const PDFToImage = dynamic(
+	() => import("@/components/tools/pdf/PDFToImage.tsx"),
+	{ ssr: false },
+);
+const Base64ToImageTool = dynamic(
+	() => import("@/components/tools/image/Base64ToImageTool.tsx"),
+	{ ssr: false },
+);
 
 const JSON_FORMATTER_IDS = new Set(["json-editor", "json-viewer", "json-validator"]);
 
@@ -881,12 +889,14 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "text-to-hashtags-converter") return <TagsFromText prefix="#" />;
 	if (toolId === "text-to-tags-converter") return <TagsFromText prefix="" />;
 	if (toolId === "base64-encode" || toolId === "base64-decode" || toolId === "base64-tool") return <Base64Tool />;
+	if (toolId === "base64-to-image-converter") return <Base64ToImageTool />;
 	if (toolId === "md5-generator") return <HashGeneratorTool />;
 	if (toolId === "qr-code-generator" || toolId === "qr-code-decoder") return <QrGeneratorTool />;
 	if (toolId === "youtube-channel-id-extractor" || toolId === "youtube-channel-id-finder") return <YouTubeChannelIDFinderTool />;
 	if (toolId === "word-to-number-converter") return <WordToNumberConverter />;
 	if (toolId === "markdown-to-text") return <MarkdownToText />;
 	if (toolId === "image-to-pdf") return <ImageToPDF />;
+	if (toolId === "pdf-to-image") return <PDFToImage />;
 
 	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 
