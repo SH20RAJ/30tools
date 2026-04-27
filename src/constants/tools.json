@@ -18,112 +18,54 @@
                     "description": "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing.",
                     "route": "/ai-image-generator",
                     "extraSlugs": [
-                        "aesthetic-bio-generator",
-                        "aesthetic-collage-maker",
                         "ai-art-generator-online",
-                        "ai-business-name-generator",
                         "ai-image-generator-for-beginners",
                         "ai-photo-enhancer",
                         "ai-photo-generator-free",
                         "ai-picture-generator",
                         "ai-picture-generator-no-signup",
-                        "ai-poetry-generator",
                         "allow-disallow-generator",
-                        "android-icon-maker",
-                        "app-icon-generator",
-                        "background-gradient-creator",
-                        "best-excuse-generator",
-                        "box-shadow-generator-online",
                         "brand-colors-generator",
-                        "brand-identity-maker",
-                        "brand-name-generator",
-                        "business-name-generator",
                         "bypass-ai-detection",
-                        "change-image-dimensions",
                         "check-image-location",
                         "check-image-seo",
-                        "circular-image-crop",
                         "color-palette-generator",
                         "color-wheel-generator",
-                        "compress-image-online",
-                        "crop-image-online",
-                        "css-gradient-generator",
-                        "css-gradient-maker",
-                        "css-shadow-maker",
-                        "css3-gradient-maker",
                         "cut-photo",
                         "delete-image-background",
                         "enhance-image-quality",
-                        "excuse-generator",
-                        "fake-chat-generator",
-                        "fake-discord-chat-generator",
-                        "fake-imessage-generator",
-                        "fake-instagram-dm-generator",
-                        "fake-whatsapp-chat-generator",
                         "favicon-maker-from-image",
                         "free-ai-art-generator",
                         "free-ai-image-generator",
                         "free-photo-grid-maker",
-                        "free-poetry-maker",
                         "generate-qr-image",
-                        "gradient-color-generator",
-                        "gradient-generator",
-                        "haiku-generator",
                         "hash-generator",
-                        "html-head-tags-maker",
                         "ico-file-generator",
-                        "icon-generator",
                         "ig-photo-download-hd",
                         "ig-profile-picture-viewer",
                         "image-color-picker-tool",
-                        "image-editor",
-                        "image-format-changer",
                         "image-optimization-test",
                         "image-seo-analyzer",
                         "image-size-analyzer",
                         "image-tools",
                         "improve-picture-resolution",
-                        "instagram-bio-generator",
                         "instagram-font-generator",
                         "instant-ai-image-creator",
-                        "ios-app-icon-creator",
                         "json-ld-generator",
-                        "linear-gradient-generator",
-                        "love-poem-generator",
                         "lucky-number-generator",
-                        "online-collage-maker",
                         "online-thumbnail-creator",
-                        "photo-collage-maker",
                         "photo-exif-viewer",
                         "picture-background-eraser",
-                        "picture-collage-creator",
-                        "poem-generator-ai",
                         "randomness-generator",
-                        "reduce-image-size",
                         "remove-background-from-image-free",
-                        "resize-image-for-social-media",
-                        "resize-image-online",
-                        "resize-picture-pixels",
-                        "rhyme-generator",
                         "rich-snippets-maker",
-                        "scale-image",
                         "secure-hash-generator",
-                        "secure-pass-generator",
                         "seo-keyword-generator",
-                        "shrink-image-file-size",
                         "simple-ai-image-generator",
-                        "startup-name-generator",
-                        "stylish-bio-generator",
                         "text-to-image-ai",
                         "text-to-image-free",
-                        "tiktok-bio-generator",
                         "upscale-image-online",
                         "view-image-metadata",
-                        "web-app-icon-generator",
-                        "web-gradient-creator",
-                        "web-gradient-generator",
-                        "website-icon-generator",
-                        "website-map-maker",
                         "yt-thumbnail-maker",
                         "zip-creator"
                     ],
@@ -158,6 +100,76 @@
                     "route": "/qr-code-reader",
                     "popular": false,
                     "category": "generators"
+                },
+                {
+                    "id": "bio-generator",
+                    "name": "Bio Generator",
+                    "description": "Create professional and aesthetic bios for social media profiles.",
+                    "route": "/bio-generator",
+                    "extraSlugs": [
+                        "aesthetic-bio-generator",
+                        "instagram-bio-generator",
+                        "stylish-bio-generator",
+                        "tiktok-bio-generator",
+                        "free-social-media-bio-maker"
+                    ],
+                    "popular": false,
+                    "category": "generators"
+                },
+                {
+                    "id": "business-name-generator",
+                    "name": "Business Name Generator",
+                    "description": "Generate creative and catchy names for your brand or startup.",
+                    "route": "/business-name-generator",
+                    "extraSlugs": [
+                        "ai-business-name-generator",
+                        "brand-name-generator",
+                        "startup-name-generator",
+                        "brand-identity-maker"
+                    ],
+                    "popular": false,
+                    "category": "generators"
+                },
+                {
+                    "id": "ai-poem-generator",
+                    "name": "AI Poem Generator",
+                    "description": "Create beautiful poems, haikus, and rhymes using artificial intelligence.",
+                    "route": "/ai-poem-generator",
+                    "extraSlugs": [
+                        "ai-poetry-generator",
+                        "free-poetry-maker",
+                        "haiku-generator",
+                        "love-poem-generator",
+                        "poem-generator-ai",
+                        "rhyme-generator"
+                    ],
+                    "popular": false,
+                    "category": "generators"
+                },
+                {
+                    "id": "fake-chat-generator",
+                    "name": "Fake Chat Generator",
+                    "description": "Create realistic-looking fake chat screenshots for WhatsApp, Discord, and iMessage.",
+                    "route": "/fake-chat-generator",
+                    "extraSlugs": [
+                        "fake-discord-chat-generator",
+                        "fake-imessage-generator",
+                        "fake-instagram-dm-generator",
+                        "fake-whatsapp-chat-generator"
+                    ],
+                    "popular": false,
+                    "category": "generators"
+                },
+                {
+                    "id": "excuse-generator",
+                    "name": "Excuse Generator",
+                    "description": "Generate creative excuses for any situation.",
+                    "route": "/excuse-generator",
+                    "extraSlugs": [
+                        "best-excuse-generator"
+                    ],
+                    "popular": false,
+                    "category": "generators"
                 }
             ]
         },
@@ -177,8 +189,6 @@
                         "transparent-background-maker",
                         "picture-background-eraser",
                         "duplicate-line-remover",
-                        "background-gradient-tool",
-                        "background-gradient-creator",
                         "ai-background-eraser-online"
                     ],
                     "popular": true,
@@ -199,23 +209,38 @@
                     "howTo": {
                         "name": "How to convert Base64 to image",
                         "steps": [
-                            { "name": "Paste Base64", "text": "Paste your Base64 string into the input text area. It can be a raw string or a full data URI." },
-                            { "name": "Preview Image", "text": "The tool will automatically decode the string and show an instant preview of the image." },
-                            { "name": "Download", "text": "Click the 'Download Image' button to save the decoded file to your device." }
+                            {
+                                "name": "Paste Base64",
+                                "text": "Paste your Base64 string into the input text area. It can be a raw string or a full data URI."
+                            },
+                            {
+                                "name": "Preview Image",
+                                "text": "The tool will automatically decode the string and show an instant preview of the image."
+                            },
+                            {
+                                "name": "Download",
+                                "text": "Click the 'Download Image' button to save the decoded file to your device."
+                            }
                         ]
                     },
                     "faqs": [
-                        { "question": "What image formats can I decode from Base64?", "answer": "You can decode common formats like PNG, JPG, WEBP, and GIF. The tool automatically detects the format from the data." },
-                        { "question": "Is it safe to decode sensitive images here?", "answer": "Yes. The decoding happens entirely in your browser using JavaScript. No data is sent to our servers, making it 100% private." },
-                        { "question": "Does it support data URI schemes?", "answer": "Yes, it supports both raw Base64 strings and those prefixed with 'data:image/...;base64,'." }
+                        {
+                            "question": "What image formats can I decode from Base64?",
+                            "answer": "You can decode common formats like PNG, JPG, WEBP, and GIF. The tool automatically detects the format from the data."
+                        },
+                        {
+                            "question": "Is it safe to decode sensitive images here?",
+                            "answer": "Yes. The decoding happens entirely in your browser using JavaScript. No data is sent to our servers, making it 100% private."
+                        },
+                        {
+                            "question": "Does it support data URI schemes?",
+                            "answer": "Yes, it supports both raw Base64 strings and those prefixed with 'data:image/...;base64,'."
+                        }
                     ],
                     "extraSlugs": [
                         "add-text-to-image",
                         "all-in-one-unit-converter",
-                        "audio-converter",
-                        "audio-converter-mp3",
                         "avi-file-to-mp4-online",
-                        "avi-to-mp4-converter",
                         "avi-video-converter",
                         "base64-encoder-decoder",
                         "base64-image",
@@ -223,26 +248,20 @@
                         "base64-to-image-converter-tool",
                         "base64-to-text",
                         "base64-tool",
-                        "change-audio-format",
                         "change-avi-to-mp4",
                         "change-flv-to-mp4",
-                        "change-image-dimensions",
                         "change-m4a-to-mp3",
                         "change-mkv-to-mp4",
                         "change-mov-to-mp4",
                         "change-ogg-to-mp3",
                         "change-pdf-orientation",
-                        "change-video-type",
                         "change-wav-to-mp3",
                         "change-webm-to-mp4",
                         "click-to-chat-whatsapp",
                         "compress-files-to-zip",
                         "compress-ogg-to-mp3",
                         "compress-wav-to-mp3",
-                        "convert-audio-format",
-                        "convert-image-to-jpg",
                         "convert-picture-to-string",
-                        "convert-video-format",
                         "date-to-epoch",
                         "decode-base64-image",
                         "document-converter",
@@ -255,41 +274,27 @@
                         "file-converter",
                         "fit-photo-to-instagram-story",
                         "flv-file-to-mp4-online",
-                        "flv-to-mp4-converter",
                         "flv-video-converter",
                         "folder-to-zip-converter",
-                        "format-html-css-js",
-                        "format-sql-online",
                         "free-base64-to-image-converter-online",
-                        "image-format-changer",
                         "image-to-base64",
                         "image-to-pdf-converter",
-                        "insta-story-size-converter",
-                        "instagram-reels-to-mp4",
-                        "m4a-audio-converter",
                         "m4a-file-to-mp3-online",
                         "m4a-to-mp3-converter",
-                        "m4a-to-mp3-online",
                         "md-html-converter",
                         "md-to-txt-converter",
                         "measurement-converter",
                         "metric-imperial-converter",
                         "mkv-file-to-mp4-online",
-                        "mkv-to-mp4-converter",
                         "mkv-video-converter",
                         "mov-file-to-mp4-online",
                         "mov-to-mp4",
-                        "mov-to-mp4-converter",
                         "mov-video-converter",
                         "movie-to-mp3-converter",
-                        "mp3-converter",
-                        "mp3-converter-online",
                         "mp4-audio-converter",
                         "mp4-converter-online",
                         "mp4-to-mp3",
-                        "ogg-audio-converter",
                         "ogg-file-to-mp3-online",
-                        "ogg-to-mp3-converter",
                         "pdf-to-docx-converter",
                         "pdf-to-epub-converter",
                         "photos-to-pdf-converter",
@@ -310,13 +315,9 @@
                         "url-string-converter",
                         "url-to-pdf-converter",
                         "usd-to-eur-converter",
-                        "video-converter",
                         "video-to-mp3-converter",
-                        "wav-audio-converter",
-                        "wav-file-to-mp3-online",
                         "wav-to-mp3-converter",
                         "webm-file-to-mp4-online",
-                        "webm-to-mp4-converter",
                         "webm-video-converter",
                         "world-clock-converter",
                         "xlsx-to-pdf-converter",
@@ -332,7 +333,6 @@
                     "description": "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
                     "route": "/convert-to-ico",
                     "extraSlugs": [
-                        "convert-audio-format",
                         "convert-avi-to-mp4",
                         "convert-doc-to-pdf",
                         "convert-epoch-time",
@@ -362,7 +362,6 @@
                         "convert-to-ico-tool",
                         "convert-units-online",
                         "convert-video-file-to-mp3",
-                        "convert-video-format",
                         "convert-wav-to-mp3",
                         "convert-webm-to-mp4",
                         "convert-xls-to-pdf",
@@ -425,8 +424,7 @@
                     "route": "/ico-to-png-converter",
                     "extraSlugs": [
                         "free-ico-to-png-converter-online",
-                        "ico-to-png-converter-tool",
-                        "compress-jpeg-png"
+                        "ico-to-png-converter-tool"
                     ],
                     "popular": false,
                     "category": "image"
@@ -446,26 +444,48 @@
                     "howTo": {
                         "name": "How to compress images",
                         "steps": [
-                            { "name": "Upload Images", "text": "Select or drag and drop your images into the compression area." },
-                            { "name": "Adjust Quality", "text": "Use the target quality slider to balance between file size and image clarity." },
-                            { "name": "Optimize", "text": "Click 'Optimise' to start the compression process for all images." },
-                            { "name": "Download", "text": "Save the compressed images individually or all at once." }
+                            {
+                                "name": "Upload Images",
+                                "text": "Select or drag and drop your images into the compression area."
+                            },
+                            {
+                                "name": "Adjust Quality",
+                                "text": "Use the target quality slider to balance between file size and image clarity."
+                            },
+                            {
+                                "name": "Optimize",
+                                "text": "Click 'Optimise' to start the compression process for all images."
+                            },
+                            {
+                                "name": "Download",
+                                "text": "Save the compressed images individually or all at once."
+                            }
                         ]
                     },
                     "faqs": [
-                        { "question": "Does compressing an image reduce its quality?", "answer": "Yes, but our tool uses optimized algorithms to minimize quality loss while significantly reducing file size. You can control this using the quality slider." },
-                        { "question": "Is there a limit to how many images I can compress?", "answer": "No, you can compress as many images as you need, and even do them in batches." },
-                        { "question": "Are my photos uploaded to your server?", "answer": "No. All compression is handled locally in your browser using JavaScript. Your photos never leave your computer." }
+                        {
+                            "question": "Does compressing an image reduce its quality?",
+                            "answer": "Yes, but our tool uses optimized algorithms to minimize quality loss while significantly reducing file size. You can control this using the quality slider."
+                        },
+                        {
+                            "question": "Is there a limit to how many images I can compress?",
+                            "answer": "No, you can compress as many images as you need, and even do them in batches."
+                        },
+                        {
+                            "question": "Are my photos uploaded to your server?",
+                            "answer": "No. All compression is handled locally in your browser using JavaScript. Your photos never leave your computer."
+                        }
                     ],
                     "extraSlugs": [
                         "audio-compressor",
                         "compress-image-to-50kb",
-                        "css-compressor",
                         "free-image-compressor",
-                        "js-compressor-minifier",
-                        "shrink-image-file-size-free",
                         "video-compressor",
-                        "web-code-compressor"
+                        "compress-image-online",
+                        "reduce-image-size",
+                        "shrink-image-file-size-free",
+                        "shrink-image-file-size",
+                        "compress-jpeg-png"
                     ],
                     "popular": true,
                     "category": "image"
@@ -485,21 +505,47 @@
                     "howTo": {
                         "name": "How to convert image formats",
                         "steps": [
-                            { "name": "Upload Images", "text": "Click 'Select Images' or drag and drop your files into the converter." },
-                            { "name": "Choose Format", "text": "Select your target output format (e.g., convert to WEBP)." },
-                            { "name": "Convert", "text": "Click 'Start Conversion' to process your images instantly." },
-                            { "name": "Download", "text": "Download your converted images individually or as a single ZIP file." }
+                            {
+                                "name": "Upload Images",
+                                "text": "Click 'Select Images' or drag and drop your files into the converter."
+                            },
+                            {
+                                "name": "Choose Format",
+                                "text": "Select your target output format (e.g., convert to WEBP)."
+                            },
+                            {
+                                "name": "Convert",
+                                "text": "Click 'Start Conversion' to process your images instantly."
+                            },
+                            {
+                                "name": "Download",
+                                "text": "Download your converted images individually or as a single ZIP file."
+                            }
                         ]
                     },
                     "faqs": [
-                        { "question": "What image formats are supported?", "answer": "We support most popular formats including JPEG, PNG, WEBP, GIF, BMP, and ICO." },
-                        { "question": "Is there a file size limit?", "answer": "No, you can convert images of any size, though larger files may take longer to process in your browser." },
-                        { "question": "Are my images private?", "answer": "Yes. All conversion is done locally in your browser. We never upload your images to our servers." },
-                        { "question": "Can I convert multiple images at once?", "answer": "Yes! Our batch converter allows you to upload and convert dozens of images simultaneously." }
+                        {
+                            "question": "What image formats are supported?",
+                            "answer": "We support most popular formats including JPEG, PNG, WEBP, GIF, BMP, and ICO."
+                        },
+                        {
+                            "question": "Is there a file size limit?",
+                            "answer": "No, you can convert images of any size, though larger files may take longer to process in your browser."
+                        },
+                        {
+                            "question": "Are my images private?",
+                            "answer": "Yes. All conversion is done locally in your browser. We never upload your images to our servers."
+                        },
+                        {
+                            "question": "Can I convert multiple images at once?",
+                            "answer": "Yes! Our batch converter allows you to upload and convert dozens of images simultaneously."
+                        }
                     ],
                     "extraSlugs": [
                         "convert-image-to-embroidery-pattern",
-                        "free-image-converter-online"
+                        "free-image-converter-online",
+                        "image-format-changer",
+                        "convert-image-to-jpg"
                     ],
                     "popular": true,
                     "category": "image"
@@ -512,8 +558,10 @@
                     "extraSlugs": [
                         "free-image-cropper-online",
                         "image-cropper-tool",
+                        "circular-image-crop",
                         "square-photo-cropper",
-                        "free-picture-cropper"
+                        "free-picture-cropper",
+                        "crop-image-online"
                     ],
                     "popular": false,
                     "category": "image"
@@ -541,8 +589,13 @@
                         "ig-story-image-resizer",
                         "linkedin-banner-resizer",
                         "photo-resizer-free",
-                        "resize-image-for-etsy-banner",
-                        "social-media-resizer"
+                        "social-media-resizer",
+                        "resize-image-online",
+                        "resize-picture-pixels",
+                        "scale-image",
+                        "change-image-dimensions",
+                        "resize-image-for-social-media",
+                        "resize-image-for-etsy-banner"
                     ],
                     "popular": false,
                     "category": "image"
@@ -680,7 +733,6 @@
                         "ig-photo-download-hd",
                         "instagram-profile-photo-hd",
                         "online-photo-editor",
-                        "photo-collage-maker",
                         "photo-filter-editor",
                         "photo-quality-improver",
                         "upscale-illustration-online-free"
@@ -800,6 +852,38 @@
                     "name": "Free Image Tools Online",
                     "description": "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
                     "route": "/image-tools",
+                    "category": "image"
+                },
+                {
+                    "id": "icon-generator",
+                    "name": "Icon Generator",
+                    "description": "Generate app icons and favicons for Android, iOS, and web applications.",
+                    "route": "/icon-generator",
+                    "extraSlugs": [
+                        "android-icon-maker",
+                        "app-icon-generator",
+                        "ios-app-icon-creator",
+                        "web-app-icon-generator",
+                        "website-icon-generator"
+                    ],
+                    "popular": false,
+                    "category": "image"
+                },
+                {
+                    "id": "image-editor",
+                    "name": "Image Editor",
+                    "description": "Edit, crop, and enhance your photos online with our free image editing tools.",
+                    "route": "/image-editor",
+                    "extraSlugs": [
+                        "crop-and-edit-photos",
+                        "edit-pictures-free",
+                        "fix-blurry-photos",
+                        "online-collage-maker",
+                        "photo-collage-maker",
+                        "picture-collage-creator",
+                        "aesthetic-collage-maker"
+                    ],
+                    "popular": false,
                     "category": "image"
                 }
             ]
@@ -1001,7 +1085,6 @@
                         "find-missing-alt-tags",
                         "generate-meta-tags",
                         "create-seo-tags",
-                        "html-head-tags-maker",
                         "seo-tag-generator-free"
                     ],
                     "popular": false,
@@ -1073,17 +1156,41 @@
                     "howTo": {
                         "name": "How to convert images to PDF",
                         "steps": [
-                            { "name": "Upload Images", "text": "Click 'Upload' or drag and drop your images into the tool." },
-                            { "name": "Reorder Pages", "text": "Drag and drop the uploaded images to set your preferred page order." },
-                            { "name": "Generate PDF", "text": "Click 'Generate PDF' to combine your images into a single document." },
-                            { "name": "Download", "text": "Save your newly created PDF file to your device instantly." }
+                            {
+                                "name": "Upload Images",
+                                "text": "Click 'Upload' or drag and drop your images into the tool."
+                            },
+                            {
+                                "name": "Reorder Pages",
+                                "text": "Drag and drop the uploaded images to set your preferred page order."
+                            },
+                            {
+                                "name": "Generate PDF",
+                                "text": "Click 'Generate PDF' to combine your images into a single document."
+                            },
+                            {
+                                "name": "Download",
+                                "text": "Save your newly created PDF file to your device instantly."
+                            }
                         ]
                     },
                     "faqs": [
-                        { "question": "Is this image to PDF converter free?", "answer": "Yes, our tool is 100% free with no hidden costs, limits, or signup required." },
-                        { "question": "Are my images secure?", "answer": "Absolutely. All processing happens locally in your web browser. Your images are never uploaded to our servers, ensuring total privacy." },
-                        { "question": "What image formats are supported?", "answer": "We support all common image formats including JPG, PNG, WEBP, and more." },
-                        { "question": "Can I reorder the images before generating the PDF?", "answer": "Yes, you can easily drag and drop the selected images to reorder them before clicking generate." }
+                        {
+                            "question": "Is this image to PDF converter free?",
+                            "answer": "Yes, our tool is 100% free with no hidden costs, limits, or signup required."
+                        },
+                        {
+                            "question": "Are my images secure?",
+                            "answer": "Absolutely. All processing happens locally in your web browser. Your images are never uploaded to our servers, ensuring total privacy."
+                        },
+                        {
+                            "question": "What image formats are supported?",
+                            "answer": "We support all common image formats including JPG, PNG, WEBP, and more."
+                        },
+                        {
+                            "question": "Can I reorder the images before generating the PDF?",
+                            "answer": "Yes, you can easily drag and drop the selected images to reorder them before clicking generate."
+                        }
                     ],
                     "extraSlugs": [
                         "add-page-numbers-to-pdf-online",
@@ -1156,31 +1263,46 @@
                     "howTo": {
                         "name": "How to edit PDF online",
                         "steps": [
-                            { "name": "Upload PDF", "text": "Select or drag and drop your PDF file into the editor." },
-                            { "name": "Select Pages", "text": "Click on page thumbnails to select them for rotation or deletion." },
-                            { "name": "Edit Pages", "text": "Use the toolbars to rotate selected pages or remove them completely." },
-                            { "name": "Save Changes", "text": "Click 'Save Changes' to download your newly edited PDF document." }
+                            {
+                                "name": "Upload PDF",
+                                "text": "Select or drag and drop your PDF file into the editor."
+                            },
+                            {
+                                "name": "Select Pages",
+                                "text": "Click on page thumbnails to select them for rotation or deletion."
+                            },
+                            {
+                                "name": "Edit Pages",
+                                "text": "Use the toolbars to rotate selected pages or remove them completely."
+                            },
+                            {
+                                "name": "Save Changes",
+                                "text": "Click 'Save Changes' to download your newly edited PDF document."
+                            }
                         ]
                     },
                     "faqs": [
-                        { "question": "Can I edit the text in a PDF with this tool?", "answer": "Our current version supports structural editing like rotating, deleting, and rearranging pages. Content editing (text/images) is coming in a future update." },
-                        { "question": "Is this PDF editor safe to use for sensitive files?", "answer": "Yes. Your files are processed entirely in your web browser. Nothing is uploaded to our servers, ensuring your data remains private." },
-                        { "question": "Can I merge multiple PDFs in the editor?", "answer": "This tool is for editing a single PDF. To combine multiple files, please use our PDF Merger tool." }
+                        {
+                            "question": "Can I edit the text in a PDF with this tool?",
+                            "answer": "Our current version supports structural editing like rotating, deleting, and rearranging pages. Content editing (text/images) is coming in a future update."
+                        },
+                        {
+                            "question": "Is this PDF editor safe to use for sensitive files?",
+                            "answer": "Yes. Your files are processed entirely in your web browser. Nothing is uploaded to our servers, ensuring your data remains private."
+                        },
+                        {
+                            "question": "Can I merge multiple PDFs in the editor?",
+                            "answer": "This tool is for editing a single PDF. To combine multiple files, please use our PDF Merger tool."
+                        }
                     ],
                     "extraSlugs": [
                         "annotate-pdf-online-free",
                         "audio-editor",
-                        "crop-and-edit-photos",
-                        "edit-audio-online",
                         "edit-pdf-online-free",
-                        "edit-pictures-free",
-                        "edit-video-online",
-                        "fix-blurry-photos",
                         "fix-text-spacing",
                         "free-audio-editor",
                         "free-pdf-text-editor",
                         "free-video-editor",
-                        "instagram-story-dimensions-fix",
                         "online-photo-editor",
                         "pdf-text-editor",
                         "photo-filter-editor",
@@ -1205,38 +1327,44 @@
                     "howTo": {
                         "name": "How to password protect a PDF",
                         "steps": [
-                            { "name": "Upload PDF", "text": "Select the PDF document you want to secure." },
-                            { "name": "Set Password", "text": "Enter a strong, unique password for your document." },
-                            { "name": "Encrypt", "text": "Click 'Protect PDF' to encrypt your file instantly." },
-                            { "name": "Download", "text": "Save the password-protected PDF to your computer." }
+                            {
+                                "name": "Upload PDF",
+                                "text": "Select the PDF document you want to secure."
+                            },
+                            {
+                                "name": "Set Password",
+                                "text": "Enter a strong, unique password for your document."
+                            },
+                            {
+                                "name": "Encrypt",
+                                "text": "Click 'Protect PDF' to encrypt your file instantly."
+                            },
+                            {
+                                "name": "Download",
+                                "text": "Save the password-protected PDF to your computer."
+                            }
                         ]
                     },
                     "faqs": [
-                        { "question": "How secure is the PDF protection?", "answer": "We use industry-standard encryption methods to secure your PDF files. However, always remember to use a strong, unique password." },
-                        { "question": "Can I recover a forgotten PDF password?", "answer": "No. For security reasons, we do not store your passwords or your files. If you lose the password, you won't be able to open the file." },
-                        { "question": "Is it safe to upload my bank statements here?", "answer": "Our tool is uniquely safe because it doesn't upload your file at all. The encryption is done by your own browser locally." }
+                        {
+                            "question": "How secure is the PDF protection?",
+                            "answer": "We use industry-standard encryption methods to secure your PDF files. However, always remember to use a strong, unique password."
+                        },
+                        {
+                            "question": "Can I recover a forgotten PDF password?",
+                            "answer": "No. For security reasons, we do not store your passwords or your files. If you lose the password, you won't be able to open the file."
+                        },
+                        {
+                            "question": "Is it safe to upload my bank statements here?",
+                            "answer": "Our tool is uniquely safe because it doesn't upload your file at all. The encryption is done by your own browser locally."
+                        }
                     ],
                     "extraSlugs": [
-                        "check-password-security",
-                        "check-pwned-password",
-                        "configurable-password-tool",
-                        "create-strong-password",
-                        "custom-password-maker",
-                        "data-breach-password-search",
-                        "generate-secure-password",
-                        "have-i-been-pwned-password",
                         "lock-pdf-from-editing-free",
-                        "password-breach-checker",
-                        "password-generator2",
-                        "password-leak-check",
                         "password-protect-pdf",
                         "password-protect-pdf-online",
-                        "password-safety-checker",
-                        "password-strength-checker",
-                        "password-tester-online",
                         "pdf-password-remover",
                         "remove-pdf-password",
-                        "secure-password-creator",
                         "test-password-strength",
                         "verify-password-safety"
                     ],
@@ -1298,17 +1426,41 @@
                     "howTo": {
                         "name": "How to convert Word to PDF",
                         "steps": [
-                            { "name": "Upload Word File", "text": "Select or drag and drop your .docx Word document." },
-                            { "name": "Preview Content", "text": "Our tool will show you a live preview of the document before conversion." },
-                            { "name": "Convert to PDF", "text": "Click the 'Convert to PDF' button to start the process." },
-                            { "name": "Download PDF", "text": "Once finished, download your new PDF file to your device." }
+                            {
+                                "name": "Upload Word File",
+                                "text": "Select or drag and drop your .docx Word document."
+                            },
+                            {
+                                "name": "Preview Content",
+                                "text": "Our tool will show you a live preview of the document before conversion."
+                            },
+                            {
+                                "name": "Convert to PDF",
+                                "text": "Click the 'Convert to PDF' button to start the process."
+                            },
+                            {
+                                "name": "Download PDF",
+                                "text": "Once finished, download your new PDF file to your device."
+                            }
                         ]
                     },
                     "faqs": [
-                        { "question": "Can I convert .doc files to PDF?", "answer": "Currently, we support the modern .docx format. For older .doc files, please save them as .docx in Word first before converting." },
-                        { "question": "Is the Word to PDF converter free?", "answer": "Yes, it is completely free to use with no hidden fees or daily limits." },
-                        { "question": "Will my document formatting be preserved?", "answer": "Yes, our converter is designed to preserve fonts, tables, and layout as closely as possible." },
-                        { "question": "Is it safe to convert private documents?", "answer": "Absolutely. The conversion is performed entirely within your web browser. Your document is never uploaded to our servers." }
+                        {
+                            "question": "Can I convert .doc files to PDF?",
+                            "answer": "Currently, we support the modern .docx format. For older .doc files, please save them as .docx in Word first before converting."
+                        },
+                        {
+                            "question": "Is the Word to PDF converter free?",
+                            "answer": "Yes, it is completely free to use with no hidden fees or daily limits."
+                        },
+                        {
+                            "question": "Will my document formatting be preserved?",
+                            "answer": "Yes, our converter is designed to preserve fonts, tables, and layout as closely as possible."
+                        },
+                        {
+                            "question": "Is it safe to convert private documents?",
+                            "answer": "Absolutely. The conversion is performed entirely within your web browser. Your document is never uploaded to our servers."
+                        }
                     ],
                     "extraSlugs": [
                         "convert-docx-to-pdf-free-no-limit",
@@ -1355,35 +1507,24 @@
                     "route": "/reddit-downloader",
                     "extraSlugs": [
                         "any-video-downloader",
-                        "change-video-type",
-                        "compress-video-for-whatsapp",
-                        "cut-and-merge-video",
-                        "cut-video-length",
-                        "download-fb-video",
                         "download-reddit-video",
                         "embed-video-player",
-                        "extract-mp3-from-video",
                         "fb-clip-downloader",
                         "fb-highlights-downloader",
                         "fb-video-downloader",
-                        "fb-video-saver",
                         "ig-downloader-all",
                         "ig-reels-downloader-hd",
                         "ig-video-downloader",
-                        "insta-video-saver",
                         "instagram-video-downloader",
                         "musically-downloader",
                         "reddit-hd-video-downloader",
                         "reddit-media-saver",
                         "reddit-mp4-downloader",
                         "reddit-video-saver",
-                        "reduce-video-size",
                         "responsive-video-player",
                         "save-reddit-video",
                         "save-reddit-video-with-audio-online",
                         "save-reels-video",
-                        "screen-capture-video",
-                        "shorten-video-clip",
                         "sitemap-url-downloader",
                         "snap-video-downloader",
                         "social-media-downloader",
@@ -1420,6 +1561,38 @@
                     "name": "Video Tools",
                     "description": "Compress videos, convert formats, and create GIFs",
                     "route": "/video-tools",
+                    "category": "video"
+                },
+                {
+                    "id": "video-converter",
+                    "name": "Video Converter",
+                    "description": "Convert video files between MP4, AVI, MKV, MOV, and more.",
+                    "route": "/video-converter",
+                    "extraSlugs": [
+                        "change-video-type",
+                        "convert-video-format",
+                        "avi-to-mp4-converter",
+                        "mkv-to-mp4-converter",
+                        "mov-to-mp4-converter",
+                        "webm-to-mp4-converter",
+                        "flv-to-mp4-converter"
+                    ],
+                    "popular": false,
+                    "category": "video"
+                },
+                {
+                    "id": "video-editor",
+                    "name": "Video Editor",
+                    "description": "Edit, cut, and merge video files online for free.",
+                    "route": "/video-editor",
+                    "extraSlugs": [
+                        "cut-and-merge-video",
+                        "cut-video-length",
+                        "shorten-video-clip",
+                        "screen-capture-video",
+                        "edit-video-online"
+                    ],
+                    "popular": false,
                     "category": "video"
                 }
             ]
@@ -2153,10 +2326,7 @@
                         "css-beautifier-tool",
                         "css-box-shadow",
                         "css-formatter",
-                        "css-gradient-maker",
                         "css-optimizer-online",
-                        "css-shadow-maker",
-                        "format-html-css-js",
                         "free-css-beautifier-online",
                         "json-beautifier",
                         "make-css-gradients",
@@ -3052,6 +3222,52 @@
                     ],
                     "popular": false,
                     "category": "developer"
+                },
+                {
+                    "id": "css-gradient-generator",
+                    "name": "CSS Gradient Generator",
+                    "description": "Create beautiful CSS gradients for your web projects.",
+                    "route": "/css-gradient-generator",
+                    "extraSlugs": [
+                        "background-gradient-creator",
+                        "css-gradient-maker",
+                        "css3-gradient-maker",
+                        "gradient-color-generator",
+                        "gradient-generator",
+                        "linear-gradient-generator",
+                        "web-gradient-creator",
+                        "web-gradient-generator",
+                        "background-gradient-tool"
+                    ],
+                    "popular": false,
+                    "category": "developer"
+                },
+                {
+                    "id": "css-shadow-generator",
+                    "name": "CSS Shadow Generator",
+                    "description": "Generate CSS box shadows and text shadows for modern web design.",
+                    "route": "/css-shadow-generator",
+                    "extraSlugs": [
+                        "box-shadow-generator-online",
+                        "css-shadow-maker"
+                    ],
+                    "popular": false,
+                    "category": "developer"
+                },
+                {
+                    "id": "code-formatter",
+                    "name": "Code Formatter",
+                    "description": "Format and beautify HTML, CSS, JavaScript, and SQL code.",
+                    "route": "/code-formatter",
+                    "extraSlugs": [
+                        "format-html-css-js",
+                        "format-sql-online",
+                        "web-code-compressor",
+                        "css-compressor",
+                        "js-compressor-minifier"
+                    ],
+                    "popular": false,
+                    "category": "developer"
                 }
             ]
         },
@@ -3109,7 +3325,7 @@
                 {
                     "id": "blutv-video-downloader",
                     "name": "BluTV Video Downloader",
-                    "description": "Download publicly accessible BluTV content\u2014trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
+                    "description": "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
                     "route": "/blutv-video-downloader",
                     "extraSlugs": [],
                     "popular": false,
@@ -3184,10 +3400,12 @@
                         "facebook-downloader",
                         "facebook-hd-video-saver",
                         "facebook-reels-downloader",
-                        "facebook-story-downloader",
                         "facebook-story-saver",
                         "facebook-video-saver",
-                        "save-facebook-video"
+                        "save-facebook-video",
+                        "download-fb-video",
+                        "fb-video-saver",
+                        "facebook-story-downloader"
                     ],
                     "popular": true,
                     "category": "downloaders"
@@ -3334,7 +3552,6 @@
                         "fit-photo-to-instagram-story",
                         "insta-story-saver",
                         "instagram-anonymous-story-viewer",
-                        "instagram-story-dimensions-fix",
                         "instagram-story-resizer",
                         "instagram-story-viewer",
                         "instagram-story-viewer-download",
@@ -3411,7 +3628,7 @@
                 {
                     "id": "linkedin-video-downloader",
                     "name": "Linkedin Video Downloader",
-                    "description": "Download LinkedIn videos in high quality\u2014free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps\u2014just fast processing and a clean, simple interface that helps you save videos quickly.",
+                    "description": "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
                     "route": "/linkedin-video-downloader",
                     "extraSlugs": [
                         "save-linkedin-video-online-free",
@@ -3510,18 +3727,14 @@
                         "create-zip-file-online",
                         "download videos from any website",
                         "drawing-board-online",
-                        "edit-audio-online",
-                        "edit-video-online",
                         "facebook video downloader",
                         "find-keywords-online",
-                        "format-sql-online",
                         "free video downloader",
                         "generate-hash-online",
                         "generate-sitemap-online",
                         "instagram video downloader",
                         "make-archive-online",
                         "online video downloader",
-                        "online-collage-maker",
                         "online-microphone-recorder",
                         "online-screen-capture",
                         "online-thumbnail-creator",
@@ -3594,7 +3807,7 @@
                 {
                     "id": "pinterest-video-downloader",
                     "name": "Pinterest Video Downloader",
-                    "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF\u2014on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
+                    "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
                     "route": "/pinterest-video-downloader",
                     "extraSlugs": [
                         "how-to-download-pinterest-videos-to-camera-roll",
@@ -3757,7 +3970,7 @@
                 {
                     "id": "tiktok-videos-downloader",
                     "name": "Tiktok Videos Downloader",
-                    "description": "Download TikTok videos without watermark\u2014free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips.",
+                    "description": "Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips.",
                     "route": "/tiktok-videos-downloader",
                     "extraSlugs": [],
                     "popular": false,
@@ -3858,7 +4071,7 @@
                 {
                     "id": "youtube-video-downloader",
                     "name": "YouTube Video Downloader",
-                    "description": "Download YouTube videos quickly in multiple formats and resolutions\u2014free, fast, secure, no signup, and fully browser-based.",
+                    "description": "Download YouTube videos quickly in multiple formats and resolutions—free, fast, secure, no signup, and fully browser-based.",
                     "route": "/youtube-video-downloader",
                     "extraSlugs": [
                         "youtube-video-downloader-2026"
@@ -3884,9 +4097,7 @@
                         "compress-ogg-to-mp3",
                         "compress-wav-to-mp3",
                         "flv-file-to-mp4-online",
-                        "instagram-reels-to-mp4",
                         "m4a-file-to-mp3-online",
-                        "m4a-to-mp3-online",
                         "mkv-file-to-mp4-online",
                         "mov-file-to-mp4-online",
                         "mov-to-mp4",
@@ -3894,7 +4105,6 @@
                         "ogg-file-to-mp3-online",
                         "quicktime-to-mp4",
                         "tiktok-to-mp3-online",
-                        "wav-file-to-mp3-online",
                         "webm-file-to-mp4-online",
                         "youtube-to-mp3-high-quality",
                         "extract-audio-from-mp4-online"
@@ -3918,10 +4128,7 @@
                     "description": "Save Facebook videos and stories directly to your device. Our free online saver allows you to download public content in high definition without needing an account.",
                     "route": "/fb-video-saver",
                     "extraSlugs": [
-                        "download-fb-video",
                         "fb-story-saver",
-                        "fb-video-saver",
-                        "insta-video-saver",
                         "facebook-media-downloader"
                     ],
                     "category": "downloaders"
@@ -4069,7 +4276,7 @@
                 {
                     "id": "save-ig-content",
                     "name": "Save Ig Content",
-                    "description": "Download any public Instagram content\u2014photos, videos, reels, and stories\u2014to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
+                    "description": "Download any public Instagram content—photos, videos, reels, and stories—to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
                     "route": "/save-ig-content",
                     "extraSlugs": [
                         "save-ig-content",
@@ -4784,11 +4991,16 @@
                     "route": "/password-generator",
                     "extraSlugs": [
                         "advanced-password-generator",
-                        "custom-password-maker",
-                        "secure-password-creator",
                         "secure-password-generator-for-wifi",
                         "strong-password-generator",
-                        "strong-password-maker-online"
+                        "strong-password-maker-online",
+                        "configurable-password-tool",
+                        "create-strong-password",
+                        "custom-password-maker",
+                        "generate-secure-password",
+                        "password-generator2",
+                        "secure-password-creator",
+                        "secure-pass-generator"
                     ],
                     "popular": true,
                     "category": "utilities"
@@ -5038,7 +5250,6 @@
                     "description": "Free terms and condition generator tool to process your data instantly with privacy-friendly browser-based workflows.",
                     "route": "/terms-and-condition-generator",
                     "extraSlugs": [
-                        "crop-and-edit-photos",
                         "free-terms-and-condition-generator-online",
                         "terms",
                         "terms-and-condition-generator-tool"
@@ -5361,7 +5572,9 @@
                     "extraSlugs": [
                         "extract-urls-from-sitemap",
                         "google-sitemap-generator",
-                        "xml-sitemap-builder"
+                        "xml-sitemap-builder",
+                        "website-map-maker",
+                        "visual-sitemap-generator"
                     ],
                     "popular": true,
                     "category": "seo"
@@ -5494,7 +5707,9 @@
                         "free-meta-tag-generator-online",
                         "meta-header-generator",
                         "meta-tag-generator-tool",
-                        "meta-tags-generator"
+                        "meta-tags-generator",
+                        "html-head-tags-maker",
+                        "seo-meta-tags-generator"
                     ],
                     "popular": false,
                     "category": "seo"
@@ -5565,7 +5780,6 @@
                     "extraSlugs": [
                         "free-website-ranking-checker-online",
                         "website-ranking-checker-tool",
-                        "website-map-maker",
                         "check-website-errors",
                         "search-ranking-monitor",
                         "local-search-ranking"
