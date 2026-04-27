@@ -38,50 +38,7 @@ function getAllTools() {
 }
 
 function buildSlugRoutingRules() {
-	const tools = getAllTools();
-	const primaryRoutes = new Set();
-
-	for (const tool of tools) {
-		const route = normalizePath(tool.route);
-		if (route) primaryRoutes.add(route);
-	}
-
-	const redirects = [];
-	const rewritesMap = new Map();
-
-	for (const tool of tools) {
-		const destination = normalizePath(tool.route);
-		if (!destination) continue;
-
-		for (const rawSlug of tool.extraSlugs || []) {
-			const source = normalizePath(rawSlug);
-			if (!source) continue;
-
-			// Keep canonical tool routes and static pages untouched.
-			if (
-				source === destination ||
-				primaryRoutes.has(source) ||
-				STATIC_PAGES.has(source)
-			) {
-				continue;
-			}
-
-			if (rewritesMap.has(source)) continue;
-
-			rewritesMap.set(source, destination);
-			redirects.push({
-				source: `${source}/`,
-				destination: source,
-				permanent: true,
-			});
-		}
-	}
-
-	const rewrites = Array.from(rewritesMap.entries()).map(
-		([source, destination]) => ({ source, destination }),
-	);
-
-	return { redirects, rewrites };
+	return { redirects: [], rewrites: [] };
 }
 
 const { redirects: slugRedirects, rewrites: slugRewrites } =

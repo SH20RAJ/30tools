@@ -23,10 +23,12 @@ const languages = [
 	{ name: "Polski", code: "pl" },
 ];
 
-/**
- * @param {{ categories: any[] }} props
- */
-export function AppleFooter({ categories = [] }) {
+interface CategoryItem {
+	label: string;
+	href: string;
+}
+
+export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }) {
 	const footerNav = [
 		{ name: "About", href: getRouteById("about") },
 		{ name: "Privacy Policy", href: getRouteById("privacy") },

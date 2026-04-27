@@ -41,6 +41,23 @@ Classic square posts work best at 1080x1080 pixels. Our resizer handles the padd
     }
 };
 
+import { getToolByExtraSlug } from "./tools";
+
 export function getIntentBySlug(slug: string) {
-    return intentData[slug] || null;
+    const existing = intentData[slug];
+    if (existing) return existing;
+
+    // Fallback: Look up in tools.json extraSlugs
+    const parentTool = getToolByExtraSlug(slug);
+    if (parentTool) {
+        const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+        return {
+            parentToolId: parentTool.id,
+            title: `${title} Online - Free & No Signup`,
+            description: `Free ${title} online. ${parentTool.name} allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.`,
+            keywords: `${title}, free online tool, no signup, ${parentTool.category}, ${title} online, 30tools`,
+        };
+    }
+
+    return null;
 }

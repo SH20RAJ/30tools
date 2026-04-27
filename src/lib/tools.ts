@@ -56,6 +56,10 @@ export function getToolById(id: string): Tool | undefined {
 	return getAllTools().find((t) => t.id === id);
 }
 
+export function getToolByExtraSlug(slug: string): Tool | undefined {
+	return getAllTools().find((t) => t.extraSlugs?.includes(slug));
+}
+
 export function getAllCategories(): Category[] {
 	return Object.values(categories);
 }
