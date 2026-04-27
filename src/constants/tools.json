@@ -150,6 +150,14 @@
                     ],
                     "popular": true,
                     "category": "generators"
+                },
+                {
+                    "id": "qr-code-reader",
+                    "name": "QR Code Reader",
+                    "description": "Scan and decode QR codes from images or using your camera online for free. Secure, browser-based QR reader with instant results and no data storage.",
+                    "route": "/qr-code-reader",
+                    "popular": false,
+                    "category": "generators"
                 }
             ]
         },
@@ -1307,6 +1315,22 @@
                         "word-to-pdf-converter-online"
                     ],
                     "popular": true,
+                    "category": "pdf"
+                },
+                {
+                    "id": "pdf-grayscale",
+                    "name": "PDF Grayscale",
+                    "description": "Convert color PDF documents to black and white (grayscale) online for free. Reduce file size and save ink with our secure, browser-based PDF converter. No signup required.",
+                    "route": "/pdf-grayscale",
+                    "popular": false,
+                    "category": "pdf"
+                },
+                {
+                    "id": "pdf-repair",
+                    "name": "PDF Repair",
+                    "description": "Fix corrupted or broken PDF files online for free. Our secure repair tool rebuilds document headers and cross-reference tables to restore access to your PDF documents instantly.",
+                    "route": "/pdf-repair",
+                    "popular": false,
                     "category": "pdf"
                 },
                 {

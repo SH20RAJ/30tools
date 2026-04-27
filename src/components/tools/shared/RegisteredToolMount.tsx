@@ -148,11 +148,27 @@ const PDFRotation = dynamic(
 	{ ssr: false },
 );
 const PDFPageDelete = dynamic(
-	() => import("@/components/tools/pdf/PDFPageDelete.tsx"),
+	() => import("@/components/tools/pdf/PDFPageDelete"),
 	{ ssr: false },
 );
 const PDFRearrange = dynamic(
-	() => import("@/components/tools/pdf/PDFRearrange.tsx"),
+	() => import("@/components/tools/pdf/PDFRearrange"),
+	{ ssr: false },
+);
+const PDFGrayscale = dynamic(
+	() => import("@/components/tools/pdf/PDFGrayscale"),
+	{ ssr: false },
+);
+const PDFRepair = dynamic(
+	() => import("@/components/tools/pdf/PDFRepair"),
+	{ ssr: false },
+);
+const QrGeneratorPremium = dynamic(
+	() => import("@/components/tools/utilities/QrGeneratorPremium"),
+	{ ssr: false },
+);
+const QrReaderPremium = dynamic(
+	() => import("@/components/tools/utilities/QrReaderPremium"),
 	{ ssr: false },
 );
 const ImageToBase64Tool = dynamic(
@@ -984,7 +1000,8 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "base64-to-image-converter") return <Base64ToImageTool />;
 	if (toolId === "image-to-base64-converter") return <ImageToBase64Tool />;
 	if (toolId === "md5-generator") return <HashGeneratorTool />;
-	if (toolId === "qr-code-generator" || toolId === "qr-code-decoder") return <QrGeneratorTool />;
+	if (toolId === "qr-code-generator" || toolId === "qr-code-decoder") return <QrGeneratorPremium />;
+	if (toolId === "qr-code-reader") return <QrReaderPremium />;
 	if (toolId === "youtube-channel-id-extractor" || toolId === "youtube-channel-id-finder") return <YouTubeChannelIDFinderTool />;
 	if (toolId === "word-to-number-converter") return <WordToNumberConverter />;
 	if (toolId === "markdown-to-text") return <MarkdownToText />;
@@ -1006,6 +1023,8 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "pdf-rotation") return <PDFRotation />;
 	if (toolId === "delete-pdf-pages") return <PDFPageDelete />;
 	if (toolId === "rearrange-pdf") return <PDFRearrange />;
+	if (toolId === "pdf-grayscale") return <PDFGrayscale />;
+	if (toolId === "pdf-repair") return <PDFRepair />;
 
 	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 
