@@ -1,17 +1,20 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
+import { getToolById } from "@/lib/tools";
+import { notFound } from "next/navigation";
 
 
 export const metadata = {
 	title: "Free Image Converter Online – Fast & No Signup | 30tools",
-	description: "Convert images between different formats (JPEG, PNG, WebP) 100% free, fast, and no signup required.",
-	keywords: "image converter, free image converter, online image converter, no signup, 30tools",
+	description: "Convert images between any format (PNG, JPG, WEBP, BMP, GIF, SVG) online for free. Fast, high-quality conversion with batch support and 100% privacy.",
+	keywords: "image converter, free image converter, online image converter, no signup, 30tools, convert png to jpg, convert jpg to webp",
 	alternates: {
 		canonical: "https://30tools.com/image-converter",
 	},
 	openGraph: {
 		title: "Free Image Converter Online – Fast & No Signup | 30tools",
-		description: "Convert images between different formats (JPEG, PNG, WebP) 100% free, fast, and no signup required.",
+		description: "Convert images between any format (PNG, JPG, WEBP, BMP, GIF, SVG) online for free. Fast, high-quality conversion with batch support and 100% privacy.",
 		url: "https://30tools.com/image-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,47 +23,25 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Image Converter Online – Fast & No Signup | 30tools",
-		description: "Convert images between different formats (JPEG, PNG, WebP) 100% free, fast, and no signup required.",
+		description: "Convert images between any format (PNG, JPG, WEBP, BMP, GIF, SVG) online for free. Fast, high-quality conversion with batch support and 100% privacy.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "image-converter",
-        "name": "Image Converter",
-        "description": "Convert images between different formats (JPEG, PNG, WebP)",
-        "route": "/image-converter",
-        "extraSlugs": [
-                "convert-image-to-embroidery-pattern",
-                "free-image-converter-online"
-        ],
-        "popular": true,
-        "category": "image"
-};
+	const tool = getToolById("image-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
 		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/image-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
+			<ToolSEOLayout toolId={tool.id}>
 				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
+			</ToolSEOLayout>
 		</>
 	);
 }
+

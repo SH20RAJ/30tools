@@ -465,8 +465,30 @@
                 {
                     "id": "image-converter",
                     "name": "Image Converter",
-                    "description": "Convert images between different formats (JPEG, PNG, WebP)",
+                    "description": "Convert images between any format (PNG, JPG, WEBP, BMP, GIF, SVG) online for free. Fast, high-quality conversion with batch support and 100% privacy.",
                     "route": "/image-converter",
+                    "features": [
+                        "Supports all major formats: PNG, JPG, WEBP, BMP, GIF",
+                        "Batch processing for multiple images at once",
+                        "Maintain original image quality and resolution",
+                        "Fast, secure, and privacy-focused conversion",
+                        "No registration or software installation needed"
+                    ],
+                    "howTo": {
+                        "name": "How to convert image formats",
+                        "steps": [
+                            { "name": "Upload Images", "text": "Click 'Select Images' or drag and drop your files into the converter." },
+                            { "name": "Choose Format", "text": "Select your target output format (e.g., convert to WEBP)." },
+                            { "name": "Convert", "text": "Click 'Start Conversion' to process your images instantly." },
+                            { "name": "Download", "text": "Download your converted images individually or as a single ZIP file." }
+                        ]
+                    },
+                    "faqs": [
+                        { "question": "What image formats are supported?", "answer": "We support most popular formats including JPEG, PNG, WEBP, GIF, BMP, and ICO." },
+                        { "question": "Is there a file size limit?", "answer": "No, you can convert images of any size, though larger files may take longer to process in your browser." },
+                        { "question": "Are my images private?", "answer": "Yes. All conversion is done locally in your browser. We never upload your images to our servers." },
+                        { "question": "Can I convert multiple images at once?", "answer": "Yes! Our batch converter allows you to upload and convert dozens of images simultaneously." }
+                    ],
                     "extraSlugs": [
                         "convert-image-to-embroidery-pattern",
                         "free-image-converter-online"
