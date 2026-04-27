@@ -123,6 +123,26 @@ const PDFPageNumbers = dynamic(
 	() => import("@/components/tools/pdf/PDFPageNumbers.tsx"),
 	{ ssr: false },
 );
+const PDFWatermark = dynamic(
+	() => import("@/components/tools/pdf/PDFWatermark.tsx"),
+	{ ssr: false },
+);
+const PDFMetadataEditor = dynamic(
+	() => import("@/components/tools/pdf/PDFMetadataEditor.tsx"),
+	{ ssr: false },
+);
+const HTMLToPDF = dynamic(
+	() => import("@/components/tools/pdf/HTMLToPDF.tsx"),
+	{ ssr: false },
+);
+const PDFEditor = dynamic(
+	() => import("@/components/tools/pdf/PDFEditor.tsx"),
+	{ ssr: false },
+);
+const PDFCompressor = dynamic(
+	() => import("@/components/tools/pdf/PDFCompressor.tsx"),
+	{ ssr: false },
+);
 const ImageToBase64Tool = dynamic(
 	() => import("@/components/tools/image/ImageToBase64Tool.tsx"),
 	{ ssr: false },
@@ -966,6 +986,11 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "word-to-pdf") return <WordToPDF />;
 	if (toolId === "pdf-to-word") return <PDFToWord />;
 	if (toolId === "pdf-add-page-numbers") return <PDFPageNumbers />;
+	if (toolId === "pdf-watermark") return <PDFWatermark />;
+	if (toolId === "pdf-metadata-editor") return <PDFMetadataEditor />;
+	if (toolId === "html-to-pdf") return <HTMLToPDF />;
+	if (toolId === "pdf-editor") return <PDFEditor />;
+	if (toolId === "pdf-size-reducer") return <PDFCompressor />;
 
 	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 
