@@ -5,7 +5,58 @@
  */
 
 export const getDynamicSEOContent = (tool) => {
-	const { name, category } = tool;
+	const { name, category, id } = tool;
+
+	const toolSpecificOverrides = {
+		"pdf-merger": {
+			article: `
+## Why Our PDF Merger is the Professionals Choice
+Merging sensitive documents like legal contracts, medical records, or academic transcripts requires a tool that respects both formatting and privacy. Our PDF Merger is built to handle complex multi-file combinations without ever touching a server.
+
+### Maintain Original Formatting & Fonts
+Many online mergers strip out embedded fonts or mess up the page order. 30tools ensures that every layer, hyperlink, and vector element remains exactly as it was in the original file.
+
+### Unlimited Files, Zero Signup
+While other platforms limit you to 2 files or 10MB, our browser-side engine lets you merge dozens of documents into a single, high-fidelity PDF without ever creating an account.
+			`,
+			faqs: [
+				{ question: "Is there a limit to how many PDFs I can merge?", answer: "No. You can merge as many files as your device's memory can handle. For most users, this means dozens of documents simultaneously." },
+				{ question: "Do you store a copy of my merged PDF?", answer: "No. The merging happens locally. Once you download the result, the data is cleared from your browser's memory." }
+			]
+		},
+		"pdf-compressor": {
+			article: `
+## Compress PDF Files Without Visible Quality Loss
+Sending a large PDF via email often results in "File too large" errors. Our compressor uses structural optimization to shrink your files by up to 90% while keeping your text sharp and images clear.
+
+### Intelligent Object Stream Compression
+Instead of just lowering image quality, we optimize the PDF's internal structure—removing redundant data, flattening layers where appropriate, and cleaning up object streams.
+
+### Professional Quality Levels
+Choose from "Extreme Compression" for maximum size reduction or "Recommended" for a perfect balance between size and high-fidelity resolution.
+			`,
+			faqs: [
+				{ question: "Will my images look blurry after compression?", answer: "We use smart downsampling to ensure that images remain crisp for viewing and printing even at high compression levels." },
+				{ question: "Is this compressor safe for bank statements?", answer: "Yes. Since processing is 100% browser-side, your sensitive financial data is never exposed to our servers." }
+			]
+		},
+		"image-compressor": {
+			article: `
+## Elite Image Compression for Faster Websites
+Website speed is a critical ranking factor. Our Image Compressor helps you achieve perfect Lighthouse scores by stripping unnecessary metadata and using modern quantization algorithms to reduce file sizes without touching the visual clarity.
+
+### Smart Lossy & Lossless Modes
+Our engine automatically detects the best balance for your specific image type. We preserve transparent alpha channels for PNGs and use advanced chroma subsampling for JPEGs.
+
+### Bulk Optimization
+Upload your entire asset folder and compress them all at once. Download the results in a single ZIP or individually — all processed locally for maximum privacy.
+			`,
+			faqs: [
+				{ question: "How much file size can I save?", answer: "On average, our users save 60-80% on file size for JPEGs and 50-70% for PNGs with no noticeable difference in quality." },
+				{ question: "Do you support WebP compression?", answer: "Yes, we support and recommend WebP for the best web performance. You can even convert and compress in one step." }
+			]
+		}
+	};
 
 	const templates = {
 		downloaders: {
@@ -713,10 +764,6 @@ export const getDynamicSEOContent = (tool) => {
 					answer: `Yes. Every issue comes with a plain-language explanation and a copy-paste fix. No SEO expertise required — just follow the prioritized checklist.`,
 				},
 				{
-					question: `How often should I run an SEO audit?`,
-					answer: `We recommend auditing after any site change (new pages, redesigns, content updates) and at least once a month to catch regressions. ${name} makes it easy with instant, free re-audits.`,
-				},
-				{
 					question: `Does ${name} store my audit data?`,
 					answer: `No. Audits are processed in real time and results are shown only to you. We do not build a database of audited URLs or share findings with any third party.`,
 				},
@@ -724,33 +771,32 @@ export const getDynamicSEOContent = (tool) => {
 		},
 	};
 
-	const template = templates[category] || templates.utilities;
-	const safeName = name || "Tool";
-
 	try {
+		const safeName = name || "This tool";
+		const safeCategory = category || "utilities";
+		const categoryTemplate = templates[safeCategory] || templates.utilities;
+		const overrides = toolSpecificOverrides[id] || {};
+
 		return {
-			features: (template.features || []).map((f) => f.replaceAll("${name}", safeName)),
+			article: (overrides.article || categoryTemplate.article || "").replace(/\${name}/g, safeName),
+			features: (overrides.features || categoryTemplate.features || []).map(f => f.replace(/\${name}/g, safeName)),
 			howTo: {
-				name: (template.howTo?.name || `How to use ${safeName}`).replaceAll("${name}", safeName),
-				steps: (template.howTo?.steps || []).map((step) => ({
-					...step,
-					name: (step.name || "").replaceAll("${name}", safeName),
-					text: (step.text || "").replaceAll("${name}", safeName),
+				name: (overrides.howTo?.name || categoryTemplate.howTo?.name || `How to use ${safeName}`).replace(/\${name}/g, safeName),
+				steps: (overrides.howTo?.steps || categoryTemplate.howTo?.steps || []).map(s => ({
+					name: s.name.replace(/\${name}/g, safeName),
+					text: s.text.replace(/\${name}/g, safeName),
 				})),
 			},
-			faqs: (template.faqs || []).map((faq) => ({
-				...faq,
-				question: (faq.question || "").replaceAll("${name}", safeName),
-				answer: (faq.answer || "").replaceAll("${name}", safeName),
+			faqs: (overrides.faqs || categoryTemplate.faqs || []).map(f => ({
+				question: f.question.replace(/\${name}/g, safeName),
+				answer: f.answer.replace(/\${name}/g, safeName),
 			})),
-			article: (template.article || "").replaceAll("${name}", safeName),
 		};
 	} catch (error) {
-		console.error(`Error generating SEO content for ${safeName}:`, error);
-		// Fallback to minimal utilities template
+		console.error(`Error generating SEO content for ${id}:`, error);
 		return {
 			features: [],
-			howTo: { name: `How to use ${safeName}`, steps: [] },
+			howTo: { name: `How to use ${name}`, steps: [] },
 			faqs: [],
 			article: "",
 		};

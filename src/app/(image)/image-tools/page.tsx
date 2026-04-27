@@ -1,17 +1,16 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
-
+import ImagePillar from "@/components/pillars/ImagePillar";
 
 export const metadata = {
-	title: "Free Free Image Tools Online Online – Fast & No Signup | 30tools",
-	description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
-	keywords: "free image tools online, free free image tools online, online free image tools online, no signup, 30tools",
+	title: "Free Image Tools Online – No Signup, No Limits & Fast | 30tools",
+	description: "Professional suite of free online image tools. Compress, resize, remove backgrounds, and convert images to WebP/PNG securely in your browser. No signup required.",
+	keywords: "image tools, free image tools online, image compressor free, remove background online, resize image for instagram, photo enhancer free, convert heic to jpg, 30tools image",
 	alternates: {
 		canonical: "https://30tools.com/image-tools",
 	},
 	openGraph: {
-		title: "Free Free Image Tools Online Online – Fast & No Signup | 30tools",
-		description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
+		title: "Free Image Tools Online – No Signup, No Limits & Fast | 30tools",
+		description: "Professional suite of free online image tools. Compress, resize, remove backgrounds, and convert images securely in your browser.",
 		url: "https://30tools.com/image-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Free Image Tools Online Online – Fast & No Signup | 30tools",
-		description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
+		title: "Free Image Tools Online – No Signup, No Limits & Fast | 30tools",
+		description: "Professional-grade image tools for free. No signup, no limits, and 100% browser-side privacy.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -29,35 +28,28 @@ export const metadata = {
 export default async function ToolPage() {
 	const tool = {
         "id": "image-tools",
-        "name": "Free Image Tools Online",
-        "description": "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
+        "name": "Professional Image Suite",
+        "description": "Powerful AI-driven and browser-based image utilities for creators, developers, and social media managers.",
         "route": "/image-tools",
-        "extraSlugs": [],
-        "popular": false,
-        "category": "image"
+        "category": "image",
+        "article": `
+## Professional Photo Editing and Optimization Online
+30tools brings the power of desktop photo editors directly to your browser. Our Image Suite is optimized for speed, precision, and privacy, making it the perfect choice for professional workflows.
+
+### AI Subject Isolation & Background Removal
+Leverage cutting-edge machine learning models to remove backgrounds from your photos instantly. Perfect for e-commerce product listings and professional profile pictures.
+
+### Advanced Format Compression
+Save up to 80% on file size without visible quality loss. Our compressor uses state-of-the-art algorithms to ensure your website assets are as light as possible for perfect Core Web Vitals.
+
+### 100% Secure & Private
+Unlike other online editors, we process your images on your own hardware. Your private photos are never uploaded to our servers, giving you total peace of mind for sensitive projects.
+        `
 };
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/image-tools",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ImagePillar />
+		</ToolLayout>
 	);
 }

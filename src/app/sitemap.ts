@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllTools, SUPPORTED_LANGUAGES } from "@/lib/tools";
+import { intentData } from "@/lib/intent-data";
 
 const BASE_URL = "https://30tools.com";
 
@@ -75,6 +76,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			priority: 0.8,
 		}));
 
+	// 7. Intent Pages (Long-tail SEO)
+	const intentPages: MetadataRoute.Sitemap = Object.keys(intentData).map((slug) => ({
+		url: `${BASE_URL}/${slug}`,
+		lastModified: currentDate,
+		changeFrequency: "weekly",
+		priority: 0.8,
+	}));
+
 	try {
 		return [
 			...staticPages, 
@@ -82,7 +91,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			...toolPages, 
 			...toolGuidesIndex, 
 			...toolGuideCategoryPages, 
-			...blogPages
+			...blogPages,
+			...intentPages
 		];
 	} catch (error) {
 		console.error("Sitemap generation error:", error);

@@ -1,17 +1,16 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
-
+import PDFPillar from "@/components/pillars/PDFPillar";
 
 export const metadata = {
-	title: "Free PDF Tools Online – Fast & No Signup | 30tools",
-	description: "Merge, split, compress, and manipulate PDF documents 100% free, fast, and no signup required.",
-	keywords: "pdf tools, free pdf tools, online pdf tools, no signup, 30tools",
+	title: "Free PDF Tools Online – No Signup, No Limits & Secure | 30tools",
+	description: "The ultimate suite of 20+ free online PDF tools. Merge, split, compress, and convert PDFs to Word/Images securely in your browser. Professional-grade utilities with no signup required.",
+	keywords: "pdf tools, free pdf tools online, merge pdf free, compress pdf no limits, split pdf online, secure pdf editor, convert pdf to word online, 30tools pdf",
 	alternates: {
 		canonical: "https://30tools.com/pdf-tools",
 	},
 	openGraph: {
-		title: "Free PDF Tools Online – Fast & No Signup | 30tools",
-		description: "Merge, split, compress, and manipulate PDF documents 100% free, fast, and no signup required.",
+		title: "Free PDF Tools Online – No Signup, No Limits & Secure | 30tools",
+		description: "The ultimate suite of 20+ free online PDF tools. Merge, split, compress, and convert PDFs to Word/Images securely in your browser.",
 		url: "https://30tools.com/pdf-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free PDF Tools Online – Fast & No Signup | 30tools",
-		description: "Merge, split, compress, and manipulate PDF documents 100% free, fast, and no signup required.",
+		title: "Free PDF Tools Online – No Signup, No Limits & Secure | 30tools",
+		description: "Professional-grade PDF tools for free. No signup, no limits, and 100% browser-side privacy.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -29,35 +28,25 @@ export const metadata = {
 export default async function ToolPage() {
 	const tool = {
         "id": "pdf-tools",
-        "name": "PDF Tools",
-        "description": "Merge, split, compress, and manipulate PDF documents",
+        "name": "Professional PDF Suite",
+        "description": "20+ enterprise-grade PDF utilities for merging, splitting, compressing, and converting documents with total privacy.",
         "route": "/pdf-tools",
-        "extraSlugs": [],
-        "popular": false,
-        "category": "pdf"
+        "category": "pdf",
+        "article": `
+## The Most Comprehensive Free PDF Suite Online
+Stop paying for monthly subscriptions to simple PDF utilities. 30tools provides a professional-grade alternative to desktop software, allowing you to manipulate documents with surgical precision. 
+
+### Privacy-First Browser Processing
+We believe your documents belong to you. Our PDF suite is built using local-first technologies (PDF.js and PDF-Lib), meaning your files are never uploaded to a server. All merging, splitting, and conversion happens in your browser's secure sandbox.
+
+### No Signup. No Limits. No Watermarks.
+Unlike competitors who gate productivity behind paywalls and account creation, 30tools is committed to a frictionless experience. Download as many files as you need, whenever you need them.
+        `
 };
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/pdf-tools",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "pdf" }}>
-				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<PDFPillar />
+		</ToolLayout>
 	);
 }
