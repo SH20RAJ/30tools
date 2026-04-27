@@ -107,6 +107,22 @@ const PDFSplitter = dynamic(
 	() => import("@/components/tools/pdf/PDFSplitter.tsx"),
 	{ ssr: false },
 );
+const ImageColorPicker = dynamic(
+	() => import("@/components/tools/image/ImageColorPicker.tsx"),
+	{ ssr: false },
+);
+const WordToPDF = dynamic(
+	() => import("@/components/tools/pdf/WordToPDF.tsx"),
+	{ ssr: false },
+);
+const PDFToWord = dynamic(
+	() => import("@/components/tools/pdf/PDFToWord.tsx"),
+	{ ssr: false },
+);
+const PDFPageNumbers = dynamic(
+	() => import("@/components/tools/pdf/PDFPageNumbers.tsx"),
+	{ ssr: false },
+);
 const ImageToBase64Tool = dynamic(
 	() => import("@/components/tools/image/ImageToBase64Tool.tsx"),
 	{ ssr: false },
@@ -946,6 +962,10 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "pdf-unlocker") return <PDFUnlock />;
 	if (toolId === "pdf-merger") return <PDFMerger />;
 	if (toolId === "pdf-splitter") return <PDFSplitter />;
+	if (toolId === "image-color-picker") return <ImageColorPicker />;
+	if (toolId === "word-to-pdf") return <WordToPDF />;
+	if (toolId === "pdf-to-word") return <PDFToWord />;
+	if (toolId === "pdf-add-page-numbers") return <PDFPageNumbers />;
 
 	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 
