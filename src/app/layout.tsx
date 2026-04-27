@@ -336,19 +336,6 @@ export default async function RootLayout({
 					{children}
 					<AppleFooter categories={categories} />
 					<Toaster />
-					<a
-						className="sr-only"
-						href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
-						aria-label="Visitor Badge"
-					>
-						<img
-							src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
-							alt="Visitor badge"
-							width="200"
-							height="20"
-							loading="lazy"
-						/>
-					</a>
 				</ThemeProvider>
 
 				<script

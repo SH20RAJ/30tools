@@ -129,10 +129,11 @@ export function AppleNavbar() {
 										href="https://github.com/sh20raj/30tools"
 										target="_blank"
 										rel="noopener noreferrer"
-										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-none transition-all"
+										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-none transition-all flex items-center gap-2"
 										aria-label="GitHub Repository"
 									>
-										<Github className="h-5 w-5" />
+										<Github className="h-4 w-4" />
+										<span className="text-[10px] font-bold uppercase tracking-tighter hidden lg:block">Open Source</span>
 									</a>
 								</TooltipTrigger>
 								<TooltipContent>GitHub</TooltipContent>

@@ -149,8 +149,8 @@ export default function ToolLayout({
 				/>
 			</div>
 
-			<main className="container mx-auto px-4 py-16 max-w-6xl space-y-32">
-				<section className="text-center space-y-8 max-w-4xl mx-auto animate-in">
+			<main className="container mx-auto px-4 py-24 md:py-32 max-w-6xl space-y-32">
+				<section className="text-center space-y-8 max-w-4xl mx-auto animate-in pt-8">
 					<h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight bg-gradient-to-b from-foreground to-foreground/70">
 						{enrichedTool.name}
 					</h1>
@@ -184,6 +184,28 @@ export default function ToolLayout({
 					<div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] -z-10 transition-opacity" />
 					<div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 blur-[120px] -z-10 transition-opacity" />
 					<div className="relative z-10">{children}</div>
+				</section>
+
+				{/* Contribution Notice */}
+				<section className="text-center space-y-4 max-w-2xl mx-auto p-8 border border-dashed rounded-2xl bg-primary/5">
+					<h3 className="text-lg font-bold">Tool not working or missing something?</h3>
+					<p className="text-sm text-muted-foreground">
+						This tool is open-source and community-driven. If you find a bug, have a feature request, 
+						or want to contribute a new tool, please create a PR on GitHub or contact us.
+					</p>
+					<div className="flex flex-wrap items-center justify-center gap-4">
+						<Button variant="outline" size="sm" asChild className="gap-2">
+							<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noreferrer">
+								<Github className="h-4 w-4" />
+								Contribute on GitHub
+							</a>
+						</Button>
+						<Button variant="ghost" size="sm" asChild className="gap-2">
+							<a href="mailto:mail@30tools.com">
+								mail@30tools.com
+							</a>
+						</Button>
+					</div>
 				</section>
 
 				{/* Trust & SEO Content */}

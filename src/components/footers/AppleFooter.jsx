@@ -75,16 +75,21 @@ export function AppleFooter({ categories = [] }) {
 					</div>
 
 					<div>
-						<h4 className="text-[12px] font-semibold mb-4">Open Source</h4>
+						<h4 className="text-[12px] font-semibold mb-4 text-primary">Open Source</h4>
 						<ul className="space-y-2">
 							<li>
-								<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex items-center gap-1">
-									GitHub Repository <ArrowUpRight className="h-3 w-3" />
+								<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex items-center gap-1 group">
+									<Github className="h-3 w-3 group-hover:text-primary" /> GitHub Repository <ArrowUpRight className="h-3 w-3 opacity-50" />
 								</a>
 							</li>
 							<li>
 								<a href="https://github.com/sh20raj/30tools/blob/main/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex items-center gap-1">
-									Contribute <ArrowUpRight className="h-3 w-3" />
+									Contribute & Build <ArrowUpRight className="h-3 w-3 opacity-50" />
+								</a>
+							</li>
+							<li>
+								<a href="https://github.com/sh20raj/30tools/issues" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex items-center gap-1">
+									Report an Issue <ArrowUpRight className="h-3 w-3 opacity-50" />
 								</a>
 							</li>
 						</ul>
@@ -100,10 +105,25 @@ export function AppleFooter({ categories = [] }) {
 					<p className="text-[12px] opacity-80">
 						Copyright © 2026 30tools Inc. All rights reserved.
 					</p>
-					<div className="flex gap-6 opacity-90">
-						<Link href={getRouteById("privacy")} className="text-[12px] hover:underline underline-offset-4">Privacy Policy</Link>
-						<Link href={getRouteById("terms")} className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
-						<Link href={getRouteById("contact")} className="text-[12px] hover:underline underline-offset-4">Contact</Link>
+					<div className="flex flex-col md:flex-row items-center gap-6">
+						<div className="flex gap-6 opacity-90">
+							<Link href={getRouteById("privacy")} className="text-[12px] hover:underline underline-offset-4">Privacy Policy</Link>
+							<Link href={getRouteById("terms")} className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
+							<Link href={getRouteById("contact")} className="text-[12px] hover:underline underline-offset-4">Contact</Link>
+						</div>
+						<a
+							href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
+							aria-label="Visitor Badge"
+							className="block hover:opacity-80 transition-opacity"
+						>
+							<img
+								src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
+								alt="Visitor badge"
+								width="120"
+								height="20"
+								loading="lazy"
+							/>
+						</a>
 					</div>
 				</div>
 			</div>

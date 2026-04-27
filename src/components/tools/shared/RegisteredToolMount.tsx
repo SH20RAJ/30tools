@@ -943,16 +943,26 @@ function GenericNotice({ toolId }: { toolId: string }) {
 			<CardHeader className="">
 				<CardTitle className="text-lg">{titleCaseId(toolId)}</CardTitle>
 			</CardHeader>
-			<CardContent className="space-y-3 text-sm text-muted-foreground">
+			<CardContent className="space-y-4 text-sm text-muted-foreground">
 				<p>
 					Interactive workflow for this page is being expanded. You can still use breadcrumbs and related
-					tools below, or request prioritization on GitHub.
+					tools below. 
 				</p>
-				<Button className="" variant="outline" asChild>
-					<a href="https://github.com/sh20raj/30tools/issues" target="_blank" rel="noreferrer">
-						Open GitHub issue
-					</a>
-				</Button>
+				<p className="font-medium text-foreground">
+					Want to request this tool or contribute?
+				</p>
+				<div className="flex flex-wrap gap-3">
+					<Button variant="outline" size="sm" asChild className="gap-2">
+						<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noreferrer">
+							Create PR/Issue
+						</a>
+					</Button>
+					<Button variant="secondary" size="sm" asChild>
+						<a href="mailto:mail@30tools.com">
+							Email Request
+						</a>
+					</Button>
+				</div>
 			</CardContent>
 		</Card>
 	);
