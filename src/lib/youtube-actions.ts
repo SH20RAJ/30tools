@@ -5,7 +5,7 @@ import {
 	generateTimestampsAI,
 	generateYouTubeIdeasAI,
 	generateYouTubeScriptAI,
-} from "./ai-services/youtube-ai-actions.js";
+} from "./ai-services/youtube-ai-actions";
 
 export interface YouTubeVideoIdResult {
 	success?: boolean;

@@ -67,6 +67,10 @@ const MarkdownToText = dynamic(
 	() => import("@/components/tools/text/MarkdownToText.jsx"),
 	{ ssr: false },
 );
+const ImageToPDF = dynamic(
+	() => import("@/components/tools/pdf/ImageToPDF.tsx"),
+	{ ssr: false },
+);
 
 const JSON_FORMATTER_IDS = new Set(["json-editor", "json-viewer", "json-validator"]);
 
@@ -882,6 +886,7 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "youtube-channel-id-extractor" || toolId === "youtube-channel-id-finder") return <YouTubeChannelIDFinderTool />;
 	if (toolId === "word-to-number-converter") return <WordToNumberConverter />;
 	if (toolId === "markdown-to-text") return <MarkdownToText />;
+	if (toolId === "image-to-pdf") return <ImageToPDF />;
 
 	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
 
