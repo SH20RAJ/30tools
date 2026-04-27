@@ -84,71 +84,71 @@ const MarkdownToText = dynamic(
 	{ ssr: false },
 );
 const ImageToPDF = dynamic(
-	() => import("@/components/tools/pdf/ImageToPDF.tsx"),
+	() => import("@/components/tools/pdf/ImageToPDF"),
 	{ ssr: false },
 );
 const PDFToImage = dynamic(
-	() => import("@/components/tools/pdf/PDFToImage.tsx"),
+	() => import("@/components/tools/pdf/PDFToImage"),
 	{ ssr: false },
 );
 const PDFProtect = dynamic(
-	() => import("@/components/tools/pdf/PDFProtect.tsx"),
+	() => import("@/components/tools/pdf/PDFProtect"),
 	{ ssr: false },
 );
 const PDFUnlock = dynamic(
-	() => import("@/components/tools/pdf/PDFUnlock.tsx"),
+	() => import("@/components/tools/pdf/PDFUnlock"),
 	{ ssr: false },
 );
 const PDFMerger = dynamic(
-	() => import("@/components/tools/pdf/PDFMerger.tsx"),
+	() => import("@/components/tools/pdf/PDFMerger"),
 	{ ssr: false },
 );
 const PDFSplitter = dynamic(
-	() => import("@/components/tools/pdf/PDFSplitter.tsx"),
+	() => import("@/components/tools/pdf/PDFSplitter"),
 	{ ssr: false },
 );
 const ImageColorPicker = dynamic(
-	() => import("@/components/tools/image/ImageColorPicker.tsx"),
+	() => import("@/components/tools/image/ImageColorPicker"),
 	{ ssr: false },
 );
 const WordToPDF = dynamic(
-	() => import("@/components/tools/pdf/WordToPDF.tsx"),
+	() => import("@/components/tools/pdf/WordToPDF"),
 	{ ssr: false },
 );
 const PDFToWord = dynamic(
-	() => import("@/components/tools/pdf/PDFToWord.tsx"),
+	() => import("@/components/tools/pdf/PDFToWord"),
 	{ ssr: false },
 );
 const PDFPageNumbers = dynamic(
-	() => import("@/components/tools/pdf/PDFPageNumbers.tsx"),
+	() => import("@/components/tools/pdf/PDFPageNumbers"),
 	{ ssr: false },
 );
 const PDFWatermark = dynamic(
-	() => import("@/components/tools/pdf/PDFWatermark.tsx"),
+	() => import("@/components/tools/pdf/PDFWatermark"),
 	{ ssr: false },
 );
 const PDFMetadataEditor = dynamic(
-	() => import("@/components/tools/pdf/PDFMetadataEditor.tsx"),
+	() => import("@/components/tools/pdf/PDFMetadataEditor"),
 	{ ssr: false },
 );
 const HTMLToPDF = dynamic(
-	() => import("@/components/tools/pdf/HTMLToPDF.tsx"),
+	() => import("@/components/tools/pdf/HTMLToPDF"),
 	{ ssr: false },
 );
 const PDFEditor = dynamic(
-	() => import("@/components/tools/pdf/PDFEditor.tsx"),
+	() => import("@/components/tools/pdf/PDFEditor"),
 	{ ssr: false },
 );
 const PDFCompressor = dynamic(
-	() => import("@/components/tools/pdf/PDFCompressor.tsx"),
+	() => import("@/components/tools/pdf/PDFCompressor"),
 	{ ssr: false },
 );
 const ImageToBase64Tool = dynamic(
-	() => import("@/components/tools/image/ImageToBase64Tool.tsx"),
+	() => import("@/components/tools/image/ImageToBase64Tool"),
 	{ ssr: false },
 );
 const Base64ToImageTool = dynamic(
-	() => import("@/components/tools/image/Base64ToImageTool.tsx"),
+	() => import("@/components/tools/image/Base64ToImageTool"),
 	{ ssr: false },
 );
 

@@ -4,7 +4,7 @@ import { useState, useCallback, useRef, useEffect } from "react";
 import JSZip from "jszip";
 import { 
     Upload, 
-    FileImage, 
+    FileImage as FileImageIcon, 
     X, 
     Download, 
     FileText,
@@ -210,7 +210,7 @@ export default function PDFToImage() {
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
-                        <FileImage className="h-6 w-6" />
+                        <FileImageIcon className="h-6 w-6" />
                     </div>
                     <div>
                         <h2 className="text-2xl font-bold">PDF to Image</h2>

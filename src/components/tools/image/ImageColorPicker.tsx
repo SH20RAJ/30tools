@@ -203,7 +203,7 @@ export default function ImageColorPicker() {
                                             style={{
                                                 backgroundImage: `url(${image})`,
                                                 backgroundPosition: `${-(zoomPos.x * 4) + 48}px ${-(zoomPos.y * 4) + 48}px`,
-                                                backgroundSize: `${imageRef.current?.naturalWidth * 4}px ${imageRef.current?.naturalHeight * 4}px`,
+                                                backgroundSize: `${(imageRef.current?.naturalWidth || 0) * 4}px ${(imageRef.current?.naturalHeight || 0) * 4}px`,
                                                 backgroundRepeat: 'no-repeat',
                                                 imageRendering: 'pixelated'
                                             }}
