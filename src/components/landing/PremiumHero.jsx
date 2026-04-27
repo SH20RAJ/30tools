@@ -97,6 +97,10 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 					<div className="flex items-center gap-2 px-2 py-1 rounded bg-foreground text-background">
 						<span className="text-[10px] font-black uppercase tracking-tighter">100% Free</span>
 					</div>
+					<div className="flex items-center gap-2 px-2 py-1 rounded border border-foreground/10 hover:bg-foreground/5 transition-colors">
+						<Github className="h-4 w-4" />
+						<span className="text-[10px] font-black uppercase tracking-tighter">We are Open Source</span>
+					</div>
 				</div>
 			</div>
 		</div>
