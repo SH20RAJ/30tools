@@ -7,6 +7,16 @@ import {
 } from "@/components/seo";
 import StructuredData from "@/components/shared/StructuredData";
 import { getToolById } from "@/lib/tools";
+import React from "react";
+
+interface ToolSEOLayoutProps {
+	toolId: string;
+	children: React.ReactNode;
+	faqs?: any[];
+	features?: any[];
+	reviews?: any[];
+	howTo?: any;
+}
 
 export default function ToolSEOLayout({
 	toolId,
@@ -15,7 +25,7 @@ export default function ToolSEOLayout({
 	features,
 	reviews,
 	howTo,
-}) {
+}: ToolSEOLayoutProps) {
 	const tool = getToolById(toolId);
 
 	if (!tool) {
@@ -25,10 +35,11 @@ export default function ToolSEOLayout({
 	// Merge props with tool data, preferring props if provided
 	const mergedTool = {
 		...tool,
-		faqs: faqs || tool.faqs,
-		features: features || tool.features,
-		reviews: reviews || tool.reviews,
+		faqs: faqs || tool.faqs || [],
+		features: features || tool.features || [],
+		reviews: reviews || tool.reviews || [],
 		howTo: howTo || tool.howTo,
+		author: tool.author || "30Tools Engineering Team"
 	};
 
 	return (
@@ -36,7 +47,7 @@ export default function ToolSEOLayout({
 			<StructuredData tool={mergedTool} />
 
 			<div className="container mx-auto px-4 py-8">
-				<BreadcrumbsEnhanced tool={mergedTool} />
+				<BreadcrumbsEnhanced />
 
 				<div className="grid grid-cols-1 lg:grid-cols-12 gap-8 mt-6">
 					<div className="lg:col-span-12">
@@ -49,7 +60,7 @@ export default function ToolSEOLayout({
 						</div>
 
 						{/* Tool Features */}
-						<ToolFeatures tool={mergedTool} />
+						<ToolFeatures features={mergedTool.features} />
 
 						{/* FAQs */}
 						<FAQSection
@@ -58,7 +69,7 @@ export default function ToolSEOLayout({
 						/>
 
 						{/* Comments */}
-						<UserComments tool={mergedTool} />
+						<UserComments toolId={mergedTool.id} toolName={mergedTool.name} />
 
 						{/* E-E-A-T Author Bio */}
 						<AuthorBio author={mergedTool.author} />

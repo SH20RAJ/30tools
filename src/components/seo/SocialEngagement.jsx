@@ -356,6 +356,12 @@ export function QuickActions({
 }
 
 // Tool features showcase
+/**
+ * @param {Object} props
+ * @param {any[]} [props.features]
+ * @param {string} [props.title]
+ * @param {string} [props.variant]
+ */
 export function ToolFeatures({
 	features = [],
 	title = "Key Features",

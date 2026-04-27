@@ -30,6 +30,15 @@ const generateFAQSchema = (faqs) => {
 	};
 };
 
+/**
+ * @param {Object} props
+ * @param {any[]} [props.faqs]
+ * @param {string} [props.title]
+ * @param {boolean} [props.showSchema]
+ * @param {string} [props.variant]
+ * @param {string} [props.categoryTitle]
+ * @param {string} [props.toolName]
+ */
 export default function FAQSection({
 	faqs = [],
 	title = "Frequently Asked Questions",

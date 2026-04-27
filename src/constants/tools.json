@@ -24,13 +24,9 @@
                         "ai-photo-generator-free",
                         "ai-picture-generator",
                         "ai-picture-generator-no-signup",
-                        "allow-disallow-generator",
-                        "brand-colors-generator",
                         "bypass-ai-detection",
                         "check-image-location",
                         "check-image-seo",
-                        "color-palette-generator",
-                        "color-wheel-generator",
                         "cut-photo",
                         "delete-image-background",
                         "enhance-image-quality",
@@ -39,11 +35,7 @@
                         "free-ai-image-generator",
                         "free-photo-grid-maker",
                         "generate-qr-image",
-                        "hash-generator",
                         "ico-file-generator",
-                        "ig-photo-download-hd",
-                        "ig-profile-picture-viewer",
-                        "image-color-picker-tool",
                         "image-optimization-test",
                         "image-seo-analyzer",
                         "image-size-analyzer",
@@ -51,23 +43,18 @@
                         "improve-picture-resolution",
                         "instagram-font-generator",
                         "instant-ai-image-creator",
-                        "json-ld-generator",
                         "lucky-number-generator",
                         "online-thumbnail-creator",
                         "photo-exif-viewer",
                         "picture-background-eraser",
                         "randomness-generator",
                         "remove-background-from-image-free",
-                        "rich-snippets-maker",
-                        "secure-hash-generator",
-                        "seo-keyword-generator",
                         "simple-ai-image-generator",
                         "text-to-image-ai",
                         "text-to-image-free",
                         "upscale-image-online",
                         "view-image-metadata",
-                        "yt-thumbnail-maker",
-                        "zip-creator"
+                        "yt-thumbnail-maker"
                     ],
                     "popular": true,
                     "category": "generators"
@@ -3504,7 +3491,9 @@
                         "save-instagram-clips",
                         "save-instagram-content-online",
                         "save-instagram-photos",
-                        "watch-instagram-stories"
+                        "watch-instagram-stories",
+                        "ig-photo-download-hd",
+                        "ig-profile-picture-viewer"
                     ],
                     "popular": true,
                     "category": "downloaders"
@@ -5559,7 +5548,8 @@
                         "keyword-ideas-bing",
                         "keyword-monitoring-tool",
                         "keyword-tool-google",
-                        "long-tail-keyword-tool"
+                        "long-tail-keyword-tool",
+                        "seo-keyword-generator"
                     ],
                     "popular": true,
                     "category": "seo"

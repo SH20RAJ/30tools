@@ -32,6 +32,8 @@ export interface Tool {
 		steps?: { name: string; text: string; url?: string }[];
 	};
 	faqs?: { question: string; answer: string }[];
+	author?: any;
+	reviews?: any[];
 }
 
 export interface Category {
@@ -62,6 +64,11 @@ export function getToolByExtraSlug(slug: string): Tool | undefined {
 
 export function getAllCategories(): Category[] {
 	return Object.values(categories);
+}
+
+export function getAllToolsByCategory(categorySlug: string): Tool[] {
+	const category = getCategoryBySlug(categorySlug);
+	return category ? category.tools : [];
 }
 
 export function getCategoryBySlug(slug: string): Category | undefined {
