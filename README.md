@@ -7,6 +7,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/sh20raj/30tools?style=for-the-badge&color=ffd700)](https://github.com/sh20raj/30tools/stargazers)
 [![GitHub license](https://img.shields.io/github/license/sh20raj/30tools?style=for-the-badge&color=2ecc71)](https://github.com/sh20raj/30tools/blob/main/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/sh20raj/30tools?style=for-the-badge&color=e74c3c)](https://github.com/sh20raj/30tools/issues)
+[![Deploy to Cloudflare](https://img.shields.io/badge/Deploy%20to-Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://dash.cloudflare.com/?to=/:account/pages/new)
 [![Next.js](https://img.shields.io/badge/Next.js-15-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![Cloudflare](https://img.shields.io/badge/Cloudflare-F38020?style=for-the-badge&logo=cloudflare&logoColor=white)](https://cloudflare.com)
 
