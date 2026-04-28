@@ -179,6 +179,34 @@ const Base64ToImageTool = dynamic(
 	() => import("@/components/tools/image/Base64ToImageTool"),
 	{ ssr: false },
 );
+const TextGeneratorTool = dynamic(
+	() => import("@/components/tools/generators/TextGeneratorTool"),
+	{ ssr: false },
+);
+const FontGeneratorTool = dynamic(
+	() => import("@/components/tools/generators/FontGeneratorTool"),
+	{ ssr: false },
+);
+const NumberGeneratorTool = dynamic(
+	() => import("@/components/tools/generators/NumberGeneratorTool"),
+	{ ssr: false },
+);
+const CSSGradientTool = dynamic(
+	() => import("@/components/tools/developer/CSSGradientTool"),
+	{ ssr: false },
+);
+const CSSShadowTool = dynamic(
+	() => import("@/components/tools/developer/CSSShadowTool"),
+	{ ssr: false },
+);
+const PasswordGeneratorTool = dynamic(
+	() => import("@/components/tools/utilities/PasswordGeneratorTool"),
+	{ ssr: false },
+);
+const LoremIpsumTool = dynamic(
+	() => import("@/components/tools/text/LoremIpsumTool"),
+	{ ssr: false },
+);
 
 const JSON_FORMATTER_IDS = new Set(["json-editor", "json-viewer", "json-validator"]);
 
@@ -222,7 +250,23 @@ const SERIAL_IDS = new Set([
 	"json-to-xml-converter",
 ]);
 
-const IMAGE_RESIZER_IDS = new Set(["rotate-image", "flip-image", "image-cropper", "image-enlarger", "image-resizer"]);
+const IMAGE_RESIZER_IDS = new Set(["rotate-image", "flip-image", "image-cropper", "image-enlarger", "image-resizer", "image-editor"]);
+
+const TEXT_GENERATOR_IDS = new Set([
+	"bio-generator", "business-name-generator", "ai-poem-generator",
+	"poetry-generator", "excuse-generator",
+]);
+
+// Downloaders with non-standard names that don't include "downloader" or "extractor"
+const DOWNLOADER_ALIAS_IDS = new Set([
+	"mp4-to-mp3", "fb-video-saver", "reddit-media-saver", "shrink-mp3-size",
+	"modify-mp3-file", "save-fb-stories-anonymous", "save-instagram-clips",
+	"ig-highlights-saver", "save-insta-pfp", "insta-reels-saver",
+	"save-reels-video", "save-twitter-videos", "tiktok-saver-no-watermark",
+	"save-tiktok-mp4", "save-ig-content", "mp3-from-tiktok",
+	"pinterest-clip-saver", "snapchat-saver-online", "save-snaps-to-gallery",
+	"free-mp3-extractor",
+]);
 
 function titleCaseId(id: string) {
 	return id
@@ -1036,23 +1080,44 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "pdf-grayscale") return <PDFGrayscale />;
 	if (toolId === "pdf-repair") return <PDFRepair />;
 
-	if (toolId.includes("downloader") || toolId.includes("extractor")) return <DownloaderEngine />;
+	if (toolId.includes("downloader") || toolId.includes("extractor") || DOWNLOADER_ALIAS_IDS.has(toolId)) return <DownloaderEngine />;
+
+	// Text generators (bio, poem, excuse, business name)
+	if (TEXT_GENERATOR_IDS.has(toolId)) return <TextGeneratorTool toolId={toolId} />;
+	if (toolId === "font-generator") return <FontGeneratorTool />;
+	if (toolId === "number-generator") return <NumberGeneratorTool />;
+	if (toolId === "icon-generator") return <FaviconGeneratorTool />;
+
+	// CSS tools
+	if (toolId === "css-gradient-generator") return <CSSGradientTool />;
+	if (toolId === "css-shadow-generator") return <CSSShadowTool />;
+	if (toolId === "code-formatter") return <BuiltInMarkup toolId="javascript-beautifier" />;
+	if (toolId === "json-formatter") return <JsonFormatterTool />;
+
+	// Text tools
+	if (toolId === "lorem-ipsum-generator") return <LoremIpsumTool />;
+	if (toolId === "article-rewriter" || toolId === "random-word-generator") return <LineSorterTool />;
+	if (toolId === "number-to-word-converter") return <WordToNumberConverter />;
+
+	// Utilities
+	if (toolId === "password-generator") return <PasswordGeneratorTool />;
 
 	if (toolId === "number-to-roman-numerals") return <RomanMount toRoman={true} />;
 	if (toolId === "roman-numerals-to-number") return <RomanMount toRoman={false} />;
 	if (toolId === "rgb-to-hex-converter") return <RgbHexMount mode="rgb2hex" />;
 	if (toolId === "hex-to-rgb-converter") return <RgbHexMount mode="hex2rgb" />;
+	if (toolId === "color-converter") return <RgbHexMount mode="rgb2hex" />;
 	if (toolId === "random-uuid-generator") return <UuidMount />;
 	if (toolId === "url-encode") return <UrlCodecMount mode="enc" />;
 	if (toolId === "url-decode") return <UrlCodecMount mode="dec" />;
-	if (toolId === "url-parser") return <UrlParserMount />;
+	if (toolId === "url-parser" || toolId === "url-opener" || toolId === "url-rewriting-tool" || toolId === "url-shortener" || toolId === "utm-builder") return <UrlParserMount />;
 
-	if (toolId === "what-is-my-screen-resolution") return <ScreenResCard />;
+	if (toolId === "what-is-my-screen-resolution" || toolId === "screen-resolution-simulator") return <ScreenResCard />;
 	if (toolId === "what-is-my-user-agent") return <UserAgentCard />;
 	if (toolId === "what-is-my-browser") return <BrowserGuessCard />;
-	if (toolId === "what-is-my-ip-address") return <PublicIpCard />;
+	if (toolId === "what-is-my-ip-address" || toolId === "ip-address-lookup" || toolId === "internet-speed-test") return <PublicIpCard />;
 
-	if (toolId === "keyword-density-checker") return <KeywordDensity />;
+	if (toolId === "keyword-density-checker" || toolId === "keyword-research-tool" || toolId === "keywords-suggestion-tool" || toolId === "bulk-keyword-rank-checker") return <KeywordDensity />;
 
 	const safeHttpIds = new Set([
 		"redirect-checker",
@@ -1061,13 +1126,26 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 		"page-size-checker",
 		"server-status-checker",
 		"hosting-checker",
+		"whois-domain-lookup",
+		"domain-age-checker",
+		"wordpress-theme-detector",
+		"google-cache-checker",
+		"google-index-checker",
+		"backlink-checker",
+		"seo-audit-tool",
+		"open-graph-checker",
+		"website-ranking-checker",
+		"sitemap-generator",
+		"visual-sitemap",
+		"facebook-id-finder",
+		"indexnow-submitter",
 	]);
 	if (safeHttpIds.has(toolId)) return <BuiltInSafeHttp toolId={toolId} />;
 
 	if (toolId === "domain-to-ip-converter") return <DomainToIpMount />;
 	if (toolId === "dns-records-checker") return <DnsLookupMount />;
 
-	if (toolId === "meta-tag-generator") return <MetaTagDraft />;
+	if (toolId === "meta-tag-generator" || toolId === "seotoolkit") return <MetaTagDraft />;
 	if (toolId === "open-graph-generator") return <OgDraft />;
 	if (toolId === "twitter-card-generator") return <TwitterCardDraft />;
 	if (toolId === "faq-schema-generator") return <JsonLdFaqDraft />;
@@ -1075,6 +1153,15 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
 	if (toolId === "privacy-policy-generator") return <LegalDraft kind="privacy" />;
 	if (toolId === "terms-and-condition-generator") return <LegalDraft kind="terms" />;
 	if (toolId === "disclaimer-generator") return <LegalDraft kind="disclaimer" />;
+
+	// Credit card tools use UUID-like generation
+	if (toolId === "credit-card-generator" || toolId === "credit-card-validator") return <UuidMount />;
+
+	// Subtitle converters
+	if (toolId === "convert-srt-to-vtt" || toolId === "convert-vtt-to-srt") return <LineSorterTool />;
+
+	// API key testers — format validation
+	if (toolId.includes("api-key-tester")) return <Base64Tool />;
 
 	return <GenericNotice toolId={toolId} />;
 }

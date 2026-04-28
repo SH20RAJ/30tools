@@ -41,6 +41,20 @@ export const BASE_CONVERTER_MAP: Record<string, BaseConverterKind> = {
 	"octal-to-decimal-converter": "octal-to-decimal",
 	"octal-to-hex-converter": "octal-to-hex",
 	"octal-to-text-converter": "octal-to-text",
+	// Previously missing — ascii/binary/decimal/hex converters
+	"ascii-to-binary-converter": "ascii-to-binary",
+	"ascii-to-text-converter": "ascii-to-text",
+	"binary-to-ascii-converter": "binary-to-ascii",
+	"binary-to-decimal-converter": "binary-to-decimal",
+	"binary-to-hex-converter": "binary-to-hex",
+	"binary-to-octal-converter": "binary-to-octal",
+	"binary-to-text-converter": "binary-to-text",
+	"decimal-to-binary-converter": "decimal-to-binary",
+	"decimal-to-hex-converter": "decimal-to-hex",
+	"decimal-to-octal-converter": "decimal-to-octal",
+	"decimal-to-text-converter": "decimal-to-text",
+	"hex-to-binary-converter": "hex-to-binary",
+	"hex-to-decimal-converter": "hex-to-decimal",
 };
 
 /** defaultOutputFormat for ImageConverterTool (jpeg | png | webp | gif | bmp) */
