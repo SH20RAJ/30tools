@@ -39,4 +39,7 @@
 - **Server Components ONLY:** All `page.js` and `layout.js` files MUST remain Server Components. NEVER add `'use client'` to these files. If interactivity is needed, encapsulate it in a separate Client Component and import it into the server page.
 - **SEO Title Strategy:** Always use the "Low-Hanging-Fruit" strategy for titles. 
   - Pattern: `Free [Tool Name] Online - No Signup | 30tools`
-  - Avoid high-competition generic titles.
+
+## Graphify
+- **graphify** (`.agents/skills/graphify/SKILL.md`) - any input (code, docs, papers, images) to knowledge graph. Trigger: `/graphify`
+When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.
