@@ -56,7 +56,7 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
     "text-to-hashtags-converter": dynamic(() => import("@/components/tools/shared/RegisteredToolMount").then(m => m.TagsFromText), { ssr: false }),
     "text-to-tags-converter": dynamic(() => import("@/components/tools/shared/RegisteredToolMount").then(m => m.TagsFromText), { ssr: false }),
     "markdown-to-text": dynamic(() => import("@/components/tools/text/MarkdownToText.jsx"), { ssr: false }),
-    "lorem-ipsum-generator": dynamic(() => import("@/components/tools/text/LoremIpsumTool"), { ssr: false }),
+    "lorem-ipsum-generator": dynamic(() => import("@/components/tools/generators/LoremIpsumGeneratorTool.jsx"), { ssr: false }),
     "backwards-text-generator": dynamic(() => import("@/components/tools/text/BackwardsTextGenerator"), { ssr: false }),
     "case-converter": dynamic(() => import("@/components/tools/text/CaseConverter"), { ssr: false }),
     "remove-duplicate-lines": dynamic(() => import("@/components/tools/text/RemoveDuplicatesTool.jsx"), { ssr: false }),
@@ -93,6 +93,7 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
     "number-generator": dynamic(() => import("@/components/tools/generators/NumberGeneratorTool"), { ssr: false }),
     "emoji-copy-tool": dynamic(() => import("@/components/tools/generators/EmojiCopyTool.jsx"), { ssr: false }),
     "chatgpt-persona-generator": dynamic(() => import("@/components/tools/generators/ChatGPTPersonaGeneratorTool.jsx"), { ssr: false }),
+    "productivity-roast-generator": dynamic(() => import("@/components/tools/generators/ProductivityRoastGeneratorTool.jsx"), { ssr: false }),
 
     // Audio Tools
     "text-to-speech": dynamic(() => import("@/components/tools/audio/TextToSpeechTool.jsx"), { ssr: false }),
@@ -106,6 +107,7 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
     "sitemap-generator": dynamic(() => import("@/components/tools/seo/SitemapGeneratorTool.jsx"), { ssr: false }),
     "visual-sitemap": dynamic(() => import("@/components/tools/seo/VisualSitemapTool.jsx"), { ssr: false }),
     "seotoolkit": dynamic(() => import("@/components/tools/seo/SeoToolkit.jsx"), { ssr: false }),
+    "indexnow-tool": dynamic(() => import("@/components/tools/general/IndexnowTool.jsx"), { ssr: false }),
 
     // Utilities
     "ip-address-lookup": dynamic(() => import("@/components/tools/utilities/IPLocationFinderTool.jsx"), { ssr: false }),
@@ -116,9 +118,11 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
     "url-shortener": dynamic(() => import("@/components/tools/utilities/URLShortenerTool.jsx"), { ssr: false }),
     "utm-builder": dynamic(() => import("@/components/tools/utilities/UTMBuilderTool.jsx"), { ssr: false }),
     "user-agent-parser": dynamic(() => import("@/components/tools/utilities/UserAgentParserTool.jsx"), { ssr: false }),
+    "password-checker": dynamic(() => import("@/components/tools/security/PasswordCheckerTool.jsx"), { ssr: false }),
 
     // Video Tools
     "video-watermark-remover": dynamic(() => import("@/components/tools/video/VideoWatermarkRemoverTool.jsx"), { ssr: false }),
+    "tiktok-downloader": dynamic(() => import("@/components/tools/video/TikTokDownloaderTool.jsx"), { ssr: false }),
 
     // YouTube Tools
     "youtube-channel-id-extractor": dynamic(() => import("@/components/tools/youtube/YouTubeChannelIDFinderTool.jsx"), { ssr: false }),
