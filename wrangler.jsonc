@@ -12,9 +12,6 @@
 		"binding": "ASSETS",
 		"directory": ".open-next/assets"
 	},
-	"observability": {
-		"enabled": true
-	},
 	/**
 	 * Smart Placement
 	 * Docs: https://developers.cloudflare.com/workers/configuration/smart-placement/#smart-placement
@@ -30,9 +27,15 @@
 	 * Environment Variables
 	 * https://developers.cloudflare.com/workers/wrangler/configuration/#environment-variables
 	 */
-	"vars": {
-		"TELEGRAM_BOT_TOKEN": "8561187524:AAGZhfo0fPYeKvnjWrauM1ph4DInqmp7cCw"
-	}
+	 "observability": {
+		"logs": {
+		"enabled": true,
+		"invocation_logs": true
+		},
+		"traces": {
+		"enabled": false
+		}
+	},
 	/**
 	 * Note: Use secrets to store sensitive data.
 	 * https://developers.cloudflare.com/workers/configuration/secrets/
