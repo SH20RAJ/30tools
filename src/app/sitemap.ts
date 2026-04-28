@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getAllCategories, getAllTools, SUPPORTED_LANGUAGES } from "@/lib/tools";
 import { intentData } from "@/lib/intent-data";
+import { blogs } from "@/constants/blog-data";
 
 const BASE_URL = "https://30tools.com";
 
@@ -67,14 +68,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	}));
 
 	// 6. Blog & Content
-	const blogPages: MetadataRoute.Sitemap = allTools
-		.filter(t => t.category === "blog" || t.category === "content")
-		.map((page) => ({
-			url: `${BASE_URL}${page.route}`,
-			lastModified: currentDate,
-			changeFrequency: "weekly",
-			priority: 0.8,
-		}));
+	const blogPages: MetadataRoute.Sitemap = [
+		...allTools
+			.filter((t) => t.category === "blog" || t.category === "content")
+			.map((page) => ({
+				url: `${BASE_URL}${page.route}`,
+				lastModified: currentDate,
+				changeFrequency: "weekly" as const,
+				priority: 0.8,
+			})),
+		...blogs.map((article) => ({
+			url: `${BASE_URL}/blog/${article.slug}`,
+			lastModified: new Date(article.date),
+			changeFrequency: "monthly" as const,
+			priority: 0.7,
+		})),
+	];
 
 	// 7. Intent Pages (Long-tail SEO)
 	const intentPages: MetadataRoute.Sitemap = Object.keys(intentData).map((slug) => ({

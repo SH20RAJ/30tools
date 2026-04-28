@@ -157,7 +157,14 @@ const nextConfig = {
 
 	// SEO Redirects and Rewrites are generated from src/constants/tools.json.
 	async redirects() {
-		return slugRedirects;
+		return [
+			...slugRedirects,
+			{
+				source: "/blogs/:user/:slug",
+				destination: "/blog/:slug",
+				permanent: true,
+			},
+		];
 	},
 
 	async rewrites() {

@@ -137,6 +137,55 @@ export const blogs: BlogArticle[] = [
 			"Compare the best sentence rewriter tools to improve your content flow and clarity.",
 		date: "2025-01-06",
 	},
+	{
+		slug: "hermes-agent-review-956k-stars-self-improving-ai-agent-april-2026-11le",
+		title: "Hermes Agent Review: 956K Stars & Self-Improving AI (April 2026)",
+		description:
+			"A deep dive into the Hermes Agent framework, its rapid growth, self-evolving skills, and how it integrates with 30tools.",
+		date: "2026-04-28",
+		readTimeMinutes: 8,
+		intro: "Hermes Agent, developed by Nous Research, has taken the AI world by storm. It is a self-evolving AI framework that learns as it works, making it one of the most powerful autonomous assistants available today.",
+		sections: [
+			{
+				heading: "What is Hermes Agent?",
+				paragraphs: [
+					"Hermes is an autonomous AI framework designed to be a self-evolving assistant. Unlike standard chatbots, it is built to live on your machine or a server and grow as you use it.",
+					"Its standout feature is the learning loop: it extracts skills from completed tasks. If it solves a complex coding problem once, it abstracts the logic into a reusable playbook for future use.",
+				],
+			},
+			{
+				heading: "Integration with 30tools",
+				paragraphs: [
+					"Hermes thrives when paired with the 30tools suite. It can use terminal operations, browser automation, and call the 190+ web utilities on 30tools.com to process data efficiently.",
+					"Many users use Hermes to automate repetitive tasks like JSON formatting, image conversion, and SEO audits using our privacy-first tools.",
+				],
+			},
+		],
+	},
+	{
+		slug: "how-to-run-gemma-4-locally-with-ollama-llamacpp-and-vllm-3n44",
+		title: "How to Run Gemma 4 Locally with Ollama, Llama.cpp, and vLLM",
+		description:
+			"Step-by-step guide to running Google's Gemma 4 model locally for maximum privacy and performance.",
+		date: "2026-04-28",
+		readTimeMinutes: 6,
+		intro: "Google's Gemma 4 is the latest frontier-level open model optimized for local reasoning. Running it locally ensures maximum privacy and allows you to use its multimodal features without a subscription.",
+		sections: [
+			{
+				heading: "Running with Ollama",
+				paragraphs: [
+					"Ollama is the easiest way to get started. After installing Ollama, simply run 'ollama run gemma4:e4b' in your terminal.",
+					"Gemma 4 supports image and audio input, making it a versatile tool for local AI workflows.",
+				],
+			},
+			{
+				heading: "Hardware Requirements",
+				paragraphs: [
+					"For the compact 4B variant, 16GB of RAM is recommended. If you want to run the larger 31B dense model, you will need 16GB+ of VRAM on an RTX 3090/4090 or a Mac Studio.",
+				],
+			},
+		],
+	},
 ];
 
 export const getBlogArticleBySlug = (slug: string) => {
