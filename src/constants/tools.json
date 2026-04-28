@@ -1480,7 +1480,45 @@
                     "description": "Convert color PDF documents to black and white (grayscale) online for free. Reduce file size and save ink with our secure, browser-based PDF converter. No signup required.",
                     "route": "/pdf-grayscale",
                     "popular": false,
-                    "category": "pdf"
+                    "category": "pdf",
+                    "features": [
+                        "Instant color to grayscale conversion",
+                        "Reduces PDF file size for easier sharing",
+                        "Saves printer ink and toner costs",
+                        "100% private: processing happens in your browser",
+                        "No registration or software installation needed"
+                    ],
+                    "howTo": {
+                        "name": "How to convert PDF to Grayscale",
+                        "steps": [
+                            {
+                                "name": "Upload PDF",
+                                "text": "Select your color PDF file or drag and drop it into the tool."
+                            },
+                            {
+                                "name": "Convert",
+                                "text": "Click the 'Convert to Grayscale' button to start the B&W optimization."
+                            },
+                            {
+                                "name": "Download",
+                                "text": "Save the converted grayscale PDF to your device instantly."
+                            }
+                        ]
+                    },
+                    "faqs": [
+                        {
+                            "question": "Does this tool reduce PDF file size?",
+                            "answer": "Yes, converting images and elements to grayscale often significantly reduces the overall file size of the PDF."
+                        },
+                        {
+                            "question": "Is my document data secure?",
+                            "answer": "Absolutely. We use browser-based processing, meaning your file is never uploaded to any server. Your privacy is 100% guaranteed."
+                        },
+                        {
+                            "question": "Will the text remain sharp?",
+                            "answer": "Yes, our grayscale conversion preserves the vector quality of text and shapes, ensuring professional results."
+                        }
+                    ]
                 },
                 {
                     "id": "pdf-repair",

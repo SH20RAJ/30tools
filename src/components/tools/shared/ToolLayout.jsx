@@ -10,6 +10,7 @@ import VariantLinks from "./VariantLinks";
 import { getDynamicSEOContent } from "./seoTemplates";
 import { getRelatedTools } from "@/lib/tools";
 import { Github } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 function ToolArticle({ content }) {
 	if (!content) return null;
