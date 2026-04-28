@@ -4,8 +4,8 @@ import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
 import { getIntentBySlug } from "@/lib/intent-data";
 import { getToolById } from "@/lib/tools";
 
-export async function generateMetadata({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
     const intent = getIntentBySlug(slug);
 
     if (!intent) return {};
@@ -20,8 +20,8 @@ export async function generateMetadata({ params }: { params: { slug: string } })
     };
 }
 
-export default async function IntentPage({ params }: { params: { slug: string } }) {
-    const { slug } = params;
+export default async function IntentPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
     const intent = getIntentBySlug(slug);
 
     if (!intent) {

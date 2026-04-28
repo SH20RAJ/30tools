@@ -4,7 +4,7 @@ import { blogs, getBlogArticleBySlug } from "@/constants/blog-data";
 import { getToolByRoute } from "@/lib/tools";
 
 interface BlogArticlePageProps {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -12,7 +12,7 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: BlogArticlePageProps) {
-	const { slug } = params;
+	const { slug } = await params;
 	const article = getBlogArticleBySlug(slug);
 
 	if (!article) {

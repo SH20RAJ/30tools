@@ -4,15 +4,16 @@ import { getAllCategories, getCategoryBySlug } from "@/lib/tools";
 import ToolCategoryGuidePage from "@/components/content/ToolCategoryGuidePage";
 
 interface ToolCategoryPageProps {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
 	return getAllCategories().map((category) => ({ slug: category.slug }));
 }
 
-export function generateMetadata({ params }: ToolCategoryPageProps): Metadata {
-	const category = getCategoryBySlug(params.slug);
+export async function generateMetadata({ params }: ToolCategoryPageProps): Promise<Metadata> {
+	const { slug } = await params;
+	const category = getCategoryBySlug(slug);
 	if (!category) {
 		return {
 			title: "Category Not Found | 30tools",
@@ -38,8 +39,9 @@ export function generateMetadata({ params }: ToolCategoryPageProps): Metadata {
 	};
 }
 
-export default function ToolCategoryPage({ params }: ToolCategoryPageProps) {
-	const category = getCategoryBySlug(params.slug);
+export default async function ToolCategoryPage({ params }: ToolCategoryPageProps) {
+	const { slug } = await params;
+	const category = getCategoryBySlug(slug);
 	if (!category) return notFound();
 
 	const relatedCategories = getAllCategories().filter((cat) => cat.slug !== category.slug);
