@@ -5031,6 +5031,14 @@
                     "category": "utilities"
                 },
                 {
+                    "id": "ascii-art-generator",
+                    "name": "ASCII Art Generator",
+                    "description": "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
+                    "route": "/ascii-art-generator",
+                    "popular": true,
+                    "category": "generators"
+                },
+                {
                     "id": "password-generator",
                     "name": "Password Generator",
                     "description": "Create strong, secure passwords instantly with customizable settings.",

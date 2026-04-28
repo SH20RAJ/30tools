@@ -91,6 +91,7 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
     "password-generator": dynamic(() => import("@/components/tools/utilities/PasswordGeneratorTool"), { ssr: false }),
     "font-generator": dynamic(() => import("@/components/tools/generators/FontGeneratorTool"), { ssr: false }),
     "number-generator": dynamic(() => import("@/components/tools/generators/NumberGeneratorTool"), { ssr: false }),
+    "ascii-art-generator": dynamic(() => import("@/components/tools/generators/AsciiArtGeneratorTool"), { ssr: false }),
     "emoji-copy-tool": dynamic(() => import("@/components/tools/generators/EmojiCopyTool.jsx"), { ssr: false }),
     "chatgpt-persona-generator": dynamic(() => import("@/components/tools/generators/ChatGPTPersonaGeneratorTool.jsx"), { ssr: false }),
     "productivity-roast-generator": dynamic(() => import("@/components/tools/generators/ProductivityRoastGeneratorTool.jsx"), { ssr: false }),
