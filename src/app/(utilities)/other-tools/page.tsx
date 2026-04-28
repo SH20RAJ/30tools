@@ -1,63 +1,61 @@
-import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
-
+import { getAllToolsByCategory, getAllCategories, Tool } from "@/lib/tools";
+import { PremiumHero } from "@/components/landing/PremiumHero";
+import { AppleFooter } from "@/components/footers/AppleFooter";
+import { AppleNavbar } from "@/components/navigation/AppleNavbar";
+import { GridPattern } from "@/components/shared/GridPattern";
+import Link from "next/link";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Wrench, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata = {
-	title: "Free Other Tools Online – Fast & No Signup | 30tools",
-	description: "Free Other Tools online tool. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "other tools, free other tools, online other tools, no signup, 30tools",
-	alternates: {
-		canonical: "https://30tools.com/other-tools",
-	},
-	openGraph: {
-		title: "Free Other Tools Online – Fast & No Signup | 30tools",
-		description: "Free Other Tools online tool. Fast and secure. 100% free, fast, and no signup required.",
-		url: "https://30tools.com/other-tools",
-		siteName: "30tools",
-		images: [{ url: "/og-image.jpg" }],
-		type: "website",
-	},
-	twitter: {
-		card: "summary_large_image",
-		title: "Free Other Tools Online – Fast & No Signup | 30tools",
-		description: "Free Other Tools online tool. Fast and secure. 100% free, fast, and no signup required.",
-		images: ["/og-image.jpg"],
-	},
+	title: "Free Utility Tools Online – Fast & No Signup | 30tools",
+	description: "Free utility tools online. IP lookup, speed test, QR codes, notes, and more. 100% free, fast, and no signup required.",
+	keywords: "utility tools, free utility tools, online utility tools, no signup, 30tools",
+	alternates: { canonical: "https://30tools.com/other-tools" },
+	openGraph: { title: "Free Utility Tools Online – Fast & No Signup | 30tools", description: "Free utility tools online. IP lookup, speed test, QR codes, notes, and more. 100% free, fast, and no signup required.", url: "https://30tools.com/other-tools", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free Utility Tools Online – Fast & No Signup | 30tools", description: "Free utility tools online. IP lookup, speed test, QR codes, notes, and more. 100% free, fast, and no signup required.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 
-export default async function ToolPage() {
-	const tool = {
-        "id": "other-tools",
-        "name": "Other Tools",
-        "description": "Free Other Tools online tool. Fast and secure.",
-        "route": "/other-tools",
-        "extraSlugs": [],
-        "popular": false,
-        "category": "utilities"
-};
+export default function OtherToolsHub() {
+	const tools = getAllToolsByCategory("utilities");
+	const categories = getAllCategories().map(cat => ({ label: cat.name, href: cat.slug.startsWith("/") ? cat.slug : `/${cat.slug}` }));
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/other-tools",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
-		</>
+		<div className="min-h-screen bg-background">
+			<AppleNavbar />
+			<main>
+				<PremiumHero title="Utility Tools" subtitle="IP lookup, speed test, QR codes, notes, URL tools, and more — all free, fast, and no signup required." />
+				<div className="container mx-auto px-4 py-16 max-w-7xl relative">
+					<GridPattern className="opacity-20" />
+					<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 relative z-10">
+						{tools.map((tool: Tool) => (
+							<Link key={tool.id} href={tool.route}>
+								<Card className="h-full hover:shadow-2xl hover:border-primary/50 transition-all group overflow-hidden bg-card/50 backdrop-blur-sm">
+									<CardHeader className="pb-2">
+										<CardTitle className="flex items-center justify-between">
+											<span className="text-xl font-bold tracking-tight flex items-center gap-2">
+												<Wrench className="w-5 h-5 text-primary" />
+												{tool.name}
+											</span>
+											<ArrowRight className="w-5 h-5 text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all" />
+										</CardTitle>
+									</CardHeader>
+									<CardContent>
+										<p className="text-sm text-muted-foreground leading-relaxed line-clamp-2">{tool.description}</p>
+										{tool.popular && (
+											<div className="mt-4 inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">
+												<Sparkles className="w-3 h-3" /> Popular
+											</div>
+										)}
+									</CardContent>
+								</Card>
+							</Link>
+						))}
+					</div>
+				</div>
+			</main>
+			<AppleFooter categories={categories} />
+		</div>
 	);
 }

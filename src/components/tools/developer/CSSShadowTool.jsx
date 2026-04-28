@@ -18,22 +18,30 @@ export default function CSSShadowTool() {
 	const [inset, setInset] = useState(false);
 
 	const shadowValue = useMemo(() => {
-		const r = parseInt(color.slice(1, 3), 16);
-		const g = parseInt(color.slice(3, 5), 16);
-		const b = parseInt(color.slice(5, 7), 16);
+		let r = 0, g = 0, b = 0;
+		const hex = color.replace("#", "");
+		if (hex.length === 3) {
+			r = parseInt(hex[0] + hex[0], 16);
+			g = parseInt(hex[1] + hex[1], 16);
+			b = parseInt(hex[2] + hex[2], 16);
+		} else if (hex.length === 6) {
+			r = parseInt(hex.slice(0, 2), 16);
+			g = parseInt(hex.slice(2, 4), 16);
+			b = parseInt(hex.slice(4, 6), 16);
+		}
 		const a = (opacity / 100).toFixed(2);
-		return `${inset ? "inset " : ""}${hOffset}px ${vOffset}px ${blur}px ${spread}px rgba(${r}, ${g}, ${b}, ${a})`;
+		return `${inset ? "inset " : ""}${hOffset}px ${vOffset}px ${blur}px ${spread}px rgba(${isNaN(r) ? 0 : r}, ${isNaN(g) ? 0 : g}, ${isNaN(b) ? 0 : b}, ${a})`;
 	}, [hOffset, vOffset, blur, spread, color, opacity, inset]);
 
 	const cssCode = `box-shadow: ${shadowValue};`;
 
-	const sliders = [
-		{ label: "Horizontal Offset", value: hOffset, set: setHOffset, min: -50, max: 50 },
-		{ label: "Vertical Offset", value: vOffset, set: setVOffset, min: -50, max: 50 },
-		{ label: "Blur Radius", value: blur, set: setBlur, min: 0, max: 100 },
-		{ label: "Spread Radius", value: spread, set: setSpread, min: -50, max: 50 },
+	const sliders = useMemo(() => [
+		{ label: "Horizontal Offset", value: hOffset, set: setHOffset, min: -100, max: 100 },
+		{ label: "Vertical Offset", value: vOffset, set: setVOffset, min: -100, max: 100 },
+		{ label: "Blur Radius", value: blur, set: setBlur, min: 0, max: 200 },
+		{ label: "Spread Radius", value: spread, set: setSpread, min: -100, max: 100 },
 		{ label: "Opacity", value: opacity, set: setOpacity, min: 0, max: 100, suffix: "%" },
-	];
+	], [hOffset, vOffset, blur, spread, opacity]);
 
 	return (
 		<Card>

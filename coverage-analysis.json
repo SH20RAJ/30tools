@@ -1,0 +1,25 @@
+{
+  "placeholderTools": [
+    {
+      "id": "fake-chat-generator",
+      "name": "Fake Chat Generator",
+      "category": "generators"
+    },
+    {
+      "id": "video-converter",
+      "name": "Video Converter",
+      "category": "video"
+    },
+    {
+      "id": "video-editor",
+      "name": "Video Editor",
+      "category": "video"
+    }
+  ],
+  "totalPlaceholderCount": 3,
+  "analysis": {
+    "totalToolsInJson": 379,
+    "coveredToolsCount": 376,
+    "placeholderPercentage": "0.79%"
+  }
+}
