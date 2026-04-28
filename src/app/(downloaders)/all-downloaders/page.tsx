@@ -4,7 +4,7 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 export const metadata = {
 	title: "Free All Downloaders Online - No Signup | 30tools",
 	description:
-		"All Downloaders - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
+		"All Downloaders - 100% free, no signup required, and privacy-focused processing in your browser.",
 	keywords:
 		"all downloaders, free online tool, no signup, others, all downloaders online, 30tools",
 	alternates: {
@@ -33,7 +33,7 @@ export default async function ToolPage() {
 	const tool = {
 		id: "all-downloaders",
 		name: "All Downloaders",
-		description: "All Downloaders - Coming Soon",
+		description: "All Downloaders",
 		route: "/all-downloaders",
 		extraSlugs: [],
 		popular: false,
@@ -96,7 +96,7 @@ export default async function ToolPage() {
 						"@context": "https://schema.org",
 						"@type": "SoftwareApplication",
 						name: "All Downloaders",
-						description: "All Downloaders - Coming Soon",
+						description: "All Downloaders",
 						url: "https://30tools.com/all-downloaders",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",

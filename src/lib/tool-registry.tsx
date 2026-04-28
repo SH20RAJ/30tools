@@ -123,6 +123,7 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
 
     // Video Tools
     "video-watermark-remover": dynamic(() => import("@/components/tools/video/VideoWatermarkRemoverTool.jsx"), { ssr: false }),
+    "ai-video-summarizer": dynamic(() => import("@/components/tools/video/AiVideoSummarizerTool.jsx"), { ssr: false }),
     "tiktok-downloader": dynamic(() => import("@/components/tools/video/TikTokDownloaderTool.jsx"), { ssr: false }),
 
     // YouTube Tools
