@@ -20,41 +20,20 @@
                     "extraSlugs": [
                         "ai-art-generator-online",
                         "ai-image-generator-for-beginners",
-                        "ai-photo-enhancer",
                         "ai-photo-generator-free",
                         "ai-picture-generator",
                         "ai-picture-generator-no-signup",
                         "bypass-ai-detection",
-                        "check-image-location",
-                        "check-image-seo",
-                        "cut-photo",
-                        "delete-image-background",
-                        "enhance-image-quality",
-                        "favicon-maker-from-image",
                         "free-ai-art-generator",
                         "free-ai-image-generator",
                         "free-photo-grid-maker",
-                        "generate-qr-image",
-                        "ico-file-generator",
-                        "image-optimization-test",
-                        "image-seo-analyzer",
                         "image-size-analyzer",
                         "image-tools",
-                        "improve-picture-resolution",
-                        "instagram-font-generator",
                         "instant-ai-image-creator",
-                        "lucky-number-generator",
-                        "online-thumbnail-creator",
-                        "photo-exif-viewer",
-                        "picture-background-eraser",
-                        "randomness-generator",
-                        "remove-background-from-image-free",
                         "simple-ai-image-generator",
                         "text-to-image-ai",
                         "text-to-image-free",
-                        "upscale-image-online",
-                        "view-image-metadata",
-                        "yt-thumbnail-maker"
+                        "upscale-image-online"
                     ],
                     "popular": true,
                     "category": "generators"
@@ -157,6 +136,36 @@
                     ],
                     "popular": false,
                     "category": "generators"
+                },
+                {
+                    "id": "font-generator",
+                    "name": "Font Generator",
+                    "route": "/font-generator",
+                    "category": "generators",
+                    "description": "Professional Font Generator tool for free online use.",
+                    "extraSlugs": [
+                        "instagram-font-generator"
+                    ]
+                },
+                {
+                    "id": "number-generator",
+                    "name": "Number Generator",
+                    "route": "/number-generator",
+                    "category": "generators",
+                    "description": "Professional Number Generator tool for free online use.",
+                    "extraSlugs": [
+                        "lucky-number-generator"
+                    ]
+                },
+                {
+                    "id": "poetry-generator",
+                    "name": "Poetry Generator",
+                    "route": "/poetry-generator",
+                    "category": "generators",
+                    "description": "Professional Poetry Generator tool for free online use.",
+                    "extraSlugs": [
+                        "ai-poetry-generator"
+                    ]
                 }
             ]
         },
@@ -176,7 +185,9 @@
                         "transparent-background-maker",
                         "picture-background-eraser",
                         "duplicate-line-remover",
-                        "ai-background-eraser-online"
+                        "ai-background-eraser-online",
+                        "delete-image-background",
+                        "remove-background-from-image-free"
                     ],
                     "popular": true,
                     "category": "image"
@@ -370,7 +381,9 @@
                         "read-image-metadata",
                         "photo-exif-viewer",
                         "read-exif-data-online",
-                        "online-tts-reader"
+                        "online-tts-reader",
+                        "check-image-location",
+                        "view-image-metadata"
                     ],
                     "popular": true,
                     "category": "image"
@@ -386,7 +399,9 @@
                         "website-favicon-creator",
                         "favicon-generator-no-signup",
                         "favicon-maker-online",
-                        "create-favicon-online"
+                        "create-favicon-online",
+                        "favicon-maker-from-image",
+                        "ico-file-generator"
                     ],
                     "popular": true,
                     "category": "image"
@@ -582,7 +597,8 @@
                         "scale-image",
                         "change-image-dimensions",
                         "resize-image-for-social-media",
-                        "resize-image-for-etsy-banner"
+                        "resize-image-for-etsy-banner",
+                        "cut-photo"
                     ],
                     "popular": false,
                     "category": "image"
@@ -722,7 +738,9 @@
                         "online-photo-editor",
                         "photo-filter-editor",
                         "photo-quality-improver",
-                        "upscale-illustration-online-free"
+                        "upscale-illustration-online-free",
+                        "enhance-image-quality",
+                        "improve-picture-resolution"
                     ],
                     "popular": true,
                     "category": "image"
@@ -4052,7 +4070,8 @@
                         "youtube thumbnail grabber",
                         "youtube thumbnail saver",
                         "youtube video thumbnail download",
-                        "yt-thumbnail-maker"
+                        "yt-thumbnail-maker",
+                        "online-thumbnail-creator"
                     ],
                     "popular": true,
                     "category": "downloaders"
@@ -4989,7 +5008,8 @@
                         "generate-secure-password",
                         "password-generator2",
                         "secure-password-creator",
-                        "secure-pass-generator"
+                        "secure-pass-generator",
+                        "randomness-generator"
                     ],
                     "popular": true,
                     "category": "utilities"
@@ -5092,7 +5112,8 @@
                         "custom-qr-generator",
                         "free-qr-code-generator-online",
                         "qr-code-generator-tool",
-                        "qr-code-maker-online"
+                        "qr-code-maker-online",
+                        "generate-qr-image"
                     ],
                     "popular": false,
                     "category": "utilities"
@@ -5583,7 +5604,10 @@
                         "seo-tools",
                         "technical-seo-audit",
                         "website-meta-audit",
-                        "website-seo-audit"
+                        "website-seo-audit",
+                        "check-image-seo",
+                        "image-seo-analyzer",
+                        "image-optimization-test"
                     ],
                     "popular": true,
                     "category": "seo"
