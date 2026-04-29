@@ -37,15 +37,16 @@ export async function POST(req) {
 		}
 
 		const rawData = await response.json();
+		console.log("Vidssave Raw Response:", JSON.stringify(rawData, null, 2));
 
-		if (rawData.status !== 1 || !rawData.data || rawData.data.length === 0) {
+		if (rawData.status !== 1 || !rawData.data) {
 			return NextResponse.json(
 				{ error: "Could not find video. Please check the URL and try again." },
 				{ status: 404 },
 			);
 		}
 
-		const video = rawData.data[0];
+		const video = rawData.data;
 
 		// Transform to standard format expected by DownloaderEngine
 		const transformedData = {
@@ -54,12 +55,15 @@ export async function POST(req) {
 			thumbnail: video.thumbnail,
 			duration: 0, // Vidssave doesn't seem to provide duration in the main data object
 			author: video.user_item?.nickname || "Unknown",
-			medias: video.medias.map((m) => ({
-				quality: m.quality,
-				size: m.size ? `${(m.size / (1024 * 1024)).toFixed(1)} MB` : "Unknown",
-				url: m.download_url,
-				type: m.format === "MP3" ? "audio" : "video",
-			})),
+			medias: video.media.map((m) => {
+				console.log("Media Item:", JSON.stringify(m, null, 2));
+				return {
+					quality: m.quality,
+					size: m.size ? `${(m.size / (1024 * 1024)).toFixed(1)} MB` : "Unknown",
+					url: m.download_url,
+					type: m.format === "MP3" ? "audio" : "video",
+				};
+			}),
 		};
 
 		return NextResponse.json(transformedData);
