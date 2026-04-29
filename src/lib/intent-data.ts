@@ -38,6 +38,46 @@ Classic square posts work best at 1080x1080 pixels. Our resizer handles the padd
             { question: "What is the best resolution for Instagram?", answer: "1080 pixels wide is the standard. For stories, use 1080x1920. For posts, use 1080x1080 or 1080x1350." },
             { question: "Does resizing affect image quality?", answer: "We use Lanczos resampling to ensure that your resized images stay crisp and professional." }
         ]
+    },
+    "pdf-to-word-without-email": {
+        parentToolId: "pdf-to-word",
+        title: "Convert PDF to Word Online Free - No Email Required",
+        description: "Convert your PDF documents to editable DOCX files instantly. 100% free, no email signup, and no registration. Secure browser-based conversion.",
+        keywords: "pdf to word no email, free pdf to word converter without registration, convert pdf to docx no signup",
+        article: `
+## Convert PDF to Word Without Giving Your Email
+Most online PDF converters ask for your email address to send you the converted file. This often leads to unwanted marketing emails and spam. 30tools is different.
+
+### 100% Private Conversion
+Our PDF to Word converter works directly in your browser or on our secure servers without storing your personal data. You download the file directly from the interface—no email inbox required.
+
+### Retain Formatting and Layout
+We use advanced OCR and layout analysis to ensure that your Word document looks exactly like your original PDF, preserving fonts, tables, and images.
+        `,
+        faqs: [
+            { question: "Is it really free without an email?", answer: "Yes, 30tools provides professional-grade conversion tools completely free of charge with no signup or email barriers." },
+            { question: "What file formats are supported?", answer: "We support all standard PDF files and convert them to the latest .docx format compatible with Microsoft Word and Google Docs." }
+        ]
+    },
+    "youtube-to-mp3-320kbps": {
+        parentToolId: "youtube-downloader",
+        title: "YouTube to MP3 320kbps - High Quality Audio Downloader",
+        description: "Download YouTube videos as high-quality 320kbps MP3 audio files. Free, fast, and secure online converter with no signup required.",
+        keywords: "youtube to mp3 320kbps, high quality youtube mp3 downloader, yt to mp3 converter free",
+        article: `
+## Download YouTube Music in High Fidelity (320kbps)
+When you convert YouTube videos to audio, quality matters. Most converters limit you to 128kbps, which sounds flat and compressed. Our tool supports the maximum possible bitrate for crystal clear sound.
+
+### Why choose 320kbps?
+320kbps is the "Gold Standard" for MP3 files. It provides the best balance between file size and audio fidelity, making it indistinguishable from CD quality for most listeners.
+
+### Fast and Secure
+Simply paste your YouTube link, select the MP3 320kbps option, and your download will start instantly. No software installation needed.
+        `,
+        faqs: [
+            { question: "Is 320kbps better than 128kbps?", answer: "Yes, 320kbps contains much more audio data, resulting in better bass, clearer highs, and a richer soundstage." },
+            { question: "Can I download entire playlists in 320kbps?", answer: "Our downloader currently supports individual video conversions to maintain the highest quality standards." }
+        ]
     }
 };
 

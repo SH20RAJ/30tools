@@ -25,7 +25,7 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 	];
 
 	return (
-		<div className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden">
+		<div className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-[70vh] flex flex-col justify-center">
 			{/* Background Ambient Glow */}
 			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
 				<div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-none animate-pulse" />
@@ -34,9 +34,11 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 
 			<div className="max-w-4xl mx-auto text-center px-4">
 				{/* Badge */}
-				<div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-primary/10 border border-primary/20 text-primary text-xs font-semibold mb-8 animate-in">
-					<Sparkles className="h-3 w-3" />
-					<span>Discover 600+ Power Tools</span>
+				<div className="h-8 mb-8">
+					<div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-primary/10 border border-primary/20 text-primary text-xs font-semibold animate-fade-in">
+						<Sparkles className="h-3 w-3" />
+						<span>Discover 600+ Power Tools</span>
+					</div>
 				</div>
 
 				<h1 className="text-5xl md:text-8xl font-bold tracking-tight text-foreground mb-8 leading-[1.05]">

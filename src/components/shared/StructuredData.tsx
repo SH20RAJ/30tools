@@ -90,6 +90,34 @@ export default function StructuredData({
 				}
 			: null;
 
+		const articleData = tool.article
+			? {
+					"@context": "https://schema.org",
+					"@type": "Article",
+					headline: tool.name,
+					description: tool.description,
+					author: {
+						"@type": "Organization",
+						name: "30tools",
+						url: BASE_URL,
+					},
+					publisher: {
+						"@type": "Organization",
+						name: "30tools",
+						logo: {
+							"@type": "ImageObject",
+							url: `${BASE_URL}/icons/icon-512x512.png`,
+						},
+					},
+					datePublished: "2024-01-01T08:00:00+08:00",
+					dateModified: new Date().toISOString(),
+					mainEntityOfPage: {
+						"@type": "WebPage",
+						"@id": toolUrl,
+					},
+				}
+			: null;
+
 		const breadcrumbStructuredData = {
 			"@context": "https://schema.org",
 			"@type": "BreadcrumbList",
@@ -142,6 +170,14 @@ export default function StructuredData({
 						type="application/ld+json"
 						dangerouslySetInnerHTML={{
 							__html: JSON.stringify(howToData),
+						}}
+					/>
+				)}
+				{articleData && (
+					<script
+						type="application/ld+json"
+						dangerouslySetInnerHTML={{
+							__html: JSON.stringify(articleData),
 						}}
 					/>
 				)}

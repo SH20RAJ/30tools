@@ -85,13 +85,29 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		})),
 	];
 
-	// 7. Intent Pages (Long-tail SEO)
-	const intentPages: MetadataRoute.Sitemap = Object.keys(intentData).map((slug) => ({
+	// 7. Intent Pages (Long-tail SEO from intent-data.ts)
+	const manualIntentSlugs = Object.keys(intentData);
+	const intentPages: MetadataRoute.Sitemap = manualIntentSlugs.map((slug) => ({
 		url: `${BASE_URL}/${slug}`,
 		lastModified: currentDate,
 		changeFrequency: "weekly",
 		priority: 0.8,
 	}));
+
+	// 8. Extra Slugs (Variant SEO Pages from tools.json)
+	const extraSlugPages: MetadataRoute.Sitemap = allTools.flatMap((tool) => {
+		if (!tool.extraSlugs || tool.extraSlugs.length === 0) return [];
+		
+		// Filter out slugs that are already in manual intentData to avoid duplication
+		return tool.extraSlugs
+			.filter(slug => !manualIntentSlugs.includes(slug))
+			.map((slug) => ({
+				url: `${BASE_URL}/${slug}`,
+				lastModified: currentDate,
+				changeFrequency: "weekly" as const,
+				priority: 0.75,
+			}));
+	});
 
 	try {
 		return [
@@ -101,7 +117,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			...toolGuidesIndex, 
 			...toolGuideCategoryPages, 
 			...blogPages,
-			...intentPages
+			...intentPages,
+			...extraSlugPages
 		];
 	} catch (error) {
 		console.error("Sitemap generation error:", error);

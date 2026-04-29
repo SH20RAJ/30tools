@@ -101,23 +101,6 @@ export const metadata: Metadata = {
 	},
 	metadataBase: new URL(SITE_URL),
 	alternates: {
-		canonical: "/",
-		languages: {
-			en: "/?lang=en",
-			es: "/?lang=es",
-			fr: "/?lang=fr",
-			de: "/?lang=de",
-			hi: "/?lang=hi",
-			it: "/?lang=it",
-			pt: "/?lang=pt",
-			ja: "/?lang=ja",
-			zh: "/?lang=zh",
-			ko: "/?lang=ko",
-			ru: "/?lang=ru",
-			tr: "/?lang=tr",
-			vi: "/?lang=vi",
-			id: "/?lang=id",
-		},
 		types: {
 			"application/rss+xml": [{ url: "/feed.xml", title: "30tools RSS Feed" }],
 		},
