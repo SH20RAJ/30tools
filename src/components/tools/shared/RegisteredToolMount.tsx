@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { getToolComponent } from "@/lib/tool-registry";
+import { getToolComponent, TOOL_COMPONENTS } from "@/lib/tool-registry";
 import {
     UNIT_TOOL_MAP,
     BASE_CONVERTER_MAP,
