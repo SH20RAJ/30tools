@@ -30,7 +30,7 @@ export default async function ToolPage() {
 	const tool = {
         "id": "youtube-tag-generator",
         "name": "YouTube Tag Generator",
-        "description": "Generate SEO-friendly tags for your YouTube videos instantly. Our free online tool suggests relevant keywords based on your video topic to help you rank higher in search results.",
+        "description": "Generate SEO-friendly tags for your YouTube videos instantly. This free online YouTube Tag Generator suggests relevant keywords based on your video topic to improve search rankings, increase visibility, and reach a wider audience.",
         "route": "/youtube-tag-generator",
         "extraSlugs": [
                 "free-youtube-tag-generator-online",
