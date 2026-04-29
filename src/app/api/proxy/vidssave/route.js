@@ -37,7 +37,7 @@ export async function POST(req) {
 		}
 
 		const rawData = await response.json();
-		console.log("Vidssave Raw Response:", JSON.stringify(rawData, null, 2));
+		console.log("RAW DATA:", JSON.stringify(rawData, null, 2));
 
 		if (rawData.status !== 1 || !rawData.data) {
 			return NextResponse.json(
@@ -46,24 +46,43 @@ export async function POST(req) {
 			);
 		}
 
-		const video = rawData.data;
+		const video = Array.isArray(rawData.data) ? rawData.data[0] : rawData.data;
+
+		if (!video) {
+			return NextResponse.json(
+				{ error: "Could not find video data." },
+				{ status: 404 },
+			);
+		}
+
+		const mediaGroups = video.media || video.medias || [];
+		const flattenedMedias = [];
+
+		mediaGroups.forEach((group) => {
+			const resources = group.resources || [];
+			resources.forEach((res) => {
+				flattenedMedias.push({
+					quality: res.quality || res.format_note || group.type || "Unknown",
+					size: res.size ? `${(res.size / (1024 * 1024)).toFixed(1)} MB` : "Unknown",
+					url: res.url || res.download_url || res.link,
+					type:
+						(res.format || "").toUpperCase().includes("MP3") ||
+						(res.mime || "").includes("audio") ||
+						group.type === "audio"
+							? "audio"
+							: "video",
+				});
+			});
+		});
 
 		// Transform to standard format expected by DownloaderEngine
 		const transformedData = {
 			source: "YouTube",
 			title: video.title || "YouTube Video",
 			thumbnail: video.thumbnail,
-			duration: 0, // Vidssave doesn't seem to provide duration in the main data object
+			duration: 0,
 			author: video.user_item?.nickname || "Unknown",
-			medias: video.media.map((m) => {
-				console.log("Media Item:", JSON.stringify(m, null, 2));
-				return {
-					quality: m.quality,
-					size: m.size ? `${(m.size / (1024 * 1024)).toFixed(1)} MB` : "Unknown",
-					url: m.download_url,
-					type: m.format === "MP3" ? "audio" : "video",
-				};
-			}),
+			medias: flattenedMedias,
 		};
 
 		return NextResponse.json(transformedData);
