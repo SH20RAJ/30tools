@@ -20,7 +20,7 @@ import { Input } from "@/components/ui/input";
  * @param {string} [props.buttonText]
  * @param {string} [props.toolName]
  */
-export const DownloaderEngine = ({ placeholder, buttonText, toolName }) => {
+export const DownloaderEngine = ({ placeholder, buttonText, toolName, apiEndpoint }) => {
 	const [url, setUrl] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [videoData, setVideoData] = useState(null);
@@ -37,7 +37,7 @@ export const DownloaderEngine = ({ placeholder, buttonText, toolName }) => {
 		setVideoData(null);
 
 		try {
-			const response = await fetch("/api/proxy/universal", {
+			const response = await fetch(apiEndpoint || "/api/proxy/universal", {
 				method: "POST",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ url: url }),

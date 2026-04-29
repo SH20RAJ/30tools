@@ -29,6 +29,8 @@ import {
 
 // Special case imports that are still needed here for logic or aren't in registry yet
 const ImageConverterTool = dynamic(() => import("@/components/tools/image/ImageConverterTool.jsx"), { ssr: false });
+const DownloaderEngine = dynamic(() => import("@/components/tools/downloaders/DownloaderEngine.jsx"), { ssr: false });
+const YouTubeChannelIDFinderTool = dynamic(() => import("@/components/tools/youtube/YouTubeChannelIDFinderTool.jsx"), { ssr: false });
 
 function titleCaseId(id: string) {
     return id
@@ -127,6 +129,12 @@ export default function RegisteredToolMount({ toolId }: { toolId: string }) {
     if (SAFE_HTTP_IDS.has(toolId)) return <BuiltInSafeHttp toolId={toolId} />;
 
     // 5. Text tools (Mini components)
+    if (toolId.startsWith("youtube-") && !TOOL_COMPONENTS[toolId]) {
+        if (toolId.includes("downloader") || toolId.includes("extractor")) {
+            return <DownloaderEngine apiEndpoint="/api/proxy/vidssave" />;
+        }
+        return <YouTubeChannelIDFinderTool toolId={toolId} />;
+    }
     if (toolId === "text-compare") return <TextCompareMount />;
     if (toolId === "text-repeater") return <SimpleRepeater />;
     if (toolId === "word-counter") return <WordCounterMount />;
