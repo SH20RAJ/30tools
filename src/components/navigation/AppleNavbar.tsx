@@ -153,7 +153,9 @@ export function AppleNavbar() {
 								<TooltipContent>Browse All</TooltipContent>
 							</Tooltip>
 
-							<AuthButton />
+							<Suspense fallback={<div className="h-9 w-16 bg-muted rounded-none animate-pulse" />}>
+								<AuthButton />
+							</Suspense>
 						</div>
 
 						{/* Mobile Menu Button */}
@@ -199,7 +201,9 @@ export function AppleNavbar() {
 							<div className="flex items-center gap-4 py-2 border-t border-border mt-2 pt-4">
 								<ThemeToggle />
 								<a href="https://github.com/sh20raj/30tools" className="text-muted-foreground">GitHub</a>
-								<AuthButton />
+								<Suspense fallback={<div className="h-9 w-16 bg-muted rounded-none animate-pulse" />}>
+									<AuthButton />
+								</Suspense>
 							</div>
 						</div>
 					</div>
