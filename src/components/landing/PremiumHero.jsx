@@ -18,9 +18,9 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 	};
 
 	const trendingTools = [
+		{ name: "AI Music Generator", href: "/ai-music-generator" },
 		{ name: "YouTube Downloader", href: "/youtube-downloader" },
 		{ name: "Image Compressor", href: "/image-compressor" },
-		{ name: "PDF to Word", href: "/pdf-to-word" },
 		{ name: "AI Image Generator", href: "/ai-image-generator" },
 	];
 
