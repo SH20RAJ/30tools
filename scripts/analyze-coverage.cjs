@@ -156,7 +156,7 @@ addAll(inlineUtilityIds);
 addAll(miniComponentIds);
 
 // Process actual tools from JSON
-const toolsData = JSON.parse(fs.readFileSync('all-tools.json', 'utf8'));
+const toolsData = JSON.parse(fs.readFileSync('docs/internal/all-tools.json', 'utf8'));
 
 // Filter actual tools
 const nonToolCategories = new Set(['others', 'company', 'content']);
@@ -196,5 +196,5 @@ const result = {
   }
 };
 
-fs.writeFileSync('coverage-analysis.json', JSON.stringify(result, null, 2));
+fs.writeFileSync('docs/internal/coverage-analysis.json', JSON.stringify(result, null, 2));
 console.log('Analysis complete. Total tools:', actualTools.length, 'Covered:', actualTools.length - placeholderTools.length, 'Placeholders:', placeholderTools.length);

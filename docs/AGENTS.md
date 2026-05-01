@@ -6,12 +6,12 @@
 ## Core Architecture
 
 ### 1. Data Layer
-- **tools.json**: Located in `src/constants/tools.json`. The single source of truth for the entire tool ecosystem. Contains metadata for all tools, including SEO titles, descriptions, categories, and `extraSlugs`.
-- **tools.ts**: Located in `src/lib/tools.ts`. Type-safe utility functions to query and filter tools from the JSON data.
+- **tools.json**: Located in `../src/constants/tools.json`. The single source of truth for the entire tool ecosystem. Contains metadata for all tools, including SEO titles, descriptions, categories, and `extraSlugs`.
+- **tools.ts**: Located in `../src/lib/tools.ts`. Type-safe utility functions to query and filter tools from the JSON data.
 
 ### 2. Routing System
-- **Next.js rewrites**: Located in `next.config.mjs`, this programmatically handles all SEO variants defined in `extraSlugs` of `tools.json`.
-- **Proxy (`src/proxy.ts`)**: Replaces the deprecated middleware.ts. Dynamically validates incoming requests and handles 301 redirects for `extraSlugs`.
+- **Next.js rewrites**: Located in `../next.config.mjs`, this programmatically handles all SEO variants defined in `extraSlugs` of `tools.json`.
+- **Proxy (`../src/proxy.ts`)**: Replaces the deprecated middleware.ts. Dynamically validates incoming requests and handles 301 redirects for `extraSlugs`.
 - **App Router**: Tools are organized into semantic category folders (e.g., `(image)`, `(pdf)`, `(downloaders)`) for better codebase management and SEO.
 
 ### 3. SEO Infrastructure
@@ -29,8 +29,8 @@
 
 ## Developer Workflow
 - To add a new tool:
-    1. Append entry to `src/constants/tools.json`.
-    2. Create folder and `page.js` in `src/app/(category)/[slug]/`.
+    1. Append entry to `../src/constants/tools.json`.
+    2. Create folder and `page.js` in `../src/app/(category)/[slug]/`.
     3. The middleware and rewrite system will handle the rest.
 
 ### CRITICAL: Metadata & Component Rules
@@ -41,5 +41,5 @@
   - Pattern: `Free [Tool Name] Online - No Signup | 30tools`
 
 ## Graphify
-- **graphify** (`.agents/skills/graphify/SKILL.md`) - any input (code, docs, papers, images) to knowledge graph. Trigger: `/graphify`
+- **graphify** (`../.agents/skills/graphify/SKILL.md`) - any input (code, docs, papers, images) to knowledge graph. Trigger: `/graphify`
 When the user types `/graphify`, invoke the Skill tool with `skill: "graphify"` before doing anything else.

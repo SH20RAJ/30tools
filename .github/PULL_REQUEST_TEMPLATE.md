@@ -2,7 +2,7 @@
 
 **Checklist:**
 - [ ] I have tested these changes locally.
-- [ ] I have followed the coding standards mentioned in `CONTRIBUTING.md`.
+- [ ] I have followed the coding standards mentioned in `.github/CONTRIBUTING.md`.
 - [ ] I have updated the documentation if necessary.
 - [ ] My code passes all linting checks (`npm run lint`).
 

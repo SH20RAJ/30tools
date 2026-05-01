@@ -87,8 +87,15 @@ bun run deploy
 30tools is built by the community, for the community. We believe in high-quality, free software that respects user privacy.
 
 - **Found a bug?** Open an [Issue](https://github.com/sh20raj/30tools/issues).
-- **Have a new tool idea?** Check out [CONTRIBUTING.md](CONTRIBUTING.md).
-- **Want to help scale?** See [OPEN_SOURCE.md](OPEN_SOURCE.md) for our long-term vision.
+- **Have a new tool idea?** Check out [.github/CONTRIBUTING.md](.github/CONTRIBUTING.md).
+- **Want to help scale?** See [.github/OPEN_SOURCE.md](.github/OPEN_SOURCE.md) for our long-term vision.
+
+## 📖 Documentation
+
+For deeper dives into the architecture and design:
+- [Architecture & Workflow](docs/AGENTS.md)
+- [Design System & Guidelines](docs/DESIGN.md)
+- [SEO Strategy](docs/seo-low-hanging-fruit-strategy.md)
 
 ---
 

@@ -142,7 +142,7 @@ export default async function ToolPage() {
 									GitHub Repository <ArrowUpRight className="h-4 w-4" />
 								</a>
 								<a 
-									href="https://github.com/sh20raj/30tools/blob/main/CONTRIBUTING.md" 
+									href="https://github.com/sh20raj/30tools/blob/main/.github/CONTRIBUTING.md" 
 									target="_blank" 
 									rel="noreferrer"
 									className="flex items-center gap-2 font-bold hover:text-primary transition-colors"
