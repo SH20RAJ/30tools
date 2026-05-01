@@ -6,6 +6,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import * as React from "react";
 import { useEffect, useState, Suspense } from "react";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
+import { AuthButton } from "./AuthButton";
 import { Input } from "@/components/ui/input";
 import {
 	Tooltip,
@@ -151,6 +152,8 @@ export function AppleNavbar() {
 								</TooltipTrigger>
 								<TooltipContent>Browse All</TooltipContent>
 							</Tooltip>
+
+							<AuthButton />
 						</div>
 
 						{/* Mobile Menu Button */}
@@ -196,6 +199,7 @@ export function AppleNavbar() {
 							<div className="flex items-center gap-4 py-2 border-t border-border mt-2 pt-4">
 								<ThemeToggle />
 								<a href="https://github.com/sh20raj/30tools" className="text-muted-foreground">GitHub</a>
+								<AuthButton />
 							</div>
 						</div>
 					</div>

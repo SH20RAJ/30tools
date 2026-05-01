@@ -1,6 +1,8 @@
 import { Toaster } from "sonner";
 import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
+import { StackProvider } from "@stackframe/stack";
+import { stackClientApp } from "@/stack/client";
 import { getAllTools } from "@/lib/tools";
 import "./globals.css";
 import Script from "next/script";
@@ -314,12 +316,14 @@ export default async function RootLayout({
 				/>
 			</head>
 			<body className="ds-page font-sans antialiased">
-				<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-					<AppleNavbar />
-					{children}
-					<AppleFooter categories={categories} />
-					<Toaster />
-				</ThemeProvider>
+				<StackProvider app={stackClientApp}>
+					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+						<AppleNavbar />
+						{children}
+						<AppleFooter categories={categories} />
+						<Toaster />
+					</ThemeProvider>
+				</StackProvider>
 
 				<script
 					defer

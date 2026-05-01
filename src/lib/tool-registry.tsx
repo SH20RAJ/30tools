@@ -145,6 +145,7 @@ export const TOOL_COMPONENTS: Record<string, ComponentType<any>> = {
 
     // AI Tools
     "ai-image-generator": dynamic(() => import("@/components/tools/generators/AIImageGeneratorTool.jsx"), { ssr: false }),
+    "ai-music-generator": dynamic(() => import("@/components/tools/generators/AIMusicGeneratorTool.jsx"), { ssr: false }),
 
     // Website / Web Tools
     "website-analyzer": dynamic(() => import("@/components/tools/web/WebsiteAnalyzerTool.jsx"), { ssr: false }),
