@@ -184,7 +184,7 @@ const nextConfig = {
 	webpack: (config, { dev, isServer }) => {
 		// Production optimizations
 		if (!dev) {
-			config.optimization.sideEffects = false;
+			config.optimization.sideEffects = true;
 			config.optimization.usedExports = true;
 		}
 
