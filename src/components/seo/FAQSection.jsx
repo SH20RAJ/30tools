@@ -8,11 +8,18 @@ import {
 } from "lucide-react";
 import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+// import {
+// 	Collapsible,
+// 	CollapsibleContent,
+// 	CollapsibleTrigger,
+// } from "@/components/ui/collapsible";
+
 import {
-	Collapsible,
-	CollapsibleContent,
-	CollapsibleTrigger,
-} from "@/components/ui/collapsible";
+	Accordion,
+	AccordionContent,
+	AccordionItem,
+	AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const generateFAQSchema = (faqs) => {
 	if (!faqs || faqs.length === 0) return null;
@@ -47,17 +54,17 @@ export default function FAQSection({
 	categoryTitle,
 	toolName,
 }) {
-	const [openItems, setOpenItems] = useState(new Set());
+	// const [openItems, setOpenItems] = useState(new Set());
 
-	const toggleItem = (index) => {
-		const newOpenItems = new Set(openItems);
-		if (newOpenItems.has(index)) {
-			newOpenItems.delete(index);
-		} else {
-			newOpenItems.add(index);
-		}
-		setOpenItems(newOpenItems);
-	};
+	// const toggleItem = (index) => {
+	// 	const newOpenItems = new Set(openItems);
+	// 	if (newOpenItems.has(index)) {
+	// 		newOpenItems.delete(index);
+	// 	} else {
+	// 		newOpenItems.add(index);
+	// 	}
+	// 	setOpenItems(newOpenItems);
+	// };
 
 	const schema = showSchema ? generateFAQSchema(faqs) : null;
 
@@ -79,7 +86,7 @@ export default function FAQSection({
 				)}
 			</CardHeader>
 			<CardContent className="space-y-4">
-				{faqs.map((faq, index) => (
+				{/* {faqs.map((faq, index) => (
 					<Collapsible
 						key={index}
 						open={openItems.has(index)}
@@ -106,7 +113,25 @@ export default function FAQSection({
 							</div>
 						</CollapsibleContent>
 					</Collapsible>
-				))}
+				))} */}
+
+				<Accordion type="single" collapsible className="w-full">
+					{faqs.map((faq, index) => (
+						<AccordionItem
+							key={index}
+							value={`item-${index}`}
+							className="border rounded-md px-4"
+						>
+							<AccordionTrigger>
+								{faq.question}
+							</AccordionTrigger>
+
+							<AccordionContent>
+								{faq.answer}
+							</AccordionContent>
+						</AccordionItem>
+					))}
+				</Accordion>
 			</CardContent>
 		</Card>
 	);
@@ -173,7 +198,7 @@ export default function FAQSection({
 				/>
 			)}
 
-			<section className="py-12 bg-muted/30" aria-labelledby="faq-heading">
+			<section className="bg-muted/30" aria-labelledby="faq-heading">
 				<div className="container mx-auto px-4">
 					{variant === "accordion" && renderAccordionFAQ()}
 					{variant === "grid" && renderGridFAQ()}
