@@ -10,15 +10,15 @@ import { STATIC_ROUTES } from "@/lib/tools";
 import StructuredData from "@/components/shared/StructuredData";
 
 interface ToolCategory {
-  key: string;
-  iconKey: string;
-  name: string;
-  description: string;
-  tools: any[];
+	key: string;
+	iconKey: string;
+	name: string;
+	description: string;
+	tools: any[];
 }
 
 interface LandingPageProps {
-  searchParams: Promise<{ lang?: string }>;
+	searchParams: Promise<{ lang?: string }>;
 }
 
 const TOOL_COUNT = Object.values(toolsData.categories || {}).reduce(
@@ -44,7 +44,7 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 
 	const isEnglish = lang === "en" || lang === "default";
 
-	const [heroTitle, heroSubtitle] = isEnglish 
+	const [heroTitle, heroSubtitle] = isEnglish
 		? ["The Unlimited Toolkit for Your Digital Life.", "Access 600+ professional tools for image, video, PDF, and developer workflows. No subscriptions. No signups. Just high-performance utilities."]
 		: await Promise.all([
 			translateEngine.translate("The Unlimited Toolkit for Your Digital Life.", lang),
@@ -68,35 +68,35 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 
 	const toolCategories = isEnglish
 		? priorityOrder.map((key) => {
+			const cat = (toolsData.categories as any)[key];
+			if (!cat) return null;
+			return {
+				key,
+				iconKey: cat.icon || key,
+				name: cat.name,
+				description: cat.description,
+				tools: cat.tools || [],
+			} as ToolCategory;
+		})
+		: await Promise.all(
+			priorityOrder.map(async (key) => {
 				const cat = (toolsData.categories as any)[key];
 				if (!cat) return null;
+
+				const [translatedName, translatedDesc] = await Promise.all([
+					translateEngine.translate(cat.name, lang),
+					translateEngine.translate(cat.description, lang),
+				]);
+
 				return {
 					key,
 					iconKey: cat.icon || key,
-					name: cat.name,
-					description: cat.description,
+					name: translatedName,
+					description: translatedDesc,
 					tools: cat.tools || [],
 				} as ToolCategory;
-			})
-		: await Promise.all(
-				priorityOrder.map(async (key) => {
-					const cat = (toolsData.categories as any)[key];
-					if (!cat) return null;
-
-					const [translatedName, translatedDesc] = await Promise.all([
-						translateEngine.translate(cat.name, lang),
-						translateEngine.translate(cat.description, lang),
-					]);
-
-					return {
-						key,
-						iconKey: cat.icon || key,
-						name: translatedName,
-						description: translatedDesc,
-						tools: cat.tools || [],
-					} as ToolCategory;
-				}),
-			);
+			}),
+		);
 
 	const filteredCategories = toolCategories.filter((c): c is ToolCategory => c !== null);
 
@@ -105,7 +105,7 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 			<StructuredData isHome={true} />
 			{/* Global Decorative Gradients */}
 			<div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-cute opacity-20 -z-10" />
-			
+
 			<div className="container mx-auto px-4 max-w-7xl">
 				{/* Hero Section */}
 				<PremiumHero title={heroTitle} subtitle={heroSubtitle} lang={lang} />
@@ -125,13 +125,13 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 				<HomeFAQ />
 
 				{/* Final CTA */}
-				<section className="py-32 text-center">
+				<section className="text-center">
 					<div className="max-w-2xl mx-auto px-4 py-16 rounded-none bg-foreground text-background relative overflow-hidden group">
 						<div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />
 						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Ready to work faster?</h2>
 						<p className="text-xl opacity-80 mb-10 text-background/90">Start using any of our 600+ tools today. No accounts, no hassle.</p>
-						<Link 
-							href={STATIC_ROUTES.SEARCH} 
+						<Link
+							href={STATIC_ROUTES.SEARCH}
 							className="inline-flex h-14 items-center justify-center rounded-none bg-background text-foreground px-10 text-lg font-bold hover:scale-105 transition-transform"
 						>
 							Browse All Tools
