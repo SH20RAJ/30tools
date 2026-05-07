@@ -198,7 +198,7 @@ export default function FAQSection({
 				/>
 			)}
 
-			<section className="bg-muted/30" aria-labelledby="faq-heading">
+			<section className="bg-muted/30" aria-label={title}>
 				<div className="container mx-auto px-4">
 					{variant === "accordion" && renderAccordionFAQ()}
 					{variant === "grid" && renderGridFAQ()}
