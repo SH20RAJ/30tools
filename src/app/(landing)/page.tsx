@@ -11,15 +11,15 @@ import StructuredData from "@/components/shared/StructuredData";
 import { SITE_CONFIG } from "@/constants/config";
 
 interface ToolCategory {
-  key: string;
-  iconKey: string;
-  name: string;
-  description: string;
-  tools: any[];
+	key: string;
+	iconKey: string;
+	name: string;
+	description: string;
+	tools: any[];
 }
 
 interface LandingPageProps {
-  searchParams: Promise<{ lang?: string }>;
+	searchParams: Promise<{ lang?: string }>;
 }
 
 import { generateMetadata as baseGenerateMetadata } from "@/lib/seo";
@@ -64,35 +64,35 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 
 	const toolCategories = isEnglish
 		? priorityOrder.map((key) => {
+			const cat = (toolsData.categories as any)[key];
+			if (!cat) return null;
+			return {
+				key,
+				iconKey: cat.icon || key,
+				name: cat.name,
+				description: cat.description,
+				tools: cat.tools || [],
+			} as ToolCategory;
+		})
+		: await Promise.all(
+			priorityOrder.map(async (key) => {
 				const cat = (toolsData.categories as any)[key];
 				if (!cat) return null;
+
+				const [translatedName, translatedDesc] = await Promise.all([
+					translateEngine.translate(cat.name, lang),
+					translateEngine.translate(cat.description, lang),
+				]);
+
 				return {
 					key,
 					iconKey: cat.icon || key,
-					name: cat.name,
-					description: cat.description,
+					name: translatedName,
+					description: translatedDesc,
 					tools: cat.tools || [],
 				} as ToolCategory;
-			})
-		: await Promise.all(
-				priorityOrder.map(async (key) => {
-					const cat = (toolsData.categories as any)[key];
-					if (!cat) return null;
-
-					const [translatedName, translatedDesc] = await Promise.all([
-						translateEngine.translate(cat.name, lang),
-						translateEngine.translate(cat.description, lang),
-					]);
-
-					return {
-						key,
-						iconKey: cat.icon || key,
-						name: translatedName,
-						description: translatedDesc,
-						tools: cat.tools || [],
-					} as ToolCategory;
-				}),
-			);
+			}),
+		);
 
 	const filteredCategories = toolCategories.filter((c): c is ToolCategory => c !== null);
 
@@ -101,7 +101,7 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 			<StructuredData isHome={true} />
 			{/* Global Decorative Gradients */}
 			<div className="absolute top-0 left-0 w-full h-[1000px] bg-gradient-cute opacity-20 -z-10" />
-			
+
 			<div className="container mx-auto px-4 max-w-7xl">
 				{/* Hero Section */}
 				<PremiumHero title={heroTitle} subtitle={heroSubtitle} lang={lang} />
@@ -121,7 +121,7 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 				<HomeFAQ />
 
 				{/* Final CTA */}
-				<section className="py-32 text-center">
+				<section className="text-center">
 					<div className="max-w-2xl mx-auto px-4 py-16 rounded-none bg-foreground text-background relative overflow-hidden group">
 						<div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-10 transition-opacity" />
 						<h2 className="text-4xl md:text-5xl font-bold mb-6 text-background">Ready to work faster?</h2>
