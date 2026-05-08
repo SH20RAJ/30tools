@@ -8,6 +8,26 @@ export const getDynamicSEOContent = (tool) => {
 	const { name, category, id } = tool;
 
 	const toolSpecificOverrides = {
+		"amazon-ses-api-key-tester": {
+			article: `
+## Securely Verify Your Amazon SES Credentials
+Testing AWS credentials locally often involves writing temporary scripts or messing with complex CLI environments. The Amazon SES API Key Tester allows you to instantly verify if an IAM user has the necessary permissions (e.g., \`ses:SendEmail\`, \`ses:GetSendQuota\`) to dispatch emails through Amazon Simple Email Service.
+
+### Security Architecture & Data Flow
+When testing live production or sandbox AWS credentials, absolute transparency is required. Here is exactly how this tool processes your data:
+1. **What leaves the browser:** Your Access Key ID, Secret Access Key, and AWS Region are transmitted securely over HTTPS to our edge proxy server (hosted on Vercel/Cloudflare).
+2. **What the proxy sees:** Our edge proxy uses these credentials *ephemerally* (in-memory only) to construct and sign an official request to the AWS SES API.
+3. **Strict Zero-Logging Policy:** Our proxy **does not** log, store, cache, or output your Secret Access Key. The moment the AWS API responds, the proxy drops the credentials from memory and returns the result (Success/Failure) to your browser.
+
+### Best Practices for API Testing
+Despite our strict security protocols, you should **never paste root AWS credentials** into any online tool. Always create a restricted IAM User specifically for testing. If you must use production credentials, we strongly recommend rotating the Secret Access Key immediately after your testing is complete to maintain a pristine security posture.
+			`,
+			faqs: [
+				{ question: "Does this tool test both SMTP and API credentials?", answer: "This tool specifically tests the AWS REST API credentials (Access Key ID and Secret Access Key), not the derived SMTP passwords used for legacy mail clients." },
+				{ question: "What specific SES permissions are tested?", answer: "The tool attempts to call the \`GetSendQuota\` or \`SendEmail\` endpoints. A successful response confirms the key is valid and authorized for SES operations." },
+				{ question: "Why should I rotate my keys after testing?", answer: "As a fundamental security best practice, any credential pasted outside of your secure internal environment or AWS console should be treated as potentially exposed and rotated out." }
+			]
+		},
 		"pdf-merger": {
 			article: `
 ## Why Our PDF Merger is the Professionals Choice

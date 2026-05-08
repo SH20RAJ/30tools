@@ -79,6 +79,58 @@ export default async function ToolPage() {
 		],
 		popular: true,
 		category: "video",
+		features: [
+			"Download Reddit Videos with Audio Intact",
+			"Save Content in HD (720p, 1080p)",
+			"No API Keys or Reddit Account Required",
+			"Bypass the Reddit App Restrictions",
+			"Fast Proxy Extraction Engine"
+		],
+		article: `
+## Download Reddit Videos With Sound Intact
+Reddit is notoriously difficult when it comes to saving videos. If you use standard "Save Video" options on your phone or desktop, the video is often saved without audio, because Reddit separates the video and audio streams (DASH format) on their servers. Our Reddit Video Downloader automatically stitches the video and audio back together so you get a complete, playable MP4 file.
+
+### Lawful Use Notice
+**Important:** Reddit is home to original content created by users, as well as copyrighted material posted under fair use. You may only download videos for offline, personal viewing. Do not re-upload, distribute, or monetize downloaded videos without the explicit permission of the original poster (OP) or copyright holder.
+
+### Platform-Specific Limitations
+Because Reddit relies heavily on third-party video hosts (like Imgur or RedGifs) alongside their native v.redd.it player, our tool occasionally has to proxy requests through different engines. If a video is hosted on a highly restricted third-party site or is part of a private subreddit (NSFW/Quarantined), our downloader may not be able to access the media.
+		`,
+		howTo: {
+			name: "How to Download a Reddit Video",
+			steps: [
+				{
+					name: "Copy the Post Link",
+					"text": "On Reddit, click 'Share' on the post containing the video and select 'Copy Link'."
+				},
+				{
+					name: "Paste the URL",
+					"text": "Paste the Reddit URL into our downloader input box. Ensure the link looks like 'reddit.com/r/...'"
+				},
+				{
+					name: "Wait for Audio Stitching",
+					"text": "Our engine fetches the video and audio files and merges them. This usually takes 3-10 seconds."
+				},
+				{
+					name": "Download the MP4",
+					"text": "Click the download button to save the final HD video to your device."
+				}
+			]
+		},
+		faqs: [
+			{
+				question: "Why do some Reddit videos download without sound?",
+				answer: "If you download directly from the app, it's because Reddit streams audio separately. By using our tool, we fetch both streams and combine them so the final MP4 has sound."
+			},
+			{
+				question: "Can I download NSFW videos?",
+				answer: "Our tool can download most native Reddit videos, but Reddit places heavy restrictions on fetching media from NSFW subreddits without an authenticated account. Therefore, it may fail."
+			},
+			{
+				question: "Are my downloads logged?",
+				answer: "No. The download request is proxied through our edge servers and immediately discarded. We do not keep logs of which videos you download."
+			}
+		]
 	};
 	const breadcrumbs = [
 		{

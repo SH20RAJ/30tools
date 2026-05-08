@@ -33,13 +33,13 @@
 - [x] **Step 4:** Fix homepage (counts, giant link blocks, canonical categories).
 - [x] **Step 5:** Fix search and category/filter URLs (noindex dynamic queries).
 - [x] **Step 6:** Fix company and legal pages (about, contact, privacy, terms).
-- [ ] **Step 7:** Fix high-value SEO tool pages urgently (add unique content).
-- [ ] **Step 8:** Fix content-quality issues (remove fake reviews/keyword stuffing).
-- [ ] **Step 9:** Fix all remaining footer-only/thin tool pages (add structured templates).
-- [ ] **Step 10:** Fix category hubs and canonical URLs.
-- [ ] **Step 11:** Fix structured data (remove fake ratings, strict Organization/FAQ rules).
-- [ ] **Step 12:** Fix sitemap and robots.txt.
-- [ ] **Step 13:** Fix metadata globally (titles/descriptions, Open Graph).
-- [ ] **Step 14:** Build local SEO verification script (`scripts/seo-audit-local.mjs`).
-- [ ] **Step 15:** Implement structured templates for tools (vs hardcoding).
-- [ ] **Step 16:** Final Verification (build, audit, lint).
+- [x] **Step 7:** Fix high-value SEO tool pages urgently (add unique content).
+- [x] **Step 8:** Fix content-quality issues (remove fake reviews/keyword stuffing).
+- [x] **Step 9:** Fix all remaining footer-only/thin tool pages (add structured templates).
+- [x] **Step 10:** Fix category hubs and canonical URLs.
+- [x] **Step 11:** Fix structured data (remove fake ratings, strict Organization/FAQ rules).
+- [x] **Step 12:** Fix sitemap and robots.txt.
+- [x] **Step 13:** Fix metadata globally (titles/descriptions, Open Graph).
+- [x] **Step 14:** Build local SEO verification script (`scripts/seo-audit-local.mjs`).
+- [x] **Step 15:** Implement structured templates for tools (vs hardcoding).
+- [x] **Step 16:** Final Verification (build, audit, lint).
