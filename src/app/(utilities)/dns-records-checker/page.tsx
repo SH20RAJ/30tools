@@ -38,7 +38,59 @@ export default async function ToolPage() {
                 "lookup-domain-dns-records"
         ],
         "popular": false,
-        "category": "utilities"
+        "category": "utilities",
+		"features": [
+			"Lookup A, AAAA, CNAME, MX, TXT, and NS Records",
+			"Query Multiple Global DNS Servers (Google, Cloudflare, OpenDNS)",
+			"Verify Email Deliverability Records (SPF, DKIM, DMARC)",
+			"Detect Misconfigured DNS Propagation",
+			"Fast Server-Side Proxying to Avoid Local Cache Issues"
+		],
+		"article": `
+## Instantly Verify DNS Propagation and Configuration
+When you launch a new website, change hosting providers, or set up a professional email address, DNS configuration is the most critical step. The DNS Records Checker allows you to query live nameservers to confirm that your domain's records have updated correctly across the globe.
+
+### Comprehensive Record Lookup
+Unlike basic terminal commands, our tool provides a clean, parsed breakdown of every major DNS record type. You can easily verify if your A records point to the correct IP, if your MX records are routing mail to Google Workspace, or if your TXT records contain valid SPF policies.
+
+### No Local Cache Interference
+If you recently changed your DNS records, your computer's local cache might still show the old IP address. By using our web-based checker, the query is executed from our edge servers, bypassing your local ISP cache and giving you the true global status of your domain.
+		`,
+		"howTo": {
+			"name": "How to Check DNS Records",
+			"steps": [
+				{
+					"name": "Enter the Domain Name",
+					"text": "Type the raw domain name (e.g., 'example.com') without 'https://' or 'www' into the search bar."
+				},
+				{
+					"name": "Select Record Type (Optional)",
+					"text": "Choose a specific record type like 'MX' if you are troubleshooting email, or leave it as 'ALL' for a complete report."
+				},
+				{
+					"name": "Run the Query",
+					"text": "Click the check button. The tool queries authoritative servers and returns the live records in seconds."
+				},
+				{
+					"name": "Analyze the Output",
+					"text": "Review the IPs, TTL (Time to Live) values, and target strings to ensure they match your hosting provider's instructions."
+				}
+			]
+		},
+		"faqs": [
+			{
+				"question": "How long does DNS propagation take?",
+				"answer": "While modern DNS updates often propagate within 15 to 30 minutes, it can take up to 48 hours for changes to reflect across all ISPs globally."
+			},
+			{
+				"question": "Why can't I see my new TXT record?",
+				"answer": "TXT records can be cached aggressively. Ensure you are querying the specific subdomain if the record was added there, and check the TTL of the previous record."
+			},
+			{
+				"question": "Are my domain searches logged?",
+				"answer": "No. The DNS queries are executed in real-time and the results are not stored in any database. Your search history remains private."
+			}
+		]
 };
 
 	return (
