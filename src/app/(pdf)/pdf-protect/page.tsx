@@ -1,6 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
-import ToolSEOLayout from "@/components/seo/ToolSEOLayout";
 import { getToolById } from "@/lib/tools";
 import { notFound } from "next/navigation";
 
@@ -38,9 +37,9 @@ export default async function ToolPage() {
 
 	return (
 		<>
-			<ToolSEOLayout toolId={tool.id}>
+			<ToolLayout tool={tool}>
 				<RegisteredToolMount toolId={tool.id} />
-			</ToolSEOLayout>
+			</ToolLayout>
 		</>
 	);
 }

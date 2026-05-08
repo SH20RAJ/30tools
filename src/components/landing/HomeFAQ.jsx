@@ -4,12 +4,13 @@ import {
 	AccordionItem,
 	AccordionTrigger,
 } from "@/components/ui/accordion";
+import { SITE_CONFIG } from "@/constants/config";
 
 export function HomeFAQ() {
 	const faqs = [
 		{
 			question: "Is 30tools really free to use?",
-			answer: "Yes, 30tools is 100% free. We provide over 600 professional-grade tools with no subscription fees, registration, or paywalls. Our mission is to democratize access to high-quality productivity software."
+			answer: `Yes, 30tools is 100% free. We provide over ${SITE_CONFIG.toolCountString} professional-grade tools with no subscription fees, registration, or paywalls. Our mission is to democratize access to high-quality productivity software.`
 		},
 		{
 			question: "Do I need to create an account or sign up?",
@@ -25,7 +26,7 @@ export function HomeFAQ() {
 		},
 		{
 			question: "How many tools are available on the platform?",
-			answer: "We currently offer 600+ tools across categories like Image, PDF, Video, Audio, SEO, and Developer Utilities. We are constantly adding new tools based on user feedback."
+			answer: `We currently offer ${SITE_CONFIG.toolCountString} tools across categories like Image, PDF, Video, Audio, SEO, and Developer Utilities. We are constantly adding new tools based on user feedback.`
 		}
 	];
 

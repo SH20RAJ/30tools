@@ -62,7 +62,7 @@ Upload your entire asset folder and compress them all at once. Download the resu
 		downloaders: {
 			article: DOWNLOADER_ARTICLE,
 			features: [
-				`Download from 30+ Social Platforms with ${name}`,
+				`Download from ${SITE_CONFIG.popularToolCountString} Social Platforms with ${"${name}"}`,
 				"100% Free & No Registration Required",
 				"HD & 4K Quality — No Watermarks",
 				"Instant Processing with Zero Server Latency",
@@ -1028,4 +1028,6 @@ Our audit criteria are derived from Google's Search Central documentation and up
 
 ### No Account Required
 Use the full toolkit without signing up, sharing your email, or entering a credit card. Your audit URLs and generated configs are processed in real time and never stored on our servers.
+`;
+servers.
 `;

@@ -4,6 +4,7 @@ import { ArrowUpRight, Github } from "lucide-react";
 import Link from "next/link";
 import { LanguageSelector } from "@/components/shared/LanguageSelector";
 import { getRouteById, STATIC_ROUTES } from "@/lib/tools";
+import { SITE_CONFIG } from "@/constants/config";
 
 const languages = [
 	{ name: "English", code: "en" },
@@ -45,7 +46,7 @@ export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }
 							30tools
 						</Link>
 						<p className="text-[12px] leading-relaxed opacity-90 max-w-xs">
-							200+ free tools for creators, developers, and professionals. 
+							{SITE_CONFIG.toolCountString} free tools for creators, developers, and professionals. 
 							Fast, secure, and private.
 						</p>
 					</div>

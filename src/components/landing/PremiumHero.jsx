@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
+import { SITE_CONFIG } from "@/constants/config";
 
 export function PremiumHero({ title, subtitle, lang = "en" }) {
 	const [query, setQuery] = useState("");
@@ -37,7 +38,7 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 				<div className="h-8 mb-8">
 					<div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-primary/10 border border-primary/20 text-primary text-xs font-semibold animate-fade-in">
 						<Sparkles className="h-3 w-3" />
-						<span>Discover 600+ Power Tools</span>
+						<span>Discover {SITE_CONFIG.toolCountString} Power Tools</span>
 					</div>
 				</div>
 

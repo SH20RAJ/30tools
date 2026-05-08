@@ -1,6 +1,7 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { Shield } from "lucide-react";
+import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata = {
 	title: "Privacy Policy - 30tools",
@@ -36,7 +37,7 @@ export default async function PrivacyPage() {
 					}),
 				}}
 			/>
-			<ToolLayout tool={tool}>
+			<ToolLayout tool={tool} relatedTools={[]}>
 				<div className="space-y-6">
 					<Card>
 						<CardContent className="pt-6 space-y-6">
@@ -45,29 +46,56 @@ export default async function PrivacyPage() {
 								<h1 className="text-2xl font-bold">Privacy Policy</h1>
 							</div>
 
-							<p className="text-sm text-muted-foreground">Last updated: April 2026</p>
+							<p className="text-sm text-muted-foreground">Last updated: {SITE_CONFIG.lastUpdatedDate}</p>
 
 							<section className="space-y-3">
 								<h2 className="text-lg font-semibold">1. Overview</h2>
 								<p className="text-sm leading-relaxed">
-									30tools (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) operates <a href="https://30tools.com" className="text-primary underline">30tools.com</a>, a free online toolkit that processes files and data entirely in your browser. This Privacy Policy explains how we handle information when you use our service.
+									30tools (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) operates <a href="https://30tools.com" className="text-primary underline">30tools.com</a>, a free online toolkit. This Privacy Policy explains how we handle information when you use our service.
 								</p>
 							</section>
 
 							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">2. Browser-Side Processing</h2>
+								<h2 className="text-lg font-semibold">2. Data Processing & Storage</h2>
 								<p className="text-sm leading-relaxed">
-									All file processing (PDF, image, video, audio, text) happens locally in your browser using JavaScript and WebAssembly. Your files <strong>never leave your device</strong>. We do not upload, store, or have access to any files you process with our tools.
+									We are committed to absolute transparency regarding how your data is processed. Below is a breakdown of our tools:
 								</p>
+								<div className="overflow-x-auto my-4">
+									<table className="w-full text-sm border-collapse border border-border">
+										<thead>
+											<tr className="bg-muted/50">
+												<th className="border border-border p-2 text-left">Tool Category</th>
+												<th className="border border-border p-2 text-left">Processing Method</th>
+												<th className="border border-border p-2 text-left">Data Retention</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td className="border border-border p-2 font-medium">Client-Side Tools (Image Compressors, Text Tools, Generators)</td>
+												<td className="border border-border p-2">Executed locally in your browser using JavaScript/WebAssembly.</td>
+												<td className="border border-border p-2">Data never leaves your device. Nothing is stored.</td>
+											</tr>
+											<tr>
+												<td className="border border-border p-2 font-medium">Server/Proxy Tools (Downloaders, Meta Tag Extractors, Site Audits)</td>
+												<td className="border border-border p-2">Requests are proxied through our edge servers (Cloudflare/Vercel) to fetch external data.</td>
+												<td className="border border-border p-2">Data is processed in-memory and immediately discarded. No logs.</td>
+											</tr>
+											<tr>
+												<td className="border border-border p-2 font-medium">API Tools (Tester, DNS Checkers)</td>
+												<td className="border border-border p-2">Requests made via our servers to specific APIs or DNS providers.</td>
+												<td className="border border-border p-2">No logging of API keys, payloads, or output. Ephemeral processing only.</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
 							</section>
 
 							<section className="space-y-3">
 								<h2 className="text-lg font-semibold">3. Information We Collect</h2>
 								<p className="text-sm leading-relaxed">We collect minimal information:</p>
 								<ul className="list-disc list-inside text-sm space-y-1 ml-4">
-									<li><strong>Usage Analytics:</strong> We use privacy-respecting analytics to understand which tools are popular and how users navigate the site. This includes page views, referral sources, and general geographic regions. We do not track individual users across sessions.</li>
+									<li><strong>Usage Analytics:</strong> We use privacy-respecting analytics to understand which tools are popular. We do not track individual users across sessions.</li>
 									<li><strong>Device Information:</strong> Browser type, screen resolution, and operating system — collected automatically to optimize the user experience.</li>
-									<li><strong>Cookies:</strong> We use essential cookies for site functionality and optional analytics cookies that you can disable.</li>
 								</ul>
 							</section>
 
@@ -77,7 +105,7 @@ export default async function PrivacyPage() {
 									<li>Files you upload or process</li>
 									<li>Text you enter into tools</li>
 									<li>Personal identification information (unless you voluntarily contact us)</li>
-									<li>Payment information (our tools are 100% free)</li>
+									<li>Payment information</li>
 								</ul>
 							</section>
 
@@ -89,7 +117,6 @@ export default async function PrivacyPage() {
 								<ul className="list-disc list-inside text-sm space-y-1 ml-4">
 									<li><strong>Analytics:</strong> To understand site usage patterns</li>
 									<li><strong>CDN:</strong> To deliver content quickly worldwide</li>
-									<li><strong>Public APIs:</strong> Some tools (IP lookup, DNS checker) query public APIs. These queries contain only the data you explicitly enter.</li>
 								</ul>
 							</section>
 
@@ -101,40 +128,12 @@ export default async function PrivacyPage() {
 							</section>
 
 							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">7. Your Rights</h2>
-								<p className="text-sm leading-relaxed">
-									Depending on your jurisdiction, you may have the right to:
-								</p>
-								<ul className="list-disc list-inside text-sm space-y-1 ml-4">
-									<li>Access the personal data we hold about you</li>
-									<li>Request deletion of your data</li>
-									<li>Opt out of analytics tracking</li>
-									<li>Lodge a complaint with a supervisory authority</li>
-								</ul>
-							</section>
-
-							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">8. Children&apos;s Privacy</h2>
-								<p className="text-sm leading-relaxed">
-									Our service is not directed at children under 13. We do not knowingly collect personal information from children.
-								</p>
-							</section>
-
-							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">9. Changes to This Policy</h2>
-								<p className="text-sm leading-relaxed">
-									We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated revision date.
-								</p>
-							</section>
-
-							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">10. Contact Us</h2>
+								<h2 className="text-lg font-semibold">7. Contact Us</h2>
 								<p className="text-sm leading-relaxed">
 									If you have questions about this Privacy Policy, contact us at:
 								</p>
 								<ul className="text-sm space-y-1 ml-4">
-									<li>Email: <a href="mailto:mail@30tools.com" className="text-primary underline">mail@30tools.com</a></li>
-									<li>GitHub: <a href="https://github.com/SH20RAJ/30tools" target="_blank" rel="noreferrer" className="text-primary underline">github.com/SH20RAJ/30tools</a></li>
+									<li>Email: <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-primary underline">{SITE_CONFIG.contactEmail}</a></li>
 								</ul>
 							</section>
 						</CardContent>

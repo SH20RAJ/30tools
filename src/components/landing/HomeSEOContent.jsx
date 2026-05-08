@@ -1,4 +1,5 @@
 import { CheckCircle2, Shield, Globe, Zap } from "lucide-react";
+import { SITE_CONFIG } from "@/constants/config";
 
 export function HomeSEOContent() {
 	const features = [
@@ -10,7 +11,7 @@ export function HomeSEOContent() {
 		{
 			icon: <Globe className="h-6 w-6 text-primary" />,
 			title: "No Sign-up Required",
-			description: "Access our entire suite of 600+ tools instantly. No emails, no credit cards, and no complex registration flows. Just pick a tool and start."
+			description: `Access our entire suite of ${SITE_CONFIG.toolCountString} tools instantly. No emails, no credit cards, and no complex registration flows. Just pick a tool and start.`
 		},
 		{
 			icon: <Zap className="h-6 w-6 text-primary" />,

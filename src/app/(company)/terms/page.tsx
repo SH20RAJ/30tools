@@ -1,6 +1,7 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import { Card, CardContent } from "@/components/ui/card";
 import { FileText } from "lucide-react";
+import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata = {
 	title: "Terms of Use - 30tools",
@@ -36,7 +37,7 @@ export default async function TermsPage() {
 					}),
 				}}
 			/>
-			<ToolLayout tool={tool}>
+			<ToolLayout tool={tool} relatedTools={[]}>
 				<div className="space-y-6">
 					<Card>
 						<CardContent className="pt-6 space-y-6">
@@ -45,7 +46,7 @@ export default async function TermsPage() {
 								<h1 className="text-2xl font-bold">Terms of Use</h1>
 							</div>
 
-							<p className="text-sm text-muted-foreground">Last updated: April 2026</p>
+							<p className="text-sm text-muted-foreground">Last updated: {SITE_CONFIG.lastUpdatedDate}</p>
 
 							<section className="space-y-3">
 								<h2 className="text-lg font-semibold">1. Acceptance of Terms</h2>
@@ -57,24 +58,34 @@ export default async function TermsPage() {
 							<section className="space-y-3">
 								<h2 className="text-lg font-semibold">2. Description of Service</h2>
 								<p className="text-sm leading-relaxed">
-									30tools provides free, browser-based utility tools for file conversion, image processing, text manipulation, SEO analysis, and more. All processing happens locally in your browser. No data is uploaded to our servers unless you explicitly use a feature that requires it (such as downloading from external URLs).
+									30tools provides free, browser-based utility tools for file conversion, image processing, text manipulation, SEO analysis, media downloading, and more. Processing primarily happens locally in your browser, though some features (such as downloaders or API tests) utilize our edge network for proxying.
 								</p>
 							</section>
 
 							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">3. Use of the Service</h2>
-								<p className="text-sm leading-relaxed">You agree to use the Service only for lawful purposes. You must not:</p>
+								<h2 className="text-lg font-semibold">3. Use of the Service and Lawful Use</h2>
+								<p className="text-sm leading-relaxed">You agree to use the Service only for lawful purposes. You must adhere to the following rules:</p>
 								<ul className="list-disc list-inside text-sm space-y-1 ml-4">
-									<li>Use the Service for any illegal or unauthorized purpose</li>
-									<li>Attempt to gain unauthorized access to any part of the Service</li>
-									<li>Use automated scripts to scrape or abuse the Service</li>
-									<li>Interfere with or disrupt the Service or servers</li>
-									<li>Use the Service to process content you do not have the right to process</li>
+									<li><strong>Downloaders & Extractors:</strong> You may only download, unlock, or extract content/documents that you own or have explicit permission to modify. Do not use the Service to infringe on copyright or intellectual property rights.</li>
+									<li><strong>API & Network Tools:</strong> Do not use API testers to distribute malicious payloads, launch denial-of-service attacks, or scan networks you do not own. Do not paste production root credentials into testing interfaces.</li>
+									<li><strong>AI & Generated Content:</strong> Do not use our generators to produce harmful, defamatory, or explicit content.</li>
+									<li>Do not attempt to gain unauthorized access to any part of the Service or abuse the Service with automated scripts.</li>
 								</ul>
 							</section>
 
 							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">4. Intellectual Property</h2>
+								<h2 className="text-lg font-semibold">4. Service Limitations</h2>
+								<p className="text-sm leading-relaxed">
+									While we strive to provide the best possible experience, the Service is provided with the following practical limitations:
+								</p>
+								<ul className="list-disc list-inside text-sm space-y-1 ml-4">
+									<li><strong>File Size:</strong> Supported file processing is generally limited to {SITE_CONFIG.supportedFileLimits}. Files larger than {SITE_CONFIG.maxFileSize} may cause browser instability.</li>
+									<li><strong>Availability:</strong> We do not guarantee 100% uptime. Services may be rate-limited or temporarily disabled for maintenance without prior notice.</li>
+								</ul>
+							</section>
+
+							<section className="space-y-3">
+								<h2 className="text-lg font-semibold">5. Intellectual Property</h2>
 								<p className="text-sm leading-relaxed">
 									The Service, including its design, code, and content, is owned by 30tools and protected by applicable intellectual property laws. Our source code is available under the license specified in our <a href="https://github.com/SH20RAJ/30tools" target="_blank" rel="noreferrer" className="text-primary underline">GitHub repository</a>.
 								</p>
@@ -84,28 +95,16 @@ export default async function TermsPage() {
 							</section>
 
 							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">5. Disclaimer of Warranties</h2>
+								<h2 className="text-lg font-semibold">6. Disclaimer of Warranties</h2>
 								<p className="text-sm leading-relaxed">
-									The Service is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind, either express or implied. We do not guarantee that:
-								</p>
-								<ul className="list-disc list-inside text-sm space-y-1 ml-4">
-									<li>The Service will be uninterrupted or error-free</li>
-									<li>The results obtained from using the Service will be accurate or reliable</li>
-									<li>Any defects in the Service will be corrected</li>
-								</ul>
-							</section>
-
-							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">6. Limitation of Liability</h2>
-								<p className="text-sm leading-relaxed">
-									In no event shall 30tools be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service. Since all processing occurs in your browser, we have no access to your files and cannot be responsible for data loss or corruption.
+									The Service is provided &quot;as is&quot; and &quot;as available&quot; without warranties of any kind, either express or implied.
 								</p>
 							</section>
 
 							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">7. External Links</h2>
+								<h2 className="text-lg font-semibold">7. Limitation of Liability</h2>
 								<p className="text-sm leading-relaxed">
-									The Service may contain links to third-party websites or services. We are not responsible for the content, privacy policies, or practices of any third-party websites.
+									In no event shall 30tools be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the Service. We have no access to your files and cannot be responsible for data loss, corruption, or legal repercussions of your downloaded media.
 								</p>
 							</section>
 
@@ -117,21 +116,10 @@ export default async function TermsPage() {
 							</section>
 
 							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">9. Governing Law</h2>
+								<h2 className="text-lg font-semibold">9. Contact</h2>
 								<p className="text-sm leading-relaxed">
-									These Terms shall be governed by and construed in accordance with applicable laws, without regard to conflict of law provisions.
+									For questions about these Terms of Use, contact us at: <a href={`mailto:${SITE_CONFIG.contactEmail}`} className="text-primary underline">{SITE_CONFIG.contactEmail}</a>
 								</p>
-							</section>
-
-							<section className="space-y-3">
-								<h2 className="text-lg font-semibold">10. Contact</h2>
-								<p className="text-sm leading-relaxed">
-									For questions about these Terms of Use, contact us at:
-								</p>
-								<ul className="text-sm space-y-1 ml-4">
-									<li>Email: <a href="mailto:mail@30tools.com" className="text-primary underline">mail@30tools.com</a></li>
-									<li>GitHub: <a href="https://github.com/SH20RAJ/30tools" target="_blank" rel="noreferrer" className="text-primary underline">github.com/SH20RAJ/30tools</a></li>
-								</ul>
 							</section>
 						</CardContent>
 					</Card>
