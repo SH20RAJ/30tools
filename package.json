@@ -12,15 +12,15 @@
 		"clean-imports": "node scripts/remove-unused-imports.cjs",
 		"predeploy": "rm -rf .next && rm -rf .open-next",
 		"deploy:small": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
-	"deploy": "next build && opennextjs-cloudflare build --skipNextBuild && opennextjs-cloudflare deploy",
-	"deploy:fast": "next build && opennextjs-cloudflare build --skipNextBuild && opennextjs-cloudflare deploy",
+		"deploy": "next build && opennextjs-cloudflare build --skipNextBuild && opennextjs-cloudflare deploy",
+		"deploy:fast": "next build && opennextjs-cloudflare build --skipNextBuild && opennextjs-cloudflare deploy",
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
 		"generate-icons": "node scripts/generate-icons.cjs",
 		"generate-feed": "node scripts/generate-feed.cjs"
 	},
 	"dependencies": {
-		"@opennextjs/cloudflare": "^1.11.0",
+		"@opennextjs/cloudflare": "^1.19.8",
 		"@radix-ui/react-accordion": "^1.2.11",
 		"@radix-ui/react-avatar": "^1.1.10",
 		"@radix-ui/react-checkbox": "^1.3.2",
