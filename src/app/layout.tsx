@@ -1,5 +1,4 @@
 import { Toaster } from "sonner";
-import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { StackProvider } from "@stackframe/stack";
 import { stackClientApp } from "@/stack/client";
@@ -331,14 +330,23 @@ export default async function RootLayout({
 				/>
 			</head>
 			<body className="ds-page font-sans antialiased">
-				<StackProvider app={stackClientApp as any}>
+				{stackClientApp ? (
+					<StackProvider app={stackClientApp as any}>
+						<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+							<AppleNavbar />
+							{children}
+							<AppleFooter categories={categories} />
+							<Toaster />
+						</ThemeProvider>
+					</StackProvider>
+				) : (
 					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<AppleNavbar />
 						{children}
 						<AppleFooter categories={categories} />
 						<Toaster />
 					</ThemeProvider>
-				</StackProvider>
+				)}
 
 				<script
 					defer
