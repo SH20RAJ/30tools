@@ -129,11 +129,7 @@ export default async function ToolPage() {
 							price: "0",
 							priceCurrency: "USD",
 						},
-						aggregateRating: {
-							"@type": "AggregateRating",
-							ratingValue: "4.9",
-							ratingCount: "1240",
-						},
+						// NOTE: aggregateRating removed - no real reviews exist for this tool
 					}),
 				}}
 			/>

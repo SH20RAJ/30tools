@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 import { StackProvider } from "@stackframe/stack";
 import { stackClientApp } from "@/stack/client";
 import { getAllTools } from "@/lib/tools";
-import { SITE_URL, TOOL_COUNT_STRING } from "@/constants/config";
+import { SITE_URL, TOOL_COUNT, TOOL_COUNT_STRING } from "@/constants/config";
 import "./globals.css";
 import Script from "next/script";
 import { AppleNavbar } from "@/components/navigation/AppleNavbar";

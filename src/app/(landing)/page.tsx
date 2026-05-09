@@ -41,7 +41,7 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 	const isEnglish = lang === "en" || lang === "default";
 
 	const [heroTitle, heroSubtitle] = isEnglish 
-		? ["The Unlimited Toolkit for Your Digital Life.", `Access ${SITE_CONFIG.toolCountString} professional tools for image, video, PDF, and developer workflows. No subscriptions. No signups. Just high-performance utilities.`]
+		? ["A Comprehensive Toolkit for Your Digital Life.", `Access ${SITE_CONFIG.toolCountString} professional tools for image, video, PDF, and developer workflows. No subscriptions. No signups. Just high-performance utilities.`]
 		: await Promise.all([
 			translateEngine.translate("The Unlimited Toolkit for Your Digital Life.", lang),
 			translateEngine.translate(

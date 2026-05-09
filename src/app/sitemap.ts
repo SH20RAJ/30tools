@@ -10,10 +10,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	const allCategories = getAllCategories();
 	const currentDate = new Date();
 
-	// 1. Static Pages
+	// 1. Static Pages - exclude pages with noindex in their metadata
 	const staticPages: MetadataRoute.Sitemap = [
 		{ url: BASE_URL, lastModified: currentDate, changeFrequency: "daily", priority: 1.0 },
-		{ url: `${BASE_URL}/search`, lastModified: currentDate, changeFrequency: "daily", priority: 0.8 },
+		// NOTE: /search has robots: { index: false } in its metadata, so it's excluded
 		{ url: `${BASE_URL}/about`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/contact`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/privacy`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },

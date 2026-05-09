@@ -5,8 +5,8 @@ export function HomeSEOContent() {
 	const features = [
 		{
 			icon: <Shield className="h-6 w-6 text-primary" />,
-			title: "Privacy First Processing",
-			description: "Most of our tools process files directly in your browser. Your data never leaves your device, ensuring maximum security and anonymity."
+			title: "Privacy-Conscious Design",
+			description: "Many of our tools process files in your browser to minimize data exposure. Some tools use server-side APIs or third-party services — see our Privacy page for details on which tools send data off-device."
 		},
 		{
 			icon: <Globe className="h-6 w-6 text-primary" />,
@@ -65,10 +65,7 @@ export function HomeSEOContent() {
 						))}
 					</ul>
 					<div className="mt-10 p-6 rounded-none bg-primary/5 border border-primary/10">
-						<p className="text-sm font-medium italic">
-							"30tools has replaced over a dozen paid subscriptions for my team. The browser-based processing is a game changer for our sensitive client data."
-						</p>
-						<p className="mt-4 text-xs font-bold uppercase tracking-widest text-primary">— Lead Developer, TechFlow</p>
+						<p className="text-sm font-medium italic">Used by creators, developers, and teams for fast, browser-first workflows. See our contribution and case studies on GitHub for real-world examples.</p>
 					</div>
 				</div>
 			</div>

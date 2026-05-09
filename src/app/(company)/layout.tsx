@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
+import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata: Metadata = {
 	title: "Company | 30tools",
 	description:
-		"Learn about 30tools — our mission to provide 365+ free browser-based tools, contact information, privacy policy, and terms of service. Privacy-first, no registration required.",
+		`Learn about 30tools — our mission to provide ${SITE_CONFIG.toolCountString} free browser-based tools, contact information, privacy policy, and terms of service. Privacy-first, no registration required.`,
 	keywords:
 		"30tools company, about 30tools, contact 30tools, privacy policy, terms of service, free online tools company, privacy focused tools, no signup tools",
 	openGraph: {

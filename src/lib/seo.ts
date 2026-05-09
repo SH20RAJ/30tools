@@ -166,6 +166,8 @@ export function generateFAQSchema(faqs: FAQ[]) {
 
 /**
  * Generate SoftwareApplication JSON-LD for tools
+ * NOTE: Do NOT add aggregateRating unless there are real, verified reviews visible on the page.
+ * Adding fake ratings violates Google's guidelines and undermines user trust.
  */
 export function generateToolSchema({
 	name,
@@ -186,10 +188,6 @@ export function generateToolSchema({
 			price: "0",
 			priceCurrency: "USD",
 		},
-		aggregateRating: {
-			"@type": "AggregateRating",
-			ratingValue: "4.8",
-			reviewCount: "1250",
-		},
+		// aggregateRating removed - only include if there are real, verified page-specific reviews
 	};
 }
