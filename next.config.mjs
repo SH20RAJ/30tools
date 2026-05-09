@@ -173,7 +173,7 @@ const pwaConfig = withPWA({
 	dest: "public",
 	register: true,
 	skipWaiting: true,
-	disable: process.env.NODE_ENV === "development",
+	disable: true, // Temporarily disabled for stability on Cloudflare
 	buildExcludes: [/middleware-manifest\.json$/],
 	runtimeCaching: [
 		{
