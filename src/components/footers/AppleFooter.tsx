@@ -114,7 +114,6 @@ export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }
 							<Link href={getRouteById("terms")} className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
 							<Link href={getRouteById("contact")} className="text-[12px] hover:underline underline-offset-4">Contact</Link>
 						</div>
-						</div>
 					</div>
 				</div>
 			</div>
