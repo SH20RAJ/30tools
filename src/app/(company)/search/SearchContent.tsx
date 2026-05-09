@@ -151,7 +151,7 @@ function SearchResults() {
 
 export default function SearchContent() {
 	return (
-		<Suspense fallback={<div className="container mx-auto px-4 py-12 text-center">Loading Search...</div>}>
+		<Suspense fallback={<div className="container mx-auto px-4 py-12 text-center"><h2 className="text-2xl font-bold">Search 30tools</h2><p className="text-muted-foreground">This interactive search loads in your browser. Use the input box to find tools or browse category hubs.</p></div>}>
 			<SearchResults />
 		</Suspense>
 	);

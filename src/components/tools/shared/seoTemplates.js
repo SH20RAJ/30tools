@@ -4,6 +4,8 @@
  * for tools missing features, FAQs, howTo steps, and long-form articles.
  */
 
+import { SITE_CONFIG } from "@/constants/config";
+
 export const getDynamicSEOContent = (tool) => {
 	const { name, category, id } = tool;
 
@@ -1048,6 +1050,4 @@ Our audit criteria are derived from Google's Search Central documentation and up
 
 ### No Account Required
 Use the full toolkit without signing up, sharing your email, or entering a credit card. Your audit URLs and generated configs are processed in real time and never stored on our servers.
-`;
-servers.
 `;

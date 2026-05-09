@@ -4,21 +4,19 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 import { StackProvider } from "@stackframe/stack";
 import { stackClientApp } from "@/stack/client";
 import { getAllTools } from "@/lib/tools";
+import { SITE_URL, TOOL_COUNT_STRING } from "@/constants/config";
 import "./globals.css";
 import Script from "next/script";
 import { AppleNavbar } from "@/components/navigation/AppleNavbar";
 import { AppleFooter } from "@/components/footers/AppleFooter";
 import { Metadata, Viewport } from "next";
 
-const SITE_URL = "https://30tools.com";
-const TOOL_COUNT = getAllTools().length;
-
 export const viewport: Viewport = {
 	width: "device-width",
 	initialScale: 1,
 	maximumScale: 5,
 };
-const DEFAULT_DESCRIPTION = `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, text processing, and more. No registration required. Privacy-focused, fast, and secure browser-based processing.`;
+const DEFAULT_DESCRIPTION = `Professional online toolkit with ${TOOL_COUNT_STRING} free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, text processing, and more. No registration required. Privacy-focused, fast, and secure browser-based processing.`;
 
 const siteVerification = {
 	...(process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION

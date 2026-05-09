@@ -1,3 +1,81 @@
+#!/usr/bin/env node
+import fs from 'fs';
+import path from 'path';
+
+const BASE = process.env.BASE_URL || 'http://localhost:3000';
+const toolsJsonPath = path.resolve(process.cwd(), 'src/constants/tools.json');
+
+function gatherRoutes() {
+  const data = JSON.parse(fs.readFileSync(toolsJsonPath, 'utf-8'));
+  const routes = new Set();
+  for (const catKey of Object.keys(data.categories || {})) {
+    const cat = data.categories[catKey];
+    if (cat && Array.isArray(cat.tools)) {
+      for (const t of cat.tools) {
+        if (t.route) routes.add(t.route);
+        if (Array.isArray(t.extraSlugs)) for (const s of t.extraSlugs) routes.add('/' + s);
+      }
+    }
+  }
+  // Add core pages
+  ['/','/about','/contact','/privacy','/terms','/image-tools','/pdf-tools','/video-tools'].forEach(p => routes.add(p));
+  return Array.from(routes);
+}
+
+async function fetchHtml(url) {
+  const res = await fetch(url, { redirect: 'follow' });
+  const text = await res.text();
+  return { status: res.status, text };
+}
+
+function hasTag(html, tag) {
+  return new RegExp(`<${tag}[^>]*>`, 'i').test(html);
+}
+
+function extract(html, regex) {
+  const m = html.match(regex);
+  return m ? m[1] : null;
+}
+
+async function run() {
+  const routes = gatherRoutes();
+  const results = [];
+  for (const route of routes) {
+    const url = (route.startsWith('http') ? route : BASE.replace(/\/$/, '') + route);
+    try {
+      const { status, text } = await fetchHtml(url);
+      const title = extract(text, /<title>([^<]+)<\/title>/i);
+      const desc = extract(text, /<meta\s+name=["']description["']\s+content=["']([^"']+)["']/i) || extract(text, /<meta\s+content=["']([^"']+)["']\s+name=["']description["']/i);
+      const canonical = extract(text, /<link\s+rel=["']canonical["']\s+href=["']([^"']+)["']/i);
+      const h1 = extract(text, /<h1[^>]*>([\s\S]*?)<\/h1>/i);
+      const bodyText = text.replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]+>/g, '').trim();
+
+      const errors = [];
+      if (status !== 200) errors.push(`status:${status}`);
+      if (!title) errors.push('missing title');
+      if (!desc) errors.push('missing meta description');
+      if (!canonical) errors.push('missing canonical');
+      if (!h1) errors.push('missing h1');
+      if (bodyText.length < 200) errors.push(`short body (${bodyText.length} chars)`);
+      if (/Loading Search|Loading\.{1,3}/i.test(text)) errors.push('contains Loading text');
+
+      results.push({ route, url, errors });
+      console.log(`${route} -> ${errors.length ? 'FAIL' : 'OK'}${errors.length ? ' : ' + errors.join(', ') : ''}`);
+    } catch (err) {
+      console.error(`Error fetching ${url}:`, err.message || err);
+      results.push({ route, url, errors: ['fetch error'] });
+    }
+  }
+
+  const critical = results.filter(r => r.errors && r.errors.length > 0);
+  if (critical.length > 0) {
+    console.log('\nSEO audit found failures:', critical.length);
+    process.exit(2);
+  }
+  console.log('\nSEO audit passed: no critical failures found.');
+}
+
+run();
 import fs from "fs";
 import path from "path";
 
