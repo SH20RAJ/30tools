@@ -1,82 +1,52 @@
 import type { MetadataRoute } from "next";
-import { getAllCategories, getAllTools, SUPPORTED_LANGUAGES } from "@/lib/tools";
-import { intentData } from "@/lib/intent-data";
+import { getAllTools } from "@/lib/tools";
 import { blogs } from "@/constants/blog-data";
+import { SITE_CONFIG } from "@/constants/config";
 
-const BASE_URL = "https://30tools.com";
+const BASE_URL = SITE_CONFIG.siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const allTools = getAllTools();
-	const allCategories = getAllCategories();
-	const currentDate = new Date();
+	const currentDate = new Date(SITE_CONFIG.lastUpdatedDate);
 
-	// 1. Static Pages - exclude pages with noindex in their metadata
+	// Canonical static pages only
 	const staticPages: MetadataRoute.Sitemap = [
 		{ url: BASE_URL, lastModified: currentDate, changeFrequency: "daily", priority: 1.0 },
-		// NOTE: /search has robots: { index: false } in its metadata, so it's excluded
 		{ url: `${BASE_URL}/about`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/contact`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/privacy`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/terms`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${BASE_URL}/image-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/pdf-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/video-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/audio-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/text-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/seo-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.85 },
+		{ url: `${BASE_URL}/developer-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/other-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.75 },
 		{ url: `${BASE_URL}/blog`, lastModified: currentDate, changeFrequency: "daily", priority: 0.8 },
 	];
 
-	// 2. Category Pages
-	const categoryPages: MetadataRoute.Sitemap = allCategories.map((cat) => ({
-		url: `${BASE_URL}/${cat.slug}`,
-		lastModified: currentDate,
-		changeFrequency: "weekly",
-		priority: 0.85,
-	}));
-
-	// 3. Tool Pages (English/Default)
-	const toolPages: MetadataRoute.Sitemap = allTools.map((tool) => {
-		const route = tool.route.startsWith("/") ? tool.route : `/${tool.route}`;
-		const separator = route.includes("?") ? "&" : "?";
-		
-		// Build alternates for all supported languages
-		const alternatesLanguages: Record<string, string> = {
-			en: `${BASE_URL}${route}`
-		};
-		
-		SUPPORTED_LANGUAGES.filter(l => l !== "en").forEach((lang) => {
-			alternatesLanguages[lang] = `${BASE_URL}${route}${separator}lang=${lang}`;
-		});
-
-		return {
-			url: `${BASE_URL}${route}`,
+	// Canonical tool pages only (exclude duplicate variants, query URLs, and sensitive tester pages)
+	const toolPages: MetadataRoute.Sitemap = allTools
+		.filter((tool) => {
+			const route = String(tool.route || "");
+			if (!route.startsWith("/")) return false;
+			if (route.includes("?")) return false;
+			if (route.startsWith("/search")) return false;
+			if (route.startsWith("/api-key-tester/")) return false;
+			if (route.startsWith("/tool-guides")) return false;
+			return true;
+		})
+		.map((tool) => ({
+			url: `${BASE_URL}${tool.route}`,
 			lastModified: currentDate,
-			changeFrequency: "weekly",
-			priority: tool.popular ? 0.9 : 0.8,
-			alternates: {
-				languages: alternatesLanguages
-			}
-		};
-	});
+			changeFrequency: "weekly" as const,
+			priority: tool.popular ? 0.9 : 0.75,
+		}));
 
-	// 4. Tool Guides Index
-	const toolGuidesIndex: MetadataRoute.Sitemap = [
-		{ url: `${BASE_URL}/tool-guides`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.85 },
-	];
-
-	// 5. Tool Guide Category Pages
-	const toolGuideCategoryPages: MetadataRoute.Sitemap = allCategories.map((category) => ({
-		url: `${BASE_URL}/tool-guides/${category.slug}`,
-		lastModified: currentDate,
-		changeFrequency: "weekly",
-		priority: 0.8,
-	}));
-
-	// 6. Blog & Content
+	// Blog URLs
 	const blogPages: MetadataRoute.Sitemap = [
-		...allTools
-			.filter((t) => t.category === "blog" || t.category === "content")
-			.map((page) => ({
-				url: `${BASE_URL}${page.route}`,
-				lastModified: currentDate,
-				changeFrequency: "weekly" as const,
-				priority: 0.8,
-			})),
 		...blogs.map((article) => ({
 			url: `${BASE_URL}/blog/${article.slug}`,
 			lastModified: new Date(article.date),
@@ -85,43 +55,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		})),
 	];
 
-	// 7. Intent Pages (Long-tail SEO from intent-data.ts)
-	const manualIntentSlugs = Object.keys(intentData);
-	const intentPages: MetadataRoute.Sitemap = manualIntentSlugs.map((slug) => ({
-		url: `${BASE_URL}/${slug}`,
-		lastModified: currentDate,
-		changeFrequency: "weekly",
-		priority: 0.8,
-	}));
-
-	// 8. Extra Slugs (Variant SEO Pages from tools.json)
-	const extraSlugPages: MetadataRoute.Sitemap = allTools.flatMap((tool) => {
-		if (!tool.extraSlugs || tool.extraSlugs.length === 0) return [];
-		
-		// Filter out slugs that are already in manual intentData to avoid duplication
-		return tool.extraSlugs
-			.filter(slug => !manualIntentSlugs.includes(slug))
-			.map((slug) => ({
-				url: `${BASE_URL}/${slug}`,
-				lastModified: currentDate,
-				changeFrequency: "weekly" as const,
-				priority: 0.75,
-			}));
-	});
-
 	try {
-		return [
-			...staticPages, 
-			...categoryPages, 
-			...toolPages, 
-			...toolGuidesIndex, 
-			...toolGuideCategoryPages, 
-			...blogPages,
-			...intentPages,
-			...extraSlugPages
-		];
+		return [...staticPages, ...toolPages, ...blogPages];
 	} catch (error) {
 		console.error("Sitemap generation error:", error);
-		return [...staticPages, ...categoryPages]; // Fallback to safe core pages
+		return [...staticPages];
 	}
 }

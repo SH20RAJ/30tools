@@ -6,11 +6,11 @@ import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata = {
 	title: "About 30tools - Free Online Tools | 30tools",
-	description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free browser-based tools for PDF, image, video, text, SEO, and more. No signup, no uploads, 100% private.`,
-	keywords: "about 30tools, free online tools, browser-based tools, privacy-first tools",
+	description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free online tools for PDF, image, video, text, SEO, and more. No signup required for core usage.`,
+	keywords: "about 30tools, free online tools, browser-based tools, privacy-conscious tools",
 	alternates: { canonical: "https://30tools.com/about" },
-	openGraph: { title: "About 30tools - Free Online Tools | 30tools", description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free browser-based tools for PDF, image, video, text, SEO, and more. No signup, no uploads, 100% private.`, url: "https://30tools.com/about", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "About 30tools - Free Online Tools | 30tools", description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free browser-based tools for PDF, image, video, text, SEO, and more. No signup, no uploads, 100% private.`, images: ["/og-image.jpg"] },
+	openGraph: { title: "About 30tools - Free Online Tools | 30tools", description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free online tools for PDF, image, video, text, SEO, and more. No signup required.`, url: "https://30tools.com/about", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "About 30tools - Free Online Tools | 30tools", description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free online tools for PDF, image, video, text, SEO, and more. No signup required.`, images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 
@@ -45,7 +45,7 @@ export default async function AboutPage() {
 							<div className="text-center space-y-3 mb-8">
 								<h1 className="text-3xl font-bold">About 30tools</h1>
 								<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-									The world&apos;s largest free browser-based tool collection. {SITE_CONFIG.toolCountString} tools, zero data uploads, 100% private.
+									A large free tool collection with {SITE_CONFIG.toolCountString} tools. Many tools run in-browser, while some use secure server-side requests.
 								</p>
 							</div>
 
@@ -57,15 +57,15 @@ export default async function AboutPage() {
 								</div>
 								<div className="p-6 bg-muted/30 rounded-xl">
 									<Lock className="h-8 w-8 text-primary mx-auto mb-2" />
-									<div className="text-3xl font-bold">100%</div>
-									<div className="text-sm text-muted-foreground">Browser-Side</div>
+								<div className="text-3xl font-bold">Mixed</div>
+								<div className="text-sm text-muted-foreground">Browser + Server Tools</div>
 								</div>
 							</div>
 
 							<section className="space-y-3">
 								<h2 className="text-xl font-semibold">Our Mission</h2>
 								<p className="text-sm leading-relaxed">
-									30tools was built with a simple mission: make every useful utility tool available for free, directly in your browser, with zero data leaving your device. No signups, no paywalls, no hidden tracking — just tools that work.
+									30tools was built with a simple mission: make every useful utility tool available for free and accessible. Most tools run directly in your browser for privacy; some use secure server-side or third-party API processing when necessary. No signups for core features, no paywalls, and transparent about how each tool processes your data — just tools that work.
 								</p>
 							</section>
 
@@ -76,14 +76,14 @@ export default async function AboutPage() {
 										<Lock className="h-5 w-5 text-primary shrink-0 mt-0.5" />
 										<div>
 											<h3 className="font-medium text-sm">Privacy-First</h3>
-											<p className="text-xs text-muted-foreground">All processing happens locally in your browser. Your files never touch our servers.</p>
+											<p className="text-xs text-muted-foreground">Many tools process locally in your browser; some tools require server or third-party API calls.</p>
 										</div>
 									</div>
 									<div className="flex gap-3 p-4 bg-muted/20 rounded-lg">
 										<Zap className="h-5 w-5 text-primary shrink-0 mt-0.5" />
 										<div>
 											<h3 className="font-medium text-sm">Instant & Free</h3>
-											<p className="text-xs text-muted-foreground">No signup, no wait times, no watermarks. Every tool is completely free.</p>
+											<p className="text-xs text-muted-foreground">No signup for core use and fast access to most workflows. Tool-specific limits are documented per page.</p>
 										</div>
 									</div>
 									<div className="flex gap-3 p-4 bg-muted/20 rounded-lg">
@@ -97,7 +97,7 @@ export default async function AboutPage() {
 										<Users className="h-5 w-5 text-primary shrink-0 mt-0.5" />
 										<div>
 											<h3 className="font-medium text-sm">Community Driven</h3>
-											<p className="text-xs text-muted-foreground">Built by contributors worldwide. PRs reviewed within 24 hours.</p>
+											<p className="text-xs text-muted-foreground">Built with open-source contributions and community feedback.</p>
 										</div>
 									</div>
 								</div>
@@ -106,13 +106,12 @@ export default async function AboutPage() {
 							<section className="space-y-3">
 								<h2 className="text-xl font-semibold">Tech Stack</h2>
 								<div className="flex flex-wrap gap-2">
-									<Badge variant="secondary">Next.js 15</Badge>
+									<Badge variant="secondary">Next.js</Badge>
 									<Badge variant="secondary">TypeScript</Badge>
 									<Badge variant="secondary">Tailwind CSS</Badge>
 									<Badge variant="secondary">React</Badge>
 									<Badge variant="secondary">App Router</Badge>
-									<Badge variant="secondary">Client-Side Only</Badge>
-									<Badge variant="secondary">Vercel</Badge>
+									<Badge variant="secondary">Cloudflare + Vercel</Badge>
 								</div>
 							</section>
 

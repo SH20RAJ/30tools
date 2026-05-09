@@ -11,6 +11,7 @@ import { getDynamicSEOContent } from "./seoTemplates";
 import { getRelatedTools } from "@/lib/tools";
 import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { SITE_CONFIG } from "@/constants/config";
 
 function ToolArticle({ content }) {
 	if (!content) return null;
@@ -140,6 +141,10 @@ export default function ToolLayout({
 			? getRelatedTools(tool, 15) // Get more than 10 to be safe
 			: relatedTools;
 
+	const defaultSuffix =
+		" Fast and privacy-conscious. Data handling depends on the tool and is documented on each page.";
+	const finalDescription = String(enrichedTool.description || "").trim();
+
 	return (
 		<div className="min-h-screen bg-background text-foreground selection:bg-primary/20 ambient-glow">
 			<StructuredData tool={enrichedTool} />
@@ -156,28 +161,12 @@ export default function ToolLayout({
 						{enrichedTool.name}
 					</h1>
 					<p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-2xl mx-auto">
-						{enrichedTool.description}
-						{!String(enrichedTool.description || "").includes(
-							"privacy-friendly browser-based workflows",
-						)
-							? " Free, private, and runs entirely in your browser — no signup needed."
-							: " Fast, private, and built for real workflows — completely free."}
+						{finalDescription}
+						{!finalDescription.toLowerCase().includes("privacy")
+							? defaultSuffix
+							: ""}
 					</p>
-					<p className="text-base text-muted-foreground/70 max-w-xl mx-auto">
-						Part of 30tools — 365+ free online tools for image, PDF, video,
-						audio, text, SEO, and developer workflows. No registration required.
-					</p>
-					<div className="flex items-center justify-center gap-2 pt-2">
-						<a 
-							href="https://github.com/sh20raj/30tools" 
-							target="_blank" 
-							rel="noreferrer"
-							className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-[10px] font-bold uppercase tracking-widest text-primary/60 hover:bg-primary/10 transition-colors"
-						>
-							<Github className="h-3 w-3" />
-							We are Open Source
-						</a>
-					</div>
+					
 				</section>
 
 				{/* Tool Interaction Area */}
@@ -223,6 +212,24 @@ export default function ToolLayout({
 						<ToolFAQ faqs={enrichedTool.faqs} toolName={enrichedTool.name} />
 					</div>
 				</div>
+
+				<div className="h-16" >
+					<p className="text-base text-muted-foreground/70 max-w-xl mx-auto">
+						Part of 30tools — {SITE_CONFIG.toolCountString} free online tools for image, PDF, video,
+						audio, text, SEO, and developer workflows. No registration required.
+					</p>
+					<div className="flex items-center justify-center gap-2 pt-2">
+						<a 
+							href="https://github.com/sh20raj/30tools" 
+							target="_blank" 
+							rel="noreferrer"
+							className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-[10px] font-bold uppercase tracking-widest text-primary/60 hover:bg-primary/10 transition-colors"
+						>
+							<Github className="h-3 w-3" />
+							We are Open Source
+						</a>
+					</div>
+					</div>
 
 				{/* Internal Link Sculpting Segment */}
 				<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />

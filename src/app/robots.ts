@@ -1,14 +1,15 @@
 import { MetadataRoute } from "next";
+import { SITE_CONFIG } from "@/constants/config";
 
 export default function robots(): MetadataRoute.Robots {
-	const baseUrl = "https://30tools.com";
+	const baseUrl = SITE_CONFIG.siteUrl;
 
 	return {
 		rules: [
 			{
 				userAgent: "*",
 				allow: "/",
-				disallow: ["/api/", "/admin/", "/_next/static/", "/private/"],
+				disallow: ["/api/", "/admin/", "/private/"],
 			},
 			{
 				userAgent: "Googlebot",

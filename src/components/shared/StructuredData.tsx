@@ -192,14 +192,6 @@ export default function StructuredData({
 		alternateName: "30tools - Free Online Toolkit",
 		url: BASE_URL,
 		description: `Fast, free, and privacy-focused tools for image, video, audio, PDF, SEO, and developer workflows. Explore ${TOOL_COUNT}+ tools with no sign-up required.`,
-		potentialAction: {
-			"@type": "SearchAction",
-			target: {
-				"@type": "EntryPoint",
-				urlTemplate: `${BASE_URL}/search?q={search_term_string}`,
-			},
-			"query-input": "required name=search_term_string",
-		},
 		publisher: {
 			"@type": "Organization",
 			name: "30tools",

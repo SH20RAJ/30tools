@@ -7,6 +7,7 @@ import { Search, ArrowRight, Sparkles, Filter, X } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Input } from "@/components/ui/input";
 import { Card, CardContent } from "@/components/ui/card";
+import { SITE_CONFIG } from "@/constants/config";
 
 function SearchResults() {
 	const searchParams = useSearchParams();
@@ -45,7 +46,7 @@ function SearchResults() {
 					Search <span className="text-primary">30tools</span>
 				</h1>
 				<p className="text-xl text-muted-foreground">
-					Find exactly what you need among our 700+ professional tools.
+					Find exactly what you need among our {SITE_CONFIG.toolCountString} professional tools.
 				</p>
 				
 				<div className="relative max-w-2xl mx-auto">

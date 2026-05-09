@@ -5,11 +5,11 @@ import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata = {
 	title: "Privacy Policy - 30tools",
-	description: "Read the 30tools Privacy Policy. We explain what data we collect, how we protect it, and how our privacy-first browser-based tools work.",
-	keywords: "privacy policy, 30tools privacy, data protection, browser-based tools privacy",
+	description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.",
+	keywords: "privacy policy, 30tools privacy, data protection, privacy policy 30tools",
 	alternates: { canonical: "https://30tools.com/privacy" },
-	openGraph: { title: "Privacy Policy - 30tools", description: "Read the 30tools Privacy Policy. We explain what data we collect, how we protect it, and how our privacy-first browser-based tools work.", url: "https://30tools.com/privacy", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Privacy Policy - 30tools", description: "Read the 30tools Privacy Policy. We explain what data we collect, how we protect it, and how our privacy-first browser-based tools work.", images: ["/og-image.jpg"] },
+	openGraph: { title: "Privacy Policy - 30tools", description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.", url: "https://30tools.com/privacy", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Privacy Policy - 30tools", description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 
@@ -73,17 +73,17 @@ export default async function PrivacyPage() {
 											<tr>
 												<td className="border border-border p-2 font-medium">Client-Side Tools (Image Compressors, Text Tools, Generators)</td>
 												<td className="border border-border p-2">Executed locally in your browser using JavaScript/WebAssembly.</td>
-												<td className="border border-border p-2">Data never leaves your device. Nothing is stored.</td>
+												<td className="border border-border p-2">Processed locally in browser for many tools; no server-side file storage for these workflows.</td>
 											</tr>
 											<tr>
 												<td className="border border-border p-2 font-medium">Server/Proxy Tools (Downloaders, Meta Tag Extractors, Site Audits)</td>
 												<td className="border border-border p-2">Requests are proxied through our edge servers (Cloudflare/Vercel) to fetch external data.</td>
-												<td className="border border-border p-2">Data is processed in-memory and immediately discarded. No logs.</td>
+												<td className="border border-border p-2">Processed via edge services for request handling. We minimize retention and avoid persistent content storage for tool payloads.</td>
 											</tr>
 											<tr>
 												<td className="border border-border p-2 font-medium">API Tools (Tester, DNS Checkers)</td>
 												<td className="border border-border p-2">Requests made via our servers to specific APIs or DNS providers.</td>
-												<td className="border border-border p-2">No logging of API keys, payloads, or output. Ephemeral processing only.</td>
+												<td className="border border-border p-2">API credentials are handled only for request execution and should be treated as sensitive by users. Use restricted keys and rotate when needed.</td>
 											</tr>
 										</tbody>
 									</table>

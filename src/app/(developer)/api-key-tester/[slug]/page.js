@@ -11,14 +11,14 @@ export async function generateMetadata({ params }) {
 	if (!tool) return {};
 
 	return {
-		title: `${tool.seoTitle || tool.name} - Free Online Tester | 30tools`,
+		title: `${tool.seoTitle || tool.name} - API Test Utility | 30tools`,
 		description: tool.seoDescription || tool.description,
 		keywords: `api tester, ${tool.name.toLowerCase()}, validate api key, debug api, 30tools`,
 		alternates: {
 			canonical: `https://30tools.com/api-key-tester/${slug}`,
 		},
 		openGraph: {
-			title: `${tool.name} - Free Online Tester | 30tools`,
+			title: `${tool.name} - API Test Utility | 30tools`,
 			description: tool.description,
 			url: `https://30tools.com/api-key-tester/${slug}`,
 			siteName: "30tools",
@@ -27,11 +27,11 @@ export async function generateMetadata({ params }) {
 		},
 		twitter: {
 			card: "summary_large_image",
-			title: `${tool.name} - Free Online Tester | 30tools`,
+			title: `${tool.name} - API Test Utility | 30tools`,
 			description: tool.description,
 			images: ["/og-image.jpg"],
 		},
-		robots: { index: true, follow: true },
+		robots: { index: false, follow: true },
 	};
 }
 

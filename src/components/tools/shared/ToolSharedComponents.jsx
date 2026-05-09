@@ -1,4 +1,5 @@
 import { Check, Download, Shield, Zap, Globe, Lock } from "lucide-react";
+import { SITE_CONFIG } from "@/constants/config";
 
 export const ToolTrust = () => {
 	return (
@@ -27,8 +28,9 @@ export const ToolTrust = () => {
 					Privacy-First by Design
 				</h3>
 				<p className="text-sm text-muted-foreground leading-relaxed">
-					Your files and data never leave your browser. We do not store, log, or
-					track anything you process — guaranteed by architecture, not policy.
+					Many tools process data locally in your browser. Some tools use server-side
+					APIs or proxy requests. Check each tool page and our Privacy Policy for
+					exact data flow details.
 				</p>
 			</div>
 			<div className="text-center space-y-4 group">
@@ -39,9 +41,9 @@ export const ToolTrust = () => {
 					Free Forever, No Signup
 				</h3>
 				<p className="text-sm text-muted-foreground leading-relaxed">
-					No registration, no hidden costs, no premium tiers, and no daily
-					limits. 365+ professional tools available to everyone, everywhere, at
-					zero cost.
+					No registration required for core usage. {SITE_CONFIG.toolCountString} tools
+					are available across image, PDF, video, audio, text, SEO, and developer
+					workflows.
 				</p>
 			</div>
 		</section>

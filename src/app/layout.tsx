@@ -4,7 +4,7 @@ import { ThemeProvider } from "@/components/shared/theme-provider";
 import { StackProvider } from "@stackframe/stack";
 import { stackClientApp } from "@/stack/client";
 import { getAllTools } from "@/lib/tools";
-import { SITE_URL, TOOL_COUNT, TOOL_COUNT_STRING } from "@/constants/config";
+import { SITE_URL, TOOL_COUNT_STRING } from "@/constants/config";
 import "./globals.css";
 import Script from "next/script";
 import { AppleNavbar } from "@/components/navigation/AppleNavbar";
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
 		default: "Free Online Tools - No Signup | 30tools",
 		template: "%s | 30tools",
 	},
-	description: `Professional online toolkit with ${TOOL_COUNT}+ free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, text processing, and more. 100% free, no signup required. Privacy-focused, fast, and secure browser-based processing.`,
+	description: `Professional online toolkit with ${TOOL_COUNT_STRING} free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, text processing, and more. Free to use with no signup required.`,
 	keywords: [
 		// Primary keywords
 		"free online tools",
@@ -110,14 +110,14 @@ export const metadata: Metadata = {
 		locale: "en_US",
 		url: SITE_URL,
 		siteName: "30tools",
-		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit for Everyone`,
+		title: `30tools - ${TOOL_COUNT_STRING} Free Online Tools | Professional Toolkit for Everyone`,
 		description: DEFAULT_DESCRIPTION,
 		images: [
 			{
 				url: "/og-image.jpg",
 				width: 1200,
 				height: 630,
-				alt: `30tools - Professional Free Online Toolkit with ${TOOL_COUNT}+ Tools`,
+				alt: `30tools - Professional Free Online Toolkit with ${TOOL_COUNT_STRING} Tools`,
 				type: "image/jpeg",
 			},
 		],
@@ -126,7 +126,7 @@ export const metadata: Metadata = {
 		card: "summary_large_image",
 		site: "@30tools",
 		creator: "@30tools",
-		title: `30tools - ${TOOL_COUNT}+ Free Online Tools | Professional Toolkit`,
+		title: `30tools - ${TOOL_COUNT_STRING} Free Online Tools | Professional Toolkit`,
 		description: DEFAULT_DESCRIPTION,
 		images: ["/og-image.jpg"],
 	},
@@ -185,9 +185,21 @@ export default async function RootLayout({
 	for (const tool of tools) {
 		const catKey = tool.categoryKey || tool.category;
 		if (catKey && !categoriesMap.has(catKey)) {
+			const canonicalCategoryHubs: Record<string, string> = {
+				image: "/image-tools",
+				pdf: "/pdf-tools",
+				video: "/video-tools",
+				audio: "/audio-tools",
+				seo: "/seo-tools",
+				text: "/text-tools",
+				developer: "/developer-tools",
+				utilities: "/other-tools",
+				generators: "/generators",
+				calculators: "/calculators",
+			};
 			categoriesMap.set(catKey, {
 				label: tool.categoryName || catKey,
-				href: `/search?category=${catKey}`,
+				href: canonicalCategoryHubs[catKey] || "/search",
 			});
 		}
 	}
