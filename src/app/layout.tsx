@@ -3,7 +3,7 @@ import StructuredData from "@/components/shared/StructuredData";
 import { ThemeProvider } from "@/components/shared/theme-provider";
 import { StackProvider } from "@stackframe/stack";
 import { stackClientApp } from "@/stack/client";
-import { getAllTools } from "@/lib/tools";
+import { getAllTools, Tool } from "@/lib/tools";
 import { SITE_URL, TOOL_COUNT_STRING } from "@/constants/config";
 import "./globals.css";
 import Script from "next/script";
@@ -179,7 +179,7 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	let tools = [];
+	let tools: Tool[] = [];
 	try {
 		tools = getAllTools();
 	} catch (error) {
@@ -331,7 +331,7 @@ export default async function RootLayout({
 				/>
 			</head>
 			<body className="ds-page font-sans antialiased">
-				<StackProvider app={stackClientApp}>
+				<StackProvider app={stackClientApp as any}>
 					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<AppleNavbar />
 						{children}

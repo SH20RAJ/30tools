@@ -34,6 +34,7 @@ export interface Tool {
 	faqs?: { question: string; answer: string }[];
 	author?: any;
 	reviews?: any[];
+	article?: string;
 }
 
 export interface Category {

@@ -19,6 +19,7 @@ import { Input } from "@/components/ui/input";
  * @param {string} [props.placeholder]
  * @param {string} [props.buttonText]
  * @param {string} [props.toolName]
+ * @param {string} [props.apiEndpoint]
  */
 export const DownloaderEngine = ({ placeholder, buttonText, toolName, apiEndpoint }) => {
 	const [url, setUrl] = useState("");

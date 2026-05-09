@@ -48,7 +48,7 @@ const TOOL_FEATURES = [
 	"No Login Required",
 ];
 
-export default function YouTubeChannelIDFinderTool() {
+export default function YouTubeChannelIDFinderTool({ toolId }) {
 	const [url, setUrl] = useState("");
 	const [isLoading, setIsLoading] = useState(false);
 	const [result, setResult] = useState(null);

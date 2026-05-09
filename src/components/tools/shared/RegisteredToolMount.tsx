@@ -29,8 +29,8 @@ import {
 
 // Special case imports that are still needed here for logic or aren't in registry yet
 const ImageConverterTool = dynamic(() => import("@/components/tools/image/ImageConverterTool.jsx"), { ssr: false });
-const DownloaderEngine = dynamic(() => import("@/components/tools/downloaders/DownloaderEngine.jsx"), { ssr: false });
-const YouTubeChannelIDFinderTool = dynamic(() => import("@/components/tools/youtube/YouTubeChannelIDFinderTool.jsx"), { ssr: false });
+const DownloaderEngine = dynamic<{ apiEndpoint: string }>(() => import("@/components/tools/downloaders/DownloaderEngine.jsx"), { ssr: false });
+const YouTubeChannelIDFinderTool = dynamic<{ toolId: string }>(() => import("@/components/tools/youtube/YouTubeChannelIDFinderTool.jsx"), { ssr: false });
 
 function titleCaseId(id: string) {
     return id
