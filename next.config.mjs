@@ -1,48 +1,7 @@
 /** @type {import('next').NextConfig} */
-import fs from "node:fs";
-import path from "node:path";
-import withPWA from "next-pwa";
+import withPWAInit from "next-pwa";
+const withPWA = withPWAInit.default || withPWAInit;
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
-
-const toolsJsonPath = path.join(process.cwd(), "src/constants/tools.json");
-const toolsData = JSON.parse(fs.readFileSync(toolsJsonPath, "utf8"));
-
-const STATIC_PAGES = new Set([
-	"/",
-	"/search",
-	"/calculators",
-	"/about",
-	"/contact",
-	"/help",
-	"/privacy",
-	"/terms",
-	"/api-docs",
-	"/blog",
-	"/blog/",
-	"/sitemap.xml",
-	"/sitemap-index.xml",
-]);
-
-function normalizePath(input) {
-	if (!input || typeof input !== "string") return null;
-	const withSlash = input.startsWith("/") ? input : `/${input}`;
-	if (withSlash.length > 1 && withSlash.endsWith("/")) {
-		return withSlash.slice(0, -1);
-	}
-	return withSlash;
-}
-
-function getAllTools() {
-	const categories = Object.values(toolsData.categories || {});
-	return categories.flatMap((category) => category.tools || []);
-}
-
-function buildSlugRoutingRules() {
-	return { redirects: [], rewrites: [] };
-}
-
-const { redirects: slugRedirects, rewrites: slugRewrites } =
-	buildSlugRoutingRules();
 
 const nextConfig = {
 	// TypeScript configuration
@@ -155,10 +114,9 @@ const nextConfig = {
 		];
 	},
 
-	// SEO Redirects and Rewrites are generated from src/constants/tools.json.
+	// SEO Redirects and Rewrites
 	async redirects() {
 		return [
-			...slugRedirects,
 			{
 				source: "/blogs/:user/:slug",
 				destination: "/blog/:slug",
@@ -169,7 +127,6 @@ const nextConfig = {
 
 	async rewrites() {
 		return [
-			...slugRewrites,
 			{
 				source: "/sitemap-index.xml",
 				destination: "/sitemap.xml",

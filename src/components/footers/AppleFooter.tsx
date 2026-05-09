@@ -114,19 +114,7 @@ export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }
 							<Link href={getRouteById("terms")} className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
 							<Link href={getRouteById("contact")} className="text-[12px] hover:underline underline-offset-4">Contact</Link>
 						</div>
-						<a
-							href="https://visitorbadge.io/status?path=https%3A%2F%2F30tools.com%2F"
-							aria-label="Visitor Badge"
-							className="block hover:opacity-80 transition-opacity"
-						>
-							<img
-								src="https://api.visitorbadge.io/api/combined?path=https%3A%2F%2F30tools.com%2F&countColor=%23263759&style=flat-square"
-								alt="Visitor badge"
-								width="120"
-								height="20"
-								loading="lazy"
-							/>
-						</a>
+						</div>
 					</div>
 				</div>
 			</div>

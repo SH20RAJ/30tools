@@ -179,7 +179,12 @@ export default async function RootLayout({
 }: {
 	children: React.ReactNode;
 }) {
-	const tools = getAllTools();
+	let tools = [];
+	try {
+		tools = getAllTools();
+	} catch (error) {
+		console.error("Failed to load tools registry:", error);
+	}
 	const categoriesMap = new Map();
 
 	for (const tool of tools) {
