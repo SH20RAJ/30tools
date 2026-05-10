@@ -37,49 +37,34 @@ export default async function ToolPage() {
 			"Download Reddit videos with audio in HD quality - 100% free, no signup required, privacy-focused processing in your browser.",
 		route: "/reddit-downloader",
 		extraSlugs: [
-			"any-video-downloader",
-			"change-video-type",
-			"compress-video-for-whatsapp",
-			"cut-and-merge-video",
-			"cut-video-length",
-			"download-fb-video",
-			"download-reddit-video",
-			"embed-video-player",
-			"extract-mp3-from-video",
-			"fb-clip-downloader",
-			"fb-highlights-downloader",
-			"fb-video-downloader",
-			"fb-video-saver",
-			"ig-downloader-all",
-			"ig-reels-downloader-hd",
-			"ig-video-downloader",
-			"insta-video-saver",
-			"instagram-video-downloader",
-			"musically-downloader",
 			"reddit-hd-video-downloader",
 			"reddit-media-saver",
-			"reddit-mp4-downloader",
-			"reddit-video-saver",
-			"reduce-video-size",
-			"responsive-video-player",
-			"save-reddit-video",
-			"save-reddit-video-with-audio-online",
-			"save-reels-video",
-			"screen-capture-video",
-			"shorten-video-clip",
-			"sitemap-url-downloader",
-			"snap-video-downloader",
-			"social-media-downloader",
-			"split-video-file",
-			"tt-video-downloader",
-			"video-player",
-			"video-size-reducer",
-			"video-tools",
-			"video-trimmer",
-			"x-video-downloader",
 		],
 		popular: true,
 		category: "downloaders",
+		features: [
+			"Download public Reddit videos with audio",
+			"Works on desktop and mobile browsers",
+			"No signup required",
+		],
+		article: `
+## Download Reddit Videos Responsibly
+
+This tool allows you to download publicly available Reddit videos for personal use. Please respect copyright and intellectual property rights when using this service.
+
+### Important Guidelines
+- Only download videos you own or have permission to download
+- Do not redistribute downloaded content without authorization
+- Respect the original creators' rights and attributions
+
+### Supported Content
+- Public Reddit posts with video
+- Videos where the creator has explicitly permitted downloads
+- Your own Reddit content
+
+### Privacy Note
+Video URLs are processed temporarily for retrieval. We do not store or log downloaded content.
+		`,
 	};
 
 	return (

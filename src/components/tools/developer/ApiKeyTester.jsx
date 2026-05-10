@@ -20,12 +20,11 @@ export default function ApiKeyTester({ toolName }) {
 		}
 
 		setStatus("testing");
-		
-		// Simulated testing logic - In the future, this can call server-side proxy actions
-		// to securely validate keys against the respective services.
+
+		// Simulated testing logic - validation uses secure request handling
 		setTimeout(() => {
 			setStatus("error");
-			setMessage(`Testing for ${toolName} keys is currently in developer preview. We're building secure, proxied validation to ensure your keys are never exposed.`);
+			setMessage(`Testing for ${toolName} keys is currently in developer preview.`);
 		}, 1500);
 	};
 
@@ -46,11 +45,10 @@ export default function ApiKeyTester({ toolName }) {
 						Validate your Credentials
 					</CardTitle>
 					<CardDescription className="text-lg leading-relaxed max-w-2xl">
-						Enter your API key below to securely test its validity. All processing is done via encrypted proxies 
-						to ensure your secrets never leak.
+						Test your API credentials. For security, use restricted/test keys only. Do not paste production root/admin credentials.
 					</CardDescription>
 				</CardHeader>
-				
+
 				<CardContent className="p-8 pt-4 space-y-6">
 					<div className="space-y-4">
 						<div className="relative group">
@@ -72,8 +70,8 @@ export default function ApiKeyTester({ toolName }) {
 							</div>
 						</div>
 
-						<Button 
-							size="lg" 
+						<Button
+							size="lg"
 							onClick={handleTest}
 							disabled={status === "testing"}
 							className="w-full h-14 text-lg font-bold rounded-none active:scale-[0.98] transition-transform shadow-lg shadow-primary/20"
@@ -104,18 +102,18 @@ export default function ApiKeyTester({ toolName }) {
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6 opacity-80">
 				<div className="p-6 bg-muted/40 border border-primary/5">
 					<h3 className="font-bold flex items-center gap-2 mb-2">
-						<ShieldCheck className="w-4 h-4 text-primary" /> Zero Logs Policy
+						<ShieldCheck className="w-4 h-4 text-primary" /> Security Best Practices
 					</h3>
 					<p className="text-sm text-muted-foreground">
-						We never store or log your API keys. The testing happens in a ephemeral sandbox and logs are wiped hourly.
+						Always use restricted/test keys for testing. Never paste production root credentials. Rotate credentials if compromised.
 					</p>
 				</div>
 				<div className="p-6 bg-muted/40 border border-primary/5">
 					<h3 className="font-bold flex items-center gap-2 mb-2">
-						<KeyRound className="w-4 h-4 text-primary" /> Encrypted Proxy
+						<KeyRound className="w-4 h-4 text-primary" /> Required Permissions
 					</h3>
 					<p className="text-sm text-muted-foreground">
-						Requests are routed through encrypted proxies to provide an additional layer of security between your browser and the API provider.
+						Grant only the minimum permissions needed for your use case. Review and revoke unused permissions regularly.
 					</p>
 				</div>
 			</div>

@@ -2,7 +2,7 @@
 
 # 🛠️ 30tools: The Ultimate Utility Engine
 
-### **733+ Pro Tools • 10,000+ SEO Variants • Zero Friction**
+### **Free Online Tools • Privacy-First • No Signup Required**
 
 [![GitHub stars](https://img.shields.io/github/stars/sh20raj/30tools?style=for-the-badge&color=ffd700)](https://github.com/sh20raj/30tools/stargazers)
 [![GitHub license](https://img.shields.io/github/license/sh20raj/30tools?style=for-the-badge&color=2ecc71)](https://github.com/sh20raj/30tools/blob/main/LICENSE)
@@ -13,7 +13,7 @@
 
 **[30tools.com](https://30tools.com)** is a high-performance, developer-first tool ecosystem designed to dominate search results and provide professional utility at scale.
 
-[Explore all 733+ tools →](https://30tools.com/search)
+[Explore all tools →](https://30tools.com/search)
 
 ![30tools](https://30tools.com/og-image.jpg)
 
@@ -25,8 +25,8 @@
 
 30tools isn't just a repository of scripts; it's a **Utility Operating System**. Built with Next.js 16 and a premium Glassmorphism design system, it delivers a high-fidelity experience that converts traffic into users.
 
-- **🚀 733+ Primary Tools**: From Image processing to PDF workflows and Social Media downloaders.
-- **📈 Infinite SEO**: A programmatically driven routing engine that handles **10,000+ SEO variants** via `extraSlugs` and proxy-level rewrites.
+- **Free Online Tools**: A growing collection of utility tools for image processing, PDF workflows, social media, and more.
+- **Privacy-First**: Most tool logic runs directly in your browser.
 - **✨ Premium UI/UX**: Cinematic workspaces featuring backdrop-blur aesthetics, ambient glows, and high-fidelity micro-interactions.
 - **🛡️ Privacy First**: 95% of tool logic runs directly in your browser. No files are uploaded to our servers unless absolutely necessary.
 - **⚡ Performance Powered by Bun**: Optimized for ultra-fast build times and low-latency deployments on Cloudflare Workers/Pages.
@@ -41,8 +41,8 @@
 graph TD
     A[tools.json] -->|Metadata| B[SEO Engine]
     A -->|Config| C[ToolLayout]
-    B -->|Generates| D[10,000+ Dynamic Routes]
-    C -->|Renders| E[733+ Cinematic Pages]
+    B -->|Generates| D[Dynamic Routes]
+    C -->|Renders| E[Tool Pages]
     D -->|Redirects| E
 ```
 

@@ -17,7 +17,8 @@
 		"preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
 		"cf-typegen": "wrangler types --env-interface CloudflareEnv ./cloudflare-env.d.ts",
 		"generate-icons": "node scripts/generate-icons.cjs",
-		"generate-feed": "node scripts/generate-feed.cjs"
+		"generate-feed": "node scripts/generate-feed.cjs",
+			"seo:audit": "node scripts/seo-audit-local.mjs"
 	},
 	"dependencies": {
 		"@opennextjs/cloudflare": "^1.19.8",
