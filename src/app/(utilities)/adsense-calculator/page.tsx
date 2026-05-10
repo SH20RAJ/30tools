@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators";
 
 
 export const metadata = {
@@ -111,7 +111,7 @@ We understand that your website's traffic and revenue metrics are highly sensiti
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<BuiltInCalculators kind="adsense-calculator" />
 			</ToolLayout>
 		</>
 	);

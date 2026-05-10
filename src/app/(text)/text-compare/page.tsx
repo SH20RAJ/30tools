@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import TextCompareTool from "@/components/tools/text/TextCompareTool";
 
 
 export const metadata = {
@@ -62,7 +62,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<TextCompareTool />
 			</ToolLayout>
 		</>
 	);

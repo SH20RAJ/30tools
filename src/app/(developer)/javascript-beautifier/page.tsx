@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 
 
 export const metadata = {
@@ -61,7 +61,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<BuiltInMarkup toolId="javascript-beautifier" />
 			</ToolLayout>
 		</>
 	);

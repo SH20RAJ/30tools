@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 
 
 export const metadata = {
@@ -63,7 +63,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<BuiltInSafeHttp toolId="get-http-headers" />
 			</ToolLayout>
 		</>
 	);

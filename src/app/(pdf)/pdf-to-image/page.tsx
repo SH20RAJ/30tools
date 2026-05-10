@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import PDFToImage from "@/components/tools/pdf/PDFToImage";
 
 
 export const metadata = {
@@ -59,7 +59,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "pdf" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<PDFToImage />
 			</ToolLayout>
 		</>
 	);

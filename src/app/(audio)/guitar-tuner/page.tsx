@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import GuitarTunerTool from "@/components/tools/audio/GuitarTunerTool";
 
 
 export const metadata = {
@@ -61,7 +61,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "audio" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<GuitarTunerTool />
 			</ToolLayout>
 		</>
 	);

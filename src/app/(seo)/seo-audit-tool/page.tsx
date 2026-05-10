@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 
 
 export const metadata = {
@@ -123,7 +123,7 @@ Unlike heavy desktop crawlers or subscription SaaS products, our audit tool requ
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<BuiltInSafeHttp toolId="seo-audit-tool" />
 			</ToolLayout>
 		</>
 	);

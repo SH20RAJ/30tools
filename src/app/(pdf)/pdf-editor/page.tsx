@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import PDFEditor from "@/components/tools/pdf/PDFEditor";
 import { getToolById } from "@/lib/tools";
 import { notFound } from "next/navigation";
 
@@ -105,7 +105,7 @@ To ensure browser stability during local processing, our editor supports standar
 	return (
 		<>
 			<ToolLayout tool={tool}>
-				<RegisteredToolMount toolId={tool.id} />
+				<PDFEditor />
 			</ToolLayout>
 		</>
 	);

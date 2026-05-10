@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import TwitterCardGenerator from "@/components/tools/built-ins/TwitterCardGenerator";
 
 
 export const metadata = {
@@ -61,7 +61,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<TwitterCardGenerator />
 			</ToolLayout>
 		</>
 	);

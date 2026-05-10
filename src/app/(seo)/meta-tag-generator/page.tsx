@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import MetaTagGenerator from "@/components/tools/built-ins/MetaTagGenerator";
 
 
 export const metadata = {
@@ -114,7 +114,7 @@ Beyond standard titles and descriptions, our generator handles the intricate tag
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<MetaTagGenerator />
 			</ToolLayout>
 		</>
 	);

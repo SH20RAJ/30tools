@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import PDFRepair from "@/components/tools/pdf/PDFRepair";
 
 export const metadata = {
 	title: "Free PDF Repair Online - Fix Corrupted PDF Files | 30tools",
@@ -52,7 +52,7 @@ export default async function ToolPage() {
 				}}
 			/>
 			<ToolLayout tool={tool}>
-				<RegisteredToolMount toolId={tool.id} />
+				<PDFRepair />
 			</ToolLayout>
 		</>
 	);

@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import MarkdownToText from "@/components/tools/text/MarkdownToText";
 
 
 export const metadata = {
@@ -60,7 +60,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<MarkdownToText />
 			</ToolLayout>
 		</>
 	);

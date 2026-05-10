@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import AIImageGeneratorTool from "@/components/tools/generators/AIImageGeneratorTool";
 
 
 export const metadata = {
@@ -68,7 +68,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "generators" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<AIImageGeneratorTool />
 			</ToolLayout>
 		</>
 	);

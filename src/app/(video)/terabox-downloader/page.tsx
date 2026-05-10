@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 
 
 export const metadata = {
@@ -116,7 +116,7 @@ Due to TeraBox's evolving infrastructure, links may occasionally expire or requi
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "video" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<DownloaderEngine />
 			</ToolLayout>
 		</>
 	);

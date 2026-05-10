@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 
 
 export const metadata = {
@@ -59,7 +59,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<ImageResizerTool />
 			</ToolLayout>
 		</>
 	);

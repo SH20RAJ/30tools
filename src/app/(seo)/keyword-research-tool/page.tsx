@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import KeywordTool from "@/components/tools/seo/KeywordTool";
 
 
 export const metadata = {
@@ -124,7 +124,7 @@ We do not require you to connect your Google Ads account or paste a personal API
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<KeywordTool />
 			</ToolLayout>
 		</>
 	);

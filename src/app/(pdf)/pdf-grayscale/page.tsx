@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import PDFGrayscale from "@/components/tools/pdf/PDFGrayscale";
 
 export const metadata = {
 	title: "Free PDF to Grayscale Online - Convert Color PDF to B&W | 30tools",
@@ -52,7 +52,7 @@ export default async function ToolPage() {
 				}}
 			/>
 			<ToolLayout tool={tool}>
-				<RegisteredToolMount toolId={tool.id} />
+				<PDFGrayscale />
 			</ToolLayout>
 		</>
 	);

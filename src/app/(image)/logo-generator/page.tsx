@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool";
 
 
 export const metadata = {
@@ -69,7 +69,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<LogoGeneratorTool />
 			</ToolLayout>
 		</>
 	);

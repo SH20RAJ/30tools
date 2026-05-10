@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import WordToNumberTool from "@/components/tools/text/WordToNumberTool";
 
 
 export const metadata = {
@@ -61,7 +61,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<WordToNumberTool />
 			</ToolLayout>
 		</>
 	);

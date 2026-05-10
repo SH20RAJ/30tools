@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import QrReaderPremium from "@/components/tools/utilities/QrReaderPremium";
 
 export const metadata = {
 	title: "Free QR Code Reader Online - Scan & Decode | 30tools",
@@ -52,7 +52,7 @@ export default async function ToolPage() {
 				}}
 			/>
 			<ToolLayout tool={tool}>
-				<RegisteredToolMount toolId={tool.id} />
+				<QrReaderPremium />
 			</ToolLayout>
 		</>
 	);

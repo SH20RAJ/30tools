@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 
 
 export const metadata = {
@@ -108,7 +108,7 @@ Phishing sites and scams often use domains registered just days or weeks ago. Be
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<BuiltInSafeHttp toolId="domain-age-checker" />
 			</ToolLayout>
 		</>
 	);

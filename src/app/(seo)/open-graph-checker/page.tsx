@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 
 
 export const metadata = {
@@ -111,7 +111,7 @@ Social platforms aggressively cache Open Graph data. If you recently updated you
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<BuiltInSafeHttp toolId="open-graph-checker" />
 			</ToolLayout>
 		</>
 	);

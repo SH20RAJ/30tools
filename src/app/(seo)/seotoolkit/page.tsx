@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import SeoToolkit from "@/components/tools/seo/SeoToolkit";
 
 
 export const metadata = {
@@ -56,7 +56,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<SeoToolkit />
 			</ToolLayout>
 		</>
 	);

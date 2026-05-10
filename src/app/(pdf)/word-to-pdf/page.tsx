@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import WordToPDF from "@/components/tools/pdf/WordToPDF";
 import { getToolById } from "@/lib/tools";
 import { notFound } from "next/navigation";
 
@@ -38,7 +38,7 @@ export default async function ToolPage() {
 	return (
 		<>
 			<ToolLayout tool={tool}>
-				<RegisteredToolMount toolId={tool.id} />
+				<WordToPDF />
 			</ToolLayout>
 		</>
 	);

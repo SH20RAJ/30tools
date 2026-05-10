@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import TextRepeaterTool from "@/components/tools/text/TextRepeaterTool";
 
 
 export const metadata = {
@@ -60,7 +60,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<TextRepeaterTool />
 			</ToolLayout>
 		</>
 	);

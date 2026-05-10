@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import QrGeneratorPremium from "@/components/tools/utilities/QrGeneratorPremium";
 
 
 export const metadata = {
@@ -62,7 +62,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<QrGeneratorPremium />
 			</ToolLayout>
 		</>
 	);

@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
 
 
 export const metadata = {
@@ -65,7 +65,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<ExifReaderTool />
 			</ToolLayout>
 		</>
 	);

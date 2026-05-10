@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import VideoConverterTool from "@/components/tools/video/VideoConverterTool";
 
 export const metadata = {
 	title: "Free Video Converter Online - No Signup | 30tools",
@@ -16,7 +16,7 @@ export default async function ToolPage() {
 	return (
 		<>
 			<script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({ "@context": "https://schema.org", "@type": "SoftwareApplication", name: tool.name, description: tool.description, url: "https://30tools.com/video-converter", applicationCategory: "UtilitiesApplication", operatingSystem: "Any", offers: { "@type": "Offer", price: "0", priceCurrency: "USD" } }) }} />
-			<ToolLayout tool={tool}><RegisteredToolMount toolId={tool.id} /></ToolLayout>
+			<ToolLayout tool={tool}><VideoConverterTool /></ToolLayout>
 		</>
 	);
 }

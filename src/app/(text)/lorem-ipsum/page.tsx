@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGeneratorTool";
 
 
 export const metadata = {
@@ -65,7 +65,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<LoremIpsumGeneratorTool />
 			</ToolLayout>
 		</>
 	);

@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import DnsLookupTool from "@/components/tools/built-ins/DnsLookupTool";
 
 
 export const metadata = {
@@ -112,7 +112,7 @@ If you recently changed your DNS records, your computer's local cache might stil
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<DnsLookupTool />
 			</ToolLayout>
 		</>
 	);

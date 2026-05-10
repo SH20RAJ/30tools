@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import PDFToWord from "@/components/tools/pdf/PDFToWord";
 
 
 export const metadata = {
@@ -63,7 +63,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "pdf" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<PDFToWord />
 			</ToolLayout>
 		</>
 	);

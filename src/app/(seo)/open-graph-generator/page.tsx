@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import OpenGraphGenerator from "@/components/tools/built-ins/OpenGraphGenerator";
 
 
 export const metadata = {
@@ -59,7 +59,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<OpenGraphGenerator />
 			</ToolLayout>
 		</>
 	);

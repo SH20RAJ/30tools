@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 
 
 export const metadata = {
@@ -113,7 +113,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<ImageConverterTool defaultOutputFormat="jpeg" />
 			</ToolLayout>
 		</>
 	);

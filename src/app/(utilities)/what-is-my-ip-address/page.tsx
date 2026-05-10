@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import PublicIpTool from "@/components/tools/built-ins/PublicIpTool";
 
 
 export const metadata = {
@@ -59,7 +59,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<PublicIpTool />
 			</ToolLayout>
 		</>
 	);

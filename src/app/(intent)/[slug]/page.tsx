@@ -1,6 +1,5 @@
 import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
 import { getIntentBySlug } from "@/lib/intent-data";
 import { getToolById } from "@/lib/tools";
 
@@ -29,7 +28,6 @@ export default async function IntentPage({ params }: { params: Promise<{ slug: s
     }
 
     const parentTool = getToolById(intent.parentToolId);
-    
     if (!parentTool) {
         return notFound();
     }
@@ -45,7 +43,14 @@ export default async function IntentPage({ params }: { params: Promise<{ slug: s
 
     return (
         <ToolLayout tool={enrichedTool}>
-            <RegisteredToolMount toolId={intent.parentToolId} />
+            <div className="min-h-[400px]">
+                <iframe
+                    src={parentTool.route}
+                    className="w-full h-[800px]"
+                    title={enrichedTool.name}
+                    style={{ border: 'none' }}
+                />
+            </div>
         </ToolLayout>
     );
 }

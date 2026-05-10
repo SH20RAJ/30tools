@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import AIMusicGeneratorTool from "@/components/tools/generators/AIMusicGeneratorTool";
 
 export const metadata = {
 	title: "Free AI Music Generator – MiniMax 2.6 on Cloudflare | 30tools",
@@ -134,7 +134,7 @@ export default async function ToolPage() {
 				}}
 			/>
 			<ToolLayout tool={{ ...tool, category: "generators" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<AIMusicGeneratorTool />
 			</ToolLayout>
 		</>
 	);

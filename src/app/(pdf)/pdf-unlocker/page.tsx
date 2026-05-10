@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import PDFUnlock from "@/components/tools/pdf/PDFUnlock";
 
 
 export const metadata = {
@@ -111,7 +111,7 @@ This tool is not a password "cracker" or "hacker." For most modern AES-encrypted
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "pdf" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<PDFUnlock />
 			</ToolLayout>
 		</>
 	);

@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 
 
 export const metadata = {
@@ -110,7 +110,7 @@ Large e-commerce sites and publishers can have sitemaps containing up to 50,000 
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<RegisteredToolMount toolId={tool.id} />
+				<DownloaderEngine />
 			</ToolLayout>
 		</>
 	);
