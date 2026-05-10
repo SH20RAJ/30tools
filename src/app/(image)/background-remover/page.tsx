@@ -1,17 +1,16 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
+import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverTool";
 
 
 export const metadata = {
-	title: "Free Background Remover Online – Fast & No Signup | 30tools",
-	description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based, and no signup needed.",
-	keywords: "background remover, free background remover, online background remover, no signup, 30tools",
+	title: "Background Remover – Remove Solid Backgrounds from Images Online Free",
+	description: "Remove solid and white backgrounds from images automatically. Create transparent PNGs for product photos, headshots, and graphics. 100% free, browser-based processing, no signup needed.",
 	alternates: {
 		canonical: "https://30tools.com/background-remover",
 	},
 	openGraph: {
-		title: "Free Background Remover Online – Fast & No Signup | 30tools",
-		description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based, and no signup needed.",
+		title: "Background Remover – Remove Solid Backgrounds Online Free",
+		description: "Remove white and solid color backgrounds from photos instantly. Export transparent PNGs for e-commerce, social media, or design projects. No signup required.",
 		url: "https://30tools.com/background-remover",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Background Remover Online – Fast & No Signup | 30tools",
-		description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based, and no signup needed.",
+		title: "Background Remover – Remove Solid Backgrounds Online Free",
+		description: "Instantly remove white and solid color backgrounds from photos. Export transparent PNGs for e-commerce, social media, or design.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -30,99 +29,97 @@ export default async function ToolPage() {
 	const tool = {
         "id": "background-remover",
         "name": "Background Remover",
-        "description": "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based, and no signup needed.",
+        "description": "Remove solid and white backgrounds from images instantly. Create transparent PNGs for product photos, headshots, and graphics. 100% free, browser-based, no signup needed.",
         "route": "/background-remover",
         "extraSlugs": [
                 "remove-background-from-signature-free",
                 "transparent-background-maker",
                 "picture-background-eraser",
-                "duplicate-line-remover",
-                "background-gradient-tool",
-                "background-gradient-creator",
-                "ai-background-eraser-online"
+                "remove-white-background-free",
+                "solid-color-background-remover",
+                "background-eraser-online"
         ],
         "popular": true,
         "category": "image",
 		"features": [
-			"Automatic AI Subject Detection",
-			"Supports People, Products, and Animals",
+			"Detects and Removes Solid Color Backgrounds",
+			"Works Best with Clear Subject-Background Contrast",
 			"100% Free with No Watermarks",
-			"Client-Side Processing via WebGL/WASM",
-			"Export as Transparent PNG or with Solid Colors",
-			"No Resolution Downgrading (Up to 10MB)"
+			"Client-Side Processing – No Server Uploads",
+			"Export as Transparent PNG",
+			"Preserves Image Quality and Resolution"
 		],
 		"article": `
-## Professional Background Removal Without Subscriptions
-Editing out a background using the magic wand tool in Photoshop can take minutes per photo. Our AI Background Remover automates the process using advanced neural networks, isolating the main subject perfectly in seconds.
+## Remove Solid Backgrounds from Images Instantly
+If you have photos with simple solid backgrounds or white studio backgrounds, our Background Remover automatically detects edges and makes the background transparent. This works great for product photos, headshots, and other images with clear subject separation from a uniform background.
 
-### Client-Side AI Processing
-Most background removers require you to upload your photo to a server, which poses privacy risks and can be slow. Our tool downloads a lightweight, optimized AI model directly to your browser. The background removal happens locally using your device's GPU/CPU. Your photos never leave your device.
+### Best For:
+- Product photography with studio backgrounds
+- Headshots and portrait photos with plain white/colored walls
+- Flat design mockups and overlays
+- Creating transparent PNG assets for web design
 
-### E-Commerce & Product Photography
-Clean, white, or transparent backgrounds are required for Amazon, eBay, and Shopify listings. With our tool, you can instantly prepare your product shots for listing without paying a per-image API cost or buying expensive editing software.
+### How It Works
+The tool analyzes the image to detect edges between your subject and the background. Solid, uniform backgrounds (especially very bright or very dark) are converted to transparency, creating a clear PNG file you can use anywhere.
+
+### Client-Side Processing
+Your photos are processed entirely in your browser using JavaScript and Canvas APIs. No data is uploaded to our servers—everything stays on your device.
+
+### When This Tool Works Best
+- Clear contrast between subject and background
+- Solid color backgrounds
+- Well-lit studio-style photos
+
+### When You Might Need More
+- Complex backgrounds with patterns
+- Blended or semi-transparent backgrounds
+- Detailed hair, fur, or edge work
+- For advanced cases, consider professional tools like Photoshop or Pixlr
 		`,
 		"howTo": {
-			"name": "How to Remove an Image Background",
+			"name": "How to Remove a Background",
 			"steps": [
 				{
 					"name": "Upload Your Image",
-					"text": "Drag and drop your photo (JPG, PNG, WEBP) onto the canvas, or click to browse your files."
+					"text": "Drag and drop your photo (JPG, PNG, WEBP) or click to browse your files."
 				},
 				{
-					"name": "Wait for AI Processing",
-					"text": "The local AI model will detect the primary subject (person, car, product) and mask out the background. This usually takes 2-5 seconds."
+					"name": "Process the Image",
+					"text": "Click the 'Remove Background' button. Processing usually takes a few seconds on images up to 10MB."
 				},
 				{
-					"name": "Refine Edges (Optional)",
-					"text": "If needed, use the built-in refinement sliders to adjust the edge feathering or shift the mask."
+					"name": "Review the Result",
+					"text": "See a side-by-side comparison of your original and processed image with the transparent background."
 				},
 				{
-					"name": "Download Final Image",
-					"text": "Download your new image. We save it as a high-quality PNG to preserve the transparent background channel."
+					"name": "Download",
+					"text": "Download the result as a PNG file with transparent background. Use it in design, email, social media, or websites."
 				}
 			]
 		},
 		"faqs": [
 			{
-				"question": "Does this tool downscale my images like other free removers?",
-				"answer": "No. While some commercial tools force you to pay to download HD versions, our tool processes and exports your image at its original resolution (up to browser memory limits, typically 10MB)."
+				"question": "Does this tool preserve image quality?",
+				"answer": "Yes. The tool exports your image at its original resolution. The PNG format preserves all quality while adding the transparent background."
 			},
 			{
-				"question": "What file formats do you support?",
-				"answer": "You can upload JPG, JPEG, PNG, or WEBP images. The final output is always a PNG if you choose a transparent background."
+				"question": "What types of backgrounds work best?",
+				"answer": "This tool works best with solid color backgrounds like white, studio backdrops, or plain colored walls. It uses edge detection to identify where your subject ends and the background begins."
 			},
 			{
-				"question": "Is the background removal really processed locally?",
-				"answer": "Yes. Upon first load, your browser fetches a small WebAssembly/ONNX model. All pixel processing occurs on your hardware. We never see your photos."
+				"question": "Can I undo or refine the removal?",
+				"answer": "In this version, the background removal is automatic. If you need more control, you can use your original image with other tools or professional software like Photoshop."
 			},
 			{
-				"question": "Why did the AI miss a spot in my photo?",
-				"answer": "AI models work best when there is strong contrast between the subject and the background. Images with extreme blur, complex mesh (like fences), or identical subject/background colors may occasionally confuse the model."
+				"question": "Is the image processed locally?",
+				"answer": "Yes, 100% locally in your browser. Your photos never leave your device."
 			}
 		]
-};
+	};
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/background-remover",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={{ ...tool, category: "image" }}>
+			<BackgroundRemoverTool />
+		</ToolLayout>
 	);
 }

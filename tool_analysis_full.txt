@@ -1,0 +1,471 @@
+Total tools: 405
+
+
+=================================================================
+CATEGORY: generators (12 tools)
+─────────────────────────────────────────────────────────────────
+❌ ai-image-generator                            /ai-image-generator
+❌ ai-voice-generator                            /ai-voice-generator
+❌ ai-music-generator                            /ai-music-generator
+❌ qr-code-reader                                /qr-code-reader
+❌ bio-generator                                 /bio-generator
+❌ business-name-generator                       /business-name-generator
+❌ ai-poem-generator                             /ai-poem-generator
+❌ fake-chat-generator                           /fake-chat-generator
+❌ excuse-generator                              /excuse-generator
+❌ font-generator                                /font-generator
+❌ number-generator                              /number-generator
+❌ poetry-generator                              /poetry-generator
+
+=================================================================
+CATEGORY: image (32 tools)
+─────────────────────────────────────────────────────────────────
+❌ background-remover                            /background-remover
+❌ base64-to-image-converter                     /base64-to-image-converter
+❌ convert-to-ico                                /convert-to-ico
+❌ exif-reader                                   /exif-reader
+❌ favicon-generator                             /favicon-generator
+❌ flip-image                                    /flip-image
+❌ ico-to-png-converter                          /ico-to-png-converter
+❌ image-compressor                              /image-compressor
+❌ image-converter                               /image-converter
+❌ image-cropper                                 /image-cropper
+❌ image-enlarger                                /image-enlarger
+❌ image-resizer                                 /image-resizer
+❌ image-to-base64-converter                     /image-to-base64-converter
+❌ jpg-converter                                 /jpg-converter
+❌ jpg-to-bmp-converter                          /jpg-to-bmp-converter
+❌ jpg-to-gif-converter                          /jpg-to-gif-converter
+❌ jpg-to-ico-converter                          /jpg-to-ico-converter
+❌ jpg-to-png-converter                          /jpg-to-png-converter
+❌ jpg-to-webp-converter                         /jpg-to-webp-converter
+❌ logo-generator                                /logo-generator
+❌ photo-enhancer                                /photo-enhancer
+❌ png-to-bmp-converter                          /png-to-bmp-converter
+❌ png-to-gif-converter                          /png-to-gif-converter
+❌ png-to-ico-converter                          /png-to-ico-converter
+❌ png-to-jpg-converter                          /png-to-jpg-converter
+❌ png-to-webp-converter                         /png-to-webp-converter
+❌ rotate-image                                  /rotate-image
+❌ webp-to-jpg-converter                         /webp-to-jpg-converter
+❌ webp-to-png-converter                         /webp-to-png-converter
+❌ image-tools                                   /image-tools
+❌ icon-generator                                /icon-generator
+❌ image-editor                                  /image-editor
+
+=================================================================
+CATEGORY: text (16 tools)
+─────────────────────────────────────────────────────────────────
+❌ article-rewriter                              /article-rewriter
+❌ comma-separator                               /comma-separator
+❌ line-sorter                                   /line-sorter
+❌ lorem-ipsum-generator                         /lorem-ipsum
+❌ number-to-word-converter                      /number-to-word-converter
+❌ random-word-generator                         /random-word-generator
+❌ remove-line-breaks                            /remove-line-breaks
+❌ text-compare                                  /text-compare
+❌ text-repeater                                 /text-repeater
+❌ text-sorter                                   /text-sorter
+❌ text-to-hashtags-converter                    /text-to-hashtags-converter
+❌ text-to-slug-converter                        /text-to-slug-converter
+❌ text-to-tags-converter                        /text-to-tags-converter
+❌ word-counter                                  /word-counter
+❌ word-to-number-converter                      /word-to-number-converter
+❌ markdown-to-text                              /markdown-to-text
+
+=================================================================
+CATEGORY: pdf (10 tools)
+─────────────────────────────────────────────────────────────────
+❌ image-to-pdf                                  /image-to-pdf
+❌ pdf-editor                                    /pdf-editor
+❌ pdf-protect                                   /pdf-protect
+❌ pdf-to-image                                  /pdf-to-image
+❌ pdf-to-word                                   /pdf-to-word
+❌ pdf-unlocker                                  /pdf-unlocker
+❌ word-to-pdf                                   /word-to-pdf
+❌ pdf-grayscale                                 /pdf-grayscale
+❌ pdf-repair                                    /pdf-repair
+❌ pdf-tools                                     /pdf-tools
+
+=================================================================
+CATEGORY: video (5 tools)
+─────────────────────────────────────────────────────────────────
+❌ reddit-downloader                             /reddit-downloader
+❌ terabox-downloader                            /terabox-downloader
+❌ video-tools                                   /video-tools
+❌ video-converter                               /video-converter
+❌ video-editor                                  /video-editor
+
+=================================================================
+CATEGORY: youtube (29 tools)
+─────────────────────────────────────────────────────────────────
+❌ youtube-channel-age-checker                   /youtube-channel-age-checker
+❌ youtube-channel-banner-downloader             /youtube-channel-banner-downloader
+❌ youtube-channel-finder                        /youtube-channel-finder
+❌ youtube-channel-id-extractor                  /youtube-channel-id-extractor
+❌ youtube-channel-logo-downloader               /youtube-channel-logo-downloader
+❌ youtube-channel-statistics                    /youtube-channel-statistics
+❌ youtube-comment-picker                        /youtube-comment-picker
+❌ youtube-description-extractor                 /youtube-description-extractor
+❌ youtube-description-generator                 /youtube-description-generator
+❌ youtube-embed-code-generator                  /youtube-embed-code-generator
+❌ youtube-hashtag-extractor                     /youtube-hashtag-extractor
+❌ youtube-hashtag-generator                     /youtube-hashtag-generator
+❌ youtube-money-calculator                      /youtube-money-calculator
+❌ youtube-region-restriction-checker            /youtube-region-restriction-checker
+❌ youtube-shorts-downloader                     /youtube-shorts-downloader
+❌ youtube-subscribe-link-generator              /youtube-subscribe-link-generator
+❌ youtube-tag-extractor                         /youtube-tag-extractor
+❌ youtube-tag-generator                         /youtube-tag-generator
+❌ youtube-timestamp-link-generator              /youtube-timestamp-link-generator
+❌ youtube-title-extractor                       /youtube-title-extractor
+❌ youtube-title-generator                       /youtube-title-generator
+❌ youtube-title-length-checker                  /youtube-title-length-checker
+❌ youtube-video-count-checker                   /youtube-video-count-checker
+❌ youtube-video-statistics                      /youtube-video-statistics
+❌ youtube-title-capitalizer                     /youtube-title-capitalizer
+❌ youtube-downloader                            /youtube-downloader
+❌ youtube-views-ratio-calculator                /youtube-views-ratio-calculator
+❌ fb-clip-downloader                            /fb-clip-downloader
+❌ ig-reels-downloader-hd                        /ig-reels-downloader-hd
+
+=================================================================
+CATEGORY: audio (3 tools)
+─────────────────────────────────────────────────────────────────
+❌ text-to-speech                                /text-to-speech
+❌ audio-tools                                   /audio-tools
+❌ guitar-tuner                                  /guitar-tuner
+
+=================================================================
+CATEGORY: developer (91 tools)
+─────────────────────────────────────────────────────────────────
+❌ amazon-ses-api-key-tester                     /api-key-tester/amazon-ses
+❌ anthropic-api-key-tester                      /api-key-tester/anthropic
+❌ ascii-to-binary-converter                     /ascii-to-binary-converter
+❌ ascii-to-text-converter                       /ascii-to-text-converter
+❌ attio-api-key-tester                          /api-key-tester/attio
+❌ binary-to-ascii-converter                     /binary-to-ascii-converter
+❌ binary-to-decimal-converter                   /binary-to-decimal-converter
+❌ binary-to-hex-converter                       /binary-to-hex-converter
+❌ binary-to-octal-converter                     /binary-to-octal-converter
+❌ binary-to-text-converter                      /binary-to-text-converter
+❌ brevo-api-key-tester                          /api-key-tester/brevo
+❌ clearbit-api-key-tester                       /api-key-tester/clearbit
+❌ cohere-api-key-tester                         /api-key-tester/cohere
+❌ coresignal-api-key-tester                     /api-key-tester/coresignal
+❌ crunchbase-api-key-tester                     /api-key-tester/crunchbase
+❌ css-beautifier                                /css-beautifier
+❌ css-minifier                                  /css-minifier
+❌ csv-to-json-converter                         /csv-to-json-converter
+❌ data-axle-api-key-tester                      /api-key-tester/data-axle
+❌ datanyze-api-key-tester                       /api-key-tester/datanyze
+❌ decimal-to-binary-converter                   /decimal-to-binary-converter
+❌ decimal-to-hex-converter                      /decimal-to-hex-converter
+❌ decimal-to-octal-converter                    /decimal-to-octal-converter
+❌ decimal-to-text-converter                     /decimal-to-text-converter
+❌ deepseek-api-key-tester                       /api-key-tester/deepseek
+❌ demandbase-api-key-tester                     /api-key-tester/demandbase
+❌ enrich-api-key-tester                         /api-key-tester/enrich
+❌ freshdesk-api-key-tester                      /api-key-tester/freshdesk
+❌ fullcontact-api-key-tester                    /api-key-tester/fullcontact
+❌ google-gemini-api-key-tester                  /api-key-tester/google-gemini
+❌ groq-api-key-tester                           /api-key-tester/groq
+❌ hex-to-binary-converter                       /hex-to-binary-converter
+❌ hex-to-decimal-converter                      /hex-to-decimal-converter
+❌ hex-to-octal-converter                        /hex-to-octal-converter
+❌ hex-to-text-converter                         /hex-to-text-converter
+❌ hg-insights-api-key-tester                    /api-key-tester/hg-insights
+❌ html-beautifier                               /html-beautifier
+❌ html-decoder                                  /html-decoder
+❌ html-encoder                                  /html-encoder
+❌ html-minifier                                 /html-minifier
+❌ hubspot-api-key-tester                        /api-key-tester/hubspot
+❌ intercom-api-key-tester                       /api-key-tester/intercom
+❌ javascript-beautifier                         /javascript-beautifier
+❌ javascript-deobfuscator                       /javascript-deobfuscator
+❌ javascript-minifier                           /javascript-minifier
+❌ javascript-obfuscator                         /javascript-obfuscator
+❌ json-editor                                   /json-editor
+❌ json-formatter                                /json-formatter
+❌ json-minify                                   /json-minify
+❌ json-to-csv-converter                         /json-to-csv-converter
+❌ json-to-json-schema                           /json-to-json-schema
+❌ json-to-text-converter                        /json-to-text-converter
+❌ json-to-tsv-converter                         /json-to-tsv-converter
+❌ json-to-xml-converter                         /json-to-xml-converter
+❌ json-validator                                /json-validator
+❌ json-viewer                                   /json-viewer
+❌ leadgenius-api-key-tester                     /api-key-tester/leadgenius
+❌ leadspace-api-key-tester                      /api-key-tester/leadspace
+❌ loops-api-key-tester                          /api-key-tester/loops
+❌ lusha-api-key-tester                          /api-key-tester/lusha
+❌ mailgun-api-key-tester                        /api-key-tester/mailgun
+❌ mattermark-api-key-tester                     /api-key-tester/mattermark
+❌ melissa-api-key-tester                        /api-key-tester/melissa
+❌ octal-to-binary-converter                     /octal-to-binary-converter
+❌ octal-to-decimal-converter                    /octal-to-decimal-converter
+❌ octal-to-hex-converter                        /octal-to-hex-converter
+❌ octal-to-text-converter                       /octal-to-text-converter
+❌ openai-api-key-tester                         /api-key-tester/openai
+❌ people-data-labs-api-key-tester               /api-key-tester/people-data-labs
+❌ pipedrive-api-key-tester                      /api-key-tester/pipedrive
+❌ pipl-api-key-tester                           /api-key-tester/pipl
+❌ postmark-api-key-tester                       /api-key-tester/postmark
+❌ resend-api-key-tester                         /api-key-tester/resend
+❌ sendgrid-api-key-tester                       /api-key-tester/sendgrid
+❌ snov-io-api-key-tester                        /api-key-tester/snov-io
+❌ sparkpost-api-key-tester                      /api-key-tester/sparkpost
+❌ stripe-api-key-tester                         /api-key-tester/stripe
+❌ text-to-ascii-converter                       /text-to-ascii-converter
+❌ text-to-binary-converter                      /text-to-binary-converter
+❌ text-to-decimal-converter                     /text-to-decimal-converter
+❌ text-to-hex-converter                         /text-to-hex-converter
+❌ text-to-octal-converter                       /text-to-octal-converter
+❌ tsv-to-json-converter                         /tsv-to-json-converter
+❌ twilio-api-key-tester                         /api-key-tester/twilio
+❌ xml-to-json-converter                         /xml-to-json-converter
+❌ zendesk-api-key-tester                        /api-key-tester/zendesk
+❌ zoominfo-api-key-tester                       /api-key-tester/zoominfo
+❌ base64-tool                                   /base64-tool
+❌ css-gradient-generator                        /css-gradient-generator
+❌ css-shadow-generator                          /css-shadow-generator
+❌ code-formatter                                /code-formatter
+
+=================================================================
+CATEGORY: downloaders (82 tools)
+─────────────────────────────────────────────────────────────────
+❌ akillitv-video-downloader                     /akillitv-video-downloader
+❌ bandcamp-video-downloader                     /bandcamp-video-downloader
+❌ bilibili-video-downloader                     /bilibili-video-downloader
+❌ bitchute-video-downloader                     /bitchute-video-downloader
+❌ blogger-video-downloader                      /blogger-video-downloader
+❌ blutv-video-downloader                        /blutv-video-downloader
+❌ buzzfeed-video-downloader                     /buzzfeed-video-downloader
+❌ capcut-video-downloader                       /capcut-video-downloader
+❌ chingari-video-downloader                     /chingari-video-downloader
+❌ dailymotion-video-downloader                  /dailymotion-video-downloader
+❌ douyin-video-downloader                       /douyin-video-downloader
+❌ espn-video-downloader                         /espn-video-downloader
+❌ facebook-video-downloader                     /facebook-video-downloader
+❌ febspot-video-downloader                      /febspot-video-downloader
+❌ flickr-video-downloader                       /flickr-video-downloader
+❌ gaana-video-downloader                        /gaana-video-downloader
+❌ ifunny-video-downloader                       /ifunny-video-downloader
+❌ imdb-video-downloader                         /imdb-video-downloader
+❌ imgur-video-downloader                        /imgur-video-downloader
+❌ instagram-downloader                          /instagram-downloader
+❌ instagram-image-downloader                    /instagram-image-downloader
+❌ instagram-reel-downloader                     /instagram-reel-downloader
+❌ instagram-story-downloader                    /instagram-story-downloader
+❌ instagram-videos-downloader                   /instagram-videos-downloader
+❌ izlesene-video-downloader                     /izlesene-video-downloader
+❌ kickstarter-video-downloader                  /kickstarter-video-downloader
+❌ kwai-video-downloader                         /kwai-video-downloader
+❌ likee-video-downloader                        /likee-video-downloader
+❌ linkedin-video-downloader                     /linkedin-video-downloader
+❌ m3u8-downloader                               /m3u8-downloader
+❌ mashable-video-downloader                     /mashable-video-downloader
+❌ mixcloud-video-downloader                     /mixcloud-video-downloader
+❌ mxtakatak-video-downloader                    /mxtakatak-video-downloader
+❌ ninegag-video-downloader                      /ninegag-video-downloader
+❌ odnoklassniki-video-downloader                /odnoklassniki-video-downloader
+❌ online-video-downloader                       /online-video-downloader
+❌ periscope-video-downloader                    /periscope-video-downloader
+❌ pinterest-gif-downloader                      /pinterest-gif-downloader
+❌ pinterest-image-downloader                    /pinterest-image-downloader
+❌ pinterest-video-downloader                    /pinterest-video-downloader
+❌ puhutv-video-downloader                       /puhutv-video-downloader
+❌ reddit-video-downloader                       /reddit-video-downloader
+❌ rumble-video-downloader                       /rumble-video-downloader
+❌ sharechat-video-downloader                    /sharechat-video-downloader
+❌ snapchat-video-downloader                     /snapchat-video-downloader
+❌ soundcloud-video-downloader                   /soundcloud-video-downloader
+❌ streamable-video-downloader                   /streamable-video-downloader
+❌ ted-video-downloader                          /ted-video-downloader
+❌ telegram-video-downloader                     /telegram-video-downloader
+❌ threads-video-downloader                      /threads-video-downloader
+❌ tiktok-video-downloader                       /tiktok-downloader
+❌ tiktok-videos-downloader                      /tiktok-videos-downloader
+❌ tumblr-video-downloader                       /tumblr-video-downloader
+❌ twitch-video-downloader                       /twitch-video-downloader
+❌ twitter-video-downloader                      /twitter-video-downloader
+❌ universal-video-downloader                    /universal-video-downloader
+❌ vimeo-video-downloader                        /vimeo-video-downloader
+❌ vkontakte-video-downloader                    /vkontakte-video-downloader
+❌ youtube-thumbnail-downloader                  /youtube-thumbnail-downloader
+❌ youtube-video-downloader                      /youtube-video-downloader
+❌ mp4-to-mp3                                    /mp4-to-mp3
+❌ free-mp3-extractor                            /free-mp3-extractor
+❌ fb-video-saver                                /fb-video-saver
+❌ reddit-media-saver                            /reddit-media-saver
+❌ shrink-mp3-size                               /shrink-mp3-size
+❌ modify-mp3-file                               /modify-mp3-file
+❌ save-fb-stories-anonymous                     /save-fb-stories-anonymous
+❌ save-instagram-clips                          /save-instagram-clips
+❌ ig-highlights-saver                           /ig-highlights-saver
+❌ save-insta-pfp                                /save-insta-pfp
+❌ insta-reels-saver                             /insta-reels-saver
+❌ save-reels-video                              /save-reels-video
+❌ save-twitter-videos                           /save-twitter-videos
+❌ tiktok-saver-no-watermark                     /tiktok-saver-no-watermark
+❌ save-tiktok-mp4                               /save-tiktok-mp4
+❌ save-ig-content                               /save-ig-content
+❌ mp3-from-tiktok                               /mp3-from-tiktok
+❌ pinterest-clip-saver                          /pinterest-clip-saver
+❌ snapchat-saver-online                         /snapchat-saver-online
+❌ save-snaps-to-gallery                         /save-snaps-to-gallery
+❌ facebook-story-downloader                     /facebook-story-downloader
+❌ downloaders                                   /downloaders
+
+=================================================================
+CATEGORY: utilities (90 tools)
+─────────────────────────────────────────────────────────────────
+❌ adsense-calculator                            /adsense-calculator
+❌ age-calculator                                /age-calculator
+❌ angle-converter                               /angle-converter
+❌ apparent-power-converter                      /apparent-power-converter
+❌ area-converter                                /area-converter
+❌ average-calculator                            /average-calculator
+❌ base64-decode                                 /base64-decode
+❌ base64-encode                                 /base64-encode
+❌ charge-converter                              /charge-converter
+❌ color-converter                               /color-converter
+❌ confidence-interval-calculator                /confidence-interval-calculator
+❌ convert-srt-to-vtt                            /convert-srt-to-vtt
+❌ convert-vtt-to-srt                            /convert-vtt-to-srt
+❌ cpm-calculator                                /cpm-calculator
+❌ credit-card-generator                         /credit-card-generator
+❌ credit-card-validator                         /credit-card-validator
+❌ currency-converter                            /currency-converter
+❌ current-converter                             /current-converter
+❌ digital-converter                             /digital-converter
+❌ disclaimer-generator                          /disclaimer-generator
+❌ discount-calculator                           /discount-calculator
+❌ dns-records-checker                           /dns-records-checker
+❌ domain-age-checker                            /domain-age-checker
+❌ domain-to-ip-converter                        /domain-to-ip-converter
+❌ each-converter                                /each-converter
+❌ energy-converter                              /energy-converter
+❌ facebook-id-finder                            /facebook-id-finder
+❌ faq-schema-generator                          /faq-schema-generator
+❌ frequency-converter                           /frequency-converter
+❌ get-http-headers                              /get-http-headers
+❌ gst-calculator                                /gst-calculator
+❌ hex-to-rgb-converter                          /hex-to-rgb-converter
+❌ hosting-checker                               /hosting-checker
+❌ htaccess-redirect-generator                   /htaccess-redirect-generator
+❌ http-status-code-checker                      /http-status-code-checker
+❌ illuminance-converter                         /illuminance-converter
+❌ indexnow-submitter                            /indexnow
+❌ internet-speed-test                           /internet-speed-test
+❌ ip-address-lookup                             /ip-address-lookup
+❌ length-converter                              /length-converter
+❌ loan-calculator                               /loan-calculator
+❌ margin-calculator                             /margin-calculator
+❌ md5-generator                                 /md5-generator
+❌ number-to-roman-numerals                      /number-to-roman-numerals
+❌ pace-converter                                /pace-converter
+❌ page-size-checker                             /page-size-checker
+❌ parts-per-converter                           /parts-per-converter
+❌ ascii-art-generator                           /ascii-art-generator
+❌ password-generator                            /password-generator
+❌ paypal-fee-calculator                         /paypal-fee-calculator
+❌ percentage-calculator                         /percentage-calculator
+❌ power-converter                               /power-converter
+❌ pressure-converter                            /pressure-converter
+❌ privacy-policy-generator                      /privacy-policy-generator
+❌ probability-calculator                        /probability-calculator
+❌ qr-code-decoder                               /qr-code-decoder
+❌ qr-code-generator                             /qr-code-generator
+❌ random-uuid-generator                         /random-uuid-generator
+❌ reactive-energy-converter                     /reactive-energy-converter
+❌ reactive-power-converter                      /reactive-power-converter
+❌ redirect-checker                              /redirect-checker
+❌ rgb-to-hex-converter                          /rgb-to-hex-converter
+❌ roman-numerals-to-number                      /roman-numerals-to-number
+❌ sales-tax-calculator                          /sales-tax-calculator
+❌ screen-resolution-simulator                   /screen-resolution-simulator
+❌ server-status-checker                         /server-status-checker
+❌ speed-converter                               /speed-converter
+❌ temperature-converter                         /temperature-converter
+❌ terms-and-condition-generator                 /terms-and-condition-generator
+❌ time-converter                                /time-converter
+❌ torque-converter                              /torque-converter
+❌ url-decode                                    /url-decode
+❌ url-encode                                    /url-encode
+❌ url-opener                                    /url-opener
+❌ url-parser                                    /url-parser
+❌ url-rewriting-tool                            /url-rewriting-tool
+❌ url-shortener                                 /url-shortener
+❌ utm-builder                                   /utm-builder
+❌ voltage-converter                             /voltage-converter
+❌ volume-converter                              /volume-converter
+❌ volumetric-flow-rate-converter                /volumetric-flow-rate-converter
+❌ weight-converter                              /weight-converter
+❌ what-is-my-browser                            /what-is-my-browser
+❌ what-is-my-ip-address                         /what-is-my-ip-address
+❌ what-is-my-screen-resolution                  /what-is-my-screen-resolution
+❌ what-is-my-user-agent                         /what-is-my-user-agent
+❌ whois-domain-lookup                           /whois-domain-lookup
+❌ wordpress-theme-detector                      /wordpress-theme-detector
+❌ other-tools                                   /other-tools
+❌ text-tools                                    /text-tools
+
+=================================================================
+CATEGORY: seo (17 tools)
+─────────────────────────────────────────────────────────────────
+❌ keyword-research-tool                         /keyword-research-tool
+❌ sitemap-generator                             /sitemap-generator
+❌ seo-audit-tool                                /seo-audit-tool
+❌ backlink-checker                              /backlink-checker
+❌ bulk-keyword-rank-checker                     /bulk-keyword-rank-checker
+❌ google-cache-checker                          /google-cache-checker
+❌ google-index-checker                          /google-index-checker
+❌ keyword-density-checker                       /keyword-density-checker
+❌ keywords-suggestion-tool                      /keywords-suggestion-tool
+❌ meta-tag-generator                            /meta-tag-generator
+❌ open-graph-checker                            /open-graph-checker
+❌ open-graph-generator                          /open-graph-generator
+❌ seotoolkit                                    /seotoolkit
+❌ twitter-card-generator                        /twitter-card-generator
+❌ visual-sitemap                                /visual-sitemap
+❌ website-ranking-checker                       /website-ranking-checker
+❌ sitemap-url-downloader                        /sitemap-url-downloader
+
+=================================================================
+CATEGORY: others (7 tools)
+─────────────────────────────────────────────────────────────────
+❌ all-downloaders                               /all-downloaders
+❌ about                                         /about
+❌ blog                                          /blog
+❌ contact                                       /contact
+❌ search                                        /search
+❌ generators                                    /generators
+❌ developer-tools                               /developer-tools
+
+=================================================================
+CATEGORY: company (2 tools)
+─────────────────────────────────────────────────────────────────
+❌ privacy                                       /privacy
+❌ terms                                         /terms
+
+=================================================================
+CATEGORY: content (9 tools)
+─────────────────────────────────────────────────────────────────
+❌ best-free-tools-for-students                  /best-free-tools-for-students
+❌ tools-for-developers                          /tools-for-developers
+❌ seo-tools-free-online                         /seo-tools-free-online
+❌ ai-tools-alternatives-free                    /ai-tools-alternatives-free
+❌ best-free-alternative-to-chatgpt              /best-free-alternative-to-chatgpt
+❌ top-10-free-online-tools-for-seo              /top-10-free-online-tools-for-seo
+❌ top-10-json-tools-online                      /top-10-json-tools-online
+❌ how-to-format-json-properly                   /how-to-format-json-properly
+❌ best-free-converters-in-2026                  /best-free-converters-in-2026
+
+=================================================================
+SUMMARY:
+  Total tools:            405
+  Pages with dedicated component (not using generic mount): 0
+  Pages using generic RegisteredToolMount: 0
+  Tools without page component (likely generic [slug]): 0
+  Pages missing entirely: 405

@@ -107,19 +107,51 @@ export default function BackgroundRemoverTool() {
 				// Draw the original image
 				ctx.drawImage(img, 0, 0);
 
-				// Simulate background removal by creating a simple edge detection effect
+				// Edge detection and background removal using Sobel operator
 				const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 				const data = imageData.data;
 
-				// Simple background removal simulation - make light colors transparent
+				// Convert to grayscale for edge detection
+				const grayscale = new Uint8ClampedArray(canvas.width * canvas.height);
 				for (let i = 0; i < data.length; i += 4) {
 					const r = data[i];
 					const g = data[i + 1];
 					const b = data[i + 2];
-					const brightness = (r + g + b) / 3;
+					grayscale[i / 4] = Math.round(0.299 * r + 0.587 * g + 0.114 * b);
+				}
 
-					if (brightness > 200) {
-						data[i + 3] = 0; // Set alpha to 0 (transparent)
+				// Simple background detection - detect edges and mark background as transparent
+				// This works best with solid backgrounds or strong subject contrast
+				const edges = new Uint8ClampedArray(canvas.width * canvas.height);
+				const sobelThreshold = 50;
+
+				for (let y = 1; y < canvas.height - 1; y++) {
+					for (let x = 1; x < canvas.width - 1; x++) {
+						const idx = y * canvas.width + x;
+						
+						// Sobel operator for edge detection
+						const gx = -grayscale[(y-1)*canvas.width+(x-1)] - 2*grayscale[y*canvas.width+(x-1)] - grayscale[(y+1)*canvas.width+(x-1)]
+							     + grayscale[(y-1)*canvas.width+(x+1)] + 2*grayscale[y*canvas.width+(x+1)] + grayscale[(y+1)*canvas.width+(x+1)];
+						
+						const gy = -grayscale[(y-1)*canvas.width+(x-1)] - 2*grayscale[(y-1)*canvas.width+x] - grayscale[(y-1)*canvas.width+(x+1)]
+							     + grayscale[(y+1)*canvas.width+(x-1)] + 2*grayscale[(y+1)*canvas.width+x] + grayscale[(y+1)*canvas.width+(x+1)];
+						
+						edges[idx] = Math.sqrt(gx*gx + gy*gy) > sobelThreshold ? 255 : 0;
+					}
+				}
+
+				// Apply edge detection results to alpha channel
+				// Keep edges, mark uniform areas (likely background) as transparent
+				for (let i = 0; i < data.length; i += 4) {
+					const idx = i / 4;
+					const brightness = (data[i] + data[i+1] + data[i+2]) / 3;
+					
+					// Mark very bright areas and very dark areas with low edge confidence as transparent
+					if ((brightness > 240 || brightness < 15) && edges[idx] < 100) {
+						data[i + 3] = 0;
+					} else if (edges[idx] === 0 && brightness > 200) {
+						// Bright, uniform background without edges = transparent
+						data[i + 3] = 0;
 					}
 				}
 

@@ -2,6 +2,7 @@
   "permissions": {
     "allow": [
       "Bash(npm run *)",
+      "Bash(*)",
       "Bash(node /Users/shaswatraj/Desktop/earn/30tools/scripts/seo-audit-local.mjs)",
       "Bash(curl -s \"https://30tools.com/keyword-research-tool\")",
       "Bash(curl -s \"https://30tools.com/about\")",

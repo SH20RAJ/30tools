@@ -218,11 +218,31 @@ export default function ImageCompressorTool() {
 	};
 
 	const downloadAllAsZip = async () => {
-		files.forEach((file) => {
-			if (file.status === "completed") {
-				setTimeout(() => downloadFile(file), 100);
+		try {
+			const JSZip = (await import('jszip')).default;
+			const zip = new JSZip();
+			const completedFiles = files.filter(f => f.status === "completed");
+			
+			if (completedFiles.length === 0) return;
+			
+			for (const file of completedFiles) {
+				if (file.compressedBlob) {
+					zip.file(`compressed-${file.name}`, file.compressedBlob);
+				}
 			}
-		});
+			
+			const zipBlob = await zip.generateAsync({ type: "blob" });
+			const url = URL.createObjectURL(zipBlob);
+			const a = document.createElement("a");
+			a.href = url;
+			a.download = "compressed-images.zip";
+			document.body.appendChild(a);
+			a.click();
+			document.body.removeChild(a);
+			URL.revokeObjectURL(url);
+		} catch (error) {
+			console.error("Failed to create ZIP:", error);
+		}
 	};
 
 	const removeFile = (id) => {

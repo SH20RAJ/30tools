@@ -1,19 +1,15 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import RegisteredToolMount from "@/components/tools/shared/RegisteredToolMount";
-import { getToolById } from "@/lib/tools";
-import { notFound } from "next/navigation";
-
+import PDFProtect from "@/components/tools/pdf/PDFProtect";
 
 export const metadata = {
-	title: "Free PDF Password Protect Online – Fast & No Signup | 30tools",
+	title: "PDF Password Protect – Secure PDF Files Online Free",
 	description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
-	keywords: "pdf protect, password protect pdf, encrypt pdf, secure pdf, online pdf protection, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pdf-protect",
 	},
 	openGraph: {
-		title: "Free PDF Password Protect Online – Fast & No Signup | 30tools",
-		description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
+		title: "PDF Password Protect – Encrypt PDF Files Online",
+		description: "Add password protection to PDFs instantly. Free, secure, and works in your browser.",
 		url: "https://30tools.com/pdf-protect",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,8 +17,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free PDF Password Protect Online – Fast & No Signup | 30tools",
-		description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
+		title: "PDF Password Protect – Free PDF Encryption Tool",
+		description: "Secure PDF documents with AES encryption. No uploads required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
@@ -94,15 +90,9 @@ Unlike server-based tools that force you to upload your sensitive files (which c
 		]
 	};
 
-	if (!tool) {
-		return notFound();
-	}
-
 	return (
-		<>
-			<ToolLayout tool={tool}>
-				<RegisteredToolMount toolId={tool.id} />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={{ ...tool, category: "pdf" }}>
+			<PDFProtect />
+		</ToolLayout>
 	);
 }
