@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import JsonFormatterTool from "@/components/tools/developer/JsonFormatterTool";
+import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 
 
 export const metadata = {
@@ -62,7 +62,7 @@ export default async function ToolPage() {
 			/>
 
 			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<JsonFormatterTool />
+				<JSONFormatterTool />
 			</ToolLayout>
 		</>
 	);
