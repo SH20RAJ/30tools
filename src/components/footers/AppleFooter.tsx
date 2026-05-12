@@ -40,7 +40,7 @@ export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }
 	return (
 		<footer className="bg-[#f5f5f7] dark:bg-[#161617] text-[#1d1d1f] dark:text-[#f5f5f7] pt-16 pb-8 border-t border-black/5 dark:border-white/5">
 			<div className="container mx-auto px-4 max-w-5xl">
-				<div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
+				<div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 xl:grid-cols-6 gap-8 mb-12">
 					<div className="col-span-2 lg:col-span-1">
 						<Link href={STATIC_ROUTES.HOME} className="text-lg font-semibold tracking-tight mb-4 block">
 							30tools
@@ -98,7 +98,19 @@ export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }
 						</ul>
 					</div>
 
-					<div className="hidden lg:block">
+					<div>
+						<h4 className="text-[12px] font-semibold mb-4">Featured</h4>
+						<ul className="space-y-2">
+							<li>
+								<a href="https://wify.my/" target="_blank" rel="noopener noreferrer" className="text-[12px] opacity-90 hover:opacity-100 transition-opacity flex flex-col gap-1 group">
+									<span className="font-bold flex items-center gap-1">Wify.my <ArrowUpRight className="h-3 w-3 opacity-50" /></span>
+									<span className="text-[10px] opacity-70">Premium Story Platform with immersive swipe interface.</span>
+								</a>
+							</li>
+						</ul>
+					</div>
+
+					<div className="hidden xl:block">
 						<h4 className="text-[12px] font-semibold mb-4">Language</h4>
 						<LanguageSelector languages={languages} />
 					</div>

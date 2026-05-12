@@ -17,6 +17,11 @@ export function HomeSEOContent() {
 			icon: <Zap className="h-6 w-6 text-primary" />,
 			title: "Lightning Fast Speeds",
 			description: "Optimized for performance, our tools leverage edge computing and modern web technologies to deliver instant results without server lag."
+		},
+		{
+			icon: <Zap className="h-6 w-6 text-primary" />,
+			title: "YouTube Magic Redirect",
+			description: "Instantly download any video by replacing 'youtube.com' with '30tools.com' in the URL. It's the fastest way to get your content."
 		}
 	];
 

@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { permanentRedirect, redirect } from "next/navigation";
 import { getAllTools } from "@/lib/tools";
 
 interface PageProps {
@@ -15,5 +15,5 @@ export default async function ToolsSlugPage({ params }: PageProps) {
 	}
 
 	// Redirect to the canonical tool route (e.g., /image-compressor)
-	redirect(tool.route, "permanent");
+	permanentRedirect(tool.route);
 }

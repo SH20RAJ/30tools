@@ -6,11 +6,11 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
 
-export default function RomanNumeralTool({ toRoman }) {
+export default function RomanNumeralTool({ toRoman }: { toRoman?: boolean }) {
   const [val, setVal] = useState("");
   const romanMap: [number, string][] = [[1000,"M"],[900,"CM"],[500,"D"],[400,"CD"],[100,"C"],[90,"XC"],[50,"L"],[40,"XL"],[10,"X"],[9,"IX"],[5,"V"],[4,"IV"],[1,"I"]];
-  const toR = (n) => { let s=""; for(const [v,r] of romanMap){while(n>=v){s+=r;n-=v;}} return s; };
-  const fromR = (s) => { let n=0; const u=s.toUpperCase(); const m: Record<string,number>={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}; for(let i=0;i<u.length;i++){const c=m[u[i]]||0;const nx=m[u[i+1]]||0;if(c<nx){n-=c;}else{n+=c;}} return n; };
+  const toR = (n: number) => { let s=""; for(const [v,r] of romanMap){while(n>=v){s+=r;n-=v;}} return s; };
+  const fromR = (s: string) => { let n=0; const u=s.toUpperCase(); const m: Record<string,number>={"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}; for(let i=0;i<u.length;i++){const c=m[u[i]]||0;const nx=m[u[i+1]]||0;if(c<nx){n-=c;}else{n+=c;}} return n; };
   const result = toRoman ? toR(Number(val)||0) : String(fromR(val));
   return (
     <Card>

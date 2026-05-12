@@ -25,7 +25,7 @@ export function AuthButton() {
 		);
 	}
 
-	const user = useUser({ or: "null" });
+	const user = useUser({ or: "return-null" });
 
 	if (user) {
 		return (

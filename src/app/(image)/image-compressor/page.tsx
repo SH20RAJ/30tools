@@ -1,3 +1,4 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import { getToolByRoute } from "@/lib/tools";
 import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";

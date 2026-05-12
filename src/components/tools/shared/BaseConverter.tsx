@@ -195,9 +195,9 @@ function convertByKind(kind: BaseConverterKind, input: string): string {
 }
 
 interface BaseConverterProps {
-  title: string;
-  inputPlaceholder: string;
-  outputPlaceholder: string;
+  title?: string;
+  inputPlaceholder?: string;
+  outputPlaceholder?: string;
   converterKind: BaseConverterKind;
   onCopy?: (text: string) => void;
   onClear?: () => void;
@@ -206,9 +206,9 @@ interface BaseConverterProps {
 }
 
 export default function BaseConverter({
-  title,
-  inputPlaceholder,
-  outputPlaceholder,
+  title = "Base Converter",
+  inputPlaceholder = "Enter text here...",
+  outputPlaceholder = "Result will appear here...",
   converterKind,
   autoConvert = true,
 }: BaseConverterProps) {

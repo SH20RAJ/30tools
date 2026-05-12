@@ -30,6 +30,7 @@
 - **✨ Premium UI/UX**: Cinematic workspaces featuring backdrop-blur aesthetics, ambient glows, and high-fidelity micro-interactions.
 - **🛡️ Privacy First**: 95% of tool logic runs directly in your browser. No files are uploaded to our servers unless absolutely necessary.
 - **⚡ Performance Powered by Bun**: Optimized for ultra-fast build times and low-latency deployments on Cloudflare Workers/Pages.
+- **🪄 YouTube Magic Redirect**: Replace `youtube.com` with `30tools.com` in any video URL to open it instantly in our downloader (e.g., `youtube.com/watch?v=...` → `30tools.com/watch?v=...`).
 
 ---
 

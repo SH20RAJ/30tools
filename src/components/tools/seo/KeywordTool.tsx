@@ -14,13 +14,21 @@ import {
 	TableRow,
 } from "@/components/ui/table";
 
+interface KeywordResult {
+	keyword: string;
+	volume?: string;
+	cpc?: string;
+	difficulty?: string;
+	position?: number;
+	change?: string;
+}
+
 /**
  * Keyword Tool
- * @param {string} mode - 'research' | 'tracking'
  */
-export default function KeywordTool({ mode = "research" }) {
+export default function KeywordTool({ mode = "research" }: { mode?: "research" | "tracking" }) {
 	const [query, setQuery] = useState("");
-	const [results, setResults] = useState(null);
+	const [results, setResults] = useState<KeywordResult[] | null>(null);
 	const [loading, setLoading] = useState(false);
 
 	const handleSearch = async () => {
@@ -109,33 +117,33 @@ export default function KeywordTool({ mode = "research" }) {
 			{results && (
 				<Card>
 					<CardContent className="p-0">
-						<Table>
-							<TableHeader>
-								<TableRow>
+						<Table className="">
+							<TableHeader className="">
+								<TableRow className="">
 									<TableHead className="w-[40%]">Keyword</TableHead>
 									{mode === "research" ? (
 										<>
-											<TableHead>Volume</TableHead>
-											<TableHead>CPC</TableHead>
-											<TableHead>Difficulty</TableHead>
+											<TableHead className="">Volume</TableHead>
+											<TableHead className="">CPC</TableHead>
+											<TableHead className="">Difficulty</TableHead>
 										</>
 									) : (
 										<>
-											<TableHead>Position</TableHead>
-											<TableHead>Change</TableHead>
+											<TableHead className="">Position</TableHead>
+											<TableHead className="">Change</TableHead>
 										</>
 									)}
 								</TableRow>
 							</TableHeader>
-							<TableBody>
+							<TableBody className="">
 								{results.map((row, i) => (
-									<TableRow key={i}>
+									<TableRow key={i} className="">
 										<TableCell className="font-medium">{row.keyword}</TableCell>
 										{mode === "research" ? (
 											<>
-												<TableCell>{row.volume}</TableCell>
-												<TableCell>{row.cpc}</TableCell>
-												<TableCell>
+												<TableCell className="">{row.volume}</TableCell>
+												<TableCell className="">{row.cpc}</TableCell>
+												<TableCell className="">
 													<span
 														className={`px-2 py-1 rounded text-xs font-bold ${
 															row.difficulty === "Easy"
@@ -156,9 +164,9 @@ export default function KeywordTool({ mode = "research" }) {
 												</TableCell>
 												<TableCell
 													className={
-														row.change.startsWith("+")
+														row.change?.startsWith("+")
 															? "text-green-600"
-															: row.change.startsWith("-")
+															: row.change?.startsWith("-")
 																? "text-red-500"
 																: "text-muted-foreground"
 													}
