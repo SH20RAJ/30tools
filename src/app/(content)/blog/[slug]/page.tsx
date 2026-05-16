@@ -64,12 +64,44 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 		author: {
 			"@type": "Organization",
 			name: "30tools",
+			url: "https://30tools.com",
 		},
 		publisher: {
 			"@type": "Organization",
 			name: "30tools",
+			url: "https://30tools.com",
+			logo: {
+				"@type": "ImageObject",
+				url: "https://30tools.com/icons/icon-512x512.png",
+			},
 		},
 		mainEntityOfPage: `https://30tools.com/blog/${article.slug}`,
+		image: "https://30tools.com/og-image.jpg",
+	};
+
+	const breadcrumbSchema = {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: [
+			{
+				"@type": "ListItem",
+				position: 1,
+				name: "Home",
+				item: "https://30tools.com",
+			},
+			{
+				"@type": "ListItem",
+				position: 2,
+				name: "Blog",
+				item: "https://30tools.com/blog",
+			},
+			{
+				"@type": "ListItem",
+				position: 3,
+				name: article.title,
+				item: `https://30tools.com/blog/${article.slug}`,
+			},
+		],
 	};
 
 	return (
@@ -173,6 +205,12 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
 					__html: JSON.stringify(articleSchema),
+				}}
+			/>
+			<script
+				type="application/ld+json"
+				dangerouslySetInnerHTML={{
+					__html: JSON.stringify(breadcrumbSchema),
 				}}
 			/>
 		</div>

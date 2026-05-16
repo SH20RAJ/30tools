@@ -33,9 +33,57 @@ export default function BlogPage() {
 		{ slug: "ai-tools-alternatives-free", label: "AI tools alternatives free" },
 	];
 
+	const blogSchema = {
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		name: "Blog & Guides for Free Online Tools",
+		description: "Actionable guides, tool lists, and tutorials for SEO, developer workflows, and everyday online conversion tasks.",
+		url: "https://30tools.com/blog",
+		mainEntity: {
+			"@type": "ItemList",
+			itemListElement: sortedArticles.slice(0, 10).map((article, i) => ({
+				"@type": "ListItem",
+				position: i + 1,
+				name: article.title,
+				url: `https://30tools.com/blog/${article.slug}`,
+			})),
+		},
+	};
+
+	const breadcrumbSchema = {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: [
+			{
+				"@type": "ListItem",
+				position: 1,
+				name: "Home",
+				item: "https://30tools.com",
+			},
+			{
+				"@type": "ListItem",
+				position: 2,
+				name: "Blog",
+				item: "https://30tools.com/blog",
+			},
+		],
+	};
+
 	return (
 		<div className="min-h-screen bg-background text-foreground flex flex-col">
 			<main className="flex-1">
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(blogSchema),
+					}}
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify(breadcrumbSchema),
+					}}
+				/>
 				<section className="border-b border-border/40 bg-gradient-to-b from-primary/5 to-transparent">
 					<div className="container mx-auto max-w-6xl px-4 py-14 md:py-20">
 						<p className="text-xs font-semibold uppercase tracking-[0.2em] text-primary mb-4">
