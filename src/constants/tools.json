@@ -984,7 +984,61 @@
             "improve-picture-resolution"
           ],
           "popular": true,
-          "category": "image"
+          "category": "image",
+          "features": [
+            "Enhance photo quality using AI-powered image processing",
+            "Upscale images to higher resolutions without losing quality",
+            "Improve sharpness, contrast, and color balance automatically",
+            "Remove noise and grain from low-light photos",
+            "Works with JPG, PNG, WebP, and other common formats",
+            "100% browser-based processing — your photos stay private",
+            "No signup or account required",
+            "Free for personal and commercial use"
+          ],
+          "faqs": [
+            {
+              "question": "How do I enhance a photo quality?",
+              "answer": "Upload your photo by clicking the upload area or dragging and dropping your image. The AI will automatically analyze and enhance the photo's quality, sharpness, and color balance. Download the improved version."
+            },
+            {
+              "question": "Can I upscale a low-resolution image?",
+              "answer": "Yes, our AI photo enhancer can upscale images to higher resolutions while adding realistic detail. The AI intelligently fills in missing pixels to create a sharper, clearer image."
+            },
+            {
+              "question": "Is my photo data private?",
+              "answer": "Yes, all image processing happens directly in your browser. Your photos are never uploaded to or stored on our servers. The enhancement is 100% client-side."
+            },
+            {
+              "question": "What image formats are supported?",
+              "answer": "The photo enhancer supports all common image formats including JPG, JPEG, PNG, WebP, BMP, and GIF. Output is typically in the same format as the input."
+            },
+            {
+              "question": "Is this photo enhancer free?",
+              "answer": "Yes, 30tools Photo Enhancer is completely free with no registration required. Enhance unlimited photos with no watermarks or quality restrictions."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Upload Your Photo",
+              "description": "Click the upload area or drag and drop your image file. You can also paste a screenshot from your clipboard."
+            },
+            {
+              "title": "Select Enhancement Options",
+              "description": "Choose the enhancement type — auto-enhance, upscale resolution, sharpen, denoise, or adjust colors."
+            },
+            {
+              "title": "Apply Enhancement",
+              "description": "Click the Enhance button and wait a moment while the AI processes your image."
+            },
+            {
+              "title": "Compare Before and After",
+              "description": "Use the comparison slider to see the difference between the original and enhanced photo."
+            },
+            {
+              "title": "Download Enhanced Photo",
+              "description": "Click Download to save the enhanced image to your device in high quality."
+            }
+          ]
         },
         {
           "id": "png-to-bmp-converter",
