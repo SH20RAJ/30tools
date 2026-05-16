@@ -78,6 +78,11 @@ const nextConfig = {
 						value:
 							"camera=(), microphone=(), geolocation=(), browsing-topics=()",
 					},
+					{
+						key: "Content-Security-Policy",
+						value:
+							"default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://www.clarity.ms https://assets.onedollarstats.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;",
+					},
 				],
 			},
 			{
