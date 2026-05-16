@@ -27,14 +27,14 @@ const nextConfig = {
 
 	// Performance optimizations
 	experimental: {
-		optimizeCss: false,
+		optimizeCss: true,
 		optimizePackageImports: [
 			"lucide-react",
 			"@radix-ui/react-icons",
 			"react-icons",
 			"framer-motion",
 		],
-		webVitalsAttribution: ["CLS", "LCP", "FCP", "FID", "TTFB"],
+		webVitalsAttribution: ["CLS", "LCP", "INP", "FCP", "TTFB"],
 	},
 
 	// Bundle dependencies for pages router
@@ -60,10 +60,6 @@ const nextConfig = {
 					{
 						key: "X-DNS-Prefetch-Control",
 						value: "on",
-					},
-					{
-						key: "X-XSS-Protection",
-						value: "1; mode=block",
 					},
 					{
 						key: "X-Frame-Options",
@@ -99,6 +95,15 @@ const nextConfig = {
 					{
 						key: "Cache-Control",
 						value: "public, max-age=31536000, immutable",
+					},
+				],
+			},
+			{
+				source: "/",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, s-maxage=3600, stale-while-revalidate=86400",
 					},
 				],
 			},
