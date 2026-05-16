@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChannelIDFinderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Title Generator Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-title-generator",
-        "name": "YouTube Title Generator",
-        "description": "Generate catchy and SEO-friendly titles for your YouTube videos instantly. Our free online tool suggests high-CTR titles based on your topic and keywords to help you get more views.",
-        "route": "/youtube-title-generator",
-        "extraSlugs": [
-                "free-youtube-title-generator-online",
-                "youtube-title-generator-tool",
-                "viral-youtube-title-maker"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-title-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-title-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<YouTubeChannelIDFinderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<YouTubeChannelIDFinderTool />
+		</ToolLayout>
 	);
 }

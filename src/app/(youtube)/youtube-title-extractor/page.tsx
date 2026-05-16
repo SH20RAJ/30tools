@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Title Extractor Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-title-extractor",
-        "name": "YouTube Title Extractor",
-        "description": "Extract the exact title from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool.",
-        "route": "/youtube-title-extractor",
-        "extraSlugs": [
-                "free-youtube-title-extractor-online",
-                "youtube-title-extractor-tool",
-                "google-title-rewrites",
-                "seo-title-analyzer",
-                "page-title-optimization",
-                "get-youtube-video-title"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-title-extractor");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-title-extractor",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<DownloaderEngine />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

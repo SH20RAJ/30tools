@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BaseConverter from "@/components/tools/shared/BaseConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free ASCII to Text Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "ascii-to-text-converter",
-        "name": "ASCII to Text Converter",
-        "description": "Convert ASCII character codes back to readable text instantly. Our free online tool makes it easy to decode ASCII sequences for development and debugging tasks.",
-        "route": "/ascii-to-text-converter",
-        "extraSlugs": [
-                "free-ascii-to-text-converter-online",
-                "ascii-to-text-converter-tool",
-                "decode-ascii-to-text"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/ascii-to-text-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/ascii-to-text-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BaseConverter converterKind="ascii-to-text" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BaseConverter />
+		</ToolLayout>
 	);
 }

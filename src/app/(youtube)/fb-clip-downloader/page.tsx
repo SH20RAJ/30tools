@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Fb Clip Downloader Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "fb-clip-downloader",
-        "name": "Fb Clip Downloader",
-        "description": "Download Facebook video clips and highlights in high resolution instantly. Our free online downloader is fast, secure, and easy to use. No signup required for unlimited downloads.",
-        "route": "/fb-clip-downloader",
-        "extraSlugs": [
-                "fb-clip-downloader",
-                "fb-highlights-downloader",
-                "save-facebook-videos-hd"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/fb-clip-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/fb-clip-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<DownloaderEngine />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

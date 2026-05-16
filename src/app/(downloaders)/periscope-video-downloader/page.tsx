@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Periscope Video Downloader Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "periscope-video-downloader",
-        "name": "Periscope Video Downloader",
-        "description": "Download Periscope videos and live stream replays easily. Our free online tool helps you save historical broadcast content for offline viewing before it disappears.",
-        "route": "/periscope-video-downloader",
-        "extraSlugs": [
-                "free-periscope-downloader-online",
-                "save-periscope-replays-hd"
-        ],
-        "popular": false,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/periscope-video-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/periscope-video-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Periscope Video Downloader" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

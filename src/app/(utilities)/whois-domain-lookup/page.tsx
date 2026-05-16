@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Whois Domain Lookup Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "whois-domain-lookup",
-        "name": "Whois Domain Lookup",
-        "description": "Free whois domain lookup tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/whois-domain-lookup",
-        "extraSlugs": [
-                "free-whois-domain-lookup-online",
-                "whois-domain-lookup-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/whois-domain-lookup");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/whois-domain-lookup",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<BuiltInSafeHttp toolId="whois-domain-lookup" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSafeHttp />
+		</ToolLayout>
 	);
 }

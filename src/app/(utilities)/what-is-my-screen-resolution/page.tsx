@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ScreenResolutionTool from "@/components/tools/built-ins/ScreenResolutionTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free What Is My Screen Resolution Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "what-is-my-screen-resolution",
-        "name": "What Is My Screen Resolution",
-        "description": "Free what is my screen resolution tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/what-is-my-screen-resolution",
-        "extraSlugs": [
-                "free-what-is-my-screen-resolution-online",
-                "what-is-my-screen-resolution-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/what-is-my-screen-resolution");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/what-is-my-screen-resolution",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<ScreenResolutionTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ScreenResolutionTool />
+		</ToolLayout>
 	);
 }

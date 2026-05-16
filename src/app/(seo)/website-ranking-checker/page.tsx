@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import WebsiteRankingCheckerTool from "@/components/tools/seo/WebsiteRankingCheckerTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Website Ranking Checker Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "website-ranking-checker",
-        "name": "Website Ranking Checker",
-        "description": "Free website ranking checker tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/website-ranking-checker",
-        "extraSlugs": [
-                "free-website-ranking-checker-online",
-                "website-ranking-checker-tool",
-                "website-map-maker",
-                "check-website-errors",
-                "search-ranking-monitor",
-                "local-search-ranking"
-        ],
-        "popular": false,
-        "category": "seo"
-};
+	const tool = getToolByRoute("/website-ranking-checker");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/website-ranking-checker",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<WebsiteRankingCheckerTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<WebsiteRankingCheckerTool />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free WebP to JPG Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "webp-to-jpg-converter",
-        "name": "WebP to JPG Converter",
-        "description": "Convert WebP images to JPG format for maximum compatibility across all devices and platforms. Our free online converter is fast, secure, and preserves image detail.",
-        "route": "/webp-to-jpg-converter",
-        "extraSlugs": [
-                "free-webp-to-jpg-converter-online",
-                "webp-to-jpg-converter-tool",
-                "webp-to-jpeg-online"
-        ],
-        "popular": false,
-        "category": "image"
-};
+	const tool = getToolByRoute("/webp-to-jpg-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/webp-to-jpg-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<ImageConverterTool defaultOutputFormat="jpeg" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ImageConverterTool />
+		</ToolLayout>
 	);
 }

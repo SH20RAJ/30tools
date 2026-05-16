@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChannelIDFinderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Comment Picker Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-comment-picker",
-        "name": "YouTube Comment Picker",
-        "description": "Pick a random winner from your YouTube video comments instantly. Our free online Comment Picker is perfect for giveaways, contests, and audience engagement. Fast and fair.",
-        "route": "/youtube-comment-picker",
-        "extraSlugs": [
-                "color-picker",
-                "free-youtube-comment-picker-online",
-                "online-color-picker",
-                "youtube-comment-picker-tool",
-                "youtube-comment-responder",
-                "youtube-giveaway-winner-generator"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-comment-picker");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-comment-picker",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<YouTubeChannelIDFinderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<YouTubeChannelIDFinderTool />
+		</ToolLayout>
 	);
 }

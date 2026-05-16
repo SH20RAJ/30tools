@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Pinterest Image Downloader Online – Fast & No Signup | 30tools",
@@ -27,46 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "pinterest-image-downloader",
-        "name": "Pinterest Image Downloader",
-        "description": "Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup required, instant downloads, and 100% private.",
-        "route": "/pinterest-image-downloader",
-        "extraSlugs": [
-                "free pinterest image downloader",
-                "download pinterest images hd",
-                "pinterest photo saver",
-                "pinterest image downloader no watermark",
-                "save pinterest pins",
-                "pinterest mood board downloader",
-                "pinterest image downloader online",
-                "pinterest picture downloader free"
-        ],
-        "popular": true,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/pinterest-image-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/pinterest-image-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Pinterest Image Downloader" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

@@ -112,7 +112,7 @@ export default function PDFUnlock() {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
                         <Unlock className="h-6 w-6" />
@@ -131,14 +131,14 @@ export default function PDFUnlock() {
                     <Button 
                         variant="outline" 
                         onClick={() => fileInputRef.current?.click()}
-                        className="rounded-none border-primary/20 hover:border-primary/50"
+                        className="border-primary/20 hover:border-primary/50"
                     >
                         <Upload className="mr-2 h-4 w-4" /> {file ? "Change PDF" : "Select PDF"}
                     </Button>
                     <Button 
                         disabled={!file || !password || isProcessing || !pdflib}
                         onClick={unlockPDF}
-                        className="rounded-none bg-primary hover:bg-primary/90"
+                        className="bg-primary hover:bg-primary/90"
                     >
                         {isProcessing ? (
                             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Unlocking...</>
@@ -162,9 +162,9 @@ export default function PDFUnlock() {
                     {!file ? (
                         <div 
                             onClick={() => fileInputRef.current?.click()}
-                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all rounded-none text-center"
+                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all text-center"
                         >
-                            <div className="p-6 bg-primary/5 rounded-none group-hover:scale-110 transition-transform">
+                            <div className="p-6 bg-primary/5 group-hover:scale-110 transition-transform">
                                 <Lock className="h-12 w-12 text-primary/40 group-hover:text-primary/60" />
                             </div>
                             <h3 className="mt-6 text-xl font-bold">Upload Locked PDF</h3>
@@ -178,9 +178,9 @@ export default function PDFUnlock() {
                             </div>
                         </div>
                     ) : (
-                        <Card className="rounded-none border-border/40 bg-card/40 overflow-hidden">
+                        <Card className="border-border/40 bg-card/40 overflow-hidden">
                             <div className="p-12 flex flex-col items-center justify-center bg-muted/30 border-b border-border/40">
-                                <div className="p-6 bg-destructive/10 rounded-none mb-6 relative">
+                                <div className="p-6 bg-destructive/10 mb-6 relative">
                                     <FileText className="h-16 w-16 text-destructive" />
                                     <div className="absolute bottom-0 right-0 p-1 bg-background rounded-full">
                                         <Lock className="h-6 w-6 text-destructive" />
@@ -188,13 +188,13 @@ export default function PDFUnlock() {
                                 </div>
                                 <h3 className="text-xl font-bold truncate max-w-md">{file.name}</h3>
                                 <div className="mt-4 flex gap-4">
-                                    <Badge variant="secondary" className="rounded-none">{(file.size / (1024 * 1024)).toFixed(2)} MB</Badge>
-                                    <Badge variant="outline" className="rounded-none border-destructive/20 text-destructive uppercase tracking-widest font-bold">Locked PDF</Badge>
+                                    <Badge variant="secondary" className="">{(file.size / (1024 * 1024)).toFixed(2)} MB</Badge>
+                                    <Badge variant="outline" className="border-destructive/20 text-destructive uppercase tracking-widest font-bold">Locked PDF</Badge>
                                 </div>
                             </div>
                             <CardContent className="p-8 space-y-8">
                                 <div className="max-w-md mx-auto space-y-6">
-                                    <Alert variant="destructive" className="rounded-none border-destructive/20 bg-destructive/5">
+                                    <Alert variant="destructive" className="border-destructive/20 bg-destructive/5">
                                         <AlertCircle className="h-4 w-4" />
                                         <AlertTitle className="text-xs font-bold uppercase tracking-widest">Password Required</AlertTitle>
                                         <AlertDescription className="text-xs leading-relaxed">
@@ -212,7 +212,7 @@ export default function PDFUnlock() {
                                                     placeholder="Enter current password..." 
                                                     value={password}
                                                     onChange={(e) => setPassword(e.target.value)}
-                                                    className="rounded-none pr-10 border-destructive/20 focus-visible:ring-destructive/30"
+                                                    className="pr-10 border-destructive/20 focus-visible:ring-destructive/30"
                                                 />
                                                 <button 
                                                     type="button"
@@ -228,7 +228,7 @@ export default function PDFUnlock() {
                                             size="lg"
                                             disabled={!password || isProcessing || !pdflib}
                                             onClick={unlockPDF}
-                                            className="w-full rounded-none h-14 font-bold uppercase tracking-widest bg-destructive hover:bg-destructive/90"
+                                            className="w-full h-14 font-bold uppercase tracking-widest bg-destructive hover:bg-destructive/90"
                                         >
                                             {isProcessing ? "Unlocking..." : "Decrypt & Download Unlocked PDF"}
                                         </Button>
@@ -242,7 +242,7 @@ export default function PDFUnlock() {
                                             <h4 className="font-bold">Success! PDF Unlocked</h4>
                                             <p className="text-sm text-muted-foreground">The decrypted version has been downloaded to your computer.</p>
                                         </div>
-                                        <Button variant="outline" size="sm" onClick={() => window.location.reload()} className="rounded-none">
+                                        <Button variant="outline" size="sm" onClick={() => window.location.reload()} className="">
                                             <Download className="h-4 w-4 mr-2" /> Download Again
                                         </Button>
                                     </div>
@@ -254,7 +254,7 @@ export default function PDFUnlock() {
 
                 {/* Sidebar Info */}
                 <div className="space-y-6">
-                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                    <Card className="border-border/40 bg-card/50 backdrop-blur-sm">
                         <CardHeader className="pb-4 border-b border-border/40">
                             <CardTitle className="text-xs font-bold uppercase tracking-widest flex items-center gap-2">
                                 <Unlock className="h-4 w-4 text-primary" /> Why Unlock?
@@ -276,7 +276,7 @@ export default function PDFUnlock() {
                         </CardContent>
                     </Card>
 
-                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardContent className="p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <ShieldCheck className="h-5 w-5 text-primary" />

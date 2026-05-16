@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JavaScript Beautifier Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "javascript-beautifier",
-        "name": "JavaScript Beautifier",
-        "description": "Format and prettify your JavaScript code instantly. Our free online JS Beautifier improves code readability, fixes indentation, and helps you understand complex scripts easily.",
-        "route": "/javascript-beautifier",
-        "extraSlugs": [
-                "free-javascript-beautifier-online",
-                "javascript-beautifier-tool",
-                "obfuscate-javascript",
-                "prettify-js-code-online"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/javascript-beautifier");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/javascript-beautifier",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInMarkup toolId="javascript-beautifier" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInMarkup />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Length Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "length-converter",
-        "name": "Length Converter",
-        "description": "Free length converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/length-converter",
-        "extraSlugs": [
-                "free-length-converter-online",
-                "length-converter-tool",
-                "weight-length-temp-converter"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/length-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/length-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<UniversalUnitConverter preset="length" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<UniversalUnitConverter />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Reddit Media Saver Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "reddit-media-saver",
-        "name": "Reddit Media Saver",
-        "description": "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing.",
-        "route": "/reddit-media-saver",
-        "extraSlugs": [
-                "instagram-media-saver",
-                "reddit-media-saver",
-                "twitter-media-saver",
-                "reddit-video-downloader-hd"
-        ],
-        "popular": false,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/reddit-media-saver");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/reddit-media-saver",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Reddit Media Saver" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

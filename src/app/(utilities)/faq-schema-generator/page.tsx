@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import FaqSchemaGenerator from "@/components/tools/built-ins/FaqSchemaGenerator";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free FAQ Schema Generator Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "faq-schema-generator",
-        "name": "FAQ Schema Generator",
-        "description": "Free faq schema generator tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/faq-schema-generator",
-        "extraSlugs": [
-                "free-faq-schema-generator-online",
-                "faq-schema-generator-tool",
-                "schema-creator-online"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/faq-schema-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/faq-schema-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<FaqSchemaGenerator />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<FaqSchemaGenerator />
+		</ToolLayout>
 	);
 }

@@ -5623,7 +5623,61 @@
             "randomness-generator"
           ],
           "popular": true,
-          "category": "utilities"
+          "category": "utilities",
+          "features": [
+            "Generate cryptographically strong random passwords",
+            "Customize password length from 8 to 128 characters",
+            "Include or exclude uppercase, lowercase, numbers, and symbols",
+            "One-click copy to clipboard for easy use",
+            "Password strength indicator shows security level",
+            "100% client-side generation — passwords never leave your browser",
+            "Generate multiple passwords at once",
+            "No signup or account required"
+          ],
+          "faqs": [
+            {
+              "question": "How do I create a strong password?",
+              "answer": "Use the password generator above to create a random password with at least 16 characters, including uppercase, lowercase, numbers, and special symbols. Avoid using personal information or common words."
+            },
+            {
+              "question": "How long should a strong password be?",
+              "answer": "A strong password should be at least 12-16 characters long. For critical accounts like banking or email, use 20+ characters. Longer passwords are exponentially harder to crack."
+            },
+            {
+              "question": "Is this password generator secure?",
+              "answer": "Yes, passwords are generated entirely in your browser using cryptographic random number generation. No passwords are sent to or stored on our servers. The generation happens 100% client-side."
+            },
+            {
+              "question": "Should I use the same password for multiple accounts?",
+              "answer": "Never reuse passwords across accounts. If one account is compromised, all accounts with the same password are at risk. Use a unique password for each account and consider a password manager."
+            },
+            {
+              "question": "Is this password generator free?",
+              "answer": "Yes, 30tools Password Generator is completely free with no registration required. Generate unlimited strong passwords with no restrictions."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Set Password Length",
+              "description": "Use the slider or input field to set your desired password length. 16 characters or more is recommended for strong security."
+            },
+            {
+              "title": "Choose Character Types",
+              "description": "Select which character types to include: uppercase letters (A-Z), lowercase letters (a-z), numbers (0-9), and special symbols (!@#$%)."
+            },
+            {
+              "title": "Generate Password",
+              "description": "Click the Generate button to create a random password based on your selected settings."
+            },
+            {
+              "title": "Check Strength",
+              "description": "Review the password strength indicator. Aim for a Strong or Very Strong rating for maximum security."
+            },
+            {
+              "title": "Copy and Use",
+              "description": "Click the Copy button to copy the password to your clipboard, then paste it into the account or application where you need it."
+            }
+          ]
         },
         {
           "id": "paypal-fee-calculator",

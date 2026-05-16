@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Video/Audio Downloader Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-downloader",
-        "name": "YouTube Video/Audio Downloader",
-        "description": "Download YouTube videos and audio in multiple formats and qualities. Our free online downloader is fast, secure, and works on all devices without signup. High-quality MP4 and MP3 supported.",
-        "route": "/youtube-downloader",
-        "extraSlugs": [
-                "download-youtube-video-for-imovie",
-                "youtube-to-mp4-safe-online",
-                "fast-youtube-video-downloader"
-        ],
-        "popular": true,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<DownloaderEngine />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

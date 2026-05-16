@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free CSS Beautifier Online – Fast & No Signup | 30tools",
@@ -27,54 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "css-beautifier",
-        "name": "CSS Beautifier",
-        "description": "Format and prettify your CSS code instantly with our free online CSS Beautifier. Improve code readability, fix indentation, and organize your stylesheets for better maintenance. Fast and secure.",
-        "route": "/css-beautifier",
-        "extraSlugs": [
-                "beautify-css",
-                "compress-css-online",
-                "compress-html-css-js",
-                "css-beautifier-tool",
-                "css-box-shadow",
-                "css-formatter",
-                "css-gradient-maker",
-                "css-optimizer-online",
-                "css-shadow-maker",
-                "format-html-css-js",
-                "free-css-beautifier-online",
-                "json-beautifier",
-                "make-css-gradients",
-                "minify-css-file",
-                "reduce-css-size",
-                "online-css-formatter"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/css-beautifier");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/css-beautifier",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInMarkup toolId="css-beautifier" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInMarkup />
+		</ToolLayout>
 	);
 }

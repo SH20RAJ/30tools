@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import PDFToWord from "@/components/tools/pdf/PDFToWord";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free PDF to Word Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "pdf-to-word",
-        "name": "PDF to Word",
-        "description": "Convert PDF files to editable Word documents",
-        "route": "/pdf-to-word",
-        "extraSlugs": [
-                "convert-pdf-to-docx-editable-free",
-                "editable-pdf-to-word",
-                "microsoft-word-to-pdf",
-                "pdf-to-doc-converter",
-                "save-word-as-pdf",
-                "word-document-to-pdf"
-        ],
-        "popular": true,
-        "category": "pdf"
-};
+	const tool = getToolByRoute("/pdf-to-word");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/pdf-to-word",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "pdf" }}>
-				<PDFToWord />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<PDFToWord />
+		</ToolLayout>
 	);
 }

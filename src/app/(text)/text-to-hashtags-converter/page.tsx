@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TagsFromTextTool from "@/components/tools/text/TagsFromTextTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Text to Hashtags Converter Online – Fast & No Signup | 30tools",
@@ -27,43 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "text-to-hashtags-converter",
-        "name": "Text to Hashtags Converter",
-        "description": "Convert your text into trending hashtags for social media instantly. Our free tool helps you optimize posts for Instagram, TikTok, and Twitter with relevant, search-friendly tags.",
-        "route": "/text-to-hashtags-converter",
-        "extraSlugs": [
-                "free-text-to-hashtags-converter-online",
-                "text-to-hashtags-converter-tool",
-                "trending-instagram-hashtags",
-                "best-hashtags-for-reels",
-                "social-media-tag-generator"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/text-to-hashtags-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/text-to-hashtags-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<TagsFromTextTool prefix="#" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<TagsFromTextTool />
+		</ToolLayout>
 	);
 }

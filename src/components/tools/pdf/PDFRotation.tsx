@@ -186,7 +186,7 @@ export default function PDFRotation() {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
                         <RotateCw className="h-6 w-6" />
@@ -200,14 +200,14 @@ export default function PDFRotation() {
                     <Button 
                         variant="outline" 
                         onClick={() => fileInputRef.current?.click()}
-                        className="rounded-none border-primary/20 hover:border-primary/50"
+                        className="border-primary/20 hover:border-primary/50"
                     >
                         <Upload className="mr-2 h-4 w-4" /> {file ? "Change PDF" : "Select PDF"}
                     </Button>
                     <Button 
                         disabled={pages.length === 0 || isProcessing || !pdflib}
                         onClick={savePDF}
-                        className="rounded-none bg-primary hover:bg-primary/90"
+                        className="bg-primary hover:bg-primary/90"
                     >
                         {isProcessing ? (
                             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Saving...</>
@@ -231,9 +231,9 @@ export default function PDFRotation() {
                     {!file ? (
                         <div 
                             onClick={() => fileInputRef.current?.click()}
-                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all rounded-none text-center"
+                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all text-center"
                         >
-                            <div className="p-6 bg-primary/5 rounded-none group-hover:scale-110 transition-transform">
+                            <div className="p-6 bg-primary/5 group-hover:scale-110 transition-transform">
                                 <FileText className="h-12 w-12 text-primary/40 group-hover:text-primary/60" />
                             </div>
                             <h3 className="mt-6 text-xl font-bold">Upload PDF to Rotate</h3>
@@ -250,7 +250,7 @@ export default function PDFRotation() {
                         <div className="space-y-4">
                             <div className="flex items-center justify-between mb-2">
                                 <div className="flex items-center gap-2">
-                                    <Badge variant="secondary" className="rounded-none uppercase tracking-tighter">{file.name}</Badge>
+                                    <Badge variant="secondary" className="uppercase tracking-tighter">{file.name}</Badge>
                                     <span className="text-xs text-muted-foreground">{pages.length} Pages</span>
                                 </div>
                                 <div className="flex gap-2">
@@ -269,7 +269,7 @@ export default function PDFRotation() {
                                         <span>Analyzing Pages...</span>
                                         <span>{loadingProgress}%</span>
                                     </div>
-                                    <Progress value={loadingProgress} className="h-1 rounded-none bg-primary/10" />
+                                    <Progress value={loadingProgress} className="h-1 bg-primary/10" />
                                 </div>
                             )}
 
@@ -277,7 +277,7 @@ export default function PDFRotation() {
                                 {pages.map((page) => (
                                     <Card 
                                         key={page.pageNumber} 
-                                        className="rounded-none border-border/40 bg-card/40 overflow-hidden group"
+                                        className="border-border/40 bg-card/40 overflow-hidden group"
                                     >
                                         <div className="aspect-[3/4] relative bg-muted p-4 flex items-center justify-center overflow-hidden">
                                             <div 
@@ -306,7 +306,7 @@ export default function PDFRotation() {
                                                 variant="ghost" 
                                                 size="sm" 
                                                 onClick={() => rotatePage(page.pageNumber, 'ccw')}
-                                                className="h-8 rounded-none text-[10px] font-bold uppercase tracking-widest"
+                                                className="h-8 text-[10px] font-bold uppercase tracking-widest"
                                             >
                                                 <RotateCcw className="h-3 w-3" />
                                             </Button>
@@ -314,7 +314,7 @@ export default function PDFRotation() {
                                                 variant="ghost" 
                                                 size="sm" 
                                                 onClick={() => rotatePage(page.pageNumber, 'cw')}
-                                                className="h-8 rounded-none text-[10px] font-bold uppercase tracking-widest"
+                                                className="h-8 text-[10px] font-bold uppercase tracking-widest"
                                             >
                                                 <RotateCw className="h-3 w-3" />
                                             </Button>
@@ -328,7 +328,7 @@ export default function PDFRotation() {
 
                 {/* Sidebar Info */}
                 <div className="space-y-6">
-                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                    <Card className="border-border/40 bg-card/50 backdrop-blur-sm">
                         <CardHeader className="pb-4 border-b border-border/40">
                             <CardTitle className="text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
                                 <Settings2 className="h-4 w-4 text-primary" /> Options
@@ -342,7 +342,7 @@ export default function PDFRotation() {
                                         variant="outline" 
                                         onClick={() => rotateAll('cw')}
                                         disabled={pages.length === 0}
-                                        className="rounded-none h-10 text-[10px] font-bold uppercase tracking-widest"
+                                        className="h-10 text-[10px] font-bold uppercase tracking-widest"
                                     >
                                         Rotate All 90°
                                     </Button>
@@ -353,7 +353,7 @@ export default function PDFRotation() {
                                             rotateAll('cw');
                                         }}
                                         disabled={pages.length === 0}
-                                        className="rounded-none h-10 text-[10px] font-bold uppercase tracking-widest"
+                                        className="h-10 text-[10px] font-bold uppercase tracking-widest"
                                     >
                                         Rotate All 180°
                                     </Button>
@@ -361,7 +361,7 @@ export default function PDFRotation() {
                                         variant="ghost" 
                                         onClick={() => setPages(prev => prev.map(p => ({ ...p, rotation: 0 })))}
                                         disabled={pages.length === 0}
-                                        className="rounded-none h-10 text-[10px] font-bold uppercase tracking-widest text-destructive"
+                                        className="h-10 text-[10px] font-bold uppercase tracking-widest text-destructive"
                                     >
                                         Reset All
                                     </Button>
@@ -370,7 +370,7 @@ export default function PDFRotation() {
 
                             <div className="pt-4 border-t border-border/40">
                                 <Button 
-                                    className="w-full rounded-none h-12 font-bold uppercase tracking-widest"
+                                    className="w-full h-12 font-bold uppercase tracking-widest"
                                     disabled={pages.length === 0 || isProcessing || !pdflib}
                                     onClick={savePDF}
                                 >
@@ -380,7 +380,7 @@ export default function PDFRotation() {
                         </CardContent>
                     </Card>
 
-                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardContent className="p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <LayoutGrid className="h-5 w-5 text-primary" />

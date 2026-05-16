@@ -15,7 +15,7 @@ import {
 	Shield,
 } from "lucide-react";
 import { useCallback, useState } from "react";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
+import { toast } from "sonner";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -221,9 +221,8 @@ export default function JsonFormatterTool() {
 	const handleCopy = async (text) => {
 		try {
 			await navigator.clipboard.writeText(text);
-			// In a real app, you'd show a toast notification here
-			alert("Copied to clipboard!");
-		} catch (_err) {
+			toast.success("Copied to clipboard!");
+		} catch (err) {
 			console.error("Failed to copy:", err);
 		}
 	};
@@ -265,32 +264,7 @@ export default function JsonFormatterTool() {
 	};
 
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-6xl">
-			<div className="text-center mb-8">
-				<h2 className="text-4xl font-bold mb-4">
-					Free JSON Formatter & Validator
-				</h2>
-				<p className="text-xl text-muted-foreground mb-6">
-					Format, validate, and analyze JSON data with detailed statistics and
-					error reporting. Perfect for developers working with APIs and data
-					structures.
-				</p>
-
-				<div className="flex flex-wrap justify-center gap-4 mb-6">
-					<div className="flex items-center gap-2">
-						<CheckCircle className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Real-time Validation</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<BarChart3 className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Detailed Analytics</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<Shield className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Client-Side Processing</span>
-					</div>
-				</div>
-			</div>
+		<div className="space-y-6 p-6">
 
 			{/* Input Section */}
 			<Card className="mb-6">
@@ -593,142 +567,6 @@ export default function JsonFormatterTool() {
 					</CardContent>
 				</Card>
 			)}
-
-			{/* Features Grid */}
-			<div className="grid gap-6 md:grid-cols-3 mb-8">
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<CheckCircle className="h-5 w-5" />
-							Real-time Validation
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							Instant JSON validation with detailed error messages and
-							line-by-line analysis.
-						</p>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<BarChart3 className="h-5 w-5" />
-							Detailed Analytics
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							Comprehensive statistics including structure analysis, data type
-							counts, and size metrics.
-						</p>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<Shield className="h-5 w-5" />
-							Secure Processing
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							All processing happens locally in your browser. Your JSON data
-							never leaves your device.
-						</p>
-					</CardContent>
-				</Card>
-			</div>
-
-			{/* Use Cases */}
-			<Card className="mb-8">
-				<CardHeader>
-					<CardTitle>Perfect For</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<div className="grid gap-6 md:grid-cols-2">
-						<div>
-							<h4 className="font-medium mb-3">API Development</h4>
-							<ul className="text-sm space-y-2 text-muted-foreground">
-								<li>• Validate API response formats</li>
-								<li>• Format JSON for documentation</li>
-								<li>• Debug malformed JSON data</li>
-								<li>• Analyze data structure complexity</li>
-								<li>• Optimize payload sizes</li>
-							</ul>
-						</div>
-						<div>
-							<h4 className="font-medium mb-3">Data Processing</h4>
-							<ul className="text-sm space-y-2 text-muted-foreground">
-								<li>• Clean up messy JSON files</li>
-								<li>• Prepare data for databases</li>
-								<li>• Validate configuration files</li>
-								<li>• Format export data</li>
-								<li>• Analyze data structures</li>
-							</ul>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
-
-			{/* FAQ */}
-			<Card>
-				<CardHeader>
-					<CardTitle>Frequently Asked Questions</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<div className="space-y-4">
-						<div>
-							<h4 className="font-medium mb-2">What makes JSON invalid?</h4>
-							<p className="text-sm text-muted-foreground">
-								Common issues include missing quotes around strings, trailing
-								commas, unescaped characters, and mismatched brackets or braces.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">
-								What's the difference between formatted and minified JSON?
-							</h4>
-							<p className="text-sm text-muted-foreground">
-								Formatted JSON includes indentation and line breaks for
-								readability. Minified JSON removes all unnecessary whitespace to
-								reduce file size.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">
-								Is there a size limit for JSON input?
-							</h4>
-							<p className="text-sm text-muted-foreground">
-								The tool can handle large JSON files, but very large files ( -
-								10MB) may slow down your browser due to client-side processing.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">
-								Can I use this for JSON with comments?
-							</h4>
-							<p className="text-sm text-muted-foreground">
-								Standard JSON doesn't support comments. This tool validates
-								strict JSON. For JSON with comments (JSONC), remove comments
-								first.
-							</p>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
-
-			{/* Social Share */}
-			<div className="mt-8">
-				<SocialShareButtons
-					toolName="JSON Formatter"
-					toolDescription="Free online JSON formatter and validator. Format, minify, and validate JSON with syntax highlighting and error detection"
-					toolUrl="https://30tools.com/json-formatter"
-					category="developer"
-				/>
-			</div>
 		</div>
 	);
 }

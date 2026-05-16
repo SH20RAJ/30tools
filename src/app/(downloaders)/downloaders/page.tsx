@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Downloaders Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "downloaders",
-        "name": "Downloaders",
-        "description": "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free.",
-        "route": "/downloaders",
-        "extraSlugs": [
-                "all-social-media-downloader",
-                "free-online-video-saver"
-        ],
-        "popular": false,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/downloaders");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/downloaders",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Downloaders" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

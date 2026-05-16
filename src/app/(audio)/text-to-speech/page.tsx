@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Text to Speech Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "text-to-speech",
-        "name": "Text to Speech",
-        "description": "Convert text to natural sounding speech audio",
-        "route": "/text-to-speech",
-        "extraSlugs": [
-                "free-text-to-speech-with-no-word-limit",
-                "natural-sounding-tts-online",
-                "text-to-speech-ai"
-        ],
-        "popular": true,
-        "category": "audio"
-};
+	const tool = getToolByRoute("/text-to-speech");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/text-to-speech",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "audio" }}>
-				<TextToSpeechTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<TextToSpeechTool />
+		</ToolLayout>
 	);
 }

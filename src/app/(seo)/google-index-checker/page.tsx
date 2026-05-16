@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Google Index Checker Online – Fast & No Signup | 30tools",
@@ -27,43 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "google-index-checker",
-        "name": "Google Index Checker",
-        "description": "Free google index checker tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/google-index-checker",
-        "extraSlugs": [
-                "bulk-google-index-checker",
-                "free-google-index-checker-online",
-                "google-index-checker-tool",
-                "google-index-status",
-                "website-index-checker"
-        ],
-        "popular": false,
-        "category": "seo"
-};
+	const tool = getToolByRoute("/google-index-checker");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/google-index-checker",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<BuiltInSafeHttp toolId="google-index-checker" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSafeHttp />
+		</ToolLayout>
 	);
 }

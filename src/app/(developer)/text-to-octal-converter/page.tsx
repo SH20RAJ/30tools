@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BaseConverter from "@/components/tools/shared/BaseConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Text to Octal Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "text-to-octal-converter",
-        "name": "Text to Octal Converter",
-        "description": "Convert text into octal numeric values instantly. Our free online converter provides base-8 representations for every character in your text for technical analysis.",
-        "route": "/text-to-octal-converter",
-        "extraSlugs": [
-                "free-text-to-octal-converter-online",
-                "text-to-octal-converter-tool",
-                "string-to-octal-code"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/text-to-octal-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/text-to-octal-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BaseConverter converterKind="text-to-octal" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BaseConverter />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import WordCounterTool from "@/components/tools/text/WordCounterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Word Counter Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "word-counter",
-        "name": "Word Counter",
-        "description": "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private.",
-        "route": "/word-counter",
-        "extraSlugs": [
-                "character-counter",
-                "essay-word-counter",
-                "free-word-counter-online",
-                "letter-counter",
-                "word-counter-tool",
-                "analyze-text-length"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/word-counter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/word-counter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<WordCounterTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<WordCounterTool />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Advanced Sitemap Generator Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "sitemap-generator",
-        "name": "Advanced Sitemap Generator",
-        "description": "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata.",
-        "route": "/sitemap-generator",
-        "extraSlugs": [
-                "extract-urls-from-sitemap",
-                "google-sitemap-generator",
-                "xml-sitemap-builder"
-        ],
-        "popular": true,
-        "category": "seo"
-};
+	const tool = getToolByRoute("/sitemap-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/sitemap-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<BuiltInSafeHttp toolId="sitemap-generator" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSafeHttp />
+		</ToolLayout>
 	);
 }

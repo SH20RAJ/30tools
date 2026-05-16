@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import LegalTemplateGenerator from "@/components/tools/built-ins/LegalTemplateGenerator";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Disclaimer Generator Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "disclaimer-generator",
-        "name": "Disclaimer Generator",
-        "description": "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal requirements.",
-        "route": "/disclaimer-generator",
-        "extraSlugs": [
-                "free-disclaimer-generator-online",
-                "disclaimer-generator-tool",
-                "website-legal-disclaimer-maker"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/disclaimer-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/disclaimer-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<LegalTemplateGenerator kind="disclaimer" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<LegalTemplateGenerator />
+		</ToolLayout>
 	);
 }

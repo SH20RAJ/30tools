@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChannelIDFinderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Title Length Checker Online – Fast & No Signup | 30tools",
@@ -27,46 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-title-length-checker",
-        "name": "YouTube Title Length Checker",
-        "description": "Check if your YouTube video title is the optimal length for search and browse. Our free online checker helps you avoid truncation and ensure your full title is visible in search results.",
-        "route": "/youtube-title-length-checker",
-        "extraSlugs": [
-                "free-youtube-title-length-checker-online",
-                "meta-length-checker",
-                "serp-title-checker",
-                "text-length-checker",
-                "title-rewrite-checker",
-                "title-tag-checker",
-                "youtube-title-length-checker-tool",
-                "optimize-youtube-title-length"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-title-length-checker");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-title-length-checker",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<YouTubeChannelIDFinderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<YouTubeChannelIDFinderTool />
+		</ToolLayout>
 	);
 }

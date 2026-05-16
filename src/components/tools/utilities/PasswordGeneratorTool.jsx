@@ -3,7 +3,9 @@
 import { useState, useMemo } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 import { Copy, RefreshCw, Shield } from "lucide-react";
 
@@ -69,10 +71,10 @@ export default function PasswordGeneratorTool() {
 				</div>
 				<div className="grid grid-cols-2 gap-2">
 					{options.map((opt) => (
-						<label key={opt.label} className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded-lg hover:bg-muted/40">
-							<input type="checkbox" checked={opt.checked} onChange={(e) => opt.set(e.target.checked)} className="rounded" />
-							{opt.label}
-						</label>
+						<div key={opt.label} className="flex items-center gap-2 text-sm cursor-pointer p-2 rounded-lg hover:bg-muted/40">
+							<Checkbox checked={opt.checked} onCheckedChange={(checked) => opt.set(checked)} />
+							<Label className="cursor-pointer">{opt.label}</Label>
+						</div>
 					))}
 				</div>
 				<Button onClick={generate} className="w-full gap-2">

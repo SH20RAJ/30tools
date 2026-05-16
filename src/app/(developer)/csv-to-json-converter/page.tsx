@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerialization";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free CSV to JSON Converter Online – Fast & No Signup | 30tools",
@@ -27,55 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "csv-to-json-converter",
-        "name": "CSV to JSON Converter",
-        "description": "Convert CSV files to JSON format instantly. Our free online converter makes it easy to transform spreadsheet data into developer-friendly JSON code for web applications and APIs.",
-        "route": "/csv-to-json-converter",
-        "extraSlugs": [
-                "comma-separated-to-json",
-                "convert-csv-to-json",
-                "convert-csv-to-json-code",
-                "csv-data-to-json",
-                "csv-file-to-json",
-                "csv-json-parser",
-                "csv-to-json",
-                "csv-to-json-converter-tool",
-                "csv-to-object-converter",
-                "format-json-file",
-                "free-csv-to-json-converter-online",
-                "json-converter-from-csv",
-                "json-web-token-decoder",
-                "online-csv-json-tool",
-                "prettify-json-online",
-                "transform-csv-data",
-                "convert-comma-separated-values-to-json"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/csv-to-json-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/csv-to-json-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInSerialization toolId="csv-to-json-converter" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSerialization />
+		</ToolLayout>
 	);
 }

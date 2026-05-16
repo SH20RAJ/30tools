@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BaseConverter from "@/components/tools/shared/BaseConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Binary to Octal Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "binary-to-octal-converter",
-        "name": "Binary to Octal Converter",
-        "description": "Convert binary numbers to octal format instantly. Our free online converter provides quick and accurate base transformations for developers and technical students.",
-        "route": "/binary-to-octal-converter",
-        "extraSlugs": [
-                "free-binary-to-octal-converter-online",
-                "binary-to-octal-converter-tool",
-                "binary-to-base8-converter"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/binary-to-octal-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/binary-to-octal-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BaseConverter converterKind="binary-to-octal" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BaseConverter />
+		</ToolLayout>
 	);
 }

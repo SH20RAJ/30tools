@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import WordToNumberTool from "@/components/tools/text/WordToNumberTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Word to Number Converter Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "word-to-number-converter",
-        "name": "Word to Number Converter",
-        "description": "Convert words into digits instantly with our free online Word to Number converter. Perfect for data entry, educational exercises, and technical documentation cleanup.",
-        "route": "/word-to-number-converter",
-        "extraSlugs": [
-                "free-word-to-number-converter-online",
-                "word-to-number-converter-tool",
-                "word-to-number",
-                "convert-text-to-digits"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/word-to-number-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/word-to-number-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<WordToNumberTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<WordToNumberTool />
+		</ToolLayout>
 	);
 }

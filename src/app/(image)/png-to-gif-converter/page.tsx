@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free PNG to GIF Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "png-to-gif-converter",
-        "name": "PNG to GIF Converter",
-        "description": "Convert PNG photos to GIF format instantly. Perfect for web graphics and simple animations. Free, secure, and works entirely in your browser without file uploads.",
-        "route": "/png-to-gif-converter",
-        "extraSlugs": [
-                "free-png-to-gif-converter-online",
-                "png-to-gif-converter-tool",
-                "convert-png-to-gif-online"
-        ],
-        "popular": false,
-        "category": "image"
-};
+	const tool = getToolByRoute("/png-to-gif-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/png-to-gif-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<ImageConverterTool defaultOutputFormat="gif" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ImageConverterTool />
+		</ToolLayout>
 	);
 }

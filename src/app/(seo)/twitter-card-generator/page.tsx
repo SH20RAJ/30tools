@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TwitterCardGenerator from "@/components/tools/built-ins/TwitterCardGenerator";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Twitter Card Generator Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "twitter-card-generator",
-        "name": "Twitter Card Generator",
-        "description": "Free twitter card generator tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/twitter-card-generator",
-        "extraSlugs": [
-                "free-twitter-card-generator-online",
-                "twitter-card-generator-tool",
-                "twitter-header-size-maker",
-                "twitter-bio-maker"
-        ],
-        "popular": false,
-        "category": "seo"
-};
+	const tool = getToolByRoute("/twitter-card-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/twitter-card-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<TwitterCardGenerator />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<TwitterCardGenerator />
+		</ToolLayout>
 	);
 }

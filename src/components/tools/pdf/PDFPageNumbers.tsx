@@ -118,7 +118,7 @@ export default function PDFPageNumbers() {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
                         <Hash className="h-6 w-6" />
@@ -137,14 +137,14 @@ export default function PDFPageNumbers() {
                     <Button 
                         variant="outline" 
                         onClick={() => fileInputRef.current?.click()}
-                        className="rounded-none border-primary/20 hover:border-primary/50"
+                        className="border-primary/20 hover:border-primary/50"
                     >
                         <Upload className="mr-2 h-4 w-4" /> {file ? "Change PDF" : "Select PDF"}
                     </Button>
                     <Button 
                         disabled={!file || isProcessing || !pdflib}
                         onClick={addPageNumbers}
-                        className="rounded-none bg-primary hover:bg-primary/90"
+                        className="bg-primary hover:bg-primary/90"
                     >
                         {isProcessing ? (
                             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</>
@@ -168,9 +168,9 @@ export default function PDFPageNumbers() {
                     {!file ? (
                         <div 
                             onClick={() => fileInputRef.current?.click()}
-                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all rounded-none text-center"
+                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all text-center"
                         >
-                            <div className="p-6 bg-primary/5 rounded-none group-hover:scale-110 transition-transform">
+                            <div className="p-6 bg-primary/5 group-hover:scale-110 transition-transform">
                                 <FileText className="h-12 w-12 text-primary/40 group-hover:text-primary/60" />
                             </div>
                             <h3 className="mt-6 text-xl font-bold">Upload PDF to Paginate</h3>
@@ -184,15 +184,15 @@ export default function PDFPageNumbers() {
                             </div>
                         </div>
                     ) : (
-                        <Card className="rounded-none border-border/40 bg-card/40 overflow-hidden">
+                        <Card className="border-border/40 bg-card/40 overflow-hidden">
                             <div className="p-12 flex flex-col items-center justify-center bg-muted/30 border-b border-border/40 relative">
-                                <div className="p-6 bg-primary/10 rounded-none mb-6">
+                                <div className="p-6 bg-primary/10 mb-6">
                                     <FileText className="h-16 w-16 text-primary" />
                                 </div>
                                 <h3 className="text-xl font-bold truncate max-w-md">{file.name}</h3>
                                 <div className="mt-4 flex gap-4">
-                                    <Badge variant="secondary" className="rounded-none">{(file.size / (1024 * 1024)).toFixed(2)} MB</Badge>
-                                    <Badge variant="outline" className="rounded-none border-primary/20 text-primary">Ready to Paginate</Badge>
+                                    <Badge variant="secondary" className="">{(file.size / (1024 * 1024)).toFixed(2)} MB</Badge>
+                                    <Badge variant="outline" className="border-primary/20 text-primary">Ready to Paginate</Badge>
                                 </div>
                                 
                                 {/* Position Preview Overlay */}
@@ -230,7 +230,7 @@ export default function PDFPageNumbers() {
                                                         variant={position === pos.id ? "default" : "outline"}
                                                         size="sm"
                                                         onClick={() => setPosition(pos.id)}
-                                                        className="rounded-none text-[10px] font-bold uppercase tracking-tighter h-10 px-1"
+                                                        className="text-[10px] font-bold uppercase tracking-tighter h-10 px-1"
                                                     >
                                                         {pos.icon} {pos.id.replace('-', ' ')}
                                                     </Button>
@@ -247,7 +247,7 @@ export default function PDFPageNumbers() {
                                                     type="number" 
                                                     value={startFrom} 
                                                     onChange={(e) => setStartFrom(parseInt(e.target.value) || 1)}
-                                                    className="rounded-none h-10 border-primary/10"
+                                                    className="h-10 border-primary/10"
                                                 />
                                             </div>
                                             <div className="space-y-2">
@@ -256,7 +256,7 @@ export default function PDFPageNumbers() {
                                                     type="number" 
                                                     value={fontSize} 
                                                     onChange={(e) => setFontSize(parseInt(e.target.value) || 12)}
-                                                    className="rounded-none h-10 border-primary/10"
+                                                    className="h-10 border-primary/10"
                                                 />
                                             </div>
                                         </div>
@@ -268,7 +268,7 @@ export default function PDFPageNumbers() {
                                         size="lg"
                                         disabled={isProcessing || !pdflib}
                                         onClick={addPageNumbers}
-                                        className="rounded-none px-12 h-14 font-bold uppercase tracking-widest"
+                                        className="px-12 h-14 font-bold uppercase tracking-widest"
                                     >
                                         {isProcessing ? "Processing..." : "Generate PDF with Numbers"}
                                     </Button>
@@ -280,7 +280,7 @@ export default function PDFPageNumbers() {
 
                 {/* Sidebar Info */}
                 <div className="space-y-6">
-                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                    <Card className="border-border/40 bg-card/50 backdrop-blur-sm">
                         <CardHeader className="pb-4 border-b border-border/40">
                             <CardTitle className="text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
                                 <Settings2 className="h-4 w-4 text-primary" /> Options
@@ -302,7 +302,7 @@ export default function PDFPageNumbers() {
                         </CardContent>
                     </Card>
 
-                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardContent className="p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <AlignCenter className="h-5 w-5 text-primary" />

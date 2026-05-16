@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BaseConverter from "@/components/tools/shared/BaseConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free HEX to Text Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "hex-to-text-converter",
-        "name": "HEX to Text Converter",
-        "description": "Convert hexadecimal strings back to readable text instantly. Our free online HEX to Text tool is perfect for decoding data, debugging, and discovering hidden text streams.",
-        "route": "/hex-to-text-converter",
-        "extraSlugs": [
-                "free-hex-to-text-converter-online",
-                "hex-to-text-converter-tool",
-                "decode-hex-to-string"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/hex-to-text-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/hex-to-text-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BaseConverter converterKind="hex-to-text" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BaseConverter />
+		</ToolLayout>
 	);
 }

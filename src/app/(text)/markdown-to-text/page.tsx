@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import MarkdownToText from "@/components/tools/text/MarkdownToText";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Markdown to Text Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "markdown-to-text",
-        "name": "Markdown to Text",
-        "description": "Convert Markdown formatted text to clean plain text instantly. Perfect for cleaning up content from ChatGPT, Claude, and GitHub.",
-        "route": "/markdown-to-text",
-        "extraSlugs": [
-                "markdown-to-plain-text",
-                "remove-markdown-formatting",
-                "md-to-txt-converter"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/markdown-to-text");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/markdown-to-text",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<MarkdownToText />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<MarkdownToText />
+		</ToolLayout>
 	);
 }

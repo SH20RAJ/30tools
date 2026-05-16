@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Loan Calculator Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "loan-calculator",
-        "name": "Loan Calculator",
-        "description": "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/loan-calculator",
-        "extraSlugs": [
-                "free-loan-calculator-online",
-                "loan-calculator-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/loan-calculator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/loan-calculator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<BuiltInCalculators kind="loan-calculator" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInCalculators />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ScreenResolutionTool from "@/components/tools/built-ins/ScreenResolutionTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Screen Resolution Simulator Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "screen-resolution-simulator",
-        "name": "Screen Resolution Simulator",
-        "description": "Free screen resolution simulator tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/screen-resolution-simulator",
-        "extraSlugs": [
-                "free-screen-recorder",
-                "free-screen-resolution-simulator-online",
-                "improve-picture-resolution",
-                "screen-recorder",
-                "screen-resolution-simulator-tool",
-                "smartphone-view-simulator"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/screen-resolution-simulator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/screen-resolution-simulator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<ScreenResolutionTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ScreenResolutionTool />
+		</ToolLayout>
 	);
 }

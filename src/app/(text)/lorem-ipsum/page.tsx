@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGeneratorTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Lorem Ipsum Generator Online – Fast & No Signup | 30tools",
@@ -27,46 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "lorem-ipsum-generator",
-        "name": "Lorem Ipsum Generator",
-        "description": "Generate custom Lorem Ipsum text for your designs.",
-        "route": "/lorem-ipsum",
-        "extraSlugs": [
-                "placeholder-text-generator",
-                "lipsum-generator",
-                "lorem-ipsum-generator",
-                "blind-text-generator",
-                "dummy-text-maker",
-                "standard-lorem-ipsum-text",
-                "lorem-ipsum-text-copy",
-                "lorem-ipsum-generator-for-figma"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/lorem-ipsum");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/lorem-ipsum",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<LoremIpsumGeneratorTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<LoremIpsumGeneratorTool />
+		</ToolLayout>
 	);
 }

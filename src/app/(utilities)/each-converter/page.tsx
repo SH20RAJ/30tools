@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Each Converter Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "each-converter",
-        "name": "Each Converter",
-        "description": "Free each converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/each-converter",
-        "extraSlugs": [
-                "free-each-converter-online",
-                "each-converter-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/each-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/each-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<UniversalUnitConverter preset="typography" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<UniversalUnitConverter />
+		</ToolLayout>
 	);
 }

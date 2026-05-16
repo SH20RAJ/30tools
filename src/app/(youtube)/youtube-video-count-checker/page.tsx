@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChannelIDFinderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Video Count Checker Online – Fast & No Signup | 30tools",
@@ -27,45 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-video-count-checker",
-        "name": "YouTube Video Count Checker",
-        "description": "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel auditing.",
-        "route": "/youtube-video-count-checker",
-        "extraSlugs": [
-                "free-youtube-video-count-checker-online",
-                "youtube-video-count-checker-tool",
-                "count-words-online",
-                "character-count-tool",
-                "count-characters-online",
-                "tweet-character-count",
-                "check-total-youtube-videos"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-video-count-checker");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-video-count-checker",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<YouTubeChannelIDFinderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<YouTubeChannelIDFinderTool />
+		</ToolLayout>
 	);
 }

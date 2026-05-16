@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChannelIDFinderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Timestamp Link Generator Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-timestamp-link-generator",
-        "name": "YouTube Timestamp Link Generator",
-        "description": "Create direct links to specific parts of any YouTube video instantly. Our free online tool helps you share precise moments with friends, students, or your audience. Fast and easy.",
-        "route": "/youtube-timestamp-link-generator",
-        "extraSlugs": [
-                "free-youtube-timestamp-link-generator-online",
-                "timestamp-decoder",
-                "timestamp-translator",
-                "youtube-timestamp-generator",
-                "youtube-timestamp-link-generator-tool",
-                "link-to-youtube-at-specific-time"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-timestamp-link-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-timestamp-link-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<YouTubeChannelIDFinderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<YouTubeChannelIDFinderTool />
+		</ToolLayout>
 	);
 }

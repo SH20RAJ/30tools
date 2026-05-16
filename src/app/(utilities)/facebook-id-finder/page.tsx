@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Facebook ID Finder Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "facebook-id-finder",
-        "name": "Facebook ID Finder",
-        "description": "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/facebook-id-finder",
-        "extraSlugs": [
-                "free-facebook-id-finder-online",
-                "facebook-id-finder-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/facebook-id-finder");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/facebook-id-finder",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<BuiltInSafeHttp toolId="facebook-id-finder" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSafeHttp />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Image Resizer Online – Fast & No Signup | 30tools",
@@ -27,45 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "image-resizer",
-        "name": "Image Resizer",
-        "description": "Resize images with custom dimensions and aspect ratios",
-        "route": "/image-resizer",
-        "extraSlugs": [
-                "facebook-cover-resizer",
-                "free-image-resizer-online",
-                "ig-story-image-resizer",
-                "linkedin-banner-resizer",
-                "photo-resizer-free",
-                "resize-image-for-etsy-banner",
-                "social-media-resizer"
-        ],
-        "popular": false,
-        "category": "image"
-};
+	const tool = getToolByRoute("/image-resizer");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/image-resizer",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<ImageResizerTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ImageResizerTool />
+		</ToolLayout>
 	);
 }

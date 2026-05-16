@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import JsonFormatterTool from "@/components/tools/code/JsonFormatterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JSON Editor Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "json-editor",
-        "name": "JSON Editor",
-        "description": "Edit, modify, and manage JSON data with our free online JSON Editor. Features syntax highlighting, tree view, and validation to help you structure your data perfectly.",
-        "route": "/json-editor",
-        "extraSlugs": [
-                "free-json-editor-online",
-                "json-editor-tool",
-                "online-json-structurer"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/json-editor");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/json-editor",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<JsonFormatterTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<JsonFormatterTool />
+		</ToolLayout>
 	);
 }

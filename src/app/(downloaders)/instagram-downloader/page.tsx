@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Instagram Downloader Online – Fast & No Signup | 30tools",
@@ -27,55 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "instagram-downloader",
-        "name": "Instagram Downloader",
-        "description": "Download Instagram videos, reels, stories, and photos in high quality",
-        "route": "/instagram-downloader",
-        "extraSlugs": [
-                "aesthetic-fonts-for-instagram",
-                "aesthetic-instagram-bio",
-                "download-from-instagram",
-                "download-instagram-reels",
-                "grow-on-instagram",
-                "ig-video-photo-loader",
-                "instagram-downloader-mp4",
-                "instagram-dp-downloader",
-                "instagram-media-saver",
-                "instagram-photo-downloader",
-                "instagram-picture-saver",
-                "instagram-profile-pic-downloader",
-                "instagram-tool-downloader",
-                "save-instagram-clips",
-                "save-instagram-content-online",
-                "save-instagram-photos",
-                "watch-instagram-stories"
-        ],
-        "popular": true,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/instagram-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/instagram-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Instagram Downloader" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

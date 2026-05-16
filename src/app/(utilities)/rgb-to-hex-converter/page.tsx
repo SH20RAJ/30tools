@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RgbHexConverter from "@/components/tools/built-ins/RgbHexConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free RGB to HEX Converter Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "rgb-to-hex-converter",
-        "name": "RGB to HEX Converter",
-        "description": "Free rgb to hex converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/rgb-to-hex-converter",
-        "extraSlugs": [
-                "free-rgb-to-hex-converter-online",
-                "rgb-to-hex-converter-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/rgb-to-hex-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/rgb-to-hex-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RgbHexConverter mode="rgb2hex" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<RgbHexConverter />
+		</ToolLayout>
 	);
 }

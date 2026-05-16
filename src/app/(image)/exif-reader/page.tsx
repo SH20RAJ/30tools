@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free EXIF Reader Online – Fast & No Signup | 30tools",
@@ -27,46 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "exif-reader",
-        "name": "EXIF Reader",
-        "description": "Extract metadata and EXIF data from images including camera settings and GPS location",
-        "route": "/exif-reader",
-        "extraSlugs": [
-                "view-photo-metadata-online",
-                "exif-data-viewer-free",
-                "online-exif-reader",
-                "photo-metadata-extractor",
-                "read-image-metadata",
-                "photo-exif-viewer",
-                "read-exif-data-online",
-                "online-tts-reader"
-        ],
-        "popular": true,
-        "category": "image"
-};
+	const tool = getToolByRoute("/exif-reader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/exif-reader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<ExifReaderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ExifReaderTool />
+		</ToolLayout>
 	);
 }

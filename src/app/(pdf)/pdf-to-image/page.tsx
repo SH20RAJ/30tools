@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import PDFToImage from "@/components/tools/pdf/PDFToImage";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free PDF to Image Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "pdf-to-image",
-        "name": "PDF to Image",
-        "description": "Convert PDF pages to high-quality JPG, PNG images",
-        "route": "/pdf-to-image",
-        "extraSlugs": [
-                "convert-pdf-to-high-quality-jpg",
-                "pdf-to-png-converter"
-        ],
-        "popular": true,
-        "category": "pdf"
-};
+	const tool = getToolByRoute("/pdf-to-image");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/pdf-to-image",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "pdf" }}>
-				<PDFToImage />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<PDFToImage />
+		</ToolLayout>
 	);
 }

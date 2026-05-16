@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BrowserDetectTool from "@/components/tools/built-ins/BrowserDetectTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free What Is My Browser Online – Fast & No Signup | 30tools",
@@ -27,43 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "what-is-my-browser",
-        "name": "What Is My Browser",
-        "description": "Free what is my browser tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/what-is-my-browser",
-        "extraSlugs": [
-                "free-what-is-my-browser-online",
-                "how-strong-is-my-password",
-                "is-on-whatsapp",
-                "record-browser-tab",
-                "what-is-my-browser-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/what-is-my-browser");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/what-is-my-browser",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<BrowserDetectTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BrowserDetectTool />
+		</ToolLayout>
 	);
 }

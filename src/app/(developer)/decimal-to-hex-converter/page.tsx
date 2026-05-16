@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BaseConverter from "@/components/tools/shared/BaseConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Decimal to HEX Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "decimal-to-hex-converter",
-        "name": "Decimal to HEX Converter",
-        "description": "Transform decimal numbers into hexadecimal format instantly. Our free online tool is perfect for web development, low-level programming, and color code analysis. Fast and private.",
-        "route": "/decimal-to-hex-converter",
-        "extraSlugs": [
-                "free-decimal-to-hex-converter-online",
-                "decimal-to-hex-converter-tool",
-                "convert-decimal-to-hexadecimal"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/decimal-to-hex-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/decimal-to-hex-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BaseConverter converterKind="decimal-to-hex" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BaseConverter />
+		</ToolLayout>
 	);
 }

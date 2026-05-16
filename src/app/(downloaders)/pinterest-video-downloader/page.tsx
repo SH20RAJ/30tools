@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Pinterest Video Downloader Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "pinterest-video-downloader",
-        "name": "Pinterest Video Downloader",
-        "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF\u2014on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
-        "route": "/pinterest-video-downloader",
-        "extraSlugs": [
-                "how-to-download-pinterest-videos-to-camera-roll",
-                "pinterest-video-download-hd",
-                "pinterest-video-saver-hd",
-                "save-pinterest-video"
-        ],
-        "popular": true,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/pinterest-video-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/pinterest-video-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Pinterest Video Downloader" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

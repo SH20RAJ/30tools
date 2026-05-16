@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerialization";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JSON to Text Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "json-to-text-converter",
-        "name": "JSON to Text Converter",
-        "description": "Convert JSON data into readable plain text instantly. Our free online tool is perfect for extracting values and creating human-readable documentation from raw data.",
-        "route": "/json-to-text-converter",
-        "extraSlugs": [
-                "free-json-to-text-converter-online",
-                "json-to-text-converter-tool",
-                "extract-text-from-json"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/json-to-text-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/json-to-text-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInSerialization toolId="json-to-text-converter" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSerialization />
+		</ToolLayout>
 	);
 }

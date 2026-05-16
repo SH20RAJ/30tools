@@ -52,7 +52,7 @@ export default function StructuredData({
 		const toolCategorySlug = categoryDetails?.slug || tool.category || "utilities";
 		const toolCategoryUrl = `${BASE_URL}${getCategoryHubUrl(toolCategorySlug)}`;
 
-		const toolStructuredData = {
+		const toolStructuredData: Record<string, any> = {
 			"@context": "https://schema.org",
 			"@type": "SoftwareApplication",
 			name: tool.name,
@@ -75,6 +75,19 @@ export default function StructuredData({
 				? tool.features.join(", ")
 				: "Free online tool",
 		};
+
+		// Add AggregateRating if tool has reviews
+		if (tool.reviews && tool.reviews.length > 0) {
+			const totalRating = tool.reviews.reduce((sum: number, r: any) => sum + (r.rating || 5), 0);
+			const avgRating = totalRating / tool.reviews.length;
+			toolStructuredData.aggregateRating = {
+				"@type": "AggregateRating",
+				ratingValue: avgRating.toFixed(1),
+				reviewCount: tool.reviews.length,
+				bestRating: "5",
+				worstRating: "1",
+			};
+		}
 
 		const faqData = tool.faqs
 			? {

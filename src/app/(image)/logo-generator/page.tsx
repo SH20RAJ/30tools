@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Logo Generator Online – Fast & No Signup | 30tools",
@@ -27,50 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "logo-generator",
-        "name": "Logo Generator",
-        "description": "Create professional logos with text, fonts, and custom colors",
-        "route": "/logo-generator",
-        "extraSlugs": [
-                "brand-logo-generator",
-                "business-logo-creator",
-                "business-logo-designer",
-                "company-logo-maker-free",
-                "custom-logo-maker",
-                "design-logo-free",
-                "free-logo-maker",
-                "free-logo-maker-for-twitch",
-                "gaming-logo-generator",
-                "logo-maker",
-                "online-logo-design",
-                "simple-logo-creator"
-        ],
-        "popular": true,
-        "category": "image"
-};
+	const tool = getToolByRoute("/logo-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/logo-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<LogoGeneratorTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<LogoGeneratorTool />
+		</ToolLayout>
 	);
 }

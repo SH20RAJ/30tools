@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import JSONToSchemaTool from "@/components/tools/developer/JSONToSchemaTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JSON to JSON Schema Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "json-to-json-schema",
-        "name": "JSON to JSON Schema",
-        "description": "Generate a JSON Schema from your JSON data automatically. Our free online tool helps you define validation rules and document your JSON structure for APIs.",
-        "route": "/json-to-json-schema",
-        "extraSlugs": [
-                "free-json-to-json-schema-online",
-                "json-to-json-schema-tool",
-                "schema-creator-online",
-                "infer-json-schema-from-data"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/json-to-json-schema");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/json-to-json-schema",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<JSONToSchemaTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<JSONToSchemaTool />
+		</ToolLayout>
 	);
 }

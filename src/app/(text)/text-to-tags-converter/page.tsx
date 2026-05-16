@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TagsFromTextTool from "@/components/tools/text/TagsFromTextTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Text to Tags Converter Online – Fast & No Signup | 30tools",
@@ -27,46 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "text-to-tags-converter",
-        "name": "Text to Tags Converter",
-        "description": "Extract and generate relevant meta tags from your text instantly. Our free online converter helps you create SEO tags, HTML keywords, and header tags for better web visibility.",
-        "route": "/text-to-tags-converter",
-        "extraSlugs": [
-                "free-text-to-tags-converter-online",
-                "text-to-tags-converter-tool",
-                "analyze-meta-tags",
-                "find-missing-alt-tags",
-                "generate-meta-tags",
-                "create-seo-tags",
-                "html-head-tags-maker",
-                "seo-tag-generator-free"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/text-to-tags-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/text-to-tags-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<TagsFromTextTool prefix="" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<TagsFromTextTool />
+		</ToolLayout>
 	);
 }

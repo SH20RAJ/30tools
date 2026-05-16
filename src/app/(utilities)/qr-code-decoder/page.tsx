@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import QrGeneratorPremium from "@/components/tools/utilities/QrGeneratorPremium";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free QR Code Decoder Online – Fast & No Signup | 30tools",
@@ -27,43 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "qr-code-decoder",
-        "name": "QR Code Decoder",
-        "description": "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/qr-code-decoder",
-        "extraSlugs": [
-                "create-qr-code-free",
-                "free-qr-code-decoder-online",
-                "qr-code-decoder-tool",
-                "qr-code-maker-online",
-                "url-to-qr-code"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/qr-code-decoder");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/qr-code-decoder",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<QrGeneratorPremium />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<QrGeneratorPremium />
+		</ToolLayout>
 	);
 }

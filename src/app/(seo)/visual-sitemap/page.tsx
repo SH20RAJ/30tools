@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import VisualSitemapTool from "@/components/tools/seo/VisualSitemapTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Visual Sitemap Generator Online – Fast & No Signup | 30tools",
@@ -27,39 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "visual-sitemap",
-        "name": "Visual Sitemap Generator",
-        "description": "Visualize your website's sitemap structure instantly. Enter your XML sitemap URL to generate a dynamic tree view of your site hierarchy.",
-        "route": "/visual-sitemap",
-        "extraSlugs": [
-                "visual-shadow-generator"
-        ],
-        "popular": true,
-        "category": "seo"
-};
+	const tool = getToolByRoute("/visual-sitemap");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/visual-sitemap",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<VisualSitemapTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<VisualSitemapTool />
+		</ToolLayout>
 	);
 }

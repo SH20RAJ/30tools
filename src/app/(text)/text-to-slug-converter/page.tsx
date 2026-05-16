@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import SlugTool from "@/components/tools/text/SlugTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Text to Slug Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "text-to-slug-converter",
-        "name": "Text to Slug Converter",
-        "description": "Transform any text or title into a URL-friendly slug instantly. Perfect for SEO-friendly web development, blog posts, and clean link structures. Free and fast online tool.",
-        "route": "/text-to-slug-converter",
-        "extraSlugs": [
-                "free-text-to-slug-converter-online",
-                "text-to-slug-converter-tool",
-                "url-slug-generator"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/text-to-slug-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/text-to-slug-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<SlugTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<SlugTool />
+		</ToolLayout>
 	);
 }

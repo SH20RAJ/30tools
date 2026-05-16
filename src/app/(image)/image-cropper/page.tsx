@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Image Cropper Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "image-cropper",
-        "name": "Image Cropper",
-        "description": "Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/image-cropper",
-        "extraSlugs": [
-                "free-image-cropper-online",
-                "image-cropper-tool",
-                "square-photo-cropper",
-                "free-picture-cropper"
-        ],
-        "popular": false,
-        "category": "image"
-};
+	const tool = getToolByRoute("/image-cropper");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/image-cropper",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<ImageResizerTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ImageResizerTool />
+		</ToolLayout>
 	);
 }

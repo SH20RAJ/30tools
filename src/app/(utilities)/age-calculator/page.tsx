@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Age Calculator Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "age-calculator",
-        "name": "Age Calculator",
-        "description": "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/age-calculator",
-        "extraSlugs": [
-                "free-age-calculator-online",
-                "age-calculator-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/age-calculator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/age-calculator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<BuiltInCalculators kind="age-calculator" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInCalculators />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JavaScript Minifier Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "javascript-minifier",
-        "name": "JavaScript Minifier",
-        "description": "Compress and minify your JavaScript files to reduce payload size and speed up your website. Our free online tool removes unnecessary code while preserving functionality.",
-        "route": "/javascript-minifier",
-        "extraSlugs": [
-                "free-javascript-minifier-online",
-                "javascript-minifier-tool",
-                "compress-js-online"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/javascript-minifier");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/javascript-minifier",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInMarkup toolId="javascript-minifier" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInMarkup />
+		</ToolLayout>
 	);
 }

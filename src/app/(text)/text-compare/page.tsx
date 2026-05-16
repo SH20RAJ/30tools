@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TextCompareTool from "@/components/tools/text/TextCompareTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Text Compare Online – Fast & No Signup | 30tools",
@@ -27,43 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "text-compare",
-        "name": "Text Compare",
-        "description": "Compare two text snippets side-by-side to find differences instantly. Our free online Text Compare tool highlights additions, deletions, and changes with high precision. Secure and browser-based.",
-        "route": "/text-compare",
-        "extraSlugs": [
-                "compare-google-fonts",
-                "compare-text-online",
-                "free-text-compare-online",
-                "text-compare-tool",
-                "diff-checker-online-free"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/text-compare");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/text-compare",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<TextCompareTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<TextCompareTool />
+		</ToolLayout>
 	);
 }

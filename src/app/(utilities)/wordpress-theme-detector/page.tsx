@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free WordPress Theme Detector Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "wordpress-theme-detector",
-        "name": "WordPress Theme Detector",
-        "description": "Free wordpress theme detector tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/wordpress-theme-detector",
-        "extraSlugs": [
-                "free-wordpress-theme-detector-online",
-                "wordpress-theme-detector-tool",
-                "disposable-email-detector"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/wordpress-theme-detector");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/wordpress-theme-detector",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<BuiltInSafeHttp toolId="wordpress-theme-detector" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSafeHttp />
+		</ToolLayout>
 	);
 }

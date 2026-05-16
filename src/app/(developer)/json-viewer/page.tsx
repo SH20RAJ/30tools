@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import JsonFormatterTool from "@/components/tools/code/JsonFormatterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
@@ -27,52 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "json-viewer",
-        "name": "JSON Viewer",
-        "description": "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/json-viewer",
-        "extraSlugs": [
-                "anonymous-ig-viewer",
-                "camera-metadata-viewer",
-                "facebook-story-viewer-download",
-                "free-json-viewer-online",
-                "ig-dp-viewer",
-                "ig-profile-picture-viewer",
-                "insta-dp-viewer",
-                "insta-story-viewer",
-                "insta-viewer",
-                "instagram-profile-picture-viewer",
-                "json-viewer-online",
-                "json-viewer-tool",
-                "profile-pic-viewer-instagram",
-                "story-viewer-without-account"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/json-viewer");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/json-viewer",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<JsonFormatterTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<JsonFormatterTool />
+		</ToolLayout>
 	);
 }

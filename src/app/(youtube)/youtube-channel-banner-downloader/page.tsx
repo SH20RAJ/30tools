@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Channel Banner Downloader Online – Fast & No Signup | 30tools",
@@ -27,53 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-channel-banner-downloader",
-        "name": "YouTube Channel Banner Downloader",
-        "description": "Download high-resolution YouTube channel banners and covers instantly. Our free tool helps you save channel branding for design reference or archiving. High-quality and easy to use.",
-        "route": "/youtube-channel-banner-downloader",
-        "extraSlugs": [
-                "fast-youtube-downloader",
-                "free-youtube-channel-banner-downloader-online",
-                "secure-youtube-downloader",
-                "youtube-caption-downloader",
-                "youtube-channel-banner-downloader-tool",
-                "youtube-downloader-4k",
-                "youtube-downloader-android",
-                "youtube-downloader-free",
-                "youtube-downloader-iphone",
-                "youtube-pack-downloader",
-                "youtube-srt-downloader",
-                "youtube-subtitle-downloader",
-                "youtube-subtitles-downloader",
-                "youtube-transcript-downloader",
-                "download-youtube-banner-hd"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-channel-banner-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-channel-banner-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<DownloaderEngine />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JPG to BMP Converter Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "jpg-to-bmp-converter",
-        "name": "JPG to BMP Converter",
-        "description": "Convert JPG images to BMP (Bitmap) format for legacy system compatibility. Fast, free, and secure online converter that works in your browser without uploading files to any server.",
-        "route": "/jpg-to-bmp-converter",
-        "extraSlugs": [
-                "free-jpg-to-bmp-converter-online",
-                "heic-to-jpg-converter",
-                "jpg-to-bmp-converter-tool",
-                "convert-jpeg-to-bmp"
-        ],
-        "popular": false,
-        "category": "image"
-};
+	const tool = getToolByRoute("/jpg-to-bmp-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/jpg-to-bmp-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<ImageConverterTool defaultOutputFormat="bmp" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<ImageConverterTool />
+		</ToolLayout>
 	);
 }

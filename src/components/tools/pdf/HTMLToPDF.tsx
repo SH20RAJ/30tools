@@ -109,7 +109,7 @@ export default function HTMLToPDF() {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
                         <Code className="h-6 w-6" />
@@ -123,7 +123,7 @@ export default function HTMLToPDF() {
                     <Button 
                         disabled={!html || isProcessing || !pdflib}
                         onClick={generatePDF}
-                        className="rounded-none bg-primary hover:bg-primary/90"
+                        className="bg-primary hover:bg-primary/90"
                     >
                         {isProcessing ? (
                             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</>
@@ -140,19 +140,19 @@ export default function HTMLToPDF() {
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {/* Editor Column */}
                         <div className="space-y-4">
-                            <Card className="rounded-none border-border/40 bg-card/40">
+                            <Card className="border-border/40 bg-card/40">
                                 <CardHeader className="pb-4 border-b border-border/40 flex flex-row items-center justify-between py-3">
                                     <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2">
                                         <Code className="h-3 w-3" /> HTML Editor
                                     </Label>
-                                    <Badge variant="outline" className="rounded-none h-5 text-[10px] font-bold uppercase border-primary/20 text-primary">Live Code</Badge>
+                                    <Badge variant="outline" className="h-5 text-[10px] font-bold uppercase border-primary/20 text-primary">Live Code</Badge>
                                 </CardHeader>
                                 <CardContent className="p-0">
                                     <Textarea 
                                         value={html} 
                                         onChange={(e) => setHtml(e.target.value)}
                                         placeholder="Paste your HTML here..."
-                                        className="rounded-none min-h-[500px] border-none focus-visible:ring-0 font-mono text-xs p-6 bg-transparent resize-none leading-relaxed"
+                                        className="min-h-[500px] border-none focus-visible:ring-0 font-mono text-xs p-6 bg-transparent resize-none leading-relaxed"
                                     />
                                 </CardContent>
                             </Card>
@@ -160,7 +160,7 @@ export default function HTMLToPDF() {
 
                         {/* Preview Column */}
                         <div className="space-y-4">
-                            <Card className="rounded-none border-border/40 bg-white shadow-xl overflow-hidden min-h-[500px]">
+                            <Card className="border-border/40 bg-white shadow-xl overflow-hidden min-h-[500px]">
                                 <CardHeader className="pb-4 border-b border-border/40 flex flex-row items-center justify-between py-3 bg-muted/30">
                                     <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground flex items-center gap-2 text-black/60">
                                         <Eye className="h-3 w-3" /> PDF Preview
@@ -185,7 +185,7 @@ export default function HTMLToPDF() {
 
                 {/* Sidebar Info */}
                 <div className="space-y-6">
-                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                    <Card className="border-border/40 bg-card/50 backdrop-blur-sm">
                         <CardHeader className="pb-4 border-b border-border/40">
                             <CardTitle className="text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
                                 <Settings2 className="h-4 w-4 text-primary" /> Features
@@ -207,7 +207,7 @@ export default function HTMLToPDF() {
                         </CardContent>
                     </Card>
 
-                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardContent className="p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <Monitor className="h-5 w-5 text-primary" />

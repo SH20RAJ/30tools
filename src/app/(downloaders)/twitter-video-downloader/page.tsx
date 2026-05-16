@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Twitter/X Video Downloader Online – Fast & No Signup | 30tools",
@@ -27,48 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "twitter-video-downloader",
-        "name": "Twitter/X Video Downloader",
-        "description": "Download Twitter and X platform videos and GIFs in high quality for free",
-        "route": "/twitter-video-downloader",
-        "extraSlugs": [
-                "download-twitter-clips",
-                "download-twitter-video",
-                "download-twitter-video-for-iphone",
-                "save-twitter-video",
-                "twitter-bio-maker",
-                "twitter-downloader",
-                "twitter-header-size-maker",
-                "twitter-media-saver",
-                "twitter-video-saver",
-                "x-video-downloader-online"
-        ],
-        "popular": true,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/twitter-video-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/twitter-video-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Twitter/X Video Downloader" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

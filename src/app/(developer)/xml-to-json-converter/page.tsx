@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerialization";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free XML to JSON Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "xml-to-json-converter",
-        "name": "XML to JSON Converter",
-        "description": "Convert XML documents to JSON format instantly. Our free online converter handles complex XML hierarchies to provide clean, developer-friendly JSON output for web apps.",
-        "route": "/xml-to-json-converter",
-        "extraSlugs": [
-                "free-xml-to-json-converter-online",
-                "xml-to-json-converter-tool",
-                "convert-xml-to-json-online"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/xml-to-json-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/xml-to-json-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInSerialization toolId="xml-to-json-converter" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSerialization />
+		</ToolLayout>
 	);
 }

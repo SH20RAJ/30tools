@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JSON Formatter Online – Fast & No Signup | 30tools",
@@ -27,43 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "json-formatter",
-        "name": "JSON Formatter",
-        "description": "Format and beautify your JSON data instantly for better readability. Our free online tool validates your JSON structure and provides a clean, indented view of your code.",
-        "route": "/json-formatter",
-        "extraSlugs": [
-                "beautify-json-for-email",
-                "json-validator-online",
-                "sql-formatter",
-                "xml-formatter",
-                "online-json-prettifier"
-        ],
-        "popular": true,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/json-formatter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/json-formatter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<JSONFormatterTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<JSONFormatterTool />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RomanNumeralTool from "@/components/tools/built-ins/RomanNumeralTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Roman Numerals to Number Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "roman-numerals-to-number",
-        "name": "Roman Numerals to Number",
-        "description": "Free roman numerals to number tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/roman-numerals-to-number",
-        "extraSlugs": [
-                "free-roman-numerals-to-number-online",
-                "roman-numerals-to-number-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/roman-numerals-to-number");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/roman-numerals-to-number",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RomanNumeralTool toRoman={false} />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<RomanNumeralTool />
+		</ToolLayout>
 	);
 }

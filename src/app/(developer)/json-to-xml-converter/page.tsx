@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerialization";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JSON to XML Converter Online – Fast & No Signup | 30tools",
@@ -27,53 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "json-to-xml-converter",
-        "name": "JSON to XML Converter",
-        "description": "Convert JSON data to XML format instantly. Our free online tool handles nesting and attributes to ensure a clean transformation for legacy system compatibility.",
-        "route": "/json-to-xml-converter",
-        "extraSlugs": [
-                "beautify-xml-online",
-                "convert-xml-to-json",
-                "create-xml-sitemap",
-                "format-xml-file",
-                "free-json-to-xml-converter-online",
-                "json-to-xml-converter-tool",
-                "online-xml-converter",
-                "parse-xml-to-json",
-                "validate-xml-format",
-                "xml-data-converter",
-                "xml-file-to-json",
-                "xml-indenter",
-                "xml-pretty-print",
-                "xml-sitemap-analyzer",
-                "xml-sitemap-builder"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/json-to-xml-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/json-to-xml-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInSerialization toolId="json-to-xml-converter" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSerialization />
+		</ToolLayout>
 	);
 }

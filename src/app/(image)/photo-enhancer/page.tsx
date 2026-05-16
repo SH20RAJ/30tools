@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Photo Enhancer Online – Fast & No Signup | 30tools",
@@ -27,48 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "photo-enhancer",
-        "name": "Photo Enhancer",
-        "description": "Enhance photo quality with AI-powered image enhancement",
-        "route": "/photo-enhancer",
-        "extraSlugs": [
-                "ai-photo-enhancer",
-                "cut-photo",
-                "free-photo-grid-maker",
-                "ig-photo-download-hd",
-                "instagram-profile-photo-hd",
-                "online-photo-editor",
-                "photo-collage-maker",
-                "photo-filter-editor",
-                "photo-quality-improver",
-                "upscale-illustration-online-free"
-        ],
-        "popular": true,
-        "category": "image"
-};
+	const tool = getToolByRoute("/photo-enhancer");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/photo-enhancer",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<PhotoEnhancerTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<PhotoEnhancerTool />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RgbHexConverter from "@/components/tools/built-ins/RgbHexConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Color Converter Online – Fast & No Signup | 30tools",
@@ -27,46 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "color-converter",
-        "name": "Color Converter",
-        "description": "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with precision.",
-        "route": "/color-converter",
-        "extraSlugs": [
-                "color-code-converter",
-                "color-converter-tool",
-                "color-format-changer",
-                "create-color-scheme",
-                "free-color-converter-online",
-                "rgb-color-selector",
-                "website-color-palette",
-                "convert-hex-to-rgb-online"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/color-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/color-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<RgbHexConverter mode="rgb2hex" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<RgbHexConverter />
+		</ToolLayout>
 	);
 }

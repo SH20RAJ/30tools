@@ -137,7 +137,7 @@ export default function PDFMetadataEditor() {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
                         <Tags className="h-6 w-6" />
@@ -151,14 +151,14 @@ export default function PDFMetadataEditor() {
                     <Button 
                         variant="outline" 
                         onClick={() => fileInputRef.current?.click()}
-                        className="rounded-none border-primary/20 hover:border-primary/50"
+                        className="border-primary/20 hover:border-primary/50"
                     >
                         <Upload className="mr-2 h-4 w-4" /> {file ? "Change PDF" : "Select PDF"}
                     </Button>
                     <Button 
                         disabled={!file || isProcessing || !pdflib}
                         onClick={updateMetadata}
-                        className="rounded-none bg-primary hover:bg-primary/90"
+                        className="bg-primary hover:bg-primary/90"
                     >
                         {isProcessing ? (
                             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</>
@@ -182,9 +182,9 @@ export default function PDFMetadataEditor() {
                     {!file ? (
                         <div 
                             onClick={() => fileInputRef.current?.click()}
-                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all rounded-none text-center"
+                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all text-center"
                         >
-                            <div className="p-6 bg-primary/5 rounded-none group-hover:scale-110 transition-transform">
+                            <div className="p-6 bg-primary/5 group-hover:scale-110 transition-transform">
                                 <Info className="h-12 w-12 text-primary/40 group-hover:text-primary/60" />
                             </div>
                             <h3 className="mt-6 text-xl font-bold">Upload PDF to Edit Metadata</h3>
@@ -198,7 +198,7 @@ export default function PDFMetadataEditor() {
                             </div>
                         </div>
                     ) : (
-                        <Card className="rounded-none border-border/40 bg-card/40 overflow-hidden">
+                        <Card className="border-border/40 bg-card/40 overflow-hidden">
                             <div className="p-8 border-b border-border/40 bg-muted/30">
                                 <div className="flex items-center gap-4">
                                     <div className="p-2 bg-primary/10 text-primary">
@@ -207,8 +207,8 @@ export default function PDFMetadataEditor() {
                                     <div className="flex-1 min-w-0">
                                         <h4 className="font-bold truncate">{file.name}</h4>
                                         <div className="flex gap-4 mt-1">
-                                            <Badge variant="secondary" className="rounded-none h-5 text-[10px] font-bold uppercase tracking-widest">{(file.size / (1024 * 1024)).toFixed(2)} MB</Badge>
-                                            <Badge variant="outline" className="rounded-none h-5 text-[10px] font-bold uppercase tracking-widest border-primary/20 text-primary">Metadata Loaded</Badge>
+                                            <Badge variant="secondary" className="h-5 text-[10px] font-bold uppercase tracking-widest">{(file.size / (1024 * 1024)).toFixed(2)} MB</Badge>
+                                            <Badge variant="outline" className="h-5 text-[10px] font-bold uppercase tracking-widest border-primary/20 text-primary">Metadata Loaded</Badge>
                                         </div>
                                     </div>
                                 </div>
@@ -224,7 +224,7 @@ export default function PDFMetadataEditor() {
                                                 value={metadata.title} 
                                                 onChange={(e) => setMetadata({...metadata, title: e.target.value})}
                                                 placeholder="Enter title..."
-                                                className="rounded-none h-12 border-primary/20 focus-visible:ring-primary/20"
+                                                className="h-12 border-primary/20 focus-visible:ring-primary/20"
                                             />
                                         </div>
                                         <div className="space-y-2">
@@ -235,7 +235,7 @@ export default function PDFMetadataEditor() {
                                                 value={metadata.author} 
                                                 onChange={(e) => setMetadata({...metadata, author: e.target.value})}
                                                 placeholder="Enter author name..."
-                                                className="rounded-none h-12 border-primary/20 focus-visible:ring-primary/20"
+                                                className="h-12 border-primary/20 focus-visible:ring-primary/20"
                                             />
                                         </div>
                                         <div className="space-y-2">
@@ -246,7 +246,7 @@ export default function PDFMetadataEditor() {
                                                 value={metadata.subject} 
                                                 onChange={(e) => setMetadata({...metadata, subject: e.target.value})}
                                                 placeholder="What is this PDF about?"
-                                                className="rounded-none h-12 border-primary/20 focus-visible:ring-primary/20"
+                                                className="h-12 border-primary/20 focus-visible:ring-primary/20"
                                             />
                                         </div>
                                     </div>
@@ -260,7 +260,7 @@ export default function PDFMetadataEditor() {
                                                 value={metadata.keywords} 
                                                 onChange={(e) => setMetadata({...metadata, keywords: e.target.value})}
                                                 placeholder="keyword1, keyword2, keyword3..."
-                                                className="rounded-none min-h-[120px] border-primary/20 focus-visible:ring-primary/20 resize-none"
+                                                className="min-h-[120px] border-primary/20 focus-visible:ring-primary/20 resize-none"
                                             />
                                         </div>
                                         <div className="grid grid-cols-2 gap-4">
@@ -269,7 +269,7 @@ export default function PDFMetadataEditor() {
                                                 <Input 
                                                     value={metadata.creator} 
                                                     onChange={(e) => setMetadata({...metadata, creator: e.target.value})}
-                                                    className="rounded-none h-10 border-primary/10 text-xs"
+                                                    className="h-10 border-primary/10 text-xs"
                                                 />
                                             </div>
                                             <div className="space-y-2">
@@ -277,7 +277,7 @@ export default function PDFMetadataEditor() {
                                                 <Input 
                                                     value={metadata.producer} 
                                                     onChange={(e) => setMetadata({...metadata, producer: e.target.value})}
-                                                    className="rounded-none h-10 border-primary/10 text-xs"
+                                                    className="h-10 border-primary/10 text-xs"
                                                 />
                                             </div>
                                         </div>
@@ -289,7 +289,7 @@ export default function PDFMetadataEditor() {
                                         size="lg"
                                         disabled={isProcessing || !pdflib}
                                         onClick={updateMetadata}
-                                        className="rounded-none px-12 h-14 font-bold uppercase tracking-widest"
+                                        className="px-12 h-14 font-bold uppercase tracking-widest"
                                     >
                                         {isProcessing ? "Updating..." : "Save Metadata & Download"}
                                     </Button>
@@ -301,7 +301,7 @@ export default function PDFMetadataEditor() {
 
                 {/* Sidebar Info */}
                 <div className="space-y-6">
-                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                    <Card className="border-border/40 bg-card/50 backdrop-blur-sm">
                         <CardHeader className="pb-4 border-b border-border/40">
                             <CardTitle className="text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
                                 <Settings2 className="h-4 w-4 text-primary" /> SEO Impact
@@ -323,7 +323,7 @@ export default function PDFMetadataEditor() {
                         </CardContent>
                     </Card>
 
-                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardContent className="p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <Info className="h-5 w-5 text-primary" />

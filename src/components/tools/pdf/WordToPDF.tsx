@@ -150,7 +150,7 @@ export default function WordToPDF() {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
                         <FileType className="h-6 w-6" />
@@ -169,14 +169,14 @@ export default function WordToPDF() {
                     <Button 
                         variant="outline" 
                         onClick={() => fileInputRef.current?.click()}
-                        className="rounded-none border-primary/20 hover:border-primary/50"
+                        className="border-primary/20 hover:border-primary/50"
                     >
                         <Upload className="mr-2 h-4 w-4" /> {file ? "Change Document" : "Select Word File"}
                     </Button>
                     <Button 
                         disabled={!file || isProcessing || !pdflib}
                         onClick={generatePDF}
-                        className="rounded-none bg-primary hover:bg-primary/90"
+                        className="bg-primary hover:bg-primary/90"
                     >
                         {isProcessing ? (
                             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</>
@@ -200,9 +200,9 @@ export default function WordToPDF() {
                     {!file ? (
                         <div 
                             onClick={() => fileInputRef.current?.click()}
-                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all rounded-none text-center"
+                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all text-center"
                         >
-                            <div className="p-6 bg-primary/5 rounded-none group-hover:scale-110 transition-transform">
+                            <div className="p-6 bg-primary/5 group-hover:scale-110 transition-transform">
                                 <FileText className="h-12 w-12 text-primary/40 group-hover:text-primary/60" />
                             </div>
                             <h3 className="mt-6 text-xl font-bold">Upload Word Document</h3>
@@ -216,13 +216,13 @@ export default function WordToPDF() {
                             </div>
                         </div>
                     ) : (
-                        <Card className="rounded-none border-border/40 bg-white overflow-hidden min-h-[600px]">
+                        <Card className="border-border/40 bg-white overflow-hidden min-h-[600px]">
                             <CardHeader className="bg-muted/30 border-b border-border/40 py-4 flex flex-row items-center justify-between">
                                 <div className="flex items-center gap-2">
                                     <FileCheck className="h-4 w-4 text-primary" />
                                     <span className="text-xs font-bold uppercase tracking-widest">{file.name}</span>
                                 </div>
-                                <Badge variant="outline" className="rounded-none border-primary/20 text-primary uppercase text-[10px]">Preview Mode</Badge>
+                                <Badge variant="outline" className="border-primary/20 text-primary uppercase text-[10px]">Preview Mode</Badge>
                             </CardHeader>
                             <CardContent className="p-8 md:p-12 text-black">
                                 <div 
@@ -243,7 +243,7 @@ export default function WordToPDF() {
 
                 {/* Sidebar Info */}
                 <div className="space-y-6">
-                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                    <Card className="border-border/40 bg-card/50 backdrop-blur-sm">
                         <CardHeader className="pb-4 border-b border-border/40">
                             <CardTitle className="text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
                                 <Settings2 className="h-4 w-4 text-primary" /> Info
@@ -265,7 +265,7 @@ export default function WordToPDF() {
                         </CardContent>
                     </Card>
 
-                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardContent className="p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <AlertCircle className="h-5 w-5 text-primary" />

@@ -14,6 +14,7 @@ import {
 	Trash2,
 } from "lucide-react";
 import { useCallback, useState } from "react";
+import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -91,7 +92,7 @@ export default function URLShortenerTool() {
 			setCurrentUrl("");
 			setCustomAlias("");
 		} catch (error) {
-			alert(error.message);
+			toast.error(error.message);
 		}
 		setIsProcessing(false);
 	};

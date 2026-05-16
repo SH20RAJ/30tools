@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RemoveLineBreaksTool from "@/components/tools/text/RemoveLineBreaksTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Remove Line Breaks Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "remove-line-breaks",
-        "name": "Remove Line Breaks",
-        "description": "Remove line breaks, carriage returns, and extra whitespace from your text instantly. Perfect for cleaning up copied content for clean formatting. Free and privacy-focused online tool.",
-        "route": "/remove-line-breaks",
-        "extraSlugs": [
-                "free-remove-line-breaks-online",
-                "remove-line-breaks-tool",
-                "text-cleaner-online"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/remove-line-breaks");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/remove-line-breaks",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<RemoveLineBreaksTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<RemoveLineBreaksTool />
+		</ToolLayout>
 	);
 }

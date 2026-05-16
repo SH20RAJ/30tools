@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import VttToSrtTool from "@/components/tools/text/VttToSrtTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Convert VTT to SRT Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "convert-vtt-to-srt",
-        "name": "Convert VTT to SRT",
-        "description": "Convert subtitle files from VTT to SRT format instantly. Our free online tool makes it easy to use web captions with traditional desktop video players.",
-        "route": "/convert-vtt-to-srt",
-        "extraSlugs": [
-                "free-convert-vtt-to-srt-online",
-                "convert-vtt-to-srt-tool",
-                "srt-subtitle-converter"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/convert-vtt-to-srt");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/convert-vtt-to-srt",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<VttToSrtTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<VttToSrtTool />
+		</ToolLayout>
 	);
 }

@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChannelIDFinderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Subscribe Link Generator Online – Fast & No Signup | 30tools",
@@ -27,57 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "youtube-subscribe-link-generator",
-        "name": "YouTube Subscribe Link Generator",
-        "description": "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for social media and bios.",
-        "route": "/youtube-subscribe-link-generator",
-        "extraSlugs": [
-                "create-paypal-me-link",
-                "create-short-link",
-                "create-wa-link",
-                "custom-payment-link-generator",
-                "direct-paypal-link",
-                "free-youtube-subscribe-link-generator-online",
-                "link-scraper-online",
-                "link-shortener-custom",
-                "paypal-donation-link",
-                "paypal-link-generator",
-                "reduce-link-length",
-                "shorten-link-free",
-                "wa-me-link-generator",
-                "website-link-validator",
-                "whatsapp-chat-link",
-                "whatsapp-direct-message-link",
-                "whatsapp-link-generator",
-                "youtube-subscribe-link-generator-tool",
-                "make-youtube-auto-subscribe-link"
-        ],
-        "popular": false,
-        "category": "youtube"
-};
+	const tool = getToolByRoute("/youtube-subscribe-link-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/youtube-subscribe-link-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "youtube" }}>
-				<YouTubeChannelIDFinderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<YouTubeChannelIDFinderTool />
+		</ToolLayout>
 	);
 }

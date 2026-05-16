@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitConverter";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Parts Per Converter Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "parts-per-converter",
-        "name": "Parts Per Converter",
-        "description": "Free parts per converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/parts-per-converter",
-        "extraSlugs": [
-                "free-parts-per-converter-online",
-                "parts-per-converter-tool"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/parts-per-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/parts-per-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<UniversalUnitConverter preset="dimensionless" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<UniversalUnitConverter />
+		</ToolLayout>
 	);
 }

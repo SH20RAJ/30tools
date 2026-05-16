@@ -7,9 +7,11 @@ import {
 	FileTextIcon,
 	HashIcon,
 	RefreshCwIcon,
+	ShieldIcon,
 	UploadIcon,
 } from "lucide-react";
 import { useEffect, useState, useCallback } from "react";
+import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -363,7 +365,7 @@ export default function HashGeneratorTool() {
 									const hash2 = document.getElementById("hash2").value;
 									if (hash1 && hash2) {
 										const match = compareHashes(hash1, hash2);
-										alert(match ? "Hashes match!" : "Hashes do not match.");
+										toast.success(match ? "Hashes match!" : "Hashes do not match.");
 									}
 								}}
 								className="w-full"

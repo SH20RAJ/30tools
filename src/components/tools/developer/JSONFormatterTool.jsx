@@ -292,33 +292,7 @@ export default function JSONFormatterTool() {
 	}, [formattedJson, analyzeJSON]);
 
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-7xl">
-			<div className="text-center mb-8">
-				<h2 className="text-4xl font-bold mb-4">
-					Free JSON Formatter & Validator
-				</h2>
-				<p className="text-xl text-muted-foreground mb-6">
-					Format, validate, and minify JSON data online. Perfect for developers,
-					API testing, and data processing. Includes error detection and JSON
-					analytics.
-				</p>
-
-				<div className="flex flex-wrap justify-center gap-4 mb-6">
-					<div className="flex items-center gap-2">
-						<Zap className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Instant Validation</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<Shield className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Error Detection</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<Search className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">JSON Analytics</span>
-					</div>
-				</div>
-			</div>
-
+		<div className="space-y-6 p-6">
 			<div className="grid grid-cols-1 xl:grid-cols-2 gap-6">
 				{/* Input Section */}
 				<Card>
@@ -599,43 +573,6 @@ export default function JSONFormatterTool() {
 					)}
 				</div>
 			</div>
-
-			{/* Help Section */}
-			<Card className="mt-8">
-				<CardHeader>
-					<CardTitle>JSON Formatter Guide</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<div className="grid gap-6 md:grid-cols-2">
-						<div>
-							<h4 className="font-medium mb-2">Features:</h4>
-							<ul className="text-sm space-y-1 text-muted-foreground">
-								<li>• Real-time JSON validation</li>
-								<li>• Pretty formatting with custom indentation</li>
-								<li>• JSON minification for production use</li>
-								<li>• Error detection with line numbers</li>
-								<li>• JSON analytics and statistics</li>
-								<li>• File upload and download support</li>
-								<li>• Key sorting option</li>
-								<li>• Copy to clipboard functionality</li>
-							</ul>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Common Use Cases:</h4>
-							<ul className="text-sm space-y-1 text-muted-foreground">
-								<li>• API response formatting</li>
-								<li>• Configuration file validation</li>
-								<li>• Data structure analysis</li>
-								<li>• JSON debugging and troubleshooting</li>
-								<li>• Code documentation preparation</li>
-								<li>• Database export formatting</li>
-								<li>• JSON schema validation</li>
-								<li>• Production optimization</li>
-							</ul>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
 		</div>
 	);
 }

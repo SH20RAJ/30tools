@@ -165,7 +165,7 @@ export default function ImageToPDF() {
     return (
         <div className="space-y-8 animate-in fade-in duration-700">
             {/* Header Section */}
-            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 rounded-none backdrop-blur-sm">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-card/50 p-6 border border-border/40 backdrop-blur-sm">
                 <div className="flex items-center gap-4">
                     <div className="p-3 bg-primary/10 text-primary">
                         <FileText className="h-6 w-6" />
@@ -184,14 +184,14 @@ export default function ImageToPDF() {
                     <Button 
                         variant="outline" 
                         onClick={() => fileInputRef.current?.click()}
-                        className="rounded-none border-primary/20 hover:border-primary/50"
+                        className="border-primary/20 hover:border-primary/50"
                     >
                         <Plus className="mr-2 h-4 w-4" /> Add Images
                     </Button>
                     <Button 
                         disabled={images.length === 0 || isProcessing || !pdflib}
                         onClick={generatePDF}
-                        className="rounded-none bg-primary hover:bg-primary/90"
+                        className="bg-primary hover:bg-primary/90"
                     >
                         {isProcessing ? (
                             <><Loader2 className="mr-2 h-4 w-4 animate-spin" /> Processing...</>
@@ -216,9 +216,9 @@ export default function ImageToPDF() {
                     {images.length === 0 ? (
                         <div 
                             onClick={() => fileInputRef.current?.click()}
-                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all rounded-none text-center"
+                            className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all text-center"
                         >
-                            <div className="p-6 bg-primary/5 rounded-none group-hover:scale-110 transition-transform">
+                            <div className="p-6 bg-primary/5 group-hover:scale-110 transition-transform">
                                 <Upload className="h-12 w-12 text-primary/40 group-hover:text-primary/60" />
                             </div>
                             <h3 className="mt-6 text-xl font-bold">Select or Drop Images</h3>
@@ -234,7 +234,7 @@ export default function ImageToPDF() {
                     ) : (
                         <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-4">
                             {images.map((img, index) => (
-                                <Card key={img.id} className="rounded-none border-border/40 group overflow-hidden bg-card/40">
+                                <Card key={img.id} className="border-border/40 group overflow-hidden bg-card/40">
                                     <div className="aspect-[4/3] relative overflow-hidden bg-muted">
                                         <img 
                                             src={img.preview} 
@@ -245,7 +245,7 @@ export default function ImageToPDF() {
                                             <Button 
                                                 size="icon" 
                                                 variant="secondary" 
-                                                className="rounded-none h-8 w-8"
+                                                className="h-8 w-8"
                                                 disabled={index === 0}
                                                 onClick={() => moveImage(index, 'up')}
                                             >
@@ -254,7 +254,7 @@ export default function ImageToPDF() {
                                             <Button 
                                                 size="icon" 
                                                 variant="secondary" 
-                                                className="rounded-none h-8 w-8"
+                                                className="h-8 w-8"
                                                 disabled={index === images.length - 1}
                                                 onClick={() => moveImage(index, 'down')}
                                             >
@@ -263,7 +263,7 @@ export default function ImageToPDF() {
                                             <Button 
                                                 size="icon" 
                                                 variant="destructive" 
-                                                className="rounded-none h-8 w-8"
+                                                className="h-8 w-8"
                                                 onClick={() => removeImage(img.id)}
                                             >
                                                 <X className="h-4 w-4" />
@@ -280,7 +280,7 @@ export default function ImageToPDF() {
                             ))}
                             <div 
                                 onClick={() => fileInputRef.current?.click()}
-                                className="flex flex-col items-center justify-center border-2 border-dashed border-border/60 hover:border-primary/40 bg-card/20 hover:bg-card/40 transition-all rounded-none cursor-pointer aspect-[4/3]"
+                                className="flex flex-col items-center justify-center border-2 border-dashed border-border/60 hover:border-primary/40 bg-card/20 hover:bg-card/40 transition-all cursor-pointer aspect-[4/3]"
                             >
                                 <Plus className="h-8 w-8 text-muted-foreground" />
                                 <span className="mt-2 text-xs font-bold text-muted-foreground uppercase tracking-widest">Add More</span>
@@ -291,7 +291,7 @@ export default function ImageToPDF() {
 
                 {/* Sidebar Controls */}
                 <div className="space-y-6">
-                    <Card className="rounded-none border-border/40 bg-card/50 backdrop-blur-sm">
+                    <Card className="border-border/40 bg-card/50 backdrop-blur-sm">
                         <CardHeader className="pb-4 border-b border-border/40">
                             <CardTitle className="text-sm font-bold flex items-center gap-2 uppercase tracking-widest">
                                 <Settings2 className="h-4 w-4 text-primary" /> Settings
@@ -301,7 +301,7 @@ export default function ImageToPDF() {
                             <div className="space-y-3">
                                 <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Page Size</Label>
                                 <Select value={pageSize} onValueChange={(v: any) => setPageSize(v)}>
-                                    <SelectTrigger className="rounded-none border-primary/10">
+                                    <SelectTrigger className="border-primary/10">
                                         <SelectValue placeholder="Select size" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -314,7 +314,7 @@ export default function ImageToPDF() {
                             <div className="space-y-3">
                                 <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Orientation</Label>
                                 <Select value={orientation} onValueChange={(v: any) => setOrientation(v)}>
-                                    <SelectTrigger className="rounded-none border-primary/10">
+                                    <SelectTrigger className="border-primary/10">
                                         <SelectValue placeholder="Select orientation" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -327,7 +327,7 @@ export default function ImageToPDF() {
                             <div className="space-y-3">
                                 <Label className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Margins</Label>
                                 <Select value={margin} onValueChange={(v: any) => setMargin(v)}>
-                                    <SelectTrigger className="rounded-none border-primary/10">
+                                    <SelectTrigger className="border-primary/10">
                                         <SelectValue placeholder="Select margin" />
                                     </SelectTrigger>
                                     <SelectContent>
@@ -344,7 +344,7 @@ export default function ImageToPDF() {
                                     <span className="text-foreground">{images.length}</span>
                                 </div>
                                 <Button 
-                                    className="w-full rounded-none h-12 font-bold uppercase tracking-widest"
+                                    className="w-full h-12 font-bold uppercase tracking-widest"
                                     disabled={images.length === 0 || isProcessing || !pdflib}
                                     onClick={generatePDF}
                                 >
@@ -354,7 +354,7 @@ export default function ImageToPDF() {
                         </CardContent>
                     </Card>
 
-                    <Card className="rounded-none border-primary/20 bg-primary/5">
+                    <Card className="border-primary/20 bg-primary/5">
                         <CardContent className="p-6">
                             <div className="flex items-center gap-3 mb-4">
                                 <ImageIcon className="h-5 w-5 text-primary" />

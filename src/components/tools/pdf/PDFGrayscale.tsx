@@ -90,7 +90,7 @@ export default function PDFGrayscale() {
                 </CardHeader>
                 <CardContent className="px-6 md:px-12 pb-12 space-y-8">
                     {!file ? (
-                        <div className="group relative flex flex-col items-center justify-center p-16 border-2 border-dashed rounded-none border-primary/20 hover:border-primary/50 bg-muted/10 hover:bg-muted/20 transition-all duration-300 cursor-pointer">
+                        <div className="group relative flex flex-col items-center justify-center p-16 border-2 border-dashed border-primary/20 hover:border-primary/50 bg-muted/10 hover:bg-muted/20 transition-all duration-300 cursor-pointer">
                             <Input
                                 type="file"
                                 accept=".pdf"
@@ -112,9 +112,9 @@ export default function PDFGrayscale() {
                         </div>
                     ) : (
                         <div className="space-y-6">
-                            <div className="flex items-center justify-between p-6 bg-primary/5 border border-primary/10 rounded-none">
+                            <div className="flex items-center justify-between p-6 bg-primary/5 border border-primary/10">
                                 <div className="flex items-center gap-4">
-                                    <div className="p-3 bg-primary/20 rounded-none">
+                                    <div className="p-3 bg-primary/20">
                                         <FileCheck className="w-8 h-8 text-primary" />
                                     </div>
                                     <div>
@@ -135,7 +135,7 @@ export default function PDFGrayscale() {
                             {downloadUrl ? (
                                 <Button
                                     onClick={handleDownload}
-                                    className="w-full h-16 text-xl font-bold rounded-none shadow-[0_10px_30px_rgba(var(--primary-rgb),0.3)] hover:scale-[1.01] transition-all"
+                                    className="w-full h-16 text-xl font-bold shadow-[0_10px_30px_rgba(var(--primary-rgb),0.3)] hover:scale-[1.01] transition-all"
                                 >
                                     <Download className="mr-3 h-6 w-6" />
                                     Download Grayscale PDF
@@ -144,7 +144,7 @@ export default function PDFGrayscale() {
                                 <Button
                                     onClick={convertToGrayscale}
                                     disabled={isProcessing || !pdfLibReady}
-                                    className="w-full h-16 text-xl font-bold rounded-none"
+                                    className="w-full h-16 text-xl font-bold"
                                 >
                                     {isProcessing ? (
                                         <>
@@ -188,7 +188,7 @@ export default function PDFGrayscale() {
                 </CardContent>
             </Card>
 
-            <div className="bg-muted/30 p-8 border border-border rounded-none">
+            <div className="bg-muted/30 p-8 border border-border">
                 <h3 className="text-xl font-bold mb-4">Why convert PDF to Grayscale?</h3>
                 <div className="grid md:grid-cols-2 gap-8 text-sm leading-relaxed text-muted-foreground">
                     <div className="space-y-4">

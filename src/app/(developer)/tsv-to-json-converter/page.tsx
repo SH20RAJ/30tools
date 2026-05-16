@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerialization";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free TSV to JSON Converter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "tsv-to-json-converter",
-        "name": "TSV to JSON Converter",
-        "description": "Convert Tab-Separated Values (TSV) into JSON format instantly. Our free online tool makes it easy to transform structured data for web applications and API development.",
-        "route": "/tsv-to-json-converter",
-        "extraSlugs": [
-                "free-tsv-to-json-converter-online",
-                "tsv-to-json-converter-tool",
-                "tab-separated-to-json-online"
-        ],
-        "popular": false,
-        "category": "developer"
-};
+	const tool = getToolByRoute("/tsv-to-json-converter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/tsv-to-json-converter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "developer" }}>
-				<BuiltInSerialization toolId="tsv-to-json-converter" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSerialization />
+		</ToolLayout>
 	);
 }

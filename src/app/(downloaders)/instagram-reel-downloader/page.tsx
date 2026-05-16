@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Instagram Reel Downloader Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "instagram-reel-downloader",
-        "name": "Instagram Reel Downloader",
-        "description": "Download Instagram Reels without watermark in HD 1080p quality with original audio. Fast, free, and no login required. Save IG Reels to your gallery instantly.",
-        "route": "/instagram-reel-downloader",
-        "extraSlugs": [
-                "save-instagram-reels-without-watermark-online",
-                "ig-reel-saver-hd",
-                "download-instagram-reels-with-audio",
-                "insta-reel-download-free",
-                "save-ig-reels-to-gallery-1080p",
-                "instagram-reel-downloader-no-signup"
-        ],
-        "popular": true,
-        "category": "downloaders"
-};
+	const tool = getToolByRoute("/instagram-reel-downloader");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/instagram-reel-downloader",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "downloaders" }}>
-				<DownloaderEngine toolName="Instagram Reel Downloader" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<DownloaderEngine />
+		</ToolLayout>
 	);
 }

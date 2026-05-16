@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import LineSorterTool from "@/components/tools/text/LineSorterTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Line Sorter Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "line-sorter",
-        "name": "Line Sorter",
-        "description": "Sort lists, names, or lines alphabetically or by length instantly. Our free online Line Sorter helps you organize data for cleaner documentation and code. Privacy-friendly and fast.",
-        "route": "/line-sorter",
-        "extraSlugs": [
-                "alphabetize-list-online-free",
-                "sort-lines-alphabetically",
-                "online-list-sorter"
-        ],
-        "popular": false,
-        "category": "text"
-};
+	const tool = getToolByRoute("/line-sorter");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/line-sorter",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "text" }}>
-				<LineSorterTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<LineSorterTool />
+		</ToolLayout>
 	);
 }

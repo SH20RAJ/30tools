@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Backlink Checker Online – Fast & No Signup | 30tools",
@@ -27,47 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "backlink-checker",
-        "name": "Backlink Checker",
-        "description": "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
-        "route": "/backlink-checker",
-        "extraSlugs": [
-                "backlink checker free",
-                "check backlinks online",
-                "backlink analyzer tool",
-                "website backlink checker",
-                "seo backlink checker",
-                "check website backlinks",
-                "free backlink audit",
-                "backlink analysis tool",
-                "website-backlink-analysis"
-        ],
-        "popular": true,
-        "category": "seo"
-};
+	const tool = getToolByRoute("/backlink-checker");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/backlink-checker",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "seo" }}>
-				<BuiltInSafeHttp toolId="backlink-checker" />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<BuiltInSafeHttp />
+		</ToolLayout>
 	);
 }

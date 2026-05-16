@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import UTMBuilderTool from "@/components/tools/utilities/UTMBuilderTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free UTM Builder Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "utm-builder",
-        "name": "UTM Builder",
-        "description": "Easily build campaign URLs with UTM parameters for Google Analytics tracking.",
-        "route": "/utm-builder",
-        "extraSlugs": [
-                "utm-link-builder-for-google-analytics-4",
-                "ga4-utm-generator"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/utm-builder");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/utm-builder",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<UTMBuilderTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<UTMBuilderTool />
+		</ToolLayout>
 	);
 }
