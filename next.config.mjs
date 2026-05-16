@@ -118,6 +118,12 @@ const nextConfig = {
 	async redirects() {
 		return [
 			{
+				source: "/:path*",
+				has: [{ type: "host", value: "www.30tools.com" }],
+				destination: "https://30tools.com/:path*",
+				permanent: true,
+			},
+			{
 				source: "/blogs/:user/:slug",
 				destination: "/blog/:slug",
 				permanent: true,
