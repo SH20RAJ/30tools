@@ -13,6 +13,23 @@ const categoryLookup = Object.fromEntries(
 	]),
 );
 
+const CATEGORY_HUB_ROUTES: Record<string, string> = {
+	image: "/image-tools",
+	pdf: "/pdf-tools",
+	video: "/video-tools",
+	audio: "/audio-tools",
+	seo: "/seo-tools",
+	text: "/text-tools",
+	developer: "/developer-tools",
+	utilities: "/other-tools",
+	generators: "/generators",
+	calculators: "/calculators",
+};
+
+function getCategoryHubUrl(categorySlug: string): string {
+	return CATEGORY_HUB_ROUTES[categorySlug] || `/${categorySlug}-tools`;
+}
+
 interface StructuredDataProps {
 	tool?: Tool;
 	includeFAQ?: boolean;
@@ -32,7 +49,8 @@ export default function StructuredData({
 		const toolUrl = `${BASE_URL}${tool.route}`;
 		const toolCategoryName =
 			categoryDetails?.name || tool.categoryName || "Utilities";
-		const toolCategoryUrl = `${BASE_URL}/${categoryDetails?.slug || tool.category || "utilities"}`;
+		const toolCategorySlug = categoryDetails?.slug || tool.category || "utilities";
+		const toolCategoryUrl = `${BASE_URL}${getCategoryHubUrl(toolCategorySlug)}`;
 
 		const toolStructuredData = {
 			"@context": "https://schema.org",
@@ -321,7 +339,7 @@ export default function StructuredData({
 					item: {
 						"@type": "CollectionPage",
 						name: category.name,
-						url: `${BASE_URL}/${category.slug}`,
+						url: `${BASE_URL}${getCategoryHubUrl(category.slug)}`,
 						description: category.description,
 					},
 				})),
