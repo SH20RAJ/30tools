@@ -261,11 +261,6 @@ export default function RootLayout({
 					name="google-adsense-account"
 					content="ca-pub-1828915420581549"
 				></meta>
-				{/* Rich Snippets */}
-				<meta property="og:site_name" content="30tools" />
-				<meta property="og:type" content="website" />
-				<meta name="twitter:site" content="@30tools" />
-				<meta name="twitter:creator" content="@30tools" />
 
 				{/* Search Box */}
 				<link
