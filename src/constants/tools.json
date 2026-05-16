@@ -6047,7 +6047,61 @@
             "serp-tracker-bulk"
           ],
           "popular": true,
-          "category": "seo"
+          "category": "seo",
+          "features": [
+            "Check Google rankings for multiple keywords simultaneously",
+            "Track keyword positions across different locations and languages",
+            "Export results as CSV for reporting and analysis",
+            "Monitor competitor rankings alongside your own",
+            "Supports desktop and mobile SERP tracking",
+            "No registration or API key required",
+            "Fast bulk processing — check up to 100 keywords at once",
+            "Accurate real-time SERP position data"
+          ],
+          "faqs": [
+            {
+              "question": "How do I check keyword rankings in bulk?",
+              "answer": "Enter your domain and paste your list of keywords (one per line) into the input fields above, then click Check Rankings. The tool will check Google SERP positions for all keywords simultaneously."
+            },
+            {
+              "question": "How many keywords can I check at once?",
+              "answer": "You can check up to 100 keywords in a single bulk check. For larger keyword lists, split them into batches of 100 and run multiple checks."
+            },
+            {
+              "question": "Is this keyword rank checker accurate?",
+              "answer": "The tool checks live Google search results to provide real-time ranking positions. Rankings can fluctuate based on location, device, and personalization, so use the results as a general guide rather than absolute values."
+            },
+            {
+              "question": "Can I track keyword rankings over time?",
+              "answer": "This tool provides a snapshot of current rankings. For ongoing rank tracking with historical data, export your results and maintain a spreadsheet, or use the tool periodically to monitor changes."
+            },
+            {
+              "question": "Is the bulk rank checker free?",
+              "answer": "Yes, 30tools Bulk Keyword Rank Checker is completely free with no signup required. Check as many keyword batches as you need with no daily limits."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Enter Your Domain",
+              "description": "Type your website domain (e.g., example.com) in the domain input field. Do not include https:// or www."
+            },
+            {
+              "title": "Paste Your Keywords",
+              "description": "Enter the keywords you want to check, one per line, in the keywords text area. You can paste up to 100 keywords at once."
+            },
+            {
+              "title": "Select Location",
+              "description": "Choose the target country or region for the Google search results you want to check."
+            },
+            {
+              "title": "Click Check Rankings",
+              "description": "Press the Check Rankings button and wait while the tool queries Google SERPs for each keyword."
+            },
+            {
+              "title": "Review and Export Results",
+              "description": "View the ranking positions for each keyword. Click Export CSV to download the results for reporting and analysis."
+            }
+          ]
         },
         {
           "id": "google-cache-checker",
