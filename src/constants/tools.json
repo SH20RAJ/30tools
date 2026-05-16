@@ -5420,7 +5420,61 @@
             "words-per-minute-test"
           ],
           "popular": true,
-          "category": "utilities"
+          "category": "utilities",
+          "features": [
+            "Measure download speed, upload speed, and ping latency",
+            "Real-time speed test with live progress visualization",
+            "Works on any device — desktop, tablet, and mobile",
+            "No software installation or Flash required",
+            "Test results in Mbps (megabits per second)",
+            "Compare your speed against typical broadband benchmarks",
+            "Fast test — results in under 30 seconds",
+            "Unlimited free tests with no restrictions"
+          ],
+          "faqs": [
+            {
+              "question": "How do I test my internet speed?",
+              "answer": "Click the Start Test button above. The tool will measure your download speed, upload speed, and ping latency. Results are displayed in Mbps within about 30 seconds."
+            },
+            {
+              "question": "What is a good internet speed?",
+              "answer": "For basic browsing and email, 10-25 Mbps is sufficient. For streaming HD video, 25-50 Mbps is recommended. For gaming and 4K streaming, 50-100+ Mbps is ideal. Upload speed of 10+ Mbps is good for video calls."
+            },
+            {
+              "question": "Why is my internet speed slower than expected?",
+              "answer": "Speed can be affected by WiFi vs ethernet connection, number of connected devices, time of day, router quality, and your ISP plan. Try testing with an ethernet cable for the most accurate results."
+            },
+            {
+              "question": "What is ping and why does it matter?",
+              "answer": "Ping (latency) measures the time it takes for data to travel to a server and back, in milliseconds. Lower ping is better — under 20ms is excellent, under 50ms is good for gaming, and under 100ms is acceptable for general use."
+            },
+            {
+              "question": "Is this speed test free?",
+              "answer": "Yes, 30tools Internet Speed Test is completely free with no registration required. Run unlimited tests to monitor your connection quality."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Close Other Applications",
+              "description": "For the most accurate results, close other applications and browser tabs that use your internet connection."
+            },
+            {
+              "title": "Start the Test",
+              "description": "Click the Start Test button. The tool will automatically begin measuring your connection speed."
+            },
+            {
+              "title": "Wait for Results",
+              "description": "The test takes about 20-30 seconds. It measures download speed first, then upload speed, and finally ping latency."
+            },
+            {
+              "title": "Review Your Speed",
+              "description": "Check your download speed, upload speed, and ping results. Compare them against your ISP plan speeds."
+            },
+            {
+              "title": "Run Multiple Tests",
+              "description": "Run the test at different times of day to get a complete picture of your internet performance."
+            }
+          ]
         },
         {
           "id": "ip-address-lookup",
