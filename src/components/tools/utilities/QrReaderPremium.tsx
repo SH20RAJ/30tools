@@ -21,6 +21,10 @@ export default function QrReaderPremium() {
             const script = document.createElement("script");
             script.src = "https://cdn.jsdelivr.net/npm/jsqr@1.4.0/dist/jsQR.min.js";
             script.onload = () => setJsqrReady(true);
+            script.onerror = () => {
+                toast.error("Failed to load QR scanner library. Please refresh the page.");
+                setJsqrReady(false);
+            };
             document.head.appendChild(script);
         } else {
             setJsqrReady(true);

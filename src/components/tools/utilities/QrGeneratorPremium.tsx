@@ -24,6 +24,10 @@ export default function QrGeneratorPremium() {
             const script = document.createElement("script");
             script.src = "https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";
             script.onload = () => setQrcodeReady(true);
+            script.onerror = () => {
+                toast.error("Failed to load QR code library. Please refresh the page.");
+                setQrcodeReady(false);
+            };
             document.head.appendChild(script);
         } else {
             setQrcodeReady(true);
