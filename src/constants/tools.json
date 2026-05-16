@@ -855,7 +855,61 @@
             "simple-logo-creator"
           ],
           "popular": true,
-          "category": "image"
+          "category": "image",
+          "features": [
+            "Create professional logos with custom text and fonts",
+            "Choose from multiple font styles and color combinations",
+            "Preview logo in real-time as you design",
+            "Download logos as high-resolution PNG files",
+            "No design experience required — simple text-based interface",
+            "Free for personal and commercial use",
+            "Works on any device with a browser",
+            "No signup or account creation needed"
+          ],
+          "faqs": [
+            {
+              "question": "How do I create a free logo?",
+              "answer": "Enter your brand name or text, choose a font style and colors, then click Generate. The logo will be created instantly and you can download it as a PNG file."
+            },
+            {
+              "question": "Can I use the logo for my business?",
+              "answer": "Yes, logos created with 30tools Logo Generator can be used for personal and commercial purposes including business branding, social media profiles, and websites."
+            },
+            {
+              "question": "What file format are logos downloaded in?",
+              "answer": "Logos are downloaded as PNG files with transparent backgrounds. The resolution is suitable for web use, social media profiles, and print materials."
+            },
+            {
+              "question": "Is this logo maker really free?",
+              "answer": "Yes, 30tools Logo Generator is completely free with no hidden charges. Create and download unlimited logos without registration or payment."
+            },
+            {
+              "question": "Can I customize the logo colors and fonts?",
+              "answer": "Yes, you can choose from multiple font styles and customize the text color to match your brand identity. The real-time preview shows changes as you make them."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Enter Your Brand Name",
+              "description": "Type your business name, brand name, or any text you want to appear in the logo."
+            },
+            {
+              "title": "Choose a Font Style",
+              "description": "Select from the available font styles. Options range from modern and minimal to bold and decorative."
+            },
+            {
+              "title": "Pick Your Colors",
+              "description": "Choose text colors that match your brand identity. Use the color picker or enter a hex code."
+            },
+            {
+              "title": "Generate the Logo",
+              "description": "Click the Generate button to create your logo. Preview it and make adjustments until you are satisfied."
+            },
+            {
+              "title": "Download Your Logo",
+              "description": "Click Download to save the logo as a PNG file to your device."
+            }
+          ]
         },
         {
           "id": "photo-enhancer",
