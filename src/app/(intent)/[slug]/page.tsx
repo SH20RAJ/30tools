@@ -1,5 +1,4 @@
-import { notFound } from "next/navigation";
-import ToolLayout from "@/components/tools/shared/ToolLayout";
+import { redirect } from "next/navigation";
 import { getIntentBySlug } from "@/lib/intent-data";
 import { getToolById } from "@/lib/tools";
 
@@ -9,13 +8,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
     if (!intent) return {};
 
+    const parentTool = getToolById(intent.parentToolId);
+    const canonicalUrl = parentTool ? `https://30tools.com${parentTool.route}` : `https://30tools.com/${slug}`;
+
     return {
         title: intent.title,
         description: intent.description,
         keywords: intent.keywords,
         alternates: {
-            canonical: `https://30tools.com/${slug}`,
+            canonical: canonicalUrl,
         },
+        robots: { index: false, follow: true },
     };
 }
 
@@ -24,33 +27,16 @@ export default async function IntentPage({ params }: { params: Promise<{ slug: s
     const intent = getIntentBySlug(slug);
 
     if (!intent) {
-        return notFound();
+        const { notFound } = await import("next/navigation");
+        notFound();
     }
 
     const parentTool = getToolById(intent.parentToolId);
     if (!parentTool) {
-        return notFound();
+        const { notFound } = await import("next/navigation");
+        notFound();
     }
 
-    // Merge intent content into the tool object for the layout
-    const enrichedTool = {
-        ...parentTool,
-        name: intent.title.split(" - ")[0], // Use the short title
-        description: intent.description,
-        article: intent.article,
-        faqs: intent.faqs,
-    };
-
-    return (
-        <ToolLayout tool={enrichedTool}>
-            <div className="min-h-[400px]">
-                <iframe
-                    src={parentTool.route}
-                    className="w-full h-[800px]"
-                    title={enrichedTool.name}
-                    style={{ border: 'none' }}
-                />
-            </div>
-        </ToolLayout>
-    );
+    // 301 redirect to the canonical parent tool URL
+    redirect(parentTool.route);
 }
