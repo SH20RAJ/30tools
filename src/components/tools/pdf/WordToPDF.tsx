@@ -28,6 +28,7 @@ declare global {
 export default function WordToPDF() {
     const [mammoth, setMammoth] = useState<any>(null);
     const [pdflib, setPdflib] = useState<any>(null);
+    const [error, setError] = useState<string | null>(null);
     const [file, setFile] = useState<File | null>(null);
     const [isProcessing, setIsProcessing] = useState(false);
     const [previewHtml, setPreviewHtml] = useState<string>("");
@@ -41,6 +42,9 @@ export default function WordToPDF() {
             script.src = "https://cdn.jsdelivr.net/npm/mammoth@1.6.0/mammoth.browser.min.js";
             script.async = true;
             script.onload = () => setMammoth(window.mammoth);
+            script.onerror = () => {
+                setError("Failed to load document processing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         } else {
             setMammoth(window.mammoth);
@@ -52,6 +56,9 @@ export default function WordToPDF() {
             script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
             script.async = true;
             script.onload = () => setPdflib(window.PDFLib);
+            script.onerror = () => {
+                setError("Failed to load PDF processing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         } else {
             setPdflib(window.PDFLib);

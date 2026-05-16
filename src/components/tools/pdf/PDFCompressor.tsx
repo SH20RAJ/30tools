@@ -27,6 +27,7 @@ declare global {
 
 export default function PDFCompressor() {
     const [pdflib, setPdflib] = useState<any>(null);
+    const [error, setError] = useState<string | null>(null);
     const [file, setFile] = useState<File | null>(null);
     const [isProcessing, setIsProcessing] = useState(false);
     const [level, setLevel] = useState<string>("recommended");
@@ -40,6 +41,9 @@ export default function PDFCompressor() {
             script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
             script.async = true;
             script.onload = () => setPdflib(window.PDFLib);
+            script.onerror = () => {
+                setError("Failed to load PDF processing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         } else {
             setPdflib(window.PDFLib);
@@ -137,6 +141,12 @@ export default function PDFCompressor() {
                     onChange={onFileChange}
                 />
             </div>
+
+            {error && (
+                <div className="p-4 border border-red-200 bg-red-50 text-red-700 text-sm">
+                    {error}
+                </div>
+            )}
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 {/* Main Content Area */}

@@ -12,6 +12,7 @@ export default function PDFGrayscale() {
     const [isProcessing, setIsProcessing] = useState(false);
     const [pdfLibReady, setPdfLibReady] = useState(false);
     const [downloadUrl, setDownloadUrl] = useState<string | null>(null);
+    const [loadError, setLoadError] = useState<string | null>(null);
 
     useEffect(() => {
         if (typeof window !== "undefined" && !(window as any).PDFLib) {
@@ -19,6 +20,7 @@ export default function PDFGrayscale() {
             script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
             script.async = true;
             script.onload = () => setPdfLibReady(true);
+            script.onerror = () => setLoadError("Failed to load PDF processing library. Please check your internet connection and refresh.");
             document.head.appendChild(script);
         } else {
             setPdfLibReady(true);
@@ -89,7 +91,11 @@ export default function PDFGrayscale() {
                     </p>
                 </CardHeader>
                 <CardContent className="px-6 md:px-12 pb-12 space-y-8">
-                    {!file ? (
+                    {loadError ? (
+                        <div className="p-6 border border-destructive/50 bg-destructive/10 text-destructive text-sm">
+                            {loadError}
+                        </div>
+                    ) : !file ? (
                         <div className="group relative flex flex-col items-center justify-center p-16 border-2 border-dashed border-primary/20 hover:border-primary/50 bg-muted/10 hover:bg-muted/20 transition-all duration-300 cursor-pointer">
                             <Input
                                 type="file"

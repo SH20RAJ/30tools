@@ -41,7 +41,8 @@ export default function PDFRotation() {
     const [pages, setPages] = useState<PageState[]>([]);
     const [isProcessing, setIsProcessing] = useState(false);
     const [loadingProgress, setLoadingProgress] = useState(0);
-    
+    const [loadError, setLoadError] = useState<string | null>(null);
+
     const fileInputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
@@ -54,6 +55,7 @@ export default function PDFRotation() {
                 window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
                 setPdfjs(window.pdfjsLib);
             };
+            script.onerror = () => setLoadError("Failed to load PDF processing library. Please check your internet connection and refresh.");
             document.head.appendChild(script);
         } else {
             setPdfjs(window.pdfjsLib);
@@ -65,6 +67,7 @@ export default function PDFRotation() {
             script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
             script.async = true;
             script.onload = () => setPdflib(window.PDFLib);
+            script.onerror = () => setLoadError("Failed to load PDF processing library. Please check your internet connection and refresh.");
             document.head.appendChild(script);
         } else {
             setPdflib(window.PDFLib);
@@ -228,8 +231,12 @@ export default function PDFRotation() {
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
                 {/* Main Content Area */}
                 <div className="lg:col-span-3 space-y-6">
-                    {!file ? (
-                        <div 
+                    {loadError ? (
+                        <div className="p-6 border border-destructive/50 bg-destructive/10 text-destructive text-sm">
+                            {loadError}
+                        </div>
+                    ) : !file ? (
+                        <div
                             onClick={() => fileInputRef.current?.click()}
                             className="group cursor-pointer flex flex-col items-center justify-center p-12 md:p-24 border-2 border-dashed border-primary/20 hover:border-primary/40 bg-card/30 hover:bg-card/50 transition-all text-center"
                         >
