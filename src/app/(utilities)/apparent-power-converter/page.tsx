@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<UniversalUnitConverter />
+			<UniversalUnitConverter preset="apparentPower" />
 		</ToolLayout>
 	);
 }
