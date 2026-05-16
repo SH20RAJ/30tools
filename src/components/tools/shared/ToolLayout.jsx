@@ -135,9 +135,13 @@ export default function ToolLayout({
 		};
 	}
 
-	// Ensure at least 10 related tools
-	const finalRelatedTools =
-		relatedTools.length < 10
+	// Company pages (privacy, terms, about) don't need tool-specific sections
+	const isCompanyPage = tool.category === "company";
+
+	// Ensure at least 10 related tools (skip for company pages)
+	const finalRelatedTools = isCompanyPage
+		? []
+		: relatedTools.length < 10
 			? getRelatedTools(tool, 15) // Get more than 10 to be safe
 			: relatedTools;
 
@@ -176,70 +180,74 @@ export default function ToolLayout({
 					<div className="relative z-10">{children}</div>
 				</section>
 
-				{/* Contribution Notice */}
-				<section className="text-center space-y-4 max-w-2xl mx-auto p-8 border border-dashed rounded-2xl bg-primary/5">
-					<h3 className="text-lg font-bold">Tool not working or missing something?</h3>
-					<p className="text-sm text-muted-foreground">
-						This tool is open-source and community-driven. If you find a bug, have a feature request, 
-						or want to contribute a new tool, please create a PR on GitHub or contact us.
-					</p>
-					<div className="flex flex-wrap items-center justify-center gap-4">
-						<Button variant="outline" size="sm" asChild className="gap-2">
-							<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noreferrer">
-								<Github className="h-4 w-4" />
-								Contribute on GitHub
-							</a>
-						</Button>
-						<Button variant="ghost" size="sm" asChild className="gap-2">
-							<a href="mailto:mail@30tools.com">
-								mail@30tools.com
-							</a>
-						</Button>
-					</div>
-				</section>
+				{!isCompanyPage && (
+					<>
+						{/* Contribution Notice */}
+						<section className="text-center space-y-4 max-w-2xl mx-auto p-8 border border-dashed rounded-2xl bg-primary/5">
+							<h3 className="text-lg font-bold">Tool not working or missing something?</h3>
+							<p className="text-sm text-muted-foreground">
+								This tool is open-source and community-driven. If you find a bug, have a feature request,
+								or want to contribute a new tool, please create a PR on GitHub or contact us.
+							</p>
+							<div className="flex flex-wrap items-center justify-center gap-4">
+								<Button variant="outline" size="sm" asChild className="gap-2">
+									<a href="https://github.com/sh20raj/30tools" target="_blank" rel="noreferrer">
+										<Github className="h-4 w-4" />
+										Contribute on GitHub
+									</a>
+								</Button>
+								<Button variant="ghost" size="sm" asChild className="gap-2">
+									<a href="mailto:mail@30tools.com">
+										mail@30tools.com
+									</a>
+								</Button>
+							</div>
+						</section>
 
-				{/* Trust & SEO Content */}
-				<div className="space-y-32">
-					<ToolTrust />
-					<ToolArticle content={enrichedTool.article} />
+						{/* Trust & SEO Content */}
+						<div className="space-y-32">
+							<ToolTrust />
+							<ToolArticle content={enrichedTool.article} />
 
-					<div className="grid grid-cols-1 gap-32">
-						<ToolFeatures features={enrichedTool.features} />
-						<ToolSteps
-							steps={enrichedTool.howTo?.steps}
-							toolName={enrichedTool.name}
-						/>
-						<ToolFAQ faqs={enrichedTool.faqs} toolName={enrichedTool.name} />
-					</div>
-				</div>
+							<div className="grid grid-cols-1 gap-32">
+								<ToolFeatures features={enrichedTool.features} />
+								<ToolSteps
+									steps={enrichedTool.howTo?.steps}
+									toolName={enrichedTool.name}
+								/>
+								<ToolFAQ faqs={enrichedTool.faqs} toolName={enrichedTool.name} />
+							</div>
+						</div>
 
-				<div className="h-16" >
-					<p className="text-base text-muted-foreground/70 max-w-xl mx-auto">
-						Part of 30tools — {SITE_CONFIG.toolCountString} free online tools for image, PDF, video,
-						audio, text, SEO, and developer workflows. No registration required.
-					</p>
-					<div className="flex items-center justify-center gap-2 pt-2">
-						<a 
-							href="https://github.com/sh20raj/30tools" 
-							target="_blank" 
-							rel="noreferrer"
-							className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-[10px] font-bold uppercase tracking-widest text-primary/60 hover:bg-primary/10 transition-colors"
-						>
-							<Github className="h-3 w-3" />
-							We are Open Source
-						</a>
-					</div>
-					</div>
+						<div className="h-16" >
+							<p className="text-base text-muted-foreground/70 max-w-xl mx-auto">
+								Part of 30tools — {SITE_CONFIG.toolCountString} free online tools for image, PDF, video,
+								audio, text, SEO, and developer workflows. No registration required.
+							</p>
+							<div className="flex items-center justify-center gap-2 pt-2">
+								<a
+									href="https://github.com/sh20raj/30tools"
+									target="_blank"
+									rel="noreferrer"
+									className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/5 border border-primary/10 text-[10px] font-bold uppercase tracking-widest text-primary/60 hover:bg-primary/10 transition-colors"
+								>
+									<Github className="h-3 w-3" />
+									We are Open Source
+								</a>
+							</div>
+						</div>
 
-				{/* Internal Link Sculpting Segment */}
-				<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
+						{/* Internal Link Sculpting Segment */}
+						<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
 
-				{finalRelatedTools.length > 0 && (
-					<RelatedTools
-						currentTool={tool.id}
-						category={tool.category}
-						tools={finalRelatedTools}
-					/>
+						{finalRelatedTools.length > 0 && (
+							<RelatedTools
+								currentTool={tool.id}
+								category={tool.category}
+								tools={finalRelatedTools}
+							/>
+						)}
+					</>
 				)}
 			</main>
 		</div>
