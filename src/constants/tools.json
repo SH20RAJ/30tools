@@ -6346,7 +6346,61 @@
             "seo-keyword-generator"
           ],
           "popular": true,
-          "category": "seo"
+          "category": "seo",
+          "features": [
+            "Get search volume, keyword difficulty, and CPC data for any keyword",
+            "Discover long-tail keyword variations and related terms",
+            "Analyze keyword competition and ranking difficulty",
+            "Find question-based keywords for content ideas",
+            "Export keyword data as CSV for reporting",
+            "Supports multiple countries and languages",
+            "No signup or API key required",
+            "Unlimited keyword research with no daily limits"
+          ],
+          "faqs": [
+            {
+              "question": "How do I research keywords for SEO?",
+              "answer": "Enter a seed keyword or topic into the input field above and click Research. The tool will show related keywords with search volume, difficulty score, CPC, and trend data to help you find the best opportunities."
+            },
+            {
+              "question": "What is keyword difficulty?",
+              "answer": "Keyword difficulty (KD) is a score from 0-100 that estimates how hard it is to rank on the first page of Google for that keyword. Lower scores (0-30) are easier to rank for, while higher scores (70+) indicate strong competition."
+            },
+            {
+              "question": "How do I find long-tail keywords?",
+              "answer": "Enter a broad topic keyword and the tool will generate long-tail variations — longer, more specific phrases with lower competition. These are often easier to rank for and attract more targeted traffic."
+            },
+            {
+              "question": "Can I research keywords for different countries?",
+              "answer": "Yes, you can select different countries to see location-specific search volume and competition data. This is useful for local SEO and international content strategies."
+            },
+            {
+              "question": "Is this keyword research tool free?",
+              "answer": "Yes, 30tools Advanced Keyword Research is completely free with no registration required. Research unlimited keywords with no daily limits or data restrictions."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Enter a Seed Keyword",
+              "description": "Type a broad topic or keyword related to your niche into the input field. For example, 'digital marketing' or 'best running shoes'."
+            },
+            {
+              "title": "Select Target Country",
+              "description": "Choose the country you want to target. This affects search volume and competition data."
+            },
+            {
+              "title": "Click Research",
+              "description": "Press the Research button to generate a list of related keywords with metrics."
+            },
+            {
+              "title": "Analyze the Results",
+              "description": "Review the keyword list sorted by search volume. Look for keywords with good volume and low to medium difficulty."
+            },
+            {
+              "title": "Export Keywords",
+              "description": "Click Export CSV to download the keyword data for use in your content planning and SEO strategy."
+            }
+          ]
         },
         {
           "id": "sitemap-generator",
