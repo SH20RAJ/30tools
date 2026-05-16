@@ -3883,7 +3883,61 @@
             "youtube-video-downloader-online"
           ],
           "popular": true,
-          "category": "downloaders"
+          "category": "downloaders",
+          "features": [
+            "Download videos from 1000+ websites including YouTube, TikTok, Instagram, Facebook, and Twitter",
+            "Save videos in MP4 format with HD, Full HD, and 4K quality options",
+            "Extract audio and download as MP3 with one click",
+            "No watermarks added to downloaded videos",
+            "Works directly in your browser — no software installation required",
+            "Unlimited free downloads with no daily limits",
+            "Fast download speeds with optimized server-side processing",
+            "Mobile-friendly interface works on phones and tablets"
+          ],
+          "faqs": [
+            {
+              "question": "How do I download a video from any website?",
+              "answer": "Copy the video URL from any website, paste it into the input field above, and click Download. The tool will process the link and provide download options in multiple quality levels and formats."
+            },
+            {
+              "question": "Is this online video downloader really free?",
+              "answer": "Yes, 30tools Online Video Downloader is completely free with no hidden charges. There are no download limits, no registration required, and no watermarks added to your downloaded videos."
+            },
+            {
+              "question": "Which websites are supported?",
+              "answer": "We support over 1000 video platforms including YouTube, TikTok, Instagram, Facebook, Twitter/X, Reddit, Vimeo, Dailymotion, Twitch, and many more. Just paste any video URL and the tool will attempt to process it."
+            },
+            {
+              "question": "What video quality can I download?",
+              "answer": "You can download videos in multiple quality options including 360p, 480p, 720p HD, 1080p Full HD, and 4K when available. The available qualities depend on the original video upload quality."
+            },
+            {
+              "question": "Can I download just the audio from a video?",
+              "answer": "Yes, select the MP3 audio option after pasting your video URL. This extracts the audio track and saves it as an MP3 file — perfect for music, podcasts, or lectures."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Copy the Video URL",
+              "description": "Go to the website containing the video (YouTube, TikTok, Instagram, etc.) and copy the video URL from your browser's address bar or use the share button."
+            },
+            {
+              "title": "Paste the URL",
+              "description": "Return to 30tools Online Video Downloader and paste the copied URL into the input field at the top of the page."
+            },
+            {
+              "title": "Click Download",
+              "description": "Click the Download button and wait a few seconds while the tool processes the video link and fetches available formats."
+            },
+            {
+              "title": "Choose Quality and Format",
+              "description": "Select your preferred video quality (360p to 4K) and format (MP4 for video, MP3 for audio) from the available options."
+            },
+            {
+              "title": "Save to Device",
+              "description": "Click the download link for your chosen format. The video will be saved directly to your device's default download folder."
+            }
+          ]
         },
         {
           "id": "periscope-video-downloader",
