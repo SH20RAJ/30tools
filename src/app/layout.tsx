@@ -256,15 +256,7 @@ export default function RootLayout({
 				<meta name="msapplication-TileColor" content="#000000" />
 				<meta name="msapplication-tap-highlight" content="no" />
 
-				{/* Site Links Enhancement */}
-				<meta
-					name="robots"
-					content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
-				/>
-				<meta
-					name="googlebot"
-					content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
-				/>
+				{/* Robots handled by Next.js metadata API */}
 				<meta
 					name="google-adsense-account"
 					content="ca-pub-1828915420581549"
