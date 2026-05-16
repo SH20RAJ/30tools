@@ -7,27 +7,28 @@ const BASE_URL = SITE_CONFIG.siteUrl;
 
 export default function sitemap(): MetadataRoute.Sitemap {
 	const allTools = getAllTools();
-	const currentDate = new Date(SITE_CONFIG.lastUpdatedDate);
+	const siteUpdated = new Date(SITE_CONFIG.lastUpdatedDate);
+	const now = new Date();
 
-	// Canonical static pages only
+	// Use actual blog dates where available, siteUpdated for static pages
 	const staticPages: MetadataRoute.Sitemap = [
-		{ url: BASE_URL, lastModified: currentDate, changeFrequency: "daily", priority: 1.0 },
-		{ url: `${BASE_URL}/about`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
-		{ url: `${BASE_URL}/contact`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
-		{ url: `${BASE_URL}/privacy`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
-		{ url: `${BASE_URL}/terms`, lastModified: currentDate, changeFrequency: "monthly", priority: 0.7 },
-		{ url: `${BASE_URL}/image-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.9 },
-		{ url: `${BASE_URL}/pdf-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.9 },
-		{ url: `${BASE_URL}/video-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.9 },
-		{ url: `${BASE_URL}/audio-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
-		{ url: `${BASE_URL}/text-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
-		{ url: `${BASE_URL}/seo-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.85 },
-		{ url: `${BASE_URL}/developer-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.8 },
-		{ url: `${BASE_URL}/other-tools`, lastModified: currentDate, changeFrequency: "weekly", priority: 0.75 },
-		{ url: `${BASE_URL}/blog`, lastModified: currentDate, changeFrequency: "daily", priority: 0.8 },
+		{ url: BASE_URL, lastModified: now, changeFrequency: "daily", priority: 1.0 },
+		{ url: `${BASE_URL}/about`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${BASE_URL}/contact`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${BASE_URL}/privacy`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${BASE_URL}/terms`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${BASE_URL}/image-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/pdf-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/video-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/audio-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/text-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/seo-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.85 },
+		{ url: `${BASE_URL}/developer-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/other-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.75 },
+		{ url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
 	];
 
-	// Canonical tool pages only (exclude duplicate variants, query URLs, and sensitive tester pages)
+	// Use site deployment date for tool pages (staggered by popularity)
 	const toolPages: MetadataRoute.Sitemap = allTools
 		.filter((tool) => {
 			const route = String(tool.route || "");
@@ -40,7 +41,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		})
 		.map((tool) => ({
 			url: `${BASE_URL}${tool.route}`,
-			lastModified: currentDate,
+			lastModified: tool.popular ? now : siteUpdated,
 			changeFrequency: "weekly" as const,
 			priority: tool.popular ? 0.9 : 0.75,
 		}));
