@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Title Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract the exact title from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
-	keywords: "youtube title extractor, free youtube title extractor, online youtube title extractor, no signup, 30tools",
+	keywords: "youtube title extractor, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-extractor",
 	},

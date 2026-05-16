@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Tag Generator Online – Fast & No Signup | 30tools",
 	description: "Generate SEO-friendly tags for your YouTube videos instantly. Our free online tool suggests relevant keywords based on your video topic to help you rank higher in search results. 100% free, fast, and no signup required.",
-	keywords: "youtube tag generator, free youtube tag generator, online youtube tag generator, no signup, 30tools",
+	keywords: "youtube tag generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-tag-generator",
 	},

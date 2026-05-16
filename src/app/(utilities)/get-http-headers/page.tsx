@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Get HTTP Headers Online – Fast & No Signup | 30tools",
 	description: "Free get http headers tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "get http headers, free get http headers, online get http headers, no signup, 30tools",
+	keywords: "get http headers, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/get-http-headers",
 	},

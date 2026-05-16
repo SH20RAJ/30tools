@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Mp3 From Tiktok Online – Fast & No Signup | 30tools",
 	description: "Extract high-quality MP3 audio from any TikTok video instantly. Perfect for saving viral sounds, music, and voiceovers for offline listening or creative projects. 100% free, fast, and no signup required.",
-	keywords: "mp3 from tiktok, free mp3 from tiktok, online mp3 from tiktok, no signup, 30tools",
+	keywords: "mp3 from tiktok, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/mp3-from-tiktok",
 	},

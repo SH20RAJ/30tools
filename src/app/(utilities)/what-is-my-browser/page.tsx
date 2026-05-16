@@ -5,7 +5,7 @@ import BrowserDetectTool from "@/components/tools/built-ins/BrowserDetectTool";
 export const metadata = {
 	title: "Free What Is My Browser Online – Fast & No Signup | 30tools",
 	description: "Free what is my browser tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "what is my browser, free what is my browser, online what is my browser, no signup, 30tools",
+	keywords: "what is my browser, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-browser",
 	},

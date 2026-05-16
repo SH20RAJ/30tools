@@ -5,7 +5,7 @@ import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerializat
 export const metadata = {
 	title: "Free JSON to TSV Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JSON data to Tab-Separated Values (TSV) format instantly. Our free online converter helps you prepare data for Excel and other spreadsheet applications. 100% free, fast, and no signup required.",
-	keywords: "json to tsv converter, free json to tsv converter, online json to tsv converter, no signup, 30tools",
+	keywords: "json to tsv converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-to-tsv-converter",
 	},

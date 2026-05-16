@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Pinterest Clip Saver Online – Fast & No Signup | 30tools",
 	description: "Save Pinterest video clips and GIFs to your device easily. Our free online tool helps you download inspirational content for offline viewing and project reference. 100% free, fast, and no signup required.",
-	keywords: "pinterest clip saver, free pinterest clip saver, online pinterest clip saver, no signup, 30tools",
+	keywords: "pinterest clip saver, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/pinterest-clip-saver",
 	},

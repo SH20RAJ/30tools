@@ -5,7 +5,7 @@ import MetaTagGenerator from "@/components/tools/built-ins/MetaTagGenerator";
 export const metadata = {
 	title: "Free Meta Tag Generator Online – Fast & No Signup | 30tools",
 	description: "Free meta tag generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "meta tag generator, free meta tag generator, online meta tag generator, no signup, 30tools",
+	keywords: "meta tag generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/meta-tag-generator",
 	},

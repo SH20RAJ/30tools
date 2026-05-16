@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Decimal to HEX Converter Online – Fast & No Signup | 30tools",
 	description: "Transform decimal numbers into hexadecimal format instantly. Our free online tool is perfect for web development, low-level programming, and color code analysis. Fast and private. 100% free, fast, and no signup required.",
-	keywords: "decimal to hex converter, free decimal to hex converter, online decimal to hex converter, no signup, 30tools",
+	keywords: "decimal to hex converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-hex-converter",
 	},

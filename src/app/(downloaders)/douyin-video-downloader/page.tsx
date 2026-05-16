@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Douyin Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save Douyin videos directly to your device easily. 100% free, fast, and no signup required.",
-	keywords: "douyin video downloader, free douyin video downloader, online douyin video downloader, no signup, 30tools",
+	keywords: "douyin video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/douyin-video-downloader",
 	},

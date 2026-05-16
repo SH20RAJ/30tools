@@ -5,7 +5,7 @@ import JsonFormatterTool from "@/components/tools/code/JsonFormatterTool";
 export const metadata = {
 	title: "Free JSON Validator Online – Fast & No Signup | 30tools",
 	description: "Validate your JSON data for syntax errors and structural integrity instantly. Our free online tool helps you catch bugs and ensure your JSON is RFC-compliant. 100% free, fast, and no signup required.",
-	keywords: "json validator, free json validator, online json validator, no signup, 30tools",
+	keywords: "json validator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-validator",
 	},

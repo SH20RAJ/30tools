@@ -5,7 +5,7 @@ import GuitarTunerTool from "@/components/tools/audio/GuitarTunerTool";
 export const metadata = {
 	title: "Free Guitar Tuner Online – Fast & No Signup | 30tools",
 	description: "Free online guitar tuner. Uses your microphone to tune your guitar accurately. 100% free, fast, and no signup required.",
-	keywords: "guitar tuner, free guitar tuner, online guitar tuner, no signup, 30tools",
+	keywords: "guitar tuner, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/guitar-tuner",
 	},

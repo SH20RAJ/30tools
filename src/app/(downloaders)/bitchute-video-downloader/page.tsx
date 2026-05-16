@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Bitchute Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download your favorite Bitchute videos in one click. 100% free, fast, and no signup required.",
-	keywords: "bitchute video downloader, free bitchute video downloader, online bitchute video downloader, no signup, 30tools",
+	keywords: "bitchute video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/bitchute-video-downloader",
 	},

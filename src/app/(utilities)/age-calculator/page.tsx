@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Age Calculator Online – Fast & No Signup | 30tools",
 	description: "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "age calculator, free age calculator, online age calculator, no signup, 30tools",
+	keywords: "age calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/age-calculator",
 	},

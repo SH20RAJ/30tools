@@ -5,7 +5,7 @@ import TagsFromTextTool from "@/components/tools/text/TagsFromTextTool";
 export const metadata = {
 	title: "Free Text to Hashtags Converter Online – Fast & No Signup | 30tools",
 	description: "Convert your text into trending hashtags for social media instantly. Our free tool helps you optimize posts for Instagram, TikTok, and Twitter with relevant, search-friendly tags. 100% free, fast, and no signup required.",
-	keywords: "text to hashtags converter, free text to hashtags converter, online text to hashtags converter, no signup, 30tools",
+	keywords: "text to hashtags converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/text-to-hashtags-converter",
 	},

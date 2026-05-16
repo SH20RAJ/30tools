@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Imdb Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save IMDb trailers, interviews, and clips to your device instantly. Our free online tool helps you keep high-quality movie metadata and videos for offline reference. 100% free, fast, and no signup required.",
-	keywords: "imdb video downloader, free imdb video downloader, online imdb video downloader, no signup, 30tools",
+	keywords: "imdb video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/imdb-video-downloader",
 	},

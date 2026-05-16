@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Money Calculator Online – Fast & No Signup | 30tools",
 	description: "Estimate potential earnings for any YouTube video or channel with our free online Money Calculator. Understand revenue based on views, CPM, and engagement metrics. Perfect for creators. 100% free, fast, and no signup required.",
-	keywords: "youtube money calculator, free youtube money calculator, online youtube money calculator, no signup, 30tools",
+	keywords: "youtube money calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-money-calculator",
 	},

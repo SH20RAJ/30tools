@@ -5,7 +5,7 @@ import TextCompareTool from "@/components/tools/text/TextCompareTool";
 export const metadata = {
 	title: "Free Text Compare Online – Fast & No Signup | 30tools",
 	description: "Compare two text snippets side-by-side to find differences instantly. Our free online Text Compare tool highlights additions, deletions, and changes with high precision. Secure and browser-based. 100% free, fast, and no signup required.",
-	keywords: "text compare, free text compare, online text compare, no signup, 30tools",
+	keywords: "text compare, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/text-compare",
 	},

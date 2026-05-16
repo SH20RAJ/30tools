@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Snapchat Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Snapchat videos and stories in HD quality for free without app installation 100% free, fast, and no signup required.",
-	keywords: "snapchat video downloader, free snapchat video downloader, online snapchat video downloader, no signup, 30tools",
+	keywords: "snapchat video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/snapchat-video-downloader",
 	},

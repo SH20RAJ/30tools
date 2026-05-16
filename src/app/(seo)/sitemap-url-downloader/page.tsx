@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Sitemap Url Downloader Online – Fast & No Signup | 30tools",
 	description: "Free Sitemap Url Downloader online. Sitemap Url Downloader allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords: "sitemap url downloader, free sitemap url downloader, online sitemap url downloader, no signup, 30tools",
+	keywords: "sitemap url downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/sitemap-url-downloader",
 	},

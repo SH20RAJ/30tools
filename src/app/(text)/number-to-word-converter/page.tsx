@@ -5,7 +5,7 @@ import NumberToWordTool from "@/components/tools/text/NumberToWordTool";
 export const metadata = {
 	title: "Free Number to Word Converter Online – Fast & No Signup | 30tools",
 	description: "Convert numbers to words instantly with our free online converter. Perfect for writing checks, legal documents, or educational purposes. Supports multiple formats and large numbers. 100% free, fast, and no signup required.",
-	keywords: "number to word converter, free number to word converter, online number to word converter, no signup, 30tools",
+	keywords: "number to word converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/number-to-word-converter",
 	},

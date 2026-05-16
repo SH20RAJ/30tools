@@ -5,7 +5,7 @@ import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerializat
 export const metadata = {
 	title: "Free CSV to JSON Converter Online – Fast & No Signup | 30tools",
 	description: "Convert CSV files to JSON format instantly. Our free online converter makes it easy to transform spreadsheet data into developer-friendly JSON code for web applications and APIs. 100% free, fast, and no signup required.",
-	keywords: "csv to json converter, free csv to json converter, online csv to json converter, no signup, 30tools",
+	keywords: "csv to json converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/csv-to-json-converter",
 	},

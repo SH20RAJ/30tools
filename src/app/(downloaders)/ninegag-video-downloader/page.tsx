@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free NineGag Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite 9GAG videos and memes to your device easily. Our free online downloader preserves original quality and works instantly in your browser. 100% free, fast, and no signup required.",
-	keywords: "ninegag video downloader, free ninegag video downloader, online ninegag video downloader, no signup, 30tools",
+	keywords: "ninegag video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/ninegag-video-downloader",
 	},

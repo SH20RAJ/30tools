@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Weight Converter Online – Fast & No Signup | 30tools",
 	description: "Free weight converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "weight converter, free weight converter, online weight converter, no signup, 30tools",
+	keywords: "weight converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/weight-converter",
 	},

@@ -5,7 +5,7 @@ import JSONToSchemaTool from "@/components/tools/developer/JSONToSchemaTool";
 export const metadata = {
 	title: "Free JSON to JSON Schema Online – Fast & No Signup | 30tools",
 	description: "Generate a JSON Schema from your JSON data automatically. Our free online tool helps you define validation rules and document your JSON structure for APIs. 100% free, fast, and no signup required.",
-	keywords: "json to json schema, free json to json schema, online json to json schema, no signup, 30tools",
+	keywords: "json to json schema, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-to-json-schema",
 	},

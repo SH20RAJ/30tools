@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free GST Calculator Online – Fast & No Signup | 30tools",
 	description: "Free gst calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "gst calculator, free gst calculator, online gst calculator, no signup, 30tools",
+	keywords: "gst calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/gst-calculator",
 	},

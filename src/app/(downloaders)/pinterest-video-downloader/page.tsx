@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Pinterest Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, fast, and no signup required.",
-	keywords: "pinterest video downloader, free pinterest video downloader, online pinterest video downloader, no signup, 30tools",
+	keywords: "pinterest video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/pinterest-video-downloader",
 	},

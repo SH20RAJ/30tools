@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free JPG to ICO Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JPG images to ICO favicon files for your website. Our free tool creates high-quality icons in multiple sizes for perfect browser compatibility. No signup required.",
-	keywords: "jpg to ico converter, free jpg to ico converter, online jpg to ico converter, no signup, 30tools",
+	keywords: "jpg to ico converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/jpg-to-ico-converter",
 	},

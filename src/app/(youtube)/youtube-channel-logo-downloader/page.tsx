@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Channel Logo Downloader Online – Fast & No Signup | 30tools",
 	description: "Download high-quality YouTube channel logos and profile pictures instantly. Perfect for brand audits and design research. Free, fast, and secure online downloader. 100% free, fast, and no signup required.",
-	keywords: "youtube channel logo downloader, free youtube channel logo downloader, online youtube channel logo downloader, no signup, 30tools",
+	keywords: "youtube channel logo downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-logo-downloader",
 	},

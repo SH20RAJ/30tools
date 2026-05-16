@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Twitch Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Twitch videos and clips easily. 100% free, fast, and no signup required.",
-	keywords: "twitch video downloader, free twitch video downloader, online twitch video downloader, no signup, 30tools",
+	keywords: "twitch video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/twitch-video-downloader",
 	},

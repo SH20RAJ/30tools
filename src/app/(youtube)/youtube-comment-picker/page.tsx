@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Comment Picker Online – Fast & No Signup | 30tools",
 	description: "Pick a random winner from your YouTube video comments instantly. Our free online Comment Picker is perfect for giveaways, contests, and audience engagement. Fast and fair. 100% free, fast, and no signup required.",
-	keywords: "youtube comment picker, free youtube comment picker, online youtube comment picker, no signup, 30tools",
+	keywords: "youtube comment picker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-comment-picker",
 	},

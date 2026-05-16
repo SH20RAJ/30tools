@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Adsense Calculator Online – Fast & No Signup | 30tools",
 	description: "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "adsense calculator, free adsense calculator, online adsense calculator, no signup, 30tools",
+	keywords: "adsense calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/adsense-calculator",
 	},

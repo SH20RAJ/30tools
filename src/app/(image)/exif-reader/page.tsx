@@ -5,7 +5,7 @@ import ExifReaderTool from "@/components/tools/image/ExifReaderTool";
 export const metadata = {
 	title: "Free EXIF Reader Online – Fast & No Signup | 30tools",
 	description: "Extract metadata and EXIF data from images including camera settings and GPS location 100% free, fast, and no signup required.",
-	keywords: "exif reader, free exif reader, online exif reader, no signup, 30tools",
+	keywords: "exif reader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/exif-reader",
 	},

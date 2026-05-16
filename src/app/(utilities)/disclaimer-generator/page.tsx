@@ -5,7 +5,7 @@ import LegalTemplateGenerator from "@/components/tools/built-ins/LegalTemplateGe
 export const metadata = {
 	title: "Free Disclaimer Generator Online – Fast & No Signup | 30tools",
 	description: "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal requirements. 100% free, fast, and no signup required.",
-	keywords: "disclaimer generator, free disclaimer generator, online disclaimer generator, no signup, 30tools",
+	keywords: "disclaimer generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/disclaimer-generator",
 	},

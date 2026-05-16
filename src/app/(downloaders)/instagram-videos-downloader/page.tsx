@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Instagram Videos Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Instagram Videos, Reels, Photos, IGTV and Carousel. Save your favorite content with our easy-to-use tool. Start downloading now! 100% free, fast, and no signup required.",
-	keywords: "instagram videos downloader, free instagram videos downloader, online instagram videos downloader, no signup, 30tools",
+	keywords: "instagram videos downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/instagram-videos-downloader",
 	},

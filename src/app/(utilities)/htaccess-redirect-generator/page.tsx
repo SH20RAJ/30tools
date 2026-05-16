@@ -5,7 +5,7 @@ import HtaccessGenerator from "@/components/tools/built-ins/HtaccessGenerator";
 export const metadata = {
 	title: "Free Htaccess Redirect Generator Online – Fast & No Signup | 30tools",
 	description: "Free htaccess redirect generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "htaccess redirect generator, free htaccess redirect generator, online htaccess redirect generator, no signup, 30tools",
+	keywords: "htaccess redirect generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/htaccess-redirect-generator",
 	},

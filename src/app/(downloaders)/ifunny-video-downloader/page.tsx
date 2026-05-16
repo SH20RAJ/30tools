@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Ifunny Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite iFunny videos and memes to your device easily. Our free online downloader preserves quality and works instantly in your browser. 100% free, fast, and no signup required.",
-	keywords: "ifunny video downloader, free ifunny video downloader, online ifunny video downloader, no signup, 30tools",
+	keywords: "ifunny video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/ifunny-video-downloader",
 	},

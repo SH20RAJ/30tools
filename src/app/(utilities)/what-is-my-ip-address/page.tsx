@@ -5,7 +5,7 @@ import PublicIpTool from "@/components/tools/built-ins/PublicIpTool";
 export const metadata = {
 	title: "Free What Is My IP Address Online – Fast & No Signup | 30tools",
 	description: "Free what is my ip address tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "what is my ip address, free what is my ip address, online what is my ip address, no signup, 30tools",
+	keywords: "what is my ip address, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-ip-address",
 	},

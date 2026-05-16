@@ -5,7 +5,7 @@ import RgbHexConverter from "@/components/tools/built-ins/RgbHexConverter";
 export const metadata = {
 	title: "Free RGB to HEX Converter Online – Fast & No Signup | 30tools",
 	description: "Free rgb to hex converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "rgb to hex converter, free rgb to hex converter, online rgb to hex converter, no signup, 30tools",
+	keywords: "rgb to hex converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/rgb-to-hex-converter",
 	},

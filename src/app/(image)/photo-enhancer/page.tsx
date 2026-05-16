@@ -5,7 +5,7 @@ import PhotoEnhancerTool from "@/components/tools/image/PhotoEnhancerTool";
 export const metadata = {
 	title: "Free Photo Enhancer Online – Fast & No Signup | 30tools",
 	description: "Enhance photo quality with AI-powered image enhancement 100% free, fast, and no signup required.",
-	keywords: "photo enhancer, free photo enhancer, online photo enhancer, no signup, 30tools",
+	keywords: "photo enhancer, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/photo-enhancer",
 	},

@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free M3U8 Downloader Online – Fast & No Signup | 30tools",
 	description: "Download m3u8 playlists and convert them to high-quality MP4 videos. 100% free, fast, and no signup required.",
-	keywords: "m3u8 downloader, free m3u8 downloader, online m3u8 downloader, no signup, 30tools",
+	keywords: "m3u8 downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/m3u8-downloader",
 	},

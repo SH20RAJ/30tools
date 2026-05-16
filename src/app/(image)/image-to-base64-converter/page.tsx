@@ -5,7 +5,7 @@ import ImageToBase64Tool from "@/components/tools/image/ImageToBase64Tool";
 export const metadata = {
 	title: "Free Image to Base64 Converter Online – Fast & No Signup | 30tools",
 	description: "Free image to base64 converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "image to base64 converter, free image to base64 converter, online image to base64 converter, no signup, 30tools",
+	keywords: "image to base64 converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/image-to-base64-converter",
 	},

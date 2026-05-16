@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Confidence Interval Calculator Online – Fast & No Signup | 30tools",
 	description: "Calculate the confidence interval for your statistical data instantly. Our free online tool helps you understand data precision and margin of error in your research. 100% free, fast, and no signup required.",
-	keywords: "confidence interval calculator, free confidence interval calculator, online confidence interval calculator, no signup, 30tools",
+	keywords: "confidence interval calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/confidence-interval-calculator",
 	},

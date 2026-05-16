@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Streamable Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Streamable videos in high definition instantly. Our free online tool helps you save viral clips and sports highlights for offline viewing without any signup. 100% free, fast, and no signup required.",
-	keywords: "streamable video downloader, free streamable video downloader, online streamable video downloader, no signup, 30tools",
+	keywords: "streamable video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/streamable-video-downloader",
 	},

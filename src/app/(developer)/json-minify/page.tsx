@@ -5,7 +5,7 @@ import JSONMinifierTool from "@/components/tools/developer/JSONMinifierTool";
 export const metadata = {
 	title: "Free JSON Minify Online – Fast & No Signup | 30tools",
 	description: "Compress and minify your JSON data to reduce its size for web transmission. Our free online tool removes all unnecessary whitespace and comments instantly. 100% free, fast, and no signup required.",
-	keywords: "json minify, free json minify, online json minify, no signup, 30tools",
+	keywords: "json minify, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-minify",
 	},

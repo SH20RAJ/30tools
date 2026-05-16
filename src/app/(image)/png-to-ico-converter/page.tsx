@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free PNG to ICO Converter Online – Fast & No Signup | 30tools",
 	description: "Generate high-quality ICO favicon files from PNG images. Our free tool supports multiple sizes for perfect website icon compatibility. Privacy-first browser-based conversion. 100% free, fast, and no signup required.",
-	keywords: "png to ico converter, free png to ico converter, online png to ico converter, no signup, 30tools",
+	keywords: "png to ico converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/png-to-ico-converter",
 	},

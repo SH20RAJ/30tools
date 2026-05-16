@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Terabox Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Terabox videos with direct links and embed custom video players 100% free, fast, and no signup required.",
-	keywords: "terabox video downloader, free terabox video downloader, online terabox video downloader, no signup, 30tools",
+	keywords: "terabox video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/terabox-downloader",
 	},

@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Bandcamp Video Downloader Online – Fast & No Signup | 30tools",
 	description: "The easiest way to download Bandcamp videos online. 100% free, fast, and no signup required.",
-	keywords: "bandcamp video downloader, free bandcamp video downloader, online bandcamp video downloader, no signup, 30tools",
+	keywords: "bandcamp video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/bandcamp-video-downloader",
 	},

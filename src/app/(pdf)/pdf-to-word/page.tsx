@@ -5,7 +5,7 @@ import PDFToWord from "@/components/tools/pdf/PDFToWord";
 export const metadata = {
 	title: "Free PDF to Word Online – Fast & No Signup | 30tools",
 	description: "Convert PDF files to editable Word documents 100% free, fast, and no signup required.",
-	keywords: "pdf to word, free pdf to word, online pdf to word, no signup, 30tools",
+	keywords: "pdf to word, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/pdf-to-word",
 	},

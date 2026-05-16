@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Octal to Decimal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert octal numbers to decimal (Base-10) instantly. Our free online tool makes it easy to transform numeric bases for programming and mathematical calculations. 100% free, fast, and no signup required.",
-	keywords: "octal to decimal converter, free octal to decimal converter, online octal to decimal converter, no signup, 30tools",
+	keywords: "octal to decimal converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/octal-to-decimal-converter",
 	},

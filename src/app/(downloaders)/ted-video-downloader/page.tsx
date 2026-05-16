@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Ted Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save TED Talk videos directly to your device easily. Our free online downloader helps you keep inspirational talks and educational content for offline viewing in high quality. 100% free, fast, and no signup required.",
-	keywords: "ted video downloader, free ted video downloader, online ted video downloader, no signup, 30tools",
+	keywords: "ted video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/ted-video-downloader",
 	},

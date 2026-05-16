@@ -5,7 +5,7 @@ import RomanNumeralTool from "@/components/tools/built-ins/RomanNumeralTool";
 export const metadata = {
 	title: "Free Roman Numerals to Number Online – Fast & No Signup | 30tools",
 	description: "Free roman numerals to number tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "roman numerals to number, free roman numerals to number, online roman numerals to number, no signup, 30tools",
+	keywords: "roman numerals to number, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/roman-numerals-to-number",
 	},

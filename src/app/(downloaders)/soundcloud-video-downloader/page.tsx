@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Soundcloud Video Downloader Online – Fast & No Signup | 30tools",
 	description: "The easiest way to download SoundCloud audio and video content online for free. Save high-quality tracks and clips for offline listening in your browser without any signup. 100% free, fast, and no signup required.",
-	keywords: "soundcloud video downloader, free soundcloud video downloader, online soundcloud video downloader, no signup, 30tools",
+	keywords: "soundcloud video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/soundcloud-video-downloader",
 	},

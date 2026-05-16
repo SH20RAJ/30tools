@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Snapchat Saver Online Online – Fast & No Signup | 30tools",
 	description: "Download Snapchat stories and spotlight videos in high quality. Our free online tool helps you save ephemeral content before it disappears forever. 100% free, fast, and no signup required.",
-	keywords: "snapchat saver online, free snapchat saver online, online snapchat saver online, no signup, 30tools",
+	keywords: "snapchat saver online, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/snapchat-saver-online",
 	},

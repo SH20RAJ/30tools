@@ -5,7 +5,7 @@ import ScreenResolutionTool from "@/components/tools/built-ins/ScreenResolutionT
 export const metadata = {
 	title: "Free Screen Resolution Simulator Online – Fast & No Signup | 30tools",
 	description: "Free screen resolution simulator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "screen resolution simulator, free screen resolution simulator, online screen resolution simulator, no signup, 30tools",
+	keywords: "screen resolution simulator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/screen-resolution-simulator",
 	},

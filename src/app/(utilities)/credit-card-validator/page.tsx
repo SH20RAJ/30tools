@@ -5,7 +5,7 @@ import CreditCardValidatorTool from "@/components/tools/security/CreditCardValid
 export const metadata = {
 	title: "Free Credit Card Validator Online – Fast & No Signup | 30tools",
 	description: "Check if a credit card number is valid using the Luhn algorithm instantly. Our free online tool helps you verify card formats and identify card types for testing purposes. 100% free, fast, and no signup required.",
-	keywords: "credit card validator, free credit card validator, online credit card validator, no signup, 30tools",
+	keywords: "credit card validator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/credit-card-validator",
 	},

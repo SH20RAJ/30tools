@@ -5,7 +5,7 @@ import LineSorterTool from "@/components/tools/text/LineSorterTool";
 export const metadata = {
 	title: "Free Article Rewriter Online – Fast & No Signup | 30tools",
 	description: "Paraphrase and rewrite articles instantly with our free online Article Rewriter. Improve readability, change tone, and create unique content variations for blogs and SEO. 100% free and secure. 100% free, fast, and no signup required.",
-	keywords: "article rewriter, free article rewriter, online article rewriter, no signup, 30tools",
+	keywords: "article rewriter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/article-rewriter",
 	},

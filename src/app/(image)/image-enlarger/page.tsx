@@ -5,7 +5,7 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 export const metadata = {
 	title: "Free Image Enlarger Online – Fast & No Signup | 30tools",
 	description: "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "image enlarger, free image enlarger, online image enlarger, no signup, 30tools",
+	keywords: "image enlarger, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/image-enlarger",
 	},

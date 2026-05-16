@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Universal Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required. 100% free, fast, and no signup required.",
-	keywords: "universal video downloader, free universal video downloader, online universal video downloader, no signup, 30tools",
+	keywords: "universal video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/universal-video-downloader",
 	},

@@ -5,7 +5,7 @@ import UrlParserTool from "@/components/tools/built-ins/UrlParserTool";
 export const metadata = {
 	title: "Free URL Parser Online – Fast & No Signup | 30tools",
 	description: "Free url parser tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "url parser, free url parser, online url parser, no signup, 30tools",
+	keywords: "url parser, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/url-parser",
 	},

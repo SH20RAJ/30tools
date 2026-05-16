@@ -5,7 +5,7 @@ import TwitterCardGenerator from "@/components/tools/built-ins/TwitterCardGenera
 export const metadata = {
 	title: "Free Twitter Card Generator Online – Fast & No Signup | 30tools",
 	description: "Free twitter card generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "twitter card generator, free twitter card generator, online twitter card generator, no signup, 30tools",
+	keywords: "twitter card generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/twitter-card-generator",
 	},

@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Whois Domain Lookup Online – Fast & No Signup | 30tools",
 	description: "Free whois domain lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "whois domain lookup, free whois domain lookup, online whois domain lookup, no signup, 30tools",
+	keywords: "whois domain lookup, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/whois-domain-lookup",
 	},

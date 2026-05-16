@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Save Twitter Videos Online – Fast & No Signup | 30tools",
 	description: "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing. 100% free, fast, and no signup required.",
-	keywords: "save twitter videos, free save twitter videos, online save twitter videos, no signup, 30tools",
+	keywords: "save twitter videos, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/save-twitter-videos",
 	},

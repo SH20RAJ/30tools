@@ -5,7 +5,7 @@ import DomainToIPTool from "@/components/tools/built-ins/DomainToIPTool";
 export const metadata = {
 	title: "Free Domain to IP Converter Online – Fast & No Signup | 30tools",
 	description: "Find the IP address of any website instantly. Our free online tool helps you identify server locations and troubleshoot network connectivity issues. 100% free, fast, and no signup required.",
-	keywords: "domain to ip converter, free domain to ip converter, online domain to ip converter, no signup, 30tools",
+	keywords: "domain to ip converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/domain-to-ip-converter",
 	},

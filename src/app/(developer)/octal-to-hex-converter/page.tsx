@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Octal to HEX Converter Online – Fast & No Signup | 30tools",
 	description: "Transform octal values into hexadecimal format instantly. Our free online converter is perfect for low-level programming and memory address transformations. 100% free, fast, and no signup required.",
-	keywords: "octal to hex converter, free octal to hex converter, online octal to hex converter, no signup, 30tools",
+	keywords: "octal to hex converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/octal-to-hex-converter",
 	},

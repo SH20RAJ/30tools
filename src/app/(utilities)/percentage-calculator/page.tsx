@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Percentage Calculator Online – Fast & No Signup | 30tools",
 	description: "Free percentage calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "percentage calculator, free percentage calculator, online percentage calculator, no signup, 30tools",
+	keywords: "percentage calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/percentage-calculator",
 	},

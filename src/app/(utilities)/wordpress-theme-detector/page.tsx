@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free WordPress Theme Detector Online – Fast & No Signup | 30tools",
 	description: "Free wordpress theme detector tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "wordpress theme detector, free wordpress theme detector, online wordpress theme detector, no signup, 30tools",
+	keywords: "wordpress theme detector, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/wordpress-theme-detector",
 	},

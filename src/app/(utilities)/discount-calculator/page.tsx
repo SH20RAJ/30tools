@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Discount Calculator Online – Fast & No Signup | 30tools",
 	description: "Calculate the final price after discounts and taxes instantly. Our free online tool helps you find the best deals and savings while shopping. 100% free, fast, and no signup required.",
-	keywords: "discount calculator, free discount calculator, online discount calculator, no signup, 30tools",
+	keywords: "discount calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/discount-calculator",
 	},

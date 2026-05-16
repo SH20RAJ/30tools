@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Subscribe Link Generator Online – Fast & No Signup | 30tools",
 	description: "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for social media and bios. 100% free, fast, and no signup required.",
-	keywords: "youtube subscribe link generator, free youtube subscribe link generator, online youtube subscribe link generator, no signup, 30tools",
+	keywords: "youtube subscribe link generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-subscribe-link-generator",
 	},

@@ -5,7 +5,7 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 export const metadata = {
 	title: "Free CSS Minifier Online – Fast & No Signup | 30tools",
 	description: "Compress and minify your CSS files to reduce page load times and improve website performance. Our free online tool removes unnecessary whitespace and comments instantly. Privacy-focused. 100% free, fast, and no signup required.",
-	keywords: "css minifier, free css minifier, online css minifier, no signup, 30tools",
+	keywords: "css minifier, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/css-minifier",
 	},

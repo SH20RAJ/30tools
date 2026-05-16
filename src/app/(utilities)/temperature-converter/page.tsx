@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Temperature Converter Online – Fast & No Signup | 30tools",
 	description: "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "temperature converter, free temperature converter, online temperature converter, no signup, 30tools",
+	keywords: "temperature converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/temperature-converter",
 	},

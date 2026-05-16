@@ -5,7 +5,7 @@ import UrlParserTool from "@/components/tools/built-ins/UrlParserTool";
 export const metadata = {
 	title: "Free URL Opener Online – Fast & No Signup | 30tools",
 	description: "Free url opener tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "url opener, free url opener, online url opener, no signup, 30tools",
+	keywords: "url opener, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/url-opener",
 	},

@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Ig Highlights Saver Online – Fast & No Signup | 30tools",
 	description: "Download Instagram story highlights to your device easily. Our free online tool helps you archive your favorite moments and creators' content in high quality. 100% free, fast, and no signup required.",
-	keywords: "ig highlights saver, free ig highlights saver, online ig highlights saver, no signup, 30tools",
+	keywords: "ig highlights saver, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/ig-highlights-saver",
 	},

@@ -5,7 +5,7 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 export const metadata = {
 	title: "Free CSS Beautifier Online – Fast & No Signup | 30tools",
 	description: "Format and prettify your CSS code instantly with our free online CSS Beautifier. Improve code readability, fix indentation, and organize your stylesheets for better maintenance. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "css beautifier, free css beautifier, online css beautifier, no signup, 30tools",
+	keywords: "css beautifier, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/css-beautifier",
 	},

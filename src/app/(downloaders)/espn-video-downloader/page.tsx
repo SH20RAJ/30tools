@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Espn Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite Espn sports videos to your device. 100% free, fast, and no signup required.",
-	keywords: "espn video downloader, free espn video downloader, online espn video downloader, no signup, 30tools",
+	keywords: "espn video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/espn-video-downloader",
 	},

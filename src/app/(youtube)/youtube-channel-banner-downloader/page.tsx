@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Channel Banner Downloader Online – Fast & No Signup | 30tools",
 	description: "Download high-resolution YouTube channel banners and covers instantly. Our free tool helps you save channel branding for design reference or archiving. High-quality and easy to use. 100% free, fast, and no signup required.",
-	keywords: "youtube channel banner downloader, free youtube channel banner downloader, online youtube channel banner downloader, no signup, 30tools",
+	keywords: "youtube channel banner downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-banner-downloader",
 	},

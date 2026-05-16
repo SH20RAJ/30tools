@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Title Generator Online – Fast & No Signup | 30tools",
 	description: "Generate catchy and SEO-friendly titles for your YouTube videos instantly. Our free online tool suggests high-CTR titles based on your topic and keywords to help you get more views. 100% free, fast, and no signup required.",
-	keywords: "youtube title generator, free youtube title generator, online youtube title generator, no signup, 30tools",
+	keywords: "youtube title generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-generator",
 	},

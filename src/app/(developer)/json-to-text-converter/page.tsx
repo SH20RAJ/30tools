@@ -5,7 +5,7 @@ import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerializat
 export const metadata = {
 	title: "Free JSON to Text Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JSON data into readable plain text instantly. Our free online tool is perfect for extracting values and creating human-readable documentation from raw data. 100% free, fast, and no signup required.",
-	keywords: "json to text converter, free json to text converter, online json to text converter, no signup, 30tools",
+	keywords: "json to text converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-to-text-converter",
 	},

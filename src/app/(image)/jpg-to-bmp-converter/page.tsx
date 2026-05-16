@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free JPG to BMP Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JPG images to BMP (Bitmap) format for legacy system compatibility. Fast, free, and secure online converter that works in your browser without uploading files to any server. 100% free, fast, and no signup required.",
-	keywords: "jpg to bmp converter, free jpg to bmp converter, online jpg to bmp converter, no signup, 30tools",
+	keywords: "jpg to bmp converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/jpg-to-bmp-converter",
 	},

@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free PNG to JPG Converter Online – Fast & No Signup | 30tools",
 	description: "Convert PNG images to JPG format for smaller file sizes and better web compatibility. Our free online tool maintains high quality and works instantly in your browser. 100% free, fast, and no signup required.",
-	keywords: "png to jpg converter, free png to jpg converter, online png to jpg converter, no signup, 30tools",
+	keywords: "png to jpg converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/png-to-jpg-converter",
 	},

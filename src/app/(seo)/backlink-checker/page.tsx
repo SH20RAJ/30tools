@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Backlink Checker Online – Fast & No Signup | 30tools",
 	description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
-	keywords: "backlink checker, free backlink checker, online backlink checker, no signup, 30tools",
+	keywords: "backlink checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/backlink-checker",
 	},

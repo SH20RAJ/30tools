@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Vimeo Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device. 100% free, fast, and no signup required.",
-	keywords: "vimeo video downloader, free vimeo video downloader, online vimeo video downloader, no signup, 30tools",
+	keywords: "vimeo video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/vimeo-video-downloader",
 	},

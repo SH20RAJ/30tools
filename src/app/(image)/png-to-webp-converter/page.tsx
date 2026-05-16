@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free PNG to WebP Converter Online – Fast & No Signup | 30tools",
 	description: "Convert PNG to WebP to optimize your website speed. Significantly reduce file sizes while maintaining image transparency and quality. Free, fast, and secure online tool. 100% free, fast, and no signup required.",
-	keywords: "png to webp converter, free png to webp converter, online png to webp converter, no signup, 30tools",
+	keywords: "png to webp converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/png-to-webp-converter",
 	},

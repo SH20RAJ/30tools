@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Open Graph Checker Online – Fast & No Signup | 30tools",
 	description: "Free open graph checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "open graph checker, free open graph checker, online open graph checker, no signup, 30tools",
+	keywords: "open graph checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/open-graph-checker",
 	},

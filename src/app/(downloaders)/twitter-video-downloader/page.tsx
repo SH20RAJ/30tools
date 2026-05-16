@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Twitter/X Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Twitter and X platform videos and GIFs in high quality for free 100% free, fast, and no signup required.",
-	keywords: "twitter/x video downloader, free twitter/x video downloader, online twitter/x video downloader, no signup, 30tools",
+	keywords: "twitter/x video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/twitter-video-downloader",
 	},

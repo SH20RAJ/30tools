@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Advanced Sitemap Generator Online – Fast & No Signup | 30tools",
 	description: "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata. 100% free, fast, and no signup required.",
-	keywords: "advanced sitemap generator, free advanced sitemap generator, online advanced sitemap generator, no signup, 30tools",
+	keywords: "advanced sitemap generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/sitemap-generator",
 	},

@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Hosting Checker Online – Fast & No Signup | 30tools",
 	description: "Free hosting checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "hosting checker, free hosting checker, online hosting checker, no signup, 30tools",
+	keywords: "hosting checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/hosting-checker",
 	},

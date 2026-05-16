@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Timestamp Link Generator Online – Fast & No Signup | 30tools",
 	description: "Create direct links to specific parts of any YouTube video instantly. Our free online tool helps you share precise moments with friends, students, or your audience. Fast and easy. 100% free, fast, and no signup required.",
-	keywords: "youtube timestamp link generator, free youtube timestamp link generator, online youtube timestamp link generator, no signup, 30tools",
+	keywords: "youtube timestamp link generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-timestamp-link-generator",
 	},

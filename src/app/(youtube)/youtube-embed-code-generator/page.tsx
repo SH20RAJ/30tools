@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Embed Code Generator Online – Fast & No Signup | 30tools",
 	description: "Generate customizable YouTube embed codes instantly. Our free online tool helps you create responsive iframes with specific start times, player controls, and privacy settings for your website. 100% free, fast, and no signup required.",
-	keywords: "youtube embed code generator, free youtube embed code generator, online youtube embed code generator, no signup, 30tools",
+	keywords: "youtube embed code generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-embed-code-generator",
 	},

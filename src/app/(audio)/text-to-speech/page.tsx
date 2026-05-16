@@ -5,7 +5,7 @@ import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
 export const metadata = {
 	title: "Free Text to Speech Online – Fast & No Signup | 30tools",
 	description: "Convert text to natural sounding speech audio 100% free, fast, and no signup required.",
-	keywords: "text to speech, free text to speech, online text to speech, no signup, 30tools",
+	keywords: "text to speech, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/text-to-speech",
 	},

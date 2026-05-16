@@ -5,7 +5,7 @@ import InternetSpeedTestTool from "@/components/tools/utilities/InternetSpeedTes
 export const metadata = {
 	title: "Free Internet Speed Test Online – Fast & No Signup | 30tools",
 	description: "Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly. 100% free, fast, and no signup required.",
-	keywords: "internet speed test, free internet speed test, online internet speed test, no signup, 30tools",
+	keywords: "internet speed test, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/internet-speed-test",
 	},

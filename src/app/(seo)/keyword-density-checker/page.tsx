@@ -5,7 +5,7 @@ import KeywordTool from "@/components/tools/seo/KeywordTool";
 export const metadata = {
 	title: "Free Keyword Density Checker Online – Fast & No Signup | 30tools",
 	description: "Free keyword density checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "keyword density checker, free keyword density checker, online keyword density checker, no signup, 30tools",
+	keywords: "keyword density checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/keyword-density-checker",
 	},

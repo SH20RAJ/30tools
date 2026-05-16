@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Currency Converter Online – Fast & No Signup | 30tools",
 	description: "Convert currencies with real-time exchange rates instantly. Our free online tool supports all major global currencies for travel, business, and financial planning. 100% free, fast, and no signup required.",
-	keywords: "currency converter, free currency converter, online currency converter, no signup, 30tools",
+	keywords: "currency converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/currency-converter",
 	},

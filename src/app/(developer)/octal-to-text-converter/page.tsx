@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Octal to Text Converter Online – Fast & No Signup | 30tools",
 	description: "Convert octal character codes back to readable text instantly. Our free online tool helps you decode data streams and debug text processing tasks in your browser. 100% free, fast, and no signup required.",
-	keywords: "octal to text converter, free octal to text converter, online octal to text converter, no signup, 30tools",
+	keywords: "octal to text converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/octal-to-text-converter",
 	},

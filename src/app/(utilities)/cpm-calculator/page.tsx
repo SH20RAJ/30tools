@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free CPM Calculator Online – Fast & No Signup | 30tools",
 	description: "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency. 100% free, fast, and no signup required.",
-	keywords: "cpm calculator, free cpm calculator, online cpm calculator, no signup, 30tools",
+	keywords: "cpm calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/cpm-calculator",
 	},

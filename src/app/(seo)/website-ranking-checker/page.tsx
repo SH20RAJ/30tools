@@ -5,7 +5,7 @@ import WebsiteRankingCheckerTool from "@/components/tools/seo/WebsiteRankingChec
 export const metadata = {
 	title: "Free Website Ranking Checker Online – Fast & No Signup | 30tools",
 	description: "Free website ranking checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "website ranking checker, free website ranking checker, online website ranking checker, no signup, 30tools",
+	keywords: "website ranking checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/website-ranking-checker",
 	},

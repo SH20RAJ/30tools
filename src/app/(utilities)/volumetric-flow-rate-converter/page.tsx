@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Volumetric Flow Rate Converter Online – Fast & No Signup | 30tools",
 	description: "Free volumetric flow rate converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "volumetric flow rate converter, free volumetric flow rate converter, online volumetric flow rate converter, no signup, 30tools",
+	keywords: "volumetric flow rate converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/volumetric-flow-rate-converter",
 	},

@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free HEX to Binary Converter Online – Fast & No Signup | 30tools",
 	description: "Transform hexadecimal values into binary code instantly. Our free online HEX to Binary converter is perfect for developers, hardware engineers, and technical students. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "hex to binary converter, free hex to binary converter, online hex to binary converter, no signup, 30tools",
+	keywords: "hex to binary converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/hex-to-binary-converter",
 	},

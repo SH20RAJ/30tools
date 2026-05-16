@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Pinterest Gif Downloader Online – Fast & No Signup | 30tools",
 	description: "Free online tool to download high-quality GIFs from Pinterest instantly. No registration required. 100% free, fast, and no signup required.",
-	keywords: "pinterest gif downloader, free pinterest gif downloader, online pinterest gif downloader, no signup, 30tools",
+	keywords: "pinterest gif downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/pinterest-gif-downloader",
 	},

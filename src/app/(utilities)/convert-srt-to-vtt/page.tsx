@@ -5,7 +5,7 @@ import SrtToVttTool from "@/components/tools/text/SrtToVttTool";
 export const metadata = {
 	title: "Free Convert SRT to VTT Online – Fast & No Signup | 30tools",
 	description: "Convert subtitle files from SRT to VTT format instantly. Our free online tool ensures compatibility with web-based video players and modern streaming platforms. 100% free, fast, and no signup required.",
-	keywords: "convert srt to vtt, free convert srt to vtt, online convert srt to vtt, no signup, 30tools",
+	keywords: "convert srt to vtt, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/convert-srt-to-vtt",
 	},

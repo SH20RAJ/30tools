@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Tag Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract hidden tags from any YouTube video instantly. Our free online tool helps you discover the keywords used by top-performing creators to boost your own video SEO. 100% free, fast, and no signup required.",
-	keywords: "youtube tag extractor, free youtube tag extractor, online youtube tag extractor, no signup, 30tools",
+	keywords: "youtube tag extractor, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-tag-extractor",
 	},

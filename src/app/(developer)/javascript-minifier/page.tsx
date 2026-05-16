@@ -5,7 +5,7 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 export const metadata = {
 	title: "Free JavaScript Minifier Online – Fast & No Signup | 30tools",
 	description: "Compress and minify your JavaScript files to reduce payload size and speed up your website. Our free online tool removes unnecessary code while preserving functionality. 100% free, fast, and no signup required.",
-	keywords: "javascript minifier, free javascript minifier, online javascript minifier, no signup, 30tools",
+	keywords: "javascript minifier, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/javascript-minifier",
 	},

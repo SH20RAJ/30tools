@@ -43,7 +43,6 @@ export default async function AboutPage() {
 					<Card>
 						<CardContent className="pt-6 space-y-6">
 							<div className="text-center space-y-3 mb-8">
-								<h1 className="text-3xl font-bold">About 30tools</h1>
 								<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
 									A large free tool collection with {SITE_CONFIG.toolCountString} tools. Many tools run in-browser, while some use secure server-side requests.
 								</p>

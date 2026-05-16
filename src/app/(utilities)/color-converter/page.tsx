@@ -5,7 +5,7 @@ import RgbHexConverter from "@/components/tools/built-ins/RgbHexConverter";
 export const metadata = {
 	title: "Free Color Converter Online – Fast & No Signup | 30tools",
 	description: "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with precision. 100% free, fast, and no signup required.",
-	keywords: "color converter, free color converter, online color converter, no signup, 30tools",
+	keywords: "color converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/color-converter",
 	},

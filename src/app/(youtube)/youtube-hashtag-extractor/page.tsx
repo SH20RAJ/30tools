@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Hashtag Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract all hashtags from any YouTube video instantly. Our free online tool helps you analyze competitor tagging strategies and optimize your own video SEO for better reach. 100% free, fast, and no signup required.",
-	keywords: "youtube hashtag extractor, free youtube hashtag extractor, online youtube hashtag extractor, no signup, 30tools",
+	keywords: "youtube hashtag extractor, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-hashtag-extractor",
 	},

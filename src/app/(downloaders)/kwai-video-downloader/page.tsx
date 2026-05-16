@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Kwai Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite Kwai videos without watermark instantly. Our free online tool helps you download trending clips and funny videos from Kwai in high-definition quality. 100% free, fast, and no signup required.",
-	keywords: "kwai video downloader, free kwai video downloader, online kwai video downloader, no signup, 30tools",
+	keywords: "kwai video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/kwai-video-downloader",
 	},

@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free IndexNow Submitter Online – Fast & No Signup | 30tools",
 	description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, fast, and no signup required.",
-	keywords: "indexnow submitter, free indexnow submitter, online indexnow submitter, no signup, 30tools",
+	keywords: "indexnow submitter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/indexnow",
 	},

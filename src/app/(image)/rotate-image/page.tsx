@@ -5,7 +5,7 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 export const metadata = {
 	title: "Free Rotate Image Online – Fast & No Signup | 30tools",
 	description: "Rotate images clockwise, counter-clockwise, or flip them instantly. Our free online image rotator works in your browser, keeping your photos private and secure. No signup needed.",
-	keywords: "rotate image, free rotate image, online rotate image, no signup, 30tools",
+	keywords: "rotate image, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/rotate-image",
 	},

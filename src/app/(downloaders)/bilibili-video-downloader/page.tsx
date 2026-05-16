@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Bilibili Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Bilibili videos online with ease. 100% free, fast, and no signup required.",
-	keywords: "bilibili video downloader, free bilibili video downloader, online bilibili video downloader, no signup, 30tools",
+	keywords: "bilibili video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/bilibili-video-downloader",
 	},

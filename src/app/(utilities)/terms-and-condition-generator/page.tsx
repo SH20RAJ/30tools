@@ -5,7 +5,7 @@ import LegalTemplateGenerator from "@/components/tools/built-ins/LegalTemplateGe
 export const metadata = {
 	title: "Free Terms And Condition Generator Online – Fast & No Signup | 30tools",
 	description: "Free terms and condition generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "terms and condition generator, free terms and condition generator, online terms and condition generator, no signup, 30tools",
+	keywords: "terms and condition generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/terms-and-condition-generator",
 	},

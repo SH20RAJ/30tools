@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Pinterest Image Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Pinterest images in original HD quality for free. Save pins, mood boards, and aesthetic visuals without watermarks. No signup required, instant downloads, and 100% private.",
-	keywords: "pinterest image downloader, free pinterest image downloader, online pinterest image downloader, no signup, 30tools",
+	keywords: "pinterest image downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/pinterest-image-downloader",
 	},

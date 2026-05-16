@@ -5,7 +5,7 @@ import DnsLookupTool from "@/components/tools/built-ins/DnsLookupTool";
 export const metadata = {
 	title: "Free DNS Records Checker Online – Fast & No Signup | 30tools",
 	description: "Retrieve all DNS records (A, MX, TXT, CNAME) for any domain instantly. Our free online tool helps you troubleshoot website hosting and email configuration issues. 100% free, fast, and no signup required.",
-	keywords: "dns records checker, free dns records checker, online dns records checker, no signup, 30tools",
+	keywords: "dns records checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/dns-records-checker",
 	},

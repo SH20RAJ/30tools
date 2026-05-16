@@ -5,7 +5,7 @@ import QrGeneratorPremium from "@/components/tools/utilities/QrGeneratorPremium"
 export const metadata = {
 	title: "Free QR Code Generator Online – Fast & No Signup | 30tools",
 	description: "Free qr code generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "qr code generator, free qr code generator, online qr code generator, no signup, 30tools",
+	keywords: "qr code generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/qr-code-generator",
 	},

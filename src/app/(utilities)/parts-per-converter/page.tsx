@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Parts Per Converter Online – Fast & No Signup | 30tools",
 	description: "Free parts per converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "parts per converter, free parts per converter, online parts per converter, no signup, 30tools",
+	keywords: "parts per converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/parts-per-converter",
 	},

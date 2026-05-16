@@ -5,7 +5,7 @@ import LineSorterTool from "@/components/tools/text/LineSorterTool";
 export const metadata = {
 	title: "Free Text Sorter Online – Fast & No Signup | 30tools",
 	description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
-	keywords: "text sorter, free text sorter, online text sorter, no signup, 30tools",
+	keywords: "text sorter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/text-sorter",
 	},

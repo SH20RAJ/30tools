@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Average Calculator Online – Fast & No Signup | 30tools",
 	description: "Calculate the mean, median, mode, and range of any dataset instantly. Our free online Average Calculator helps you analyze statistics and numeric data in seconds. 100% free, fast, and no signup required.",
-	keywords: "average calculator, free average calculator, online average calculator, no signup, 30tools",
+	keywords: "average calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/average-calculator",
 	},

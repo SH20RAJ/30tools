@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Region Restriction Checker Online – Fast & No Signup | 30tools",
 	description: "Check if a YouTube video is blocked or restricted in specific countries instantly. Our free online tool helps you verify global availability for your content. Fast and accurate. 100% free, fast, and no signup required.",
-	keywords: "youtube region restriction checker, free youtube region restriction checker, online youtube region restriction checker, no signup, 30tools",
+	keywords: "youtube region restriction checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-region-restriction-checker",
 	},

@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free PNG to BMP Converter Online – Fast & No Signup | 30tools",
 	description: "Convert PNG images to BMP format instantly. Our free online converter preserves original quality while ensuring compatibility with legacy software. Fast, secure, and privacy-focused. 100% free, fast, and no signup required.",
-	keywords: "png to bmp converter, free png to bmp converter, online png to bmp converter, no signup, 30tools",
+	keywords: "png to bmp converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/png-to-bmp-converter",
 	},

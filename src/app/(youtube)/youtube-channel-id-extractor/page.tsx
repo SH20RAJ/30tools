@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Channel ID Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract the unique Channel ID from any YouTube URL instantly. Perfect for developer API calls, marketing automation, and third-party tool integrations. Free and fast online tool. 100% free, fast, and no signup required.",
-	keywords: "youtube channel id extractor, free youtube channel id extractor, online youtube channel id extractor, no signup, 30tools",
+	keywords: "youtube channel id extractor, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-id-extractor",
 	},

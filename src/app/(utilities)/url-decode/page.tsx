@@ -5,7 +5,7 @@ import UrlCodecTool from "@/components/tools/built-ins/UrlCodecTool";
 export const metadata = {
 	title: "Free URL Decode Online – Fast & No Signup | 30tools",
 	description: "Free url decode tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "url decode, free url decode, online url decode, no signup, 30tools",
+	keywords: "url decode, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/url-decode",
 	},

@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Rumble Video Downloader Online – Fast & No Signup | 30tools",
 	description: "The ultimate tool for downloading videos from Rumble in HD quality. Our free online downloader is fast, secure, and works on all devices without any signup. 100% free, fast, and no signup required.",
-	keywords: "rumble video downloader, free rumble video downloader, online rumble video downloader, no signup, 30tools",
+	keywords: "rumble video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/rumble-video-downloader",
 	},

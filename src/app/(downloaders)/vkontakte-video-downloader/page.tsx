@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Vkontakte Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save Vkontakte videos directly to your device easily. 100% free, fast, and no signup required.",
-	keywords: "vkontakte video downloader, free vkontakte video downloader, online vkontakte video downloader, no signup, 30tools",
+	keywords: "vkontakte video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/vkontakte-video-downloader",
 	},

@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free WebP to JPG Converter Online – Fast & No Signup | 30tools",
 	description: "Convert WebP images to JPG format for maximum compatibility across all devices and platforms. Our free online converter is fast, secure, and preserves image detail. 100% free, fast, and no signup required.",
-	keywords: "webp to jpg converter, free webp to jpg converter, online webp to jpg converter, no signup, 30tools",
+	keywords: "webp to jpg converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/webp-to-jpg-converter",
 	},

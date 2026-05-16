@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Volume Converter Online – Fast & No Signup | 30tools",
 	description: "Free volume converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "volume converter, free volume converter, online volume converter, no signup, 30tools",
+	keywords: "volume converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/volume-converter",
 	},

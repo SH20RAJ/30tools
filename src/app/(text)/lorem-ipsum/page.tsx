@@ -5,7 +5,7 @@ import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGen
 export const metadata = {
 	title: "Free Lorem Ipsum Generator Online – Fast & No Signup | 30tools",
 	description: "Generate custom Lorem Ipsum text for your designs. 100% free, fast, and no signup required.",
-	keywords: "lorem ipsum generator, free lorem ipsum generator, online lorem ipsum generator, no signup, 30tools",
+	keywords: "lorem ipsum generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/lorem-ipsum",
 	},

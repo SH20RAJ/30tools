@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Instagram Story Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
-	keywords: "instagram story downloader, free instagram story downloader, online instagram story downloader, no signup, 30tools",
+	keywords: "instagram story downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/instagram-story-downloader",
 	},

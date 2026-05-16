@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Mp4 To Mp3 Online – Fast & No Signup | 30tools",
 	description: "Convert MP4 videos to high-quality MP3 audio instantly. Our free online converter is perfect for extracting audio from social media clips and videos without any loss in sound quality. 100% free, fast, and no signup required.",
-	keywords: "mp4 to mp3, free mp4 to mp3, online mp4 to mp3, no signup, 30tools",
+	keywords: "mp4 to mp3, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/mp4-to-mp3",
 	},

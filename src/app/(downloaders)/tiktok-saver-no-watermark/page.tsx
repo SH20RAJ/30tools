@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Tiktok Saver No Watermark Online – Fast & No Signup | 30tools",
 	description: "Download TikTok videos without the annoying watermark. Our free online tool provides clean, high-definition MP4 files for your personal archive or social media projects. 100% free, fast, and no signup required.",
-	keywords: "tiktok saver no watermark, free tiktok saver no watermark, online tiktok saver no watermark, no signup, 30tools",
+	keywords: "tiktok saver no watermark, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/tiktok-saver-no-watermark",
 	},

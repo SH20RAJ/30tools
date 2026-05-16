@@ -58,7 +58,7 @@ export default async function ToolPage() {
 			<ToolLayout tool={tool} relatedTools={[]}>
 				<div className="max-w-3xl mx-auto space-y-12 py-12">
 					<div className="text-center space-y-4">
-						<h1 className="text-4xl font-bold">How can we help?</h1>
+						<h2 className="text-4xl font-bold">How can we help?</h2>
 						<p className="text-xl text-muted-foreground">Choose the best way to get in touch with our team.</p>
 					</div>
 					<div className="grid md:grid-cols-2 gap-8">

@@ -5,7 +5,7 @@ import FaqSchemaGenerator from "@/components/tools/built-ins/FaqSchemaGenerator"
 export const metadata = {
 	title: "Free FAQ Schema Generator Online – Fast & No Signup | 30tools",
 	description: "Free faq schema generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "faq schema generator, free faq schema generator, online faq schema generator, no signup, 30tools",
+	keywords: "faq schema generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/faq-schema-generator",
 	},

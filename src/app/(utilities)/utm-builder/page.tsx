@@ -5,7 +5,7 @@ import UTMBuilderTool from "@/components/tools/utilities/UTMBuilderTool";
 export const metadata = {
 	title: "Free UTM Builder Online – Fast & No Signup | 30tools",
 	description: "Easily build campaign URLs with UTM parameters for Google Analytics tracking. 100% free, fast, and no signup required.",
-	keywords: "utm builder, free utm builder, online utm builder, no signup, 30tools",
+	keywords: "utm builder, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/utm-builder",
 	},

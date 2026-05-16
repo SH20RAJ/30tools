@@ -5,7 +5,7 @@ import UrlParserTool from "@/components/tools/built-ins/UrlParserTool";
 export const metadata = {
 	title: "Free URL Rewriting Tool Online – Fast & No Signup | 30tools",
 	description: "Free url rewriting tool tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "url rewriting tool, free url rewriting tool, online url rewriting tool, no signup, 30tools",
+	keywords: "url rewriting tool, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/url-rewriting-tool",
 	},

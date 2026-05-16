@@ -5,7 +5,7 @@ import KeywordTool from "@/components/tools/seo/KeywordTool";
 export const metadata = {
 	title: "Free Keywords Suggestion Tool Online – Fast & No Signup | 30tools",
 	description: "Free keywords suggestion tool tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "keywords suggestion tool, free keywords suggestion tool, online keywords suggestion tool, no signup, 30tools",
+	keywords: "keywords suggestion tool, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/keywords-suggestion-tool",
 	},

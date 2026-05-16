@@ -5,7 +5,7 @@ import JsonFormatterTool from "@/components/tools/code/JsonFormatterTool";
 export const metadata = {
 	title: "Free JSON Editor Online – Fast & No Signup | 30tools",
 	description: "Edit, modify, and manage JSON data with our free online JSON Editor. Features syntax highlighting, tree view, and validation to help you structure your data perfectly. 100% free, fast, and no signup required.",
-	keywords: "json editor, free json editor, online json editor, no signup, 30tools",
+	keywords: "json editor, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-editor",
 	},

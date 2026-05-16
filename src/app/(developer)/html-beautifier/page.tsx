@@ -5,7 +5,7 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 export const metadata = {
 	title: "Free HTML Beautifier Online – Fast & No Signup | 30tools",
 	description: "Format and prettify your HTML code instantly. Our free online HTML Beautifier fixes indentation, improves readability, and cleans up messy markup for better web development. 100% free, fast, and no signup required.",
-	keywords: "html beautifier, free html beautifier, online html beautifier, no signup, 30tools",
+	keywords: "html beautifier, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/html-beautifier",
 	},

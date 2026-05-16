@@ -5,7 +5,7 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 export const metadata = {
 	title: "Free Image Cropper Online – Fast & No Signup | 30tools",
 	description: "Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "image cropper, free image cropper, online image cropper, no signup, 30tools",
+	keywords: "image cropper, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/image-cropper",
 	},

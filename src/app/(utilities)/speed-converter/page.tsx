@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Speed Converter Online – Fast & No Signup | 30tools",
 	description: "Free speed converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "speed converter, free speed converter, online speed converter, no signup, 30tools",
+	keywords: "speed converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/speed-converter",
 	},

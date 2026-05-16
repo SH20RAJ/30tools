@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Voltage Converter Online – Fast & No Signup | 30tools",
 	description: "Free voltage converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "voltage converter, free voltage converter, online voltage converter, no signup, 30tools",
+	keywords: "voltage converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/voltage-converter",
 	},

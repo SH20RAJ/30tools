@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Charge Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between coulombs, millicoulombs, and other electrical charge units instantly. Our free online tool provides quick and accurate physics base transformations. 100% free, fast, and no signup required.",
-	keywords: "charge converter, free charge converter, online charge converter, no signup, 30tools",
+	keywords: "charge converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/charge-converter",
 	},

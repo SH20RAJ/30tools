@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free ASCII to Binary Converter Online – Fast & No Signup | 30tools",
 	description: "Convert ASCII text to binary code instantly. Our free online converter is perfect for computer science students, developers, and hobbyists. Fast, secure, and browser-based. 100% free, fast, and no signup required.",
-	keywords: "ascii to binary converter, free ascii to binary converter, online ascii to binary converter, no signup, 30tools",
+	keywords: "ascii to binary converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/ascii-to-binary-converter",
 	},

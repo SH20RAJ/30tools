@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Redirect Checker Online – Fast & No Signup | 30tools",
 	description: "Free redirect checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "redirect checker, free redirect checker, online redirect checker, no signup, 30tools",
+	keywords: "redirect checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/redirect-checker",
 	},

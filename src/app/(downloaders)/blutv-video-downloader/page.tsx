@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free BluTV Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
-	keywords: "blutv video downloader, free blutv video downloader, online blutv video downloader, no signup, 30tools",
+	keywords: "blutv video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/blutv-video-downloader",
 	},

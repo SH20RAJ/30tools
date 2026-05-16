@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Loan Calculator Online – Fast & No Signup | 30tools",
 	description: "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "loan calculator, free loan calculator, online loan calculator, no signup, 30tools",
+	keywords: "loan calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/loan-calculator",
 	},

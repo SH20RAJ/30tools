@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Shorts Downloader Online – Fast & No Signup | 30tools",
 	description: "Download YouTube Shorts videos in high quality for offline viewing 100% free, fast, and no signup required.",
-	keywords: "youtube shorts downloader, free youtube shorts downloader, online youtube shorts downloader, no signup, 30tools",
+	keywords: "youtube shorts downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-shorts-downloader",
 	},

@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free ShareChat Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite ShareChat videos without watermark instantly. Our free online tool helps you download viral Indian content and funny videos in high-definition quality. 100% free, fast, and no signup required.",
-	keywords: "sharechat video downloader, free sharechat video downloader, online sharechat video downloader, no signup, 30tools",
+	keywords: "sharechat video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/sharechat-video-downloader",
 	},

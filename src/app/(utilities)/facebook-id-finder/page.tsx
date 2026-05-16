@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Facebook ID Finder Online – Fast & No Signup | 30tools",
 	description: "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "facebook id finder, free facebook id finder, online facebook id finder, no signup, 30tools",
+	keywords: "facebook id finder, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/facebook-id-finder",
 	},

@@ -5,7 +5,7 @@ import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool";
 export const metadata = {
 	title: "Free Logo Generator Online – Fast & No Signup | 30tools",
 	description: "Create professional logos with text, fonts, and custom colors 100% free, fast, and no signup required.",
-	keywords: "logo generator, free logo generator, online logo generator, no signup, 30tools",
+	keywords: "logo generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/logo-generator",
 	},

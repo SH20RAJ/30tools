@@ -5,7 +5,7 @@ import IPLocationFinderTool from "@/components/tools/utilities/IPLocationFinderT
 export const metadata = {
 	title: "Free IP Address Lookup Online – Fast & No Signup | 30tools",
 	description: "Free ip address lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "ip address lookup, free ip address lookup, online ip address lookup, no signup, 30tools",
+	keywords: "ip address lookup, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/ip-address-lookup",
 	},

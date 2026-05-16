@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free HEX to Decimal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert hexadecimal numbers to decimal (Base-10) instantly. Our free online tool provides quick and accurate base conversions for programming and memory address analysis. 100% free, fast, and no signup required.",
-	keywords: "hex to decimal converter, free hex to decimal converter, online hex to decimal converter, no signup, 30tools",
+	keywords: "hex to decimal converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/hex-to-decimal-converter",
 	},

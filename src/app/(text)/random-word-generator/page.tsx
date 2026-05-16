@@ -5,7 +5,7 @@ import LineSorterTool from "@/components/tools/text/LineSorterTool";
 export const metadata = {
 	title: "Free Random Word Generator Online – Fast & No Signup | 30tools",
 	description: "Generate random words instantly for creative writing, brainstorming, or vocabulary practice. Our free online tool offers customizable options for word type and quantity. Fun and fast. 100% free, fast, and no signup required.",
-	keywords: "random word generator, free random word generator, online random word generator, no signup, 30tools",
+	keywords: "random word generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/random-word-generator",
 	},

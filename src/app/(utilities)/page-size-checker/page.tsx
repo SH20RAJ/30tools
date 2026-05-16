@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Page Size Checker Online – Fast & No Signup | 30tools",
 	description: "Free page size checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "page size checker, free page size checker, online page size checker, no signup, 30tools",
+	keywords: "page size checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/page-size-checker",
 	},

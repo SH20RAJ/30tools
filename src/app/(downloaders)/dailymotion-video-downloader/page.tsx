@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Dailymotion Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Free online Dailymotion downloader to save videos as MP4 in HD. Fast, secure, no signup required.",
-	keywords: "dailymotion video downloader, free dailymotion video downloader, online dailymotion video downloader, no signup, 30tools",
+	keywords: "dailymotion video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/dailymotion-video-downloader",
 	},

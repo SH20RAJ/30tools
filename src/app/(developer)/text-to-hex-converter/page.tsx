@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Text to HEX Converter Online – Fast & No Signup | 30tools",
 	description: "Convert plain text into hexadecimal format instantly. Our free online tool provides a clean hex representation of your input string for development and data analysis. 100% free, fast, and no signup required.",
-	keywords: "text to hex converter, free text to hex converter, online text to hex converter, no signup, 30tools",
+	keywords: "text to hex converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/text-to-hex-converter",
 	},

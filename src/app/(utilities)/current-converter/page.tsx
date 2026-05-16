@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Current Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between amperes, milliamperes, and other electrical current units instantly. Our free online tool is perfect for electronics and electrical engineering tasks. 100% free, fast, and no signup required.",
-	keywords: "current converter, free current converter, online current converter, no signup, 30tools",
+	keywords: "current converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/current-converter",
 	},

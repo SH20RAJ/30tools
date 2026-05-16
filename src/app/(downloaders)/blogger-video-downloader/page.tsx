@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Blogger Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Easily download videos from any Blogger post. 100% free, fast, and no signup required.",
-	keywords: "blogger video downloader, free blogger video downloader, online blogger video downloader, no signup, 30tools",
+	keywords: "blogger video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/blogger-video-downloader",
 	},

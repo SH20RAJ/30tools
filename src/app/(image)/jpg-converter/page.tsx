@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free JPG Converter Online – Fast & No Signup | 30tools",
 	description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use. Privacy-focused and works entirely in your browser. 100% free, fast, and no signup required.",
-	keywords: "jpg converter, free jpg converter, online jpg converter, no signup, 30tools",
+	keywords: "jpg converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/jpg-converter",
 	},

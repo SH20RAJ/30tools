@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Likee Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite Likee videos without watermark easily. Our free online downloader preserves high video quality and works instantly in your browser on all devices. 100% free, fast, and no signup required.",
-	keywords: "likee video downloader, free likee video downloader, online likee video downloader, no signup, 30tools",
+	keywords: "likee video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/likee-video-downloader",
 	},

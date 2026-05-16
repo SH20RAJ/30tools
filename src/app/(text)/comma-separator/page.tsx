@@ -5,7 +5,7 @@ import CommaSeparatorTool from "@/components/tools/text/CommaSeparatorTool";
 export const metadata = {
 	title: "Free Comma Separator Online – Fast & No Signup | 30tools",
 	description: "Convert lists, columns, or text into comma-separated values (CSV) instantly. Our free online Comma Separator is perfect for data cleaning and formatting tasks. Privacy-focused browser tool. 100% free, fast, and no signup required.",
-	keywords: "comma separator, free comma separator, online comma separator, no signup, 30tools",
+	keywords: "comma separator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/comma-separator",
 	},

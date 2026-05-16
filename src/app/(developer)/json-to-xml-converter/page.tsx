@@ -5,7 +5,7 @@ import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerializat
 export const metadata = {
 	title: "Free JSON to XML Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JSON data to XML format instantly. Our free online tool handles nesting and attributes to ensure a clean transformation for legacy system compatibility. 100% free, fast, and no signup required.",
-	keywords: "json to xml converter, free json to xml converter, online json to xml converter, no signup, 30tools",
+	keywords: "json to xml converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-to-xml-converter",
 	},

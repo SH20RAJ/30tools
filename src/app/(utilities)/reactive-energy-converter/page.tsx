@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Reactive Energy Converter Online – Fast & No Signup | 30tools",
 	description: "Free reactive energy converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "reactive energy converter, free reactive energy converter, online reactive energy converter, no signup, 30tools",
+	keywords: "reactive energy converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/reactive-energy-converter",
 	},

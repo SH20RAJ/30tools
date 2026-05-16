@@ -5,7 +5,7 @@ import LegalTemplateGenerator from "@/components/tools/built-ins/LegalTemplateGe
 export const metadata = {
 	title: "Free Privacy Policy Generator Online – Fast & No Signup | 30tools",
 	description: "Free privacy policy generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "privacy policy generator, free privacy policy generator, online privacy policy generator, no signup, 30tools",
+	keywords: "privacy policy generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/privacy-policy-generator",
 	},

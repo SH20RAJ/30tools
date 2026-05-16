@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Instagram Reel Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Instagram Reels without watermark in HD 1080p quality with original audio. Fast, free, and no login required. Save IG Reels to your gallery instantly. 100% free, fast, and no signup required.",
-	keywords: "instagram reel downloader, free instagram reel downloader, online instagram reel downloader, no signup, 30tools",
+	keywords: "instagram reel downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/instagram-reel-downloader",
 	},

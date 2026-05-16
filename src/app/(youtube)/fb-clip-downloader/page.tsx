@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Fb Clip Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Facebook video clips and highlights in high resolution instantly. Our free online downloader is fast, secure, and easy to use. No signup required for unlimited downloads.",
-	keywords: "fb clip downloader, free fb clip downloader, online fb clip downloader, no signup, 30tools",
+	keywords: "fb clip downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/fb-clip-downloader",
 	},

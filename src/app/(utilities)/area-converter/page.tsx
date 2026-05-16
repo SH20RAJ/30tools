@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Area Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between square meters, square feet, acres, and more instantly. Our free online Area Converter is perfect for real estate, construction, and design projects. 100% free, fast, and no signup required.",
-	keywords: "area converter, free area converter, online area converter, no signup, 30tools",
+	keywords: "area converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/area-converter",
 	},

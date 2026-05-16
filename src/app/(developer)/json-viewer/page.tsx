@@ -5,7 +5,7 @@ import JsonFormatterTool from "@/components/tools/code/JsonFormatterTool";
 export const metadata = {
 	title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
 	description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "json viewer, free json viewer, online json viewer, no signup, 30tools",
+	keywords: "json viewer, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/json-viewer",
 	},

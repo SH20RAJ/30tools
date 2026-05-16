@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Threads Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite Threads videos and clips to your device easily. Our free online tool preserves original video quality and works instantly in your browser on all devices. 100% free, fast, and no signup required.",
-	keywords: "threads video downloader, free threads video downloader, online threads video downloader, no signup, 30tools",
+	keywords: "threads video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/threads-video-downloader",
 	},

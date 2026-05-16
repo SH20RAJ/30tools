@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Frequency Converter Online – Fast & No Signup | 30tools",
 	description: "Free frequency converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "frequency converter, free frequency converter, online frequency converter, no signup, 30tools",
+	keywords: "frequency converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/frequency-converter",
 	},

@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Save Snaps To Gallery Online – Fast & No Signup | 30tools",
 	description: "Save public Snapchat snaps and videos directly to your phone gallery. Our free online tool works in your browser on all mobile devices and desktop computers. 100% free, fast, and no signup required.",
-	keywords: "save snaps to gallery, free save snaps to gallery, online save snaps to gallery, no signup, 30tools",
+	keywords: "save snaps to gallery, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/save-snaps-to-gallery",
 	},

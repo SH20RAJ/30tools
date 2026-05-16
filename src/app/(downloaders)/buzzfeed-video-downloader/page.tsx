@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Buzzfeed Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download any Buzzfeed video to your device instantly. 100% free, fast, and no signup required.",
-	keywords: "buzzfeed video downloader, free buzzfeed video downloader, online buzzfeed video downloader, no signup, 30tools",
+	keywords: "buzzfeed video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/buzzfeed-video-downloader",
 	},

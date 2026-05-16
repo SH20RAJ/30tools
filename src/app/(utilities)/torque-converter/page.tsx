@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Torque Converter Online – Fast & No Signup | 30tools",
 	description: "Free torque converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "torque converter, free torque converter, online torque converter, no signup, 30tools",
+	keywords: "torque converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/torque-converter",
 	},

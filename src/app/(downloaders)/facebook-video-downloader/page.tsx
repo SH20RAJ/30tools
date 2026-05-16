@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Facebook Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Facebook videos, reels, and stories in HD quality without software installation 100% free, fast, and no signup required.",
-	keywords: "facebook video downloader, free facebook video downloader, online facebook video downloader, no signup, 30tools",
+	keywords: "facebook video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/facebook-video-downloader",
 	},

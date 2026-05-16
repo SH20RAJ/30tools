@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Apparent Power Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between volt-amperes (VA), millivolt-amperes, and more instantly. Our free online tool is perfect for electrical engineers and technicians. 100% free, fast, and no signup required.",
-	keywords: "apparent power converter, free apparent power converter, online apparent power converter, no signup, 30tools",
+	keywords: "apparent power converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/apparent-power-converter",
 	},

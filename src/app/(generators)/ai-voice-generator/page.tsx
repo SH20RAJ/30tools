@@ -5,7 +5,7 @@ import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGenerator
 export const metadata = {
 	title: "Free AI Voice Generator Online – Fast & No Signup | 30tools",
 	description: "Convert text to natural-sounding AI voices instantly. Our free text-to-speech tool offers multiple languages and accents for professional voiceovers, accessibility, and creative projects. No signup required.",
-	keywords: "ai voice generator, free ai voice generator, online ai voice generator, no signup, 30tools",
+	keywords: "ai voice generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/ai-voice-generator",
 	},

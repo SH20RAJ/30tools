@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Modify Mp3 File Online – Fast & No Signup | 30tools",
 	description: "Trim, cut, and edit your MP3 files instantly. Our free online audio editor helps you create ringtones and clean up recordings with a simple, browser-based interface. 100% free, fast, and no signup required.",
-	keywords: "modify mp3 file, free modify mp3 file, online modify mp3 file, no signup, 30tools",
+	keywords: "modify mp3 file, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/modify-mp3-file",
 	},

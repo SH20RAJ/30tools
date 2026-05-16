@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Capcut Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Capcut videos and templates easily. 100% free, fast, and no signup required.",
-	keywords: "capcut video downloader, free capcut video downloader, online capcut video downloader, no signup, 30tools",
+	keywords: "capcut video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/capcut-video-downloader",
 	},

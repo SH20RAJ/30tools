@@ -5,7 +5,7 @@ import SeoToolkit from "@/components/tools/seo/SeoToolkit";
 export const metadata = {
 	title: "Free SEO Toolkit Online – Fast & No Signup | 30tools",
 	description: "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, fast, and no signup required.",
-	keywords: "seo toolkit, free seo toolkit, online seo toolkit, no signup, 30tools",
+	keywords: "seo toolkit, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/seotoolkit",
 	},

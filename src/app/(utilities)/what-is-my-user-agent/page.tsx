@@ -5,7 +5,7 @@ import UserAgentTool from "@/components/tools/built-ins/UserAgentTool";
 export const metadata = {
 	title: "Free What Is My User Agent Online – Fast & No Signup | 30tools",
 	description: "Free what is my user agent tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "what is my user agent, free what is my user agent, online what is my user agent, no signup, 30tools",
+	keywords: "what is my user agent, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-user-agent",
 	},

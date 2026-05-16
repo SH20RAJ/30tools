@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Text to Decimal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert text characters into their decimal numeric equivalents instantly. Our free online tool is useful for debugging character encoding and understanding data representations. 100% free, fast, and no signup required.",
-	keywords: "text to decimal converter, free text to decimal converter, online text to decimal converter, no signup, 30tools",
+	keywords: "text to decimal converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/text-to-decimal-converter",
 	},

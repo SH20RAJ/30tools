@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free Youtube Video Title Capitalizer Online – Fast & No Signup | 30tools",
 	description: "Automatically capitalize your YouTube video titles for maximum professional impact and CTR. Our free online tool follows industry standards to make your titles stand out. 100% free, fast, and no signup required.",
-	keywords: "youtube video title capitalizer, free youtube video title capitalizer, online youtube video title capitalizer, no signup, 30tools",
+	keywords: "youtube video title capitalizer, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-capitalizer",
 	},

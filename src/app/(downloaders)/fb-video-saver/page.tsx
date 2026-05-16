@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Fb Video Saver Online – Fast & No Signup | 30tools",
 	description: "Save Facebook videos and stories directly to your device. Our free online saver allows you to download public content in high definition without needing an account. 100% free, fast, and no signup required.",
-	keywords: "fb video saver, free fb video saver, online fb video saver, no signup, 30tools",
+	keywords: "fb video saver, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/fb-video-saver",
 	},

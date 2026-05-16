@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Chingari Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite Chingari videos to your device. 100% free, fast, and no signup required.",
-	keywords: "chingari video downloader, free chingari video downloader, online chingari video downloader, no signup, 30tools",
+	keywords: "chingari video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/chingari-video-downloader",
 	},

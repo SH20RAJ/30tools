@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Save Insta Pfp Online – Fast & No Signup | 30tools",
 	description: "View and download Instagram profile pictures in full resolution. Our free online tool provides high-quality DP downloads for any public Instagram account. 100% free, fast, and no signup required.",
-	keywords: "save insta pfp, free save insta pfp, online save insta pfp, no signup, 30tools",
+	keywords: "save insta pfp, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/save-insta-pfp",
 	},

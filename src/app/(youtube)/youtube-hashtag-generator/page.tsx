@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Hashtag Generator Online – Fast & No Signup | 30tools",
 	description: "Generate viral hashtags for your YouTube videos instantly. Our free online tool suggests relevant, search-friendly tags to help you reach more viewers and boost engagement. 100% free, fast, and no signup required.",
-	keywords: "youtube hashtag generator, free youtube hashtag generator, online youtube hashtag generator, no signup, 30tools",
+	keywords: "youtube hashtag generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-hashtag-generator",
 	},

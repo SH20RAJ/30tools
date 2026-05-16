@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free PuhuTv Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download videos from PuhuTv in high resolution instantly. Our free online tool makes it easy to save your favorite Turkish series and movies for offline viewing. 100% free, fast, and no signup required.",
-	keywords: "puhutv video downloader, free puhutv video downloader, online puhutv video downloader, no signup, 30tools",
+	keywords: "puhutv video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/puhutv-video-downloader",
 	},

@@ -5,7 +5,7 @@ import PDFToImage from "@/components/tools/pdf/PDFToImage";
 export const metadata = {
 	title: "Free PDF to Image Online – Fast & No Signup | 30tools",
 	description: "Convert PDF pages to high-quality JPG, PNG images 100% free, fast, and no signup required.",
-	keywords: "pdf to image, free pdf to image, online pdf to image, no signup, 30tools",
+	keywords: "pdf to image, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/pdf-to-image",
 	},

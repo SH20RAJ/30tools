@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Google Index Checker Online – Fast & No Signup | 30tools",
 	description: "Free google index checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "google index checker, free google index checker, online google index checker, no signup, 30tools",
+	keywords: "google index checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/google-index-checker",
 	},

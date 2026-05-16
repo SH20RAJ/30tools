@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Thumbnail Downloader Online – Fast & No Signup | 30tools",
 	description: "Download YouTube video thumbnails in HD and maxresdefault quality for free. Save high-resolution thumbnails for design, analysis, and content creation. No signup required, instant downloads.",
-	keywords: "youtube thumbnail downloader, free youtube thumbnail downloader, online youtube thumbnail downloader, no signup, 30tools",
+	keywords: "youtube thumbnail downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-thumbnail-downloader",
 	},

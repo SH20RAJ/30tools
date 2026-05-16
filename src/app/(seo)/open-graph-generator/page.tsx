@@ -5,7 +5,7 @@ import OpenGraphGenerator from "@/components/tools/built-ins/OpenGraphGenerator"
 export const metadata = {
 	title: "Free Open Graph Generator Online – Fast & No Signup | 30tools",
 	description: "Free open graph generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "open graph generator, free open graph generator, online open graph generator, no signup, 30tools",
+	keywords: "open graph generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/open-graph-generator",
 	},

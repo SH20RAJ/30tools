@@ -5,7 +5,7 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 export const metadata = {
 	title: "Free JavaScript DeObfuscator Online – Fast & No Signup | 30tools",
 	description: "Make obfuscated JavaScript code readable again instantly. Our free online DeObfuscator reverses common obfuscation techniques to help with code analysis and debugging. 100% free, fast, and no signup required.",
-	keywords: "javascript deobfuscator, free javascript deobfuscator, online javascript deobfuscator, no signup, 30tools",
+	keywords: "javascript deobfuscator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/javascript-deobfuscator",
 	},

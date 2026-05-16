@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Angle Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between degrees, radians, gradians, and more instantly. Our free online Angle Converter is perfect for students, engineers, and mathematicians. Fast and accurate. 100% free, fast, and no signup required.",
-	keywords: "angle converter, free angle converter, online angle converter, no signup, 30tools",
+	keywords: "angle converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/angle-converter",
 	},

@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Text to Binary Converter Online – Fast & No Signup | 30tools",
 	description: "Translate text into binary code (0s and 1s) instantly. Our free online converter is perfect for learning how computers represent data and creating secret binary messages. 100% free, fast, and no signup required.",
-	keywords: "text to binary converter, free text to binary converter, online text to binary converter, no signup, 30tools",
+	keywords: "text to binary converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/text-to-binary-converter",
 	},

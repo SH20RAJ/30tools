@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free Convert to ICO Online – Fast & No Signup | 30tools",
 	description: "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "convert to ico, free convert to ico, online convert to ico, no signup, 30tools",
+	keywords: "convert to ico, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/convert-to-ico",
 	},

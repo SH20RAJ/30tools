@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Margin Calculator Online – Fast & No Signup | 30tools",
 	description: "Free margin calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "margin calculator, free margin calculator, online margin calculator, no signup, 30tools",
+	keywords: "margin calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/margin-calculator",
 	},

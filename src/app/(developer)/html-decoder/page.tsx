@@ -5,7 +5,7 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 export const metadata = {
 	title: "Free HTML Decoder Online – Fast & No Signup | 30tools",
 	description: "Decode HTML entities back to their original characters instantly. Our free online tool converts &amp; and similar entities into readable text for easy debugging and content cleaning. 100% free, fast, and no signup required.",
-	keywords: "html decoder, free html decoder, online html decoder, no signup, 30tools",
+	keywords: "html decoder, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/html-decoder",
 	},

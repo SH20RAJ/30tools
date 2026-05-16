@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free HTTP Status Code Checker Online – Fast & No Signup | 30tools",
 	description: "Free http status code checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "http status code checker, free http status code checker, online http status code checker, no signup, 30tools",
+	keywords: "http status code checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/http-status-code-checker",
 	},

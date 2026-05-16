@@ -5,7 +5,7 @@ import RemoveLineBreaksTool from "@/components/tools/text/RemoveLineBreaksTool";
 export const metadata = {
 	title: "Free Remove Line Breaks Online – Fast & No Signup | 30tools",
 	description: "Remove line breaks, carriage returns, and extra whitespace from your text instantly. Perfect for cleaning up copied content for clean formatting. Free and privacy-focused online tool. 100% free, fast, and no signup required.",
-	keywords: "remove line breaks, free remove line breaks, online remove line breaks, no signup, 30tools",
+	keywords: "remove line breaks, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/remove-line-breaks",
 	},

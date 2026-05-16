@@ -5,7 +5,7 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 export const metadata = {
 	title: "Free JPG to GIF Converter Online – Fast & No Signup | 30tools",
 	description: "Turn your JPG photos into GIF format instantly. Perfect for simple animations or platform-specific requirements. Free, secure, and privacy-friendly online image converter. 100% free, fast, and no signup required.",
-	keywords: "jpg to gif converter, free jpg to gif converter, online jpg to gif converter, no signup, 30tools",
+	keywords: "jpg to gif converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/jpg-to-gif-converter",
 	},

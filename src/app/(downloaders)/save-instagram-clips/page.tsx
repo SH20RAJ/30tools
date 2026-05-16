@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Save Instagram Clips Online – Fast & No Signup | 30tools",
 	description: "Save Instagram clips, videos, and photos to your device instantly. Our free online downloader supports all public IG content and provides high-quality MP4/JPG files. 100% free, fast, and no signup required.",
-	keywords: "save instagram clips, free save instagram clips, online save instagram clips, no signup, 30tools",
+	keywords: "save instagram clips, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/save-instagram-clips",
 	},

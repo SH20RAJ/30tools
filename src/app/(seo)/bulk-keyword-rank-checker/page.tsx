@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Bulk Keyword Rank Checker Online – Fast & No Signup | 30tools",
 	description: "Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required.",
-	keywords: "bulk keyword rank checker, free bulk keyword rank checker, online bulk keyword rank checker, no signup, 30tools",
+	keywords: "bulk keyword rank checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/bulk-keyword-rank-checker",
 	},

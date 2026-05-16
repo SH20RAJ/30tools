@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Free Mp3 Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract MP3 audio from any video file instantly. Our free online tool supports multiple video formats and provides high-bitrate audio downloads for a premium listening experience. 100% free, fast, and no signup required.",
-	keywords: "free mp3 extractor, free free mp3 extractor, online free mp3 extractor, no signup, 30tools",
+	keywords: "free mp3 extractor, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/free-mp3-extractor",
 	},

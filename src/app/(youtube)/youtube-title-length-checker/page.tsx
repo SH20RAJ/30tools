@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Title Length Checker Online – Fast & No Signup | 30tools",
 	description: "Check if your YouTube video title is the optimal length for search and browse. Our free online checker helps you avoid truncation and ensure your full title is visible in search results. 100% free, fast, and no signup required.",
-	keywords: "youtube title length checker, free youtube title length checker, online youtube title length checker, no signup, 30tools",
+	keywords: "youtube title length checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-length-checker",
 	},

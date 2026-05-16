@@ -5,7 +5,7 @@ import ScreenResolutionTool from "@/components/tools/built-ins/ScreenResolutionT
 export const metadata = {
 	title: "Free What Is My Screen Resolution Online – Fast & No Signup | 30tools",
 	description: "Free what is my screen resolution tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "what is my screen resolution, free what is my screen resolution, online what is my screen resolution, no signup, 30tools",
+	keywords: "what is my screen resolution, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-screen-resolution",
 	},

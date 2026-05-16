@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Description Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract the full description from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
-	keywords: "youtube description extractor, free youtube description extractor, online youtube description extractor, no signup, 30tools",
+	keywords: "youtube description extractor, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-description-extractor",
 	},

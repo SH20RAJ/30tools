@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Downloaders Online – Fast & No Signup | 30tools",
 	description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
-	keywords: "downloaders, free downloaders, online downloaders, no signup, 30tools",
+	keywords: "downloaders, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/downloaders",
 	},

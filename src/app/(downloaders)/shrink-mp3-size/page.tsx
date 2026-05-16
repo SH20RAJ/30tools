@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Shrink Mp3 Size Online – Fast & No Signup | 30tools",
 	description: "Reduce the file size of your MP3 audio while maintaining great sound quality. Our free online compressor is perfect for optimizing audio for web use and mobile devices. 100% free, fast, and no signup required.",
-	keywords: "shrink mp3 size, free shrink mp3 size, online shrink mp3 size, no signup, 30tools",
+	keywords: "shrink mp3 size, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/shrink-mp3-size",
 	},

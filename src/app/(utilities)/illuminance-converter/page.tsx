@@ -5,7 +5,7 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 export const metadata = {
 	title: "Free Illuminance Converter Online – Fast & No Signup | 30tools",
 	description: "Free illuminance converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "illuminance converter, free illuminance converter, online illuminance converter, no signup, 30tools",
+	keywords: "illuminance converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/illuminance-converter",
 	},

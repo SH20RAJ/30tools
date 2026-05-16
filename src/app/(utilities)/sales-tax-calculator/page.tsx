@@ -5,7 +5,7 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 export const metadata = {
 	title: "Free Sales Tax Calculator Online – Fast & No Signup | 30tools",
 	description: "Free sales tax calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "sales tax calculator, free sales tax calculator, online sales tax calculator, no signup, 30tools",
+	keywords: "sales tax calculator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/sales-tax-calculator",
 	},

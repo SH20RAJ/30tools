@@ -5,7 +5,7 @@ import KeywordTool from "@/components/tools/seo/KeywordTool";
 export const metadata = {
 	title: "Free Advanced Keyword Research Online – Fast & No Signup | 30tools",
 	description: "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO. 100% free, fast, and no signup required.",
-	keywords: "advanced keyword research, free advanced keyword research, online advanced keyword research, no signup, 30tools",
+	keywords: "advanced keyword research, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/keyword-research-tool",
 	},

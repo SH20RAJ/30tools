@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Facebook Story Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Facebook stories in high resolution instantly. Our free online tool helps you save story content for offline viewing without any signup or account login. 100% free, fast, and no signup required.",
-	keywords: "facebook story downloader, free facebook story downloader, online facebook story downloader, no signup, 30tools",
+	keywords: "facebook story downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/facebook-story-downloader",
 	},

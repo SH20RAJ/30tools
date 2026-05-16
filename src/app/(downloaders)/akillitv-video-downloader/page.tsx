@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free AkilliTv Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download AkilliTv videos easily with our free online downloader. 100% free, fast, and no signup required.",
-	keywords: "akillitv video downloader, free akillitv video downloader, online akillitv video downloader, no signup, 30tools",
+	keywords: "akillitv video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/akillitv-video-downloader",
 	},

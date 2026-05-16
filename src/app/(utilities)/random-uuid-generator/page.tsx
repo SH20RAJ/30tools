@@ -5,7 +5,7 @@ import UuidGeneratorTool from "@/components/tools/built-ins/UuidGeneratorTool";
 export const metadata = {
 	title: "Free Random UUID Generator Online – Fast & No Signup | 30tools",
 	description: "Free random uuid generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "random uuid generator, free random uuid generator, online random uuid generator, no signup, 30tools",
+	keywords: "random uuid generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/random-uuid-generator",
 	},

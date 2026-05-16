@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free MxTakatak Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite MxTakatak videos without watermark instantly. Our free online tool helps you download viral clips and funny videos from Takatak in high quality. 100% free, fast, and no signup required.",
-	keywords: "mxtakatak video downloader, free mxtakatak video downloader, online mxtakatak video downloader, no signup, 30tools",
+	keywords: "mxtakatak video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/mxtakatak-video-downloader",
 	},

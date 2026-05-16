@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Description Generator Online – Fast & No Signup | 30tools",
 	description: "Create SEO-optimized YouTube video descriptions instantly. Our free online generator helps you include keywords, links, and timestamps to boost your video visibility and engagement. 100% free, fast, and no signup required.",
-	keywords: "youtube description generator, free youtube description generator, online youtube description generator, no signup, 30tools",
+	keywords: "youtube description generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-description-generator",
 	},

@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Mashable Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Mashable videos and news clips online with our free tool. Save high-quality content for offline viewing instantly in your browser without any signup. 100% free, fast, and no signup required.",
-	keywords: "mashable video downloader, free mashable video downloader, online mashable video downloader, no signup, 30tools",
+	keywords: "mashable video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/mashable-video-downloader",
 	},

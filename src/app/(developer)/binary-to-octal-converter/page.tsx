@@ -5,7 +5,7 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 export const metadata = {
 	title: "Free Binary to Octal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert binary numbers to octal format instantly. Our free online converter provides quick and accurate base transformations for developers and technical students. 100% free, fast, and no signup required.",
-	keywords: "binary to octal converter, free binary to octal converter, online binary to octal converter, no signup, 30tools",
+	keywords: "binary to octal converter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/binary-to-octal-converter",
 	},

@@ -5,7 +5,7 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 export const metadata = {
 	title: "Free Image Resizer Online – Fast & No Signup | 30tools",
 	description: "Resize images with custom dimensions and aspect ratios 100% free, fast, and no signup required.",
-	keywords: "image resizer, free image resizer, online image resizer, no signup, 30tools",
+	keywords: "image resizer, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/image-resizer",
 	},

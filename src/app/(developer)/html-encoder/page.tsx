@@ -5,7 +5,7 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 export const metadata = {
 	title: "Free HTML Encoder Online – Fast & No Signup | 30tools",
 	description: "Encode text into HTML entities instantly for secure web display. Our free online tool protects your markup by converting special characters into safe HTML-encoded strings. 100% free, fast, and no signup required.",
-	keywords: "html encoder, free html encoder, online html encoder, no signup, 30tools",
+	keywords: "html encoder, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/html-encoder",
 	},

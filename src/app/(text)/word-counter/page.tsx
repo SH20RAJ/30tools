@@ -5,7 +5,7 @@ import WordCounterTool from "@/components/tools/text/WordCounterTool";
 export const metadata = {
 	title: "Free Word Counter Online – Fast & No Signup | 30tools",
 	description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
-	keywords: "word counter, free word counter, online word counter, no signup, 30tools",
+	keywords: "word counter, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/word-counter",
 	},

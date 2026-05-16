@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
 	description: "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device. 100% free, fast, and no signup required.",
-	keywords: "base64 decode, free base64 decode, online base64 decode, no signup, 30tools",
+	keywords: "base64 decode, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/base64-decode",
 	},

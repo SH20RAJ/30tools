@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Reddit Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Reddit Videos & GIFs in HD Free. 100% free, fast, and no signup required.",
-	keywords: "reddit video downloader, free reddit video downloader, online reddit video downloader, no signup, 30tools",
+	keywords: "reddit video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/reddit-video-downloader",
 	},

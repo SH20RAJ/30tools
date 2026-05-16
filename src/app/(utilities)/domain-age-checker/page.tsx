@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Domain Age Checker Online – Fast & No Signup | 30tools",
 	description: "Find the exact age of any domain name instantly. Our free online tool helps with SEO research, domain appraisal, and competitive analysis. 100% free, fast, and no signup required.",
-	keywords: "domain age checker, free domain age checker, online domain age checker, no signup, 30tools",
+	keywords: "domain age checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/domain-age-checker",
 	},

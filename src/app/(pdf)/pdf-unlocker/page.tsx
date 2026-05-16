@@ -5,7 +5,7 @@ import PDFUnlock from "@/components/tools/pdf/PDFUnlock";
 export const metadata = {
 	title: "Free PDF Unlocker Online – Fast & No Signup | 30tools",
 	description: "Remove password protection from PDF files 100% free, fast, and no signup required.",
-	keywords: "pdf unlocker, free pdf unlocker, online pdf unlocker, no signup, 30tools",
+	keywords: "pdf unlocker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/pdf-unlocker",
 	},

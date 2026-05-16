@@ -5,7 +5,7 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 export const metadata = {
 	title: "Free Complete SEO Audit Tool Online – Fast & No Signup | 30tools",
 	description: "Comprehensive SEO audit tool that analyzes technical SEO, on-page optimization, content quality, and provides actionable recommendations. 100% free, fast, and no signup required.",
-	keywords: "complete seo audit tool, free complete seo audit tool, online complete seo audit tool, no signup, 30tools",
+	keywords: "complete seo audit tool, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/seo-audit-tool",
 	},

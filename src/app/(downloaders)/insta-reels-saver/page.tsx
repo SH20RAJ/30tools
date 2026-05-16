@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Insta Reels Saver Online – Fast & No Signup | 30tools",
 	description: "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation. 100% free, fast, and no signup required.",
-	keywords: "insta reels saver, free insta reels saver, online insta reels saver, no signup, 30tools",
+	keywords: "insta reels saver, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/insta-reels-saver",
 	},

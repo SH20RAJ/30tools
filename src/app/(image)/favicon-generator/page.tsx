@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Favicon Generator Online – Fast & No Signup | 30tools",
 	description: "Generate favicons from text, images, or emojis for websites 100% free, fast, and no signup required.",
-	keywords: "favicon generator, free favicon generator, online favicon generator, no signup, 30tools",
+	keywords: "favicon generator, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/favicon-generator",
 	},

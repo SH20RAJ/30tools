@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Tumblr Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Tumblr videos online with our free tool. 100% free, fast, and no signup required.",
-	keywords: "tumblr video downloader, free tumblr video downloader, online tumblr video downloader, no signup, 30tools",
+	keywords: "tumblr video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/tumblr-video-downloader",
 	},

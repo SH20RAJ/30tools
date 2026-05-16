@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Reddit Media Saver Online – Fast & No Signup | 30tools",
 	description: "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing. 100% free, fast, and no signup required.",
-	keywords: "reddit media saver, free reddit media saver, online reddit media saver, no signup, 30tools",
+	keywords: "reddit media saver, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/reddit-media-saver",
 	},

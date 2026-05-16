@@ -5,7 +5,7 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 export const metadata = {
 	title: "Free YouTube Video Count Checker Online – Fast & No Signup | 30tools",
 	description: "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel auditing. 100% free, fast, and no signup required.",
-	keywords: "youtube video count checker, free youtube video count checker, online youtube video count checker, no signup, 30tools",
+	keywords: "youtube video count checker, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-video-count-checker",
 	},

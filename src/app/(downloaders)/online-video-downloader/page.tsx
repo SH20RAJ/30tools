@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Online Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download videos from any website for free with our online video downloader. Supports YouTube, TikTok, Instagram, Facebook, Twitter and 1000+ sites. HD quality, MP4/MP3 formats, no watermarks. 100% free, fast, and no signup required.",
-	keywords: "online video downloader, free online video downloader, online online video downloader, no signup, 30tools",
+	keywords: "online video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/online-video-downloader",
 	},

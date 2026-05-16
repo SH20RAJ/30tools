@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free YouTube Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download YouTube videos quickly in multiple formats and resolutions—free, fast, secure, no signup, and fully browser-based.",
-	keywords: "youtube video downloader, free youtube video downloader, online youtube video downloader, no signup, 30tools",
+	keywords: "youtube video downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/youtube-video-downloader",
 	},

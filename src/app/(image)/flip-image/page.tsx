@@ -5,7 +5,7 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 export const metadata = {
 	title: "Free Flip Image Online – Fast & No Signup | 30tools",
 	description: "Free flip image tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "flip image, free flip image, online flip image, no signup, 30tools",
+	keywords: "flip image, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/flip-image",
 	},

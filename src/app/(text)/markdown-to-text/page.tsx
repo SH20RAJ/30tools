@@ -5,7 +5,7 @@ import MarkdownToText from "@/components/tools/text/MarkdownToText";
 export const metadata = {
 	title: "Free Markdown to Text Online – Fast & No Signup | 30tools",
 	description: "Convert Markdown formatted text to clean plain text instantly. Perfect for cleaning up content from ChatGPT, Claude, and GitHub. 100% free, fast, and no signup required.",
-	keywords: "markdown to text, free markdown to text, online markdown to text, no signup, 30tools",
+	keywords: "markdown to text, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/markdown-to-text",
 	},

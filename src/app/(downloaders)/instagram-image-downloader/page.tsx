@@ -5,7 +5,7 @@ import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
 export const metadata = {
 	title: "Free Instagram Image Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
-	keywords: "instagram image downloader, free instagram image downloader, online instagram image downloader, no signup, 30tools",
+	keywords: "instagram image downloader, free online tool, no signup",
 	alternates: {
 		canonical: "https://30tools.com/instagram-image-downloader",
 	},
