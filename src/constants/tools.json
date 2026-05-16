@@ -6275,7 +6275,61 @@
             "image-optimization-test"
           ],
           "popular": true,
-          "category": "seo"
+          "category": "seo",
+          "features": [
+            "Analyze technical SEO issues including meta tags, headings, and structure",
+            "Check on-page optimization for target keywords",
+            "Audit page speed and Core Web Vitals metrics",
+            "Review mobile-friendliness and responsive design",
+            "Identify missing alt text, broken links, and crawl errors",
+            "Get actionable recommendations prioritized by impact",
+            "Export audit results as a downloadable report",
+            "No signup required — instant analysis for any URL"
+          ],
+          "faqs": [
+            {
+              "question": "How do I run an SEO audit on my website?",
+              "answer": "Enter your website URL in the input field above and click Run Audit. The tool will analyze your site's technical SEO, on-page optimization, content quality, and provide a prioritized list of issues and recommendations."
+            },
+            {
+              "question": "What does the SEO audit check for?",
+              "answer": "The audit checks meta tags, heading structure, image alt text, page speed, mobile-friendliness, internal linking, broken links, schema markup, and content quality. Each issue is categorized by priority level."
+            },
+            {
+              "question": "How often should I run an SEO audit?",
+              "answer": "Run a full audit at least once a month, and after any major site changes like redesigns, new page additions, or URL structure changes. Regular audits help catch issues before they impact rankings."
+            },
+            {
+              "question": "Is this SEO audit tool free?",
+              "answer": "Yes, 30tools Complete SEO Audit Tool is completely free with no registration required. Run unlimited audits on any website without restrictions."
+            },
+            {
+              "question": "Can I audit competitor websites?",
+              "answer": "Yes, you can enter any public website URL to run an audit. This is useful for comparing your site's SEO health against competitors and identifying areas for improvement."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Enter Your Website URL",
+              "description": "Type or paste your website URL into the input field. Include the full URL with https:// for best results."
+            },
+            {
+              "title": "Run the Audit",
+              "description": "Click the Run Audit button. The tool will crawl your page and analyze dozens of SEO factors."
+            },
+            {
+              "title": "Review the Results",
+              "description": "Examine the audit results organized by category — technical SEO, on-page, content, and performance."
+            },
+            {
+              "title": "Prioritize Fixes",
+              "description": "Focus on high-priority issues first. Each recommendation includes the impact level and specific steps to fix the issue."
+            },
+            {
+              "title": "Export and Track",
+              "description": "Download the audit report and track your improvements by running follow-up audits after making changes."
+            }
+          ]
         },
         {
           "id": "backlink-checker",
