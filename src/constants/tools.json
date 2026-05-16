@@ -573,7 +573,61 @@
             "view-image-metadata"
           ],
           "popular": true,
-          "category": "image"
+          "category": "image",
+          "features": [
+            "Extract complete EXIF metadata from any image file",
+            "View camera settings including aperture, shutter speed, ISO, and focal length",
+            "Detect GPS location data embedded in photos",
+            "Read IPTC and XMP metadata fields",
+            "Supports JPG, JPEG, TIFF, and other image formats with EXIF data",
+            "100% browser-based processing — images never leave your device",
+            "No software installation or signup required",
+            "Free for personal and professional use"
+          ],
+          "faqs": [
+            {
+              "question": "How do I view EXIF data from a photo?",
+              "answer": "Upload your image by clicking the upload area or dragging and dropping your file. The tool will instantly extract and display all EXIF metadata including camera settings, date, GPS location, and more."
+            },
+            {
+              "question": "What information does EXIF data contain?",
+              "answer": "EXIF data can include camera make and model, aperture, shutter speed, ISO, focal length, date and time, GPS coordinates, image dimensions, software used, and copyright information."
+            },
+            {
+              "question": "Can I find the location where a photo was taken?",
+              "answer": "If the photo contains GPS data in its EXIF metadata, the tool will display the coordinates and location. Note that many social media platforms strip GPS data when uploading."
+            },
+            {
+              "question": "Is my photo data private when using this tool?",
+              "answer": "Yes, all EXIF extraction happens entirely in your browser. Your images are never uploaded to or stored on our servers. The process is 100% private and secure."
+            },
+            {
+              "question": "Is this EXIF reader free?",
+              "answer": "Yes, 30tools EXIF Reader is completely free with no registration required. Read metadata from unlimited images with no restrictions."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Upload Your Image",
+              "description": "Click the upload area or drag and drop your image file. Supports JPG, JPEG, TIFF, and other formats with embedded EXIF data."
+            },
+            {
+              "title": "View EXIF Data",
+              "description": "The tool will automatically extract and display all metadata fields from your image in an organized format."
+            },
+            {
+              "title": "Check Camera Settings",
+              "description": "Review camera-specific data like aperture, shutter speed, ISO, focal length, and white balance settings."
+            },
+            {
+              "title": "View GPS Location",
+              "description": "If available, check the GPS coordinates and location where the photo was taken. A map preview may be shown."
+            },
+            {
+              "title": "Copy or Export Data",
+              "description": "Copy individual metadata fields or export the complete EXIF data for your records."
+            }
+          ]
         },
         {
           "id": "favicon-generator",
