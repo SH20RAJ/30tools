@@ -44,7 +44,8 @@ export default function robots(): MetadataRoute.Robots {
 			// AI Crawler rules - blocking AI training but allowing citation
 			{
 				userAgent: "GPTBot",
-				disallow: ["/"],
+				allow: "/",
+				disallow: ["/api/", "/admin/"],
 			},
 			{
 				userAgent: "ChatGPT-User",
