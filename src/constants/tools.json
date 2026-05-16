@@ -3631,7 +3631,61 @@
             "ig-profile-picture-viewer"
           ],
           "popular": true,
-          "category": "downloaders"
+          "category": "downloaders",
+          "features": [
+            "Download Instagram videos, reels, stories, and photos in original quality",
+            "Save Instagram posts and carousel images as high-resolution files",
+            "Download Instagram profile pictures in full size",
+            "Works on any device with a web browser — no app needed",
+            "No Instagram login or account required for downloading",
+            "Fast processing with instant download links",
+            "Unlimited free downloads with no restrictions",
+            "Supports public and business Instagram accounts"
+          ],
+          "faqs": [
+            {
+              "question": "How do I download Instagram videos and reels?",
+              "answer": "Open Instagram, tap the three dots on the video or reel, select Copy Link, then paste the link into the input field above and click Download. You will get options to save the video in MP4 format."
+            },
+            {
+              "question": "Can I download Instagram stories anonymously?",
+              "answer": "Yes, paste the story URL into our tool and download it without the story owner knowing. The download is completely anonymous and does not trigger any notifications."
+            },
+            {
+              "question": "Does this work for private Instagram accounts?",
+              "answer": "Our tool works with public Instagram accounts and business profiles. Private account content cannot be downloaded as Instagram restricts access to that content."
+            },
+            {
+              "question": "Can I download Instagram photos in HD?",
+              "answer": "Yes, photos are downloaded in the highest resolution available from Instagram, which is typically the original upload quality. Profile pictures are also available in full resolution."
+            },
+            {
+              "question": "Is it free to use the Instagram downloader?",
+              "answer": "Yes, 30tools Instagram Downloader is completely free with no hidden charges. You can download unlimited videos, photos, reels, and stories without registration."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Copy the Instagram Link",
+              "description": "Open Instagram, find the video, reel, story, or photo you want to download. Tap the three dots menu and select Copy Link."
+            },
+            {
+              "title": "Paste the Link Here",
+              "description": "Return to 30tools Instagram Downloader and paste the copied link into the input field at the top of this page."
+            },
+            {
+              "title": "Click Download",
+              "description": "Press the Download button and wait a few seconds while the tool fetches the content from Instagram."
+            },
+            {
+              "title": "Select Quality",
+              "description": "Choose from the available quality options. Videos are offered in MP4 format and photos in their original resolution."
+            },
+            {
+              "title": "Save to Device",
+              "description": "Click the download link and the content will be saved to your device's downloads folder or camera roll."
+            }
+          ]
         },
         {
           "id": "instagram-image-downloader",
