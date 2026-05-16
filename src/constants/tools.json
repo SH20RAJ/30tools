@@ -111,7 +111,61 @@
             "ai-speech-synthesis-online"
           ],
           "popular": true,
-          "category": "generators"
+          "category": "generators",
+          "features": [
+            "Convert text to natural-sounding AI speech instantly",
+            "Multiple voice options including male, female, and different accents",
+            "Support for multiple languages and regional dialects",
+            "Adjustable speech speed and pitch controls",
+            "Download generated audio as MP3 files",
+            "No signup or account creation required",
+            "Unlimited text-to-speech conversions with no daily limits",
+            "Works directly in your browser — no software installation"
+          ],
+          "faqs": [
+            {
+              "question": "How do I convert text to AI speech?",
+              "answer": "Type or paste your text into the input field above, select a voice style, and click Generate. The AI will convert your text to natural-sounding speech that you can preview and download."
+            },
+            {
+              "question": "What languages are supported?",
+              "answer": "Our AI voice generator supports multiple languages including English, Spanish, French, German, Italian, Portuguese, Japanese, Chinese, and more. Each language offers multiple voice options."
+            },
+            {
+              "question": "Can I use the generated voice for commercial projects?",
+              "answer": "Yes, audio generated with 30tools AI Voice Generator can be used for personal and commercial projects including videos, podcasts, presentations, and accessibility features."
+            },
+            {
+              "question": "Is this text-to-speech tool free?",
+              "answer": "Yes, 30tools AI Voice Generator is completely free with no registration required. Convert unlimited text to speech with no daily limits or watermarks."
+            },
+            {
+              "question": "How do I make the AI voice sound more natural?",
+              "answer": "Break your text into natural sentences with proper punctuation. Use commas for pauses and periods for longer breaks. Avoid run-on sentences and use paragraph breaks for longer content."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Enter Your Text",
+              "description": "Type or paste the text you want to convert to speech into the input field. You can enter up to several thousand characters."
+            },
+            {
+              "title": "Choose a Voice",
+              "description": "Select from the available voice options. Pick a voice that matches the tone and language of your content."
+            },
+            {
+              "title": "Adjust Settings",
+              "description": "Fine-tune the speech speed and pitch if the options are available. Slower speeds work well for educational content."
+            },
+            {
+              "title": "Generate Speech",
+              "description": "Click the Generate button and wait a moment while the AI converts your text to speech."
+            },
+            {
+              "title": "Preview and Download",
+              "description": "Listen to the generated audio. If you are satisfied, click Download to save it as an MP3 file."
+            }
+          ]
         },
         {
           "id": "ai-music-generator",
