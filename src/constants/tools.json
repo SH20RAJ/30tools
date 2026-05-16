@@ -4676,7 +4676,61 @@
             "x-video-downloader-online"
           ],
           "popular": true,
-          "category": "downloaders"
+          "category": "downloaders",
+          "features": [
+            "Download Twitter and X videos in HD quality as MP4 files",
+            "Save Twitter GIFs as video or image files",
+            "Works on desktop, iPhone, and Android browsers",
+            "No Twitter login or account required",
+            "Fast processing — download in seconds",
+            "Unlimited free downloads with no restrictions",
+            "No watermarks added to downloaded videos",
+            "Supports Twitter and X.com video URLs"
+          ],
+          "faqs": [
+            {
+              "question": "How do I download a video from Twitter?",
+              "answer": "Open Twitter or X, find the tweet with the video, click the share icon, select Copy Link, then paste the URL into the input field above and click Download."
+            },
+            {
+              "question": "Can I download Twitter GIFs?",
+              "answer": "Yes, our tool supports downloading both Twitter videos and GIFs. GIFs from Twitter are typically short video loops that can be saved as MP4 files."
+            },
+            {
+              "question": "Does this work on iPhone and Android?",
+              "answer": "Yes, the Twitter video downloader works in your mobile browser on both iPhone and Android. No app installation is needed."
+            },
+            {
+              "question": "Is it free to download Twitter videos?",
+              "answer": "Yes, 30tools Twitter/X Video Downloader is completely free with no registration required. Download unlimited videos with no daily limits."
+            },
+            {
+              "question": "What quality are the downloaded videos?",
+              "answer": "Videos are downloaded in the highest quality available on Twitter, typically up to 1080p HD. The quality depends on the original upload."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Copy the Tweet Link",
+              "description": "Open Twitter or X, find the tweet containing the video, tap the share icon, and select Copy Link."
+            },
+            {
+              "title": "Paste the Link",
+              "description": "Return to 30tools Twitter/X Video Downloader and paste the tweet URL into the input field."
+            },
+            {
+              "title": "Click Download",
+              "description": "Press the Download button and wait a moment while the tool processes the tweet and fetches the video."
+            },
+            {
+              "title": "Select Quality",
+              "description": "Choose from the available quality options for your download."
+            },
+            {
+              "title": "Save to Device",
+              "description": "Click the download link to save the Twitter video to your device."
+            }
+          ]
         },
         {
           "id": "universal-video-downloader",
