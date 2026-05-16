@@ -50,20 +50,11 @@ export function generateMetadata({
 			? `${BASE_URL}${cleanPath}${separator}lang=${lang}`
 			: `${BASE_URL}${cleanPath}`;
 
-	const languages: Record<string, string> = {};
-	for (const l of SUPPORTED_LANGS) {
-		languages[l] =
-			l === "en"
-				? `${BASE_URL}${cleanPath}`
-				: `${BASE_URL}${cleanPath}${separator}lang=${l}`;
-	}
-
 	return {
 		title,
 		description,
 		alternates: {
 			canonical: canonicalUrl,
-			languages,
 		},
 		openGraph: {
 			title,
