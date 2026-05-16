@@ -8,16 +8,12 @@ import {
 	Download,
 	ExternalLink,
 	Eye,
-	Globe,
 	Link as LinkIcon,
 	Plus,
 	QrCode,
-	Shield,
 	Trash2,
-	Zap,
 } from "lucide-react";
 import { useCallback, useState } from "react";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
@@ -178,31 +174,7 @@ export default function URLShortenerTool() {
 	const totalClicks = urls.reduce((sum, url) => sum + url.clicks, 0);
 
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-4xl">
-			<div className="text-center mb-8">
-				<h2 className="text-4xl font-bold mb-4">Free URL Shortener</h2>
-				<p className="text-xl text-muted-foreground mb-6">
-					Create short, trackable links instantly. Custom aliases, QR codes, and
-					detailed analytics. Perfect for social media, marketing campaigns, and
-					link management.
-				</p>
-
-				<div className="flex flex-wrap justify-center gap-4 mb-6">
-					<div className="flex items-center gap-2">
-						<Zap className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Instant Generation</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<Shield className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Safe & Secure</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<Globe className="h-5 w-5 text-primary" />
-						<span className="text-sm font-medium">Custom Domain</span>
-					</div>
-				</div>
-			</div>
-
+		<div className="space-y-6 p-6">
 			<Tabs defaultValue="single" className="w-full">
 				<TabsList className="grid w-full grid-cols-3">
 					<TabsTrigger value="single">Single URL</TabsTrigger>
@@ -463,97 +435,6 @@ export default function URLShortenerTool() {
 				</Card>
 			)}
 
-			{/* Help Section */}
-			<Card className="mt-8">
-				<CardHeader>
-					<CardTitle>How to Use URL Shortener</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<div className="space-y-4">
-						<div>
-							<h4 className="font-medium mb-2">Single URL Shortening</h4>
-							<p className="text-sm text-muted-foreground">
-								Paste any long URL and optionally add a custom alias. Click
-								"Shorten URL" to generate your short link instantly.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Bulk URL Shortening</h4>
-							<p className="text-sm text-muted-foreground">
-								Process multiple URLs at once by pasting them in the bulk
-								section, one URL per line. Perfect for marketing campaigns.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Custom Aliases</h4>
-							<p className="text-sm text-muted-foreground">
-								Create memorable short links with custom aliases like
-								"30t.me/my-store" instead of random characters.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Analytics & Tracking</h4>
-							<p className="text-sm text-muted-foreground">
-								Track clicks, view creation dates, and export your data as CSV
-								for detailed analysis of your shortened URLs.
-							</p>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
-
-			{/* FAQ Section */}
-			<Card className="mt-6">
-				<CardHeader>
-					<CardTitle>Frequently Asked Questions</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<div className="space-y-4">
-						<div>
-							<h4 className="font-medium mb-2">
-								Are the shortened URLs permanent?
-							</h4>
-							<p className="text-sm text-muted-foreground">
-								Yes, once created, shortened URLs remain active indefinitely.
-								However, this is a demo version - in production, URLs would be
-								stored permanently.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Can I use custom domains?</h4>
-							<p className="text-sm text-muted-foreground">
-								Currently, all shortened URLs use the 30t.me domain. Custom
-								domain support is available in our premium plans.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Is there a limit on URLs?</h4>
-							<p className="text-sm text-muted-foreground">
-								No, you can shorten unlimited URLs. For bulk operations, we
-								recommend processing up to 100 URLs at a time for optimal
-								performance.
-							</p>
-						</div>
-						<div>
-							<h4 className="font-medium mb-2">Do you track user data?</h4>
-							<p className="text-sm text-muted-foreground">
-								We only track basic click analytics. No personal information is
-								collected from users who click on shortened links.
-							</p>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
-
-			{/* Social Share */}
-			<div className="mt-8">
-				<SocialShareButtons
-					toolName="URL Shortener"
-					toolDescription="Create short, trackable links with analytics and QR codes. Free online URL shortener tool with detailed click tracking"
-					toolUrl="https://30tools.com/url-shortener"
-					category="marketing"
-				/>
-			</div>
 		</div>
 	);
 }

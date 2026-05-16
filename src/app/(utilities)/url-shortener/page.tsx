@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import URLShortenerTool from "@/components/tools/utilities/URLShortenerTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free URL Shortener Online – Fast & No Signup | 30tools",
@@ -27,40 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "url-shortener",
-        "name": "URL Shortener",
-        "description": "Shorten long URLs for easier sharing",
-        "route": "/url-shortener",
-        "extraSlugs": [
-                "custom-url-shortener-for-instagram",
-                "free-link-shortener"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/url-shortener");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/url-shortener",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<URLShortenerTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<URLShortenerTool />
+		</ToolLayout>
 	);
 }

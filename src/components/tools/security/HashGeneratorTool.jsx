@@ -1,22 +1,15 @@
 "use client";
 
 import {
-	ArrowLeftIcon,
 	CheckCircleIcon,
 	CopyIcon,
 	EyeIcon,
 	FileTextIcon,
 	HashIcon,
 	RefreshCwIcon,
-	ShieldIcon,
 	UploadIcon,
-	ZapIcon,
 } from "lucide-react";
-import Link from "next/link";
 import { useEffect, useState, useCallback } from "react";
-import { STATIC_ROUTES } from "@/lib/tools";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -190,35 +183,7 @@ export default function HashGeneratorTool() {
 	};
 
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-6xl">
-			{/* Header */}
-			<Link href={STATIC_ROUTES.HOME}>
-				<Button variant="ghost" className="mb-4">
-					<ArrowLeftIcon className="h-4 w-4 mr-2" />
-					Back to Home
-				</Button>
-			</Link>
-
-			<div className="flex items-center gap-3 mb-4">
-				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
-					<HashIcon className="h-6 w-6 text-primary" />
-				</div>
-				<div>
-					<h2 className="text-3xl font-bold">Hash Generator</h2>
-					<p className="text-muted-foreground">
-						Generate MD5, SHA-1, SHA-256, SHA-512, and SHA-3 hashes from text or
-						files
-					</p>
-				</div>
-			</div>
-
-			<div className="flex flex-wrap gap-2 mb-6">
-				<Badge variant="secondary">Multiple Algorithms</Badge>
-				<Badge variant="secondary">File Support</Badge>
-				<Badge variant="secondary">Instant Generation</Badge>
-				<Badge variant="secondary">Hash Comparison</Badge>
-			</div>
-
+		<div className="space-y-6 p-6">
 			<div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
 				{/* Main Hash Generator */}
 				<div className="lg:col-span-2 space-y-6">
@@ -498,64 +463,6 @@ export default function HashGeneratorTool() {
 						</CardContent>
 					</Card>
 				</div>
-			</div>
-
-			{/* Features */}
-			<div className="grid md:grid-cols-3 gap-6 mt-8">
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<ZapIcon className="h-5 w-5" />
-							Multiple Algorithms
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							Support for MD5, SHA-1, SHA-256, SHA-512, and SHA-3 hash
-							algorithms.
-						</p>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<UploadIcon className="h-5 w-5" />
-							File Support
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							Hash text files directly or paste content for instant hash
-							generation.
-						</p>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<ShieldIcon className="h-5 w-5" />
-							Privacy First
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							All hashing is performed locally in your browser. No data is sent
-							to servers.
-						</p>
-					</CardContent>
-				</Card>
-			</div>
-
-			{/* Social Share */}
-			<div className="mt-8">
-				<SocialShareButtons
-					toolName="Hash Generator"
-					toolDescription="Generate MD5, SHA-1, SHA-256, SHA-512, and SHA-3 hashes from text or files. Free online hash generator tool"
-					toolUrl="https://30tools.com/hash-generator"
-					category="security"
-				/>
 			</div>
 		</div>
 	);

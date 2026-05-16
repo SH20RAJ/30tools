@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import Base64Tool from "@/components/tools/developer/Base64Tool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Base64 Encode Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "base64-encode",
-        "name": "Base64 Encode",
-        "description": "Encode plain text into Base64 format instantly. Our free online tool is perfect for developers, data transmission, and secure character representation in web URLs.",
-        "route": "/base64-encode",
-        "extraSlugs": [
-                "base64-encode-tool",
-                "encode-base64-online",
-                "free-base64-encode-online",
-                "online-base64-encoder"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/base64-encode");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/base64-encode",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<Base64Tool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<Base64Tool initialMode="encode" />
+		</ToolLayout>
 	);
 }

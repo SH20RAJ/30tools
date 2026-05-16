@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import PasswordGeneratorTool from "@/components/tools/utilities/PasswordGeneratorTool"	;
-
+import PasswordGeneratorTool from "@/components/tools/utilities/PasswordGeneratorTool";
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Password Generator Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "password-generator",
-        "name": "Password Generator",
-        "description": "Create strong, secure passwords instantly with customizable settings.",
-        "route": "/password-generator",
-        "extraSlugs": [
-                "advanced-password-generator",
-                "custom-password-maker",
-                "secure-password-creator",
-                "secure-password-generator-for-wifi",
-                "strong-password-generator",
-                "strong-password-maker-online"
-        ],
-        "popular": true,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/password-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/password-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<PasswordGeneratorTool  />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<PasswordGeneratorTool />
+		</ToolLayout>
 	);
 }

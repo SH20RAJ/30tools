@@ -2,7 +2,6 @@
 
 import {
 	AlertCircleIcon,
-	ArrowLeftIcon,
 	ArrowRightIcon,
 	CheckCircleIcon,
 	CodeIcon,
@@ -11,16 +10,10 @@ import {
 	DownloadIcon,
 	FileIcon,
 	RefreshCwIcon,
-	ShieldIcon,
 	UploadIcon,
-	ZapIcon,
 } from "lucide-react";
-import Link from "next/link";
 import { useCallback, useState } from "react";
-import { STATIC_ROUTES } from "@/lib/tools";
-import SocialShareButtons from "@/components/shared/SocialShareButtons";
 import { Alert, AlertDescription } from "@/components/ui/alert";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import {
 	Card,
@@ -141,34 +134,7 @@ export default function Base64Tool({ initialMode = "encode" } = {}) {
 	};
 
 	return (
-		<div className="container mx-auto px-4 py-8 max-w-4xl">
-			{/* Header */}
-			<Link href={STATIC_ROUTES.HOME}>
-				<Button variant="ghost" className="mb-4">
-					<ArrowLeftIcon className="h-4 w-4 mr-2" />
-					Back to Home
-				</Button>
-			</Link>
-
-			<div className="flex items-center gap-3 mb-4">
-				<div className="flex items-center justify-center w-12 h-12 bg-primary/10 ">
-					<CodeIcon className="h-6 w-6 text-primary" />
-				</div>
-				<div>
-					<h2 className="text-3xl font-bold">Base64 Encoder/Decoder</h2>
-					<p className="text-muted-foreground">
-						Encode and decode text and files to/from Base64 format
-					</p>
-				</div>
-			</div>
-
-			<div className="flex flex-wrap gap-2 mb-6">
-				<Badge variant="secondary">Text Encoding</Badge>
-				<Badge variant="secondary">File Upload</Badge>
-				<Badge variant="secondary">Batch Processing</Badge>
-				<Badge variant="secondary">Copy & Download</Badge>
-			</div>
-
+		<div className="space-y-6 p-6">
 			{/* Mode Selector */}
 			<Card className="mb-6">
 				<CardHeader>
@@ -372,103 +338,6 @@ export default function Base64Tool({ initialMode = "encode" } = {}) {
 						</Card>
 					)}
 				</div>
-			</div>
-
-			{/* Information Cards */}
-			<div className="grid md:grid-cols-3 gap-6 mt-8">
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<ZapIcon className="h-5 w-5" />
-							Fast Processing
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							Instant encoding and decoding. All processing happens locally in
-							your browser for maximum speed.
-						</p>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<ShieldIcon className="h-5 w-5" />
-							Secure & Private
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							Your data never leaves your device. Everything is processed
-							client-side for complete privacy.
-						</p>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardHeader>
-						<CardTitle className="flex items-center gap-2 text-lg">
-							<FileIcon className="h-5 w-5" />
-							File Support
-						</CardTitle>
-					</CardHeader>
-					<CardContent>
-						<p className="text-sm text-muted-foreground">
-							Encode any file type to Base64. Perfect for embedding images,
-							documents, or binary data.
-						</p>
-					</CardContent>
-				</Card>
-			</div>
-
-			{/* Usage Information */}
-			<Card className="mt-8">
-				<CardHeader>
-					<CardTitle>What is Base64?</CardTitle>
-				</CardHeader>
-				<CardContent>
-					<div className="space-y-4">
-						<p className="text-sm text-muted-foreground">
-							Base64 is a binary-to-text encoding scheme that represents binary
-							data in an ASCII string format. It's commonly used in various
-							applications including:
-						</p>
-
-						<div className="grid md:grid-cols-2 gap-6">
-							<div>
-								<h4 className="font-medium mb-3">Common Use Cases</h4>
-								<ul className="text-sm space-y-2 text-muted-foreground">
-									<li>• Email attachments (MIME)</li>
-									<li>• Embedding images in HTML/CSS</li>
-									<li>• Data URLs for web assets</li>
-									<li>• API authentication tokens</li>
-									<li>• Storing binary data in JSON</li>
-								</ul>
-							</div>
-							<div>
-								<h4 className="font-medium mb-3">Key Features</h4>
-								<ul className="text-sm space-y-2 text-muted-foreground">
-									<li>• Safe for text-based protocols</li>
-									<li>• Reversible encoding process</li>
-									<li>• Platform independent</li>
-									<li>• Widely supported standard</li>
-									<li>• No data loss during encoding</li>
-								</ul>
-							</div>
-						</div>
-					</div>
-				</CardContent>
-			</Card>
-
-			{/* Social Share */}
-			<div className="mt-8">
-				<SocialShareButtons
-					toolName="Base64 Encoder/Decoder"
-					toolDescription="Free online Base64 encoder and decoder tool. Encode text and files to Base64 or decode Base64 strings back to original format"
-					toolUrl="https://30tools.com/base64-tool"
-					category="developer"
-				/>
 			</div>
 		</div>
 	);

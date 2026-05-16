@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import HashGeneratorTool from "@/components/tools/security/HashGeneratorTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free MD5 Generator Online – Fast & No Signup | 30tools",
@@ -27,41 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "md5-generator",
-        "name": "MD5 Generator",
-        "description": "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows.",
-        "route": "/md5-generator",
-        "extraSlugs": [
-                "free-md5-generator-online",
-                "md5-generator-tool",
-                "md5-hash-generator"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/md5-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/md5-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<HashGeneratorTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<HashGeneratorTool />
+		</ToolLayout>
 	);
 }

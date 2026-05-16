@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import Base64Tool from "@/components/tools/developer/Base64Tool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
@@ -27,42 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "base64-decode",
-        "name": "Base64 Decode",
-        "description": "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device.",
-        "route": "/base64-decode",
-        "extraSlugs": [
-                "base64-decode-tool",
-                "decode-base64-string",
-                "free-base64-decode-online",
-                "online-base64-decoder"
-        ],
-        "popular": false,
-        "category": "utilities"
-};
+	const tool = getToolByRoute("/base64-decode");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/base64-decode",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "utilities" }}>
-				<Base64Tool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<Base64Tool initialMode="decode" />
+		</ToolLayout>
 	);
 }

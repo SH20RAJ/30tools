@@ -1,6 +1,7 @@
+import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 import FaviconGeneratorTool from "@/components/tools/image/FaviconGeneratorTool";
-
+import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Favicon Generator Online – Fast & No Signup | 30tools",
@@ -27,44 +28,15 @@ export const metadata = {
 };
 
 export default async function ToolPage() {
-	const tool = {
-        "id": "favicon-generator",
-        "name": "Favicon Generator",
-        "description": "Generate favicons from text, images, or emojis for websites",
-        "route": "/favicon-generator",
-        "extraSlugs": [
-                "online-favicon-generator",
-                "free-favicon-maker",
-                "website-favicon-creator",
-                "favicon-generator-no-signup",
-                "favicon-maker-online",
-                "create-favicon-online"
-        ],
-        "popular": true,
-        "category": "image"
-};
+	const tool = getToolByRoute("/favicon-generator");
+
+	if (!tool) {
+		return notFound();
+	}
 
 	return (
-		<>
-			<script
-				type="application/ld+json"
-				dangerouslySetInnerHTML={{
-					__html: JSON.stringify({
-						"@context": "https://schema.org",
-						"@type": "SoftwareApplication",
-						name: tool.name,
-						description: tool.description,
-						url: "https://30tools.com/favicon-generator",
-						applicationCategory: "UtilitiesApplication",
-						operatingSystem: "Any",
-						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
-					}),
-				}}
-			/>
-
-			<ToolLayout tool={{ ...tool, category: "image" }}>
-				<FaviconGeneratorTool />
-			</ToolLayout>
-		</>
+		<ToolLayout tool={tool}>
+			<FaviconGeneratorTool />
+		</ToolLayout>
 	);
 }
