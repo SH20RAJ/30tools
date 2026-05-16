@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { getIntentBySlug } from "@/lib/intent-data";
 import { getToolById } from "@/lib/tools";
 
@@ -27,13 +27,11 @@ export default async function IntentPage({ params }: { params: Promise<{ slug: s
     const intent = getIntentBySlug(slug);
 
     if (!intent) {
-        const { notFound } = await import("next/navigation");
         notFound();
     }
 
     const parentTool = getToolById(intent.parentToolId);
     if (!parentTool) {
-        const { notFound } = await import("next/navigation");
         notFound();
     }
 
