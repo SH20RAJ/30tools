@@ -12,25 +12,7 @@ interface MetadataProps {
 	path?: string;
 	image?: string;
 	noIndex?: boolean;
-	lang?: string;
 }
-
-const SUPPORTED_LANGS = [
-	"en",
-	"es",
-	"fr",
-	"de",
-	"hi",
-	"it",
-	"pt",
-	"ja",
-	"zh",
-	"ko",
-	"ru",
-	"tr",
-	"vi",
-	"id",
-];
 
 /**
  * Generate standard metadata for a page
@@ -41,14 +23,9 @@ export function generateMetadata({
 	path = "",
 	image = "/og-image.jpg",
 	noIndex = false,
-	lang = "en",
 }: MetadataProps): Metadata {
 	const cleanPath = path.startsWith("/") ? path : `/${path}`;
-	const separator = cleanPath.includes("?") ? "&" : "?";
-	const canonicalUrl =
-		lang && lang !== "en"
-			? `${BASE_URL}${cleanPath}${separator}lang=${lang}`
-			: `${BASE_URL}${cleanPath}`;
+	const canonicalUrl = `${BASE_URL}${cleanPath}`;
 
 	return {
 		title,
@@ -61,7 +38,7 @@ export function generateMetadata({
 			description,
 			url: canonicalUrl,
 			siteName: "30tools",
-			locale: lang === "en" ? "en_US" : lang,
+			locale: "en_US",
 			type: "website",
 			images: [
 				{
