@@ -3692,7 +3692,61 @@
             "facebook-story-downloader"
           ],
           "popular": true,
-          "category": "downloaders"
+          "category": "downloaders",
+          "features": [
+            "Download Facebook videos in HD quality as MP4 files",
+            "Save Facebook reels and stories to your device",
+            "No software installation or browser extensions needed",
+            "Works on PC, Mac, iPhone, and Android",
+            "No Facebook login required for downloading",
+            "Fast processing with instant download links",
+            "Unlimited free downloads with no daily limits",
+            "Supports public and business Facebook pages"
+          ],
+          "faqs": [
+            {
+              "question": "How do I download a Facebook video?",
+              "answer": "Open Facebook, find the video you want, click the three dots menu, select Copy Link, then paste the URL into the input field above and click Download."
+            },
+            {
+              "question": "Can I download Facebook reels and stories?",
+              "answer": "Yes, our tool supports downloading Facebook videos, reels, and stories. Just copy the link to the reel or story and paste it into the tool."
+            },
+            {
+              "question": "Does this work on iPhone and Android?",
+              "answer": "Yes, the Facebook video downloader works directly in your mobile browser. No app installation is needed. Copy the Facebook link and paste it here."
+            },
+            {
+              "question": "Is it free to download Facebook videos?",
+              "answer": "Yes, 30tools Facebook Video Downloader is completely free with no hidden charges, no registration, and no download limits."
+            },
+            {
+              "question": "What quality are the downloaded videos?",
+              "answer": "Videos are downloaded in the highest quality available on Facebook, typically up to 1080p HD. The quality depends on the original upload."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Copy the Facebook Video Link",
+              "description": "Open Facebook, find the video, reel, or story, click the three dots menu, and select Copy Link."
+            },
+            {
+              "title": "Paste the Link",
+              "description": "Return to 30tools Facebook Video Downloader and paste the copied link into the input field."
+            },
+            {
+              "title": "Click Download",
+              "description": "Press the Download button and wait a moment while the tool processes the Facebook link."
+            },
+            {
+              "title": "Select Quality",
+              "description": "Choose from the available quality options for your download."
+            },
+            {
+              "title": "Save to Device",
+              "description": "Click the download link to save the Facebook video to your device."
+            }
+          ]
         },
         {
           "id": "febspot-video-downloader",
