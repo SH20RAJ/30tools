@@ -54,6 +54,9 @@ export default function PDFMerger() {
             script.onload = () => {
                 setPdflib(window.PDFLib);
             };
+            script.onerror = () => {
+                toast.error("Failed to load PDF processing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         };
         loadPdfLib();

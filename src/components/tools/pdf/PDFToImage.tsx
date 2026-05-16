@@ -58,6 +58,9 @@ export default function PDFToImage() {
                 window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
                 setPdfjs(window.pdfjsLib);
             };
+            script.onerror = () => {
+                toast.error("Failed to load PDF processing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         };
         loadPdfJs();

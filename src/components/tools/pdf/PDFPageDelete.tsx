@@ -52,6 +52,9 @@ export default function PDFPageDelete() {
                 window.pdfjsLib.GlobalWorkerOptions.workerSrc = "https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js";
                 setPdfjs(window.pdfjsLib);
             };
+            script.onerror = () => {
+                toast.error("Failed to load PDF preview library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         } else {
             setPdfjs(window.pdfjsLib);
@@ -63,6 +66,9 @@ export default function PDFPageDelete() {
             script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
             script.async = true;
             script.onload = () => setPdflib(window.PDFLib);
+            script.onerror = () => {
+                toast.error("Failed to load PDF editing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         } else {
             setPdflib(window.PDFLib);

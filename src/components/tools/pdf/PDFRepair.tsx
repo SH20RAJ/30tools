@@ -17,6 +17,9 @@ export default function PDFRepair() {
             const script = document.createElement("script");
             script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
             script.onload = () => setPdfLibReady(true);
+            script.onerror = () => {
+                toast.error("Failed to load PDF processing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         } else {
             setPdfLibReady(true);

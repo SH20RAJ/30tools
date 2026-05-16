@@ -40,6 +40,9 @@ export default function HTMLToPDF() {
             script.src = "https://cdn.jsdelivr.net/npm/pdf-lib@1.17.1/dist/pdf-lib.min.js";
             script.async = true;
             script.onload = () => setPdflib(window.PDFLib);
+            script.onerror = () => {
+                toast.error("Failed to load PDF processing library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         } else {
             setPdflib(window.PDFLib);
@@ -50,6 +53,9 @@ export default function HTMLToPDF() {
             const script = document.createElement("script");
             script.src = "https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js";
             script.async = true;
+            script.onerror = () => {
+                toast.error("Failed to load HTML rendering library. Please check your internet connection and refresh.");
+            };
             document.head.appendChild(script);
         }
     }, []);
