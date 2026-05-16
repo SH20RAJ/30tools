@@ -4569,7 +4569,61 @@
             "online-thumbnail-creator"
           ],
           "popular": true,
-          "category": "downloaders"
+          "category": "downloaders",
+          "features": [
+            "Download YouTube video thumbnails in all available resolutions",
+            "Get maxresdefault, HD, SD, and default quality thumbnails",
+            "Works with any YouTube video URL or video ID",
+            "No software installation or browser extensions needed",
+            "Free for personal and commercial use",
+            "Fast instant downloads — no waiting or processing",
+            "No YouTube login or account required",
+            "Download thumbnails as high-resolution JPG files"
+          ],
+          "faqs": [
+            {
+              "question": "How do I download a YouTube video thumbnail?",
+              "answer": "Copy the YouTube video URL, paste it into the input field above, and click Download. You will see all available thumbnail resolutions — click the one you want to save."
+            },
+            {
+              "question": "What resolutions are available for YouTube thumbnails?",
+              "answer": "YouTube provides thumbnails in multiple resolutions: maxresdefault (1280x720), sddefault (640x480), hqdefault (480x360), mqdefault (320x180), and default (120x90). The available resolutions depend on the video."
+            },
+            {
+              "question": "Can I use YouTube thumbnails legally?",
+              "answer": "Thumbnails are copyrighted by the video creator. You can use them for personal reference, analysis, or educational purposes. For commercial use, obtain permission from the video owner."
+            },
+            {
+              "question": "Is this YouTube thumbnail downloader free?",
+              "answer": "Yes, 30tools YouTube Thumbnail Downloader is completely free with no registration required. Download unlimited thumbnails without any restrictions."
+            },
+            {
+              "question": "Why is maxresdefault not available for some videos?",
+              "answer": "Not all YouTube videos have maxresdefault thumbnails. This resolution is only available for videos where the creator has uploaded a custom thumbnail or the video has sufficient resolution."
+            }
+          ],
+          "howTo": [
+            {
+              "title": "Copy the YouTube Video URL",
+              "description": "Open YouTube, find the video whose thumbnail you want, and copy the video URL from your browser's address bar."
+            },
+            {
+              "title": "Paste the URL",
+              "description": "Return to 30tools YouTube Thumbnail Downloader and paste the video URL into the input field."
+            },
+            {
+              "title": "Click Download",
+              "description": "Press the Download button to fetch all available thumbnail resolutions for the video."
+            },
+            {
+              "title": "Choose Resolution",
+              "description": "Select the thumbnail resolution you want — maxresdefault for the highest quality, or smaller sizes for faster loading."
+            },
+            {
+              "title": "Save the Thumbnail",
+              "description": "Click the download link to save the thumbnail image to your device."
+            }
+          ]
         },
         {
           "id": "youtube-video-downloader",
