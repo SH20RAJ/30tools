@@ -7,9 +7,10 @@ import { LogIn } from "lucide-react";
 
 export function AuthButton() {
 	const stackProjectId = process.env.NEXT_PUBLIC_STACK_PROJECT_ID;
-	
+	const stackPublishableKey = process.env.NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY;
+
 	// If Stack is not configured, show a regular login link or nothing
-	if (!stackProjectId) {
+	if (!stackProjectId || !stackPublishableKey) {
 		return (
 			<Button
 				variant="outline"
