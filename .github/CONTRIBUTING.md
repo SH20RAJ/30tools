@@ -8,19 +8,49 @@ First off, thank you for considering contributing to **30tools**! With over **73
 
 ## 🛠️ Development Setup
 
-1. **Fork and Clone**:
-   ```bash
-   git clone https://github.com/sh20raj/30tools.git
-   cd 30tools
+### Prerequisites
+- **Node.js** 18+ or **Bun** 1.0+
+- A [Stack Auth](https://app.stack-auth.com) account (free tier works)
+
+### 1. Fork and Clone
+```bash
+git clone https://github.com/sh20raj/30tools.git
+cd 30tools
+```
+
+### 2. Install Dependencies
+```bash
+bun install # We recommend Bun for high-performance builds
+```
+
+### 3. Configure Environment Variables
+```bash
+cp .env.example .env.local
+```
+
+**Required: Stack Auth Keys**
+
+The app uses [Stack Auth](https://stack-auth.com) for authentication. Without these keys, you'll see connection errors in the browser console and login features won't work.
+
+1. Go to [app.stack-auth.com](https://app.stack-auth.com) and create a free project
+2. Copy your project keys into `.env.local`:
    ```
-2. **Install Dependencies**:
-   ```bash
-   bun install # We recommend Bun for high-performance builds
+   NEXT_PUBLIC_STACK_PROJECT_ID=your-project-id
+   NEXT_PUBLIC_STACK_PUBLISHABLE_CLIENT_KEY=pck_...
+   STACK_SECRET_SERVER_KEY=ssk_...
    ```
-3. **Launch Workspace**:
-   ```bash
-   bun dev
-   ```
+3. In your Stack Auth project dashboard, add `http://localhost:3000` to the allowed origins
+
+> **Note**: The app will still run without Stack Auth keys — auth features will simply be disabled. You won't see any errors if the keys are missing; the login button will redirect to a non-functional page instead.
+
+**Optional**: Other API keys in `.env.example` are only needed for specific tools (AI features, translation, etc.) and are not required for development.
+
+### 4. Launch Workspace
+```bash
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to see your workspace.
 
 ---
 
