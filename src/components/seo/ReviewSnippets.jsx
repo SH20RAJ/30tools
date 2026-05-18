@@ -13,119 +13,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 
-// Review snippet data - In a real app, this would come from your database/API
-const SAMPLE_REVIEWS = {
-	"image-compressor": [
-		{
-			id: 1,
-			author: "Sarah Chen",
-			avatar: "/avatars/sarah.jpg",
-			rating: 5,
-			date: "2024-01-15",
-			title: "Perfect for web optimization",
-			content:
-				"This image compressor is exactly what I needed for my website. Reduced my image sizes by 75% without any visible quality loss. The batch processing feature saves me hours of work!",
-			verified: true,
-			helpful: 24,
-			platform: "Trustpilot",
-		},
-		{
-			id: 2,
-			author: "Mike Rodriguez",
-			avatar: "/avatars/mike.jpg",
-			rating: 4.5,
-			date: "2024-01-12",
-			title: "Great tool, very fast",
-			content:
-				"Super fast compression and the quality is maintained really well. The interface is clean and easy to use. Only minor issue is it could use more format options.",
-			verified: true,
-			helpful: 18,
-			platform: "Google Reviews",
-		},
-		{
-			id: 3,
-			author: "Emma Thompson",
-			avatar: "/avatars/emma.jpg",
-			rating: 5,
-			date: "2024-01-10",
-			title: "Saved my project deadline",
-			content:
-				"Had to compress hundreds of images for a client project. This tool processed them all in minutes while maintaining professional quality. Absolutely recommended!",
-			verified: true,
-			helpful: 31,
-			platform: "Capterra",
-		},
-	],
-	"pdf-merger": [
-		{
-			id: 4,
-			author: "David Kim",
-			avatar: "/avatars/david.jpg",
-			rating: 5,
-			date: "2024-01-18",
-			title: "Essential for document management",
-			content:
-				"I merge PDFs daily for work and this tool is perfect. It preserves bookmarks and formatting, which many other tools mess up. The processing is lightning fast too.",
-			verified: true,
-			helpful: 27,
-			platform: "G2",
-		},
-		{
-			id: 5,
-			author: "Lisa Park",
-			avatar: "/avatars/lisa.jpg",
-			rating: 4.5,
-			date: "2024-01-16",
-			title: "Simple and effective",
-			content:
-				"Clean interface, no unnecessary features, just does what it promises. Merged 20+ PDFs into one document without any issues. Great for preparing reports.",
-			verified: true,
-			helpful: 19,
-			platform: "Trustpilot",
-		},
-	],
-	default: [
-		{
-			id: 6,
-			author: "Alex Johnson",
-			avatar: "/avatars/alex.jpg",
-			rating: 5,
-			date: "2024-01-20",
-			title: "Amazing collection of tools",
-			content:
-				"30tools has become my go-to for all online utilities. Every tool I've used works perfectly and the fact that it's all free is incredible. No ads, no watermarks!",
-			verified: true,
-			helpful: 45,
-			platform: "ProductHunt",
-		},
-		{
-			id: 7,
-			author: "Maria Garcia",
-			avatar: "/avatars/maria.jpg",
-			rating: 4.5,
-			date: "2024-01-19",
-			title: "Reliable and fast",
-			content:
-				"Been using these tools for months now. They're consistently reliable and much faster than similar tools I've tried. The privacy-first approach is a huge plus.",
-			verified: true,
-			helpful: 33,
-			platform: "Capterra",
-		},
-		{
-			id: 8,
-			author: "James Wilson",
-			avatar: "/avatars/james.jpg",
-			rating: 5,
-			date: "2024-01-17",
-			title: "Professional quality tools",
-			content:
-				"As a freelancer, I need tools that work reliably without breaking the bank. 30tools delivers professional-grade utilities completely free. Highly recommended!",
-			verified: true,
-			helpful: 29,
-			platform: "Trustpilot",
-		},
-	],
-};
+// Reviews data - currently empty. Add real reviews from your database/API when available.
+const SAMPLE_REVIEWS = {};
 
 function StarRating({ rating, showNumber = true, size = "small" }) {
 	const fullStars = Math.floor(rating);
@@ -270,7 +159,8 @@ export default function ReviewSnippets({
 	variant = "grid", // "grid", "carousel", "list"
 	limit = 6,
 }) {
-	const reviews = SAMPLE_REVIEWS[toolId] || SAMPLE_REVIEWS.default;
+	const reviews = SAMPLE_REVIEWS[toolId] || SAMPLE_REVIEWS.default || [];
+	if (!reviews || reviews.length === 0) return null;
 	const displayedReviews = reviews.slice(0, limit);
 
 	const avgRating =
@@ -346,10 +236,10 @@ export default function ReviewSnippets({
 // Trust indicators component
 export function TrustIndicators() {
 	const stats = [
-		{ label: "Active Users", value: "50K+", icon: User },
-		{ label: "Tools Processed", value: "2M+", icon: Star },
-		{ label: "Average Rating", value: "4.9/5", icon: Heart },
-		{ label: "Uptime", value: "99.9%", icon: Award },
+		{ label: "Tools Available", value: "405+", icon: User },
+		{ label: "Categories", value: "10+", icon: Star },
+		{ label: "Price", value: "Free", icon: Heart },
+		{ label: "Signup Required", value: "No", icon: Award },
 	];
 
 	return (

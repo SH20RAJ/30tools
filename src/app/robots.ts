@@ -41,7 +41,7 @@ export default function robots(): MetadataRoute.Robots {
 				allow: "/",
 				disallow: ["/api/", "/admin/"],
 			},
-			// AI Crawler rules - blocking AI training but allowing citation
+			// AI Crawlers - allow all for AI search discoverability
 			{
 				userAgent: "GPTBot",
 				allow: "/",
@@ -54,7 +54,8 @@ export default function robots(): MetadataRoute.Robots {
 			},
 			{
 				userAgent: "ClaudeBot",
-				disallow: ["/"],
+				allow: "/",
+				disallow: ["/api/", "/admin/"],
 			},
 			{
 				userAgent: "PerplexityBot",
@@ -63,14 +64,31 @@ export default function robots(): MetadataRoute.Robots {
 			},
 			{
 				userAgent: "Google-Extended",
-				disallow: ["/"],
+				allow: "/",
+				disallow: ["/api/", "/admin/"],
 			},
 			{
 				userAgent: "Bytespider",
-				disallow: ["/"],
+				allow: "/",
+				disallow: ["/api/", "/admin/"],
 			},
 			{
 				userAgent: "CCBot",
+				allow: "/",
+				disallow: ["/api/", "/admin/"],
+			},
+			{
+				userAgent: "anthropic-ai",
+				allow: "/",
+				disallow: ["/api/", "/admin/"],
+			},
+			{
+				userAgent: "Gemini",
+				allow: "/",
+				disallow: ["/api/", "/admin/"],
+			},
+			{
+				userAgent: "YouBot",
 				allow: "/",
 				disallow: ["/api/", "/admin/"],
 			},

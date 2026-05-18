@@ -34,6 +34,7 @@ export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }
 		{ name: "About", href: getRouteById("about") },
 		{ name: "Privacy Policy", href: getRouteById("privacy") },
 		{ name: "Terms", href: getRouteById("terms") },
+		{ name: "DMCA", href: "/dmca" },
 		{ name: "Contact", href: getRouteById("contact") },
 	];
 
@@ -124,6 +125,7 @@ export function AppleFooter({ categories = [] }: { categories?: CategoryItem[] }
 						<div className="flex gap-6 opacity-90">
 							<Link href={getRouteById("privacy")} className="text-[12px] hover:underline underline-offset-4">Privacy Policy</Link>
 							<Link href={getRouteById("terms")} className="text-[12px] hover:underline underline-offset-4">Terms of Use</Link>
+							<Link href="/dmca" className="text-[12px] hover:underline underline-offset-4">DMCA</Link>
 							<Link href={getRouteById("contact")} className="text-[12px] hover:underline underline-offset-4">Contact</Link>
 						</div>
 					</div>

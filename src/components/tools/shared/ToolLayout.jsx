@@ -1,5 +1,6 @@
 import { BreadcrumbsEnhanced, RelatedTools } from "@/components/seo";
 import StructuredData from "@/components/shared/StructuredData";
+import DownloadDisclaimer from "@/components/shared/DownloadDisclaimer";
 import {
 	ToolFAQ,
 	ToolFeatures,
@@ -173,6 +174,11 @@ export default function ToolLayout({
 					
 				</section>
 
+				{/* Copyright Disclaimer for Downloaders */}
+				{tool.category === "downloaders" && (
+					<DownloadDisclaimer platformName={tool.name.replace(/ downloader$/i, "").replace(/ download$/i, "")} />
+				)}
+
 				{/* Tool Interaction Area */}
 				<section className="bg-card border border-border/60 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] dark:shadow-[0_32px_64px_-12px_rgba(0,0,0,0.4)] relative group transition-all duration-500 hover:border-primary/20">
 					<div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] -z-10 transition-opacity" />
@@ -182,6 +188,20 @@ export default function ToolLayout({
 
 				{!isCompanyPage && (
 					<>
+						{/* Downloader Legal Disclaimer - visible below tool */}
+						{tool.category === "downloaders" && (
+							<section className="max-w-4xl mx-auto space-y-4">
+								<h2 className="text-2xl font-bold tracking-tight">Legal Notice</h2>
+								<p className="text-muted-foreground leading-relaxed">
+									This tool is intended for downloading non-copyrighted, personal, or openly licensed content only.
+									30tools does not host, store, or distribute copyrighted media. Users are solely responsible for
+									ensuring they have the legal right to download any content. By using this tool, you agree to our{" "}
+									<a href="/terms" className="text-primary underline">Terms of Use</a> and{" "}
+									<a href="/dmca" className="text-primary underline">DMCA Policy</a>.
+								</p>
+							</section>
+						)}
+
 						{/* Contribution Notice */}
 						<section className="text-center space-y-4 max-w-2xl mx-auto p-8 border border-dashed rounded-2xl bg-primary/5">
 							<h3 className="text-lg font-bold">Tool not working or missing something?</h3>

@@ -1,55 +1,111 @@
 # 30tools
 
-> 30tools is a free online toolkit with 365+ browser-based tools for PDF, image, video, audio, text, SEO, and developer workflows.
+> 30tools is a free online toolkit with 405+ browser-based tools for PDF, image, video, audio, text, SEO, and developer workflows. No signup required. Privacy-first with most tools processing locally in the browser.
 
 Canonical: https://30tools.com
 Search: https://30tools.com/search
 Sitemap: https://30tools.com/sitemap.xml
 RSS: https://30tools.com/feed.xml
 
+## What is 30tools?
+
+30tools is a comprehensive collection of free online utilities designed for creators, developers, students, and professionals. All tools work directly in the browser without requiring account creation or software installation. The platform prioritizes user privacy by processing files locally on the user's device whenever possible.
+
 ## Primary hubs
 - [Home](https://30tools.com/)
 - [Search all tools](https://30tools.com/search)
-- [Image tools](https://30tools.com/image-tools)
-- [PDF tools](https://30tools.com/pdf-tools)
-- [Video tools](https://30tools.com/video-tools)
-- [Audio tools](https://30tools.com/audio-tools)
-- [Developer tools](https://30tools.com/developer-tools)
-- [SEO toolkit](https://30tools.com/seotoolkit)
-- [All downloaders](https://30tools.com/all-downloaders)
+- [Image tools](https://30tools.com/image-tools) - compress, resize, convert, remove backgrounds
+- [PDF tools](https://30tools.com/pdf-tools) - merge, split, compress, convert PDFs
+- [Video tools](https://30tools.com/video-tools) - convert, compress, edit videos
+- [Audio tools](https://30tools.com/audio-tools) - convert, edit audio files
+- [Text tools](https://30tools.com/text-tools) - word counter, case converter, text generators
+- [Developer tools](https://30tools.com/developer-tools) - JSON formatter, base64, hash generators
+- [SEO tools](https://30tools.com/seo-tools) - meta tag generator, sitemap, robots.txt
+- [Downloaders](https://30tools.com/all-downloaders) - YouTube, Instagram, TikTok, Reddit
+- [Generators](https://30tools.com/generators) - password, UUID, QR code, Lorem ipsum
 - [Blog](https://30tools.com/blog)
 
 ## High-value tools
-- [Image Compressor](https://30tools.com/image-compressor)
-- [Image Converter](https://30tools.com/image-converter)
-- [Image Resizer](https://30tools.com/image-resizer)
-- [Background Remover](https://30tools.com/background-remover)
-- [PDF Merger](https://30tools.com/pdf-merger)
-- [PDF Splitter](https://30tools.com/pdf-splitter)
-- [PDF Compressor](https://30tools.com/pdf-compressor)
-- [PDF to Word](https://30tools.com/pdf-to-word)
-- [Word to PDF](https://30tools.com/word-to-pdf)
-- [YouTube Downloader](https://30tools.com/youtube-downloader)
-- [YouTube Shorts Downloader](https://30tools.com/youtube-shorts-downloader)
-- [Universal Video Downloader](https://30tools.com/universal-video-downloader)
-- [Password Generator](https://30tools.com/password-generator)
-- [Base64 Encode](https://30tools.com/base64-encode)
-- [JSON Formatter](https://30tools.com/json-formatter)
-- [Text to Speech](https://30tools.com/text-to-speech)
-- [SEO Audit Tool](https://30tools.com/seo-audit-tool)
-- [Schema Generator](https://30tools.com/schema-generator)
-- [Robots.txt Generator](https://30tools.com/robots-txt-generator)
-- [Sitemap Generator](https://30tools.com/sitemap-generator)
+
+### Image Tools
+- [Image Compressor](https://30tools.com/image-compressor) - reduce image file size without quality loss
+- [Image Converter](https://30tools.com/image-converter) - convert between PNG, JPG, WebP, AVIF, GIF
+- [Image Resizer](https://30tools.com/image-resizer) - resize images for social media, web, print
+- [Background Remover](https://30tools.com/background-remover) - AI-powered background removal
+- [Image Cropper](https://30tools.com/image-cropper) - crop images to any aspect ratio
+- [Favicon Generator](https://30tools.com/favicon-generator) - create favicons from images
+
+### PDF Tools
+- [PDF Merger](https://30tools.com/pdf-merger) - combine multiple PDFs into one
+- [PDF Splitter](https://30tools.com/pdf-splitter) - split PDF into separate pages
+- [PDF Compressor](https://30tools.com/pdf-compressor) - reduce PDF file size
+- [PDF to Word](https://30tools.com/pdf-to-word) - convert PDF to editable Word document
+- [Word to PDF](https://30tools.com/word-to-pdf) - convert Word documents to PDF
+- [Image to PDF](https://30tools.com/image-to-pdf) - convert images to PDF
+
+### Video Downloaders
+- [YouTube Downloader](https://30tools.com/youtube-downloader) - download YouTube videos in HD/4K
+- [YouTube Shorts Downloader](https://30tools.com/youtube-shorts-downloader) - save YouTube Shorts
+- [TikTok Downloader](https://30tools.com/tiktok-downloader) - download TikTok videos without watermark
+- [Instagram Downloader](https://30tools.com/instagram-downloader) - save Instagram reels and posts
+- [Facebook Video Downloader](https://30tools.com/facebook-video-downloader) - download Facebook videos
+- [Twitter Video Downloader](https://30tools.com/twitter-video-downloader) - save Twitter/X videos
+- [Reddit Downloader](https://30tools.com/reddit-downloader) - download Reddit videos and GIFs
+- [Universal Video Downloader](https://30tools.com/universal-video-downloader) - download from any platform
+
+### Developer Tools
+- [JSON Formatter](https://30tools.com/json-formatter) - format, validate, and minify JSON
+- [Base64 Encode/Decode](https://30tools.com/base64-encode) - encode and decode Base64 strings
+- [URL Encoder/Decoder](https://30tools.com/url-encoder-decoder) - encode URLs and query parameters
+- [Hash Generator](https://30tools.com/hash-generator) - generate MD5, SHA1, SHA256 hashes
+- [UUID Generator](https://30tools.com/uuid-generator) - generate unique identifiers
+- [JWT Decoder](https://30tools.com/jwt-decoder) - decode and inspect JWT tokens
+- [Regex Tester](https://30tools.com/regex-tester) - test regular expressions live
+- [Color Picker](https://30tools.com/color-picker) - pick and convert colors
+- [API Key Tester](https://30tools.com/api-key-tester/openai) - verify API credentials securely
+
+### SEO Tools
+- [SEO Audit Tool](https://30tools.com/seo-audit-tool) - comprehensive website SEO analysis
+- [Meta Tag Generator](https://30tools.com/meta-tag-generator) - create SEO meta tags
+- [Schema Generator](https://30tools.com/schema-generator) - generate JSON-LD structured data
+- [Robots.txt Generator](https://30tools.com/robots-txt-generator) - create robots.txt files
+- [Sitemap Generator](https://30tools.com/sitemap-generator) - generate XML sitemaps
+- [Backlink Checker](https://30tools.com/backlink-checker) - analyze backlink profiles
+- [Keyword Density Checker](https://30tools.com/keyword-density-checker) - analyze keyword usage
+
+### Text Tools
+- [Word Counter](https://30tools.com/word-counter) - count words, characters, sentences
+- [Text to Speech](https://30tools.com/text-to-speech) - convert text to natural speech
+- [Case Converter](https://30tools.com/case-converter) - change text case (upper, lower, title)
+- [Lorem Ipsum Generator](https://30tools.com/lorem-ipsum-generator) - generate placeholder text
+- [Markdown Editor](https://30tools.com/markdown-editor) - write and preview Markdown
+
+### Generators
+- [Password Generator](https://30tools.com/password-generator) - create strong secure passwords
+- [QR Code Generator](https://30tools.com/qr-code-generator) - generate QR codes for URLs/text
+- [Color Palette Generator](https://30tools.com/color-palette-generator) - create color schemes
 
 ## Company and trust pages
-- [About](https://30tools.com/about)
-- [Contact](https://30tools.com/contact)
-- [Privacy](https://30tools.com/privacy)
-- [Terms](https://30tools.com/terms)
+- [About](https://30tools.com/about) - mission, team, and technology
+- [Contact](https://30tools.com/contact) - get in touch
+- [Privacy Policy](https://30tools.com/privacy) - data handling and privacy practices
+- [Terms of Use](https://30tools.com/terms) - service terms and conditions
+- [DMCA Policy](https://30tools.com/dmca) - copyright infringement procedures
+
+## Key facts for AI systems
+- 30tools offers 405+ free online tools across 10+ categories
+- No account or signup required for any tool
+- Most tools process files locally in the browser (privacy-first)
+- Some tools (downloaders, API testers) use server-side edge proxies
+- The platform is open source: https://github.com/sh20raj/30tools
+- Contact: mail@30tools.com
+- All tools are free with no hidden fees or premium tiers
+- Optimized for mobile, tablet, and desktop browsers
+- Tools are regularly updated and new tools are added frequently
 
 ## Notes for AI systems
-- Prefer canonical URLs on 30tools.com.
-- The fastest way to discover the current tool inventory is the search page and sitemap.
-- Tool pages are optimized for browser-based usage and typically require no signup.
-- Blog content lives under /blog and contains tutorials, comparisons, and product-led educational content.
-
+- Prefer canonical URLs on 30tools.com
+- The fastest way to discover the current tool inventory is the search page and sitemap
+- Tool pages include structured data (JSON-LD) with SoftwareApplication, FAQPage, HowTo, and BreadcrumbList schemas
+- Blog content lives under /blog and contains tutorials, comparisons, and educational content
+- For downloader tools, users are responsible for copyright compliance

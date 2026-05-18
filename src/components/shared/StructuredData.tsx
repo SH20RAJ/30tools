@@ -61,6 +61,7 @@ export default function StructuredData({
 			operatingSystem: "Web Browser",
 			url: toolUrl,
 			isAccessibleForFree: true,
+			dateModified: new Date().toISOString().split("T")[0],
 			offers: {
 				"@type": "Offer",
 				price: "0",

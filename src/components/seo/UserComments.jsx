@@ -17,61 +17,8 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 
-// Sample comments data - in a real app, this would come from your database
-const SAMPLE_COMMENTS = [
-	{
-		id: 1,
-		author: "Alex Chen",
-		avatar: "/avatars/alex-chen.jpg",
-		content:
-			"This image compressor is amazing! Reduced my website images by 70% without any noticeable quality loss. The batch processing feature is a game-changer.",
-		timestamp: "2024-01-20T10:30:00Z",
-		likes: 24,
-		replies: 3,
-		verified: true,
-		helpful: true,
-		toolRating: 5,
-	},
-	{
-		id: 2,
-		author: "Sarah Johnson",
-		avatar: "/avatars/sarah-johnson.jpg",
-		content:
-			"Perfect tool for my blog! The interface is super clean and intuitive. Love that it works directly in the browser without uploading files to servers.",
-		timestamp: "2024-01-19T15:45:00Z",
-		likes: 18,
-		replies: 1,
-		verified: false,
-		helpful: true,
-		toolRating: 5,
-	},
-	{
-		id: 3,
-		author: "Mike Rodriguez",
-		avatar: "/avatars/mike-rodriguez.jpg",
-		content:
-			"Great compression quality! Used it for optimizing images for my e-commerce store. Would love to see more format options in the future.",
-		timestamp: "2024-01-18T09:20:00Z",
-		likes: 12,
-		replies: 0,
-		verified: true,
-		helpful: true,
-		toolRating: 4,
-	},
-	{
-		id: 4,
-		author: "Emma Thompson",
-		avatar: "/avatars/emma-thompson.jpg",
-		content:
-			"Fast and reliable! Processed 50+ images in under a minute. The quality settings give good control over the compression ratio.",
-		timestamp: "2024-01-17T14:10:00Z",
-		likes: 31,
-		replies: 5,
-		verified: false,
-		helpful: true,
-		toolRating: 5,
-	},
-];
+// Comments data - currently empty. Add real comments from your database/API when available.
+const SAMPLE_COMMENTS = [];
 
 function CommentItem({ comment, onReply, onLike, depth = 0 }) {
 	const [liked, setLiked] = useState(false);

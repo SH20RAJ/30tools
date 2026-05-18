@@ -17,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ url: `${BASE_URL}/contact`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/privacy`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/terms`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${BASE_URL}/dmca`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.6 },
 		{ url: `${BASE_URL}/image-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		{ url: `${BASE_URL}/pdf-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		{ url: `${BASE_URL}/video-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },

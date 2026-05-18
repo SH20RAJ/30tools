@@ -7,6 +7,7 @@ export const STATIC_ROUTES = {
 	PRIVACY: "/privacy",
 	TERMS: "/terms",
 	ABOUT: "/about",
+	DMCA: "/dmca",
 };
 
 export const SUPPORTED_LANGUAGES = [
