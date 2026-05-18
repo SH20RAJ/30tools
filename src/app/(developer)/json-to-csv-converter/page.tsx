@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<BuiltInSerialization />
+			<BuiltInSerialization toolId="json-to-csv-converter" />
 		</ToolLayout>
 	);
 }

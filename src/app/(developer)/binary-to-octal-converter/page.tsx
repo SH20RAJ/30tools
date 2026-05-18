@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<BaseConverter />
+			<BaseConverter converterKind="binary-to-octal" />
 		</ToolLayout>
 	);
 }

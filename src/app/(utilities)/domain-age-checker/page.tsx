@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<BuiltInSafeHttp />
+			<BuiltInSafeHttp toolId="domain-age-checker" />
 		</ToolLayout>
 	);
 }

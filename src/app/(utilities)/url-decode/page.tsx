@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<UrlCodecTool />
+			<UrlCodecTool mode="dec" />
 		</ToolLayout>
 	);
 }

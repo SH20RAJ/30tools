@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<BuiltInCalculators />
+			<BuiltInCalculators kind="adsense-calculator" />
 		</ToolLayout>
 	);
 }
