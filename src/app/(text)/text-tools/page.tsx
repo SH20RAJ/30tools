@@ -9,8 +9,24 @@ import { Type, ArrowRight } from "lucide-react";
 
 export const metadata = {
 	title: "Free Text Tools Online - Format & Transform | 30tools",
-	description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors. fast, secure, and browser-based text processing.",
+	description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors. Fast, secure, and browser-based text processing.",
 	keywords: "text tools, word counter, case converter, text cleaner, online text tools, 30tools",
+	alternates: { canonical: "https://30tools.com/text-tools" },
+	openGraph: {
+		title: "Free Text Tools Online - Format & Transform | 30tools",
+		description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors. Fast, secure, and browser-based text processing.",
+		url: "https://30tools.com/text-tools",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Text Tools Online - Format & Transform | 30tools",
+		description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors.",
+		images: ["/og-image.jpg"],
+	},
+	robots: { index: true, follow: true },
 };
 
 export default function TextHub() {

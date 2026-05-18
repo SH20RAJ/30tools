@@ -11,6 +11,22 @@ export const metadata = {
 	title: "Free AI & Fun Generators Online - No Signup | 30tools",
 	description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities. 100% free, no signup, and instant results.",
 	keywords: "ai generators, bio generator, name generator, fun tools, free online generators, 30tools",
+	alternates: { canonical: "https://30tools.com/generators" },
+	openGraph: {
+		title: "Free AI & Fun Generators Online - No Signup | 30tools",
+		description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities. 100% free, no signup, and instant results.",
+		url: "https://30tools.com/generators",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free AI & Fun Generators Online - No Signup | 30tools",
+		description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities.",
+		images: ["/og-image.jpg"],
+	},
+	robots: { index: true, follow: true },
 };
 
 export default function GeneratorsHub() {

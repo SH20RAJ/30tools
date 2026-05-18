@@ -11,6 +11,22 @@ export const metadata = {
 	title: "Free Developer Tools Online - Essential Utilities | 30tools",
 	description: "Professional suite of free developer tools. JSON formatters, base64 encoders, hash generators, and API testers. All tools run locally in your browser for maximum privacy.",
 	keywords: "developer tools, json formatter, base64 encoder, api tester, online dev tools, 30tools",
+	alternates: { canonical: "https://30tools.com/developer-tools" },
+	openGraph: {
+		title: "Free Developer Tools Online - Essential Utilities | 30tools",
+		description: "Professional suite of free developer tools. JSON formatters, base64 encoders, hash generators, and API testers. All tools run locally in your browser.",
+		url: "https://30tools.com/developer-tools",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Developer Tools Online - Essential Utilities | 30tools",
+		description: "Professional suite of free developer tools. JSON formatters, base64 encoders, hash generators, and API testers.",
+		images: ["/og-image.jpg"],
+	},
+	robots: { index: true, follow: true },
 };
 
 export default function DeveloperHub() {

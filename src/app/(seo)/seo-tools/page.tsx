@@ -11,6 +11,22 @@ export const metadata = {
 	title: "Free SEO Tools Online - Optimize Your Website | 30tools",
 	description: "Professional suite of free SEO tools. Keyword generators, meta tag analyzers, sitemap makers, and SERP checkers. Improve your search rankings for free.",
 	keywords: "seo tools, keyword generator, meta tag analyzer, sitemap maker, online seo tools, 30tools",
+	alternates: { canonical: "https://30tools.com/seo-tools" },
+	openGraph: {
+		title: "Free SEO Tools Online - Optimize Your Website | 30tools",
+		description: "Professional suite of free SEO tools. Keyword generators, meta tag analyzers, sitemap makers, and SERP checkers. Improve your search rankings for free.",
+		url: "https://30tools.com/seo-tools",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free SEO Tools Online - Optimize Your Website | 30tools",
+		description: "Professional suite of free SEO tools. Keyword generators, meta tag analyzers, sitemap makers, and SERP checkers.",
+		images: ["/og-image.jpg"],
+	},
+	robots: { index: true, follow: true },
 };
 
 export default function SEOHub() {
