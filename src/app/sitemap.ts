@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ url: `${BASE_URL}/privacy`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/terms`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/dmca`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.6 },
+		// Category hub pages (priority 0.8-0.9)
 		{ url: `${BASE_URL}/image-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		{ url: `${BASE_URL}/pdf-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		{ url: `${BASE_URL}/video-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
@@ -26,7 +27,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ url: `${BASE_URL}/seo-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.85 },
 		{ url: `${BASE_URL}/developer-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
 		{ url: `${BASE_URL}/other-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.75 },
+		{ url: `${BASE_URL}/generators`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/downloaders`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.85 },
+		{ url: `${BASE_URL}/calculators`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.75 },
+		// Blog
 		{ url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
+		// Content hub / SEO landing pages
+		{ url: `${BASE_URL}/tool-guides`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.7 },
+		{ url: `${BASE_URL}/ai-tools-alternatives-free`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/best-free-alternative-to-chatgpt`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/best-free-converters-in-2026`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/best-free-tools-for-students`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/how-to-format-json-properly`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/seo-tools-free-online`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/tools-for-developers`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/top-10-free-online-tools-for-seo`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
+		{ url: `${BASE_URL}/top-10-json-tools-online`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.65 },
 	];
 
 	// Use site deployment date for tool pages (staggered by popularity)
@@ -37,7 +53,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			if (route.includes("?")) return false;
 			if (route.startsWith("/search")) return false;
 			if (route.startsWith("/api-key-tester/")) return false;
-			if (route.startsWith("/tool-guides")) return false;
 			return true;
 		})
 		.map((tool) => ({

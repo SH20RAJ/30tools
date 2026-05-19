@@ -1,3 +1,102 @@
-# https://developers.cloudflare.com/workers/static-assets/headers
+# =============================================================================
+# Cloudflare Pages _headers file
+# https://developers.cloudflare.com/pages/configuration/headers/
+# =============================================================================
+
+# ---------------------------------------------------------------------------
+# Global security headers for all pages
+# ---------------------------------------------------------------------------
+/*
+  X-DNS-Prefetch-Control: on
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Frame-Options: SAMEORIGIN
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), browsing-topics=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
+  X-XSS-Protection: 0
+
+# ---------------------------------------------------------------------------
+# Next.js static assets (hashed filenames = immutable)
+# ---------------------------------------------------------------------------
 /_next/static/*
-  Cache-Control: public,max-age=31536000,immutable
+  Cache-Control: public, max-age=31536000, immutable
+
+# ---------------------------------------------------------------------------
+# Static icons and images
+# ---------------------------------------------------------------------------
+/icons/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/favicon.ico
+  Cache-Control: public, max-age=31536000, immutable
+
+# ---------------------------------------------------------------------------
+# OG images and screenshots (can change occasionally)
+# ---------------------------------------------------------------------------
+/og-image.jpg
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/og-image.png
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/og-images/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+/screenshots/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=86400
+
+# ---------------------------------------------------------------------------
+# PWA manifest and browserconfig (moderate cache)
+# ---------------------------------------------------------------------------
+/manifest.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/browserconfig.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/opensearch.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+# ---------------------------------------------------------------------------
+# Service worker - must revalidate immediately
+# ---------------------------------------------------------------------------
+/sw.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+/workbox-*.js
+  Cache-Control: public, max-age=0, must-revalidate
+
+# ---------------------------------------------------------------------------
+# SEO files - moderate cache
+# ---------------------------------------------------------------------------
+/robots.txt
+  Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800
+
+/sitemap.xml
+  Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400
+
+/sitemap-index.xml
+  Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400
+
+/feed.xml
+  Cache-Control: public, s-maxage=3600, stale-while-revalidate=86400
+
+/llms.txt
+  Cache-Control: public, s-maxage=86400, stale-while-revalidate=604800
+
+# ---------------------------------------------------------------------------
+# Ads.txt verification files (long cache)
+# ---------------------------------------------------------------------------
+/ads.txt
+  Cache-Control: public, max-age=604800
+
+/*.txt
+  Cache-Control: public, max-age=86400

@@ -1,6 +1,17 @@
 import { MetadataRoute } from "next";
 import { SITE_CONFIG } from "@/constants/config";
 
+// Shared disallow paths for all crawlers
+const BASE_DISALLOW = [
+	"/api/",
+	"/admin/",
+	"/private/",
+	"/handler/",
+	"/embed/",
+	"/youtube-redirects/",
+	"/search",
+];
+
 export default function robots(): MetadataRoute.Robots {
 	const baseUrl = SITE_CONFIG.siteUrl;
 
@@ -9,88 +20,88 @@ export default function robots(): MetadataRoute.Robots {
 			{
 				userAgent: "*",
 				allow: "/",
-				disallow: ["/api/", "/admin/", "/private/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Googlebot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Bingbot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Yandex",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Slurp", // Yahoo
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "DuckDuckBot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Baiduspider",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			// AI Crawlers - allow all for AI search discoverability
 			{
 				userAgent: "GPTBot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "ChatGPT-User",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "ClaudeBot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "PerplexityBot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Google-Extended",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Bytespider",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "CCBot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "anthropic-ai",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "Gemini",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 			{
 				userAgent: "YouBot",
 				allow: "/",
-				disallow: ["/api/", "/admin/"],
+				disallow: BASE_DISALLOW,
 			},
 		],
 		sitemap: `${baseUrl}/sitemap.xml`,

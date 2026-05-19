@@ -1,14 +1,35 @@
 import { Toaster } from "sonner";
 import { ThemeProvider } from "@/components/shared/theme-provider";
-import { StackProvider } from "@stackframe/stack";
-import { stackClientApp } from "@/stack/client";
 import { getAllTools, Tool } from "@/lib/tools";
-import { SITE_URL, TOOL_COUNT_STRING } from "@/constants/config";
+import { SITE_URL, TOOL_COUNT_STRING, TOOL_COUNT, CATEGORY_COUNT } from "@/constants/config";
 import "./globals.css";
 import Script from "next/script";
-import { AppleNavbar } from "@/components/navigation/AppleNavbar";
-import { AppleFooter } from "@/components/footers/AppleFooter";
+import dynamic from "next/dynamic";
 import { Metadata, Viewport } from "next";
+import { Inter } from "next/font/google";
+
+// Dynamic import for Stack Auth - heavy client bundle, only loaded when configured
+const StackAuthProvider = dynamic(
+	() => import("@/components/shared/StackAuthProvider")
+);
+
+// Dynamic imports for below-fold / non-critical layout components
+const AppleNavbar = dynamic(
+	() => import("@/components/navigation/AppleNavbar").then((mod) => ({ default: mod.AppleNavbar })),
+	{ ssr: true }
+);
+const AppleFooter = dynamic(
+	() => import("@/components/footers/AppleFooter").then((mod) => ({ default: mod.AppleFooter })),
+	{ ssr: true }
+);
+
+const inter = Inter({
+	subsets: ["latin"],
+	display: "swap",
+	preload: true,
+	variable: "--font-inter",
+	weight: ["400", "500", "600", "700", "800"],
+});
 
 export const viewport: Viewport = {
 	width: "device-width",
@@ -210,41 +231,18 @@ export default function RootLayout({
 	const categories = Array.from(categoriesMap.values());
 
 	return (
-		<html lang="en" suppressHydrationWarning>
+		<html lang="en" suppressHydrationWarning className={inter.variable}>
 			<head>
-				<script
-					dangerouslySetInnerHTML={{
-						__html: `window.__name = (t, v) => Object.defineProperty(t, 'name', { value: v, configurable: true });`,
-					}}
-				/>
+				<meta charSet="utf-8" />
 
-				{/* Preconnect for performance */}
-				<link
-					rel="preconnect"
-					href="https://pagead2.googlesyndication.com"
-					crossOrigin="anonymous"
-				/>
+				{/* Preconnect only to the most critical third-party origin */}
 				<link
 					rel="preconnect"
 					href="https://www.googletagmanager.com"
 					crossOrigin="anonymous"
 				/>
-				<link
-					rel="preconnect"
-					href="https://fundingchoicesmessages.google.com"
-					crossOrigin="anonymous"
-				/>
-				<link
-					rel="preconnect"
-					href="https://www.clarity.ms"
-					crossOrigin="anonymous"
-				/>
 				<link rel="dns-prefetch" href="https://pagead2.googlesyndication.com" />
-				<link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-				<link
-					rel="dns-prefetch"
-					href="https://fundingchoicesmessages.google.com"
-				/>
+				<link rel="dns-prefetch" href="https://www.clarity.ms" />
 
 				<meta httpEquiv="Content-Language" content="en" />
 
@@ -284,11 +282,67 @@ export default function RootLayout({
 					href="/feed.xml"
 				/>
 
+				{/* Global JSON-LD Structured Data: WebSite + Organization */}
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "WebSite",
+							name: "30tools",
+							alternateName: "30tools - Free Online Toolkit",
+							url: SITE_URL,
+							description: `Fast, free, and privacy-focused tools for image, video, audio, PDF, SEO, and developer workflows. Explore ${TOOL_COUNT}+ tools with no sign-up required.`,
+							publisher: {
+								"@type": "Organization",
+								name: "30tools",
+								url: SITE_URL,
+								logo: {
+									"@type": "ImageObject",
+									url: `${SITE_URL}/icons/icon-512x512.png`,
+									width: 512,
+									height: 512,
+								},
+							},
+							potentialAction: {
+								"@type": "SearchAction",
+								target: {
+									"@type": "EntryPoint",
+									urlTemplate: `${SITE_URL}/search?q={search_term_string}`,
+								},
+								"query-input": "required name=search_term_string",
+							},
+						}),
+					}}
+				/>
+				<script
+					type="application/ld+json"
+					dangerouslySetInnerHTML={{
+						__html: JSON.stringify({
+							"@context": "https://schema.org",
+							"@type": "Organization",
+							name: "30tools",
+							url: SITE_URL,
+							logo: `${SITE_URL}/icons/icon-512x512.png`,
+							description: `Free online toolkit with ${TOOL_COUNT}+ tools for image, video, audio, PDF, SEO, and developer workflows.`,
+							foundingDate: "2024",
+							contactPoint: {
+								"@type": "ContactPoint",
+								contactType: "customer support",
+								url: `${SITE_URL}/contact`,
+							},
+							sameAs: [
+								"https://github.com/sh20raj/30tools",
+							],
+						}),
+					}}
+				/>
+
 				<Script
 					src="https://www.googletagmanager.com/gtag/js?id=G-0LV8F646TM"
-					strategy="afterInteractive"
+					strategy="lazyOnload"
 				/>
-				<Script id="google-analytics" strategy="afterInteractive">
+				<Script id="google-analytics" strategy="lazyOnload">
 					{`
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
@@ -298,7 +352,7 @@ export default function RootLayout({
 				</Script>
 				<Script
 					src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1828915420581549"
-					strategy="afterInteractive"
+					strategy="lazyOnload"
 					crossOrigin="anonymous"
 				/>
 				{/* Clarity Tracking Code */}
@@ -316,7 +370,7 @@ export default function RootLayout({
 					}}
 				/>
 			</head>
-			<body className="ds-page font-sans antialiased">
+			<body className={`ds-page font-sans antialiased ${inter.className}`}>
 				{stackClientApp ? (
 					<StackProvider app={stackClientApp as any}>
 						<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
@@ -335,10 +389,10 @@ export default function RootLayout({
 					</ThemeProvider>
 				)}
 
-				<script
-					defer
+				<Script
 					src="https://assets.onedollarstats.com/stonks.js"
-				></script>
+					strategy="lazyOnload"
+				/>
 			</body>
 		</html>
 	);

@@ -22,16 +22,16 @@ export default {
 		extend: {
 			fontFamily: {
 				sans: [
+					"var(--font-inter)",
 					"SF Pro Text",
-					"SF Pro Icons",
 					"Helvetica Neue",
 					"Helvetica",
 					"Arial",
 					...defaultTheme.fontFamily.sans,
 				],
 				display: [
+					"var(--font-inter)",
 					"SF Pro Display",
-					"SF Pro Icons",
 					"Helvetica Neue",
 					"Helvetica",
 					"Arial",

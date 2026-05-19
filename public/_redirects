@@ -1,0 +1,11 @@
+# =============================================================================
+# Cloudflare Pages _redirects file
+# https://developers.cloudflare.com/pages/configuration/redirects/
+# =============================================================================
+
+# Force www to non-www (301 permanent redirect)
+https://www.30tools.com/*  https://30tools.com/:splat  301!
+
+# Trailing slash removal (avoid duplicate content)
+# Note: Next.js trailingSlash: false handles this, but this is a fallback
+# for direct Cloudflare edge handling

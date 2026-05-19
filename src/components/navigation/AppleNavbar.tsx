@@ -115,7 +115,7 @@ export function AppleNavbar() {
 					</div>
 
 					{/* Center: Search */}
-					<Suspense fallback={<div className="w-[300px] h-9 bg-muted rounded-none hidden md:block" />}>
+					<Suspense fallback={<div className="hidden md:block md:w-[200px] lg:w-[300px] h-9 bg-muted rounded-none" />}>
 						<SearchInput />
 					</Suspense>
 
@@ -153,7 +153,7 @@ export function AppleNavbar() {
 								<TooltipContent>Browse All</TooltipContent>
 							</Tooltip>
 
-							<Suspense fallback={<div className="h-9 w-16 bg-muted rounded-none animate-pulse" />}>
+							<Suspense fallback={<div className="h-9 w-20 bg-muted rounded-none" />}>
 								<AuthButton />
 							</Suspense>
 						</div>
@@ -201,7 +201,7 @@ export function AppleNavbar() {
 							<div className="flex items-center gap-4 py-2 border-t border-border mt-2 pt-4">
 								<ThemeToggle />
 								<a href="https://github.com/sh20raj/30tools" className="text-muted-foreground">GitHub</a>
-								<Suspense fallback={<div className="h-9 w-16 bg-muted rounded-none animate-pulse" />}>
+								<Suspense fallback={<div className="h-9 w-20 bg-muted rounded-none" />}>
 									<AuthButton />
 								</Suspense>
 							</div>

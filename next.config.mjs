@@ -1,6 +1,4 @@
 /** @type {import('next').NextConfig} */
-import withPWAInit from "next-pwa";
-const withPWA = withPWAInit.default || withPWAInit;
 import { initOpenNextCloudflareForDev } from "@opennextjs/cloudflare";
 
 const nextConfig = {
@@ -29,9 +27,25 @@ const nextConfig = {
 		optimizeCss: true,
 		optimizePackageImports: [
 			"lucide-react",
-			"@radix-ui/react-icons",
-			"react-icons",
-			"framer-motion",
+			"@radix-ui/react-accordion",
+			"@radix-ui/react-avatar",
+			"@radix-ui/react-checkbox",
+			"@radix-ui/react-collapsible",
+			"@radix-ui/react-dialog",
+			"@radix-ui/react-dropdown-menu",
+			"@radix-ui/react-label",
+			"@radix-ui/react-progress",
+			"@radix-ui/react-radio-group",
+			"@radix-ui/react-select",
+			"@radix-ui/react-separator",
+			"@radix-ui/react-slider",
+			"@radix-ui/react-slot",
+			"@radix-ui/react-switch",
+			"@radix-ui/react-tabs",
+			"@radix-ui/react-tooltip",
+			"@stackframe/stack",
+			"sonner",
+			"next-themes",
 		],
 		webVitalsAttribution: ["CLS", "LCP", "INP", "FCP", "TTFB"],
 	},
@@ -50,15 +64,20 @@ const nextConfig = {
 	// SEO and crawling optimizations
 	trailingSlash: false,
 
-	// Headers for better SEO and performance
+	// Headers for security, SEO, and performance
 	async headers() {
 		return [
+			// Global security headers for all routes
 			{
 				source: "/(.*)",
 				headers: [
 					{
 						key: "X-DNS-Prefetch-Control",
 						value: "on",
+					},
+					{
+						key: "Strict-Transport-Security",
+						value: "max-age=63072000; includeSubDomains; preload",
 					},
 					{
 						key: "X-Frame-Options",
@@ -70,29 +89,56 @@ const nextConfig = {
 					},
 					{
 						key: "Referrer-Policy",
-						value: "origin-when-cross-origin",
+						value: "strict-origin-when-cross-origin",
 					},
 					{
 						key: "Permissions-Policy",
 						value:
-							"camera=(), microphone=(), geolocation=(), browsing-topics=()",
+							"camera=(), microphone=(), geolocation=(), browsing-topics=(), interest-cohort=()",
+					},
+					{
+						key: "Cross-Origin-Opener-Policy",
+						value: "same-origin",
+					},
+					{
+						key: "Cross-Origin-Resource-Policy",
+						value: "same-origin",
+					},
+					{
+						key: "X-XSS-Protection",
+						value: "0",
 					},
 					{
 						key: "Content-Security-Policy",
-						value:
-							"default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://www.clarity.ms https://assets.onedollarstats.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https:; connect-src 'self' https://www.google-analytics.com https://www.clarity.ms;",
+						value: [
+							"default-src 'self'",
+							"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://pagead2.googlesyndication.com https://www.clarity.ms https://assets.onedollarstats.com https://cdn.jsdelivr.net",
+							"style-src 'self' 'unsafe-inline'",
+							"img-src 'self' data: blob: https://*.googleusercontent.com https://*.google.com https://*.gstatic.com https://img.youtube.com https://i.ytimg.com https://pagead2.googlesyndication.com https://www.clarity.ms",
+							"font-src 'self' data: https://cdn.jsdelivr.net",
+							"connect-src 'self' https://www.google-analytics.com https://analytics.google.com https://www.clarity.ms https://pagead2.googlesyndication.com https://translation.googleapis.com https://raw.githubusercontent.com https://tactiq-apps-prod.tactiq.io https://*.stack-auth.com https://api.stack-auth.com https://ipapi.co wss://*.stack-auth.com",
+							"frame-src 'self' https://www.google.com https://pagead2.googlesyndication.com https://*.stack-auth.com",
+							"media-src 'self' blob:",
+							"worker-src 'self' blob:",
+							"object-src 'none'",
+							"base-uri 'self'",
+							"form-action 'self'",
+							"frame-ancestors 'self'",
+						].join("; "),
 					},
 				],
 			},
+			// API routes - moderate caching
 			{
 				source: "/api/(.*)",
 				headers: [
 					{
 						key: "Cache-Control",
-						value: "public, max-age=3600, s-maxage=3600",
+						value: "public, max-age=3600, s-maxage=3600, stale-while-revalidate=86400",
 					},
 				],
 			},
+			// Next.js static assets - immutable long cache
 			{
 				source: "/_next/static/(.*)",
 				headers: [
@@ -102,6 +148,7 @@ const nextConfig = {
 					},
 				],
 			},
+			// Homepage - edge cache with revalidation
 			{
 				source: "/",
 				headers: [
@@ -111,12 +158,132 @@ const nextConfig = {
 					},
 				],
 			},
+			// Static icons - immutable long cache
 			{
 				source: "/icons/(.*)",
 				headers: [
 					{
 						key: "Cache-Control",
 						value: "public, max-age=31536000, immutable",
+					},
+				],
+			},
+			// Static images - immutable long cache
+			{
+				source: "/images/(.*)",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=31536000, immutable",
+					},
+				],
+			},
+			// Font files - immutable long cache
+			{
+				source: "/fonts/(.*)",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=31536000, immutable",
+					},
+				],
+			},
+			// OG images - moderate cache with revalidation
+			{
+				source: "/og-image.(jpg|png)",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=604800, stale-while-revalidate=86400",
+					},
+				],
+			},
+			// OG images directory
+			{
+				source: "/og-images/(.*)",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=604800, stale-while-revalidate=86400",
+					},
+				],
+			},
+			// Manifest and browserconfig - moderate cache
+			{
+				source: "/manifest.json",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=86400, stale-while-revalidate=604800",
+					},
+				],
+			},
+			{
+				source: "/browserconfig.xml",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=86400, stale-while-revalidate=604800",
+					},
+				],
+			},
+			// Service worker - minimal cache to allow updates
+			{
+				source: "/sw.js",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=0, must-revalidate",
+					},
+				],
+			},
+			// Favicon - long cache
+			{
+				source: "/favicon.ico",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, max-age=31536000, immutable",
+					},
+				],
+			},
+			// RSS/Atom feeds - short cache with revalidation
+			{
+				source: "/feed.xml",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, s-maxage=3600, stale-while-revalidate=86400",
+					},
+				],
+			},
+			// Sitemap - short cache with revalidation
+			{
+				source: "/sitemap.xml",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, s-maxage=3600, stale-while-revalidate=86400",
+					},
+				],
+			},
+			// robots.txt - moderate cache
+			{
+				source: "/robots.txt",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, s-maxage=86400, stale-while-revalidate=604800",
+					},
+				],
+			},
+			// Tool page routes - edge cache with revalidation
+			{
+				source: "/:tool((?!api|_next|handler|search|feed\\.xml|sitemap|robots|manifest|opensearch|llms|favicon|icons|og-image|not-found|archive|embed).+)",
+				headers: [
+					{
+						key: "Cache-Control",
+						value: "public, s-maxage=3600, stale-while-revalidate=86400",
 					},
 				],
 			},
@@ -184,28 +351,7 @@ const nextConfig = {
 	},
 };
 
-const pwaConfig = withPWA({
-	dest: "public",
-	register: true,
-	skipWaiting: true,
-	disable: true, // Temporarily disabled for stability on Cloudflare
-	buildExcludes: [/middleware-manifest\.json$/],
-	runtimeCaching: [
-		{
-			urlPattern: /^https?.*/,
-			handler: "NetworkFirst",
-			options: {
-				cacheName: "offlineCache",
-				expiration: {
-					maxEntries: 200,
-					maxAgeSeconds: 60 * 60 * 24 * 30, // 30 days
-				},
-			},
-		},
-	],
-});
-
-export default pwaConfig(nextConfig);
+export default nextConfig;
 
 // added by create cloudflare to enable calling `getCloudflareContext()` in `next dev`
 if (process.env.NODE_ENV === "development") {

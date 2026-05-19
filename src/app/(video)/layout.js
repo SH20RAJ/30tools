@@ -13,8 +13,8 @@ export const metadata = {
 		images: [
 			{
 				url: "/og-image.jpg",
-				width: 1200,
-				height: 630,
+				width: 1024,
+				height: 541,
 				alt: "Free Video Tools Collection",
 			},
 		],

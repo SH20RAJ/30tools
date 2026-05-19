@@ -70,11 +70,9 @@
 	@keyframes fadeIn {
 		from {
 			opacity: 0;
-			transform: translateY(10px);
 		}
 		to {
 			opacity: 1;
-			transform: translateY(0);
 		}
 	}
 }
@@ -151,7 +149,7 @@
 
 	body {
 		@apply bg-background text-foreground min-h-screen antialiased;
-		font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: var(--font-inter), "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 	}
 
 	::selection {
@@ -162,7 +160,7 @@
 
 @layer utilities {
 	.text-apple-hero {
-		font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: var(--font-inter), "SF Pro Display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 		font-size: 56px;
 		font-weight: 600;
 		line-height: 1.07;
@@ -170,14 +168,14 @@
 	}
 
 	.text-apple-section-heading {
-		font-family: "SF Pro Display", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: var(--font-inter), "SF Pro Display", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 		font-size: 40px;
 		font-weight: 600;
 		line-height: 1.1;
 	}
 
 	.text-apple-body {
-		font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+		font-family: var(--font-inter), "SF Pro Text", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
 		font-size: 17px;
 		font-weight: 400;
 		line-height: 1.47;

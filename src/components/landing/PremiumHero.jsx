@@ -29,7 +29,7 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 		<div className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-[70vh] flex flex-col justify-center">
 			{/* Background Ambient Glow */}
 			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-				<div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-none animate-pulse" />
+				<div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-none" />
 				<div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-none" />
 			</div>
 

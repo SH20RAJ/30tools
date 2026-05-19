@@ -1,21 +1,5 @@
-import type { Metadata } from "next";
-import { SITE_CONFIG } from "@/constants/config";
-
-export const metadata: Metadata = {
-	title: "Free Online Tools Hub | 30tools",
-	description:
-		`Discover ${SITE_CONFIG.toolCountString} free online tools for image editing, PDF management, video conversion, audio processing, SEO analysis, developer utilities, and text formatting. No signup, no install — everything runs in your browser.`,
-	keywords:
-		"free online tools hub, 30tools homepage, online utility tools, browser based tools, free web tools, no signup tools, privacy focused tools, all in one toolkit, image tools, pdf tools, video tools, developer tools, seo tools",
-	openGraph: {
-		title: "Free Online Tools Hub | 30tools",
-		description:
-			`Discover ${SITE_CONFIG.toolCountString} free online tools for image editing, PDF management, video conversion, and more. No signup, no install.`,
-		url: "https://30tools.com",
-		siteName: "30tools",
-		type: "website",
-	},
-};
+// Landing page uses generateMetadata() in page.tsx for dynamic metadata.
+// No static metadata here to avoid conflicts with the page-level metadata export.
 
 export default function LandingGroupLayout({
 	children,

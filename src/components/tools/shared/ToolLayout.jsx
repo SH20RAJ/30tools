@@ -1,4 +1,5 @@
-import { BreadcrumbsEnhanced, RelatedTools } from "@/components/seo";
+import BreadcrumbsEnhanced from "@/components/seo/BreadcrumbsEnhanced";
+import { RelatedTools } from "@/components/seo/SocialEngagement";
 import StructuredData from "@/components/shared/StructuredData";
 import DownloadDisclaimer from "@/components/shared/DownloadDisclaimer";
 import {
@@ -180,7 +181,7 @@ export default function ToolLayout({
 				)}
 
 				{/* Tool Interaction Area */}
-				<section className="bg-card border border-border/60 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] dark:shadow-[0_32px_64px_-12px_rgba(0,0,0,0.4)] relative group transition-all duration-500 hover:border-primary/20">
+				<section className="bg-card border border-border/60 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] dark:shadow-[0_32px_64px_-12px_rgba(0,0,0,0.4)] relative group transition-all duration-500 hover:border-primary/20 min-h-[400px]">
 					<div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] -z-10 transition-opacity" />
 					<div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 blur-[120px] -z-10 transition-opacity" />
 					<div className="relative z-10">{children}</div>
@@ -202,8 +203,8 @@ export default function ToolLayout({
 							</section>
 						)}
 
-						{/* Contribution Notice */}
-						<section className="text-center space-y-4 max-w-2xl mx-auto p-8 border border-dashed rounded-2xl bg-primary/5">
+						{/* Contribution Notice - below fold */}
+						<section className="text-center space-y-4 max-w-2xl mx-auto p-8 border border-dashed rounded-2xl bg-primary/5" style={{ contentVisibility: "auto", containIntrinsicSize: "auto 200px" }}>
 							<h3 className="text-lg font-bold">Tool not working or missing something?</h3>
 							<p className="text-sm text-muted-foreground">
 								This tool is open-source and community-driven. If you find a bug, have a feature request,
@@ -224,8 +225,8 @@ export default function ToolLayout({
 							</div>
 						</section>
 
-						{/* Trust & SEO Content */}
-						<div className="space-y-32">
+						{/* Trust & SEO Content - below fold, defer rendering */}
+						<div className="space-y-32" style={{ contentVisibility: "auto", containIntrinsicSize: "auto 2000px" }}>
 							<ToolTrust />
 							<ToolArticle content={enrichedTool.article} />
 
@@ -257,15 +258,19 @@ export default function ToolLayout({
 							</div>
 						</div>
 
-						{/* Internal Link Sculpting Segment */}
-						<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
+						{/* Internal Link Sculpting Segment - below fold */}
+						<div style={{ contentVisibility: "auto", containIntrinsicSize: "auto 400px" }}>
+							<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
+						</div>
 
 						{finalRelatedTools.length > 0 && (
+							<div style={{ contentVisibility: "auto", containIntrinsicSize: "auto 800px" }}>
 							<RelatedTools
 								currentTool={tool.id}
 								category={tool.category}
 								tools={finalRelatedTools}
 							/>
+							</div>
 						)}
 					</>
 				)}
