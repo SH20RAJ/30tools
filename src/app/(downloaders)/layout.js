@@ -22,6 +22,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Video Downloaders Online - No Signup | 30tools",
+		description:
+			`Download videos from TikTok, Instagram, Facebook, Twitter, Reddit, and ${SITE_CONFIG.popularToolCountString} platforms in HD. No watermark, no signup, 100% free.`,
+		images: ["/og-image.jpg"],
+	},
 };
 
 const jsonLdSchemas = {

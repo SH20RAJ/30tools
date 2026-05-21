@@ -20,6 +20,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Audio Tools Online - No Signup | 30tools",
+		description:
+			"Free AI text-to-speech, audio conversion, and compression tools. Generate voiceovers and process audio files instantly in your browser.",
+		images: ["/og-image.jpg"],
+	},
 };
 
 const jsonLdSchemas = {

@@ -20,6 +20,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free YouTube Tools Online - No Signup | 30tools",
+		description:
+			"Download YouTube videos & Shorts, extract thumbnails, generate transcripts and scripts — all free with no signup.",
+		images: ["/og-image.jpg"],
+	},
 };
 
 const jsonLdSchemas = {

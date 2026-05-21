@@ -15,6 +15,12 @@ export const metadata: Metadata = {
 		siteName: "30tools",
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Company | 30tools",
+		description:
+			"Learn about 30tools — our mission, contact details, privacy policy, and terms of service.",
+	},
 };
 
 export default function CompanyGroupLayout({

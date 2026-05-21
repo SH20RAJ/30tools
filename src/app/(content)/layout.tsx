@@ -14,6 +14,12 @@ export const metadata: Metadata = {
 		siteName: "30tools",
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Blog & Guides | 30tools",
+		description:
+			"Practical guides, tutorials, and tool comparisons for free online productivity tools.",
+	},
 };
 
 export default function ContentGroupLayout({

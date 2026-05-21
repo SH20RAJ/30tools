@@ -20,6 +20,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Developer Tools Online - No Signup | 30tools",
+		description:
+			"Essential developer tools for JSON, JWT, Base64, hashing, and more. Secure client-side processing with no signup.",
+		images: ["/og-image.jpg"],
+	},
 };
 
 const jsonLdSchemas = {

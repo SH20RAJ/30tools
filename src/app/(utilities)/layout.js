@@ -20,6 +20,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Utility Tools Online - No Signup | 30tools",
+		description:
+			"85+ free utility tools — speed test, password generator, QR codes, converters, and calculators. No signup required.",
+		images: ["/og-image.jpg"],
+	},
 };
 
 const jsonLdSchemas = {

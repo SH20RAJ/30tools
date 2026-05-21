@@ -20,6 +20,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free AI Generator Tools Online - No Signup | 30tools",
+		description:
+			"Generate AI images, voiceovers, QR codes, and passwords for free. Customizable, no watermarks, instant download.",
+		images: ["/og-image.jpg"],
+	},
 };
 
 const jsonLdSchemas = {

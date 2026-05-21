@@ -18,6 +18,20 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         alternates: {
             canonical: canonicalUrl,
         },
+        openGraph: {
+            title: intent.title,
+            description: intent.description,
+            url: canonicalUrl,
+            siteName: "30tools",
+            images: [{ url: "/og-image.jpg" }],
+            type: "website",
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: intent.title,
+            description: intent.description,
+            images: ["/og-image.jpg"],
+        },
         robots: { index: false, follow: true },
     };
 }

@@ -20,6 +20,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Video Tools Online - No Signup | 30tools",
+		description:
+			"Play Terabox videos, compress, convert, and trim video files for free. Browser-based, no signup, no watermarks.",
+		images: ["/og-image.jpg"],
+	},
 };
 
 const jsonLdSchemas = {

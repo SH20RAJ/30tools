@@ -13,6 +13,11 @@ export const metadata: Metadata = {
 		siteName: "30tools",
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "User Area | 30tools",
+		description: "Manage your 30tools account, preferences, and dashboard.",
+	},
 };
 
 export default function UserGroupLayout({

@@ -20,6 +20,13 @@ export const metadata = {
 		],
 		type: "website",
 	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free PDF Tools Online - No Signup | 30tools",
+		description:
+			"Merge, split, compress, and convert PDFs for free. No signup, no watermarks, zero-storage security policy.",
+		images: ["/og-image.jpg"],
+	},
 };
 
 export default function PDFToolsLayout({ children }) {
