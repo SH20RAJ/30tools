@@ -1,4 +1,4 @@
-import { DownloaderEngine } from "@/components/tools/downloaders/DownloaderEngine";
+import AllDownloaders from "@/components/tools/downloaders/AllDownloaders";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
@@ -110,7 +110,7 @@ export default async function ToolPage() {
 				breadcrumbs={breadcrumbs}
 				relatedTools={relatedTools}
 			>
-				<DownloaderEngine placeholder="Enter URL to download..." />
+				<AllDownloaders />
 			</ToolLayout>
 		</>
 	);

@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import SimpleTeraboxPlayer from "@/components/tools/downloaders/SimpleTeraboxPlayer";
+import { SimpleTeraboxPlayer } from "@/components/tools/video/SimpleTeraboxPlayer";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
