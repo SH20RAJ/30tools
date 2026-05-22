@@ -1,5 +1,5 @@
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+import RedditDownloader from "@/components/tools/downloaders/RedditDownloader";
 
 export const metadata = {
 	title: "Free Reddit Video Downloader Online - No Signup | 30tools",
@@ -87,7 +87,7 @@ Video URLs are processed temporarily for retrieval. We do not store or log downl
 			/>
 
 			<ToolLayout tool={tool}>
-				<DownloaderEngine toolName="Reddit Video Downloader" />
+				<RedditDownloader toolName="Reddit Video Downloader" />
 			</ToolLayout>
 		</>
 	);

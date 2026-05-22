@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+import YouTubeShortsDownloader from "@/components/tools/downloaders/YouTubeShortsDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<DownloaderEngine />
+			<YouTubeShortsDownloader />
 		</ToolLayout>
 	);
 }
