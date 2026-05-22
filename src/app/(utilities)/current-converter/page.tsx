@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Current Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between amperes, milliamperes, and other electrical current units instantly. Our free online tool is perfect for electronics and electrical engineering tasks. 100% free, fast, and no signup required.",
-	keywords: "current converter, free online tool, no signup",
+	keywords: "current converter, free online tool, no signup, current-converter, free current-converter, Current Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/current-converter",
 	},

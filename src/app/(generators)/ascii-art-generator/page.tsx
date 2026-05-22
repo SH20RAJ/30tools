@@ -6,7 +6,8 @@ import AsciiArtGeneratorTool from "@/components/tools/generators/AsciiArtGenerat
 export const metadata = {
 	title: "ASCII Art Generator Online – Free & No Signup | 30tools",
 	description: "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
-	alternates: {
+	
+	keywords: "ascii-art-generator, Ascii Art Generator, free ascii-art-generator, Ascii Art Generator online, online generator, content creator, free maker, creative tool, 30tools",alternates: {
 		canonical: "https://30tools.com/ascii-art-generator",
 	},
 	openGraph: {

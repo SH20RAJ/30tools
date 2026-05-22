@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Binary to Decimal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert binary numbers to decimal (Base-10) instantly. Our free online converter helps you with computer science calculations and binary data analysis in seconds. 100% free, fast, and no signup required.",
-	keywords: "binary to decimal converter, free online tool, no signup",
+	keywords: "binary to decimal converter, free online tool, no signup, binary-to-decimal-converter, free binary-to-decimal-converter, Binary To Decimal Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/binary-to-decimal-converter",
 	},

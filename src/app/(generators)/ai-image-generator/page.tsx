@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free AI Image Generator Online – Fast & No Signup | 30tools",
 	description: "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing.",
-	keywords: "ai image generator, free online tool, no signup",
+	keywords: "ai image generator, free online tool, no signup, ai-image-generator, free ai-image-generator, Ai Image Generator online, online generator, content creator, free maker, creative tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ai-image-generator",
 	},

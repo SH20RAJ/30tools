@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
 	description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "json viewer, free online tool, no signup",
+	keywords: "json viewer, free online tool, no signup, json-viewer, free json-viewer, Json Viewer online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-viewer",
 	},

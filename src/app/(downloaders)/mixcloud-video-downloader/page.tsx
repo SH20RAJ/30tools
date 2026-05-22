@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Mixcloud Video Downloader Online – Fast & No Signup | 30tools",
 	description: "The easiest way to download Mixcloud audio and video content online. Our free tool helps you save high-quality mixes and tracks for offline listening anywhere. 100% free, fast, and no signup required.",
-	keywords: "mixcloud video downloader, free online tool, no signup",
+	keywords: "mixcloud video downloader, free online tool, no signup, mixcloud-video-downloader, free mixcloud-video-downloader, Mixcloud Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/mixcloud-video-downloader",
 	},

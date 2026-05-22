@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Open Graph Generator Online – Fast & No Signup | 30tools",
 	description: "Free open graph generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "open graph generator, free online tool, no signup",
+	keywords: "open graph generator, free online tool, no signup, open-graph-generator, free open-graph-generator, Open Graph Generator online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/open-graph-generator",
 	},

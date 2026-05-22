@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Odnoklassniki Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save OK.ru (Odnoklassniki) videos directly to your device easily. Our free online tool helps you download movies, clips, and user videos in high resolution instantly. 100% free, fast, and no signup required.",
-	keywords: "odnoklassniki video downloader, free online tool, no signup",
+	keywords: "odnoklassniki video downloader, free online tool, no signup, odnoklassniki-video-downloader, free odnoklassniki-video-downloader, Odnoklassniki Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/odnoklassniki-video-downloader",
 	},

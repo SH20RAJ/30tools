@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free URL Parser Online – Fast & No Signup | 30tools",
 	description: "Free url parser tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "url parser, free online tool, no signup",
+	keywords: "url parser, free online tool, no signup, url-parser, free url-parser, Url Parser online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/url-parser",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Twitter Card Generator Online – Fast & No Signup | 30tools",
 	description: "Free twitter card generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "twitter card generator, free online tool, no signup",
+	keywords: "twitter card generator, free online tool, no signup, twitter-card-generator, free twitter-card-generator, Twitter Card Generator online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/twitter-card-generator",
 	},

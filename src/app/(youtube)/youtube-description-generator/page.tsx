@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Description Generator Online – Fast & No Signup | 30tools",
 	description: "Create SEO-optimized YouTube video descriptions instantly. Our free online generator helps you include keywords, links, and timestamps to boost your video visibility and engagement. 100% free, fast, and no signup required.",
-	keywords: "youtube description generator, free online tool, no signup",
+	keywords: "youtube description generator, free online tool, no signup, youtube-description-generator, free youtube-description-generator, Youtube Description Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-description-generator",
 	},

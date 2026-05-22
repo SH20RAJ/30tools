@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free HEX to Binary Converter Online – Fast & No Signup | 30tools",
 	description: "Transform hexadecimal values into binary code instantly. Our free online HEX to Binary converter is perfect for developers, hardware engineers, and technical students. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "hex to binary converter, free online tool, no signup",
+	keywords: "hex to binary converter, free online tool, no signup, hex-to-binary-converter, free hex-to-binary-converter, Hex To Binary Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/hex-to-binary-converter",
 	},

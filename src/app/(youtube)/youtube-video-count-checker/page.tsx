@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Video Count Checker Online – Fast & No Signup | 30tools",
 	description: "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel auditing. 100% free, fast, and no signup required.",
-	keywords: "youtube video count checker, free online tool, no signup",
+	keywords: "youtube video count checker, free online tool, no signup, youtube-video-count-checker, free youtube-video-count-checker, Youtube Video Count Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-video-count-checker",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Channel Banner Downloader Online – Fast & No Signup | 30tools",
 	description: "Download high-resolution YouTube channel banners and covers instantly. Our free tool helps you save channel branding for design reference or archiving. High-quality and easy to use. 100% free, fast, and no signup required.",
-	keywords: "youtube channel banner downloader, free online tool, no signup",
+	keywords: "youtube channel banner downloader, free online tool, no signup, youtube-channel-banner-downloader, free youtube-channel-banner-downloader, Youtube Channel Banner Downloader online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-banner-downloader",
 	},

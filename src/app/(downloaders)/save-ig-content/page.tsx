@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Save Ig Content Online – Fast & No Signup | 30tools",
 	description: "Download any public Instagram content—photos, videos, reels, and stories—to your device for free. Our all-in-one downloader provides high-quality media saves instantly. 100% free, fast, and no signup required.",
-	keywords: "save ig content, free online tool, no signup",
+	keywords: "save ig content, free online tool, no signup, save-ig-content, free save-ig-content, Save Ig Content online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-ig-content",
 	},

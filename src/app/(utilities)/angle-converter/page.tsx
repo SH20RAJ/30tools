@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Angle Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between degrees, radians, gradians, and more instantly. Our free online Angle Converter is perfect for students, engineers, and mathematicians. Fast and accurate. 100% free, fast, and no signup required.",
-	keywords: "angle converter, free online tool, no signup",
+	keywords: "angle converter, free online tool, no signup, angle-converter, free angle-converter, Angle Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/angle-converter",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Length Converter Online – Fast & No Signup | 30tools",
 	description: "Free length converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "length converter, free online tool, no signup",
+	keywords: "length converter, free online tool, no signup, length-converter, free length-converter, Length Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/length-converter",
 	},

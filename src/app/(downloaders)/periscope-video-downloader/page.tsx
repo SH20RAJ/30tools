@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Periscope Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Periscope videos and live stream replays easily. Our free online tool helps you save historical broadcast content for offline viewing before it disappears. 100% free, fast, and no signup required.",
-	keywords: "periscope video downloader, free online tool, no signup",
+	keywords: "periscope video downloader, free online tool, no signup, periscope-video-downloader, free periscope-video-downloader, Periscope Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/periscope-video-downloader",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free AI Voice Generator Online – Fast & No Signup | 30tools",
 	description: "Convert text to natural-sounding AI voices instantly. Our free text-to-speech tool offers multiple languages and accents for professional voiceovers, accessibility, and creative projects. No signup required.",
-	keywords: "ai voice generator, free online tool, no signup",
+	keywords: "ai voice generator, free online tool, no signup, ai-voice-generator, free ai-voice-generator, Ai Voice Generator online, online generator, content creator, free maker, creative tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ai-voice-generator",
 	},

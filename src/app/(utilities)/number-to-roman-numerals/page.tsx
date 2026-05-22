@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Number to Roman Numerals Online – Fast & No Signup | 30tools",
 	description: "Free number to roman numerals tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "number to roman numerals, free online tool, no signup",
+	keywords: "number to roman numerals, free online tool, no signup, number-to-roman-numerals, free number-to-roman-numerals, Number To Roman Numerals online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/number-to-roman-numerals",
 	},

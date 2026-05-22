@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Hashtag Generator Online – Fast & No Signup | 30tools",
 	description: "Generate viral hashtags for your YouTube videos instantly. Our free online tool suggests relevant, search-friendly tags to help you reach more viewers and boost engagement. 100% free, fast, and no signup required.",
-	keywords: "youtube hashtag generator, free online tool, no signup",
+	keywords: "youtube hashtag generator, free online tool, no signup, youtube-hashtag-generator, free youtube-hashtag-generator, Youtube Hashtag Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-hashtag-generator",
 	},

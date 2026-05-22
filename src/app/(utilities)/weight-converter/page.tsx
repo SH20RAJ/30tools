@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Weight Converter Online – Fast & No Signup | 30tools",
 	description: "Free weight converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "weight converter, free online tool, no signup",
+	keywords: "weight converter, free online tool, no signup, weight-converter, free weight-converter, Weight Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/weight-converter",
 	},

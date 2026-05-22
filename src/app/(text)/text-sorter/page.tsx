@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Text Sorter Online – Fast & No Signup | 30tools",
 	description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
-	keywords: "text sorter, free online tool, no signup",
+	keywords: "text sorter, free online tool, no signup, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-sorter",
 	},

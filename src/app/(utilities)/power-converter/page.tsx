@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Power Converter Online – Fast & No Signup | 30tools",
 	description: "Free power converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "power converter, free online tool, no signup",
+	keywords: "power converter, free online tool, no signup, power-converter, free power-converter, Power Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/power-converter",
 	},

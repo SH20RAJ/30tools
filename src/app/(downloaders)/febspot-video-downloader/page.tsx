@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Febspot Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Febspot videos in high resolution instantly. Our free online tool helps you save your favorite content for offline viewing without any signup. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "febspot video downloader, free online tool, no signup",
+	keywords: "febspot video downloader, free online tool, no signup, febspot-video-downloader, free febspot-video-downloader, Febspot Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/febspot-video-downloader",
 	},

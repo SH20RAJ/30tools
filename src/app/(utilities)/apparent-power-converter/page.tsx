@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Apparent Power Converter Online – Fast & No Signup | 30tools",
 	description: "Convert between volt-amperes (VA), millivolt-amperes, and more instantly. Our free online tool is perfect for electrical engineers and technicians. 100% free, fast, and no signup required.",
-	keywords: "apparent power converter, free online tool, no signup",
+	keywords: "apparent power converter, free online tool, no signup, apparent-power-converter, free apparent-power-converter, Apparent Power Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/apparent-power-converter",
 	},

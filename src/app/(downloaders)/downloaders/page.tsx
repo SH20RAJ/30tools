@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Downloaders Online – Fast & No Signup | 30tools",
 	description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
-	keywords: "downloaders, free online tool, no signup",
+	keywords: "downloaders, free online tool, no signup, free downloaders, Downloaders online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/downloaders",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Text to Slug Converter Online – Fast & No Signup | 30tools",
 	description: "Transform any text or title into a URL-friendly slug instantly. Perfect for SEO-friendly web development, blog posts, and clean link structures. Free and fast online tool. 100% free, fast, and no signup required.",
-	keywords: "text to slug converter, free online tool, no signup",
+	keywords: "text to slug converter, free online tool, no signup, text-to-slug-converter, free text-to-slug-converter, Text To Slug Converter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-slug-converter",
 	},

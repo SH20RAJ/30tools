@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Get HTTP Headers Online – Fast & No Signup | 30tools",
 	description: "Free get http headers tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "get http headers, free online tool, no signup",
+	keywords: "get http headers, free online tool, no signup, get-http-headers, free get-http-headers, Get Http Headers online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/get-http-headers",
 	},

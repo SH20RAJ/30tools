@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Blogger Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Easily download videos from any Blogger post. 100% free, fast, and no signup required.",
-	keywords: "blogger video downloader, free online tool, no signup",
+	keywords: "blogger video downloader, free online tool, no signup, blogger-video-downloader, free blogger-video-downloader, Blogger Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/blogger-video-downloader",
 	},

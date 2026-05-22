@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JPG Converter Online – Fast & No Signup | 30tools",
 	description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use. Privacy-focused and works entirely in your browser. 100% free, fast, and no signup required.",
-	keywords: "jpg converter, free online tool, no signup",
+	keywords: "jpg converter, free online tool, no signup, jpg-converter, free jpg-converter, Jpg Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/jpg-converter",
 	},

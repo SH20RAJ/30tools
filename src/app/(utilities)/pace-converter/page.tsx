@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Pace Converter Online – Fast & No Signup | 30tools",
 	description: "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "pace converter, free online tool, no signup",
+	keywords: "pace converter, free online tool, no signup, pace-converter, free pace-converter, Pace Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pace-converter",
 	},

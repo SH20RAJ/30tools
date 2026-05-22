@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Keywords Suggestion Tool Online – Fast & No Signup | 30tools",
 	description: "Free keywords suggestion tool tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "keywords suggestion tool, free online tool, no signup",
+	keywords: "keywords suggestion tool, free online tool, no signup, keywords-suggestion-tool, free keywords-suggestion-tool, Keywords Suggestion Tool online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/keywords-suggestion-tool",
 	},

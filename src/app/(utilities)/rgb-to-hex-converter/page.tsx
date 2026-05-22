@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free RGB to HEX Converter Online – Fast & No Signup | 30tools",
 	description: "Free rgb to hex converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "rgb to hex converter, free online tool, no signup",
+	keywords: "rgb to hex converter, free online tool, no signup, rgb-to-hex-converter, free rgb-to-hex-converter, Rgb To Hex Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/rgb-to-hex-converter",
 	},

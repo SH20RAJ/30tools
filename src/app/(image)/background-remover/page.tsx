@@ -6,7 +6,8 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Background Remover – Remove Solid Backgrounds from Images Online Free",
 	description: "Remove solid and white backgrounds from images automatically. Create transparent PNGs for product photos, headshots, and graphics. 100% free, browser-based processing, no signup needed.",
-	alternates: {
+	
+	keywords: "background-remover, Background Remover, free background-remover, Background Remover online, image editing, photo editor, browser image tool, free photo utility, 30tools",alternates: {
 		canonical: "https://30tools.com/background-remover",
 	},
 	openGraph: {

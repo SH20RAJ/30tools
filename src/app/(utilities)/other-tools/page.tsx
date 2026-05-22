@@ -10,7 +10,7 @@ import { Wrench, ArrowRight, Sparkles } from "lucide-react";
 export const metadata = {
 	title: "Free Utility Tools Online – Fast & No Signup | 30tools",
 	description: "Free utility tools online. IP lookup, speed test, QR codes, notes, and more. 100% free, fast, and no signup required.",
-	keywords: "utility tools, free online tool, no signup",
+	keywords: "utility tools, free online tool, no signup, other-tools, Other Tools, free other-tools, Other Tools online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: { canonical: "https://30tools.com/other-tools" },
 	openGraph: { title: "Free Utility Tools Online – Fast & No Signup | 30tools", description: "Free utility tools online. IP lookup, speed test, QR codes, notes, and more. 100% free, fast, and no signup required.", url: "https://30tools.com/other-tools", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
 	twitter: { card: "summary_large_image", title: "Free Utility Tools Online – Fast & No Signup | 30tools", description: "Free utility tools online. IP lookup, speed test, QR codes, notes, and more. 100% free, fast, and no signup required.", images: ["/og-image.jpg"] },

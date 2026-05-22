@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Lorem Ipsum Generator Online – Fast & No Signup | 30tools",
 	description: "Generate custom Lorem Ipsum text for your designs. 100% free, fast, and no signup required.",
-	keywords: "lorem ipsum generator, free online tool, no signup",
+	keywords: "lorem ipsum generator, free online tool, no signup, lorem-ipsum, Lorem Ipsum, free lorem-ipsum, Lorem Ipsum online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/lorem-ipsum",
 	},

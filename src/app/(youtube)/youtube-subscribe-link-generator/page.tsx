@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Subscribe Link Generator Online – Fast & No Signup | 30tools",
 	description: "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for social media and bios. 100% free, fast, and no signup required.",
-	keywords: "youtube subscribe link generator, free online tool, no signup",
+	keywords: "youtube subscribe link generator, free online tool, no signup, youtube-subscribe-link-generator, free youtube-subscribe-link-generator, Youtube Subscribe Link Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-subscribe-link-generator",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free HEX to Text Converter Online – Fast & No Signup | 30tools",
 	description: "Convert hexadecimal strings back to readable text instantly. Our free online HEX to Text tool is perfect for decoding data, debugging, and discovering hidden text streams. 100% free, fast, and no signup required.",
-	keywords: "hex to text converter, free online tool, no signup",
+	keywords: "hex to text converter, free online tool, no signup, hex-to-text-converter, free hex-to-text-converter, Hex To Text Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/hex-to-text-converter",
 	},

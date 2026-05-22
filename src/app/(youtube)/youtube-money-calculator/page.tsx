@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Money Calculator Online – Fast & No Signup | 30tools",
 	description: "Estimate potential earnings for any YouTube video or channel with our free online Money Calculator. Understand revenue based on views, CPM, and engagement metrics. Perfect for creators. 100% free, fast, and no signup required.",
-	keywords: "youtube money calculator, free online tool, no signup",
+	keywords: "youtube money calculator, free online tool, no signup, youtube-money-calculator, free youtube-money-calculator, Youtube Money Calculator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-money-calculator",
 	},

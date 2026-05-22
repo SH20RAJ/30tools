@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Kickstarter Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save Kickstarter project videos and pitch clips to your device easily. Our free online downloader helps you keep campaign media for reference and offline viewing. 100% free, fast, and no signup required.",
-	keywords: "kickstarter video downloader, free online tool, no signup",
+	keywords: "kickstarter video downloader, free online tool, no signup, kickstarter-video-downloader, free kickstarter-video-downloader, Kickstarter Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/kickstarter-video-downloader",
 	},

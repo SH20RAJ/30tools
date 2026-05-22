@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Page Size Checker Online – Fast & No Signup | 30tools",
 	description: "Free page size checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "page size checker, free online tool, no signup",
+	keywords: "page size checker, free online tool, no signup, page-size-checker, free page-size-checker, Page Size Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/page-size-checker",
 	},

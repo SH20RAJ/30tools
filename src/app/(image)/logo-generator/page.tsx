@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Logo Generator Online – Fast & No Signup | 30tools",
 	description: "Create professional logos with text, fonts, and custom colors 100% free, fast, and no signup required.",
-	keywords: "logo generator, free online tool, no signup",
+	keywords: "logo generator, free online tool, no signup, logo-generator, free logo-generator, Logo Generator online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/logo-generator",
 	},

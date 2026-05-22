@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Pressure Converter Online – Fast & No Signup | 30tools",
 	description: "Free pressure converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "pressure converter, free online tool, no signup",
+	keywords: "pressure converter, free online tool, no signup, pressure-converter, free pressure-converter, Pressure Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pressure-converter",
 	},

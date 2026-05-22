@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Binary to ASCII Converter Online – Fast & No Signup | 30tools",
 	description: "Transform binary code (0s and 1s) into readable ASCII text instantly. Our free online converter is fast, accurate, and works entirely in your browser. No signup required.",
-	keywords: "binary to ascii converter, free online tool, no signup",
+	keywords: "binary to ascii converter, free online tool, no signup, binary-to-ascii-converter, free binary-to-ascii-converter, Binary To Ascii Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/binary-to-ascii-converter",
 	},

@@ -6,7 +6,8 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "PDF Password Protect – Secure PDF Files Online Free",
 	description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
-	alternates: {
+	
+	keywords: "pdf-protect, Pdf Protect, free pdf-protect, Pdf Protect online, PDF utility, document editor, online PDF tool, free PDF converter, 30tools",alternates: {
 		canonical: "https://30tools.com/pdf-protect",
 	},
 	openGraph: {

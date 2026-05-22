@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Domain to IP Converter Online – Fast & No Signup | 30tools",
 	description: "Find the IP address of any website instantly. Our free online tool helps you identify server locations and troubleshoot network connectivity issues. 100% free, fast, and no signup required.",
-	keywords: "domain to ip converter, free online tool, no signup",
+	keywords: "domain to ip converter, free online tool, no signup, domain-to-ip-converter, free domain-to-ip-converter, Domain To Ip Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/domain-to-ip-converter",
 	},

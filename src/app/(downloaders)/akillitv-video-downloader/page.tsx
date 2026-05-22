@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free AkilliTv Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download AkilliTv videos easily with our free online downloader. 100% free, fast, and no signup required.",
-	keywords: "akillitv video downloader, free online tool, no signup",
+	keywords: "akillitv video downloader, free online tool, no signup, akillitv-video-downloader, free akillitv-video-downloader, Akillitv Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/akillitv-video-downloader",
 	},

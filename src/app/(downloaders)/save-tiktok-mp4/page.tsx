@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Save Tiktok Mp4 Online – Fast & No Signup | 30tools",
 	description: "Save TikTok videos as high-quality MP4 files instantly. Our free online downloader is fast, secure, and works on all devices without any signup or software. 100% free, fast, and no signup required.",
-	keywords: "save tiktok mp4, free online tool, no signup",
+	keywords: "save tiktok mp4, free online tool, no signup, save-tiktok-mp4, free save-tiktok-mp4, Save Tiktok Mp4 online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-tiktok-mp4",
 	},

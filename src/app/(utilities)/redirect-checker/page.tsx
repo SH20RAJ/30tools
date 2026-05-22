@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Redirect Checker Online – Fast & No Signup | 30tools",
 	description: "Free redirect checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "redirect checker, free online tool, no signup",
+	keywords: "redirect checker, free online tool, no signup, redirect-checker, free redirect-checker, Redirect Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/redirect-checker",
 	},

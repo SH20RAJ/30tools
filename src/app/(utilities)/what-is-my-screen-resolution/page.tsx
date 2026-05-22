@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free What Is My Screen Resolution Online – Fast & No Signup | 30tools",
 	description: "Free what is my screen resolution tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "what is my screen resolution, free online tool, no signup",
+	keywords: "what is my screen resolution, free online tool, no signup, what-is-my-screen-resolution, free what-is-my-screen-resolution, What Is My Screen Resolution online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-screen-resolution",
 	},

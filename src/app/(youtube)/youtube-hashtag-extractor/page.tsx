@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Hashtag Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract all hashtags from any YouTube video instantly. Our free online tool helps you analyze competitor tagging strategies and optimize your own video SEO for better reach. 100% free, fast, and no signup required.",
-	keywords: "youtube hashtag extractor, free online tool, no signup",
+	keywords: "youtube hashtag extractor, free online tool, no signup, youtube-hashtag-extractor, free youtube-hashtag-extractor, Youtube Hashtag Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-hashtag-extractor",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free MD5 Generator Online – Fast & No Signup | 30tools",
 	description: "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "md5 generator, free online tool, no signup",
+	keywords: "md5 generator, free online tool, no signup, md5-generator, free md5-generator, Md5 Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/md5-generator",
 	},

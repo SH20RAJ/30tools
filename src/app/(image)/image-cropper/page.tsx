@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Image Cropper Online – Fast & No Signup | 30tools",
 	description: "Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "image cropper, free online tool, no signup",
+	keywords: "image cropper, free online tool, no signup, image-cropper, free image-cropper, Image Cropper online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-cropper",
 	},
