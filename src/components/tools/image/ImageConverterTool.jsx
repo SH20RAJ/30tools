@@ -458,7 +458,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 										<div
 											key={fileData.id}
 											className={cn(
-												"flex items-center gap-4 p-5 rounded-3xl-off border border-border/40 transition-all duration-300 group hover:bg-primary/[0.02]",
+												"flex items-center gap-4 p-5 rounded-3xl border border-border/40 transition-all duration-300 group hover:bg-primary/[0.02]",
 												fileData.status === "completed" && "bg-emerald-500/[0.03] border-emerald-500/20"
 											)}
 										>
@@ -570,7 +570,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 										</Select>
 									</div>
 
-									<div className="flex items-center justify-between p-6 rounded-3xl-off bg-muted/20 border border-border/40">
+									<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40">
 										<div className="space-y-1">
 											<Label htmlFor="preserve-exif" className="text-lg font-bold">Preserve Metadata</Label>
 											<p className="text-sm text-muted-foreground leading-tight">Keep camera settings & location</p>
@@ -629,7 +629,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 								</TabsContent>
 
 								<TabsContent value="resize" className="space-y-8 mt-0">
-									<div className="flex items-center justify-between p-6 rounded-3xl-off bg-muted/20 border border-border/40 overflow-hidden relative">
+									<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40 overflow-hidden relative">
 										<div className="space-y-1 z-10">
 											<Label htmlFor="enable-resize" className="text-lg font-bold">Image Rescaling</Label>
 											<p className="text-sm text-muted-foreground leading-tight">Change pixel dimensions</p>
@@ -668,7 +668,7 @@ export default function ImageConverterTool({ defaultOutputFormat = "png" }) {
 												</div>
 											</div>
 
-											<div className="flex items-center justify-between p-6 rounded-3xl-off bg-muted/20 border border-border/40">
+											<div className="flex items-center justify-between p-6 rounded-3xl bg-muted/20 border border-border/40">
 												<Label className="text-base font-bold">Keep Aspect Ratio</Label>
 												<Switch
 													checked={conversionSettings.maintainAspectRatio}

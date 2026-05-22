@@ -140,7 +140,7 @@ export default function PdfCompressorTool() {
 				) : (
 					<GlassCard className="p-8 group relative overflow-hidden">
 						<div className="flex items-center gap-6">
-							<div className="w-20 h-20 rounded-3xl-off bg-destructive/10 text-destructive flex items-center justify-center flex-shrink-0 shadow-lg shadow-destructive/5 group-hover:scale-110 transition-transform duration-500">
+							<div className="w-20 h-20 rounded-3xl bg-destructive/10 text-destructive flex items-center justify-center flex-shrink-0 shadow-lg shadow-destructive/5 group-hover:scale-110 transition-transform duration-500">
 								<FileIcon className="w-10 h-10" />
 							</div>
 							<div className="flex-1 min-w-0">
@@ -185,7 +185,7 @@ export default function PdfCompressorTool() {
 											variant={compressionSettings.quality === q.id ? "default" : "outline"}
 											size="lg"
 											className={cn(
-												"h-24 rounded-3xl-off flex flex-col items-center justify-center gap-1 border-border/40 transition-all",
+												"h-24 rounded-3xl flex flex-col items-center justify-center gap-1 border-border/40 transition-all",
 												compressionSettings.quality !== q.id && "hover:border-primary/40 bg-muted/10"
 											)}
 											onClick={() => setCompressionSettings(prev => ({ ...prev, quality: q.id }))}
@@ -197,7 +197,7 @@ export default function PdfCompressorTool() {
 								</div>
 
 								<div className="space-y-4">
-									<div className="flex items-center justify-between p-5 rounded-3xl-off bg-muted/20 border border-border/40">
+									<div className="flex items-center justify-between p-5 rounded-3xl bg-muted/20 border border-border/40">
 										<Label className="font-bold">Optimise Images</Label>
 										<Button
 											variant={compressionSettings.optimizeImages ? "default" : "outline"}

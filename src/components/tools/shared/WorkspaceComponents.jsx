@@ -26,7 +26,7 @@ export const PremiumDropZone = ({ onDrop, onDragOver, onDragLeave, onClick, drag
 		)}
 	>
 		<div className={cn(
-			"w-20 h-20 rounded-3xl-off bg-primary/10 flex items-center justify-center mb-6 text-primary scale-110 shadow-lg shadow-primary/10 group-hover:scale-125 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-700",
+			"w-20 h-20 rounded-3xl bg-primary/10 flex items-center justify-center mb-6 text-primary scale-110 shadow-lg shadow-primary/10 group-hover:scale-125 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-700",
 			dragActive && "animate-pulse"
 		)}>
 			<Icon className="w-10 h-10" />

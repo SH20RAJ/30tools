@@ -11,7 +11,7 @@ import {
 	Upload,
 	Wand2,
 } from "lucide-react";
-import { useEffect, useRef, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
@@ -64,7 +64,7 @@ export default function PhotoEnhancerTool() {
 		});
 	};
 
-	const applyFilters = () => {
+	const applyFilters = useCallback(() => {
 		if (!originalUrl || !canvasRef.current) return;
 
 		const canvas = canvasRef.current;
@@ -94,17 +94,12 @@ export default function PhotoEnhancerTool() {
 				ctx.fillRect(0, 0, canvas.width, canvas.height);
 			}
 
-			// Apply Sharpness (Convolution Matrix) - Simplified simulation
-			// Real sharpness requires pixel manipulation which is heavy for large images on main thread
-			// For this demo, we'll skip heavy pixel manipulation to keep it responsive
-			// or use a very simple approach if needed.
-
 			// Update preview
 			setPreviewUrl(canvas.toDataURL("image/jpeg", 0.9));
 		};
 
 		img.src = originalUrl;
-	};
+	}, [originalUrl, adjustments]);
 
 	useEffect(() => {
 		const timer = setTimeout(() => {
@@ -138,10 +133,10 @@ export default function PhotoEnhancerTool() {
 		<div className="w-full max-w-6xl mx-auto p-4">
 			{!image ? (
 				<div
-					className="border-2 border-dashed border-gray-300 dark:border-gray-700 sor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors"
+					className="border-2 border-dashed border-gray-300 dark:border-gray-700 cursor-pointer hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors flex flex-col items-center justify-center p-12 text-center"
 					onClick={() => fileInputRef.current?.click()}
 				>
-					<div className="w-20 h-20 bg-primary/10 items-center justify-center mx-auto mb-6">
+					<div className="w-20 h-20 bg-primary/10 flex items-center justify-center mx-auto mb-6 rounded-2xl">
 						<Upload className="w-10 h-10 text-primary" />
 					</div>
 					<h2 className="text-2xl font-bold mb-2">

@@ -201,7 +201,7 @@ export default function TextEncoderTool() {
 							placeholder="Paste your source text here..."
 							value={inputText}
 							onChange={(e) => setInputText(e.target.value)}
-							className="min-h-[220px] rounded-3xl-off bg-muted/20 border-border/40 p-6 font-mono text-lg focus-visible:ring-primary/20 transition-all"
+							className="min-h-[220px] rounded-3xl bg-muted/20 border-border/40 p-6 font-mono text-lg focus-visible:ring-primary/20 transition-all"
 						/>
 					</GlassCard>
 
@@ -224,7 +224,7 @@ export default function TextEncoderTool() {
 							<Textarea
 								value={outputText}
 								readOnly
-								className="min-h-[220px] rounded-3xl-off bg-primary/[0.03] border-primary/20 p-6 font-mono text-lg text-primary focus-visible:ring-0 cursor-default"
+								className="min-h-[220px] rounded-3xl bg-primary/[0.03] border-primary/20 p-6 font-mono text-lg text-primary focus-visible:ring-0 cursor-default"
 							/>
 						</GlassCard>
 					)}
