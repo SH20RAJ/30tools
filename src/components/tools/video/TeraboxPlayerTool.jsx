@@ -2,7 +2,7 @@
 
 import { AlertCircleIcon, LoaderIcon, PlayIcon } from "lucide-react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
@@ -121,7 +121,7 @@ export default function TeraboxPlayerTool() {
 	};
 
 	// Load video from URL
-	const loadVideoFromUrl = async (url) => {
+	const loadVideoFromUrl = useCallback(async (url) => {
 		if (
 			!url ||
 			(!url.includes("teraboxapp.com") && !url.includes("teraboxshare.com"))
@@ -174,7 +174,7 @@ export default function TeraboxPlayerTool() {
 			setIsLoadingOG(false);
 			setIsLoadingVideo(false);
 		}
-	};
+	}, []);
 
 	return (
 		<div className="min-h-screen bg-background py-12">
