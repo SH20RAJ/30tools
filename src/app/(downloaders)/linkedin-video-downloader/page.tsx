@@ -4,14 +4,14 @@ import LinkedinDownloader from "@/components/tools/downloaders/LinkedinDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Linkedin Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Linkedin Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
-	keywords: "linkedin video downloader, download linkedin videos, linkedin video saver, linkedin to mp4, free tool, 30tools",
+	keywords: "linkedin video downloader, download linkedin videos, linkedin video saver, linkedin to mp4, free tool, 30tools, linkedin-video-downloader, free linkedin-video-downloader, linkedin video downloader online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/linkedin-video-downloader",
 	},
 	openGraph: {
-		title: "Free Linkedin Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Linkedin Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
 		url: "https://30tools.com/linkedin-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Linkedin Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Linkedin Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
 		images: ["/og-image.jpg"],
 	},

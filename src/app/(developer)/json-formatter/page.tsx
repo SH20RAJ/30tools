@@ -4,14 +4,14 @@ import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JSON Formatter Online – Fast & No Signup | 30tools",
+	title: "Free JSON Formatter Online - No Signup, Client-Side | 30tools",
 	description: "Format and beautify your JSON data instantly for better readability. Our free online tool validates your JSON structure and provides a clean, indented view of your code. 100% free, fast, and no signup required.",
-	keywords: "json formatter, beautify json, json prettifier, format json online, json validator, free tool, 30tools",
+	keywords: "json formatter, beautify json, json prettifier, format json online, json validator, free tool, 30tools, json-formatter, free json-formatter, json formatter online, developer tool, online code utility",
 	alternates: {
 		canonical: "https://30tools.com/json-formatter",
 	},
 	openGraph: {
-		title: "Free JSON Formatter Online – Fast & No Signup | 30tools",
+		title: "Free JSON Formatter Online - No Signup, Client-Side | 30tools",
 		description: "Format and beautify your JSON data instantly for better readability. Our free online tool validates your JSON structure and provides a clean, indented view of your code. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/json-formatter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JSON Formatter Online – Fast & No Signup | 30tools",
+		title: "Free JSON Formatter Online - No Signup, Client-Side | 30tools",
 		description: "Format and beautify your JSON data instantly for better readability. Our free online tool validates your JSON structure and provides a clean, indented view of your code. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

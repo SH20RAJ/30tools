@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Tag Generator Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Tag Generator Online - No Signup, HD Quality | 30tools",
 	description: "Generate SEO-friendly tags for your YouTube videos instantly. Our free online tool suggests relevant keywords based on your video topic to help you rank higher in search results. 100% free, fast, and no signup required.",
 	keywords: "youtube tag generator, free online tool, no signup, youtube-tag-generator, free youtube-tag-generator, Youtube Tag Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-tag-generator",
 	},
 	openGraph: {
-		title: "Free YouTube Tag Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Tag Generator Online - No Signup, HD Quality | 30tools",
 		description: "Generate SEO-friendly tags for your YouTube videos instantly. Our free online tool suggests relevant keywords based on your video topic to help you rank higher in search results. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-tag-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Tag Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Tag Generator Online - No Signup, HD Quality | 30tools",
 		description: "Generate SEO-friendly tags for your YouTube videos instantly. Our free online tool suggests relevant keywords based on your video topic to help you rank higher in search results. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

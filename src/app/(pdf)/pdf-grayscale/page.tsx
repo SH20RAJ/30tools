@@ -4,7 +4,7 @@ import PDFGrayscale from "@/components/tools/pdf/PDFGrayscale";
 export const metadata = {
 	title: "Free PDF to Grayscale Online - Convert Color PDF to B&W | 30tools",
 	description: "Convert color PDF documents to grayscale online for free. Optimize your PDF for B&W printing and reduce file size instantly in your browser.",
-	keywords: "pdf to grayscale, convert pdf to black and white, color to grayscale pdf, free pdf tool, 30tools",
+	keywords: "pdf to grayscale, convert pdf to black and white, color to grayscale pdf, free pdf tool, 30tools, pdf-grayscale, pdf grayscale, free pdf-grayscale, pdf grayscale online, pdf utility, document editor, online pdf tool",
 	alternates: {
 		canonical: "https://30tools.com/pdf-grayscale",
 	},

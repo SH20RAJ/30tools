@@ -4,14 +4,14 @@ import FaviconGeneratorTool from "@/components/tools/image/FaviconGeneratorTool"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Favicon Generator Online – Fast & No Signup | 30tools",
+	title: "Free Favicon Generator Online - No Signup, Browser-Based | 30tools",
 	description: "Generate favicons from text, images, or emojis for websites 100% free, fast, and no signup required.",
 	keywords: "favicon generator, free online tool, no signup, favicon-generator, free favicon-generator, Favicon Generator online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/favicon-generator",
 	},
 	openGraph: {
-		title: "Free Favicon Generator Online – Fast & No Signup | 30tools",
+		title: "Free Favicon Generator Online - No Signup, Browser-Based | 30tools",
 		description: "Generate favicons from text, images, or emojis for websites 100% free, fast, and no signup required.",
 		url: "https://30tools.com/favicon-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Favicon Generator Online – Fast & No Signup | 30tools",
+		title: "Free Favicon Generator Online - No Signup, Browser-Based | 30tools",
 		description: "Generate favicons from text, images, or emojis for websites 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

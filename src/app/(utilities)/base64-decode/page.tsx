@@ -4,14 +4,14 @@ import Base64Tool from "@/components/tools/developer/Base64Tool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
+	title: "Free Base64 Decode Online - No Signup, All-in-One | 30tools",
 	description: "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device. 100% free, fast, and no signup required.",
 	keywords: "base64 decode, free online tool, no signup, base64-decode, free base64-decode, Base64 Decode online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/base64-decode",
 	},
 	openGraph: {
-		title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
+		title: "Free Base64 Decode Online - No Signup, All-in-One | 30tools",
 		description: "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/base64-decode",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Base64 Decode Online – Fast & No Signup | 30tools",
+		title: "Free Base64 Decode Online - No Signup, All-in-One | 30tools",
 		description: "Decode Base64 strings back to their original plain text instantly. Our privacy-first tool processes everything in your browser, ensuring your data never leaves your device. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

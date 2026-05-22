@@ -4,14 +4,14 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Confidence Interval Calculator Online – Fast & No Signup | 30tools",
+	title: "Free Confidence Interval Calculator Online - No Signup, All-in-One | 30tools",
 	description: "Calculate the confidence interval for your statistical data instantly. Our free online tool helps you understand data precision and margin of error in your research. 100% free, fast, and no signup required.",
 	keywords: "confidence interval calculator, free online tool, no signup, confidence-interval-calculator, free confidence-interval-calculator, Confidence Interval Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/confidence-interval-calculator",
 	},
 	openGraph: {
-		title: "Free Confidence Interval Calculator Online – Fast & No Signup | 30tools",
+		title: "Free Confidence Interval Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Calculate the confidence interval for your statistical data instantly. Our free online tool helps you understand data precision and margin of error in your research. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/confidence-interval-calculator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Confidence Interval Calculator Online – Fast & No Signup | 30tools",
+		title: "Free Confidence Interval Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Calculate the confidence interval for your statistical data instantly. Our free online tool helps you understand data precision and margin of error in your research. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

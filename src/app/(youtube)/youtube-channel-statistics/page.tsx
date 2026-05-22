@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Channel Statistics Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Channel Statistics Online - No Signup, HD Quality | 30tools",
 	description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online analytics tool. 100% free, fast, and no signup required.",
-	keywords: "youtube channel statistics, youtube analytics, youtube stats checker, channel analysis, free tool, 30tools",
+	keywords: "youtube channel statistics, youtube analytics, youtube stats checker, channel analysis, free tool, 30tools, youtube-channel-statistics, free youtube-channel-statistics, youtube channel statistics online, youtube tool, video downloader, online youtube utility",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-statistics",
 	},
 	openGraph: {
-		title: "Free YouTube Channel Statistics Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Channel Statistics Online - No Signup, HD Quality | 30tools",
 		description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online analytics tool. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-channel-statistics",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Channel Statistics Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Channel Statistics Online - No Signup, HD Quality | 30tools",
 		description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online analytics tool. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

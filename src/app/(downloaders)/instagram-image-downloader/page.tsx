@@ -4,14 +4,14 @@ import InstagramDPDownloader from "@/components/tools/downloaders/InstagramDPDow
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Instagram Image Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Instagram Image Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
 	keywords: "instagram image downloader, free online tool, no signup, instagram-image-downloader, free instagram-image-downloader, Instagram Image Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/instagram-image-downloader",
 	},
 	openGraph: {
-		title: "Free Instagram Image Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Instagram Image Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/instagram-image-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Instagram Image Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Instagram Image Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Decimal to HEX Converter Online – Fast & No Signup | 30tools",
+	title: "Free Decimal to HEX Converter Online - No Signup, Client-Side | 30tools",
 	description: "Transform decimal numbers into hexadecimal format instantly. Our free online tool is perfect for web development, low-level programming, and color code analysis. Fast and private. 100% free, fast, and no signup required.",
 	keywords: "decimal to hex converter, free online tool, no signup, decimal-to-hex-converter, free decimal-to-hex-converter, Decimal To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-hex-converter",
 	},
 	openGraph: {
-		title: "Free Decimal to HEX Converter Online – Fast & No Signup | 30tools",
+		title: "Free Decimal to HEX Converter Online - No Signup, Client-Side | 30tools",
 		description: "Transform decimal numbers into hexadecimal format instantly. Our free online tool is perfect for web development, low-level programming, and color code analysis. Fast and private. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/decimal-to-hex-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Decimal to HEX Converter Online – Fast & No Signup | 30tools",
+		title: "Free Decimal to HEX Converter Online - No Signup, Client-Side | 30tools",
 		description: "Transform decimal numbers into hexadecimal format instantly. Our free online tool is perfect for web development, low-level programming, and color code analysis. Fast and private. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

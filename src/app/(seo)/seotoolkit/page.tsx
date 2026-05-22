@@ -4,14 +4,14 @@ import SeoToolkit from "@/components/tools/seo/SeoToolkit";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free SEO Toolkit Online – Fast & No Signup | 30tools",
+	title: "Free SEO Toolkit Online - No Signup, Instant Audit | 30tools",
 	description: "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, fast, and no signup required.",
 	keywords: "seo toolkit, free online tool, no signup, seotoolkit, free seotoolkit, Seotoolkit online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/seotoolkit",
 	},
 	openGraph: {
-		title: "Free SEO Toolkit Online – Fast & No Signup | 30tools",
+		title: "Free SEO Toolkit Online - No Signup, Instant Audit | 30tools",
 		description: "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/seotoolkit",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free SEO Toolkit Online – Fast & No Signup | 30tools",
+		title: "Free SEO Toolkit Online - No Signup, Instant Audit | 30tools",
 		description: "All-in-one SEO audit and analysis tool. 27+ checks. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

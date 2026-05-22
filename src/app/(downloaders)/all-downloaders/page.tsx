@@ -2,7 +2,7 @@ import AllDownloaders from "@/components/tools/downloaders/AllDownloaders";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
-	title: "Free All Downloaders Online - No Signup | 30tools",
+	title: "Free All Downloaders Online - No Signup, Fast Download | 30tools",
 	description:
 		"All Downloaders - 100% free, no signup required, and privacy-focused processing in your browser.",
 	keywords:
@@ -11,7 +11,7 @@ export const metadata = {
 		canonical: "https://30tools.com/all-downloaders",
 	},
 	openGraph: {
-		title: "Free All Downloaders Online - No Signup | 30tools",
+		title: "Free All Downloaders Online - No Signup, Fast Download | 30tools",
 		description:
 			"All Downloaders - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/all-downloaders",
@@ -21,7 +21,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free All Downloaders Online - No Signup | 30tools",
+		title: "Free All Downloaders Online - No Signup, Fast Download | 30tools",
 		description:
 			"All Downloaders - Coming Soon 100% free, no signup required, and privacy-focused processing in your browser.",
 		images: ["/og-image.jpg"],

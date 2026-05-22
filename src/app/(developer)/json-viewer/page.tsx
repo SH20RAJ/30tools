@@ -4,14 +4,14 @@ import JsonFormatterTool from "@/components/tools/code/JsonFormatterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
+	title: "Free JSON Viewer Online - No Signup, Client-Side | 30tools",
 	description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "json viewer, free online tool, no signup, json-viewer, free json-viewer, Json Viewer online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-viewer",
 	},
 	openGraph: {
-		title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
+		title: "Free JSON Viewer Online - No Signup, Client-Side | 30tools",
 		description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/json-viewer",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JSON Viewer Online – Fast & No Signup | 30tools",
+		title: "Free JSON Viewer Online - No Signup, Client-Side | 30tools",
 		description: "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

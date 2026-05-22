@@ -4,14 +4,14 @@ import VkontakteDownloader from "@/components/tools/downloaders/VkontakteDownloa
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Vkontakte Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Vkontakte Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Save Vkontakte videos directly to your device easily. 100% free, fast, and no signup required.",
 	keywords: "vkontakte video downloader, free online tool, no signup, vkontakte-video-downloader, free vkontakte-video-downloader, Vkontakte Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/vkontakte-video-downloader",
 	},
 	openGraph: {
-		title: "Free Vkontakte Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Vkontakte Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save Vkontakte videos directly to your device easily. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/vkontakte-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Vkontakte Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Vkontakte Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save Vkontakte videos directly to your device easily. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

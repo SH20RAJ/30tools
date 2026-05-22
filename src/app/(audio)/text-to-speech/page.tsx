@@ -4,14 +4,14 @@ import TextToSpeechTool from "@/components/tools/audio/TextToSpeechTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text to Speech Online – Fast & No Signup | 30tools",
+	title: "Free Text to Speech Online - No Signup, AI-Powered | 30tools",
 	description: "Convert text to natural sounding speech audio 100% free, fast, and no signup required.",
-	keywords: "text to speech, tts, text to audio, voice generator, ai voice, free online tool, 30tools",
+	keywords: "text to speech, tts, text to audio, voice generator, ai voice, free online tool, 30tools, text-to-speech, free text-to-speech, text to speech online, audio converter, online audio tool",
 	alternates: {
 		canonical: "https://30tools.com/text-to-speech",
 	},
 	openGraph: {
-		title: "Free Text to Speech Online – Fast & No Signup | 30tools",
+		title: "Free Text to Speech Online - No Signup, AI-Powered | 30tools",
 		description: "Convert text to natural sounding speech audio 100% free, fast, and no signup required.",
 		url: "https://30tools.com/text-to-speech",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text to Speech Online – Fast & No Signup | 30tools",
+		title: "Free Text to Speech Online - No Signup, AI-Powered | 30tools",
 		description: "Convert text to natural sounding speech audio 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -5,7 +5,7 @@ import Fragment from "react";
 export const metadata = {
 	title: "Top 10 JSON Tools Online for Faster Developer Workflows | 30tools Expert Guide",
 	description: "A practical list of the top 10 JSON tools online for formatting, validation, conversion, and schema-ready payload workflows.",
-	keywords: "top 10 json tools online for faster developer workflows, top 10 json tools online for faster developer workflows guide, 30tools",
+	keywords: "top 10 json tools online for faster developer workflows, top 10 json tools online for faster developer workflows guide, 30tools, top-10-json-tools-online, top 10 json tools online, free top-10-json-tools-online, top 10 json tools online online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/top-10-json-tools-online",
 	},

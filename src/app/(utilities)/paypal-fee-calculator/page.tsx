@@ -4,14 +4,14 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Paypal Fee Calculator Online – Fast & No Signup | 30tools",
+	title: "Free Paypal Fee Calculator Online - No Signup, All-in-One | 30tools",
 	description: "Free paypal fee calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "paypal fee calculator, free online tool, no signup, paypal-fee-calculator, free paypal-fee-calculator, Paypal Fee Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/paypal-fee-calculator",
 	},
 	openGraph: {
-		title: "Free Paypal Fee Calculator Online – Fast & No Signup | 30tools",
+		title: "Free Paypal Fee Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Free paypal fee calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/paypal-fee-calculator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Paypal Fee Calculator Online – Fast & No Signup | 30tools",
+		title: "Free Paypal Fee Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Free paypal fee calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

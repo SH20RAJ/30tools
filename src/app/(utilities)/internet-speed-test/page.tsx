@@ -4,14 +4,14 @@ import InternetSpeedTestTool from "@/components/tools/utilities/InternetSpeedTes
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Internet Speed Test Online – Fast & No Signup | 30tools",
+	title: "Free Internet Speed Test Online - No Signup, All-in-One | 30tools",
 	description: "Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly. 100% free, fast, and no signup required.",
-	keywords: "internet speed test, check internet speed, broadband speed test, wifi speed test, free tool, 30tools",
+	keywords: "internet speed test, check internet speed, broadband speed test, wifi speed test, free tool, 30tools, internet-speed-test, free internet-speed-test, internet speed test online, online utility, free converter, browser tool",
 	alternates: {
 		canonical: "https://30tools.com/internet-speed-test",
 	},
 	openGraph: {
-		title: "Free Internet Speed Test Online – Fast & No Signup | 30tools",
+		title: "Free Internet Speed Test Online - No Signup, All-in-One | 30tools",
 		description: "Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/internet-speed-test",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Internet Speed Test Online – Fast & No Signup | 30tools",
+		title: "Free Internet Speed Test Online - No Signup, All-in-One | 30tools",
 		description: "Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

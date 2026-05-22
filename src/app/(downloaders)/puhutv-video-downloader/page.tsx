@@ -4,14 +4,14 @@ import PuhutvDownloader from "@/components/tools/downloaders/PuhutvDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free PuhuTv Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free PuhuTv Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download videos from PuhuTv in high resolution instantly. Our free online tool makes it easy to save your favorite Turkish series and movies for offline viewing. 100% free, fast, and no signup required.",
 	keywords: "puhutv video downloader, free online tool, no signup, puhutv-video-downloader, free puhutv-video-downloader, Puhutv Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/puhutv-video-downloader",
 	},
 	openGraph: {
-		title: "Free PuhuTv Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free PuhuTv Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download videos from PuhuTv in high resolution instantly. Our free online tool makes it easy to save your favorite Turkish series and movies for offline viewing. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/puhutv-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free PuhuTv Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free PuhuTv Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download videos from PuhuTv in high resolution instantly. Our free online tool makes it easy to save your favorite Turkish series and movies for offline viewing. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -4,14 +4,14 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JavaScript Obfuscator Online – Fast & No Signup | 30tools",
+	title: "Free JavaScript Obfuscator Online - No Signup, Client-Side | 30tools",
 	description: "Protect your JavaScript code by making it difficult to read and reverse-engineer. Our free online Obfuscator helps secure your intellectual property and prevent unauthorized script modification. 100% free, fast, and no signup required.",
 	keywords: "javascript obfuscator, free online tool, no signup, javascript-obfuscator, free javascript-obfuscator, Javascript Obfuscator online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/javascript-obfuscator",
 	},
 	openGraph: {
-		title: "Free JavaScript Obfuscator Online – Fast & No Signup | 30tools",
+		title: "Free JavaScript Obfuscator Online - No Signup, Client-Side | 30tools",
 		description: "Protect your JavaScript code by making it difficult to read and reverse-engineer. Our free online Obfuscator helps secure your intellectual property and prevent unauthorized script modification. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/javascript-obfuscator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JavaScript Obfuscator Online – Fast & No Signup | 30tools",
+		title: "Free JavaScript Obfuscator Online - No Signup, Client-Side | 30tools",
 		description: "Protect your JavaScript code by making it difficult to read and reverse-engineer. Our free online Obfuscator helps secure your intellectual property and prevent unauthorized script modification. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

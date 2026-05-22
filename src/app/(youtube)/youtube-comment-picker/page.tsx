@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Comment Picker Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Comment Picker Online - No Signup, HD Quality | 30tools",
 	description: "Pick a random winner from your YouTube video comments instantly. Our free online Comment Picker is perfect for giveaways, contests, and audience engagement. Fast and fair. 100% free, fast, and no signup required.",
 	keywords: "youtube comment picker, free online tool, no signup, youtube-comment-picker, free youtube-comment-picker, Youtube Comment Picker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-comment-picker",
 	},
 	openGraph: {
-		title: "Free YouTube Comment Picker Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Comment Picker Online - No Signup, HD Quality | 30tools",
 		description: "Pick a random winner from your YouTube video comments instantly. Our free online Comment Picker is perfect for giveaways, contests, and audience engagement. Fast and fair. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-comment-picker",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Comment Picker Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Comment Picker Online - No Signup, HD Quality | 30tools",
 		description: "Pick a random winner from your YouTube video comments instantly. Our free online Comment Picker is perfect for giveaways, contests, and audience engagement. Fast and fair. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

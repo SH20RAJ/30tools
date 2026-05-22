@@ -2,12 +2,12 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
-	title: "Free AI Poem Generator Online - No Signup | 30tools",
+	title: "Free AI Poem Generator Online - No Signup, Customizable | 30tools",
 	description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds.",
-	keywords: "ai, poem, generator, free ai poem generator, online ai poem generator, 30tools",
+	keywords: "ai, poem, generator, free ai poem generator, online ai poem generator, 30tools, ai-poem-generator, ai poem generator, free ai-poem-generator, ai poem generator online, online generator, free creator",
 	alternates: { canonical: "https://30tools.com/ai-poem-generator" },
-	openGraph: { title: "Free AI Poem Generator Online - No Signup | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds..", url: "https://30tools.com/ai-poem-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free AI Poem Generator Online - No Signup | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds..", images: ["/og-image.jpg"] },
+	openGraph: { title: "Free AI Poem Generator Online - No Signup, Customizable | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds..", url: "https://30tools.com/ai-poem-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free AI Poem Generator Online - No Signup, Customizable | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds..", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 

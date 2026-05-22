@@ -4,14 +4,14 @@ import URLShortenerTool from "@/components/tools/utilities/URLShortenerTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free URL Shortener Online – Fast & No Signup | 30tools",
+	title: "Free URL Shortener Online - No Signup, All-in-One | 30tools",
 	description: "Shorten long URLs for easier sharing 100% free, fast, and no signup required.",
-	keywords: "url shortener, shorten url, link shortener, short link, free url shortener, 30tools",
+	keywords: "url shortener, shorten url, link shortener, short link, free url shortener, 30tools, url-shortener, free url-shortener, url shortener online, online utility, free converter, browser tool",
 	alternates: {
 		canonical: "https://30tools.com/url-shortener",
 	},
 	openGraph: {
-		title: "Free URL Shortener Online – Fast & No Signup | 30tools",
+		title: "Free URL Shortener Online - No Signup, All-in-One | 30tools",
 		description: "Shorten long URLs for easier sharing 100% free, fast, and no signup required.",
 		url: "https://30tools.com/url-shortener",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free URL Shortener Online – Fast & No Signup | 30tools",
+		title: "Free URL Shortener Online - No Signup, All-in-One | 30tools",
 		description: "Shorten long URLs for easier sharing 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

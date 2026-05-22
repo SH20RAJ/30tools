@@ -4,14 +4,14 @@ import YouTubeDownloader from "@/components/tools/downloaders/YouTubeDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Thumbnail Downloader Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Thumbnail Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download YouTube video thumbnails in HD and maxresdefault quality for free. Save high-resolution thumbnails for design, analysis, and content creation. No signup required, instant downloads.",
-	keywords: "youtube thumbnail downloader, download youtube thumbnails, video thumbnail grabber, free tool, 30tools",
+	keywords: "youtube thumbnail downloader, download youtube thumbnails, video thumbnail grabber, free tool, 30tools, youtube-thumbnail-downloader, free youtube-thumbnail-downloader, youtube thumbnail downloader online, online downloader, free media saver, video downloader, url downloader",
 	alternates: {
 		canonical: "https://30tools.com/youtube-thumbnail-downloader",
 	},
 	openGraph: {
-		title: "Free YouTube Thumbnail Downloader Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Thumbnail Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download YouTube video thumbnails in HD and maxresdefault quality for free. Save high-resolution thumbnails for design, analysis, and content creation. No signup required, instant downloads.",
 		url: "https://30tools.com/youtube-thumbnail-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Thumbnail Downloader Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Thumbnail Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download YouTube video thumbnails in HD and maxresdefault quality for free. Save high-resolution thumbnails for design, analysis, and content creation. No signup required, instant downloads.",
 		images: ["/og-image.jpg"],
 	},

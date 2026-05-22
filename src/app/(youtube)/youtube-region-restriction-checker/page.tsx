@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Region Restriction Checker Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Region Restriction Checker Online - No Signup, HD Quality | 30tools",
 	description: "Check if a YouTube video is blocked or restricted in specific countries instantly. Our free online tool helps you verify global availability for your content. Fast and accurate. 100% free, fast, and no signup required.",
 	keywords: "youtube region restriction checker, free online tool, no signup, youtube-region-restriction-checker, free youtube-region-restriction-checker, Youtube Region Restriction Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-region-restriction-checker",
 	},
 	openGraph: {
-		title: "Free YouTube Region Restriction Checker Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Region Restriction Checker Online - No Signup, HD Quality | 30tools",
 		description: "Check if a YouTube video is blocked or restricted in specific countries instantly. Our free online tool helps you verify global availability for your content. Fast and accurate. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-region-restriction-checker",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Region Restriction Checker Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Region Restriction Checker Online - No Signup, HD Quality | 30tools",
 		description: "Check if a YouTube video is blocked or restricted in specific countries instantly. Our free online tool helps you verify global availability for your content. Fast and accurate. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

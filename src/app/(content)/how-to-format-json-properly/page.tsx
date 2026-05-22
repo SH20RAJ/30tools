@@ -5,7 +5,7 @@ import Fragment from "react";
 export const metadata = {
 	title: "How to Format JSON Properly (Without Breaking Data) | 30tools Expert Guide",
 	description: "Learn how to format JSON correctly with a simple workflow for validation, cleanup, and conversion-safe output.",
-	keywords: "how to format json properly (without breaking data), how to format json properly (without breaking data) guide, 30tools",
+	keywords: "how to format json properly (without breaking data), how to format json properly (without breaking data) guide, 30tools, how-to-format-json-properly, how to format json properly, free how-to-format-json-properly, how to format json properly online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/how-to-format-json-properly",
 	},

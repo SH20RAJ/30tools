@@ -4,14 +4,14 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free CPM Calculator Online – Fast & No Signup | 30tools",
+	title: "Free CPM Calculator Online - No Signup, All-in-One | 30tools",
 	description: "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency. 100% free, fast, and no signup required.",
 	keywords: "cpm calculator, free online tool, no signup, cpm-calculator, free cpm-calculator, Cpm Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/cpm-calculator",
 	},
 	openGraph: {
-		title: "Free CPM Calculator Online – Fast & No Signup | 30tools",
+		title: "Free CPM Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/cpm-calculator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free CPM Calculator Online – Fast & No Signup | 30tools",
+		title: "Free CPM Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

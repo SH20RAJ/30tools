@@ -4,14 +4,14 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free HTML Minifier Online – Fast & No Signup | 30tools",
+	title: "Free HTML Minifier Online - No Signup, Client-Side | 30tools",
 	description: "Compress and minify your HTML code to improve website speed. Our free online tool removes unnecessary whitespace, comments, and line breaks for faster page load times. 100% free, fast, and no signup required.",
 	keywords: "html minifier, free online tool, no signup, html-minifier, free html-minifier, Html Minifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/html-minifier",
 	},
 	openGraph: {
-		title: "Free HTML Minifier Online – Fast & No Signup | 30tools",
+		title: "Free HTML Minifier Online - No Signup, Client-Side | 30tools",
 		description: "Compress and minify your HTML code to improve website speed. Our free online tool removes unnecessary whitespace, comments, and line breaks for faster page load times. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/html-minifier",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free HTML Minifier Online – Fast & No Signup | 30tools",
+		title: "Free HTML Minifier Online - No Signup, Client-Side | 30tools",
 		description: "Compress and minify your HTML code to improve website speed. Our free online tool removes unnecessary whitespace, comments, and line breaks for faster page load times. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

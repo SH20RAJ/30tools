@@ -4,14 +4,14 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Temperature Converter Online – Fast & No Signup | 30tools",
+	title: "Free Temperature Converter Online - No Signup, All-in-One | 30tools",
 	description: "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "temperature converter, free online tool, no signup, temperature-converter, free temperature-converter, Temperature Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/temperature-converter",
 	},
 	openGraph: {
-		title: "Free Temperature Converter Online – Fast & No Signup | 30tools",
+		title: "Free Temperature Converter Online - No Signup, All-in-One | 30tools",
 		description: "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/temperature-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Temperature Converter Online – Fast & No Signup | 30tools",
+		title: "Free Temperature Converter Online - No Signup, All-in-One | 30tools",
 		description: "Free temperature converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

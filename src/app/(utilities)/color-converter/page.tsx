@@ -4,14 +4,14 @@ import RgbHexConverter from "@/components/tools/built-ins/RgbHexConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Color Converter Online – Fast & No Signup | 30tools",
+	title: "Free Color Converter Online - No Signup, All-in-One | 30tools",
 	description: "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with precision. 100% free, fast, and no signup required.",
 	keywords: "color converter, free online tool, no signup, color-converter, free color-converter, Color Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/color-converter",
 	},
 	openGraph: {
-		title: "Free Color Converter Online – Fast & No Signup | 30tools",
+		title: "Free Color Converter Online - No Signup, All-in-One | 30tools",
 		description: "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with precision. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/color-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Color Converter Online – Fast & No Signup | 30tools",
+		title: "Free Color Converter Online - No Signup, All-in-One | 30tools",
 		description: "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with precision. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -8,12 +8,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, ArrowRight } from "lucide-react";
 
 export const metadata = {
-	title: "Free AI & Fun Generators Online - No Signup | 30tools",
+	title: "Free AI & Fun Generators Online - No Signup, Customizable | 30tools",
 	description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities. 100% free, no signup, and instant results.",
-	keywords: "ai generators, bio generator, name generator, fun tools, free online generators, 30tools",
+	keywords: "ai generators, bio generator, name generator, fun tools, free online generators, 30tools, generators, free generators, generators online, online generator, free creator, content generator",
 	alternates: { canonical: "https://30tools.com/generators" },
 	openGraph: {
-		title: "Free AI & Fun Generators Online - No Signup | 30tools",
+		title: "Free AI & Fun Generators Online - No Signup, Customizable | 30tools",
 		description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities. 100% free, no signup, and instant results.",
 		url: "https://30tools.com/generators",
 		siteName: "30tools",
@@ -22,7 +22,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI & Fun Generators Online - No Signup | 30tools",
+		title: "Free AI & Fun Generators Online - No Signup, Customizable | 30tools",
 		description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities.",
 		images: ["/og-image.jpg"],
 	},

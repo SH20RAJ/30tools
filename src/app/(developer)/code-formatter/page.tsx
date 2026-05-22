@@ -2,12 +2,12 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import JSONFormatterTool from "@/components/tools/developer/JSONFormatterTool";
 
 export const metadata = {
-	title: "Free Code Formatter Online - No Signup | 30tools",
+	title: "Free Code Formatter Online - No Signup, Client-Side | 30tools",
 	description: "Format and beautify JavaScript, HTML, CSS, and other code instantly. Our free Code Formatter improves readability with proper indentation and syntax highlighting.",
-	keywords: "code, formatter, free code formatter, online code formatter, 30tools",
+	keywords: "code, formatter, free code formatter, online code formatter, 30tools, code-formatter, code formatter, free code-formatter, code formatter online, developer tool, online code utility, free developer tool",
 	alternates: { canonical: "https://30tools.com/code-formatter" },
-	openGraph: { title: "Free Code Formatter Online - No Signup | 30tools", description: "Format and beautify JavaScript, HTML, CSS, and other code instantly. Our free Code Formatter improves readability with proper indentation and syntax h.", url: "https://30tools.com/code-formatter", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Code Formatter Online - No Signup | 30tools", description: "Format and beautify JavaScript, HTML, CSS, and other code instantly. Our free Code Formatter improves readability with proper indentation and syntax h.", images: ["/og-image.jpg"] },
+	openGraph: { title: "Free Code Formatter Online - No Signup, Client-Side | 30tools", description: "Format and beautify JavaScript, HTML, CSS, and other code instantly. Our free Code Formatter improves readability with proper indentation and syntax h.", url: "https://30tools.com/code-formatter", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free Code Formatter Online - No Signup, Client-Side | 30tools", description: "Format and beautify JavaScript, HTML, CSS, and other code instantly. Our free Code Formatter improves readability with proper indentation and syntax h.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 

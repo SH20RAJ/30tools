@@ -4,14 +4,14 @@ import LineSorterTool from "@/components/tools/text/LineSorterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text Sorter Online – Fast & No Signup | 30tools",
+	title: "Free Text Sorter Online - No Signup, Instant Results | 30tools",
 	description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
 	keywords: "text sorter, free online tool, no signup, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-sorter",
 	},
 	openGraph: {
-		title: "Free Text Sorter Online – Fast & No Signup | 30tools",
+		title: "Free Text Sorter Online - No Signup, Instant Results | 30tools",
 		description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/text-sorter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text Sorter Online – Fast & No Signup | 30tools",
+		title: "Free Text Sorter Online - No Signup, Instant Results | 30tools",
 		description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

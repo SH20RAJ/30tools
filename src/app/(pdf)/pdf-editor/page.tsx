@@ -4,14 +4,14 @@ import PDFEditor from "@/components/tools/pdf/PDFEditor";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free PDF Editor Online – Fast & No Signup | 30tools",
+	title: "Free PDF Editor Online - No Signup, Secure Local | 30tools",
 	description: "Edit PDF documents online for free. Rotate, delete, and rearrange pages instantly. Professional PDF tools with no signup and 100% privacy.",
-	keywords: "pdf editor, edit pdf online, free pdf editor, pdf text editor, online pdf tool, 30tools",
+	keywords: "pdf editor, edit pdf online, free pdf editor, pdf text editor, online pdf tool, 30tools, pdf-editor, free pdf-editor, pdf editor online, pdf utility, document editor, free pdf converter",
 	alternates: {
 		canonical: "https://30tools.com/pdf-editor",
 	},
 	openGraph: {
-		title: "Free PDF Editor Online – Fast & No Signup | 30tools",
+		title: "Free PDF Editor Online - No Signup, Secure Local | 30tools",
 		description: "Edit PDF documents online for free. Rotate, delete, and rearrange pages instantly. Professional PDF tools with no signup and 100% privacy.",
 		url: "https://30tools.com/pdf-editor",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free PDF Editor Online – Fast & No Signup | 30tools",
+		title: "Free PDF Editor Online - No Signup, Secure Local | 30tools",
 		description: "Edit PDF documents online for free. Rotate, delete, and rearrange pages instantly. Professional PDF tools with no signup and 100% privacy.",
 		images: ["/og-image.jpg"],
 	},

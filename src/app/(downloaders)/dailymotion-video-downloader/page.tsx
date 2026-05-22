@@ -4,14 +4,14 @@ import DailymotionDownloader from "@/components/tools/downloaders/DailymotionDow
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Dailymotion Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Dailymotion Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Free online Dailymotion downloader to save videos as MP4 in HD. Fast, secure, no signup required.",
-	keywords: "dailymotion downloader, download dailymotion videos, dailymotion to mp4, free video tool, 30tools",
+	keywords: "dailymotion downloader, download dailymotion videos, dailymotion to mp4, free video tool, 30tools, dailymotion-video-downloader, dailymotion video downloader, free dailymotion-video-downloader, dailymotion video downloader online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/dailymotion-video-downloader",
 	},
 	openGraph: {
-		title: "Free Dailymotion Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Dailymotion Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Free online Dailymotion downloader to save videos as MP4 in HD. Fast, secure, no signup required.",
 		url: "https://30tools.com/dailymotion-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Dailymotion Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Dailymotion Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Free online Dailymotion downloader to save videos as MP4 in HD. Fast, secure, no signup required.",
 		images: ["/og-image.jpg"],
 	},

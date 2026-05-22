@@ -4,14 +4,14 @@ import MashableDownloader from "@/components/tools/downloaders/MashableDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Mashable Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Mashable Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download Mashable videos and news clips online with our free tool. Save high-quality content for offline viewing instantly in your browser without any signup. 100% free, fast, and no signup required.",
 	keywords: "mashable video downloader, free online tool, no signup, mashable-video-downloader, free mashable-video-downloader, Mashable Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/mashable-video-downloader",
 	},
 	openGraph: {
-		title: "Free Mashable Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Mashable Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Mashable videos and news clips online with our free tool. Save high-quality content for offline viewing instantly in your browser without any signup. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/mashable-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Mashable Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Mashable Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Mashable videos and news clips online with our free tool. Save high-quality content for offline viewing instantly in your browser without any signup. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

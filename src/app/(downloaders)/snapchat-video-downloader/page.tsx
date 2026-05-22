@@ -4,14 +4,14 @@ import SnapchatDownloader from "@/components/tools/downloaders/SnapchatDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Snapchat Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Snapchat Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download Snapchat videos and stories in HD quality for free without app installation 100% free, fast, and no signup required.",
-	keywords: "snapchat video downloader, download snapchat videos, snap video saver, snapchat stories downloader, free tool, 30tools",
+	keywords: "snapchat video downloader, download snapchat videos, snap video saver, snapchat stories downloader, free tool, 30tools, snapchat-video-downloader, free snapchat-video-downloader, snapchat video downloader online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/snapchat-video-downloader",
 	},
 	openGraph: {
-		title: "Free Snapchat Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Snapchat Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Snapchat videos and stories in HD quality for free without app installation 100% free, fast, and no signup required.",
 		url: "https://30tools.com/snapchat-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Snapchat Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Snapchat Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Snapchat videos and stories in HD quality for free without app installation 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

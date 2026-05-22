@@ -10,7 +10,7 @@ import { Calculator, ArrowRight } from "lucide-react";
 export const metadata = {
 	title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",
 	description: "Massive collection of free online calculators. BMI calculators, loan estimators, percentage tools, and scientific calculators. Get instant, accurate results for free.",
-	keywords: "online calculators, bmi calculator, loan calculator, math tools, free calculators, 30tools",
+	keywords: "online calculators, bmi calculator, loan calculator, math tools, free calculators, 30tools, calculators, calculators online, online calculator, free math tool, converter, number tool",
 	alternates: { canonical: "https://30tools.com/calculators" },
 	openGraph: {
 		title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",

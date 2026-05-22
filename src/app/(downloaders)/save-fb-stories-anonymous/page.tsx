@@ -4,14 +4,14 @@ import FacebookStoryDownloader from "@/components/tools/downloaders/FacebookStor
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Save Fb Stories Anonymous Online – Fast & No Signup | 30tools",
+	title: "Free Save Fb Stories Anonymous Online - No Signup, Fast Download | 30tools",
 	description: "Download and view Facebook stories anonymously. Our free online tool helps you save story content without notifying the creator. 100% private and secure. 100% free, fast, and no signup required.",
-	keywords: "save fb stories anonymous, anonymous facebook story viewer, fb story downloader, anonymous story viewer, 30tools",
+	keywords: "save fb stories anonymous, anonymous facebook story viewer, fb story downloader, anonymous story viewer, 30tools, save-fb-stories-anonymous, free save-fb-stories-anonymous, save fb stories anonymous online, online downloader, free media saver, video downloader, url downloader",
 	alternates: {
 		canonical: "https://30tools.com/save-fb-stories-anonymous",
 	},
 	openGraph: {
-		title: "Free Save Fb Stories Anonymous Online – Fast & No Signup | 30tools",
+		title: "Free Save Fb Stories Anonymous Online - No Signup, Fast Download | 30tools",
 		description: "Download and view Facebook stories anonymously. Our free online tool helps you save story content without notifying the creator. 100% private and secure. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/save-fb-stories-anonymous",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Save Fb Stories Anonymous Online – Fast & No Signup | 30tools",
+		title: "Free Save Fb Stories Anonymous Online - No Signup, Fast Download | 30tools",
 		description: "Download and view Facebook stories anonymously. Our free online tool helps you save story content without notifying the creator. 100% private and secure. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

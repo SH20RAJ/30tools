@@ -6,7 +6,7 @@ import { SITE_CONFIG } from "@/constants/config";
 export const metadata = {
 	title: "Contact Us - Support & Feedback | 30tools",
 	description: "Get in touch with the 30tools team. We welcome your feedback, tool requests, and bug reports. Expected response time: 24-48 hours.",
-	keywords: "contact 30tools, support, feedback, help",
+	keywords: "contact 30tools, support, feedback, help, contact, free contact, contact online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
 	alternates: { canonical: "https://30tools.com/contact" },
 	openGraph: {
 		title: "Contact Us - Support & Feedback | 30tools",

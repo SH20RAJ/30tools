@@ -4,14 +4,14 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Adsense Calculator Online – Fast & No Signup | 30tools",
+	title: "Free Adsense Calculator Online - No Signup, All-in-One | 30tools",
 	description: "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "adsense calculator, free online tool, no signup, adsense-calculator, free adsense-calculator, Adsense Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/adsense-calculator",
 	},
 	openGraph: {
-		title: "Free Adsense Calculator Online – Fast & No Signup | 30tools",
+		title: "Free Adsense Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/adsense-calculator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Adsense Calculator Online – Fast & No Signup | 30tools",
+		title: "Free Adsense Calculator Online - No Signup, All-in-One | 30tools",
 		description: "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

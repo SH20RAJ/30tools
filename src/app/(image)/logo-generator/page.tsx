@@ -4,14 +4,14 @@ import LogoGeneratorTool from "@/components/tools/image/LogoGeneratorTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Logo Generator Online – Fast & No Signup | 30tools",
+	title: "Free Logo Generator Online - No Signup, Browser-Based | 30tools",
 	description: "Create professional logos with text, fonts, and custom colors 100% free, fast, and no signup required.",
 	keywords: "logo generator, free online tool, no signup, logo-generator, free logo-generator, Logo Generator online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/logo-generator",
 	},
 	openGraph: {
-		title: "Free Logo Generator Online – Fast & No Signup | 30tools",
+		title: "Free Logo Generator Online - No Signup, Browser-Based | 30tools",
 		description: "Create professional logos with text, fonts, and custom colors 100% free, fast, and no signup required.",
 		url: "https://30tools.com/logo-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Logo Generator Online – Fast & No Signup | 30tools",
+		title: "Free Logo Generator Online - No Signup, Browser-Based | 30tools",
 		description: "Create professional logos with text, fonts, and custom colors 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

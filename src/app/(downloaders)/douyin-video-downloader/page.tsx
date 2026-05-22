@@ -4,14 +4,14 @@ import DouyinDownloader from "@/components/tools/downloaders/DouyinDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Douyin Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Douyin Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Save Douyin videos directly to your device easily. 100% free, fast, and no signup required.",
 	keywords: "douyin video downloader, free online tool, no signup, douyin-video-downloader, free douyin-video-downloader, Douyin Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/douyin-video-downloader",
 	},
 	openGraph: {
-		title: "Free Douyin Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Douyin Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save Douyin videos directly to your device easily. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/douyin-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Douyin Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Douyin Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save Douyin videos directly to your device easily. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

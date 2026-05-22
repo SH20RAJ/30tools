@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text to HEX Converter Online – Fast & No Signup | 30tools",
+	title: "Free Text to HEX Converter Online - No Signup, Client-Side | 30tools",
 	description: "Convert plain text into hexadecimal format instantly. Our free online tool provides a clean hex representation of your input string for development and data analysis. 100% free, fast, and no signup required.",
 	keywords: "text to hex converter, free online tool, no signup, text-to-hex-converter, free text-to-hex-converter, Text To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-hex-converter",
 	},
 	openGraph: {
-		title: "Free Text to HEX Converter Online – Fast & No Signup | 30tools",
+		title: "Free Text to HEX Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert plain text into hexadecimal format instantly. Our free online tool provides a clean hex representation of your input string for development and data analysis. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/text-to-hex-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text to HEX Converter Online – Fast & No Signup | 30tools",
+		title: "Free Text to HEX Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert plain text into hexadecimal format instantly. Our free online tool provides a clean hex representation of your input string for development and data analysis. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

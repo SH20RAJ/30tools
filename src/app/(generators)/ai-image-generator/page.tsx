@@ -4,14 +4,14 @@ import AIImageGeneratorTool from "@/components/tools/generators/AIImageGenerator
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free AI Image Generator Online – Fast & No Signup | 30tools",
+	title: "Free AI Image Generator Online - No Signup, Customizable | 30tools",
 	description: "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing.",
 	keywords: "ai image generator, free online tool, no signup, ai-image-generator, free ai-image-generator, Ai Image Generator online, online generator, content creator, free maker, creative tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ai-image-generator",
 	},
 	openGraph: {
-		title: "Free AI Image Generator Online – Fast & No Signup | 30tools",
+		title: "Free AI Image Generator Online - No Signup, Customizable | 30tools",
 		description: "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing.",
 		url: "https://30tools.com/ai-image-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI Image Generator Online – Fast & No Signup | 30tools",
+		title: "Free AI Image Generator Online - No Signup, Customizable | 30tools",
 		description: "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required, unlimited generations, and 100% private browser-based processing.",
 		images: ["/og-image.jpg"],
 	},

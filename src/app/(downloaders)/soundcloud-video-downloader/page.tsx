@@ -4,14 +4,14 @@ import SoundcloudDownloader from "@/components/tools/downloaders/SoundcloudDownl
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Soundcloud Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Soundcloud Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "The easiest way to download SoundCloud audio and video content online for free. Save high-quality tracks and clips for offline listening in your browser without any signup. 100% free, fast, and no signup required.",
 	keywords: "soundcloud video downloader, free online tool, no signup, soundcloud-video-downloader, free soundcloud-video-downloader, Soundcloud Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/soundcloud-video-downloader",
 	},
 	openGraph: {
-		title: "Free Soundcloud Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Soundcloud Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "The easiest way to download SoundCloud audio and video content online for free. Save high-quality tracks and clips for offline listening in your browser without any signup. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/soundcloud-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Soundcloud Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Soundcloud Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "The easiest way to download SoundCloud audio and video content online for free. Save high-quality tracks and clips for offline listening in your browser without any signup. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

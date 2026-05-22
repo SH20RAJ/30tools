@@ -6,7 +6,7 @@ import { SITE_CONFIG } from "@/constants/config";
 export const metadata = {
 	title: "Privacy Policy - 30tools",
 	description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.",
-	keywords: "privacy policy, 30tools privacy, data protection, privacy policy 30tools",
+	keywords: "privacy policy, 30tools privacy, data protection, privacy policy 30tools, privacy, free privacy, privacy online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
 	alternates: { canonical: "https://30tools.com/privacy" },
 	openGraph: { title: "Privacy Policy - 30tools", description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.", url: "https://30tools.com/privacy", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
 	twitter: { card: "summary_large_image", title: "Privacy Policy - 30tools", description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.", images: ["/og-image.jpg"] },

@@ -5,7 +5,7 @@ import Fragment from "react";
 export const metadata = {
 	title: "AI Tools Alternatives Free - Practical Picks | 30tools Expert Guide",
 	description: "Explore free AI tool alternatives for writing, image creation, voice generation, and content ideation without subscriptions.",
-	keywords: "ai tools alternatives free - practical picks, ai tools alternatives free - practical picks guide, 30tools",
+	keywords: "ai tools alternatives free - practical picks, ai tools alternatives free - practical picks guide, 30tools, ai-tools-alternatives-free, ai tools alternatives free, free ai-tools-alternatives-free, ai tools alternatives free online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/ai-tools-alternatives-free",
 	},

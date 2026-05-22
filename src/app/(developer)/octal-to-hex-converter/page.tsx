@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Octal to HEX Converter Online – Fast & No Signup | 30tools",
+	title: "Free Octal to HEX Converter Online - No Signup, Client-Side | 30tools",
 	description: "Transform octal values into hexadecimal format instantly. Our free online converter is perfect for low-level programming and memory address transformations. 100% free, fast, and no signup required.",
 	keywords: "octal to hex converter, free online tool, no signup, octal-to-hex-converter, free octal-to-hex-converter, Octal To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/octal-to-hex-converter",
 	},
 	openGraph: {
-		title: "Free Octal to HEX Converter Online – Fast & No Signup | 30tools",
+		title: "Free Octal to HEX Converter Online - No Signup, Client-Side | 30tools",
 		description: "Transform octal values into hexadecimal format instantly. Our free online converter is perfect for low-level programming and memory address transformations. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/octal-to-hex-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Octal to HEX Converter Online – Fast & No Signup | 30tools",
+		title: "Free Octal to HEX Converter Online - No Signup, Client-Side | 30tools",
 		description: "Transform octal values into hexadecimal format instantly. Our free online converter is perfect for low-level programming and memory address transformations. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

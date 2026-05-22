@@ -4,14 +4,14 @@ import CreditCardGeneratorTool from "@/components/tools/security/CreditCardGener
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Credit Card Generator Online – Fast & No Signup | 30tools",
+	title: "Free Credit Card Generator Online - No Signup, All-in-One | 30tools",
 	description: "Generate valid dummy credit card numbers for software testing and data validation. Our free online tool provides numbers that pass Luhn algorithm checks without being real cards. 100% free, fast, and no signup required.",
 	keywords: "credit card generator, free online tool, no signup, credit-card-generator, free credit-card-generator, Credit Card Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/credit-card-generator",
 	},
 	openGraph: {
-		title: "Free Credit Card Generator Online – Fast & No Signup | 30tools",
+		title: "Free Credit Card Generator Online - No Signup, All-in-One | 30tools",
 		description: "Generate valid dummy credit card numbers for software testing and data validation. Our free online tool provides numbers that pass Luhn algorithm checks without being real cards. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/credit-card-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Credit Card Generator Online – Fast & No Signup | 30tools",
+		title: "Free Credit Card Generator Online - No Signup, All-in-One | 30tools",
 		description: "Generate valid dummy credit card numbers for software testing and data validation. Our free online tool provides numbers that pass Luhn algorithm checks without being real cards. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

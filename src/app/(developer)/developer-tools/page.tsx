@@ -10,7 +10,7 @@ import { Terminal, ArrowRight } from "lucide-react";
 export const metadata = {
 	title: "Free Developer Tools Online - Essential Utilities | 30tools",
 	description: "Professional suite of free developer tools. JSON formatters, base64 encoders, hash generators, and API testers. All tools run locally in your browser for maximum privacy.",
-	keywords: "developer tools, json formatter, base64 encoder, api tester, online dev tools, 30tools",
+	keywords: "developer tools, json formatter, base64 encoder, api tester, online dev tools, 30tools, developer-tools, free developer-tools, developer tools online, developer tool, online code utility, free developer tool",
 	alternates: { canonical: "https://30tools.com/developer-tools" },
 	openGraph: {
 		title: "Free Developer Tools Online - Essential Utilities | 30tools",

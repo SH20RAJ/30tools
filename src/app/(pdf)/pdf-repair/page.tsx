@@ -4,7 +4,7 @@ import PDFRepair from "@/components/tools/pdf/PDFRepair";
 export const metadata = {
 	title: "Free PDF Repair Online - Fix Corrupted PDF Files | 30tools",
 	description: "Repair corrupted or broken PDF files online for free. Fix PDF headers, cross-reference tables, and document structures instantly in your browser.",
-	keywords: "pdf repair, fix corrupted pdf, repair broken pdf, online pdf fixer, free pdf repair, 30tools",
+	keywords: "pdf repair, fix corrupted pdf, repair broken pdf, online pdf fixer, free pdf repair, 30tools, pdf-repair, free pdf-repair, pdf repair online, pdf utility, document editor, online pdf tool",
 	alternates: {
 		canonical: "https://30tools.com/pdf-repair",
 	},

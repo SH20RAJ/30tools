@@ -4,14 +4,14 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free CSS Minifier Online – Fast & No Signup | 30tools",
+	title: "Free CSS Minifier Online - No Signup, Client-Side | 30tools",
 	description: "Compress and minify your CSS files to reduce page load times and improve website performance. Our free online tool removes unnecessary whitespace and comments instantly. Privacy-focused. 100% free, fast, and no signup required.",
 	keywords: "css minifier, free online tool, no signup, css-minifier, free css-minifier, Css Minifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/css-minifier",
 	},
 	openGraph: {
-		title: "Free CSS Minifier Online – Fast & No Signup | 30tools",
+		title: "Free CSS Minifier Online - No Signup, Client-Side | 30tools",
 		description: "Compress and minify your CSS files to reduce page load times and improve website performance. Our free online tool removes unnecessary whitespace and comments instantly. Privacy-focused. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/css-minifier",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free CSS Minifier Online – Fast & No Signup | 30tools",
+		title: "Free CSS Minifier Online - No Signup, Client-Side | 30tools",
 		description: "Compress and minify your CSS files to reduce page load times and improve website performance. Our free online tool removes unnecessary whitespace and comments instantly. Privacy-focused. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

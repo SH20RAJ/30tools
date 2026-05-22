@@ -4,14 +4,14 @@ import ImdbDownloader from "@/components/tools/downloaders/ImdbDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Imdb Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Imdb Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Save IMDb trailers, interviews, and clips to your device instantly. Our free online tool helps you keep high-quality movie metadata and videos for offline reference. 100% free, fast, and no signup required.",
 	keywords: "imdb video downloader, free online tool, no signup, imdb-video-downloader, free imdb-video-downloader, Imdb Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/imdb-video-downloader",
 	},
 	openGraph: {
-		title: "Free Imdb Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Imdb Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save IMDb trailers, interviews, and clips to your device instantly. Our free online tool helps you keep high-quality movie metadata and videos for offline reference. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/imdb-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Imdb Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Imdb Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save IMDb trailers, interviews, and clips to your device instantly. Our free online tool helps you keep high-quality movie metadata and videos for offline reference. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

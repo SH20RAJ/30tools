@@ -4,14 +4,14 @@ import InstagramStoryDownloader from "@/components/tools/downloaders/InstagramSt
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Ig Highlights Saver Online – Fast & No Signup | 30tools",
+	title: "Free Ig Highlights Saver Online - No Signup, Fast Download | 30tools",
 	description: "Download Instagram story highlights to your device easily. Our free online tool helps you archive your favorite moments and creators' content in high quality. 100% free, fast, and no signup required.",
 	keywords: "ig highlights saver, free online tool, no signup, ig-highlights-saver, free ig-highlights-saver, Ig Highlights Saver online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ig-highlights-saver",
 	},
 	openGraph: {
-		title: "Free Ig Highlights Saver Online – Fast & No Signup | 30tools",
+		title: "Free Ig Highlights Saver Online - No Signup, Fast Download | 30tools",
 		description: "Download Instagram story highlights to your device easily. Our free online tool helps you archive your favorite moments and creators' content in high quality. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/ig-highlights-saver",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Ig Highlights Saver Online – Fast & No Signup | 30tools",
+		title: "Free Ig Highlights Saver Online - No Signup, Fast Download | 30tools",
 		description: "Download Instagram story highlights to your device easily. Our free online tool helps you archive your favorite moments and creators' content in high quality. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

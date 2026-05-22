@@ -4,14 +4,14 @@ import ChingariDownloader from "@/components/tools/downloaders/ChingariDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Chingari Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Chingari Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Save your favorite Chingari videos to your device. 100% free, fast, and no signup required.",
 	keywords: "chingari video downloader, free online tool, no signup, chingari-video-downloader, free chingari-video-downloader, Chingari Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/chingari-video-downloader",
 	},
 	openGraph: {
-		title: "Free Chingari Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Chingari Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save your favorite Chingari videos to your device. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/chingari-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Chingari Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Chingari Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save your favorite Chingari videos to your device. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

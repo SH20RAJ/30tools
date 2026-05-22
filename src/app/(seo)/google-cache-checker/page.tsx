@@ -4,14 +4,14 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Google Cache Checker Online – Fast & No Signup | 30tools",
+	title: "Free Google Cache Checker Online - No Signup, Instant Audit | 30tools",
 	description: "Free google cache checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "google cache checker, free online tool, no signup, google-cache-checker, free google-cache-checker, Google Cache Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/google-cache-checker",
 	},
 	openGraph: {
-		title: "Free Google Cache Checker Online – Fast & No Signup | 30tools",
+		title: "Free Google Cache Checker Online - No Signup, Instant Audit | 30tools",
 		description: "Free google cache checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/google-cache-checker",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Google Cache Checker Online – Fast & No Signup | 30tools",
+		title: "Free Google Cache Checker Online - No Signup, Instant Audit | 30tools",
 		description: "Free google cache checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -4,14 +4,14 @@ import FacebookDownloader from "@/components/tools/downloaders/FacebookDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Fb Video Saver Online – Fast & No Signup | 30tools",
+	title: "Free Fb Video Saver Online - No Signup, Fast Download | 30tools",
 	description: "Save Facebook videos and stories directly to your device. Our free online saver allows you to download public content in high definition without needing an account. 100% free, fast, and no signup required.",
-	keywords: "fb video saver, facebook video saver, save facebook videos, fb video downloader, free tool, 30tools",
+	keywords: "fb video saver, facebook video saver, save facebook videos, fb video downloader, free tool, 30tools, fb-video-saver, free fb-video-saver, fb video saver online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/fb-video-saver",
 	},
 	openGraph: {
-		title: "Free Fb Video Saver Online – Fast & No Signup | 30tools",
+		title: "Free Fb Video Saver Online - No Signup, Fast Download | 30tools",
 		description: "Save Facebook videos and stories directly to your device. Our free online saver allows you to download public content in high definition without needing an account. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/fb-video-saver",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Fb Video Saver Online – Fast & No Signup | 30tools",
+		title: "Free Fb Video Saver Online - No Signup, Fast Download | 30tools",
 		description: "Save Facebook videos and stories directly to your device. Our free online saver allows you to download public content in high definition without needing an account. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

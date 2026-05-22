@@ -4,14 +4,14 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free IndexNow Submitter Online – Fast & No Signup | 30tools",
+	title: "Free IndexNow Submitter Online - No Signup, All-in-One | 30tools",
 	description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, fast, and no signup required.",
 	keywords: "indexnow submitter, free online tool, no signup, indexnow, free indexnow, Indexnow online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/indexnow",
 	},
 	openGraph: {
-		title: "Free IndexNow Submitter Online – Fast & No Signup | 30tools",
+		title: "Free IndexNow Submitter Online - No Signup, All-in-One | 30tools",
 		description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/indexnow",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free IndexNow Submitter Online – Fast & No Signup | 30tools",
+		title: "Free IndexNow Submitter Online - No Signup, All-in-One | 30tools",
 		description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

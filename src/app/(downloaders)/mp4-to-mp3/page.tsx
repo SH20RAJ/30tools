@@ -4,14 +4,14 @@ import TikTokMP3Converter from "@/components/tools/downloaders/TikTokMP3Converte
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Mp4 To Mp3 Online – Fast & No Signup | 30tools",
+	title: "Free Mp4 To Mp3 Online - No Signup, Fast Download | 30tools",
 	description: "Convert MP4 videos to high-quality MP3 audio instantly. Our free online converter is perfect for extracting audio from social media clips and videos without any loss in sound quality. 100% free, fast, and no signup required.",
 	keywords: "mp4 to mp3, free online tool, no signup, mp4-to-mp3, free mp4-to-mp3, Mp4 To Mp3 online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/mp4-to-mp3",
 	},
 	openGraph: {
-		title: "Free Mp4 To Mp3 Online – Fast & No Signup | 30tools",
+		title: "Free Mp4 To Mp3 Online - No Signup, Fast Download | 30tools",
 		description: "Convert MP4 videos to high-quality MP3 audio instantly. Our free online converter is perfect for extracting audio from social media clips and videos without any loss in sound quality. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/mp4-to-mp3",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Mp4 To Mp3 Online – Fast & No Signup | 30tools",
+		title: "Free Mp4 To Mp3 Online - No Signup, Fast Download | 30tools",
 		description: "Convert MP4 videos to high-quality MP3 audio instantly. Our free online converter is perfect for extracting audio from social media clips and videos without any loss in sound quality. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

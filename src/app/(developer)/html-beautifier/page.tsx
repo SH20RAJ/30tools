@@ -4,14 +4,14 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free HTML Beautifier Online – Fast & No Signup | 30tools",
+	title: "Free HTML Beautifier Online - No Signup, Client-Side | 30tools",
 	description: "Format and prettify your HTML code instantly. Our free online HTML Beautifier fixes indentation, improves readability, and cleans up messy markup for better web development. 100% free, fast, and no signup required.",
 	keywords: "html beautifier, free online tool, no signup, html-beautifier, free html-beautifier, Html Beautifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/html-beautifier",
 	},
 	openGraph: {
-		title: "Free HTML Beautifier Online – Fast & No Signup | 30tools",
+		title: "Free HTML Beautifier Online - No Signup, Client-Side | 30tools",
 		description: "Format and prettify your HTML code instantly. Our free online HTML Beautifier fixes indentation, improves readability, and cleans up messy markup for better web development. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/html-beautifier",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free HTML Beautifier Online – Fast & No Signup | 30tools",
+		title: "Free HTML Beautifier Online - No Signup, Client-Side | 30tools",
 		description: "Format and prettify your HTML code instantly. Our free online HTML Beautifier fixes indentation, improves readability, and cleans up messy markup for better web development. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

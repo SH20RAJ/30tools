@@ -5,7 +5,7 @@ import Fragment from "react";
 export const metadata = {
 	title: "Best Free Alternative to ChatGPT for Daily Tasks | 30tools Expert Guide",
 	description: "Looking for a free ChatGPT alternative? Build a focused stack for writing, metadata, image generation, and voice tasks with free online tools.",
-	keywords: "best free alternative to chatgpt for daily tasks, best free alternative to chatgpt for daily tasks guide, 30tools",
+	keywords: "best free alternative to chatgpt for daily tasks, best free alternative to chatgpt for daily tasks guide, 30tools, best-free-alternative-to-chatgpt, best free alternative to chatgpt, free best-free-alternative-to-chatgpt, best free alternative to chatgpt online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/best-free-alternative-to-chatgpt",
 	},

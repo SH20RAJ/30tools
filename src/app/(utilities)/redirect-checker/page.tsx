@@ -4,14 +4,14 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Redirect Checker Online – Fast & No Signup | 30tools",
+	title: "Free Redirect Checker Online - No Signup, All-in-One | 30tools",
 	description: "Free redirect checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "redirect checker, free online tool, no signup, redirect-checker, free redirect-checker, Redirect Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/redirect-checker",
 	},
 	openGraph: {
-		title: "Free Redirect Checker Online – Fast & No Signup | 30tools",
+		title: "Free Redirect Checker Online - No Signup, All-in-One | 30tools",
 		description: "Free redirect checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/redirect-checker",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Redirect Checker Online – Fast & No Signup | 30tools",
+		title: "Free Redirect Checker Online - No Signup, All-in-One | 30tools",
 		description: "Free redirect checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

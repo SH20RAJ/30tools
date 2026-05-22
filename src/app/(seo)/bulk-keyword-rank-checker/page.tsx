@@ -4,14 +4,14 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Bulk Keyword Rank Checker Online – Fast & No Signup | 30tools",
+	title: "Free Bulk Keyword Rank Checker Online - No Signup, Instant Audit | 30tools",
 	description: "Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required.",
 	keywords: "bulk keyword rank checker, free online tool, no signup, bulk-keyword-rank-checker, free bulk-keyword-rank-checker, Bulk Keyword Rank Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/bulk-keyword-rank-checker",
 	},
 	openGraph: {
-		title: "Free Bulk Keyword Rank Checker Online – Fast & No Signup | 30tools",
+		title: "Free Bulk Keyword Rank Checker Online - No Signup, Instant Audit | 30tools",
 		description: "Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required.",
 		url: "https://30tools.com/bulk-keyword-rank-checker",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Bulk Keyword Rank Checker Online – Fast & No Signup | 30tools",
+		title: "Free Bulk Keyword Rank Checker Online - No Signup, Instant Audit | 30tools",
 		description: "Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required.",
 		images: ["/og-image.jpg"],
 	},

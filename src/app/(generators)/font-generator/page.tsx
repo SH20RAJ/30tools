@@ -2,12 +2,12 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import FontGeneratorTool from "@/components/tools/generators/FontGeneratorTool";
 
 export const metadata = {
-	title: "Free Font Generator Online - No Signup | 30tools",
+	title: "Free Font Generator Online - No Signup, Customizable | 30tools",
 	description: "Transform your text into 15+ fancy Unicode font styles instantly. Copy stylish text for Instagram, Twitter, Discord, and more with our free Font Generator.",
-	keywords: "font, generator, free font generator, online font generator, 30tools",
+	keywords: "font, generator, free font generator, online font generator, 30tools, font-generator, font generator, free font-generator, font generator online, online generator, free creator, content generator",
 	alternates: { canonical: "https://30tools.com/font-generator" },
-	openGraph: { title: "Free Font Generator Online - No Signup | 30tools", description: "Transform your text into 15+ fancy Unicode font styles instantly. Copy stylish text for Instagram, Twitter, Discord, and more with our free Font Gener.", url: "https://30tools.com/font-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Font Generator Online - No Signup | 30tools", description: "Transform your text into 15+ fancy Unicode font styles instantly. Copy stylish text for Instagram, Twitter, Discord, and more with our free Font Gener.", images: ["/og-image.jpg"] },
+	openGraph: { title: "Free Font Generator Online - No Signup, Customizable | 30tools", description: "Transform your text into 15+ fancy Unicode font styles instantly. Copy stylish text for Instagram, Twitter, Discord, and more with our free Font Gener.", url: "https://30tools.com/font-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free Font Generator Online - No Signup, Customizable | 30tools", description: "Transform your text into 15+ fancy Unicode font styles instantly. Copy stylish text for Instagram, Twitter, Discord, and more with our free Font Gener.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 

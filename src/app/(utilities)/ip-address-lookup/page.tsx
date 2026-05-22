@@ -4,14 +4,14 @@ import IPLocationFinderTool from "@/components/tools/utilities/IPLocationFinderT
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free IP Address Lookup Online – Fast & No Signup | 30tools",
+	title: "Free IP Address Lookup Online - No Signup, All-in-One | 30tools",
 	description: "Free ip address lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "ip address lookup, free online tool, no signup, ip-address-lookup, free ip-address-lookup, Ip Address Lookup online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ip-address-lookup",
 	},
 	openGraph: {
-		title: "Free IP Address Lookup Online – Fast & No Signup | 30tools",
+		title: "Free IP Address Lookup Online - No Signup, All-in-One | 30tools",
 		description: "Free ip address lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/ip-address-lookup",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free IP Address Lookup Online – Fast & No Signup | 30tools",
+		title: "Free IP Address Lookup Online - No Signup, All-in-One | 30tools",
 		description: "Free ip address lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

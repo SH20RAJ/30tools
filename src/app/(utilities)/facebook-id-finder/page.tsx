@@ -4,14 +4,14 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Facebook ID Finder Online – Fast & No Signup | 30tools",
+	title: "Free Facebook ID Finder Online - No Signup, All-in-One | 30tools",
 	description: "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "facebook id finder, free online tool, no signup, facebook-id-finder, free facebook-id-finder, Facebook Id Finder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/facebook-id-finder",
 	},
 	openGraph: {
-		title: "Free Facebook ID Finder Online – Fast & No Signup | 30tools",
+		title: "Free Facebook ID Finder Online - No Signup, All-in-One | 30tools",
 		description: "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/facebook-id-finder",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Facebook ID Finder Online – Fast & No Signup | 30tools",
+		title: "Free Facebook ID Finder Online - No Signup, All-in-One | 30tools",
 		description: "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Binary to ASCII Converter Online – Fast & No Signup | 30tools",
+	title: "Free Binary to ASCII Converter Online - No Signup, Client-Side | 30tools",
 	description: "Transform binary code (0s and 1s) into readable ASCII text instantly. Our free online converter is fast, accurate, and works entirely in your browser. No signup required.",
 	keywords: "binary to ascii converter, free online tool, no signup, binary-to-ascii-converter, free binary-to-ascii-converter, Binary To Ascii Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/binary-to-ascii-converter",
 	},
 	openGraph: {
-		title: "Free Binary to ASCII Converter Online – Fast & No Signup | 30tools",
+		title: "Free Binary to ASCII Converter Online - No Signup, Client-Side | 30tools",
 		description: "Transform binary code (0s and 1s) into readable ASCII text instantly. Our free online converter is fast, accurate, and works entirely in your browser. No signup required.",
 		url: "https://30tools.com/binary-to-ascii-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Binary to ASCII Converter Online – Fast & No Signup | 30tools",
+		title: "Free Binary to ASCII Converter Online - No Signup, Client-Side | 30tools",
 		description: "Transform binary code (0s and 1s) into readable ASCII text instantly. Our free online converter is fast, accurate, and works entirely in your browser. No signup required.",
 		images: ["/og-image.jpg"],
 	},

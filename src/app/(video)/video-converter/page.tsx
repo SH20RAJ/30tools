@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Online Video Converter - Convert MP4, AVI, MOV, WEBM & More | 30tools",
 	description: "Convert videos between MP4, AVI, MOV, WEBM, MKV, and GIF formats. Free online video converter that processes files entirely in your browser for maximum privacy. No upload, no signup, no limits.",
-	keywords: "video converter, convert video, mp4 converter, video format converter, free video tool, 30tools",
+	keywords: "video converter, convert video, mp4 converter, video format converter, free video tool, 30tools, video-converter, free video-converter, video converter online, browser video tool, online video editor, free video utility",
 	alternates: { canonical: "https://30tools.com/video-converter" },
 	openGraph: {
 		title: "Free Online Video Converter - Convert MP4, AVI, MOV, WEBM & More | 30tools",

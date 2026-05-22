@@ -4,14 +4,14 @@ import TextRepeaterTool from "@/components/tools/text/TextRepeaterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text Repeater Online – Fast & No Signup | 30tools",
+	title: "Free Text Repeater Online - No Signup, Instant Results | 30tools",
 	description: "Repeat any text as many times as you need with our free online Text Repeater. Perfect for testing, social media, or fun content. Simple, fast, and works instantly in your browser. 100% free, fast, and no signup required.",
 	keywords: "text repeater, free online tool, no signup, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-repeater",
 	},
 	openGraph: {
-		title: "Free Text Repeater Online – Fast & No Signup | 30tools",
+		title: "Free Text Repeater Online - No Signup, Instant Results | 30tools",
 		description: "Repeat any text as many times as you need with our free online Text Repeater. Perfect for testing, social media, or fun content. Simple, fast, and works instantly in your browser. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/text-repeater",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text Repeater Online – Fast & No Signup | 30tools",
+		title: "Free Text Repeater Online - No Signup, Instant Results | 30tools",
 		description: "Repeat any text as many times as you need with our free online Text Repeater. Perfect for testing, social media, or fun content. Simple, fast, and works instantly in your browser. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

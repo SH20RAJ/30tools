@@ -4,14 +4,14 @@ import NinegagDownloader from "@/components/tools/downloaders/NinegagDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free NineGag Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free NineGag Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Save your favorite 9GAG videos and memes to your device easily. Our free online downloader preserves original quality and works instantly in your browser. 100% free, fast, and no signup required.",
 	keywords: "ninegag video downloader, free online tool, no signup, ninegag-video-downloader, free ninegag-video-downloader, Ninegag Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ninegag-video-downloader",
 	},
 	openGraph: {
-		title: "Free NineGag Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free NineGag Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save your favorite 9GAG videos and memes to your device easily. Our free online downloader preserves original quality and works instantly in your browser. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/ninegag-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free NineGag Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free NineGag Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save your favorite 9GAG videos and memes to your device easily. Our free online downloader preserves original quality and works instantly in your browser. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

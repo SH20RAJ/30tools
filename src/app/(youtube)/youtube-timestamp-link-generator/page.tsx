@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Timestamp Link Generator Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Timestamp Link Generator Online - No Signup, HD Quality | 30tools",
 	description: "Create direct links to specific parts of any YouTube video instantly. Our free online tool helps you share precise moments with friends, students, or your audience. Fast and easy. 100% free, fast, and no signup required.",
 	keywords: "youtube timestamp link generator, free online tool, no signup, youtube-timestamp-link-generator, free youtube-timestamp-link-generator, Youtube Timestamp Link Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-timestamp-link-generator",
 	},
 	openGraph: {
-		title: "Free YouTube Timestamp Link Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Timestamp Link Generator Online - No Signup, HD Quality | 30tools",
 		description: "Create direct links to specific parts of any YouTube video instantly. Our free online tool helps you share precise moments with friends, students, or your audience. Fast and easy. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-timestamp-link-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Timestamp Link Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Timestamp Link Generator Online - No Signup, HD Quality | 30tools",
 		description: "Create direct links to specific parts of any YouTube video instantly. Our free online tool helps you share precise moments with friends, students, or your audience. Fast and easy. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

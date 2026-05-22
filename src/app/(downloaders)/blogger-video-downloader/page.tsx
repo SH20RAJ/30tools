@@ -4,14 +4,14 @@ import BloggerDownloader from "@/components/tools/downloaders/BloggerDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Blogger Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Blogger Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Easily download videos from any Blogger post. 100% free, fast, and no signup required.",
 	keywords: "blogger video downloader, free online tool, no signup, blogger-video-downloader, free blogger-video-downloader, Blogger Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/blogger-video-downloader",
 	},
 	openGraph: {
-		title: "Free Blogger Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Blogger Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Easily download videos from any Blogger post. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/blogger-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Blogger Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Blogger Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Easily download videos from any Blogger post. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

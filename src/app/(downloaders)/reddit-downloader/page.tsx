@@ -2,7 +2,7 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RedditDownloader from "@/components/tools/downloaders/RedditDownloader";
 
 export const metadata = {
-	title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+	title: "Free Reddit Video Downloader Online - No Signup, Fast Download | 30tools",
 	description:
 		"Download Reddit videos with audio in HD quality 100% free, no signup required, and privacy-focused processing in your browser.",
 	keywords:
@@ -11,7 +11,7 @@ export const metadata = {
 		canonical: "https://30tools.com/reddit-downloader",
 	},
 	openGraph: {
-		title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+		title: "Free Reddit Video Downloader Online - No Signup, Fast Download | 30tools",
 		description:
 			"Download Reddit videos with audio in HD quality 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/reddit-downloader",
@@ -21,7 +21,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+		title: "Free Reddit Video Downloader Online - No Signup, Fast Download | 30tools",
 		description:
 			"Download Reddit videos with audio in HD quality 100% free, no signup required, and privacy-focused processing in your browser.",
 		images: ["/og-image.jpg"],

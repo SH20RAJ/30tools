@@ -4,14 +4,14 @@ import FacebookDownloader from "@/components/tools/downloaders/FacebookDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Fb Clip Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Fb Clip Downloader Online - No Signup, HD Quality | 30tools",
 	description: "Download Facebook video clips and highlights in high resolution instantly. Our free online downloader is fast, secure, and easy to use. No signup required for unlimited downloads.",
 	keywords: "fb clip downloader, free online tool, no signup, fb-clip-downloader, free fb-clip-downloader, Fb Clip Downloader online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/fb-clip-downloader",
 	},
 	openGraph: {
-		title: "Free Fb Clip Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Fb Clip Downloader Online - No Signup, HD Quality | 30tools",
 		description: "Download Facebook video clips and highlights in high resolution instantly. Our free online downloader is fast, secure, and easy to use. No signup required for unlimited downloads.",
 		url: "https://30tools.com/fb-clip-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Fb Clip Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Fb Clip Downloader Online - No Signup, HD Quality | 30tools",
 		description: "Download Facebook video clips and highlights in high resolution instantly. Our free online downloader is fast, secure, and easy to use. No signup required for unlimited downloads.",
 		images: ["/og-image.jpg"],
 	},

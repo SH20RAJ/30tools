@@ -4,14 +4,14 @@ import AllDownloaders from "@/components/tools/downloaders/AllDownloaders";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Downloaders Online – Fast & No Signup | 30tools",
+	title: "Free Downloaders Online - No Signup, Fast Download | 30tools",
 	description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
 	keywords: "downloaders, free online tool, no signup, free downloaders, Downloaders online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/downloaders",
 	},
 	openGraph: {
-		title: "Free Downloaders Online – Fast & No Signup | 30tools",
+		title: "Free Downloaders Online - No Signup, Fast Download | 30tools",
 		description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/downloaders",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Downloaders Online – Fast & No Signup | 30tools",
+		title: "Free Downloaders Online - No Signup, Fast Download | 30tools",
 		description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

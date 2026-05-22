@@ -4,14 +4,14 @@ import LegalTemplateGenerator from "@/components/tools/built-ins/LegalTemplateGe
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Disclaimer Generator Online – Fast & No Signup | 30tools",
+	title: "Free Disclaimer Generator Online - No Signup, All-in-One | 30tools",
 	description: "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal requirements. 100% free, fast, and no signup required.",
 	keywords: "disclaimer generator, free online tool, no signup, disclaimer-generator, free disclaimer-generator, Disclaimer Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/disclaimer-generator",
 	},
 	openGraph: {
-		title: "Free Disclaimer Generator Online – Fast & No Signup | 30tools",
+		title: "Free Disclaimer Generator Online - No Signup, All-in-One | 30tools",
 		description: "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal requirements. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/disclaimer-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Disclaimer Generator Online – Fast & No Signup | 30tools",
+		title: "Free Disclaimer Generator Online - No Signup, All-in-One | 30tools",
 		description: "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal requirements. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

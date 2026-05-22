@@ -10,7 +10,7 @@ import { Type, ArrowRight } from "lucide-react";
 export const metadata = {
 	title: "Free Text Tools Online - Format & Transform | 30tools",
 	description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors. Fast, secure, and browser-based text processing.",
-	keywords: "text tools, word counter, case converter, text cleaner, online text tools, 30tools",
+	keywords: "text tools, word counter, case converter, text cleaner, online text tools, 30tools, text-tools, free text-tools, text tools online, text tool, online text utility, free text converter",
 	alternates: { canonical: "https://30tools.com/text-tools" },
 	openGraph: {
 		title: "Free Text Tools Online - Format & Transform | 30tools",

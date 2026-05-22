@@ -2,12 +2,12 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import CSSShadowTool from "@/components/tools/developer/CSSShadowTool";
 
 export const metadata = {
-	title: "Free CSS Shadow Generator Online - No Signup | 30tools",
+	title: "Free CSS Shadow Generator Online - No Signup, Client-Side | 30tools",
 	description: "Design perfect CSS box-shadows with our visual editor. Adjust offset, blur, spread, color, and opacity with live preview. Copy production-ready CSS code instantly.",
-	keywords: "css, shadow, generator, free css shadow generator, online css shadow generator, 30tools",
+	keywords: "css, shadow, generator, free css shadow generator, online css shadow generator, 30tools, css-shadow-generator, css shadow generator, free css-shadow-generator, css shadow generator online, developer tool, online code utility",
 	alternates: { canonical: "https://30tools.com/css-shadow-generator" },
-	openGraph: { title: "Free CSS Shadow Generator Online - No Signup | 30tools", description: "Design perfect CSS box-shadows with our visual editor. Adjust offset, blur, spread, color, and opacity with live preview. Copy production-ready CSS co.", url: "https://30tools.com/css-shadow-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free CSS Shadow Generator Online - No Signup | 30tools", description: "Design perfect CSS box-shadows with our visual editor. Adjust offset, blur, spread, color, and opacity with live preview. Copy production-ready CSS co.", images: ["/og-image.jpg"] },
+	openGraph: { title: "Free CSS Shadow Generator Online - No Signup, Client-Side | 30tools", description: "Design perfect CSS box-shadows with our visual editor. Adjust offset, blur, spread, color, and opacity with live preview. Copy production-ready CSS co.", url: "https://30tools.com/css-shadow-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free CSS Shadow Generator Online - No Signup, Client-Side | 30tools", description: "Design perfect CSS box-shadows with our visual editor. Adjust offset, blur, spread, color, and opacity with live preview. Copy production-ready CSS co.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 

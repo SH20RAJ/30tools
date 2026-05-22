@@ -4,14 +4,14 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Advanced Sitemap Generator Online – Fast & No Signup | 30tools",
+	title: "Free Advanced Sitemap Generator Online - No Signup, Instant Audit | 30tools",
 	description: "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata. 100% free, fast, and no signup required.",
-	keywords: "sitemap generator, xml sitemap, create sitemap, seo sitemap, website crawler, free tool, 30tools",
+	keywords: "sitemap generator, xml sitemap, create sitemap, seo sitemap, website crawler, free tool, 30tools, sitemap-generator, free sitemap-generator, sitemap generator online, seo tool, website analyzer",
 	alternates: {
 		canonical: "https://30tools.com/sitemap-generator",
 	},
 	openGraph: {
-		title: "Free Advanced Sitemap Generator Online – Fast & No Signup | 30tools",
+		title: "Free Advanced Sitemap Generator Online - No Signup, Instant Audit | 30tools",
 		description: "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/sitemap-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Advanced Sitemap Generator Online – Fast & No Signup | 30tools",
+		title: "Free Advanced Sitemap Generator Online - No Signup, Instant Audit | 30tools",
 		description: "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

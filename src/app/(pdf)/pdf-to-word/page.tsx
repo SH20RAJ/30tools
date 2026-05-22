@@ -4,14 +4,14 @@ import PDFToWord from "@/components/tools/pdf/PDFToWord";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free PDF to Word Online – Fast & No Signup | 30tools",
+	title: "Free PDF to Word Online - No Signup, Secure Local | 30tools",
 	description: "Convert PDF files to editable Word documents 100% free, fast, and no signup required.",
-	keywords: "pdf to word, convert pdf to word, pdf to docx, free pdf converter, online pdf tool, 30tools",
+	keywords: "pdf to word, convert pdf to word, pdf to docx, free pdf converter, online pdf tool, 30tools, pdf-to-word, free pdf-to-word, pdf to word online, pdf utility, document editor, secure document processing",
 	alternates: {
 		canonical: "https://30tools.com/pdf-to-word",
 	},
 	openGraph: {
-		title: "Free PDF to Word Online – Fast & No Signup | 30tools",
+		title: "Free PDF to Word Online - No Signup, Secure Local | 30tools",
 		description: "Convert PDF files to editable Word documents 100% free, fast, and no signup required.",
 		url: "https://30tools.com/pdf-to-word",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free PDF to Word Online – Fast & No Signup | 30tools",
+		title: "Free PDF to Word Online - No Signup, Secure Local | 30tools",
 		description: "Convert PDF files to editable Word documents 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

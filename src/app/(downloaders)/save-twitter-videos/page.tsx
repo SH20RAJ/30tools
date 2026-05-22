@@ -4,14 +4,14 @@ import TwitterDownloader from "@/components/tools/downloaders/TwitterDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Save Twitter Videos Online – Fast & No Signup | 30tools",
+	title: "Free Save Twitter Videos Online - No Signup, Fast Download | 30tools",
 	description: "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing. 100% free, fast, and no signup required.",
 	keywords: "save twitter videos, free online tool, no signup, save-twitter-videos, free save-twitter-videos, Save Twitter Videos online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-twitter-videos",
 	},
 	openGraph: {
-		title: "Free Save Twitter Videos Online – Fast & No Signup | 30tools",
+		title: "Free Save Twitter Videos Online - No Signup, Fast Download | 30tools",
 		description: "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/save-twitter-videos",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Save Twitter Videos Online – Fast & No Signup | 30tools",
+		title: "Free Save Twitter Videos Online - No Signup, Fast Download | 30tools",
 		description: "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

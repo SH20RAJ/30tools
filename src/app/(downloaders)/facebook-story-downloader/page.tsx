@@ -4,14 +4,14 @@ import FacebookStoryDownloader from "@/components/tools/downloaders/FacebookStor
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Facebook Story Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Facebook Story Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download Facebook stories in high resolution instantly. Our free online tool helps you save story content for offline viewing without any signup or account login. 100% free, fast, and no signup required.",
-	keywords: "facebook story downloader, save facebook stories, fb story saver, facebook story saver, free tool, 30tools",
+	keywords: "facebook story downloader, save facebook stories, fb story saver, facebook story saver, free tool, 30tools, facebook-story-downloader, free facebook-story-downloader, facebook story downloader online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/facebook-story-downloader",
 	},
 	openGraph: {
-		title: "Free Facebook Story Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Facebook Story Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Facebook stories in high resolution instantly. Our free online tool helps you save story content for offline viewing without any signup or account login. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/facebook-story-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Facebook Story Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Facebook Story Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Facebook stories in high resolution instantly. Our free online tool helps you save story content for offline viewing without any signup or account login. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

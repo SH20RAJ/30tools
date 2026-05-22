@@ -4,14 +4,14 @@ import KeywordTool from "@/components/tools/seo/KeywordTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Advanced Keyword Research Online – Fast & No Signup | 30tools",
+	title: "Free Advanced Keyword Research Online - No Signup, Instant Audit | 30tools",
 	description: "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO. 100% free, fast, and no signup required.",
-	keywords: "keyword research tool, seo keyword finder, search keywords, keyword analysis, free seo tool, 30tools",
+	keywords: "keyword research tool, seo keyword finder, search keywords, keyword analysis, free seo tool, 30tools, keyword-research-tool, free keyword-research-tool, keyword research tool online, seo tool, website analyzer, online seo checker",
 	alternates: {
 		canonical: "https://30tools.com/keyword-research-tool",
 	},
 	openGraph: {
-		title: "Free Advanced Keyword Research Online – Fast & No Signup | 30tools",
+		title: "Free Advanced Keyword Research Online - No Signup, Instant Audit | 30tools",
 		description: "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/keyword-research-tool",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Advanced Keyword Research Online – Fast & No Signup | 30tools",
+		title: "Free Advanced Keyword Research Online - No Signup, Instant Audit | 30tools",
 		description: "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

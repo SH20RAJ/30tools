@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Subscribe Link Generator Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Subscribe Link Generator Online - No Signup, HD Quality | 30tools",
 	description: "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for social media and bios. 100% free, fast, and no signup required.",
 	keywords: "youtube subscribe link generator, free online tool, no signup, youtube-subscribe-link-generator, free youtube-subscribe-link-generator, Youtube Subscribe Link Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-subscribe-link-generator",
 	},
 	openGraph: {
-		title: "Free YouTube Subscribe Link Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Subscribe Link Generator Online - No Signup, HD Quality | 30tools",
 		description: "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for social media and bios. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-subscribe-link-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Subscribe Link Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Subscribe Link Generator Online - No Signup, HD Quality | 30tools",
 		description: "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for social media and bios. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

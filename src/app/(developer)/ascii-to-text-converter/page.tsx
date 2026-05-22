@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free ASCII to Text Converter Online – Fast & No Signup | 30tools",
+	title: "Free ASCII to Text Converter Online - No Signup, Client-Side | 30tools",
 	description: "Convert ASCII character codes back to readable text instantly. Our free online tool makes it easy to decode ASCII sequences for development and debugging tasks. 100% free, fast, and no signup required.",
 	keywords: "ascii to text converter, free online tool, no signup, ascii-to-text-converter, free ascii-to-text-converter, Ascii To Text Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ascii-to-text-converter",
 	},
 	openGraph: {
-		title: "Free ASCII to Text Converter Online – Fast & No Signup | 30tools",
+		title: "Free ASCII to Text Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert ASCII character codes back to readable text instantly. Our free online tool makes it easy to decode ASCII sequences for development and debugging tasks. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/ascii-to-text-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free ASCII to Text Converter Online – Fast & No Signup | 30tools",
+		title: "Free ASCII to Text Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert ASCII character codes back to readable text instantly. Our free online tool makes it easy to decode ASCII sequences for development and debugging tasks. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

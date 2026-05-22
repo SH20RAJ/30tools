@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Video Count Checker Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Video Count Checker Online - No Signup, HD Quality | 30tools",
 	description: "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel auditing. 100% free, fast, and no signup required.",
 	keywords: "youtube video count checker, free online tool, no signup, youtube-video-count-checker, free youtube-video-count-checker, Youtube Video Count Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-video-count-checker",
 	},
 	openGraph: {
-		title: "Free YouTube Video Count Checker Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Video Count Checker Online - No Signup, HD Quality | 30tools",
 		description: "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel auditing. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-video-count-checker",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Video Count Checker Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Video Count Checker Online - No Signup, HD Quality | 30tools",
 		description: "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel auditing. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -4,14 +4,14 @@ import MetaTagGenerator from "@/components/tools/built-ins/MetaTagGenerator";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Meta Tag Generator Online – Fast & No Signup | 30tools",
+	title: "Free Meta Tag Generator Online - No Signup, Instant Audit | 30tools",
 	description: "Free meta tag generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "meta tag generator, seo meta tags, html meta tags, meta description, title tag generator, free tool, 30tools",
+	keywords: "meta tag generator, seo meta tags, html meta tags, meta description, title tag generator, free tool, 30tools, meta-tag-generator, free meta-tag-generator, meta tag generator online, seo tool, website analyzer",
 	alternates: {
 		canonical: "https://30tools.com/meta-tag-generator",
 	},
 	openGraph: {
-		title: "Free Meta Tag Generator Online – Fast & No Signup | 30tools",
+		title: "Free Meta Tag Generator Online - No Signup, Instant Audit | 30tools",
 		description: "Free meta tag generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/meta-tag-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Meta Tag Generator Online – Fast & No Signup | 30tools",
+		title: "Free Meta Tag Generator Online - No Signup, Instant Audit | 30tools",
 		description: "Free meta tag generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

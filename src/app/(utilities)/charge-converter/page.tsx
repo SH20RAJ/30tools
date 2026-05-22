@@ -4,14 +4,14 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Charge Converter Online – Fast & No Signup | 30tools",
+	title: "Free Charge Converter Online - No Signup, All-in-One | 30tools",
 	description: "Convert between coulombs, millicoulombs, and other electrical charge units instantly. Our free online tool provides quick and accurate physics base transformations. 100% free, fast, and no signup required.",
 	keywords: "charge converter, free online tool, no signup, charge-converter, free charge-converter, Charge Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/charge-converter",
 	},
 	openGraph: {
-		title: "Free Charge Converter Online – Fast & No Signup | 30tools",
+		title: "Free Charge Converter Online - No Signup, All-in-One | 30tools",
 		description: "Convert between coulombs, millicoulombs, and other electrical charge units instantly. Our free online tool provides quick and accurate physics base transformations. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/charge-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Charge Converter Online – Fast & No Signup | 30tools",
+		title: "Free Charge Converter Online - No Signup, All-in-One | 30tools",
 		description: "Convert between coulombs, millicoulombs, and other electrical charge units instantly. Our free online tool provides quick and accurate physics base transformations. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

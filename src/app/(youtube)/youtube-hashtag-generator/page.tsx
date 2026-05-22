@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Hashtag Generator Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Hashtag Generator Online - No Signup, HD Quality | 30tools",
 	description: "Generate viral hashtags for your YouTube videos instantly. Our free online tool suggests relevant, search-friendly tags to help you reach more viewers and boost engagement. 100% free, fast, and no signup required.",
 	keywords: "youtube hashtag generator, free online tool, no signup, youtube-hashtag-generator, free youtube-hashtag-generator, Youtube Hashtag Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-hashtag-generator",
 	},
 	openGraph: {
-		title: "Free YouTube Hashtag Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Hashtag Generator Online - No Signup, HD Quality | 30tools",
 		description: "Generate viral hashtags for your YouTube videos instantly. Our free online tool suggests relevant, search-friendly tags to help you reach more viewers and boost engagement. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-hashtag-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Hashtag Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Hashtag Generator Online - No Signup, HD Quality | 30tools",
 		description: "Generate viral hashtags for your YouTube videos instantly. Our free online tool suggests relevant, search-friendly tags to help you reach more viewers and boost engagement. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

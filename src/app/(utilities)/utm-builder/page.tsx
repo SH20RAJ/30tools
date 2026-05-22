@@ -4,14 +4,14 @@ import UTMBuilderTool from "@/components/tools/utilities/UTMBuilderTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free UTM Builder Online – Fast & No Signup | 30tools",
+	title: "Free UTM Builder Online - No Signup, All-in-One | 30tools",
 	description: "Easily build campaign URLs with UTM parameters for Google Analytics tracking. 100% free, fast, and no signup required.",
 	keywords: "utm builder, free online tool, no signup, utm-builder, free utm-builder, Utm Builder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/utm-builder",
 	},
 	openGraph: {
-		title: "Free UTM Builder Online – Fast & No Signup | 30tools",
+		title: "Free UTM Builder Online - No Signup, All-in-One | 30tools",
 		description: "Easily build campaign URLs with UTM parameters for Google Analytics tracking. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/utm-builder",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free UTM Builder Online – Fast & No Signup | 30tools",
+		title: "Free UTM Builder Online - No Signup, All-in-One | 30tools",
 		description: "Easily build campaign URLs with UTM parameters for Google Analytics tracking. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

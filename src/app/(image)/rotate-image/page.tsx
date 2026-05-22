@@ -4,14 +4,14 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Rotate Image Online – Fast & No Signup | 30tools",
+	title: "Free Rotate Image Online - No Signup, Browser-Based | 30tools",
 	description: "Rotate images clockwise, counter-clockwise, or flip them instantly. Our free online image rotator works in your browser, keeping your photos private and secure. No signup needed.",
 	keywords: "rotate image, free online tool, no signup, rotate-image, free rotate-image, Rotate Image online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/rotate-image",
 	},
 	openGraph: {
-		title: "Free Rotate Image Online – Fast & No Signup | 30tools",
+		title: "Free Rotate Image Online - No Signup, Browser-Based | 30tools",
 		description: "Rotate images clockwise, counter-clockwise, or flip them instantly. Our free online image rotator works in your browser, keeping your photos private and secure. No signup needed.",
 		url: "https://30tools.com/rotate-image",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Rotate Image Online – Fast & No Signup | 30tools",
+		title: "Free Rotate Image Online - No Signup, Browser-Based | 30tools",
 		description: "Rotate images clockwise, counter-clockwise, or flip them instantly. Our free online image rotator works in your browser, keeping your photos private and secure. No signup needed.",
 		images: ["/og-image.jpg"],
 	},

@@ -4,14 +4,14 @@ import SitemapUrlDownloader from "@/components/tools/downloaders/SitemapUrlDownl
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Sitemap Url Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Sitemap Url Downloader Online - No Signup, Instant Audit | 30tools",
 	description: "Free Sitemap Url Downloader online. Sitemap Url Downloader allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 	keywords: "sitemap url downloader, free online tool, no signup, sitemap-url-downloader, free sitemap-url-downloader, Sitemap Url Downloader online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/sitemap-url-downloader",
 	},
 	openGraph: {
-		title: "Free Sitemap Url Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Sitemap Url Downloader Online - No Signup, Instant Audit | 30tools",
 		description: "Free Sitemap Url Downloader online. Sitemap Url Downloader allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/sitemap-url-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Sitemap Url Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Sitemap Url Downloader Online - No Signup, Instant Audit | 30tools",
 		description: "Free Sitemap Url Downloader online. Sitemap Url Downloader allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		images: ["/og-image.jpg"],
 	},

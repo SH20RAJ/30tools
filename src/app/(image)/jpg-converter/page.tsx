@@ -4,14 +4,14 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JPG Converter Online – Fast & No Signup | 30tools",
+	title: "Free JPG Converter Online - No Signup, Browser-Based | 30tools",
 	description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use. Privacy-focused and works entirely in your browser. 100% free, fast, and no signup required.",
 	keywords: "jpg converter, free online tool, no signup, jpg-converter, free jpg-converter, Jpg Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/jpg-converter",
 	},
 	openGraph: {
-		title: "Free JPG Converter Online – Fast & No Signup | 30tools",
+		title: "Free JPG Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use. Privacy-focused and works entirely in your browser. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/jpg-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JPG Converter Online – Fast & No Signup | 30tools",
+		title: "Free JPG Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use. Privacy-focused and works entirely in your browser. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

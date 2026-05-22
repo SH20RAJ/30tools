@@ -2,12 +2,12 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import FakeChatGeneratorTool from "@/components/tools/generators/FakeChatGeneratorTool";
 
 export const metadata = {
-	title: "Free Fake Chat Generator Online - No Signup | 30tools",
+	title: "Free Fake Chat Generator Online - No Signup, Customizable | 30tools",
 	description: "Create realistic fake chat screenshots for social media, presentations, or fun. Our free Fake Chat Generator supports multiple messaging app styles.",
-	keywords: "fake, chat, generator, free fake chat generator, online fake chat generator, 30tools",
+	keywords: "fake, chat, generator, free fake chat generator, online fake chat generator, 30tools, fake-chat-generator, fake chat generator, free fake-chat-generator, fake chat generator online, online generator, free creator",
 	alternates: { canonical: "https://30tools.com/fake-chat-generator" },
-	openGraph: { title: "Free Fake Chat Generator Online - No Signup | 30tools", description: "Create realistic fake chat screenshots for social media, presentations, or fun. Our free Fake Chat Generator supports multiple messaging app styles..", url: "https://30tools.com/fake-chat-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Fake Chat Generator Online - No Signup | 30tools", description: "Create realistic fake chat screenshots for social media, presentations, or fun. Our free Fake Chat Generator supports multiple messaging app styles..", images: ["/og-image.jpg"] },
+	openGraph: { title: "Free Fake Chat Generator Online - No Signup, Customizable | 30tools", description: "Create realistic fake chat screenshots for social media, presentations, or fun. Our free Fake Chat Generator supports multiple messaging app styles..", url: "https://30tools.com/fake-chat-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free Fake Chat Generator Online - No Signup, Customizable | 30tools", description: "Create realistic fake chat screenshots for social media, presentations, or fun. Our free Fake Chat Generator supports multiple messaging app styles..", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 

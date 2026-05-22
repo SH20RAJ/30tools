@@ -4,14 +4,14 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Digital Converter Online – Fast & No Signup | 30tools",
+	title: "Free Digital Converter Online - No Signup, All-in-One | 30tools",
 	description: "Convert between bytes, kilobytes, megabytes, and gigabytes instantly. Our free online tool helps you understand data storage and file sizes in seconds. 100% free, fast, and no signup required.",
 	keywords: "digital converter, free online tool, no signup, digital-converter, free digital-converter, Digital Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/digital-converter",
 	},
 	openGraph: {
-		title: "Free Digital Converter Online – Fast & No Signup | 30tools",
+		title: "Free Digital Converter Online - No Signup, All-in-One | 30tools",
 		description: "Convert between bytes, kilobytes, megabytes, and gigabytes instantly. Our free online tool helps you understand data storage and file sizes in seconds. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/digital-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Digital Converter Online – Fast & No Signup | 30tools",
+		title: "Free Digital Converter Online - No Signup, All-in-One | 30tools",
 		description: "Convert between bytes, kilobytes, megabytes, and gigabytes instantly. Our free online tool helps you understand data storage and file sizes in seconds. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

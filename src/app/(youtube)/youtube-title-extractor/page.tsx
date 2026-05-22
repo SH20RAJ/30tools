@@ -4,14 +4,14 @@ import YouTubeDownloader from "@/components/tools/downloaders/YouTubeDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Title Extractor Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Title Extractor Online - No Signup, HD Quality | 30tools",
 	description: "Extract the exact title from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
 	keywords: "youtube title extractor, free online tool, no signup, youtube-title-extractor, free youtube-title-extractor, Youtube Title Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-extractor",
 	},
 	openGraph: {
-		title: "Free YouTube Title Extractor Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Title Extractor Online - No Signup, HD Quality | 30tools",
 		description: "Extract the exact title from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-title-extractor",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Title Extractor Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Title Extractor Online - No Signup, HD Quality | 30tools",
 		description: "Extract the exact title from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

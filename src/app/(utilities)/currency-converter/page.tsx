@@ -4,14 +4,14 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Currency Converter Online – Fast & No Signup | 30tools",
+	title: "Free Currency Converter Online - No Signup, All-in-One | 30tools",
 	description: "Convert currencies with real-time exchange rates instantly. Our free online tool supports all major global currencies for travel, business, and financial planning. 100% free, fast, and no signup required.",
-	keywords: "currency converter, exchange rate, convert currency, money converter, forex converter, free tool, 30tools",
+	keywords: "currency converter, exchange rate, convert currency, money converter, forex converter, free tool, 30tools, currency-converter, free currency-converter, currency converter online, online utility, free converter",
 	alternates: {
 		canonical: "https://30tools.com/currency-converter",
 	},
 	openGraph: {
-		title: "Free Currency Converter Online – Fast & No Signup | 30tools",
+		title: "Free Currency Converter Online - No Signup, All-in-One | 30tools",
 		description: "Convert currencies with real-time exchange rates instantly. Our free online tool supports all major global currencies for travel, business, and financial planning. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/currency-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Currency Converter Online – Fast & No Signup | 30tools",
+		title: "Free Currency Converter Online - No Signup, All-in-One | 30tools",
 		description: "Convert currencies with real-time exchange rates instantly. Our free online tool supports all major global currencies for travel, business, and financial planning. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

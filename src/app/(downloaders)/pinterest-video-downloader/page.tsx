@@ -4,14 +4,14 @@ import PinterestDownloader from "@/components/tools/downloaders/PinterestDownloa
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Pinterest Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Pinterest Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, fast, and no signup required.",
-	keywords: "pinterest video downloader, download pinterest videos, pinterest video saver, pin video download, free tool, 30tools",
+	keywords: "pinterest video downloader, download pinterest videos, pinterest video saver, pin video download, free tool, 30tools, pinterest-video-downloader, free pinterest-video-downloader, pinterest video downloader online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/pinterest-video-downloader",
 	},
 	openGraph: {
-		title: "Free Pinterest Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Pinterest Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/pinterest-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Pinterest Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Pinterest Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

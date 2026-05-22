@@ -4,14 +4,14 @@ import CapcutDownloader from "@/components/tools/downloaders/CapcutDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Capcut Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Capcut Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download Capcut videos and templates easily. 100% free, fast, and no signup required.",
 	keywords: "capcut video downloader, free online tool, no signup, capcut-video-downloader, free capcut-video-downloader, Capcut Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/capcut-video-downloader",
 	},
 	openGraph: {
-		title: "Free Capcut Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Capcut Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Capcut videos and templates easily. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/capcut-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Capcut Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Capcut Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Capcut videos and templates easily. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

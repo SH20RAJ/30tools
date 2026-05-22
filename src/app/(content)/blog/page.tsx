@@ -1,25 +1,30 @@
 import Link from "next/link";
-import { blogs } from "@/constants/blog-data";
-
-export const metadata = {
-	title: "Blog & Guides for Free Online Tools | 30tools",
-	description:
-		"Actionable guides, tool lists, and tutorials for SEO, developer workflows, and everyday online conversion tasks.",
-	keywords:
-		"30tools blog, free online tools guides, seo tutorials, json guides, converter tutorials, no signup tools",
-	alternates: {
-		canonical: "https://30tools.com/blog",
-	},
-	openGraph: {
+import { blogs } from "@/constants/blog-data";	export const metadata = {
 		title: "Blog & Guides for Free Online Tools | 30tools",
 		description:
-			"Read practical guides that link directly to free tools you can use instantly.",
-		url: "https://30tools.com/blog",
-		type: "website",
-		images: [{ url: "/og-image.jpg" }],
-	},
-	robots: { index: true, follow: true },
-};
+			"Actionable guides, tool lists, and tutorials for SEO, developer workflows, and everyday online conversion tasks.",
+		keywords:
+			"30tools blog, free online tools guides, seo tutorials, json guides, converter tutorials, no signup tools",
+		alternates: {
+			canonical: "https://30tools.com/blog",
+		},
+		openGraph: {
+			title: "Blog & Guides for Free Online Tools | 30tools",
+			description:
+				"Read practical guides that link directly to free tools you can use instantly.",
+			url: "https://30tools.com/blog",
+			type: "website",
+			images: [{ url: "/og-image.jpg" }],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: "Blog & Guides for Free Online Tools | 30tools",
+			description:
+				"Read practical guides that link directly to free tools you can use instantly.",
+			images: ["/og-image.jpg"],
+		},
+		robots: { index: true, follow: true },
+	};
 
 export default function BlogPage() {
 	const sortedArticles = [...blogs].sort((a, b) =>

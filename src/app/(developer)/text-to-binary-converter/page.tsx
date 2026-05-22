@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text to Binary Converter Online – Fast & No Signup | 30tools",
+	title: "Free Text to Binary Converter Online - No Signup, Client-Side | 30tools",
 	description: "Translate text into binary code (0s and 1s) instantly. Our free online converter is perfect for learning how computers represent data and creating secret binary messages. 100% free, fast, and no signup required.",
 	keywords: "text to binary converter, free online tool, no signup, text-to-binary-converter, free text-to-binary-converter, Text To Binary Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-binary-converter",
 	},
 	openGraph: {
-		title: "Free Text to Binary Converter Online – Fast & No Signup | 30tools",
+		title: "Free Text to Binary Converter Online - No Signup, Client-Side | 30tools",
 		description: "Translate text into binary code (0s and 1s) instantly. Our free online converter is perfect for learning how computers represent data and creating secret binary messages. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/text-to-binary-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text to Binary Converter Online – Fast & No Signup | 30tools",
+		title: "Free Text to Binary Converter Online - No Signup, Client-Side | 30tools",
 		description: "Translate text into binary code (0s and 1s) instantly. Our free online converter is perfect for learning how computers represent data and creating secret binary messages. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

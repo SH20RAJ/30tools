@@ -4,14 +4,14 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JPG to BMP Converter Online – Fast & No Signup | 30tools",
+	title: "Free JPG to BMP Converter Online - No Signup, Browser-Based | 30tools",
 	description: "Convert JPG images to BMP (Bitmap) format for legacy system compatibility. Fast, free, and secure online converter that works in your browser without uploading files to any server. 100% free, fast, and no signup required.",
 	keywords: "jpg to bmp converter, free online tool, no signup, jpg-to-bmp-converter, free jpg-to-bmp-converter, Jpg To Bmp Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/jpg-to-bmp-converter",
 	},
 	openGraph: {
-		title: "Free JPG to BMP Converter Online – Fast & No Signup | 30tools",
+		title: "Free JPG to BMP Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Convert JPG images to BMP (Bitmap) format for legacy system compatibility. Fast, free, and secure online converter that works in your browser without uploading files to any server. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/jpg-to-bmp-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JPG to BMP Converter Online – Fast & No Signup | 30tools",
+		title: "Free JPG to BMP Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Convert JPG images to BMP (Bitmap) format for legacy system compatibility. Fast, free, and secure online converter that works in your browser without uploading files to any server. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

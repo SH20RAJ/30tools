@@ -6,7 +6,7 @@ import { SITE_CONFIG } from "@/constants/config";
 export const metadata = {
 	title: "Terms of Use - 30tools",
 	description: "Read the 30tools Terms of Use. Our privacy-first online toolkit is free, browser-based, and available without registration.",
-	keywords: "terms of use, 30tools terms, terms of service, free online tools terms",
+	keywords: "terms of use, 30tools terms, terms of service, free online tools terms, terms, free terms, terms online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
 	alternates: { canonical: "https://30tools.com/terms" },
 	openGraph: { title: "Terms of Use - 30tools", description: "Read the 30tools Terms of Use. Our privacy-first online toolkit is free, browser-based, and available without registration.", url: "https://30tools.com/terms", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
 	twitter: { card: "summary_large_image", title: "Terms of Use - 30tools", description: "Read the 30tools Terms of Use. Our privacy-first online toolkit is free, browser-based, and available without registration.", images: ["/og-image.jpg"] },

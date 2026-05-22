@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Decimal to Binary Converter Online – Fast & No Signup | 30tools",
+	title: "Free Decimal to Binary Converter Online - No Signup, Client-Side | 30tools",
 	description: "Convert decimal numbers (Base-10) to binary code (Base-2) instantly. Our free online converter is perfect for students, developers, and data analysis tasks. Fast, secure, and accurate. 100% free, fast, and no signup required.",
 	keywords: "decimal to binary converter, free online tool, no signup, decimal-to-binary-converter, free decimal-to-binary-converter, Decimal To Binary Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-binary-converter",
 	},
 	openGraph: {
-		title: "Free Decimal to Binary Converter Online – Fast & No Signup | 30tools",
+		title: "Free Decimal to Binary Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert decimal numbers (Base-10) to binary code (Base-2) instantly. Our free online converter is perfect for students, developers, and data analysis tasks. Fast, secure, and accurate. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/decimal-to-binary-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Decimal to Binary Converter Online – Fast & No Signup | 30tools",
+		title: "Free Decimal to Binary Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert decimal numbers (Base-10) to binary code (Base-2) instantly. Our free online converter is perfect for students, developers, and data analysis tasks. Fast, secure, and accurate. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

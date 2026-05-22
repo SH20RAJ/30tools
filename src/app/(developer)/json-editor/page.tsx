@@ -4,14 +4,14 @@ import JsonFormatterTool from "@/components/tools/code/JsonFormatterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JSON Editor Online – Fast & No Signup | 30tools",
+	title: "Free JSON Editor Online - No Signup, Client-Side | 30tools",
 	description: "Edit, modify, and manage JSON data with our free online JSON Editor. Features syntax highlighting, tree view, and validation to help you structure your data perfectly. 100% free, fast, and no signup required.",
 	keywords: "json editor, free online tool, no signup, json-editor, free json-editor, Json Editor online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-editor",
 	},
 	openGraph: {
-		title: "Free JSON Editor Online – Fast & No Signup | 30tools",
+		title: "Free JSON Editor Online - No Signup, Client-Side | 30tools",
 		description: "Edit, modify, and manage JSON data with our free online JSON Editor. Features syntax highlighting, tree view, and validation to help you structure your data perfectly. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/json-editor",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JSON Editor Online – Fast & No Signup | 30tools",
+		title: "Free JSON Editor Online - No Signup, Client-Side | 30tools",
 		description: "Edit, modify, and manage JSON data with our free online JSON Editor. Features syntax highlighting, tree view, and validation to help you structure your data perfectly. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

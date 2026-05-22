@@ -5,7 +5,7 @@ import Fragment from "react";
 export const metadata = {
 	title: "SEO Tools Free Online - Ranked Picks (2026) | 30tools Expert Guide",
 	description: "Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks. Built for creators, agencies, and developers.",
-	keywords: "seo tools free online - ranked picks (2026), seo tools free online - ranked picks (2026) guide, 30tools",
+	keywords: "seo tools free online - ranked picks (2026), seo tools free online - ranked picks (2026) guide, 30tools, seo-tools-free-online, seo tools free online, free seo-tools-free-online, seo tools free online online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/seo-tools-free-online",
 	},

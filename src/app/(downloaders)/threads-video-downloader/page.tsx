@@ -4,14 +4,14 @@ import ThreadsDownloader from "@/components/tools/downloaders/ThreadsDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Threads Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Threads Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Save your favorite Threads videos and clips to your device easily. Our free online tool preserves original video quality and works instantly in your browser on all devices. 100% free, fast, and no signup required.",
 	keywords: "threads video downloader, free online tool, no signup, threads-video-downloader, free threads-video-downloader, Threads Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/threads-video-downloader",
 	},
 	openGraph: {
-		title: "Free Threads Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Threads Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save your favorite Threads videos and clips to your device easily. Our free online tool preserves original video quality and works instantly in your browser on all devices. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/threads-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Threads Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Threads Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Save your favorite Threads videos and clips to your device easily. Our free online tool preserves original video quality and works instantly in your browser on all devices. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

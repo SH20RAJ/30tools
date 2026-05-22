@@ -4,14 +4,14 @@ import QrGeneratorPremium from "@/components/tools/utilities/QrGeneratorPremium"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free QR Code Decoder Online – Fast & No Signup | 30tools",
+	title: "Free QR Code Decoder Online - No Signup, All-in-One | 30tools",
 	description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "qr code decoder, free online tool, no signup, qr-code-decoder, free qr-code-decoder, Qr Code Decoder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/qr-code-decoder",
 	},
 	openGraph: {
-		title: "Free QR Code Decoder Online – Fast & No Signup | 30tools",
+		title: "Free QR Code Decoder Online - No Signup, All-in-One | 30tools",
 		description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/qr-code-decoder",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free QR Code Decoder Online – Fast & No Signup | 30tools",
+		title: "Free QR Code Decoder Online - No Signup, All-in-One | 30tools",
 		description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

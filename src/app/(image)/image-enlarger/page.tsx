@@ -4,14 +4,14 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Image Enlarger Online – Fast & No Signup | 30tools",
+	title: "Free Image Enlarger Online - No Signup, Browser-Based | 30tools",
 	description: "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "image enlarger, free online tool, no signup, image-enlarger, free image-enlarger, Image Enlarger online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-enlarger",
 	},
 	openGraph: {
-		title: "Free Image Enlarger Online – Fast & No Signup | 30tools",
+		title: "Free Image Enlarger Online - No Signup, Browser-Based | 30tools",
 		description: "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/image-enlarger",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Enlarger Online – Fast & No Signup | 30tools",
+		title: "Free Image Enlarger Online - No Signup, Browser-Based | 30tools",
 		description: "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -4,14 +4,14 @@ import BilibiliDownloader from "@/components/tools/downloaders/BilibiliDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Bilibili Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free Bilibili Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download Bilibili videos online with ease. 100% free, fast, and no signup required.",
 	keywords: "bilibili video downloader, free online tool, no signup, bilibili-video-downloader, free bilibili-video-downloader, Bilibili Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/bilibili-video-downloader",
 	},
 	openGraph: {
-		title: "Free Bilibili Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Bilibili Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Bilibili videos online with ease. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/bilibili-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Bilibili Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free Bilibili Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download Bilibili videos online with ease. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

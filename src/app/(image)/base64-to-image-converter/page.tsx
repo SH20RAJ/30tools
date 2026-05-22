@@ -5,14 +5,14 @@ import { notFound } from "next/navigation";
 
 
 export const metadata = {
-	title: "Free Base64 to Image Converter Online – Fast & No Signup | 30tools",
+	title: "Free Base64 to Image Converter Online - No Signup, Browser-Based | 30tools",
 	description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
-	keywords: "base64 to image converter, free base64 to image converter, online base64 to image converter, no signup, 30tools, base64 decoder",
+	keywords: "base64 to image converter, free base64 to image converter, online base64 to image converter, no signup, 30tools, base64 decoder, base64-to-image-converter, free base64-to-image-converter, base64 to image converter online, image editing, photo editor, browser image tool",
 	alternates: {
 		canonical: "https://30tools.com/base64-to-image-converter",
 	},
 	openGraph: {
-		title: "Free Base64 to Image Converter Online – Fast & No Signup | 30tools",
+		title: "Free Base64 to Image Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
 		url: "https://30tools.com/base64-to-image-converter",
 		siteName: "30tools",
@@ -21,7 +21,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Base64 to Image Converter Online – Fast & No Signup | 30tools",
+		title: "Free Base64 to Image Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Convert Base64 strings to images (PNG, JPG, WebP) instantly. Our privacy-first tool processes data locally in your browser, ensuring your images stay secure. Free and fast Base64 decoder.",
 		images: ["/og-image.jpg"],
 	},

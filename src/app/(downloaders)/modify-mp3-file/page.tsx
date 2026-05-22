@@ -4,14 +4,14 @@ import TikTokMP3Converter from "@/components/tools/downloaders/TikTokMP3Converte
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Modify Mp3 File Online – Fast & No Signup | 30tools",
+	title: "Free Modify Mp3 File Online - No Signup, Fast Download | 30tools",
 	description: "Trim, cut, and edit your MP3 files instantly. Our free online audio editor helps you create ringtones and clean up recordings with a simple, browser-based interface. 100% free, fast, and no signup required.",
 	keywords: "modify mp3 file, free online tool, no signup, modify-mp3-file, free modify-mp3-file, Modify Mp3 File online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/modify-mp3-file",
 	},
 	openGraph: {
-		title: "Free Modify Mp3 File Online – Fast & No Signup | 30tools",
+		title: "Free Modify Mp3 File Online - No Signup, Fast Download | 30tools",
 		description: "Trim, cut, and edit your MP3 files instantly. Our free online audio editor helps you create ringtones and clean up recordings with a simple, browser-based interface. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/modify-mp3-file",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Modify Mp3 File Online – Fast & No Signup | 30tools",
+		title: "Free Modify Mp3 File Online - No Signup, Fast Download | 30tools",
 		description: "Trim, cut, and edit your MP3 files instantly. Our free online audio editor helps you create ringtones and clean up recordings with a simple, browser-based interface. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

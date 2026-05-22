@@ -4,14 +4,14 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Convert to ICO Online – Fast & No Signup | 30tools",
+	title: "Free Convert to ICO Online - No Signup, Browser-Based | 30tools",
 	description: "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "convert to ico, free online tool, no signup, convert-to-ico, free convert-to-ico, Convert To Ico online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/convert-to-ico",
 	},
 	openGraph: {
-		title: "Free Convert to ICO Online – Fast & No Signup | 30tools",
+		title: "Free Convert to ICO Online - No Signup, Browser-Based | 30tools",
 		description: "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/convert-to-ico",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Convert to ICO Online – Fast & No Signup | 30tools",
+		title: "Free Convert to ICO Online - No Signup, Browser-Based | 30tools",
 		description: "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

@@ -1,25 +1,30 @@
 import Link from "next/link";
-import { getAllCategories } from "@/lib/tools";
-
-export const metadata = {
-	title: "Free Tool Guides by Category | 30tools",
-	description:
-		"Browse free tool guides for every category on 30tools. Find the best image, PDF, SEO, developer, downloader, and utility tools online.",
-	keywords:
-		"free tool guides, online tool categories, 30tools guide, best online tools, tool category pages",
-	alternates: {
-		canonical: "https://30tools.com/tool-guides",
-	},
-	openGraph: {
+import { getAllCategories } from "@/lib/tools";	export const metadata = {
 		title: "Free Tool Guides by Category | 30tools",
 		description:
-			"Browse curated category guides for image, PDF, video, audio, developer, SEO, and more free online tools.",
-		url: "https://30tools.com/tool-guides",
-		type: "website",
-		images: [{ url: "/og-image.jpg" }],
-	},
-	robots: { index: true, follow: true },
-};
+			"Browse free tool guides for every category on 30tools. Find the best image, PDF, SEO, developer, downloader, and utility tools online.",
+		keywords:
+			"free tool guides, online tool categories, 30tools guide, best online tools, tool category pages",
+		alternates: {
+			canonical: "https://30tools.com/tool-guides",
+		},
+		openGraph: {
+			title: "Free Tool Guides by Category | 30tools",
+			description:
+				"Browse curated category guides for image, PDF, video, audio, developer, SEO, and more free online tools.",
+			url: "https://30tools.com/tool-guides",
+			type: "website",
+			images: [{ url: "/og-image.jpg" }],
+		},
+		twitter: {
+			card: "summary_large_image",
+			title: "Free Tool Guides by Category | 30tools",
+			description:
+				"Browse curated category guides for image, PDF, video, audio, developer, SEO, and more free online tools.",
+			images: ["/og-image.jpg"],
+		},
+		robots: { index: true, follow: true },
+	};
 
 export default function ToolGuidesIndexPage() {
 	const categories = getAllCategories();

@@ -5,7 +5,7 @@ import Fragment from "react";
 export const metadata = {
 	title: "Best Free Converters in 2026 (File, Data, and Media) | 30tools Expert Guide",
 	description: "The best free converters in 2026 for JSON, CSV, XML, images, and documents. No signup required.",
-	keywords: "best free converters in 2026 (file, data, and media), best free converters in 2026 (file, data, and media) guide, 30tools",
+	keywords: "best free converters in 2026 (file, data, and media), and media) guide, 30tools, best-free-converters-in-2026, best free converters in 2026, free best-free-converters-in-2026, best free converters in 2026 online, 30tools guide, online tool guide, free tool category",
 	alternates: {
 		canonical: "https://30tools.com/best-free-converters-in-2026",
 	},

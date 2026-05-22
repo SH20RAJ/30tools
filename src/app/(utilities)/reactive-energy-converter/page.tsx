@@ -4,14 +4,14 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Reactive Energy Converter Online – Fast & No Signup | 30tools",
+	title: "Free Reactive Energy Converter Online - No Signup, All-in-One | 30tools",
 	description: "Free reactive energy converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 	keywords: "reactive energy converter, free online tool, no signup, reactive-energy-converter, free reactive-energy-converter, Reactive Energy Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/reactive-energy-converter",
 	},
 	openGraph: {
-		title: "Free Reactive Energy Converter Online – Fast & No Signup | 30tools",
+		title: "Free Reactive Energy Converter Online - No Signup, All-in-One | 30tools",
 		description: "Free reactive energy converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/reactive-energy-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Reactive Energy Converter Online – Fast & No Signup | 30tools",
+		title: "Free Reactive Energy Converter Online - No Signup, All-in-One | 30tools",
 		description: "Free reactive energy converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

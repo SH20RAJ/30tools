@@ -4,14 +4,14 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JPG to GIF Converter Online – Fast & No Signup | 30tools",
+	title: "Free JPG to GIF Converter Online - No Signup, Browser-Based | 30tools",
 	description: "Turn your JPG photos into GIF format instantly. Perfect for simple animations or platform-specific requirements. Free, secure, and privacy-friendly online image converter. 100% free, fast, and no signup required.",
 	keywords: "jpg to gif converter, free online tool, no signup, jpg-to-gif-converter, free jpg-to-gif-converter, Jpg To Gif Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/jpg-to-gif-converter",
 	},
 	openGraph: {
-		title: "Free JPG to GIF Converter Online – Fast & No Signup | 30tools",
+		title: "Free JPG to GIF Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Turn your JPG photos into GIF format instantly. Perfect for simple animations or platform-specific requirements. Free, secure, and privacy-friendly online image converter. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/jpg-to-gif-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JPG to GIF Converter Online – Fast & No Signup | 30tools",
+		title: "Free JPG to GIF Converter Online - No Signup, Browser-Based | 30tools",
 		description: "Turn your JPG photos into GIF format instantly. Perfect for simple animations or platform-specific requirements. Free, secure, and privacy-friendly online image converter. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

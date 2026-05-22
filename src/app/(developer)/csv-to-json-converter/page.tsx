@@ -4,14 +4,14 @@ import BuiltInSerialization from "@/components/tools/built-ins/BuiltInSerializat
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free CSV to JSON Converter Online – Fast & No Signup | 30tools",
+	title: "Free CSV to JSON Converter Online - No Signup, Client-Side | 30tools",
 	description: "Convert CSV files to JSON format instantly. Our free online converter makes it easy to transform spreadsheet data into developer-friendly JSON code for web applications and APIs. 100% free, fast, and no signup required.",
 	keywords: "csv to json converter, free online tool, no signup, csv-to-json-converter, free csv-to-json-converter, Csv To Json Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/csv-to-json-converter",
 	},
 	openGraph: {
-		title: "Free CSV to JSON Converter Online – Fast & No Signup | 30tools",
+		title: "Free CSV to JSON Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert CSV files to JSON format instantly. Our free online converter makes it easy to transform spreadsheet data into developer-friendly JSON code for web applications and APIs. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/csv-to-json-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free CSV to JSON Converter Online – Fast & No Signup | 30tools",
+		title: "Free CSV to JSON Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert CSV files to JSON format instantly. Our free online converter makes it easy to transform spreadsheet data into developer-friendly JSON code for web applications and APIs. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

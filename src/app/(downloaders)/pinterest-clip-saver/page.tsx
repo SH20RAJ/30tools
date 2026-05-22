@@ -4,14 +4,14 @@ import PinterestDownloader from "@/components/tools/downloaders/PinterestDownloa
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Pinterest Clip Saver Online – Fast & No Signup | 30tools",
+	title: "Free Pinterest Clip Saver Online - No Signup, Fast Download | 30tools",
 	description: "Save Pinterest video clips and GIFs to your device easily. Our free online tool helps you download inspirational content for offline viewing and project reference. 100% free, fast, and no signup required.",
 	keywords: "pinterest clip saver, free online tool, no signup, pinterest-clip-saver, free pinterest-clip-saver, Pinterest Clip Saver online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pinterest-clip-saver",
 	},
 	openGraph: {
-		title: "Free Pinterest Clip Saver Online – Fast & No Signup | 30tools",
+		title: "Free Pinterest Clip Saver Online - No Signup, Fast Download | 30tools",
 		description: "Save Pinterest video clips and GIFs to your device easily. Our free online tool helps you download inspirational content for offline viewing and project reference. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/pinterest-clip-saver",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Pinterest Clip Saver Online – Fast & No Signup | 30tools",
+		title: "Free Pinterest Clip Saver Online - No Signup, Fast Download | 30tools",
 		description: "Save Pinterest video clips and GIFs to your device easily. Our free online tool helps you download inspirational content for offline viewing and project reference. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

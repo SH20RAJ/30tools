@@ -7,7 +7,7 @@ import { SITE_CONFIG } from "@/constants/config";
 export const metadata = {
 	title: "About 30tools - Free Online Tools | 30tools",
 	description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free online tools for PDF, image, video, text, SEO, and more. No signup required for core usage.`,
-	keywords: "about 30tools, free online tools, browser-based tools, privacy-conscious tools",
+	keywords: "about 30tools, free online tools, browser-based tools, privacy-conscious tools, about, free about, about online, 30tools, browser tools, no signup tools, privacy tools",
 	alternates: { canonical: "https://30tools.com/about" },
 	openGraph: { title: "About 30tools - Free Online Tools | 30tools", description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free online tools for PDF, image, video, text, SEO, and more. No signup required.`, url: "https://30tools.com/about", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
 	twitter: { card: "summary_large_image", title: "About 30tools - Free Online Tools | 30tools", description: `Learn about 30tools — ${SITE_CONFIG.toolCountString} free online tools for PDF, image, video, text, SEO, and more. No signup required.`, images: ["/og-image.jpg"] },

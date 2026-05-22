@@ -4,14 +4,14 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text to Decimal Converter Online – Fast & No Signup | 30tools",
+	title: "Free Text to Decimal Converter Online - No Signup, Client-Side | 30tools",
 	description: "Convert text characters into their decimal numeric equivalents instantly. Our free online tool is useful for debugging character encoding and understanding data representations. 100% free, fast, and no signup required.",
 	keywords: "text to decimal converter, free online tool, no signup, text-to-decimal-converter, free text-to-decimal-converter, Text To Decimal Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-decimal-converter",
 	},
 	openGraph: {
-		title: "Free Text to Decimal Converter Online – Fast & No Signup | 30tools",
+		title: "Free Text to Decimal Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert text characters into their decimal numeric equivalents instantly. Our free online tool is useful for debugging character encoding and understanding data representations. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/text-to-decimal-converter",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text to Decimal Converter Online – Fast & No Signup | 30tools",
+		title: "Free Text to Decimal Converter Online - No Signup, Client-Side | 30tools",
 		description: "Convert text characters into their decimal numeric equivalents instantly. Our free online tool is useful for debugging character encoding and understanding data representations. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

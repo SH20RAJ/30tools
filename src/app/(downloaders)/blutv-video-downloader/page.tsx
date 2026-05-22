@@ -4,14 +4,14 @@ import BlutvDownloader from "@/components/tools/downloaders/BlutvDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free BluTV Video Downloader Online – Fast & No Signup | 30tools",
+	title: "Free BluTV Video Downloader Online - No Signup, Fast Download | 30tools",
 	description: "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
 	keywords: "blutv video downloader, free online tool, no signup, blutv-video-downloader, free blutv-video-downloader, Blutv Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/blutv-video-downloader",
 	},
 	openGraph: {
-		title: "Free BluTV Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free BluTV Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
 		url: "https://30tools.com/blutv-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free BluTV Video Downloader Online – Fast & No Signup | 30tools",
+		title: "Free BluTV Video Downloader Online - No Signup, Fast Download | 30tools",
 		description: "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
 		images: ["/og-image.jpg"],
 	},

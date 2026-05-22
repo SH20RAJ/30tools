@@ -4,14 +4,14 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Title Generator Online – Fast & No Signup | 30tools",
+	title: "Free YouTube Title Generator Online - No Signup, HD Quality | 30tools",
 	description: "Generate catchy and SEO-friendly titles for your YouTube videos instantly. Our free online tool suggests high-CTR titles based on your topic and keywords to help you get more views. 100% free, fast, and no signup required.",
-	keywords: "youtube title generator, video title ideas, youtube seo titles, clickable titles, free tool, 30tools",
+	keywords: "youtube title generator, video title ideas, youtube seo titles, clickable titles, free tool, 30tools, youtube-title-generator, free youtube-title-generator, youtube title generator online, youtube tool, video downloader, online youtube utility",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-generator",
 	},
 	openGraph: {
-		title: "Free YouTube Title Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Title Generator Online - No Signup, HD Quality | 30tools",
 		description: "Generate catchy and SEO-friendly titles for your YouTube videos instantly. Our free online tool suggests high-CTR titles based on your topic and keywords to help you get more views. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/youtube-title-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Title Generator Online – Fast & No Signup | 30tools",
+		title: "Free YouTube Title Generator Online - No Signup, HD Quality | 30tools",
 		description: "Generate catchy and SEO-friendly titles for your YouTube videos instantly. Our free online tool suggests high-CTR titles based on your topic and keywords to help you get more views. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},

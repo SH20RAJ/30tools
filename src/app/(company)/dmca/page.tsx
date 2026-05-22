@@ -6,7 +6,7 @@ import { SITE_CONFIG } from "@/constants/config";
 export const metadata = {
 	title: "DMCA Copyright Policy - 30tools",
 	description: "30tools DMCA copyright infringement notification policy. Learn how to report copyright violations and our takedown procedures.",
-	keywords: "DMCA, copyright policy, takedown notice, copyright infringement, 30tools DMCA, intellectual property",
+	keywords: "dmca, copyright policy, takedown notice, copyright infringement, 30tools dmca, intellectual property, free dmca, dmca online, 30tools, free online tools, browser tools, no signup tools",
 	alternates: { canonical: "https://30tools.com/dmca" },
 	openGraph: { title: "DMCA Copyright Policy - 30tools", description: "30tools DMCA copyright infringement notification policy. Learn how to report copyright violations and our takedown procedures.", url: "https://30tools.com/dmca", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
 	twitter: { card: "summary_large_image", title: "DMCA Copyright Policy - 30tools", description: "30tools DMCA copyright infringement notification policy.", images: ["/og-image.jpg"] },

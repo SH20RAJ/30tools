@@ -4,14 +4,14 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Backlink Checker Online – Fast & No Signup | 30tools",
+	title: "Free Backlink Checker Online - No Signup, Instant Audit | 30tools",
 	description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
-	keywords: "backlink checker, check backlinks, domain backlinks, link analysis, seo backlinks, free tool, 30tools",
+	keywords: "backlink checker, check backlinks, domain backlinks, link analysis, seo backlinks, free tool, 30tools, backlink-checker, free backlink-checker, backlink checker online, seo tool, website analyzer",
 	alternates: {
 		canonical: "https://30tools.com/backlink-checker",
 	},
 	openGraph: {
-		title: "Free Backlink Checker Online – Fast & No Signup | 30tools",
+		title: "Free Backlink Checker Online - No Signup, Instant Audit | 30tools",
 		description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
 		url: "https://30tools.com/backlink-checker",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Backlink Checker Online – Fast & No Signup | 30tools",
+		title: "Free Backlink Checker Online - No Signup, Instant Audit | 30tools",
 		description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
 		images: ["/og-image.jpg"],
 	},
