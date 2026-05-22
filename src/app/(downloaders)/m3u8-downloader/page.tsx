@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+import M3u8Downloader from "@/components/tools/downloaders/M3u8Downloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<DownloaderEngine />
+			<M3u8Downloader />
 		</ToolLayout>
 	);
 }

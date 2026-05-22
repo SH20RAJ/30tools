@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import ToolLayout from "@/components/tools/shared/ToolLayout";
-import DownloaderEngine from "@/components/tools/downloaders/DownloaderEngine";
+import FacebookStoryDownloader from "@/components/tools/downloaders/FacebookStoryDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
@@ -36,7 +36,7 @@ export default async function ToolPage() {
 
 	return (
 		<ToolLayout tool={tool}>
-			<DownloaderEngine />
+			<FacebookStoryDownloader />
 		</ToolLayout>
 	);
 }
