@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Bitchute Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download your favorite Bitchute videos in one click. 100% free, fast, and no signup required.",
-	keywords: "bitchute video downloader, free online tool, no signup",
+	keywords: "bitchute video downloader, free online tool, no signup, bitchute-video-downloader, free bitchute-video-downloader, Bitchute Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/bitchute-video-downloader",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Decimal to Octal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert decimal numbers to octal format instantly. Our free online converter provides quick and accurate base transformations for computer science and technical tasks. No signup required.",
-	keywords: "decimal to octal converter, free online tool, no signup",
+	keywords: "decimal to octal converter, free online tool, no signup, decimal-to-octal-converter, free decimal-to-octal-converter, Decimal To Octal Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-octal-converter",
 	},

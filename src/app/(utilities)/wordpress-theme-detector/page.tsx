@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free WordPress Theme Detector Online – Fast & No Signup | 30tools",
 	description: "Free wordpress theme detector tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "wordpress theme detector, free online tool, no signup",
+	keywords: "wordpress theme detector, free online tool, no signup, wordpress-theme-detector, free wordpress-theme-detector, Wordpress Theme Detector online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/wordpress-theme-detector",
 	},

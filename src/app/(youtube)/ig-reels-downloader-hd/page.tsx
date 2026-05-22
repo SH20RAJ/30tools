@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Ig Reels Downloader Hd Online – Fast & No Signup | 30tools",
 	description: "Download Instagram Reels in high-definition quality instantly. Our free online downloader is optimized for speed and works on all devices. Save your favorite Reels with one click. 100% free, fast, and no signup required.",
-	keywords: "ig reels downloader hd, free online tool, no signup",
+	keywords: "ig reels downloader hd, free online tool, no signup, ig-reels-downloader-hd, free ig-reels-downloader-hd, Ig Reels Downloader Hd online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ig-reels-downloader-hd",
 	},

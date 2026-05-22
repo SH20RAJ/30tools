@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Text to Tags Converter Online – Fast & No Signup | 30tools",
 	description: "Extract and generate relevant meta tags from your text instantly. Our free online converter helps you create SEO tags, HTML keywords, and header tags for better web visibility. 100% free, fast, and no signup required.",
-	keywords: "text to tags converter, free online tool, no signup",
+	keywords: "text to tags converter, free online tool, no signup, text-to-tags-converter, free text-to-tags-converter, Text To Tags Converter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-tags-converter",
 	},

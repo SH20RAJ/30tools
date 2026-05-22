@@ -6,7 +6,8 @@ import ImageCompressorTool from "@/components/tools/image/ImageCompressorTool";
 export const metadata = {
 	title: "Image Compressor – Reduce JPG, PNG, WebP File Sizes Online for Free",
 	description: "Compress images online without losing quality. Reduce JPG, PNG, WebP file sizes instantly with our free image optimizer. Secure, browser-based compression with no signup required.",
-	alternates: {
+	
+	keywords: "image-compressor, Image Compressor, free image-compressor, Image Compressor online, image editing, photo editor, browser image tool, free photo utility, 30tools",alternates: {
 		canonical: "https://30tools.com/image-compressor",
 	},
 	openGraph: {

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free CSS Beautifier Online – Fast & No Signup | 30tools",
 	description: "Format and prettify your CSS code instantly with our free online CSS Beautifier. Improve code readability, fix indentation, and organize your stylesheets for better maintenance. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "css beautifier, free online tool, no signup",
+	keywords: "css beautifier, free online tool, no signup, css-beautifier, free css-beautifier, Css Beautifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/css-beautifier",
 	},

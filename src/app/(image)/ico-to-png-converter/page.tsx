@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free ICO to PNG Converter Online – Fast & No Signup | 30tools",
 	description: "Free ico to png converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "ico to png converter, free online tool, no signup",
+	keywords: "ico to png converter, free online tool, no signup, ico-to-png-converter, free ico-to-png-converter, Ico To Png Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ico-to-png-converter",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free URL Encode Online – Fast & No Signup | 30tools",
 	description: "Free url encode tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "url encode, free online tool, no signup",
+	keywords: "url encode, free online tool, no signup, url-encode, free url-encode, Url Encode online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/url-encode",
 	},

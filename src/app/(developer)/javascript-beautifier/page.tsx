@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JavaScript Beautifier Online – Fast & No Signup | 30tools",
 	description: "Format and prettify your JavaScript code instantly. Our free online JS Beautifier improves code readability, fixes indentation, and helps you understand complex scripts easily. 100% free, fast, and no signup required.",
-	keywords: "javascript beautifier, free online tool, no signup",
+	keywords: "javascript beautifier, free online tool, no signup, javascript-beautifier, free javascript-beautifier, Javascript Beautifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/javascript-beautifier",
 	},

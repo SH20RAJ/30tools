@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Word Counter Online – Fast & No Signup | 30tools",
 	description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
-	keywords: "word counter, free online tool, no signup",
+	keywords: "word counter, free online tool, no signup, word-counter, free word-counter, Word Counter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/word-counter",
 	},

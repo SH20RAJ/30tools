@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free XML to JSON Converter Online – Fast & No Signup | 30tools",
 	description: "Convert XML documents to JSON format instantly. Our free online converter handles complex XML hierarchies to provide clean, developer-friendly JSON output for web apps. 100% free, fast, and no signup required.",
-	keywords: "xml to json converter, free online tool, no signup",
+	keywords: "xml to json converter, free online tool, no signup, xml-to-json-converter, free xml-to-json-converter, Xml To Json Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/xml-to-json-converter",
 	},

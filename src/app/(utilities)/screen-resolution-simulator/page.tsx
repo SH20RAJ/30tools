@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Screen Resolution Simulator Online – Fast & No Signup | 30tools",
 	description: "Free screen resolution simulator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "screen resolution simulator, free online tool, no signup",
+	keywords: "screen resolution simulator, free online tool, no signup, screen-resolution-simulator, free screen-resolution-simulator, Screen Resolution Simulator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/screen-resolution-simulator",
 	},

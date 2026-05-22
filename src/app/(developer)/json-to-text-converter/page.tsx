@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JSON to Text Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JSON data into readable plain text instantly. Our free online tool is perfect for extracting values and creating human-readable documentation from raw data. 100% free, fast, and no signup required.",
-	keywords: "json to text converter, free online tool, no signup",
+	keywords: "json to text converter, free online tool, no signup, json-to-text-converter, free json-to-text-converter, Json To Text Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-to-text-converter",
 	},

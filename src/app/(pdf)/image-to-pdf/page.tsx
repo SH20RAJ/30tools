@@ -6,7 +6,8 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Image to PDF – Convert JPG, PNG to PDF Online for Free",
 	description: "Convert multiple images to a single PDF document 100% free. Supports JPG, PNG, WEBP and more. Privacy-first local processing with no signup required.",
-	alternates: {
+	
+	keywords: "image-to-pdf, Image To Pdf, free image-to-pdf, Image To Pdf online, PDF utility, document editor, online PDF tool, free PDF converter, 30tools",alternates: {
 		canonical: "https://30tools.com/image-to-pdf",
 	},
 	openGraph: {

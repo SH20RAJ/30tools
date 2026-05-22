@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Decimal to HEX Converter Online – Fast & No Signup | 30tools",
 	description: "Transform decimal numbers into hexadecimal format instantly. Our free online tool is perfect for web development, low-level programming, and color code analysis. Fast and private. 100% free, fast, and no signup required.",
-	keywords: "decimal to hex converter, free online tool, no signup",
+	keywords: "decimal to hex converter, free online tool, no signup, decimal-to-hex-converter, free decimal-to-hex-converter, Decimal To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/decimal-to-hex-converter",
 	},

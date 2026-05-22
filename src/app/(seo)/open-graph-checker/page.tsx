@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Open Graph Checker Online – Fast & No Signup | 30tools",
 	description: "Free open graph checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "open graph checker, free online tool, no signup",
+	keywords: "open graph checker, free online tool, no signup, open-graph-checker, free open-graph-checker, Open Graph Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/open-graph-checker",
 	},

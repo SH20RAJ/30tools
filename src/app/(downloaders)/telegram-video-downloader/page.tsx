@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Telegram Video Downloader Online – Fast & No Signup | 30tools",
 	description: "The ultimate tool for downloading videos and media from Telegram channels and groups. Save high-quality content for offline viewing instantly in your browser. 100% free, fast, and no signup required.",
-	keywords: "telegram video downloader, free online tool, no signup",
+	keywords: "telegram video downloader, free online tool, no signup, telegram-video-downloader, free telegram-video-downloader, Telegram Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/telegram-video-downloader",
 	},

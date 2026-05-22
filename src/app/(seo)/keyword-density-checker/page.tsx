@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Keyword Density Checker Online – Fast & No Signup | 30tools",
 	description: "Free keyword density checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "keyword density checker, free online tool, no signup",
+	keywords: "keyword density checker, free online tool, no signup, keyword-density-checker, free keyword-density-checker, Keyword Density Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/keyword-density-checker",
 	},

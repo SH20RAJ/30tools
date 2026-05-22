@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Random Word Generator Online – Fast & No Signup | 30tools",
 	description: "Generate random words instantly for creative writing, brainstorming, or vocabulary practice. Our free online tool offers customizable options for word type and quantity. Fun and fast. 100% free, fast, and no signup required.",
-	keywords: "random word generator, free online tool, no signup",
+	keywords: "random word generator, free online tool, no signup, random-word-generator, free random-word-generator, Random Word Generator online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/random-word-generator",
 	},

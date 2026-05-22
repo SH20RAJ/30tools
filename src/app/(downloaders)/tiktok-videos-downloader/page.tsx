@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Tiktok Videos Downloader Online – Fast & No Signup | 30tools",
 	description: "Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips. 100% free, fast, and no signup required.",
-	keywords: "tiktok videos downloader, free online tool, no signup",
+	keywords: "tiktok videos downloader, free online tool, no signup, tiktok-videos-downloader, free tiktok-videos-downloader, Tiktok Videos Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/tiktok-videos-downloader",
 	},

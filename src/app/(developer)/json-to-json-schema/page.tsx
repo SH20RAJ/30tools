@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JSON to JSON Schema Online – Fast & No Signup | 30tools",
 	description: "Generate a JSON Schema from your JSON data automatically. Our free online tool helps you define validation rules and document your JSON structure for APIs. 100% free, fast, and no signup required.",
-	keywords: "json to json schema, free online tool, no signup",
+	keywords: "json to json schema, free online tool, no signup, json-to-json-schema, free json-to-json-schema, Json To Json Schema online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-to-json-schema",
 	},

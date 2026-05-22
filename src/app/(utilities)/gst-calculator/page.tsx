@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free GST Calculator Online – Fast & No Signup | 30tools",
 	description: "Free gst calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "gst calculator, free online tool, no signup",
+	keywords: "gst calculator, free online tool, no signup, gst-calculator, free gst-calculator, Gst Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/gst-calculator",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Terabox Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Terabox videos with direct links and embed custom video players 100% free, fast, and no signup required.",
-	keywords: "terabox video downloader, free online tool, no signup",
+	keywords: "terabox video downloader, free online tool, no signup, terabox-downloader, Terabox Downloader, free terabox-downloader, Terabox Downloader online, video tool, video editor, media converter, online video, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/terabox-downloader",
 	},

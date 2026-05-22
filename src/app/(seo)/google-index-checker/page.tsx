@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Google Index Checker Online – Fast & No Signup | 30tools",
 	description: "Free google index checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "google index checker, free online tool, no signup",
+	keywords: "google index checker, free online tool, no signup, google-index-checker, free google-index-checker, Google Index Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/google-index-checker",
 	},

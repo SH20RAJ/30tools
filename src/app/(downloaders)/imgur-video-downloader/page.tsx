@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Imgur Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save your favorite Imgur videos and GIFs to your device easily. Our free online tool is fast, secure, and preserves the original quality of the content. 100% free, fast, and no signup required.",
-	keywords: "imgur video downloader, free online tool, no signup",
+	keywords: "imgur video downloader, free online tool, no signup, imgur-video-downloader, free imgur-video-downloader, Imgur Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/imgur-video-downloader",
 	},

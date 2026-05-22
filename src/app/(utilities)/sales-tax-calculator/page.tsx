@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Sales Tax Calculator Online – Fast & No Signup | 30tools",
 	description: "Free sales tax calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "sales tax calculator, free online tool, no signup",
+	keywords: "sales tax calculator, free online tool, no signup, sales-tax-calculator, free sales-tax-calculator, Sales Tax Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/sales-tax-calculator",
 	},

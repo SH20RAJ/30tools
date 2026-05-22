@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Gaana Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Gaana music videos and content online with our free tool. Save high-quality videos for offline enjoyment without needing a premium subscription. 100% free, fast, and no signup required.",
-	keywords: "gaana video downloader, free online tool, no signup",
+	keywords: "gaana video downloader, free online tool, no signup, gaana-video-downloader, free gaana-video-downloader, Gaana Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/gaana-video-downloader",
 	},

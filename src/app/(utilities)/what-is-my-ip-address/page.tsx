@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free What Is My IP Address Online – Fast & No Signup | 30tools",
 	description: "Free what is my ip address tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "what is my ip address, free online tool, no signup",
+	keywords: "what is my ip address, free online tool, no signup, what-is-my-ip-address, free what-is-my-ip-address, What Is My Ip Address online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-ip-address",
 	},

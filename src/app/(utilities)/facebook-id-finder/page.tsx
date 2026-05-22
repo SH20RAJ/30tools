@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Facebook ID Finder Online – Fast & No Signup | 30tools",
 	description: "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "facebook id finder, free online tool, no signup",
+	keywords: "facebook id finder, free online tool, no signup, facebook-id-finder, free facebook-id-finder, Facebook Id Finder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/facebook-id-finder",
 	},

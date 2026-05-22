@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Discount Calculator Online – Fast & No Signup | 30tools",
 	description: "Calculate the final price after discounts and taxes instantly. Our free online tool helps you find the best deals and savings while shopping. 100% free, fast, and no signup required.",
-	keywords: "discount calculator, free online tool, no signup",
+	keywords: "discount calculator, free online tool, no signup, discount-calculator, free discount-calculator, Discount Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/discount-calculator",
 	},

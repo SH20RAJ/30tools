@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Shorts Downloader Online – Fast & No Signup | 30tools",
 	description: "Download YouTube Shorts videos in high quality for offline viewing 100% free, fast, and no signup required.",
-	keywords: "youtube shorts downloader, free online tool, no signup",
+	keywords: "youtube shorts downloader, free online tool, no signup, youtube-shorts-downloader, free youtube-shorts-downloader, Youtube Shorts Downloader online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-shorts-downloader",
 	},

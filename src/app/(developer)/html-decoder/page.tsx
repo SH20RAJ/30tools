@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free HTML Decoder Online – Fast & No Signup | 30tools",
 	description: "Decode HTML entities back to their original characters instantly. Our free online tool converts &amp; and similar entities into readable text for easy debugging and content cleaning. 100% free, fast, and no signup required.",
-	keywords: "html decoder, free online tool, no signup",
+	keywords: "html decoder, free online tool, no signup, html-decoder, free html-decoder, Html Decoder online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/html-decoder",
 	},

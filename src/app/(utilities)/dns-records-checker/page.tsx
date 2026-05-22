@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free DNS Records Checker Online – Fast & No Signup | 30tools",
 	description: "Retrieve all DNS records (A, MX, TXT, CNAME) for any domain instantly. Our free online tool helps you troubleshoot website hosting and email configuration issues. 100% free, fast, and no signup required.",
-	keywords: "dns records checker, free online tool, no signup",
+	keywords: "dns records checker, free online tool, no signup, dns-records-checker, free dns-records-checker, Dns Records Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/dns-records-checker",
 	},

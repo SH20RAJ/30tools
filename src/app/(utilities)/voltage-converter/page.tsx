@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Voltage Converter Online – Fast & No Signup | 30tools",
 	description: "Free voltage converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "voltage converter, free online tool, no signup",
+	keywords: "voltage converter, free online tool, no signup, voltage-converter, free voltage-converter, Voltage Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/voltage-converter",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Flickr Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Save Flickr videos to your device in high quality instantly. Our free online downloader is perfect for archiving and offline viewing of beautiful photography and videography. 100% free, fast, and no signup required.",
-	keywords: "flickr video downloader, free online tool, no signup",
+	keywords: "flickr video downloader, free online tool, no signup, flickr-video-downloader, free flickr-video-downloader, Flickr Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/flickr-video-downloader",
 	},

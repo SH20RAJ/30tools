@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Izlesene Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download videos from Izlesene in high quality instantly. Our free online tool makes it easy to save your favorite Turkish videos and clips for offline viewing without any signup. 100% free, fast, and no signup required.",
-	keywords: "izlesene video downloader, free online tool, no signup",
+	keywords: "izlesene video downloader, free online tool, no signup, izlesene-video-downloader, free izlesene-video-downloader, Izlesene Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/izlesene-video-downloader",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free UTM Builder Online – Fast & No Signup | 30tools",
 	description: "Easily build campaign URLs with UTM parameters for Google Analytics tracking. 100% free, fast, and no signup required.",
-	keywords: "utm builder, free online tool, no signup",
+	keywords: "utm builder, free online tool, no signup, utm-builder, free utm-builder, Utm Builder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/utm-builder",
 	},

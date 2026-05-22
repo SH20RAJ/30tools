@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Binary to HEX Converter Online – Fast & No Signup | 30tools",
 	description: "Transform binary code into hexadecimal format instantly. Our free online tool is perfect for low-level programming, data analysis, and memory debugging. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "binary to hex converter, free online tool, no signup",
+	keywords: "binary to hex converter, free online tool, no signup, binary-to-hex-converter, free binary-to-hex-converter, Binary To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/binary-to-hex-converter",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Channel Age Checker Online – Fast & No Signup | 30tools",
 	description: "Find the exact creation date of any YouTube channel with our free online Age Checker. Perfect for creator research, account verification, and competitive analysis. Fast and private. 100% free, fast, and no signup required.",
-	keywords: "youtube channel age checker, free online tool, no signup",
+	keywords: "youtube channel age checker, free online tool, no signup, youtube-channel-age-checker, free youtube-channel-age-checker, Youtube Channel Age Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-age-checker",
 	},

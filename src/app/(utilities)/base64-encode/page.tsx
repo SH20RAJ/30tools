@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Base64 Encode Online – Fast & No Signup | 30tools",
 	description: "Encode plain text into Base64 format instantly. Our free online tool is perfect for developers, data transmission, and secure character representation in web URLs. 100% free, fast, and no signup required.",
-	keywords: "base64 encode, free online tool, no signup",
+	keywords: "base64 encode, free online tool, no signup, base64-encode, free base64-encode, Base64 Encode online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/base64-encode",
 	},

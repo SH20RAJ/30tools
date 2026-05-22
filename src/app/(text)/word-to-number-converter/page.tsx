@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Word to Number Converter Online – Fast & No Signup | 30tools",
 	description: "Convert words into digits instantly with our free online Word to Number converter. Perfect for data entry, educational exercises, and technical documentation cleanup. 100% free, fast, and no signup required.",
-	keywords: "word to number converter, free online tool, no signup",
+	keywords: "word to number converter, free online tool, no signup, word-to-number-converter, free word-to-number-converter, Word To Number Converter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/word-to-number-converter",
 	},

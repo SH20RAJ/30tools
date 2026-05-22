@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Torque Converter Online – Fast & No Signup | 30tools",
 	description: "Free torque converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "torque converter, free online tool, no signup",
+	keywords: "torque converter, free online tool, no signup, torque-converter, free torque-converter, Torque Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/torque-converter",
 	},

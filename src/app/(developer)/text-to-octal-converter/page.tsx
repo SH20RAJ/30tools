@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Text to Octal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert text into octal numeric values instantly. Our free online converter provides base-8 representations for every character in your text for technical analysis. 100% free, fast, and no signup required.",
-	keywords: "text to octal converter, free online tool, no signup",
+	keywords: "text to octal converter, free online tool, no signup, text-to-octal-converter, free text-to-octal-converter, Text To Octal Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-octal-converter",
 	},

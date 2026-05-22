@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Photo Enhancer Online – Fast & No Signup | 30tools",
 	description: "Enhance photo quality with AI-powered image enhancement 100% free, fast, and no signup required.",
-	keywords: "photo enhancer, free online tool, no signup",
+	keywords: "photo enhancer, free online tool, no signup, photo-enhancer, free photo-enhancer, Photo Enhancer online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/photo-enhancer",
 	},

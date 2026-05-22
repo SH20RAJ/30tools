@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Text to ASCII Converter Online – Fast & No Signup | 30tools",
 	description: "Convert plain text into ASCII character codes instantly. Our free online tool provides decimal ASCII values for every character in your input string. Fast and secure. 100% free, fast, and no signup required.",
-	keywords: "text to ascii converter, free online tool, no signup",
+	keywords: "text to ascii converter, free online tool, no signup, text-to-ascii-converter, free text-to-ascii-converter, Text To Ascii Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-ascii-converter",
 	},

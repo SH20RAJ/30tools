@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Hosting Checker Online – Fast & No Signup | 30tools",
 	description: "Free hosting checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "hosting checker, free online tool, no signup",
+	keywords: "hosting checker, free online tool, no signup, hosting-checker, free hosting-checker, Hosting Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/hosting-checker",
 	},

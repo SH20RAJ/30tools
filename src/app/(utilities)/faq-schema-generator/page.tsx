@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free FAQ Schema Generator Online – Fast & No Signup | 30tools",
 	description: "Free faq schema generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "faq schema generator, free online tool, no signup",
+	keywords: "faq schema generator, free online tool, no signup, faq-schema-generator, free faq-schema-generator, Faq Schema Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/faq-schema-generator",
 	},

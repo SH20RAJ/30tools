@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free HTML Beautifier Online – Fast & No Signup | 30tools",
 	description: "Format and prettify your HTML code instantly. Our free online HTML Beautifier fixes indentation, improves readability, and cleans up messy markup for better web development. 100% free, fast, and no signup required.",
-	keywords: "html beautifier, free online tool, no signup",
+	keywords: "html beautifier, free online tool, no signup, html-beautifier, free html-beautifier, Html Beautifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/html-beautifier",
 	},

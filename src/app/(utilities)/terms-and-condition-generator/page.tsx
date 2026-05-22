@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Terms And Condition Generator Online – Fast & No Signup | 30tools",
 	description: "Free terms and condition generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "terms and condition generator, free online tool, no signup",
+	keywords: "terms and condition generator, free online tool, no signup, terms-and-condition-generator, free terms-and-condition-generator, Terms And Condition Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/terms-and-condition-generator",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free HTTP Status Code Checker Online – Fast & No Signup | 30tools",
 	description: "Free http status code checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "http status code checker, free online tool, no signup",
+	keywords: "http status code checker, free online tool, no signup, http-status-code-checker, free http-status-code-checker, Http Status Code Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/http-status-code-checker",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Markdown to Text Online – Fast & No Signup | 30tools",
 	description: "Convert Markdown formatted text to clean plain text instantly. Perfect for cleaning up content from ChatGPT, Claude, and GitHub. 100% free, fast, and no signup required.",
-	keywords: "markdown to text, free online tool, no signup",
+	keywords: "markdown to text, free online tool, no signup, markdown-to-text, free markdown-to-text, Markdown To Text online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/markdown-to-text",
 	},

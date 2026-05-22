@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free IndexNow Submitter Online – Fast & No Signup | 30tools",
 	description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol. 100% free, fast, and no signup required.",
-	keywords: "indexnow submitter, free online tool, no signup",
+	keywords: "indexnow submitter, free online tool, no signup, indexnow, free indexnow, Indexnow online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/indexnow",
 	},

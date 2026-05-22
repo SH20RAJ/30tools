@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JavaScript DeObfuscator Online – Fast & No Signup | 30tools",
 	description: "Make obfuscated JavaScript code readable again instantly. Our free online DeObfuscator reverses common obfuscation techniques to help with code analysis and debugging. 100% free, fast, and no signup required.",
-	keywords: "javascript deobfuscator, free online tool, no signup",
+	keywords: "javascript deobfuscator, free online tool, no signup, javascript-deobfuscator, free javascript-deobfuscator, Javascript Deobfuscator online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/javascript-deobfuscator",
 	},

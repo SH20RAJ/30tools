@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Random UUID Generator Online – Fast & No Signup | 30tools",
 	description: "Free random uuid generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "random uuid generator, free online tool, no signup",
+	keywords: "random uuid generator, free online tool, no signup, random-uuid-generator, free random-uuid-generator, Random Uuid Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/random-uuid-generator",
 	},

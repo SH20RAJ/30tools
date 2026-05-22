@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free HTML Minifier Online – Fast & No Signup | 30tools",
 	description: "Compress and minify your HTML code to improve website speed. Our free online tool removes unnecessary whitespace, comments, and line breaks for faster page load times. 100% free, fast, and no signup required.",
-	keywords: "html minifier, free online tool, no signup",
+	keywords: "html minifier, free online tool, no signup, html-minifier, free html-minifier, Html Minifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/html-minifier",
 	},

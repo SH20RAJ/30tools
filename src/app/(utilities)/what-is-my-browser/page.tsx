@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free What Is My Browser Online – Fast & No Signup | 30tools",
 	description: "Free what is my browser tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "what is my browser, free online tool, no signup",
+	keywords: "what is my browser, free online tool, no signup, what-is-my-browser, free what-is-my-browser, What Is My Browser online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-browser",
 	},

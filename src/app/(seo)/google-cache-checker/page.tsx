@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Google Cache Checker Online – Fast & No Signup | 30tools",
 	description: "Free google cache checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "google cache checker, free online tool, no signup",
+	keywords: "google cache checker, free online tool, no signup, google-cache-checker, free google-cache-checker, Google Cache Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/google-cache-checker",
 	},

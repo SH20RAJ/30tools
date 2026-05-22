@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Streamable Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Streamable videos in high definition instantly. Our free online tool helps you save viral clips and sports highlights for offline viewing without any signup. 100% free, fast, and no signup required.",
-	keywords: "streamable video downloader, free online tool, no signup",
+	keywords: "streamable video downloader, free online tool, no signup, streamable-video-downloader, free streamable-video-downloader, Streamable Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/streamable-video-downloader",
 	},

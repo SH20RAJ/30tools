@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Volume Converter Online – Fast & No Signup | 30tools",
 	description: "Free volume converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "volume converter, free online tool, no signup",
+	keywords: "volume converter, free online tool, no signup, volume-converter, free volume-converter, Volume Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/volume-converter",
 	},

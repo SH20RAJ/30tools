@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free HEX to Octal Converter Online – Fast & No Signup | 30tools",
 	description: "Convert hexadecimal values to octal format instantly. Our free online converter helps with computer science base transformations and data processing in your browser. 100% free, fast, and no signup required.",
-	keywords: "hex to octal converter, free online tool, no signup",
+	keywords: "hex to octal converter, free online tool, no signup, hex-to-octal-converter, free hex-to-octal-converter, Hex To Octal Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/hex-to-octal-converter",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Reactive Energy Converter Online – Fast & No Signup | 30tools",
 	description: "Free reactive energy converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "reactive energy converter, free online tool, no signup",
+	keywords: "reactive energy converter, free online tool, no signup, reactive-energy-converter, free reactive-energy-converter, Reactive Energy Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/reactive-energy-converter",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free PNG to GIF Converter Online – Fast & No Signup | 30tools",
 	description: "Convert PNG photos to GIF format instantly. Perfect for web graphics and simple animations. Free, secure, and works entirely in your browser without file uploads. 100% free, fast, and no signup required.",
-	keywords: "png to gif converter, free online tool, no signup",
+	keywords: "png to gif converter, free online tool, no signup, png-to-gif-converter, free png-to-gif-converter, Png To Gif Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/png-to-gif-converter",
 	},

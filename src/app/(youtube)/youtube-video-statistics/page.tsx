@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Video Statistics Online – Fast & No Signup | 30tools",
 	description: "Get detailed metrics and statistics for any YouTube video instantly. Analyze view counts, likes, and engagement rates with our free online video audit tool. 100% free, fast, and no signup required.",
-	keywords: "youtube video statistics, free online tool, no signup",
+	keywords: "youtube video statistics, free online tool, no signup, youtube-video-statistics, free youtube-video-statistics, Youtube Video Statistics online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-video-statistics",
 	},

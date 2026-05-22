@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JSON to TSV Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JSON data to Tab-Separated Values (TSV) format instantly. Our free online converter helps you prepare data for Excel and other spreadsheet applications. 100% free, fast, and no signup required.",
-	keywords: "json to tsv converter, free online tool, no signup",
+	keywords: "json to tsv converter, free online tool, no signup, json-to-tsv-converter, free json-to-tsv-converter, Json To Tsv Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-to-tsv-converter",
 	},

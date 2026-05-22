@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Save Instagram Clips Online – Fast & No Signup | 30tools",
 	description: "Save Instagram clips, videos, and photos to your device instantly. Our free online downloader supports all public IG content and provides high-quality MP4/JPG files. 100% free, fast, and no signup required.",
-	keywords: "save instagram clips, free online tool, no signup",
+	keywords: "save instagram clips, free online tool, no signup, save-instagram-clips, free save-instagram-clips, Save Instagram Clips online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-instagram-clips",
 	},
