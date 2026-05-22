@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Twitch Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Twitch videos and clips easily. 100% free, fast, and no signup required.",
-	keywords: "twitch video downloader, free online tool, no signup",
+	keywords: "twitch video downloader, download twitch clips, twitch vod downloader, twitch to mp4, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/twitch-video-downloader",
 	},

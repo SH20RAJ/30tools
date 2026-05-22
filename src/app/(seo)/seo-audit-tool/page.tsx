@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Complete SEO Audit Tool Online – Fast & No Signup | 30tools",
 	description: "Comprehensive SEO audit tool that analyzes technical SEO, on-page optimization, content quality, and provides actionable recommendations. 100% free, fast, and no signup required.",
-	keywords: "complete seo audit tool, free online tool, no signup",
+	keywords: "seo audit tool, website audit, seo checker, on-page seo analysis, site audit, free seo tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/seo-audit-tool",
 	},

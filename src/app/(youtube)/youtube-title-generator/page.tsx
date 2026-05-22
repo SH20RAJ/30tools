@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Title Generator Online – Fast & No Signup | 30tools",
 	description: "Generate catchy and SEO-friendly titles for your YouTube videos instantly. Our free online tool suggests high-CTR titles based on your topic and keywords to help you get more views. 100% free, fast, and no signup required.",
-	keywords: "youtube title generator, free online tool, no signup",
+	keywords: "youtube title generator, video title ideas, youtube seo titles, clickable titles, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-generator",
 	},

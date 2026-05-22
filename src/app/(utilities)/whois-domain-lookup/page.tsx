@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Whois Domain Lookup Online – Fast & No Signup | 30tools",
 	description: "Free whois domain lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "whois domain lookup, free online tool, no signup",
+	keywords: "whois lookup, domain lookup, check domain, domain availability, whois search, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/whois-domain-lookup",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free PNG to JPG Converter Online – Fast & No Signup | 30tools",
 	description: "Convert PNG images to JPG format for smaller file sizes and better web compatibility. Our free online tool maintains high quality and works instantly in your browser. 100% free, fast, and no signup required.",
-	keywords: "png to jpg converter, free online tool, no signup",
+	keywords: "png to jpg converter, convert png to jpg, image format converter, online image converter, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/png-to-jpg-converter",
 	},

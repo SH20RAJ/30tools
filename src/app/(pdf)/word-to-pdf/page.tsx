@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 export const metadata = {
 	title: "Free Word to PDF Online – Fast & No Signup | 30tools",
 	description: "Convert Word documents (.docx) to PDF format 100% free. Fast, high-quality, and privacy-focused conversion with no signup required.",
-	keywords: "word to pdf, free word to pdf, online word to pdf, no signup, 30tools, docx to pdf, convert docx to pdf",
+	keywords: "word to pdf, convert word to pdf, docx to pdf, free word converter, online pdf tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/word-to-pdf",
 	},

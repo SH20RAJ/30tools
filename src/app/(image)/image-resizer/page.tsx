@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Image Resizer Online – Fast & No Signup | 30tools",
 	description: "Resize images with custom dimensions and aspect ratios 100% free, fast, and no signup required.",
-	keywords: "image resizer, free online tool, no signup",
+	keywords: "image resizer, resize image online, photo resizer, image dimension converter, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-resizer",
 	},

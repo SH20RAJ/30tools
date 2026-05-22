@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Age Calculator Online – Fast & No Signup | 30tools",
 	description: "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "age calculator, free online tool, no signup",
+	keywords: "age calculator, calculate age, birthdate calculator, age from date, how old am i, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/age-calculator",
 	},

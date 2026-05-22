@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JSON Validator Online – Fast & No Signup | 30tools",
 	description: "Validate your JSON data for syntax errors and structural integrity instantly. Our free online tool helps you catch bugs and ensure your JSON is RFC-compliant. 100% free, fast, and no signup required.",
-	keywords: "json validator, free online tool, no signup",
+	keywords: "json validator, validate json, json syntax checker, json lint, online json validator, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-validator",
 	},

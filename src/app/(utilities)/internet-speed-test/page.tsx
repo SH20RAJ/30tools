@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Internet Speed Test Online – Fast & No Signup | 30tools",
 	description: "Check your internet connection speed online free. Measure your download speed, upload speed, and ping instantly. 100% free, fast, and no signup required.",
-	keywords: "internet speed test, free online tool, no signup",
+	keywords: "internet speed test, check internet speed, broadband speed test, wifi speed test, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/internet-speed-test",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free PDF Unlocker Online – Fast & No Signup | 30tools",
 	description: "Remove password protection from PDF files 100% free, fast, and no signup required.",
-	keywords: "pdf unlocker, free online tool, no signup",
+	keywords: "pdf unlocker, unlock pdf, remove pdf password, free pdf tool, online pdf unlock, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pdf-unlocker",
 	},

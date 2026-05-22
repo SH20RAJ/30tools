@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Currency Converter Online – Fast & No Signup | 30tools",
 	description: "Convert currencies with real-time exchange rates instantly. Our free online tool supports all major global currencies for travel, business, and financial planning. 100% free, fast, and no signup required.",
-	keywords: "currency converter, free online tool, no signup",
+	keywords: "currency converter, exchange rate, convert currency, money converter, forex converter, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/currency-converter",
 	},

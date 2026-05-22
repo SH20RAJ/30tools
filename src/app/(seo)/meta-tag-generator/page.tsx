@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Meta Tag Generator Online – Fast & No Signup | 30tools",
 	description: "Free meta tag generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "meta tag generator, free online tool, no signup",
+	keywords: "meta tag generator, seo meta tags, html meta tags, meta description, title tag generator, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/meta-tag-generator",
 	},

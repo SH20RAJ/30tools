@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Dailymotion Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Free online Dailymotion downloader to save videos as MP4 in HD. Fast, secure, no signup required.",
-	keywords: "dailymotion video downloader, free online tool, no signup",
+	keywords: "dailymotion downloader, download dailymotion videos, dailymotion to mp4, free video tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/dailymotion-video-downloader",
 	},

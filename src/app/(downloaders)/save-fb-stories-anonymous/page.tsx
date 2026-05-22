@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Save Fb Stories Anonymous Online – Fast & No Signup | 30tools",
 	description: "Download and view Facebook stories anonymously. Our free online tool helps you save story content without notifying the creator. 100% private and secure. 100% free, fast, and no signup required.",
-	keywords: "save fb stories anonymous, free online tool, no signup",
+	keywords: "save fb stories anonymous, anonymous facebook story viewer, fb story downloader, anonymous story viewer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-fb-stories-anonymous",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free PDF to Image Online – Fast & No Signup | 30tools",
 	description: "Convert PDF pages to high-quality JPG, PNG images 100% free, fast, and no signup required.",
-	keywords: "pdf to image, free online tool, no signup",
+	keywords: "pdf to image, convert pdf to jpg, pdf to png, pdf page to image, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pdf-to-image",
 	},

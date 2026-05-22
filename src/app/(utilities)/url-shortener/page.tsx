@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free URL Shortener Online – Fast & No Signup | 30tools",
 	description: "Shorten long URLs for easier sharing 100% free, fast, and no signup required.",
-	keywords: "url shortener, free online tool, no signup",
+	keywords: "url shortener, shorten url, link shortener, short link, free url shortener, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/url-shortener",
 	},

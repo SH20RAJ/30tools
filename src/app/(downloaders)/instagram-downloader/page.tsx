@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Instagram Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Instagram videos, reels, stories, and photos in high quality 100% free, fast, and no signup required.",
-	keywords: "instagram downloader, free online tool, no signup",
+	keywords: "instagram downloader, download instagram videos, instagram reels downloader, instagram photo downloader, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/instagram-downloader",
 	},

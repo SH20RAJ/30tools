@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free PDF to Word Online – Fast & No Signup | 30tools",
 	description: "Convert PDF files to editable Word documents 100% free, fast, and no signup required.",
-	keywords: "pdf to word, free online tool, no signup",
+	keywords: "pdf to word, convert pdf to word, pdf to docx, free pdf converter, online pdf tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pdf-to-word",
 	},

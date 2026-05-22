@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Channel Statistics Online – Fast & No Signup | 30tools",
 	description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online analytics tool. 100% free, fast, and no signup required.",
-	keywords: "youtube channel statistics, free online tool, no signup",
+	keywords: "youtube channel statistics, youtube analytics, youtube stats checker, channel analysis, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-statistics",
 	},

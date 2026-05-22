@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Vimeo Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device. 100% free, fast, and no signup required.",
-	keywords: "vimeo video downloader, free online tool, no signup",
+	keywords: "vimeo downloader, download vimeo videos, vimeo video downloader, vimeo to mp4, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/vimeo-video-downloader",
 	},

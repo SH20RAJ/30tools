@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JPG to WebP Converter Online – Fast & No Signup | 30tools",
 	description: "Convert JPG to WebP for superior web performance. Reduce file sizes significantly without losing quality. Our free online converter helps you speed up your website instantly. 100% free, fast, and no signup required.",
-	keywords: "jpg to webp converter, free online tool, no signup",
+	keywords: "jpg to webp converter, convert jpg to webp, image optimizer, webp converter, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/jpg-to-webp-converter",
 	},

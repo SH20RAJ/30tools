@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Facebook Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Facebook videos, reels, and stories in HD quality without software installation 100% free, fast, and no signup required.",
-	keywords: "facebook video downloader, free online tool, no signup",
+	keywords: "facebook video downloader, download fb videos, facebook reels downloader, free video downloader, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/facebook-video-downloader",
 	},

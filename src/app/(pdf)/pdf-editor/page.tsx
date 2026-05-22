@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free PDF Editor Online – Fast & No Signup | 30tools",
 	description: "Edit PDF documents online for free. Rotate, delete, and rearrange pages instantly. Professional PDF tools with no signup and 100% privacy.",
-	keywords: "pdf editor, free pdf editor, online pdf editor, no signup, 30tools, rotate pdf, delete pdf pages",
+	keywords: "pdf editor, edit pdf online, free pdf editor, pdf text editor, online pdf tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/pdf-editor",
 	},

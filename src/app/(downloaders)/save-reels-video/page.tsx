@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Save Reels Video Online – Fast & No Signup | 30tools",
 	description: "Download viral Reels from Instagram and other platforms instantly. Our free online tool provides high-speed downloads for all your favorite short-form video content. 100% free, fast, and no signup required.",
-	keywords: "save reels video, free online tool, no signup",
+	keywords: "save reels video, save instagram reels, instagram reels saver, reel video downloader, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-reels-video",
 	},

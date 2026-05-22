@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free PNG to WebP Converter Online – Fast & No Signup | 30tools",
 	description: "Convert PNG to WebP to optimize your website speed. Significantly reduce file sizes while maintaining image transparency and quality. Free, fast, and secure online tool. 100% free, fast, and no signup required.",
-	keywords: "png to webp converter, free online tool, no signup",
+	keywords: "png to webp converter, convert png to webp, image optimizer, webp converter, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/png-to-webp-converter",
 	},

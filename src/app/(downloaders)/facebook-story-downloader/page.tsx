@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Facebook Story Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Facebook stories in high resolution instantly. Our free online tool helps you save story content for offline viewing without any signup or account login. 100% free, fast, and no signup required.",
-	keywords: "facebook story downloader, free online tool, no signup",
+	keywords: "facebook story downloader, save facebook stories, fb story saver, facebook story saver, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/facebook-story-downloader",
 	},

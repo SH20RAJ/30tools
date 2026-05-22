@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Tag Extractor Online – Fast & No Signup | 30tools",
 	description: "Extract hidden tags from any YouTube video instantly. Our free online tool helps you discover the keywords used by top-performing creators to boost your own video SEO. 100% free, fast, and no signup required.",
-	keywords: "youtube tag extractor, free online tool, no signup",
+	keywords: "youtube tag extractor, youtube tags, youtube keywords, youtube seo tags, video tags generator, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-tag-extractor",
 	},

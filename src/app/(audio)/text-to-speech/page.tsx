@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Text to Speech Online – Fast & No Signup | 30tools",
 	description: "Convert text to natural sounding speech audio 100% free, fast, and no signup required.",
-	keywords: "text to speech, free online tool, no signup",
+	keywords: "text to speech, tts, text to audio, voice generator, ai voice, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-to-speech",
 	},

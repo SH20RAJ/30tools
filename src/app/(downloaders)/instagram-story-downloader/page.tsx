@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Instagram Story Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
-	keywords: "instagram story downloader, free online tool, no signup",
+	keywords: "instagram story downloader, download instagram stories, story saver, ig story downloader, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/instagram-story-downloader",
 	},

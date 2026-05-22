@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Fb Video Saver Online – Fast & No Signup | 30tools",
 	description: "Save Facebook videos and stories directly to your device. Our free online saver allows you to download public content in high definition without needing an account. 100% free, fast, and no signup required.",
-	keywords: "fb video saver, free online tool, no signup",
+	keywords: "fb video saver, facebook video saver, save facebook videos, fb video downloader, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/fb-video-saver",
 	},

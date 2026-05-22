@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Password Generator Online – Fast & No Signup | 30tools",
 	description: "Create strong, secure passwords instantly with customizable settings. 100% free, fast, and no signup required.",
-	keywords: "password generator, free online tool, no signup",
+	keywords: "password generator, strong password maker, secure password generator, random password, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/password-generator",
 	},

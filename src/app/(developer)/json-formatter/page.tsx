@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JSON Formatter Online – Fast & No Signup | 30tools",
 	description: "Format and beautify your JSON data instantly for better readability. Our free online tool validates your JSON structure and provides a clean, indented view of your code. 100% free, fast, and no signup required.",
-	keywords: "json formatter, free online tool, no signup",
+	keywords: "json formatter, beautify json, json prettifier, format json online, json validator, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-formatter",
 	},

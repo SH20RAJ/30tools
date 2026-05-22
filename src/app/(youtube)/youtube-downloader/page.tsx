@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Video/Audio Downloader Online – Fast & No Signup | 30tools",
 	description: "Download YouTube videos and audio in multiple formats and qualities. Our free online downloader is fast, secure, and works on all devices without signup. High-quality MP4 and MP3 supported. 100% free, fast, and no signup required.",
-	keywords: "youtube downloader, youtube video downloader, youtube to mp4, youtube to mp3, free youtube downloader, online video downloader",
+	keywords: "youtube downloader, youtube video downloader, youtube to mp4, youtube to mp3, download youtube videos, free youtube downloader, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-downloader",
 	},

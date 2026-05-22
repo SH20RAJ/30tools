@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free JavaScript Minifier Online – Fast & No Signup | 30tools",
 	description: "Compress and minify your JavaScript files to reduce payload size and speed up your website. Our free online tool removes unnecessary code while preserving functionality. 100% free, fast, and no signup required.",
-	keywords: "javascript minifier, free online tool, no signup",
+	keywords: "javascript minifier, minify js, js compressor, javascript minification, online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/javascript-minifier",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Thumbnail Downloader Online – Fast & No Signup | 30tools",
 	description: "Download YouTube video thumbnails in HD and maxresdefault quality for free. Save high-resolution thumbnails for design, analysis, and content creation. No signup required, instant downloads.",
-	keywords: "youtube thumbnail downloader, free online tool, no signup",
+	keywords: "youtube thumbnail downloader, download youtube thumbnails, video thumbnail grabber, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-thumbnail-downloader",
 	},

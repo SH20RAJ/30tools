@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Advanced Sitemap Generator Online – Fast & No Signup | 30tools",
 	description: "Generate XML sitemaps for any website URL. Crawl websites and create comprehensive sitemaps with proper formatting and metadata. 100% free, fast, and no signup required.",
-	keywords: "advanced sitemap generator, free online tool, no signup",
+	keywords: "sitemap generator, xml sitemap, create sitemap, seo sitemap, website crawler, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/sitemap-generator",
 	},

@@ -8,7 +8,7 @@ export const ToolTrust = () => {
 			className="grid grid-cols-1 sm:grid-cols-3 gap-8 p-12 bg-gradient-to-br from-primary/5 via-transparent to-primary/5 border border-primary/10"
 		>
 			<div className="text-center space-y-4 group">
-				<div className="w-16 h-16 bg-primary/10 items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
+				<div className="w-16 h-16 rounded-2xl bg-primary/10 inline-flex items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
 					<Zap className="w-8 h-8" />
 				</div>
 				<h3 className="font-bold text-xl tracking-tight">
@@ -21,7 +21,7 @@ export const ToolTrust = () => {
 				</p>
 			</div>
 			<div className="text-center space-y-4 group">
-				<div className="w-16 h-16 bg-primary/10 items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
+				<div className="w-16 h-16 rounded-2xl bg-primary/10 inline-flex items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
 					<Lock className="w-8 h-8" />
 				</div>
 				<h3 className="font-bold text-xl tracking-tight">
@@ -34,7 +34,7 @@ export const ToolTrust = () => {
 				</p>
 			</div>
 			<div className="text-center space-y-4 group">
-				<div className="w-16 h-16 bg-primary/10 items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
+				<div className="w-16 h-16 rounded-2xl bg-primary/10 inline-flex items-center justify-center mx-auto text-primary group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500 shadow-sm">
 					<Globe className="w-8 h-8" />
 				</div>
 				<h3 className="font-bold text-xl tracking-tight">
@@ -68,7 +68,7 @@ export const ToolFeatures = ({ features }) => {
 						key={idx}
 						className="flex items-start gap-5 p-6 bg-card border border-border/60 space-y-1 hover:shadow-xl hover:border-primary/30 transition-all duration-300 group"
 					>
-						<div className="mt-1 w-8 h-8 items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-colors">
+						<div className="mt-1 w-8 h-8 rounded-lg inline-flex items-center justify-center text-green-600 group-hover:bg-green-500 group-hover:text-white transition-colors">
 							<Check className="w-5 h-4" />
 						</div>
 						<span className="text-lg font-semibold tracking-tight">
@@ -102,7 +102,7 @@ export const ToolSteps = ({ steps, toolName }) => {
 						key={idx}
 						className="relative p-8 bg-muted/30 shadow-lg transition-all duration-300"
 					>
-						<div className="absolute -top-5 -left-5 w-12 h-12 bg-primary text-primary-foreground items-center justify-center font-black text-xl shadow-xl shadow-primary/20 transform -rotate-12 group-hover:rotate-0 transition-transform">
+						<div className="absolute -top-5 -left-5 w-12 h-12 rounded-xl bg-primary text-primary-foreground inline-flex items-center justify-center font-black text-xl shadow-xl shadow-primary/20 transform -rotate-12 group-hover:rotate-0 transition-transform">
 							{idx + 1}
 						</div>
 						<h3 className="text-2xl font-bold mb-4 mt-2 tracking-tight">
@@ -124,7 +124,7 @@ export const ToolFAQ = ({ faqs, toolName }) => {
 			aria-label={`Frequently asked questions about ${toolName}`}
 		>
 			<h2 className="text-3xl md:text-4xl font-extrabold tracking-tight mb-4 flex items-center gap-4">
-				<div className="w-10 h-10 items-center justify-center">
+				<div className="w-10 h-10 rounded-lg bg-primary/10 inline-flex items-center justify-center">
 					<Check className="w-6 h-6 text-primary" />
 				</div>
 				{toolName} — Frequently Asked Questions

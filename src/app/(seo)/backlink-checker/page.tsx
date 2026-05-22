@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Backlink Checker Online – Fast & No Signup | 30tools",
 	description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
-	keywords: "backlink checker, free online tool, no signup",
+	keywords: "backlink checker, check backlinks, domain backlinks, link analysis, seo backlinks, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/backlink-checker",
 	},

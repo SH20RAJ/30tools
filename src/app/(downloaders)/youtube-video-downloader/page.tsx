@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free YouTube Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download YouTube videos quickly in multiple formats and resolutions—free, fast, secure, no signup, and fully browser-based.",
-	keywords: "youtube video downloader, free online tool, no signup",
+	keywords: "youtube video downloader, download youtube videos, youtube hd downloader, free video downloader, online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-video-downloader",
 	},

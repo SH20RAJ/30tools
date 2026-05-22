@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Linkedin Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
-	keywords: "linkedin video downloader, free online tool, no signup",
+	keywords: "linkedin video downloader, download linkedin videos, linkedin video saver, linkedin to mp4, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/linkedin-video-downloader",
 	},

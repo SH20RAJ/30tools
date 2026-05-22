@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free QR Code Generator Online – Fast & No Signup | 30tools",
 	description: "Free qr code generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
-	keywords: "qr code generator, free online tool, no signup",
+	keywords: "qr code generator, create qr code, custom qr code, qr code maker, free qr generator, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/qr-code-generator",
 	},

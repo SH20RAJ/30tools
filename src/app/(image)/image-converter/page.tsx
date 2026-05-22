@@ -7,7 +7,7 @@ import { notFound } from "next/navigation";
 export const metadata = {
 	title: "Free Image Converter Online – Fast & No Signup | 30tools",
 	description: "Convert images between any format (PNG, JPG, WEBP, BMP, GIF, SVG) online for free. Fast, high-quality conversion with batch support and 100% privacy.",
-	keywords: "image converter, free image converter, online image converter, no signup, 30tools, convert png to jpg, convert jpg to webp",
+	keywords: "image converter, convert image format online, jpg png webp converter, free online tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-converter",
 	},

@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Twitter/X Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Twitter and X platform videos and GIFs in high quality for free 100% free, fast, and no signup required.",
-	keywords: "twitter/x video downloader, free online tool, no signup",
+	keywords: "twitter video downloader, download twitter videos, x video downloader, twitter media downloader, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/twitter-video-downloader",
 	},

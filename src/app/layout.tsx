@@ -371,23 +371,14 @@ export default function RootLayout({
 				/>
 			</head>
 			<body className={`ds-page font-sans antialiased ${inter.className}`}>
-				{stackClientApp ? (
-					<StackProvider app={stackClientApp as any}>
-						<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-							<AppleNavbar />
-							{children}
-							<AppleFooter categories={categories} />
-							<Toaster />
-						</ThemeProvider>
-					</StackProvider>
-				) : (
+				<StackAuthProvider>
 					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<AppleNavbar />
 						{children}
 						<AppleFooter categories={categories} />
 						<Toaster />
 					</ThemeProvider>
-				)}
+				</StackAuthProvider>
 
 				<Script
 					src="https://assets.onedollarstats.com/stonks.js"

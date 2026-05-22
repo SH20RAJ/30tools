@@ -6,7 +6,7 @@ import { getToolByRoute } from "@/lib/tools";
 export const metadata = {
 	title: "Free Reddit Video Downloader Online – Fast & No Signup | 30tools",
 	description: "Download Reddit Videos & GIFs in HD Free. 100% free, fast, and no signup required.",
-	keywords: "reddit video downloader, free online tool, no signup",
+	keywords: "reddit video downloader, download reddit videos, reddit video saver, reddit to mp4, free tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/reddit-video-downloader",
 	},
