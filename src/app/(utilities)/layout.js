@@ -1,3 +1,5 @@
+import { generateCollectionPageSchema } from "@/lib/seo";
+
 export const metadata = {
 	title: "Free Utility Tools Online - No Signup | 30tools",
 	description:
@@ -8,7 +10,7 @@ export const metadata = {
 		title: "Free Utility Tools Online - No Signup | 30tools",
 		description:
 			"85+ free utility tools — speed test, password generator, QR codes, converters, and calculators. No signup required.",
-		url: "https://30tools.com/utility-tools",
+		url: "https://30tools.com/other-tools",
 		siteName: "30tools",
 		images: [
 			{
@@ -27,41 +29,13 @@ export const metadata = {
 			"85+ free utility tools — speed test, password generator, QR codes, converters, and calculators. No signup required.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "Free Utility Tools Collection",
-		description:
-			"A collection of essential online utilities to boost your productivity.",
-		url: "https://30tools.com/utility-tools",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/internet-speed-test",
-					name: "Internet Speed Test",
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					url: "https://30tools.com/url-shortener",
-					name: "URL Shortener",
-				},
-				{
-					"@type": "ListItem",
-					position: 3,
-					url: "https://30tools.com/indexnow",
-					name: "IndexNow Integration",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('utilities', {
+	name: 'Free Utility Tools Collection',
+	description: 'A collection of essential online utilities to boost your productivity.'
+});
 
 export default function UtilityToolsLayout({ children }) {
 	return (
@@ -69,7 +43,7 @@ export default function UtilityToolsLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>

@@ -1,3 +1,5 @@
+import { generateCollectionPageSchema } from "@/lib/seo";
+
 export const metadata = {
 	title: "Free Audio Tools Online - No Signup | 30tools",
 	description:
@@ -27,28 +29,13 @@ export const metadata = {
 			"Free AI text-to-speech, audio conversion, and compression tools. Generate voiceovers and process audio files instantly in your browser.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "Online Audio Tools",
-		description: "Collection of free audio utilities including Text to Speech.",
-		url: "https://30tools.com/audio-tools",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/text-to-speech",
-					name: "Text to Speech",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('audio', {
+	name: 'Online Audio Tools',
+	description: 'Collection of free audio utilities including Text to Speech.'
+});
 
 export default function AudioToolsLayout({ children }) {
 	return (
@@ -56,7 +43,7 @@ export default function AudioToolsLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>

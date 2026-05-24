@@ -1,4 +1,5 @@
 import { SITE_CONFIG } from "@/constants/config";
+import { generateCollectionPageSchema } from "@/lib/seo";
 
 export const metadata = {
 	title: "Free Video Downloaders Online - No Signup | 30tools",
@@ -29,47 +30,13 @@ export const metadata = {
 			`Download videos from TikTok, Instagram, Facebook, Twitter, Reddit, and ${SITE_CONFIG.popularToolCountString} platforms in HD. No watermark, no signup, 100% free.`,
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "Social Media Video Downloaders",
-		description:
-			"Collection of free tools to download videos from TikTok, Instagram, Facebook, Twitter, and other platforms.",
-		url: "https://30tools.com/all-downloaders",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/tiktok-downloader",
-					name: "TikTok Downloader",
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					url: "https://30tools.com/instagram-downloader",
-					name: "Instagram Downloader",
-				},
-				{
-					"@type": "ListItem",
-					position: 3,
-					url: "https://30tools.com/facebook-video-downloader",
-					name: "Facebook Downloader",
-				},
-				{
-					"@type": "ListItem",
-					position: 4,
-					url: "https://30tools.com/twitter-video-downloader",
-					name: "Twitter Downloader",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('downloaders', {
+	name: 'Social Media Video Downloaders',
+	description: 'Collection of free tools to download videos from TikTok, Instagram, Facebook, Twitter, and other platforms.'
+});
 
 export default function DownloadersLayout({ children }) {
 	return (
@@ -77,7 +44,7 @@ export default function DownloadersLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { getAllTools, getAllCategories } from "./tools";
 
 /**
  * Centralized SEO utility for 30tools
@@ -157,5 +158,80 @@ export function generateToolSchema({
 			priceCurrency: "USD",
 		},
 		// aggregateRating removed - only include if there are real, verified page-specific reviews
+	};
+}
+
+/**
+ * Category-hub URL map: route-group key → canonical hub URL
+ */
+const CATEGORY_HUB_URLS: Record<string, string> = {
+	image: `${BASE_URL}/image-tools`,
+	pdf: `${BASE_URL}/pdf-tools`,
+	video: `${BASE_URL}/video-tools`,
+	audio: `${BASE_URL}/audio-tools`,
+	text: `${BASE_URL}/text-tools`,
+	seo: `${BASE_URL}/seo-tools`,
+	developer: `${BASE_URL}/developer-tools`,
+	utilities: `${BASE_URL}/other-tools`,
+	generators: `${BASE_URL}/generators`,
+	youtube: `${BASE_URL}/youtube-tools`,
+	downloaders: `${BASE_URL}/all-downloaders`,
+	calculators: `${BASE_URL}/calculators`,
+};
+
+/**
+ * Generate a dynamic CollectionPage JSON-LD schema for a category.
+ * Includes all tools in the category as ItemList entries.
+ */
+export function generateCollectionPageSchema(
+	groupKey: string,
+	overrides?: { name?: string; description?: string },
+) {
+	const tools = getAllTools();
+	const categories = getAllCategories();
+	const category = categories.find(
+		(c) =>
+			c.slug === groupKey ||
+			c.slug === `${groupKey}-tools` ||
+			// Handle irregular mappings like 'utilities' → 'utility-tools'
+			c.slug === groupKey.replace(/ies$/, "y") + "-tools",
+	);
+
+	const categoryName =
+		overrides?.name ||
+		category?.name ||
+		groupKey.charAt(0).toUpperCase() + groupKey.slice(1).replace(/-/g, " ") +
+			" Tools";
+
+	const categoryDescription =
+		overrides?.description ||
+		category?.description ||
+		`Free online ${categoryName.toLowerCase()} for everyday tasks.`;
+
+	const hubUrl = CATEGORY_HUB_URLS[groupKey] || `${BASE_URL}/${groupKey}`;
+
+	const categoryTools = tools.filter(
+		(t) =>
+			t.category === groupKey ||
+			t.category === `${groupKey}-tools` ||
+			t.category === category?.slug,
+	);
+
+	return {
+		"@context": "https://schema.org",
+		"@type": "CollectionPage",
+		name: categoryName,
+		description: categoryDescription,
+		url: hubUrl,
+		mainEntity: {
+			"@type": "ItemList",
+			numberOfItems: categoryTools.length,
+			itemListElement: categoryTools.slice(0, 50).map((tool, index) => ({
+				"@type": "ListItem",
+				position: index + 1,
+				url: `${BASE_URL}${tool.route}`,
+				name: tool.name,
+			})),
+		},
 	};
 }

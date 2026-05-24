@@ -1,3 +1,5 @@
+import { generateCollectionPageSchema } from "@/lib/seo";
+
 export const metadata = {
 	title: "Free YouTube Tools Online - No Signup | 30tools",
 	description:
@@ -27,47 +29,13 @@ export const metadata = {
 			"Download YouTube videos & Shorts, extract thumbnails, generate transcripts and scripts — all free with no signup.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "YouTube Creator Tools",
-		description:
-			"Suite of free tools for YouTube content creation and downloading.",
-		url: "https://30tools.com/youtube-tools",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/youtube-downloader",
-					name: "YouTube Downloader",
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					url: "https://30tools.com/youtube-shorts-downloader",
-					name: "Shorts Downloader",
-				},
-				{
-					"@type": "ListItem",
-					position: 3,
-					url: "https://30tools.com/youtube-script-generator",
-					name: "Script Generator",
-				},
-				{
-					"@type": "ListItem",
-					position: 4,
-					url: "https://30tools.com/youtube-video-summarizer",
-					name: "Video Summarizer",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('youtube', {
+	name: 'YouTube Creator Tools',
+	description: 'Suite of free tools for YouTube content creation and downloading.'
+});
 
 export default function YouTubeLayout({ children }) {
 	return (
@@ -75,7 +43,7 @@ export default function YouTubeLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>

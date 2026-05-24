@@ -27,6 +27,7 @@ export const metadata = {
 			"Free online calculators for finance, health, math, and daily life. No signup, instant results.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
 const jsonLdSchemas = {

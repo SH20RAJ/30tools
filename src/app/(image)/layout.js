@@ -1,3 +1,5 @@
+import { generateCollectionPageSchema } from "@/lib/seo";
+
 export const metadata = {
 	title: "Free Image Tools Online - No Signup | 30tools",
 	description:
@@ -27,59 +29,13 @@ export const metadata = {
 			"Edit, convert, and enhance your photos with our free AI-powered tools.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "Online Image Tools",
-		description:
-			"Comprehensive suite of free image editing and generation tools.",
-		url: "https://30tools.com/image-tools",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/background-remover",
-					name: "Background Remover",
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					url: "https://30tools.com/image-compressor",
-					name: "Image Compressor",
-				},
-				{
-					"@type": "ListItem",
-					position: 3,
-					url: "https://30tools.com/image-converter",
-					name: "Image Converter",
-				},
-				{
-					"@type": "ListItem",
-					position: 4,
-					url: "https://30tools.com/image-resizer",
-					name: "Image Resizer",
-				},
-				{
-					"@type": "ListItem",
-					position: 5,
-					url: "https://30tools.com/photo-enhancer",
-					name: "Photo Enhancer",
-				},
-				{
-					"@type": "ListItem",
-					position: 6,
-					url: "https://30tools.com/logo-generator",
-					name: "Logo Generator",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('image', {
+	name: 'Online Image Tools',
+	description: 'Comprehensive suite of free image editing and generation tools.'
+});
 
 export default function ImageToolsLayout({ children }) {
 	return (
@@ -87,7 +43,7 @@ export default function ImageToolsLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>

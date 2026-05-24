@@ -1,3 +1,5 @@
+import { generateCollectionPageSchema } from "@/lib/seo";
+
 export const metadata = {
 	title: "Free Video Tools Online - No Signup | 30tools",
 	description:
@@ -27,29 +29,13 @@ export const metadata = {
 			"Play Terabox videos, compress, convert, and trim video files for free. Browser-based, no signup, no watermarks.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "Online Video Tools",
-		description:
-			"Collection of free video utilities including Terabox downloader and player.",
-		url: "https://30tools.com/video-tools",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/terabox-downloader",
-					name: "Terabox Downloader",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('video', {
+	name: 'Online Video Tools',
+	description: 'Collection of free video utilities including Terabox downloader and player.'
+});
 
 export default function VideoToolsLayout({ children }) {
 	return (
@@ -57,7 +43,7 @@ export default function VideoToolsLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>

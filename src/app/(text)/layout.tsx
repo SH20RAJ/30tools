@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { generateCollectionPageSchema } from "@/lib/seo";
 
 export const metadata: Metadata = {
 	title: "Text Tools - Free Online Text Utilities | 30tools",
@@ -20,16 +21,13 @@ export const metadata: Metadata = {
 		description:
 			"Sort, clean, and transform text instantly with free browser-based tools.",
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLd = {
-	"@context": "https://schema.org",
-	"@type": "CollectionPage",
-	name: "Text Tools",
-	description:
-		"A collection of free online text utilities for sorting, cleaning, and formatting content.",
-	url: "https://30tools.com/text-tools",
-};
+const collectionPageSchema = generateCollectionPageSchema('text', {
+	name: 'Text Tools',
+	description: 'A collection of free online text utilities for sorting, cleaning, and formatting content.'
+});
 
 export default function TextGroupLayout({
 	children,
@@ -40,7 +38,7 @@ export default function TextGroupLayout({
 		<div className="min-h-screen flex flex-col bg-background selection:bg-primary/10">
 			<script
 				type="application/ld+json"
-				dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionPageSchema) }}
 			/>
 			<main className="flex-1">{children}</main>
 		</div>

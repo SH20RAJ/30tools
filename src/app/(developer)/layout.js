@@ -1,3 +1,5 @@
+import { generateCollectionPageSchema } from "@/lib/seo";
+
 export const metadata = {
 	title: "Free Developer Tools Online - No Signup | 30tools",
 	description:
@@ -27,41 +29,13 @@ export const metadata = {
 			"Essential developer tools for JSON, JWT, Base64, hashing, and more. Secure client-side processing with no signup.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "Free Developer Tools Collection",
-		description:
-			"Essential suite of free online developer utilities for JSON, Base64, and JWT operations.",
-		url: "https://30tools.com/developer-tools",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/json-formatter",
-					name: "JSON Formatter",
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					url: "https://30tools.com/jwt-decoder",
-					name: "JWT Decoder",
-				},
-				{
-					"@type": "ListItem",
-					position: 3,
-					url: "https://30tools.com/base64-tool",
-					name: "Base64 Tool",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('developer', {
+	name: 'Free Developer Tools Collection',
+	description: 'Essential suite of free online developer utilities for JSON, Base64, and JWT operations.'
+});
 
 export default function DeveloperToolsLayout({ children }) {
 	return (
@@ -69,7 +43,7 @@ export default function DeveloperToolsLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>

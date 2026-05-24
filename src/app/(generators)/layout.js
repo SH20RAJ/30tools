@@ -1,3 +1,5 @@
+import { generateCollectionPageSchema } from "@/lib/seo";
+
 export const metadata = {
 	title: "Free AI Generator Tools Online - No Signup | 30tools",
 	description:
@@ -27,35 +29,13 @@ export const metadata = {
 			"Generate AI images, voiceovers, QR codes, and passwords for free. Customizable, no watermarks, instant download.",
 		images: ["/og-image.jpg"],
 	},
+	robots: { index: true, follow: true },
 };
 
-const jsonLdSchemas = {
-	collectionPage: {
-		"@context": "https://schema.org",
-		"@type": "CollectionPage",
-		name: "AI Generator Tools Collection",
-		description:
-			"Suite of powerful free AI generator tools for images and voice.",
-		url: "https://30tools.com/generator-tools",
-		mainEntity: {
-			"@type": "ItemList",
-			itemListElement: [
-				{
-					"@type": "ListItem",
-					position: 1,
-					url: "https://30tools.com/ai-image-generator",
-					name: "AI Image Generator",
-				},
-				{
-					"@type": "ListItem",
-					position: 2,
-					url: "https://30tools.com/ai-voice-generator",
-					name: "AI Voice Generator",
-				},
-			],
-		},
-	},
-};
+const collectionPageSchema = generateCollectionPageSchema('generators', {
+	name: 'AI Generator Tools Collection',
+	description: 'Suite of powerful free AI generator tools for images and voice.'
+});
 
 export default function GeneratorsLayout({ children }) {
 	return (
@@ -63,7 +43,7 @@ export default function GeneratorsLayout({ children }) {
 			<script
 				type="application/ld+json"
 				dangerouslySetInnerHTML={{
-					__html: JSON.stringify(jsonLdSchemas.collectionPage),
+					__html: JSON.stringify(collectionPageSchema),
 				}}
 			/>
 			<main className="flex-1">{children}</main>
