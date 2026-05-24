@@ -225,9 +225,13 @@ export default function ToolLayout({
 							</div>
 						</section>
 
-						{/* Trust & SEO Content - below fold, defer rendering */}
-						<div className="space-y-32" style={{ contentVisibility: "auto", containIntrinsicSize: "auto 2000px" }}>
+						{/* Trust indicators - defer rendering (generic boilerplate) */}
+						<div style={{ contentVisibility: "auto", containIntrinsicSize: "auto 600px" }}>
 							<ToolTrust />
+						</div>
+
+						{/* SEO Content - fully server-rendered for crawlers */}
+						<div className="space-y-32">
 							<ToolArticle content={enrichedTool.article} />
 
 							<div className="grid grid-cols-1 gap-32">
