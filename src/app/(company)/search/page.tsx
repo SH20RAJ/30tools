@@ -1,31 +1,85 @@
 import SearchContent from "./SearchContent";
 import { SITE_CONFIG } from "@/constants/config";
+import toolsData from "@/constants/tools.json";
 
 export const metadata = {
-    title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
-    description: `Search across our ecosystem of ${SITE_CONFIG.toolCountString} professional online tools for image, PDF, video, text, and SEO tasks.`,
-    keywords: "search online tools, free online tools, 30tools search, image tool search, pdf tool search, seo tools directory, developer utilities, search, free search, search online, 30tools, browser tools",
-    openGraph: {
-        title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
-        description: `Instantly find the right free online tool from ${SITE_CONFIG.toolCountString} professional tools for image, PDF, video, SEO, and developer workflows.`,        url: "https://30tools.com/search",
-        siteName: SITE_CONFIG.siteName,
-        images: [{ url: "/og-image.jpg" }],
-        type: "website",
-    },
-    twitter: {
-        card: "summary_large_image",
-        title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
-        description: `Instantly find the right free online tool from ${SITE_CONFIG.toolCountString} professional tools.`,        images: ["/og-image.jpg"],
-    },
-    robots: { index: false, follow: true },
+	title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
+	description: `Browse or search across our ecosystem of ${SITE_CONFIG.toolCountString} professional online tools for image, PDF, video, text, and SEO tasks.`,
+	keywords: "search online tools, free online tools, 30tools search, image tool search, pdf tool search, seo tools directory, developer utilities, search, free search, search online, 30tools, browser tools",
+	openGraph: {
+		title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
+		description: `Instantly find the right free online tool from ${SITE_CONFIG.toolCountString} professional tools for image, PDF, video, SEO, and developer workflows.`,
+		url: "https://30tools.com/search",
+		siteName: SITE_CONFIG.siteName,
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
+		description: `Instantly find the right free online tool from ${SITE_CONFIG.toolCountString} professional tools.`,
+		images: ["/og-image.jpg"],
+	},
+	robots: { index: false, follow: true },
 };
 
-export default function SearchPage() {
-    return (
-        <div className="min-h-screen bg-background flex flex-col">
-            <main className="flex-1">
-                <SearchContent />
-            </main>
-        </div>
-    );
+export default async function SearchPage() {
+	const cats = (toolsData as any).categories || {};
+	const categoryEntries: {
+		key: string;
+		name: string;
+		slug: string;
+		description: string;
+		tools: any[];
+	}[] = [];
+
+	const enrichedTools: any[] = [];
+
+	for (const [key, cat] of Object.entries(cats)) {
+		const category = cat as any;
+		const tools = (category.tools || []).map((tool: any) => ({
+			...tool,
+			categoryName: category.name,
+			categorySlug: category.slug,
+		}));
+		enrichedTools.push(...tools);
+		categoryEntries.push({
+			key, // Use the actual object key (e.g. "image", "generators", "others")
+			name: category.name,
+			slug: category.slug,
+			description: category.description || "",
+			tools,
+		});
+	}
+
+	// Filter out empty categories
+	const populatedCategories = categoryEntries.filter(ce => ce.tools.length > 0);
+
+	return (
+		<div className="min-h-screen bg-background flex flex-col">
+			<main className="flex-1">
+				<div className="container mx-auto px-4 py-12 max-w-6xl space-y-12">
+					{/* Search header — server-rendered, visible to crawlers */}
+					<div className="space-y-6 text-center max-w-3xl mx-auto">
+						<h1 className="text-4xl md:text-6xl font-black tracking-tighter">
+							Search <span className="text-primary">30tools</span>
+						</h1>
+						<p className="text-xl text-muted-foreground">
+							Find exactly what you need among our {SITE_CONFIG.toolCountString} professional tools.
+						</p>
+					</div>
+
+					{/* 
+						SearchContent handles ALL rendering: search input, filters, and tool grid.
+						On first SSR/hydration it renders the full enriched tool list — crawlers see it,
+						users can interact with it, and there's no duplicate content.
+					*/}
+					<SearchContent
+						initialTools={enrichedTools}
+						initialCategories={populatedCategories}
+					/>
+				</div>
+			</main>
+		</div>
+	);
 }
