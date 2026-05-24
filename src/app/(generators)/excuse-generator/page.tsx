@@ -6,8 +6,8 @@ export const metadata = {
 	description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or social events.",
 	keywords: "excuse, generator, free excuse generator, online excuse generator, 30tools, excuse-generator, excuse generator, free excuse-generator, excuse generator online, online generator, free creator, content generator",
 	alternates: { canonical: "https://30tools.com/excuse-generator" },
-	openGraph: { title: "Free Excuse Generator - Funny & Creative Alibis | 30tools", description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or so.", url: "https://30tools.com/excuse-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Excuse Generator - Funny & Creative Alibis | 30tools", description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or so.", images: ["/og-image.jpg"] },
+	openGraph: { title: "Free Excuse Generator - Funny & Creative Alibis | 30tools", description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or social events.", url: "https://30tools.com/excuse-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free Excuse Generator - Funny & Creative Alibis | 30tools", description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or social events.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 

@@ -6,8 +6,8 @@ export const metadata = {
 	description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds.",
 	keywords: "ai, poem, generator, free ai poem generator, online ai poem generator, 30tools, ai-poem-generator, ai poem generator, free ai-poem-generator, ai poem generator online, online generator, free creator",
 	alternates: { canonical: "https://30tools.com/ai-poem-generator" },
-	openGraph: { title: "Free AI Poem Generator - Create Rhymes & Verses with AI | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds..", url: "https://30tools.com/ai-poem-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free AI Poem Generator - Create Rhymes & Verses with AI | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds..", images: ["/og-image.jpg"] },
+	openGraph: { title: "Free AI Poem Generator - Create Rhymes & Verses with AI | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds.", url: "https://30tools.com/ai-poem-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	twitter: { card: "summary_large_image", title: "Free AI Poem Generator - Create Rhymes & Verses with AI | 30tools", description: "Create beautiful, unique poems on any topic instantly. Our free AI Poem Generator crafts rhyming and free-verse poetry for any occasion in seconds.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
 

@@ -11,7 +11,7 @@ import { getAllCategories } from "@/lib/tools";	export const metadata = {
 		openGraph: {
 			title: "Free Tool Guides by Category | 30tools",
 			description:
-				"Browse curated category guides for image, PDF, video, audio, developer, SEO, and more free online tools.",
+				"Browse free tool guides for every category on 30tools. Find the best image, PDF, SEO, developer, downloader, and utility tools online.",
 			url: "https://30tools.com/tool-guides",
 			type: "website",
 			images: [{ url: "/og-image.jpg" }],
@@ -20,7 +20,7 @@ import { getAllCategories } from "@/lib/tools";	export const metadata = {
 			card: "summary_large_image",
 			title: "Free Tool Guides by Category | 30tools",
 			description:
-				"Browse curated category guides for image, PDF, video, audio, developer, SEO, and more free online tools.",
+				"Browse free tool guides for every category on 30tools. Find the best image, PDF, SEO, developer, downloader, and utility tools online.",
 			images: ["/og-image.jpg"],
 		},
 		robots: { index: true, follow: true },
