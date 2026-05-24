@@ -4,14 +4,14 @@ import AIVoiceGeneratorTool from "@/components/tools/generators/AIVoiceGenerator
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free AI Voice Generator Online - No Signup, Customizable | 30tools",
+	title: "Free AI Voice Generator - Natural Text to Speech Online | 30tools",
 	description: "Convert text to natural-sounding AI voices instantly. Our free text-to-speech tool offers multiple languages and accents for professional voiceovers, accessibility, and creative projects. No signup required.",
 	keywords: "ai voice generator, free online tool, no signup, ai-voice-generator, free ai-voice-generator, Ai Voice Generator online, online generator, content creator, free maker, creative tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ai-voice-generator",
 	},
 	openGraph: {
-		title: "Free AI Voice Generator Online - No Signup, Customizable | 30tools",
+		title: "Free AI Voice Generator - Natural Text to Speech Online | 30tools",
 		description: "Convert text to natural-sounding AI voices instantly. Our free text-to-speech tool offers multiple languages and accents for professional voiceovers, accessibility, and creative projects. No signup required.",
 		url: "https://30tools.com/ai-voice-generator",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI Voice Generator Online - No Signup, Customizable | 30tools",
+		title: "Free AI Voice Generator - Natural Text to Speech Online | 30tools",
 		description: "Convert text to natural-sounding AI voices instantly. Our free text-to-speech tool offers multiple languages and accents for professional voiceovers, accessibility, and creative projects. No signup required.",
 		images: ["/og-image.jpg"],
 	},

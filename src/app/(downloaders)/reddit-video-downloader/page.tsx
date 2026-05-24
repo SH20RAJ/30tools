@@ -4,14 +4,14 @@ import RedditDownloader from "@/components/tools/downloaders/RedditDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Reddit Video Downloader Online - No Signup, Fast Download | 30tools",
+	title: "Reddit Video & GIF Downloader Online - Free & No Signup | 30tools",
 	description: "Download Reddit Videos & GIFs in HD Free. 100% free, fast, and no signup required.",
 	keywords: "reddit video downloader, download reddit videos, reddit video saver, reddit to mp4, free tool, 30tools, reddit-video-downloader, free reddit-video-downloader, reddit video downloader online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/reddit-video-downloader",
 	},
 	openGraph: {
-		title: "Free Reddit Video Downloader Online - No Signup, Fast Download | 30tools",
+		title: "Reddit Video & GIF Downloader Online - Free & No Signup | 30tools",
 		description: "Download Reddit Videos & GIFs in HD Free. 100% free, fast, and no signup required.",
 		url: "https://30tools.com/reddit-video-downloader",
 		siteName: "30tools",
@@ -20,7 +20,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Reddit Video Downloader Online - No Signup, Fast Download | 30tools",
+		title: "Reddit Video & GIF Downloader Online - Free & No Signup | 30tools",
 		description: "Download Reddit Videos & GIFs in HD Free. 100% free, fast, and no signup required.",
 		images: ["/og-image.jpg"],
 	},
