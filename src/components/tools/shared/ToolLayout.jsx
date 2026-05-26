@@ -181,10 +181,10 @@ export default function ToolLayout({
 				)}
 
 				{/* Tool Interaction Area */}
-				<section className="bg-card border border-border/60 shadow-[0_32px_64px_-12px_rgba(0,0,0,0.14)] dark:shadow-[0_32px_64px_-12px_rgba(0,0,0,0.4)] relative group transition-all duration-500 hover:border-primary/20 min-h-[400px]">
+				<section className="bg-card/30 backdrop-blur-md border border-border/40 rounded-3xl shadow-[0_32px_64px_-12px_rgba(0,0,0,0.15)] dark:shadow-[0_32px_64px_-12px_rgba(0,0,0,0.5)] relative group transition-all duration-500 hover:border-primary/20 min-h-[400px] overflow-hidden">
 					<div className="absolute top-0 right-0 w-96 h-96 bg-primary/10 blur-[120px] -z-10 transition-opacity" />
 					<div className="absolute bottom-0 left-0 w-96 h-96 bg-secondary/10 blur-[120px] -z-10 transition-opacity" />
-					<div className="relative z-10">{children}</div>
+					<div className="relative z-10 p-6 md:p-8">{children}</div>
 				</section>
 
 				{!isCompanyPage && (
