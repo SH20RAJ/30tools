@@ -1,3 +1,5 @@
+import { getToolByExtraSlug } from "@/lib/tools";
+
 export const intentData: Record<string, any> = {
     "compress-image-to-50kb": {
         parentToolId: "image-compressor",
@@ -81,23 +83,83 @@ Simply paste your YouTube link, select the MP3 320kbps option, and your download
     }
 };
 
-import { getToolByExtraSlug } from "./tools";
-
 export function getIntentBySlug(slug: string) {
     const existing = intentData[slug];
-    if (existing) return existing;
-
-    // Fallback: Look up in tools.json extraSlugs
-    const parentTool = getToolByExtraSlug(slug);
-    if (parentTool) {
-        const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-        return {
-            parentToolId: parentTool.id,
-            title: `${title} Online - Free & No Signup`,
-            description: `Free ${title} online. ${parentTool.name} allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.`,
-            keywords: `${title}, free online tool, no signup, ${parentTool.category}, ${title} online, 30tools`,
-        };
+    let result: any = null;
+    
+    if (existing) {
+        result = { ...existing };
+    } else {
+        const parentTool = getToolByExtraSlug(slug);
+        if (parentTool) {
+            const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+            result = {
+                parentToolId: parentTool.id,
+                title: `${title} Online - Free & No Signup`,
+                description: `Free ${title} online. ${parentTool.name} allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.`,
+                keywords: `${title}, free online tool, no signup, ${parentTool.category}, ${title} online, 30tools`,
+            };
+        }
     }
+    
+    if (result) {
+        const title = slug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
+        let hash = 0;
+        for (let i = 0; i < slug.length; i++) hash += slug.charCodeAt(i);
+        
+        if (!existing) {
+            const titleTemplates = [
+                `${title} Online - Free & No Signup`,
+                `Free ${title} - Fast & Easy Online Tool`,
+                `${title} Tool - 100% Free & Secure`,
+                `${title} Online - Browser-First Utility`
+            ];
+            const descTemplates = [
+                `Need a fast way to ${slug.replace(/-/g, ' ')}? Use our free browser-based ${title} tool. Operate 100% privately without signup.`,
+                `Easily process ${slug.replace(/-/g, ' ')} online. Secure, privacy-first utility that runs directly in your browser with zero signups required.`,
+                `Looking for a free ${title} online? Get instant, high-quality results with our private, secure browser utility tool. No email needed.`,
+                `Try our free online ${title} tool. Quick, secure, and fully private browser-based processing. Clean files and save time.`
+            ];
+            result.title = titleTemplates[hash % titleTemplates.length];
+            result.description = descTemplates[(hash + 1) % descTemplates.length];
+        }
+        
+        if (!result.article) {
+            result.article = `
+## About ${title}
 
-    return null;
+Our online **${title}** tool is optimized to provide a fast, secure, and browser-first experience. It allows you to perform your tasks quickly without any friction.
+
+### Why use this online tool?
+- **100% Free & No Registration**: You don't need to sign up, log in, or share your email address. Start using it immediately.
+- **Privacy First**: All processing runs locally on your device via JavaScript. Your files and data are never sent to our servers.
+- **Fast and Secure**: Enjoy instantaneous processing with zero queues or wait times.
+
+### How it works:
+1. Access the **${title}** utility.
+2. Input your data or upload your files using the interactive drag-and-drop workspace.
+3. Adjust the tool settings to suit your target requirements.
+4. Click the action button and download your output files instantly.
+`;
+        }
+        
+        if (!result.faqs || result.faqs.length === 0) {
+            result.faqs = [
+                {
+                    question: `Is the ${title} tool completely free?`,
+                    answer: `Yes, our ${title} tool is 100% free with no hidden charges, subscription fees, or daily usage limits.`
+                },
+                {
+                    question: `Do you upload my files or data to any server?`,
+                    answer: `No. We value your privacy. All processing for ${title} is done locally in your browser, meaning your data never leaves your computer.`
+                },
+                {
+                    question: `Do I need to install any software to use ${title}?`,
+                    answer: `No installation is required. The tool operates directly in any modern web browser across desktop and mobile devices.`
+                }
+            ];
+        }
+    }
+    
+    return result;
 }
