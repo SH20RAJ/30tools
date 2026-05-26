@@ -22,18 +22,7 @@
             "ai-image-generator-for-beginners",
             "ai-photo-generator-free",
             "ai-picture-generator",
-            "ai-picture-generator-no-signup",
-            "bypass-ai-detection",
-            "free-ai-art-generator",
-            "free-ai-image-generator",
-            "free-photo-grid-maker",
-            "image-size-analyzer",
-            "image-tools",
-            "instant-ai-image-creator",
-            "simple-ai-image-generator",
-            "text-to-image-ai",
-            "text-to-image-free",
-            "upscale-image-online"
+            "ai-picture-generator-no-signup"
           ],
           "popular": true,
           "category": "generators",
@@ -43,7 +32,7 @@
             "High-resolution output suitable for social media and print",
             "No signup or account creation required",
             "Unlimited image generations with no daily limits",
-            "100% private \u2014 images are processed in your browser",
+            "100% private — images are processed in your browser",
             "Download images in PNG format with no watermarks",
             "Simple prompt-based interface for beginners and pros"
           ],
@@ -62,7 +51,7 @@
             },
             {
               "question": "What types of images can I create?",
-              "answer": "You can create virtually any type of image \u2014 photorealistic photos, digital paintings, anime characters, illustrations, logos, landscapes, product mockups, abstract art, and more. The more detailed your prompt, the better the result."
+              "answer": "You can create virtually any type of image — photorealistic photos, digital paintings, anime characters, illustrations, logos, landscapes, product mockups, abstract art, and more. The more detailed your prompt, the better the result."
             },
             {
               "question": "How do I write a good AI image prompt?",
@@ -76,7 +65,7 @@
             },
             {
               "title": "Choose a Style",
-              "description": "Select an art style if available \u2014 such as photorealistic, anime, digital art, watercolor, or oil painting. This helps guide the AI generation."
+              "description": "Select an art style if available — such as photorealistic, anime, digital art, watercolor, or oil painting. This helps guide the AI generation."
             },
             {
               "title": "Generate the Image",
@@ -102,13 +91,7 @@
             "ai-voice-creator-online",
             "ai-voice-reader",
             "celebrity-voice-generator",
-            "free-ai-voice-over",
-            "realistic-voice-generator",
-            "record-voice-online",
-            "text-to-speech-robotic-voice-free",
-            "voice-recorder",
-            "natural-sounding-ai-voices",
-            "ai-speech-synthesis-online"
+            "free-ai-voice-over"
           ],
           "popular": true,
           "category": "generators",
@@ -120,7 +103,7 @@
             "Download generated audio as MP3 files",
             "No signup or account creation required",
             "Unlimited text-to-speech conversions with no daily limits",
-            "Works directly in your browser \u2014 no software installation"
+            "Works directly in your browser — no software installation"
           ],
           "faqs": [
             {
@@ -177,33 +160,18 @@
             "ai-music-maker",
             "free-ai-music-generator",
             "text-to-song-ai",
-            "ai-vocal-generator",
-            "ai-instrumental-generator",
-            "royalty-free-ai-music",
-            "minimax-music-generator",
-            "cloudflare-ai-music",
-            "ai-music-generator-no-signup",
-            "free-music-generator-online",
-            "ai-music-creator",
-            "ai-song-maker-free",
-            "generate-ai-music",
-            "ai-music-production",
-            "text-to-music-ai",
-            "ai-composer-online",
-            "free-ai-vocal-generator",
-            "ai-background-music-generator",
-            "ai-music-for-videos"
+            "ai-vocal-generator"
           ],
           "popular": true,
           "category": "generators",
           "features": [
             "Generate full-length songs with natural vocals and layered instrumentation using MiniMax Music 2.6",
             "Instrumental mode for background music, video scores, and ambient soundscapes",
-            "Lyrics Optimizer auto-writes lyrics from your style prompt \u2014 no writing needed",
+            "Lyrics Optimizer auto-writes lyrics from your style prompt — no writing needed",
             "14+ song structure tags including [Verse], [Chorus], [Bridge], [Drop], [Outro] for precise arrangement control",
             "Studio-grade audio output up to 44.1kHz sample rate and 256kbps bitrate",
             "Export in MP3 or WAV format for any professional production workflow",
-            "Completely free this week via Cloudflare Workers AI \u2014 no cost, no signup",
+            "Completely free this week via Cloudflare Workers AI — no cost, no signup",
             "All generated music is royalty-free and cleared for commercial use"
           ],
           "howTo": {
@@ -211,7 +179,7 @@
             "steps": [
               {
                 "name": "Write a Style Prompt",
-                "text": "Describe the sound you want \u2014 genre, mood, vocal style, tempo, and instruments. Example: 'Indie folk, melancholic, female vocal, fingerpicked acoustic guitar, 75 BPM.'"
+                "text": "Describe the sound you want — genre, mood, vocal style, tempo, and instruments. Example: 'Indie folk, melancholic, female vocal, fingerpicked acoustic guitar, 75 BPM.'"
               },
               {
                 "name": "Add Lyrics or Use Auto-Generate",
@@ -230,7 +198,7 @@
             },
             {
               "question": "Is the AI Music Generator really free?",
-              "answer": "Yes \u2014 MiniMax Music 2.6 is free this week on Cloudflare Workers AI. You can generate unlimited songs at no cost. No credit card or signup is required."
+              "answer": "Yes — MiniMax Music 2.6 is free this week on Cloudflare Workers AI. You can generate unlimited songs at no cost. No credit card or signup is required."
             },
             {
               "question": "Can I use the generated music commercially?",
@@ -252,7 +220,8 @@
           "description": "Scan and decode QR codes from images or using your camera online for free. Secure, browser-based QR reader with instant results and no data storage.",
           "route": "/qr-code-reader",
           "popular": false,
-          "category": "generators"
+          "category": "generators",
+          "extraSlugs": []
         },
         {
           "id": "bio-generator",
@@ -277,8 +246,7 @@
           "extraSlugs": [
             "ai-business-name-generator",
             "brand-name-generator",
-            "startup-name-generator",
-            "brand-identity-maker"
+            "startup-name-generator"
           ],
           "popular": false,
           "category": "generators"
@@ -290,11 +258,8 @@
           "route": "/ai-poem-generator",
           "extraSlugs": [
             "ai-poetry-generator",
-            "free-poetry-maker",
-            "haiku-generator",
             "love-poem-generator",
-            "poem-generator-ai",
-            "rhyme-generator"
+            "poem-generator-ai"
           ],
           "popular": false,
           "category": "generators"
@@ -362,8 +327,10 @@
           "popular": true,
           "category": "generators",
           "extraSlugs": [
-            "free-rent-receipt-generator",
+            "hra-rent-receipt",
             "rent-receipt-pdf",
+            "rent-receipt-with-landlord-pan",
+            "free-rent-receipt-generator",
             "hra-rent-receipt-maker"
           ]
         },
@@ -375,9 +342,11 @@
           "popular": true,
           "category": "generators",
           "extraSlugs": [
+            "free-invoice-pdf",
+            "invoice-maker",
+            "printable-invoice",
             "free-invoice-maker",
-            "tax-invoice-generator",
-            "gst-invoice-creator"
+            "tax-invoice-generator"
           ]
         },
         {
@@ -388,6 +357,9 @@
           "popular": false,
           "category": "generators",
           "extraSlugs": [
+            "leave-letter-generator",
+            "school-leave-application",
+            "office-leave-application",
             "leave-letter-writer",
             "sick-leave-application-maker"
           ]
@@ -400,8 +372,11 @@
           "popular": true,
           "category": "generators",
           "extraSlugs": [
+            "resignation-letter-format",
+            "notice-period-resignation",
             "formal-resignation-letter",
-            "polite-resignation-maker"
+            "polite-resignation-maker",
+            "resignation-letter-builder"
           ]
         },
         {
@@ -412,6 +387,9 @@
           "popular": true,
           "category": "generators",
           "extraSlugs": [
+            "marriage-biodata-maker",
+            "job-biodata-format",
+            "biodata-pdf-maker",
             "marriage-biodata-creator",
             "resume-biodata-builder"
           ]
@@ -433,10 +411,8 @@
             "remove-background-from-signature-free",
             "transparent-background-maker",
             "picture-background-eraser",
-            "duplicate-line-remover",
             "ai-background-eraser-online",
-            "delete-image-background",
-            "remove-background-from-image-free"
+            "delete-image-background"
           ],
           "popular": true,
           "category": "image"
@@ -507,12 +483,7 @@
             "exif-data-viewer-free",
             "online-exif-reader",
             "photo-metadata-extractor",
-            "read-image-metadata",
-            "photo-exif-viewer",
-            "read-exif-data-online",
-            "online-tts-reader",
-            "check-image-location",
-            "view-image-metadata"
+            "read-image-metadata"
           ],
           "popular": true,
           "category": "image",
@@ -522,7 +493,7 @@
             "Detect GPS location data embedded in photos",
             "Read IPTC and XMP metadata fields",
             "Supports JPG, JPEG, TIFF, and other image formats with EXIF data",
-            "100% browser-based processing \u2014 images never leave your device",
+            "100% browser-based processing — images never leave your device",
             "No software installation or signup required",
             "Free for personal and professional use"
           ],
@@ -581,10 +552,7 @@
             "free-favicon-maker",
             "website-favicon-creator",
             "favicon-generator-no-signup",
-            "favicon-maker-online",
-            "create-favicon-online",
-            "favicon-maker-from-image",
-            "ico-file-generator"
+            "favicon-maker-online"
           ],
           "popular": true,
           "category": "image"
@@ -662,15 +630,11 @@
             }
           ],
           "extraSlugs": [
-            "audio-compressor",
             "compress-image-to-50kb",
             "free-image-compressor",
-            "video-compressor",
             "compress-image-online",
             "reduce-image-size",
-            "shrink-image-file-size-free",
-            "shrink-image-file-size",
-            "compress-jpeg-png"
+            "shrink-image-file-size-free"
           ],
           "popular": true,
           "category": "image"
@@ -745,8 +709,7 @@
             "image-cropper-tool",
             "circular-image-crop",
             "square-photo-cropper",
-            "free-picture-cropper",
-            "crop-image-online"
+            "free-picture-cropper"
           ],
           "popular": false,
           "category": "image"
@@ -769,19 +732,11 @@
           "description": "Resize images with custom dimensions and aspect ratios",
           "route": "/image-resizer",
           "extraSlugs": [
-            "facebook-cover-resizer",
             "free-image-resizer-online",
             "ig-story-image-resizer",
-            "linkedin-banner-resizer",
             "photo-resizer-free",
-            "social-media-resizer",
             "resize-image-online",
-            "resize-picture-pixels",
-            "scale-image",
-            "change-image-dimensions",
-            "resize-image-for-social-media",
-            "resize-image-for-etsy-banner",
-            "cut-photo"
+            "resize-picture-pixels"
           ],
           "popular": false,
           "category": "image"
@@ -834,12 +789,8 @@
             "create-gif-online",
             "free-jpg-to-gif-converter-online",
             "jpg-to-gif-converter-tool",
-            "make-gif-from-video",
             "mov-to-gif",
-            "video-to-gif",
-            "video-to-gif-converter",
-            "youtube-gif-maker",
-            "convert-jpeg-to-gif"
+            "youtube-gif-maker"
           ],
           "popular": false,
           "category": "image"
@@ -863,7 +814,6 @@
           "description": "Convert JPG to PNG with transparency support. Maintain high image quality and convert formats instantly in your browser. Free, secure, and privacy-focused online tool.",
           "route": "/jpg-to-png-converter",
           "extraSlugs": [
-            "convert-png-to-jpg",
             "free-jpg-to-png-converter-online",
             "jpg-png-to-pdf",
             "jpg-to-png-converter-tool",
@@ -895,14 +845,7 @@
             "business-logo-creator",
             "business-logo-designer",
             "company-logo-maker-free",
-            "custom-logo-maker",
-            "design-logo-free",
-            "free-logo-maker",
-            "free-logo-maker-for-twitch",
-            "gaming-logo-generator",
-            "logo-maker",
-            "online-logo-design",
-            "simple-logo-creator"
+            "custom-logo-maker"
           ],
           "popular": true,
           "category": "image",
@@ -911,7 +854,7 @@
             "Choose from multiple font styles and color combinations",
             "Preview logo in real-time as you design",
             "Download logos as high-resolution PNG files",
-            "No design experience required \u2014 simple text-based interface",
+            "No design experience required — simple text-based interface",
             "Free for personal and commercial use",
             "Works on any device with a browser",
             "No signup or account creation needed"
@@ -971,13 +914,7 @@
             "cut-photo",
             "free-photo-grid-maker",
             "ig-photo-download-hd",
-            "instagram-profile-photo-hd",
-            "online-photo-editor",
-            "photo-filter-editor",
-            "photo-quality-improver",
-            "upscale-illustration-online-free",
-            "enhance-image-quality",
-            "improve-picture-resolution"
+            "instagram-profile-photo-hd"
           ],
           "popular": true,
           "category": "image",
@@ -987,7 +924,7 @@
             "Improve sharpness, contrast, and color balance automatically",
             "Remove noise and grain from low-light photos",
             "Works with JPG, PNG, WebP, and other common formats",
-            "100% browser-based processing \u2014 your photos stay private",
+            "100% browser-based processing — your photos stay private",
             "No signup or account required",
             "Free for personal and commercial use"
           ],
@@ -1020,7 +957,7 @@
             },
             {
               "title": "Select Enhancement Options",
-              "description": "Choose the enhancement type \u2014 auto-enhance, upscale resolution, sharpen, denoise, or adjust colors."
+              "description": "Choose the enhancement type — auto-enhance, upscale resolution, sharpen, denoise, or adjust colors."
             },
             {
               "title": "Apply Enhancement",
@@ -1111,8 +1048,7 @@
             "pdf-rotate",
             "rotate-image-tool",
             "rotate-pdf-online",
-            "rotate-pdf-pages",
-            "fix-image-orientation-online"
+            "rotate-pdf-pages"
           ],
           "popular": false,
           "category": "image"
@@ -1148,7 +1084,8 @@
           "name": "Free Image Tools Online",
           "description": "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
           "route": "/image-tools",
-          "category": "image"
+          "category": "image",
+          "extraSlugs": []
         },
         {
           "id": "icon-generator",
@@ -1175,9 +1112,7 @@
             "edit-pictures-free",
             "fix-blurry-photos",
             "online-collage-maker",
-            "photo-collage-maker",
-            "picture-collage-creator",
-            "aesthetic-collage-maker"
+            "photo-collage-maker"
           ],
           "popular": false,
           "category": "image"
@@ -1191,8 +1126,10 @@
           "category": "image",
           "extraSlugs": [
             "image-compressor-20kb",
-            "reduce-photo-size-to-20kb",
-            "jpg-under-20kb"
+            "20kb-jpeg-compressor",
+            "compress-image-under-20kb",
+            "reduce-jpg-size-to-20kb",
+            "jpg-compressor-20kb"
           ]
         },
         {
@@ -1204,8 +1141,10 @@
           "category": "image",
           "extraSlugs": [
             "photo-size-in-cm",
-            "resize-photo-to-cm",
-            "image-cm-resizer"
+            "resize-photo-3.5x4.5cm",
+            "image-cm-resizer",
+            "cm-photo-resizer",
+            "resize-image-to-cm"
           ]
         },
         {
@@ -1269,8 +1208,10 @@
           "category": "image",
           "extraSlugs": [
             "photo-size-in-mm",
-            "resize-photo-to-mm",
-            "image-mm-resizer"
+            "resize-image-by-millimeter",
+            "mm-photo-resizer",
+            "mm-image-converter",
+            "resize-photo-in-mm"
           ]
         },
         {
@@ -1295,8 +1236,10 @@
           "category": "image",
           "extraSlugs": [
             "change-image-dpi",
-            "dpi-converter-online",
-            "convert-image-to-300-dpi"
+            "300-dpi-converter",
+            "photo-dpi-changer",
+            "image-dpi-converter-online",
+            "convert-dpi-of-photo"
           ]
         }
       ]
@@ -1314,8 +1257,7 @@
           "route": "/article-rewriter",
           "extraSlugs": [
             "free-article-rewriter-online",
-            "article-rewriter-tool",
-            "paraphrase-tool-online-free"
+            "article-rewriter-tool"
           ],
           "popular": false,
           "category": "text"
@@ -1340,7 +1282,6 @@
           "description": "Sort lists, names, or lines alphabetically or by length instantly. Our free online Line Sorter helps you organize data for cleaner documentation and code. Privacy-friendly and fast.",
           "route": "/line-sorter",
           "extraSlugs": [
-            "alphabetize-list-online-free",
             "sort-lines-alphabetically",
             "online-list-sorter"
           ],
@@ -1353,11 +1294,6 @@
           "description": "Generate custom Lorem Ipsum text for your designs.",
           "route": "/lorem-ipsum",
           "extraSlugs": [
-            "placeholder-text-generator",
-            "lipsum-generator",
-            "lorem-ipsum-generator",
-            "blind-text-generator",
-            "dummy-text-maker",
             "standard-lorem-ipsum-text",
             "lorem-ipsum-text-copy",
             "lorem-ipsum-generator-for-figma"
@@ -1375,11 +1311,7 @@
             "check-word-count",
             "free-number-to-word-converter-online",
             "number-pdf-pages",
-            "number-to-word-converter-tool",
-            "random-number-picker",
-            "wa-number-validator",
-            "word-to-epub",
-            "convert-digits-to-words"
+            "number-to-word-converter-tool"
           ],
           "popular": false,
           "category": "text"
@@ -1394,12 +1326,7 @@
             "generate-random-stuff",
             "random-color-schemes",
             "random-excuse-generator",
-            "random-generator",
-            "random-password-maker",
-            "random-string-generator-secure",
-            "random-string-maker",
-            "random-word-generator-tool",
-            "pick-random-words"
+            "random-generator"
           ],
           "popular": false,
           "category": "text"
@@ -1426,8 +1353,7 @@
             "compare-google-fonts",
             "compare-text-online",
             "free-text-compare-online",
-            "text-compare-tool",
-            "diff-checker-online-free"
+            "text-compare-tool"
           ],
           "popular": false,
           "category": "text"
@@ -1465,10 +1391,7 @@
           "route": "/text-to-hashtags-converter",
           "extraSlugs": [
             "free-text-to-hashtags-converter-online",
-            "text-to-hashtags-converter-tool",
-            "trending-instagram-hashtags",
-            "best-hashtags-for-reels",
-            "social-media-tag-generator"
+            "text-to-hashtags-converter-tool"
           ],
           "popular": false,
           "category": "text"
@@ -1493,12 +1416,7 @@
           "route": "/text-to-tags-converter",
           "extraSlugs": [
             "free-text-to-tags-converter-online",
-            "text-to-tags-converter-tool",
-            "analyze-meta-tags",
-            "find-missing-alt-tags",
-            "generate-meta-tags",
-            "create-seo-tags",
-            "seo-tag-generator-free"
+            "text-to-tags-converter-tool"
           ],
           "popular": false,
           "category": "text"
@@ -1513,8 +1431,7 @@
             "essay-word-counter",
             "free-word-counter-online",
             "letter-counter",
-            "word-counter-tool",
-            "analyze-text-length"
+            "word-counter-tool"
           ],
           "popular": false,
           "category": "text"
@@ -1540,8 +1457,7 @@
           "route": "/markdown-to-text",
           "extraSlugs": [
             "markdown-to-plain-text",
-            "remove-markdown-formatting",
-            "md-to-txt-converter"
+            "remove-markdown-formatting"
           ],
           "popular": false,
           "category": "text"
@@ -1554,7 +1470,11 @@
           "popular": true,
           "category": "text",
           "extraSlugs": [
-            "krutidev-converter-online"
+            "krutidev-converter",
+            "hindi-font-converter",
+            "kruti-to-mangal",
+            "kruti-dev-to-mangal-converter",
+            "convert-krutidev-online"
           ]
         },
         {
@@ -1565,7 +1485,11 @@
           "popular": false,
           "category": "text",
           "extraSlugs": [
-            "unicode-to-krutidev-converter"
+            "mangal-to-kruti-dev",
+            "unicode-hindi-converter",
+            "mangal-to-krutidev-online",
+            "unicode-to-kruti-converter",
+            "convert-unicode-to-legacy"
           ]
         },
         {
@@ -1576,8 +1500,11 @@
           "popular": false,
           "category": "text",
           "extraSlugs": [
-            "phonetic-hindi-transliteration",
-            "english-to-hindi-converter"
+            "hinglish-to-hindi-converter",
+            "roman-hindi-to-hindi",
+            "english-to-hindi-transliteration",
+            "hinglish-transliteration",
+            "write-hinglish-to-hindi"
           ]
         },
         {
@@ -1588,8 +1515,11 @@
           "popular": true,
           "category": "text",
           "extraSlugs": [
-            "online-hindi-typing",
-            "easy-hindi-typing"
+            "english-to-hindi-typing",
+            "online-hindi-keyboard",
+            "hindi-typing-keyboard",
+            "easy-hindi-typing",
+            "type-in-hindi-online"
           ]
         }
       ]
@@ -1656,53 +1586,7 @@
             "add-password-to-pdf",
             "annotate-pdf-online",
             "change-pdf-orientation",
-            "combine-pdf-files",
-            "compress-pdf-online",
-            "convert-images-to-pdf",
-            "create-epub-from-pdf",
-            "cut-pdf-pages",
-            "decrypt-pdf-file",
-            "edit-pdf-online-free",
-            "encrypt-pdf",
-            "excel-sheet-to-pdf",
-            "excel-to-pdf",
-            "export-pdf-to-image",
-            "extract-pdf-pages",
-            "html-to-pdf",
-            "insert-page-numbers-in-pdf",
-            "join-pdf-documents",
-            "jpeg-to-pdf-online",
-            "jpg-to-pdf-high-quality-free",
-            "lock-pdf-file",
-            "make-pdf-from-photos",
-            "merge-multiple-pdf",
-            "merge-pdf-online",
-            "modify-pdf-content",
-            "open-protected-pdf",
-            "optimize-pdf-for-web",
-            "paginate-pdf",
-            "pdf-add-page-numbers",
-            "pdf-combiner-free",
-            "pdf-pagination-tool",
-            "pdf-size-reducer",
-            "pdf-tools",
-            "powerpoint-to-pdf",
-            "presentation-to-pdf",
-            "print-html-to-pdf",
-            "reduce-pdf-size",
-            "save-excel-as-pdf",
-            "save-pdf-as-image",
-            "save-powerpoint-as-pdf",
-            "save-rotated-pdf",
-            "save-webpage-as-pdf",
-            "secure-pdf-document",
-            "separate-pdf-files",
-            "shrink-pdf-file",
-            "slides-to-pdf",
-            "split-pdf-pages",
-            "spreadsheet-to-pdf",
-            "unlock-pdf-online",
-            "web-to-pdf-online"
+            "combine-pdf-files"
           ],
           "popular": true,
           "category": "pdf"
@@ -1756,17 +1640,9 @@
           ],
           "extraSlugs": [
             "annotate-pdf-online-free",
-            "audio-editor",
             "edit-pdf-online-free",
-            "fix-text-spacing",
-            "free-audio-editor",
             "free-pdf-text-editor",
-            "free-video-editor",
-            "online-photo-editor",
-            "pdf-text-editor",
-            "photo-filter-editor",
-            "sound-editor-online",
-            "video-editor"
+            "pdf-text-editor"
           ],
           "popular": true,
           "category": "pdf"
@@ -1823,9 +1699,7 @@
             "password-protect-pdf",
             "password-protect-pdf-online",
             "pdf-password-remover",
-            "remove-pdf-password",
-            "test-password-strength",
-            "verify-password-safety"
+            "remove-pdf-password"
           ],
           "popular": false,
           "category": "pdf"
@@ -1850,10 +1724,8 @@
           "extraSlugs": [
             "convert-pdf-to-docx-editable-free",
             "editable-pdf-to-word",
-            "microsoft-word-to-pdf",
             "pdf-to-doc-converter",
-            "save-word-as-pdf",
-            "word-document-to-pdf"
+            "save-word-as-pdf"
           ],
           "popular": true,
           "category": "pdf"
@@ -1972,7 +1844,8 @@
               "question": "Will the text remain sharp?",
               "answer": "Yes, our grayscale conversion preserves the vector quality of text and shapes, ensuring professional results."
             }
-          ]
+          ],
+          "extraSlugs": []
         },
         {
           "id": "pdf-repair",
@@ -1980,14 +1853,16 @@
           "description": "Fix corrupted or broken PDF files online for free. Our secure repair tool rebuilds document headers and cross-reference tables to restore access to your PDF documents instantly.",
           "route": "/pdf-repair",
           "popular": false,
-          "category": "pdf"
+          "category": "pdf",
+          "extraSlugs": []
         },
         {
           "id": "pdf-tools",
           "name": "PDF Tools",
           "description": "Merge, split, compress, and manipulate PDF documents",
           "route": "/pdf-tools",
-          "category": "pdf"
+          "category": "pdf",
+          "extraSlugs": []
         }
       ]
     },
@@ -2003,35 +1878,11 @@
           "description": "Download Reddit videos with audio in HD quality",
           "route": "/reddit-downloader",
           "extraSlugs": [
-            "any-video-downloader",
             "download-reddit-video",
-            "embed-video-player",
-            "fb-clip-downloader",
-            "fb-highlights-downloader",
-            "fb-video-downloader",
-            "ig-downloader-all",
-            "ig-reels-downloader-hd",
-            "ig-video-downloader",
-            "instagram-video-downloader",
-            "musically-downloader",
             "reddit-hd-video-downloader",
             "reddit-media-saver",
             "reddit-mp4-downloader",
-            "reddit-video-saver",
-            "responsive-video-player",
-            "save-reddit-video",
-            "save-reddit-video-with-audio-online",
-            "save-reels-video",
-            "sitemap-url-downloader",
-            "snap-video-downloader",
-            "social-media-downloader",
-            "split-video-file",
-            "tt-video-downloader",
-            "video-player",
-            "video-size-reducer",
-            "video-tools",
-            "video-trimmer",
-            "x-video-downloader"
+            "reddit-video-saver"
           ],
           "popular": true,
           "category": "downloaders",
@@ -2041,7 +1892,7 @@
             "Save Reddit videos as MP4 files with sound",
             "Works on desktop and mobile browsers",
             "No Reddit login required for downloading",
-            "Fast processing \u2014 download in seconds",
+            "Fast processing — download in seconds",
             "Unlimited free downloads with no restrictions",
             "No watermarks added to downloaded videos"
           ],
@@ -2056,7 +1907,7 @@
             },
             {
               "question": "Can I download Reddit videos on my phone?",
-              "answer": "Yes, our Reddit video downloader works in your mobile browser on both iPhone and Android. Just copy the Reddit post link and paste it into the tool \u2014 no app installation needed."
+              "answer": "Yes, our Reddit video downloader works in your mobile browser on both iPhone and Android. Just copy the Reddit post link and paste it into the tool — no app installation needed."
             },
             {
               "question": "Is it free to download Reddit videos?",
@@ -2100,9 +1951,7 @@
             "download-terabox-videos-without-app",
             "terabox-direct-download",
             "terabox-link-downloader",
-            "terabox-player-online",
-            "terabox-video-player-online",
-            "terabox-video-saver"
+            "terabox-player-online"
           ],
           "popular": true,
           "category": "video"
@@ -2112,7 +1961,8 @@
           "name": "Video Tools",
           "description": "Compress videos, convert formats, and create GIFs",
           "route": "/video-tools",
-          "category": "video"
+          "category": "video",
+          "extraSlugs": []
         },
         {
           "id": "video-converter",
@@ -2124,9 +1974,7 @@
             "convert-video-format",
             "avi-to-mp4-converter",
             "mkv-to-mp4-converter",
-            "mov-to-mp4-converter",
-            "webm-to-mp4-converter",
-            "flv-to-mp4-converter"
+            "mov-to-mp4-converter"
           ],
           "popular": false,
           "category": "video"
@@ -2160,27 +2008,7 @@
           "description": "Find the exact creation date of any YouTube channel with our free online Age Checker. Perfect for creator research, account verification, and competitive analysis. Fast and private.",
           "route": "/youtube-channel-age-checker",
           "extraSlugs": [
-            "compromised-email-checker",
-            "diff-checker-online",
-            "email-breach-checker",
             "free-youtube-channel-age-checker-online",
-            "html-checker",
-            "html-error-checker",
-            "html-syntax-checker",
-            "https-checker",
-            "load-time-checker",
-            "mobile-seo-checker",
-            "plagiarism-checker-seo",
-            "readability-score-checker",
-            "responsive-design-checker",
-            "schema-checker-online",
-            "search-volume-checker",
-            "seo-competitor-checker",
-            "seo-meta-checker",
-            "seo-score-checker",
-            "ssl-checker",
-            "temp-email-checker",
-            "whatsapp-checker",
             "youtube-channel-age-checker-tool",
             "check-youtube-channel-creation-date"
           ],
@@ -2197,17 +2025,7 @@
             "free-youtube-channel-banner-downloader-online",
             "secure-youtube-downloader",
             "youtube-caption-downloader",
-            "youtube-channel-banner-downloader-tool",
-            "youtube-downloader-4k",
-            "youtube-downloader-android",
-            "youtube-downloader-free",
-            "youtube-downloader-iphone",
-            "youtube-pack-downloader",
-            "youtube-srt-downloader",
-            "youtube-subtitle-downloader",
-            "youtube-subtitles-downloader",
-            "youtube-transcript-downloader",
-            "download-youtube-banner-hd"
+            "youtube-channel-banner-downloader-tool"
           ],
           "popular": false,
           "category": "youtube"
@@ -2220,12 +2038,6 @@
           "extraSlugs": [
             "free-youtube-channel-finder-online",
             "youtube-channel-finder-tool",
-            "duplicate-content-finder",
-            "hex-color-finder",
-            "website-url-finder",
-            "dead-link-finder",
-            "free-keyword-finder",
-            "insta-hashtag-finder",
             "find-youtube-channels-by-keyword"
           ],
           "popular": false,
@@ -2237,11 +2049,7 @@
           "description": "Extract the unique Channel ID from any YouTube URL instantly. Perfect for developer API calls, marketing automation, and third-party tool integrations. Free and fast online tool.",
           "route": "/youtube-channel-id-extractor",
           "extraSlugs": [
-            "email-extractor",
-            "free-mp3-extractor",
             "free-youtube-channel-id-extractor-online",
-            "url-extractor",
-            "xml-sitemap-extractor",
             "youtube-channel-id-extractor-tool",
             "find-youtube-channel-id-from-url"
           ],
@@ -2280,9 +2088,7 @@
           "description": "Pick a random winner from your YouTube video comments instantly. Our free online Comment Picker is perfect for giveaways, contests, and audience engagement. Fast and fair.",
           "route": "/youtube-comment-picker",
           "extraSlugs": [
-            "color-picker",
             "free-youtube-comment-picker-online",
-            "online-color-picker",
             "youtube-comment-picker-tool",
             "youtube-comment-responder",
             "youtube-giveaway-winner-generator"
@@ -2298,8 +2104,6 @@
           "extraSlugs": [
             "free-youtube-description-extractor-online",
             "youtube-description-extractor-tool",
-            "meta-description-length-check",
-            "meta-description-test",
             "get-youtube-video-description"
           ],
           "popular": false,
@@ -2324,23 +2128,7 @@
           "description": "Generate customizable YouTube embed codes instantly. Our free online tool helps you create responsive iframes with specific start times, player controls, and privacy settings for your website.",
           "route": "/youtube-embed-code-generator",
           "extraSlugs": [
-            "beautify-code-online",
-            "binary-code-translator",
-            "check-code-complexity",
-            "clean-code-indentation",
-            "code-formatter",
-            "code-minifier",
-            "code-optimization-tool",
-            "code-prettifier",
-            "compress-javascript-code",
-            "find-color-code",
             "free-youtube-embed-code-generator-online",
-            "minify-code-online",
-            "reduce-code-size",
-            "source-code-formatter",
-            "sql-code-formatter",
-            "validate-html-code",
-            "validate-json-code",
             "youtube-embed-code-generator-tool",
             "youtube-embed-generator",
             "generate-youtube-iframe-code"
@@ -2368,8 +2156,6 @@
           "route": "/youtube-hashtag-generator",
           "extraSlugs": [
             "free-youtube-hashtag-generator-online",
-            "instagram-hashtag-generator",
-            "viral-hashtag-generator",
             "youtube-hashtag-generator-tool",
             "youtube-tag-generator-free"
           ],
@@ -2384,12 +2170,6 @@
           "extraSlugs": [
             "free-youtube-money-calculator-online",
             "youtube-money-calculator-tool",
-            "sha256-hash-calculator",
-            "advanced-hash-calculator",
-            "file-checksum-calculator",
-            "flesch-kincaid-calculator",
-            "exchange-rate-calculator",
-            "currency-calculator-live",
             "youtube-earnings-calculator"
           ],
           "popular": false,
@@ -2415,7 +2195,6 @@
           "route": "/youtube-shorts-downloader",
           "extraSlugs": [
             "save-youtube-shorts-to-camera-roll",
-            "shorts-video-downloader-hd",
             "download-youtube-shorts-online-free"
           ],
           "popular": true,
@@ -2427,23 +2206,7 @@
           "description": "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for social media and bios.",
           "route": "/youtube-subscribe-link-generator",
           "extraSlugs": [
-            "create-paypal-me-link",
-            "create-short-link",
-            "create-wa-link",
-            "custom-payment-link-generator",
-            "direct-paypal-link",
             "free-youtube-subscribe-link-generator-online",
-            "link-scraper-online",
-            "link-shortener-custom",
-            "paypal-donation-link",
-            "paypal-link-generator",
-            "reduce-link-length",
-            "shorten-link-free",
-            "wa-me-link-generator",
-            "website-link-validator",
-            "whatsapp-chat-link",
-            "whatsapp-direct-message-link",
-            "whatsapp-link-generator",
             "youtube-subscribe-link-generator-tool",
             "make-youtube-auto-subscribe-link"
           ],
@@ -2458,7 +2221,6 @@
           "extraSlugs": [
             "free-youtube-tag-extractor-online",
             "youtube-tag-extractor-tool",
-            "title-tag-preview",
             "get-youtube-video-tags"
           ],
           "popular": false,
@@ -2484,8 +2246,6 @@
           "route": "/youtube-timestamp-link-generator",
           "extraSlugs": [
             "free-youtube-timestamp-link-generator-online",
-            "timestamp-decoder",
-            "timestamp-translator",
             "youtube-timestamp-generator",
             "youtube-timestamp-link-generator-tool",
             "link-to-youtube-at-specific-time"
@@ -2501,9 +2261,6 @@
           "extraSlugs": [
             "free-youtube-title-extractor-online",
             "youtube-title-extractor-tool",
-            "google-title-rewrites",
-            "seo-title-analyzer",
-            "page-title-optimization",
             "get-youtube-video-title"
           ],
           "popular": false,
@@ -2529,11 +2286,6 @@
           "route": "/youtube-title-length-checker",
           "extraSlugs": [
             "free-youtube-title-length-checker-online",
-            "meta-length-checker",
-            "serp-title-checker",
-            "text-length-checker",
-            "title-rewrite-checker",
-            "title-tag-checker",
             "youtube-title-length-checker-tool",
             "optimize-youtube-title-length"
           ],
@@ -2548,10 +2300,6 @@
           "extraSlugs": [
             "free-youtube-video-count-checker-online",
             "youtube-video-count-checker-tool",
-            "count-words-online",
-            "character-count-tool",
-            "count-characters-online",
-            "tweet-character-count",
             "check-total-youtube-videos"
           ],
           "popular": false,
@@ -2577,8 +2325,7 @@
           "route": "/youtube-title-capitalizer",
           "extraSlugs": [
             "free-youtube-title-capitalizer-online",
-            "youtube-title-capitalizer-tool",
-            "fix-title-capitalization-online"
+            "youtube-title-capitalizer-tool"
           ],
           "popular": false,
           "category": "youtube"
@@ -2615,7 +2362,6 @@
           "description": "Download Facebook video clips and highlights in high resolution instantly. Our free online downloader is fast, secure, and easy to use. No signup required for unlimited downloads.",
           "route": "/fb-clip-downloader",
           "extraSlugs": [
-            "fb-clip-downloader",
             "fb-highlights-downloader",
             "save-facebook-videos-hd"
           ],
@@ -2628,7 +2374,6 @@
           "route": "/ig-reels-downloader-hd",
           "extraSlugs": [
             "ig-downloader-all",
-            "ig-reels-downloader-hd",
             "save-instagram-reels-online"
           ],
           "category": "youtube"
@@ -2648,7 +2393,6 @@
           "route": "/text-to-speech",
           "extraSlugs": [
             "free-text-to-speech-with-no-word-limit",
-            "natural-sounding-tts-online",
             "text-to-speech-ai"
           ],
           "popular": true,
@@ -2659,7 +2403,8 @@
           "name": "Audio Tools",
           "description": "Compress and convert audio files between formats",
           "route": "/audio-tools",
-          "category": "audio"
+          "category": "audio",
+          "extraSlugs": []
         },
         {
           "id": "guitar-tuner",
@@ -2695,11 +2440,6 @@
             "api-endpoint-tester",
             "api-tester",
             "debug-api-requests",
-            "font-tester-tool",
-            "regex-flags-tester",
-            "regex-match-tester",
-            "regex-replace-tester",
-            "regex-tester",
             "test-rest-api-online"
           ],
           "popular": false,
@@ -2875,15 +2615,7 @@
             "compress-css-online",
             "compress-html-css-js",
             "css-beautifier-tool",
-            "css-box-shadow",
-            "css-formatter",
-            "css-optimizer-online",
-            "free-css-beautifier-online",
-            "json-beautifier",
-            "make-css-gradients",
-            "minify-css-file",
-            "reduce-css-size",
-            "online-css-formatter"
+            "css-box-shadow"
           ],
           "popular": false,
           "category": "developer"
@@ -2913,19 +2645,7 @@
             "convert-csv-to-json",
             "convert-csv-to-json-code",
             "csv-data-to-json",
-            "csv-file-to-json",
-            "csv-json-parser",
-            "csv-to-json",
-            "csv-to-json-converter-tool",
-            "csv-to-object-converter",
-            "format-json-file",
-            "free-csv-to-json-converter-online",
-            "json-converter-from-csv",
-            "json-web-token-decoder",
-            "online-csv-json-tool",
-            "prettify-json-online",
-            "transform-csv-data",
-            "convert-comma-separated-values-to-json"
+            "csv-file-to-json"
           ],
           "popular": false,
           "category": "developer"
@@ -3060,12 +2780,7 @@
             "google-ai-api-tester",
             "test-google-fonts",
             "google-search-console-tool",
-            "google-snippet-preview",
-            "google-keyword-planner-free",
-            "find-google-keywords",
-            "seo-keywords-google",
-            "google-mobile-test",
-            "google-maps-seo"
+            "google-snippet-preview"
           ],
           "popular": false,
           "category": "developer"
@@ -3153,10 +2868,7 @@
             "check-html-syntax",
             "free-html-beautifier-online",
             "html-beautifier-tool",
-            "html-validator",
-            "validate-html-online",
-            "w3c-html-validation-alternative",
-            "prettify-html-code-online"
+            "html-validator"
           ],
           "popular": false,
           "category": "developer"
@@ -3227,8 +2939,7 @@
           "extraSlugs": [
             "free-javascript-beautifier-online",
             "javascript-beautifier-tool",
-            "obfuscate-javascript",
-            "prettify-js-code-online"
+            "obfuscate-javascript"
           ],
           "popular": false,
           "category": "developer"
@@ -3240,8 +2951,7 @@
           "route": "/javascript-deobfuscator",
           "extraSlugs": [
             "free-javascript-deobfuscator-online",
-            "javascript-deobfuscator-tool",
-            "unminify-js-online"
+            "javascript-deobfuscator-tool"
           ],
           "popular": false,
           "category": "developer"
@@ -3253,8 +2963,7 @@
           "route": "/javascript-minifier",
           "extraSlugs": [
             "free-javascript-minifier-online",
-            "javascript-minifier-tool",
-            "compress-js-online"
+            "javascript-minifier-tool"
           ],
           "popular": false,
           "category": "developer"
@@ -3266,8 +2975,7 @@
           "route": "/javascript-obfuscator",
           "extraSlugs": [
             "free-javascript-obfuscator-online",
-            "javascript-obfuscator-tool",
-            "secure-js-code"
+            "javascript-obfuscator-tool"
           ],
           "popular": false,
           "category": "developer"
@@ -3374,20 +3082,10 @@
           "route": "/json-to-xml-converter",
           "extraSlugs": [
             "beautify-xml-online",
-            "convert-xml-to-json",
             "create-xml-sitemap",
             "format-xml-file",
             "free-json-to-xml-converter-online",
-            "json-to-xml-converter-tool",
-            "online-xml-converter",
-            "parse-xml-to-json",
-            "validate-xml-format",
-            "xml-data-converter",
-            "xml-file-to-json",
-            "xml-indenter",
-            "xml-pretty-print",
-            "xml-sitemap-analyzer",
-            "xml-sitemap-builder"
+            "json-to-xml-converter-tool"
           ],
           "popular": false,
           "category": "developer"
@@ -3398,11 +3096,9 @@
           "description": "Validate your JSON data for syntax errors and structural integrity instantly. Our free online tool helps you catch bugs and ensure your JSON is RFC-compliant.",
           "route": "/json-validator",
           "extraSlugs": [
-            "complex-regex-validator",
             "free-json-validator-online",
             "json-ld-validator",
             "json-validator-tool",
-            "regular-expression-validator",
             "json-syntax-checker"
           ],
           "popular": false,
@@ -3414,20 +3110,9 @@
           "description": "Free json viewer tool to process your data instantly with privacy-friendly browser-based workflows.",
           "route": "/json-viewer",
           "extraSlugs": [
-            "anonymous-ig-viewer",
-            "camera-metadata-viewer",
-            "facebook-story-viewer-download",
             "free-json-viewer-online",
-            "ig-dp-viewer",
-            "ig-profile-picture-viewer",
-            "insta-dp-viewer",
-            "insta-story-viewer",
-            "insta-viewer",
-            "instagram-profile-picture-viewer",
             "json-viewer-online",
-            "json-viewer-tool",
-            "profile-pic-viewer-instagram",
-            "story-viewer-without-account"
+            "json-viewer-tool"
           ],
           "popular": false,
           "category": "developer"
@@ -3784,11 +3469,7 @@
             "css-gradient-maker",
             "css3-gradient-maker",
             "gradient-color-generator",
-            "gradient-generator",
-            "linear-gradient-generator",
-            "web-gradient-creator",
-            "web-gradient-generator",
-            "background-gradient-tool"
+            "gradient-generator"
           ],
           "popular": false,
           "category": "developer"
@@ -3811,11 +3492,7 @@
           "description": "Format and beautify HTML, CSS, JavaScript, and SQL code.",
           "route": "/code-formatter",
           "extraSlugs": [
-            "format-html-css-js",
-            "format-sql-online",
-            "web-code-compressor",
-            "css-compressor",
-            "js-compressor-minifier"
+            "web-code-compressor"
           ],
           "popular": false,
           "category": "developer"
@@ -3876,7 +3553,7 @@
         {
           "id": "blutv-video-downloader",
           "name": "BluTV Video Downloader",
-          "description": "Download publicly accessible BluTV content\u2014trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
+          "description": "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
           "route": "/blutv-video-downloader",
           "extraSlugs": [],
           "popular": false,
@@ -3949,14 +3626,7 @@
             "download-facebook-videos-hd",
             "download-story-facebook",
             "facebook-downloader",
-            "facebook-hd-video-saver",
-            "facebook-reels-downloader",
-            "facebook-story-saver",
-            "facebook-video-saver",
-            "save-facebook-video",
-            "download-fb-video",
-            "fb-video-saver",
-            "facebook-story-downloader"
+            "facebook-hd-video-saver"
           ],
           "popular": true,
           "category": "downloaders",
@@ -4097,21 +3767,7 @@
             "aesthetic-instagram-bio",
             "download-from-instagram",
             "download-instagram-reels",
-            "grow-on-instagram",
-            "ig-video-photo-loader",
-            "instagram-downloader-mp4",
-            "instagram-dp-downloader",
-            "instagram-media-saver",
-            "instagram-photo-downloader",
-            "instagram-picture-saver",
-            "instagram-profile-pic-downloader",
-            "instagram-tool-downloader",
-            "save-instagram-clips",
-            "save-instagram-content-online",
-            "save-instagram-photos",
-            "watch-instagram-stories",
-            "ig-photo-download-hd",
-            "ig-profile-picture-viewer"
+            "grow-on-instagram"
           ],
           "popular": true,
           "category": "downloaders",
@@ -4119,7 +3775,7 @@
             "Download Instagram videos, reels, stories, and photos in original quality",
             "Save Instagram posts and carousel images as high-resolution files",
             "Download Instagram profile pictures in full size",
-            "Works on any device with a web browser \u2014 no app needed",
+            "Works on any device with a web browser — no app needed",
             "No Instagram login or account required for downloading",
             "Fast processing with instant download links",
             "Unlimited free downloads with no restrictions",
@@ -4180,9 +3836,7 @@
             "instagram-photo-downloader",
             "instagram-picture-saver",
             "instagram-profile-photo-hd",
-            "instagram-profile-pic-downloader",
-            "instagram-profile-picture-viewer",
-            "profile-pic-viewer-instagram"
+            "instagram-profile-pic-downloader"
           ],
           "popular": false,
           "category": "downloaders"
@@ -4197,8 +3851,7 @@
             "ig-reel-saver-hd",
             "download-instagram-reels-with-audio",
             "insta-reel-download-free",
-            "save-ig-reels-to-gallery-1080p",
-            "instagram-reel-downloader-no-signup"
+            "save-ig-reels-to-gallery-1080p"
           ],
           "popular": true,
           "category": "downloaders"
@@ -4209,16 +3862,11 @@
           "description": "Download Instagram Story online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required.",
           "route": "/instagram-story-downloader",
           "extraSlugs": [
-            "fb-story-saver",
             "fit-photo-to-instagram-story",
             "insta-story-saver",
             "instagram-anonymous-story-viewer",
             "instagram-story-resizer",
-            "instagram-story-viewer",
-            "instagram-story-viewer-download",
-            "instagram-viewer-story",
-            "resize-for-instagram-story",
-            "save-instagram-story-anonymous"
+            "instagram-story-viewer"
           ],
           "popular": false,
           "category": "downloaders"
@@ -4229,11 +3877,7 @@
           "description": "Download Instagram Videos, Reels, Photos, IGTV and Carousel. Save your favorite content with our easy-to-use tool. Start downloading now!",
           "route": "/instagram-videos-downloader",
           "extraSlugs": [
-            "download-instagram-videos-online",
-            "download-pinterest-videos",
-            "download-videos-from-any-site",
-            "save-snapchat-videos",
-            "save-twitter-videos"
+            "download-instagram-videos-online"
           ],
           "popular": false,
           "category": "downloaders"
@@ -4289,7 +3933,7 @@
         {
           "id": "linkedin-video-downloader",
           "name": "Linkedin Video Downloader",
-          "description": "Download LinkedIn videos in high quality\u2014free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps\u2014just fast processing and a clean, simple interface that helps you save videos quickly.",
+          "description": "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
           "route": "/linkedin-video-downloader",
           "extraSlugs": [
             "save-linkedin-video-online-free",
@@ -4328,8 +3972,7 @@
           "description": "The easiest way to download Mixcloud audio and video content online. Our free tool helps you save high-quality mixes and tracks for offline listening anywhere.",
           "route": "/mixcloud-video-downloader",
           "extraSlugs": [
-            "free-mixcloud-downloader-online",
-            "save-mixcloud-audio-hd"
+            "free-mixcloud-downloader-online"
           ],
           "popular": false,
           "category": "downloaders"
@@ -4376,48 +4019,11 @@
           "description": "Download videos from any website for free with our online video downloader. Supports YouTube, TikTok, Instagram, Facebook, Twitter and 1000+ sites. HD quality, MP4/MP3 formats, no watermarks.",
           "route": "/online-video-downloader",
           "extraSlugs": [
-            "audio-cutter-online",
-            "audio-recorder-online",
-            "check-diff-online",
-            "check-regex-online",
-            "check-wpm-online",
-            "combine-photos-online",
-            "compress-images-online",
-            "compress-mp3-online",
             "compress-video-online",
-            "create-zip-file-online",
             "download-videos-from-any-website",
-            "drawing-board-online",
             "facebook-video-downloader",
-            "find-keywords-online",
             "free-video-downloader",
-            "generate-hash-online",
-            "generate-sitemap-online",
-            "instagram-video-downloader",
-            "make-archive-online",
-            "online-video-downloader",
-            "online-microphone-recorder",
-            "online-screen-capture",
-            "online-thumbnail-creator",
-            "online-video-player-creator",
-            "online-whiteboard-free",
-            "postman-alternative-online",
-            "preview-fonts-online",
-            "record-mp3-online",
-            "record-screen-online",
-            "save-tiktok-video-online",
-            "sketch-board-online",
-            "snapchat-saver-online",
-            "test-regex-online",
-            "tiktok-video-downloader",
-            "trim-audio-online",
-            "trim-video-online",
-            "video-downloader-online",
-            "video-cutter-online",
-            "video-grabber-online",
-            "video-to-mp3-online",
-            "youtube-video-downloader-free",
-            "youtube-video-downloader-online"
+            "instagram-video-downloader"
           ],
           "popular": true,
           "category": "downloaders",
@@ -4426,7 +4032,7 @@
             "Save videos in MP4 format with HD, Full HD, and 4K quality options",
             "Extract audio and download as MP3 with one click",
             "No watermarks added to downloaded videos",
-            "Works directly in your browser \u2014 no software installation required",
+            "Works directly in your browser — no software installation required",
             "Unlimited free downloads with no daily limits",
             "Fast download speeds with optimized server-side processing",
             "Mobile-friendly interface works on phones and tablets"
@@ -4450,7 +4056,7 @@
             },
             {
               "question": "Can I download just the audio from a video?",
-              "answer": "Yes, select the MP3 audio option after pasting your video URL. This extracts the audio track and saves it as an MP3 file \u2014 perfect for music, podcasts, or lectures."
+              "answer": "Yes, select the MP3 audio option after pasting your video URL. This extracts the audio track and saves it as an MP3 file — perfect for music, podcasts, or lectures."
             }
           ],
           "howTo": [
@@ -4495,8 +4101,7 @@
           "route": "/pinterest-gif-downloader",
           "extraSlugs": [
             "pinterest-clip-saver",
-            "pinterest-media-downloader",
-            "twitter-gif-downloader"
+            "pinterest-media-downloader"
           ],
           "popular": false,
           "category": "downloaders"
@@ -4511,10 +4116,7 @@
             "download-pinterest-images-hd",
             "pinterest-photo-saver",
             "pinterest-image-downloader-no-watermark",
-            "save-pinterest-pins",
-            "pinterest-mood-board-downloader",
-            "pinterest-image-downloader-online",
-            "pinterest-picture-downloader-free"
+            "save-pinterest-pins"
           ],
           "popular": true,
           "category": "downloaders"
@@ -4522,7 +4124,7 @@
         {
           "id": "pinterest-video-downloader",
           "name": "Pinterest Video Downloader",
-          "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF\u2014on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
+          "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
           "route": "/pinterest-video-downloader",
           "extraSlugs": [
             "how-to-download-pinterest-videos-to-camera-roll",
@@ -4659,37 +4261,21 @@
           "extraSlugs": [
             "download-tiktok-sound",
             "download-tiktok-video",
-            "extract-tiktok-audio",
             "fast-tiktok-downloader",
             "fit-video-to-tiktok",
-            "mp3-from-tiktok",
-            "no-watermark-tiktok",
-            "resize-video-for-tiktok",
-            "save-tiktok-mp4",
-            "save-tiktok-music",
-            "save-tiktok-video-hd",
-            "tiktok-audio-downloader",
-            "tiktok-downloader-hd",
-            "tiktok-downloader-without-watermark-2026",
-            "tiktok-mp3-saver",
-            "tiktok-saver-no-watermark",
-            "tiktok-sound-downloader-mp3",
-            "tiktok-video-dimensions",
-            "tiktok-video-downloader-2",
-            "tiktok-video-resizer",
-            "tiktok-video-saver-free"
+            "mp3-from-tiktok"
           ],
           "popular": true,
           "category": "downloaders",
           "features": [
             "Download TikTok videos without watermark in original HD quality",
             "Save TikTok videos as MP4 or extract audio as MP3",
-            "Works on all devices \u2014 iPhone, Android, PC, and tablet",
+            "Works on all devices — iPhone, Android, PC, and tablet",
             "No TikTok login or account required",
             "Fast processing with downloads completing in seconds",
             "Unlimited free downloads with no daily restrictions",
             "Preserves original video resolution and audio quality",
-            "Browser-based tool \u2014 no app installation needed"
+            "Browser-based tool — no app installation needed"
           ],
           "faqs": [
             {
@@ -4702,7 +4288,7 @@
             },
             {
               "question": "Can I download TikTok videos as MP3 audio?",
-              "answer": "Yes, select the MP3 option after pasting your TikTok link. This extracts just the audio from the video \u2014 perfect for saving TikTok sounds, music, and voice clips."
+              "answer": "Yes, select the MP3 option after pasting your TikTok link. This extracts just the audio from the video — perfect for saving TikTok sounds, music, and voice clips."
             },
             {
               "question": "Is it legal to download TikTok videos?",
@@ -4739,7 +4325,7 @@
         {
           "id": "tiktok-videos-downloader",
           "name": "Tiktok Videos Downloader",
-          "description": "Download TikTok videos without watermark\u2014free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips.",
+          "description": "Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips.",
           "route": "/tiktok-videos-downloader",
           "extraSlugs": [],
           "popular": false,
@@ -4773,12 +4359,7 @@
             "download-twitter-video",
             "download-twitter-video-for-iphone",
             "save-twitter-video",
-            "twitter-bio-maker",
-            "twitter-downloader",
-            "twitter-header-size-maker",
-            "twitter-media-saver",
-            "twitter-video-saver",
-            "x-video-downloader-online"
+            "twitter-bio-maker"
           ],
           "popular": true,
           "category": "downloaders",
@@ -4787,7 +4368,7 @@
             "Save Twitter GIFs as video or image files",
             "Works on desktop, iPhone, and Android browsers",
             "No Twitter login or account required",
-            "Fast processing \u2014 download in seconds",
+            "Fast processing — download in seconds",
             "Unlimited free downloads with no restrictions",
             "No watermarks added to downloaded videos",
             "Supports Twitter and X.com video URLs"
@@ -4879,15 +4460,8 @@
             "create-youtube-thumbnail",
             "download-youtube-thumbnail-hd",
             "free-youtube-thumbnail-downloader",
-            "free-thumbnail-design",
-            "maxresdefault-downloader",
-            "youtube-thumbnail-downloader",
             "youtube-thumbnail-extractor",
-            "youtube-thumbnail-grabber",
-            "youtube-thumbnail-saver",
-            "youtube-video-thumbnail-download",
-            "yt-thumbnail-maker",
-            "online-thumbnail-creator"
+            "youtube-thumbnail-grabber"
           ],
           "popular": true,
           "category": "downloaders",
@@ -4897,14 +4471,14 @@
             "Works with any YouTube video URL or video ID",
             "No software installation or browser extensions needed",
             "Free for personal and commercial use",
-            "Fast instant downloads \u2014 no waiting or processing",
+            "Fast instant downloads — no waiting or processing",
             "No YouTube login or account required",
             "Download thumbnails as high-resolution JPG files"
           ],
           "faqs": [
             {
               "question": "How do I download a YouTube video thumbnail?",
-              "answer": "Copy the YouTube video URL, paste it into the input field above, and click Download. You will see all available thumbnail resolutions \u2014 click the one you want to save."
+              "answer": "Copy the YouTube video URL, paste it into the input field above, and click Download. You will see all available thumbnail resolutions — click the one you want to save."
             },
             {
               "question": "What resolutions are available for YouTube thumbnails?",
@@ -4938,7 +4512,7 @@
             },
             {
               "title": "Choose Resolution",
-              "description": "Select the thumbnail resolution you want \u2014 maxresdefault for the highest quality, or smaller sizes for faster loading."
+              "description": "Select the thumbnail resolution you want — maxresdefault for the highest quality, or smaller sizes for faster loading."
             },
             {
               "title": "Save the Thumbnail",
@@ -4949,7 +4523,7 @@
         {
           "id": "youtube-video-downloader",
           "name": "YouTube Video Downloader",
-          "description": "Download YouTube videos quickly in multiple formats and resolutions\u2014free, fast, secure, no signup, and fully browser-based.",
+          "description": "Download YouTube videos quickly in multiple formats and resolutions—free, fast, secure, no signup, and fully browser-based.",
           "route": "/youtube-video-downloader",
           "extraSlugs": [
             "youtube-video-downloader-2026"
@@ -4967,25 +4541,7 @@
             "change-avi-to-mp4",
             "change-flv-to-mp4",
             "change-m4a-to-mp3",
-            "change-mkv-to-mp4",
-            "change-mov-to-mp4",
-            "change-ogg-to-mp3",
-            "change-wav-to-mp3",
-            "change-webm-to-mp4",
-            "compress-ogg-to-mp3",
-            "compress-wav-to-mp3",
-            "flv-file-to-mp4-online",
-            "m4a-file-to-mp3-online",
-            "mkv-file-to-mp4-online",
-            "mov-file-to-mp4-online",
-            "mov-to-mp4",
-            "mp4-to-mp3",
-            "ogg-file-to-mp3-online",
-            "quicktime-to-mp4",
-            "tiktok-to-mp3-online",
-            "webm-file-to-mp4-online",
-            "youtube-to-mp3-high-quality",
-            "extract-audio-from-mp4-online"
+            "change-mkv-to-mp4"
           ],
           "category": "downloaders"
         },
@@ -4995,7 +4551,6 @@
           "description": "Extract MP3 audio from any video file instantly. Our free online tool supports multiple video formats and provides high-bitrate audio downloads for a premium listening experience.",
           "route": "/free-mp3-extractor",
           "extraSlugs": [
-            "free-mp3-extractor",
             "extract-audio-from-video-free"
           ],
           "category": "downloaders"
@@ -5017,9 +4572,6 @@
           "description": "Save videos, images, and GIFs from Reddit instantly. Our free online tool handles multiple subreddits and provides high-quality downloads for offline viewing.",
           "route": "/reddit-media-saver",
           "extraSlugs": [
-            "instagram-media-saver",
-            "reddit-media-saver",
-            "twitter-media-saver",
             "reddit-video-downloader-hd"
           ],
           "category": "downloaders"
@@ -5030,7 +4582,6 @@
           "description": "Reduce the file size of your MP3 audio while maintaining great sound quality. Our free online compressor is perfect for optimizing audio for web use and mobile devices.",
           "route": "/shrink-mp3-size",
           "extraSlugs": [
-            "shrink-mp3-size",
             "compress-mp3-online-free"
           ],
           "category": "downloaders"
@@ -5042,7 +4593,6 @@
           "route": "/modify-mp3-file",
           "extraSlugs": [
             "cut-mp3-file",
-            "modify-mp3-file",
             "online-mp3-trimmer"
           ],
           "category": "downloaders"
@@ -5053,7 +4603,6 @@
           "description": "Download and view Facebook stories anonymously. Our free online tool helps you save story content without notifying the creator. 100% private and secure.",
           "route": "/save-fb-stories-anonymous",
           "extraSlugs": [
-            "save-fb-stories-anonymous",
             "view-facebook-stories-privately"
           ],
           "category": "downloaders"
@@ -5064,7 +4613,6 @@
           "description": "Save Instagram clips, videos, and photos to your device instantly. Our free online downloader supports all public IG content and provides high-quality MP4/JPG files.",
           "route": "/save-instagram-clips",
           "extraSlugs": [
-            "save-instagram-clips",
             "save-instagram-photos",
             "download-ig-videos-free"
           ],
@@ -5076,7 +4624,6 @@
           "description": "Download Instagram story highlights to your device easily. Our free online tool helps you archive your favorite moments and creators' content in high quality.",
           "route": "/ig-highlights-saver",
           "extraSlugs": [
-            "ig-highlights-saver",
             "download-instagram-highlights-online"
           ],
           "category": "downloaders"
@@ -5086,10 +4633,7 @@
           "name": "Save Insta Pfp",
           "description": "View and download Instagram profile pictures in full resolution. Our free online tool provides high-quality DP downloads for any public Instagram account.",
           "route": "/save-insta-pfp",
-          "extraSlugs": [
-            "save-insta-pfp",
-            "download-instagram-profile-picture-hd"
-          ],
+          "extraSlugs": [],
           "category": "downloaders"
         },
         {
@@ -5098,7 +4642,6 @@
           "description": "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation.",
           "route": "/insta-reels-saver",
           "extraSlugs": [
-            "insta-reels-saver",
             "download-ig-reels-hd"
           ],
           "category": "downloaders"
@@ -5109,7 +4652,6 @@
           "description": "Download viral Reels from Instagram and other platforms instantly. Our free online tool provides high-speed downloads for all your favorite short-form video content.",
           "route": "/save-reels-video",
           "extraSlugs": [
-            "save-reels-video",
             "download-viral-reels-online"
           ],
           "category": "downloaders"
@@ -5120,8 +4662,6 @@
           "description": "Download videos and GIFs from Twitter (X) in high resolution. Our free online tool preserves quality and provides multiple format options for offline viewing.",
           "route": "/save-twitter-videos",
           "extraSlugs": [
-            "save-snapchat-videos",
-            "save-twitter-videos",
             "twitter-video-downloader-hd"
           ],
           "category": "downloaders"
@@ -5134,7 +4674,6 @@
           "extraSlugs": [
             "no-watermark-tiktok",
             "tiktok-mp3-saver",
-            "tiktok-saver-no-watermark",
             "download-clean-tiktok-video"
           ],
           "category": "downloaders"
@@ -5145,7 +4684,6 @@
           "description": "Save TikTok videos as high-quality MP4 files instantly. Our free online downloader is fast, secure, and works on all devices without any signup or software.",
           "route": "/save-tiktok-mp4",
           "extraSlugs": [
-            "save-tiktok-mp4",
             "save-tiktok-music",
             "tiktok-to-mp4-online"
           ],
@@ -5154,10 +4692,9 @@
         {
           "id": "save-ig-content",
           "name": "Save Ig Content",
-          "description": "Download any public Instagram content\u2014photos, videos, reels, and stories\u2014to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
+          "description": "Download any public Instagram content—photos, videos, reels, and stories—to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
           "route": "/save-ig-content",
           "extraSlugs": [
-            "save-ig-content",
             "instagram-media-downloader-all"
           ],
           "category": "downloaders"
@@ -5168,7 +4705,6 @@
           "description": "Extract high-quality MP3 audio from any TikTok video instantly. Perfect for saving viral sounds, music, and voiceovers for offline listening or creative projects.",
           "route": "/mp3-from-tiktok",
           "extraSlugs": [
-            "mp3-from-tiktok",
             "tiktok-audio-extractor-online"
           ],
           "category": "downloaders"
@@ -5179,7 +4715,6 @@
           "description": "Save Pinterest video clips and GIFs to your device easily. Our free online tool helps you download inspirational content for offline viewing and project reference.",
           "route": "/pinterest-clip-saver",
           "extraSlugs": [
-            "pinterest-clip-saver",
             "download-pinterest-videos-online"
           ],
           "category": "downloaders"
@@ -5190,7 +4725,6 @@
           "description": "Download Snapchat stories and spotlight videos in high quality. Our free online tool helps you save ephemeral content before it disappears forever.",
           "route": "/snapchat-saver-online",
           "extraSlugs": [
-            "snapchat-saver-online",
             "save-snapchat-stories-free"
           ],
           "category": "downloaders"
@@ -5200,10 +4734,7 @@
           "name": "Save Snaps To Gallery",
           "description": "Save public Snapchat snaps and videos directly to your phone gallery. Our free online tool works in your browser on all mobile devices and desktop computers.",
           "route": "/save-snaps-to-gallery",
-          "extraSlugs": [
-            "save-snaps-to-gallery",
-            "download-snapchat-videos-hd"
-          ],
+          "extraSlugs": [],
           "category": "downloaders"
         },
         {
@@ -5224,8 +4755,7 @@
           "description": "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free.",
           "route": "/downloaders",
           "extraSlugs": [
-            "all-social-media-downloader",
-            "free-online-video-saver"
+            "all-social-media-downloader"
           ],
           "popular": false,
           "category": "downloaders"
@@ -5269,8 +4799,7 @@
           "route": "/angle-converter",
           "extraSlugs": [
             "free-angle-converter-online",
-            "angle-converter-tool",
-            "convert-degrees-to-radians"
+            "angle-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5282,8 +4811,7 @@
           "route": "/apparent-power-converter",
           "extraSlugs": [
             "free-apparent-power-converter-online",
-            "apparent-power-converter-tool",
-            "convert-va-to-kva"
+            "apparent-power-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5295,8 +4823,7 @@
           "route": "/area-converter",
           "extraSlugs": [
             "free-area-converter-online",
-            "area-converter-tool",
-            "convert-acres-to-hectares"
+            "area-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5308,8 +4835,7 @@
           "route": "/average-calculator",
           "extraSlugs": [
             "free-average-calculator-online",
-            "average-calculator-tool",
-            "mean-median-mode-calculator"
+            "average-calculator-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5349,8 +4875,7 @@
           "route": "/charge-converter",
           "extraSlugs": [
             "free-charge-converter-online",
-            "charge-converter-tool",
-            "convert-coulomb-to-ampere-hour"
+            "charge-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5365,10 +4890,7 @@
             "color-converter-tool",
             "color-format-changer",
             "create-color-scheme",
-            "free-color-converter-online",
-            "rgb-color-selector",
-            "website-color-palette",
-            "convert-hex-to-rgb-online"
+            "free-color-converter-online"
           ],
           "popular": false,
           "category": "utilities"
@@ -5380,8 +4902,7 @@
           "route": "/confidence-interval-calculator",
           "extraSlugs": [
             "free-confidence-interval-calculator-online",
-            "confidence-interval-calculator-tool",
-            "statistical-margin-of-error-calculator"
+            "confidence-interval-calculator-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5419,8 +4940,7 @@
           "route": "/cpm-calculator",
           "extraSlugs": [
             "free-cpm-calculator-online",
-            "cpm-calculator-tool",
-            "advertising-cost-calculator"
+            "cpm-calculator-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5445,8 +4965,7 @@
           "route": "/credit-card-validator",
           "extraSlugs": [
             "free-credit-card-validator-online",
-            "credit-card-validator-tool",
-            "luhn-algorithm-checker"
+            "credit-card-validator-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5458,8 +4977,7 @@
           "route": "/currency-converter",
           "extraSlugs": [
             "free-currency-converter-online",
-            "currency-converter-tool",
-            "live-exchange-rates-calculator"
+            "currency-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5471,8 +4989,7 @@
           "route": "/current-converter",
           "extraSlugs": [
             "free-current-converter-online",
-            "current-converter-tool",
-            "convert-amps-to-milliamps"
+            "current-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5484,8 +5001,7 @@
           "route": "/digital-converter",
           "extraSlugs": [
             "free-digital-converter-online",
-            "digital-converter-tool",
-            "data-storage-unit-converter"
+            "digital-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5510,8 +5026,7 @@
           "route": "/discount-calculator",
           "extraSlugs": [
             "free-discount-calculator-online",
-            "discount-calculator-tool",
-            "percentage-off-calculator"
+            "discount-calculator-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -5627,8 +5142,7 @@
             "get-http-headers-tool",
             "get-emails-from-string",
             "send-http-request",
-            "get-urls-from-sitemap",
-            "get-all-urls-from-page"
+            "get-urls-from-sitemap"
           ],
           "popular": false,
           "category": "utilities"
@@ -5715,7 +5229,6 @@
           "description": "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
           "route": "/indexnow",
           "extraSlugs": [
-            "submit-url-to-bing-instantly",
             "indexnow-api-tool"
           ],
           "popular": false,
@@ -5731,25 +5244,18 @@
             "check-website-speed",
             "keyboard-speed-test",
             "microphone-test-recorder",
-            "mobile-friendly-test",
-            "online-bandwidth-test-free",
-            "rich-results-test",
-            "speed-test-google",
-            "typing-racer-test",
-            "typing-speed-test",
-            "website-performance-test",
-            "words-per-minute-test"
+            "mobile-friendly-test"
           ],
           "popular": true,
           "category": "utilities",
           "features": [
             "Measure download speed, upload speed, and ping latency",
             "Real-time speed test with live progress visualization",
-            "Works on any device \u2014 desktop, tablet, and mobile",
+            "Works on any device — desktop, tablet, and mobile",
             "No software installation or Flash required",
             "Test results in Mbps (megabits per second)",
             "Compare your speed against typical broadband benchmarks",
-            "Fast test \u2014 results in under 30 seconds",
+            "Fast test — results in under 30 seconds",
             "Unlimited free tests with no restrictions"
           ],
           "faqs": [
@@ -5767,7 +5273,7 @@
             },
             {
               "question": "What is ping and why does it matter?",
-              "answer": "Ping (latency) measures the time it takes for data to travel to a server and back, in milliseconds. Lower ping is better \u2014 under 20ms is excellent, under 50ms is good for gaming, and under 100ms is acceptable for general use."
+              "answer": "Ping (latency) measures the time it takes for data to travel to a server and back, in milliseconds. Lower ping is better — under 20ms is excellent, under 50ms is good for gaming, and under 100ms is acceptable for general use."
             },
             {
               "question": "Is this speed test free?",
@@ -5893,13 +5399,7 @@
             "download-full-size-dp",
             "duplicate-page-detector",
             "free-page-size-checker-online",
-            "on-page-seo-checker",
-            "page-size-checker-tool",
-            "reduce-audio-file-size",
-            "reduce-js-file-size",
-            "shrink-mp3-size",
-            "social-media-post-size",
-            "view-full-size-ig-dp"
+            "on-page-seo-checker"
           ],
           "popular": false,
           "category": "utilities"
@@ -5922,7 +5422,8 @@
           "description": "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
           "route": "/ascii-art-generator",
           "popular": true,
-          "category": "generators"
+          "category": "generators",
+          "extraSlugs": []
         },
         {
           "id": "password-generator",
@@ -5934,14 +5435,7 @@
             "secure-password-generator-for-wifi",
             "strong-password-generator",
             "strong-password-maker-online",
-            "configurable-password-tool",
-            "create-strong-password",
-            "custom-password-maker",
-            "generate-secure-password",
-            "password-generator2",
-            "secure-password-creator",
-            "secure-pass-generator",
-            "randomness-generator"
+            "configurable-password-tool"
           ],
           "popular": true,
           "category": "utilities",
@@ -5951,7 +5445,7 @@
             "Include or exclude uppercase, lowercase, numbers, and symbols",
             "One-click copy to clipboard for easy use",
             "Password strength indicator shows security level",
-            "100% client-side generation \u2014 passwords never leave your browser",
+            "100% client-side generation — passwords never leave your browser",
             "Generate multiple passwords at once",
             "No signup or account required"
           ],
@@ -6198,8 +5692,7 @@
             "free-screen-resolution-simulator-online",
             "improve-picture-resolution",
             "screen-recorder",
-            "screen-resolution-simulator-tool",
-            "smartphone-view-simulator"
+            "screen-resolution-simulator-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -6263,9 +5756,7 @@
             "free-time-converter-online",
             "human-readable-time",
             "meeting-planner-time-zone",
-            "time-converter-tool",
-            "time-zone-map",
-            "unix-time-converter"
+            "time-converter-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -6292,10 +5783,7 @@
             "url-decode-tool",
             "escape-url-characters",
             "make-url-shorter",
-            "generate-payment-url",
-            "check-url-indexation",
-            "bulk-url-indexer",
-            "find-backlinks-url"
+            "generate-payment-url"
           ],
           "popular": false,
           "category": "utilities"
@@ -6345,24 +5833,9 @@
           "description": "Free url rewriting tool tool to process your data instantly with privacy-friendly browser-based workflows.",
           "route": "/url-rewriting-tool",
           "extraSlugs": [
-            "competitor-analysis-tool",
-            "content-duplication-tool",
-            "crawl-control-tool",
-            "css3-gradient-tool",
-            "css3-shadow-tool",
-            "email-scraper-tool",
-            "foreign-exchange-tool",
             "free-url-rewriting-tool-online",
-            "gmb-optimization-tool",
-            "mobile-optimization-tool",
-            "percent-encoding-tool",
-            "rank-tracking-tool",
-            "regex-cheatsheet-tool",
-            "serp-preview-tool",
-            "typography-preview-tool",
             "url-decoder-tool",
-            "url-rewriting-tool-tool",
-            "website-comparison-tool"
+            "url-rewriting-tool-tool"
           ],
           "popular": false,
           "category": "utilities"
@@ -6530,7 +6003,8 @@
           "name": "Text Tools",
           "description": "Format, convert, and manipulate text content",
           "route": "/text-tools",
-          "category": "utilities"
+          "category": "utilities",
+          "extraSlugs": []
         }
       ]
     },
@@ -6546,17 +6020,11 @@
           "description": "Comprehensive keyword research tool with search volume, difficulty, CPC data, and keyword suggestions. Find profitable keywords for SEO.",
           "route": "/keyword-research-tool",
           "extraSlugs": [
-            "advanced-regex-tool",
             "bing-keyword-research",
             "bing-keyword-tool",
             "competitor-keyword-spy",
             "google-keyword-research",
-            "keyword-counter-tool",
-            "keyword-ideas-bing",
-            "keyword-monitoring-tool",
-            "keyword-tool-google",
-            "long-tail-keyword-tool",
-            "seo-keyword-generator"
+            "keyword-counter-tool"
           ],
           "popular": true,
           "category": "seo",
@@ -6581,7 +6049,7 @@
             },
             {
               "question": "How do I find long-tail keywords?",
-              "answer": "Enter a broad topic keyword and the tool will generate long-tail variations \u2014 longer, more specific phrases with lower competition. These are often easier to rank for and attract more targeted traffic."
+              "answer": "Enter a broad topic keyword and the tool will generate long-tail variations — longer, more specific phrases with lower competition. These are often easier to rank for and attract more targeted traffic."
             },
             {
               "question": "Can I research keywords for different countries?",
@@ -6624,7 +6092,6 @@
             "extract-urls-from-sitemap",
             "google-sitemap-generator",
             "xml-sitemap-builder",
-            "website-map-maker",
             "visual-sitemap-generator"
           ],
           "popular": true,
@@ -6640,14 +6107,7 @@
             "local-business-seo",
             "local-seo-tool",
             "seo-competition-analysis",
-            "seo-potransition-tracker",
-            "seo-tools",
-            "technical-seo-audit",
-            "website-meta-audit",
-            "website-seo-audit",
-            "check-image-seo",
-            "image-seo-analyzer",
-            "image-optimization-test"
+            "seo-potransition-tracker"
           ],
           "popular": true,
           "category": "seo",
@@ -6659,7 +6119,7 @@
             "Identify missing alt text, broken links, and crawl errors",
             "Get actionable recommendations prioritized by impact",
             "Export audit results as a downloadable report",
-            "No signup required \u2014 instant analysis for any URL"
+            "No signup required — instant analysis for any URL"
           ],
           "faqs": [
             {
@@ -6694,7 +6154,7 @@
             },
             {
               "title": "Review the Results",
-              "description": "Examine the audit results organized by category \u2014 technical SEO, on-page, content, and performance."
+              "description": "Examine the audit results organized by category — technical SEO, on-page, content, and performance."
             },
             {
               "title": "Prioritize Fixes",
@@ -6716,11 +6176,7 @@
             "check-backlinks-online",
             "backlink-analyzer-tool",
             "website-backlink-checker",
-            "seo-backlink-checker",
-            "check-website-backlinks",
-            "free-backlink-audit",
-            "backlink-analysis-tool",
-            "website-backlink-analysis"
+            "seo-backlink-checker"
           ],
           "popular": true,
           "category": "seo",
@@ -6741,7 +6197,7 @@
             },
             {
               "question": "What is a backlink?",
-              "answer": "A backlink is a link from one website to another. Search engines like Google use backlinks as a ranking factor \u2014 sites with more high-quality backlinks tend to rank higher in search results."
+              "answer": "A backlink is a link from one website to another. Search engines like Google use backlinks as a ranking factor — sites with more high-quality backlinks tend to rank higher in search results."
             },
             {
               "question": "What makes a good backlink?",
@@ -6785,19 +6241,11 @@
           "description": "Check Google rankings for multiple keywords instantly with our free bulk keyword rank checker. Track keyword positions, monitor competitors, and get accurate SERP data. No signup required.",
           "route": "/bulk-keyword-rank-checker",
           "extraSlugs": [
-            "bulk-keyword-rank-checker",
             "bulk-rank-tracking",
             "check-keyword-position",
             "free-rank-checker",
             "google-rank-checker",
-            "google-rank-checker",
-            "google-rank-checker-bulk",
-            "keyword-position-tracker",
-            "keyword-rank-checker",
-            "keyword-potransition-checker",
-            "rank-checker-bulk",
-            "serp-checker",
-            "serp-tracker-bulk"
+            "google-rank-checker-bulk"
           ],
           "popular": true,
           "category": "seo",
@@ -6808,7 +6256,7 @@
             "Monitor competitor rankings alongside your own",
             "Supports desktop and mobile SERP tracking",
             "No registration or API key required",
-            "Fast bulk processing \u2014 check up to 100 keywords at once",
+            "Fast bulk processing — check up to 100 keywords at once",
             "Accurate real-time SERP position data"
           ],
           "faqs": [
@@ -6923,9 +6371,7 @@
             "free-meta-tag-generator-online",
             "meta-header-generator",
             "meta-tag-generator-tool",
-            "meta-tags-generator",
-            "html-head-tags-maker",
-            "seo-meta-tags-generator"
+            "meta-tags-generator"
           ],
           "popular": false,
           "category": "seo"
@@ -7008,9 +6454,7 @@
           "name": "Sitemap Url Downloader",
           "description": "Free Sitemap Url Downloader online. Sitemap Url Downloader allows you to optimize your website quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
           "route": "/sitemap-url-downloader",
-          "extraSlugs": [
-            "sitemap-url-downloader"
-          ],
+          "extraSlugs": [],
           "category": "seo"
         }
       ]
@@ -7035,9 +6479,7 @@
           "name": "About",
           "description": "Free About online. About allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
           "route": "/about",
-          "extraSlugs": [
-            "about"
-          ],
+          "extraSlugs": [],
           "category": "others"
         },
         {
@@ -7045,9 +6487,7 @@
           "name": "Blog",
           "description": "Free Blog online. Blog allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
           "route": "/blog",
-          "extraSlugs": [
-            "blog"
-          ],
+          "extraSlugs": [],
           "category": "others"
         },
         {
@@ -7055,9 +6495,7 @@
           "name": "Contact",
           "description": "Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
           "route": "/contact",
-          "extraSlugs": [
-            "contact"
-          ],
+          "extraSlugs": [],
           "category": "others"
         },
         {
@@ -7065,21 +6503,24 @@
           "name": "Search All Tools",
           "description": "Search and browse our collection of 300+ free online tools. 100% free, no signup required.",
           "route": "/search",
-          "category": "others"
+          "category": "others",
+          "extraSlugs": []
         },
         {
           "id": "generators",
           "name": "Fun Generators",
           "description": "Create viral content with AI-powered fun generators",
           "route": "/generators",
-          "category": "others"
+          "category": "others",
+          "extraSlugs": []
         },
         {
           "id": "developer-tools",
           "name": "Developer Tools",
           "description": "Format JSON, generate hashes, and developer utilities",
           "route": "/developer-tools",
-          "category": "others"
+          "category": "others",
+          "extraSlugs": []
         }
       ]
     },
@@ -7092,14 +6533,16 @@
           "name": "Free Privacy Policy Online",
           "description": "Read the 30tools Privacy Policy. We explain what data we collect, how we protect it, and how our privacy-first browser-based tools work. No signup required.",
           "route": "/privacy",
-          "category": "company"
+          "category": "company",
+          "extraSlugs": []
         },
         {
           "id": "terms",
           "name": "Free Terms of Use Online",
           "description": "Read the 30tools Terms of Use. Our privacy-first online toolkit is free, browser-based, and available without registration.",
           "route": "/terms",
-          "category": "company"
+          "category": "company",
+          "extraSlugs": []
         }
       ]
     },
@@ -7114,63 +6557,72 @@
           "name": "Best Free Tools for Students (2026)",
           "description": "Discover the best free tools for students in 2026. Improve writing, formatting, assignments, and study productivity with no-signup online tools.",
           "route": "/best-free-tools-for-students",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "tools-for-developers",
           "name": "Tools for Developers - Free Online Stack",
           "description": "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
           "route": "/tools-for-developers",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "seo-tools-free-online",
           "name": "SEO Tools Free Online - Ranked Picks (2026)",
           "description": "Use free online SEO tools for audits, keyword planning, metadata generation, and indexing checks. Built for creators, agencies, and developers.",
           "route": "/seo-tools-free-online",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "ai-tools-alternatives-free",
           "name": "AI Tools Alternatives Free - Practical Picks",
           "description": "Explore free AI tool alternatives for writing, image creation, voice generation, and content ideation without subscriptions.",
           "route": "/ai-tools-alternatives-free",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "best-free-alternative-to-chatgpt",
           "name": "Best Free Alternative to ChatGPT for Daily Tasks",
           "description": "Looking for a free ChatGPT alternative? Build a focused stack for writing, metadata, image generation, and voice tasks with free online tools.",
           "route": "/best-free-alternative-to-chatgpt",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "top-10-free-online-tools-for-seo",
           "name": "Top 10 Free Online Tools for SEO (2026)",
           "description": "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
           "route": "/top-10-free-online-tools-for-seo",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "top-10-json-tools-online",
           "name": "Top 10 JSON Tools Online for Faster Developer Workflows",
           "description": "A practical list of the top 10 JSON tools online for formatting, validation, conversion, and schema-ready payload workflows.",
           "route": "/top-10-json-tools-online",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "how-to-format-json-properly",
           "name": "How to Format JSON Properly (Without Breaking Data)",
           "description": "Learn how to format JSON correctly with a simple workflow for validation, cleanup, and conversion-safe output.",
           "route": "/how-to-format-json-properly",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         },
         {
           "id": "best-free-converters-in-2026",
           "name": "Best Free Converters in 2026 (File, Data, and Media)",
           "description": "The best free converters in 2026 for JSON, CSV, XML, images, and documents. No signup required.",
           "route": "/best-free-converters-in-2026",
-          "category": "content"
+          "category": "content",
+          "extraSlugs": []
         }
       ]
     },
@@ -7196,10 +6648,10 @@
           "category": "calculators",
           "extraSlugs": [
             "attendance-percentage-calculator",
-            "how-many-classes-to-attend",
+            "attendance-calculator-75",
             "college-attendance-calculator",
-            "attendance-shortage-calculator",
-            "monthly-attendance-calculator"
+            "how-many-classes-to-attend",
+            "attendance-percentage-checker"
           ]
         },
         {
@@ -7211,7 +6663,10 @@
           "category": "calculators",
           "extraSlugs": [
             "semester-grade-calculator",
-            "credit-based-sgpa-calculator"
+            "credit-based-sgpa-calculator",
+            "calculate-sgpa-online",
+            "sgpa-to-gpa-converter",
+            "sgpa-marks-calculator"
           ]
         },
         {
@@ -7223,7 +6678,10 @@
           "category": "calculators",
           "extraSlugs": [
             "cumulative-grade-calculator",
-            "cgpa-with-credits"
+            "cgpa-with-credits",
+            "calculate-cgpa-online",
+            "cgpa-marks-calculator",
+            "cgpa-grade-estimator"
           ]
         },
         {
@@ -7235,7 +6693,10 @@
           "category": "calculators",
           "extraSlugs": [
             "convert-cgpa-to-percentage",
-            "university-cgpa-percentage"
+            "university-cgpa-percentage",
+            "cgpa-to-percent-formula",
+            "cgpa-percentage-converter",
+            "convert-cgpa-marks"
           ]
         },
         {
@@ -7247,7 +6708,10 @@
           "category": "calculators",
           "extraSlugs": [
             "final-exam-marks-needed",
-            "passing-marks-calculator"
+            "passing-marks-calculator",
+            "calculate-required-marks",
+            "marks-needed-to-pass",
+            "exam-passing-score-calculator"
           ]
         },
         {
@@ -7260,7 +6724,9 @@
           "extraSlugs": [
             "bricks-per-square-feet",
             "brick-quantity-calculator",
-            "wall-brick-calculator"
+            "wall-brick-calculator",
+            "brick-estimator-online",
+            "estimate-bricks-wall"
           ]
         },
         {
@@ -7273,7 +6739,9 @@
           "extraSlugs": [
             "wall-paint-calculator",
             "paint-quantity-calculator",
-            "paint-cost-calculator"
+            "paint-cost-calculator",
+            "paint-estimator-online",
+            "calculate-paint-gallons"
           ]
         },
         {
@@ -7286,7 +6754,9 @@
           "extraSlugs": [
             "floor-tile-calculator",
             "tiles-required-for-room",
-            "tile-cost-calculator"
+            "tile-cost-calculator",
+            "tiles-estimator-online",
+            "calculate-floor-tiles"
           ]
         }
       ]
@@ -7306,8 +6776,10 @@
           "category": "exam-tools",
           "extraSlugs": [
             "upsc-signature-resizer",
-            "upsc-photo-dimensions",
-            "upsc-photo-compressor"
+            "upsc-photo-size",
+            "resize-photo-for-upsc-form",
+            "upsc-image-compressor",
+            "resize-signature-for-upsc"
           ]
         },
         {
@@ -7319,7 +6791,10 @@
           "category": "exam-tools",
           "extraSlugs": [
             "ssc-signature-resizer",
-            "ssc-photo-compressor"
+            "ssc-photo-size",
+            "ssc-image-resizer",
+            "ssc-signature-10kb-20kb",
+            "resize-photo-for-ssc"
           ]
         },
         {
@@ -7331,7 +6806,10 @@
           "category": "exam-tools",
           "extraSlugs": [
             "neet-postcard-photo-resizer",
-            "neet-photo-compressor"
+            "neet-photo-compressor",
+            "neet-photo-size",
+            "neet-form-photo-resize",
+            "resize-image-for-neet"
           ]
         },
         {
@@ -7343,7 +6821,10 @@
           "category": "exam-tools",
           "extraSlugs": [
             "jee-main-photo-compressor",
-            "jee-signature-resizer"
+            "jee-signature-resizer",
+            "jee-main-photo-size",
+            "resize-photo-for-jee-form",
+            "jee-image-compressor"
           ]
         },
         {
@@ -7355,7 +6836,10 @@
           "category": "exam-tools",
           "extraSlugs": [
             "cuet-photo-compressor",
-            "cuet-signature-resizer"
+            "cuet-signature-resizer",
+            "cuet-photo-size",
+            "resize-photo-for-cuet-form",
+            "cuet-image-compressor"
           ]
         },
         {
@@ -7367,7 +6851,10 @@
           "category": "exam-tools",
           "extraSlugs": [
             "rrb-photo-resizer",
-            "railway-signature-resizer"
+            "rrb-signature-resizer",
+            "railway-photo-resizer",
+            "rrb-ntpc-photo-size",
+            "resize-image-for-railway-form"
           ]
         },
         {
@@ -7380,7 +6867,9 @@
           "extraSlugs": [
             "passport-size-photo-maker",
             "free-passport-photo-maker",
-            "passport-photo-crop"
+            "passport-photo-crop",
+            "online-passport-photo-editor",
+            "passport-photo-4x6-sheet"
           ]
         },
         {
@@ -7452,7 +6941,10 @@
           "category": "exam-tools",
           "extraSlugs": [
             "ibps-signature-resizer",
-            "ibps-photo-compressor"
+            "ibps-photo-compressor",
+            "bank-exam-photo-resizer",
+            "bank-exam-signature-resizer",
+            "signature-under-20kb"
           ]
         },
         {
@@ -7465,7 +6957,9 @@
           "extraSlugs": [
             "nsdl-photo-resizer",
             "pan-signature-resizer",
-            "pan-photo-size-converter"
+            "pan-photo-size-converter",
+            "nsdl-pan-photo-resizer",
+            "pan-card-image-resize"
           ]
         },
         {
@@ -7478,7 +6972,9 @@
           "extraSlugs": [
             "add-name-date-on-photo",
             "exam-photo-date-editor",
-            "photo-name-date-generator"
+            "govt-form-photo-editor",
+            "photo-name-date-editor-online",
+            "name-date-photo-creator"
           ]
         }
       ]
