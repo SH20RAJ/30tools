@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
-export function PremiumHero({ title, subtitle }) {
+export function PremiumHero({ title, subtitle = "" }) {
 	const [query, setQuery] = useState("");
 	const router = useRouter();
 
