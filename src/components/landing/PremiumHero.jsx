@@ -1,13 +1,12 @@
 "use client";
 
-import { Search, Sparkles, Zap, ShieldCheck, Github } from "lucide-react";
-import { useState, useEffect } from "react";
+import { Search } from "lucide-react";
+import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { SITE_CONFIG } from "@/constants/config";
 
-export function PremiumHero({ title, subtitle, lang = "en" }) {
+export function PremiumHero({ title }) {
 	const [query, setQuery] = useState("");
 	const router = useRouter();
 
@@ -18,93 +17,41 @@ export function PremiumHero({ title, subtitle, lang = "en" }) {
 		}
 	};
 
-	const trendingTools = [
-		{ name: "AI Music Generator", href: "/ai-music-generator" },
-		{ name: "YouTube Downloader", href: "/youtube-downloader" },
-		{ name: "Image Compressor", href: "/image-compressor" },
-		{ name: "AI Image Generator", href: "/ai-image-generator" },
-	];
-
 	return (
-		<div className="relative pt-20 pb-16 md:pt-32 md:pb-24 overflow-hidden min-h-[70vh] flex flex-col justify-center">
+		<div className="relative pt-12 pb-8 md:pt-20 md:pb-12 overflow-hidden flex flex-col justify-center items-center">
 			{/* Background Ambient Glow */}
 			<div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10 pointer-events-none">
-				<div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-primary/10 blur-[120px] rounded-none" />
-				<div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-secondary/10 blur-[120px] rounded-none" />
+				<div className="absolute top-0 left-[-10%] w-[35%] h-[35%] bg-primary/5 blur-[100px] rounded-none" />
+				<div className="absolute bottom-0 right-[-10%] w-[35%] h-[35%] bg-secondary/5 blur-[100px] rounded-none" />
 			</div>
 
-			<div className="max-w-4xl mx-auto text-center px-4">
-				{/* Badge */}
-				<div className="h-8 mb-8">
-					<div className="inline-flex items-center gap-2 px-3 py-1 rounded-none bg-primary/10 border border-primary/20 text-primary text-xs font-semibold animate-fade-in">
-						<Sparkles className="h-3 w-3" />
-						<span>Discover {SITE_CONFIG.toolCountString} Power Tools</span>
-					</div>
-				</div>
-
-				<h1 className="text-5xl md:text-8xl font-bold tracking-tight text-foreground mb-8 leading-[1.05]">
+			<div className="w-full max-w-3xl mx-auto text-center px-4">
+				<h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-foreground mb-8 leading-[1.1] bg-gradient-to-b from-foreground to-foreground/80">
 					{title}
 				</h1>
 				
-				<p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto mb-12 leading-relaxed">
-					{subtitle}
-				</p>
-
 				{/* Search Discovery Engine */}
 				<form 
 					onSubmit={handleSearch}
-					className="relative max-w-2xl mx-auto mb-8 group"
+					className="relative w-full max-w-2xl mx-auto group animate-fade-in"
 				>
-					<div className="relative flex items-center">
+					<div className="relative flex items-center shadow-lg border border-border/40 hover:border-border transition-all">
 						<Search className="absolute left-6 h-5 w-5 text-muted-foreground group-focus-within:text-primary transition-colors" />
 						<Input
 							type="text"
 							placeholder="Search for any tool (e.g. 'compress image', 'pdf', 'youtube')..."
-							className="h-16 pl-16 pr-32 rounded-none bg-card border-border/50 text-lg shadow-2xl focus-visible:ring-primary/20 transition-all placeholder:text-muted-foreground/60"
+							className="h-16 pl-16 pr-32 rounded-none bg-card border-none text-lg focus-visible:ring-0 focus-visible:ring-offset-0 transition-all placeholder:text-muted-foreground/50 w-full"
 							value={query}
 							onChange={(e) => setQuery(e.target.value)}
 						/>
 						<Button 
 							type="submit"
-							className="absolute right-2 h-12 px-6 rounded-none bg-primary hover:bg-primary/90 text-white font-medium"
+							className="absolute right-2 h-12 px-6 rounded-none bg-primary hover:bg-primary/95 text-white font-semibold transition-all hover:scale-[1.02] active:scale-[0.98]"
 						>
 							Find Tool
 						</Button>
 					</div>
 				</form>
-
-				{/* Trending Pills */}
-				<div className="flex flex-wrap items-center justify-center gap-3 mb-16 animate-in" style={{ animationDelay: '200ms' }}>
-					<span className="text-sm text-muted-foreground mr-2">Trending:</span>
-					{trendingTools.map((tool) => (
-						<a
-							key={tool.name}
-							href={tool.href}
-							className="px-4 py-1.5 rounded-none bg-secondary/50 border border-border hover:border-primary/30 hover:bg-secondary transition-all text-sm font-medium"
-						>
-							{tool.name}
-						</a>
-					))}
-				</div>
-
-				{/* Trust Badges */}
-				<div className="flex flex-wrap items-center justify-center gap-8 md:gap-12 opacity-60 grayscale hover:grayscale-0 transition-all duration-500">
-					<div className="flex items-center gap-2">
-						<ShieldCheck className="h-5 w-5" />
-						<span className="text-sm font-semibold uppercase tracking-widest">Privacy First</span>
-					</div>
-					<div className="flex items-center gap-2">
-						<Zap className="h-5 w-5" />
-						<span className="text-sm font-semibold uppercase tracking-widest">Lightning Fast</span>
-					</div>
-					<div className="flex items-center gap-2 px-2 py-1 rounded bg-foreground text-background">
-						<span className="text-[10px] font-black uppercase tracking-tighter">100% Free</span>
-					</div>
-					<div className="flex items-center gap-2 px-2 py-1 rounded border border-foreground/10 hover:bg-foreground/5 transition-colors">
-						<Github className="h-4 w-4" />
-						<span className="text-[10px] font-black uppercase tracking-tighter">We are Open Source</span>
-					</div>
-				</div>
 			</div>
 		</div>
 	);

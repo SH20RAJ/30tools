@@ -102,7 +102,7 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 
 			<div className="container mx-auto px-4 max-w-7xl">
 				{/* Hero Section */}
-				<PremiumHero title={heroTitle} subtitle={heroSubtitle} lang={lang} />
+				<PremiumHero title={heroTitle} />
 
 				{/* Social Trust Marks */}
 				<TrustSection />

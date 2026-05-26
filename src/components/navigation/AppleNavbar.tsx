@@ -8,12 +8,6 @@ import { useEffect, useState, Suspense } from "react";
 import { ThemeToggle } from "@/components/shared/theme-toggle";
 import { AuthButton } from "./AuthButton";
 import { Input } from "@/components/ui/input";
-import {
-	Tooltip,
-	TooltipContent,
-	TooltipProvider,
-	TooltipTrigger,
-} from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 import { STATIC_ROUTES } from "@/lib/tools";
 
@@ -32,15 +26,17 @@ function SearchInput() {
 	};
 
 	return (
-		<form onSubmit={handleSearch} className="relative w-full max-w-sm group hidden md:block">
-			{/* <Search className="absolute left-3  h-4 w-4 text-muted-foreground group-focus-within:text-foreground transition-colors" /> */}
-			<Input
-				type="text"
-				placeholder="Search tools... (⌘K)"
-				value={query}
-				onChange={(e) => setQuery(e.target.value)}
-				className="bg-muted border-transparent text-foreground placeholder:text-muted-foreground h-9 pl-9 pr-4 rounded-none focus-visible:ring-1 focus-visible:ring-ring transition-all w-full md:w-[200px] lg:w-[300px]"
-			/>
+		<form onSubmit={handleSearch} className="relative w-full max-w-xs group hidden md:block">
+			<div className="relative flex items-center">
+				<Search className="absolute left-3 h-4 w-4 text-muted-foreground group-focus-within:text-primary transition-colors" />
+				<Input
+					type="text"
+					placeholder="Search tools... (⌘K)"
+					value={query}
+					onChange={(e) => setQuery(e.target.value)}
+					className="bg-muted/40 border-border/40 text-foreground placeholder:text-muted-foreground/60 h-9 pl-9 pr-4 rounded-none focus-visible:ring-1 focus-visible:ring-primary/20 transition-all w-full"
+				/>
+			</div>
 		</form>
 	);
 }
@@ -72,143 +68,139 @@ export function AppleNavbar() {
 		};
 	}, [router]);
 
-	const navLinks = [
-		{ name: "All Tools", href: STATIC_ROUTES.SEARCH },
+	const categories = [
 		{ name: "Image", href: `${STATIC_ROUTES.SEARCH}?category=image` },
 		{ name: "PDF", href: `${STATIC_ROUTES.SEARCH}?category=pdf` },
 		{ name: "Video", href: `${STATIC_ROUTES.SEARCH}?category=video` },
+		{ name: "Developer", href: `${STATIC_ROUTES.SEARCH}?category=developer` },
 	];
 
 	return (
-		<TooltipProvider>
-			<header 
-				className={cn(
-					"sticky top-0 z-50 w-full h-16 transition-all duration-300 border-b",
-					isScrolled 
-						? "bg-background/80 backdrop-blur-md border-border" 
-						: "bg-background border-transparent"
-				)}
-			>
-				<div className="container mx-auto h-full flex items-center justify-between px-4 max-w-7xl">
-					{/* Left: Logo & Nav */}
-					<div className="flex items-center gap-8">
-						<Link
-							href={STATIC_ROUTES.HOME}
-							className="flex items-center gap-2 hover:opacity-80 transition-opacity"
-						>
-							<span className="text-xl font-bold tracking-tight text-foreground">
-								30tools
-							</span>
-						</Link>
+		<header 
+			className={cn(
+				"sticky top-0 z-50 w-full h-16 transition-all duration-300 border-b",
+				isScrolled 
+					? "bg-background/80 backdrop-blur-md border-border/80 shadow-[0_2px_20px_-10px_rgba(0,0,0,0.1)]" 
+					: "bg-background border-transparent"
+			)}
+		>
+			<div className="container mx-auto h-full flex items-center justify-between px-4 max-w-7xl">
+				{/* Left: Brand Logo & Navigation */}
+				<div className="flex items-center gap-8">
+					<Link
+						href={STATIC_ROUTES.HOME}
+						className="flex items-center gap-2 group"
+					>
+						<span className="text-xl font-black tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/75 group-hover:to-primary transition-all duration-300">
+							30tools
+						</span>
+					</Link>
 
-						{/* <nav className="hidden lg:flex items-center gap-6">
-							{navLinks.map((link) => (
-								<Link
-									key={link.name}
-									href={link.href}
-									className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-								>
-									{link.name}
-								</Link>
-							))}
-						</nav> */}
-					</div>
-
-					{/* Center: Search */}
-					<Suspense fallback={<div className="hidden md:block md:w-[200px] lg:w-[300px] h-9 bg-muted rounded-none" />}>
-						<SearchInput />
-					</Suspense>
-
-					{/* Right: Actions */}
-					<div className="flex items-center gap-2 md:gap-4">
-						<div className="hidden sm:flex items-center gap-2">
-							<ThemeToggle />
-
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<a
-										href="https://github.com/sh20raj/30tools"
-										target="_blank"
-										rel="noopener noreferrer"
-										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-none transition-all flex items-center gap-2"
-										aria-label="GitHub Repository"
-									>
-										<Github className="h-4 w-4" />
-										<span className="text-[10px] font-bold uppercase tracking-tighter hidden lg:block">Open Source</span>
-									</a>
-								</TooltipTrigger>
-								<TooltipContent>GitHub</TooltipContent>
-							</Tooltip>
-
-							<Tooltip>
-								<TooltipTrigger asChild>
-									<Link
-										href={STATIC_ROUTES.SEARCH}
-										className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted rounded-none transition-all"
-										aria-label="Browse all tools"
-									>
-										<LayoutGrid className="h-5 w-4" />
-									</Link>
-								</TooltipTrigger>
-								<TooltipContent>Browse All</TooltipContent>
-							</Tooltip>
-
-							<Suspense fallback={<div className="h-9 w-20 bg-muted rounded-none" />}>
-								<AuthButton />
-							</Suspense>
-						</div>
-
-						{/* Mobile Menu Button */}
-						<button 
-							className="p-2 text-muted-foreground hover:text-foreground md:hidden rounded-none"
-							onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-						>
-							{mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-						</button>
-					</div>
+					{/* Navigation Links */}
+					<nav className="hidden lg:flex items-center gap-5">
+						{categories.map((link) => (
+							<Link
+								key={link.name}
+								href={link.href}
+								className="text-xs font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground transition-colors hover:scale-105 duration-200"
+							>
+								{link.name}
+							</Link>
+						))}
+					</nav>
 				</div>
 
-				{/* Mobile Menu */}
-				{mobileMenuOpen && (
-					<div className="absolute top-16 left-0 w-full bg-background border-b border-border md:hidden animate-in slide-in-from-top duration-300">
-						<div className="flex flex-col p-4 gap-4">
-							<form 
-								onSubmit={(e) => {
-									e.preventDefault();
-									const q = (e.currentTarget.elements.namedItem("q") as HTMLInputElement).value;
-									router.push(`${STATIC_ROUTES.SEARCH}?q=${encodeURIComponent(q)}`);
-									setMobileMenuOpen(false);
-								}}
-								className="relative"
-							>
-								<Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-								<Input
-									name="q"
-									placeholder="Search tools..."
-									className="bg-muted border-transparent text-foreground pl-9 w-full rounded-none"
-								/>
-							</form>
-							{navLinks.map((link) => (
+				{/* Center: Clean Search Bar */}
+				<Suspense fallback={<div className="hidden md:block w-64 h-9 bg-muted/40 rounded-none animate-pulse" />}>
+					<SearchInput />
+				</Suspense>
+
+				{/* Right: Actions */}
+				<div className="flex items-center gap-3">
+					<div className="hidden sm:flex items-center gap-3">
+						<ThemeToggle />
+
+						<a
+							href="https://github.com/sh20raj/30tools"
+							target="_blank"
+							rel="noopener noreferrer"
+							className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-none transition-all flex items-center gap-2 border border-transparent hover:border-border/30"
+							aria-label="GitHub Repository"
+						>
+							<Github className="h-4 w-4" />
+							<span className="text-[10px] font-bold uppercase tracking-tighter hidden xl:block">GitHub</span>
+						</a>
+
+						<Link
+							href={STATIC_ROUTES.SEARCH}
+							className="p-2 text-muted-foreground hover:text-foreground hover:bg-muted/40 rounded-none transition-all border border-transparent hover:border-border/30"
+							aria-label="Browse all tools"
+						>
+							<LayoutGrid className="h-4 w-4" />
+						</Link>
+
+						<Suspense fallback={<div className="h-9 w-20 bg-muted/40 rounded-none" />}>
+							<AuthButton />
+						</Suspense>
+					</div>
+
+					{/* Mobile Menu Button */}
+					<button 
+						className="p-2 text-muted-foreground hover:text-foreground md:hidden rounded-none hover:bg-muted/40 transition-colors"
+						onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+						aria-label="Toggle menu"
+					>
+						{mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+					</button>
+				</div>
+			</div>
+
+			{/* Mobile Dropdown Menu */}
+			{mobileMenuOpen && (
+				<div className="absolute top-16 left-0 w-full bg-background/95 backdrop-blur-lg border-b border-border md:hidden animate-in slide-in-from-top duration-300">
+					<div className="flex flex-col p-5 gap-4">
+						<form 
+							onSubmit={(e) => {
+								e.preventDefault();
+								const q = (e.currentTarget.elements.namedItem("q") as HTMLInputElement).value;
+								router.push(`${STATIC_ROUTES.SEARCH}?q=${encodeURIComponent(q)}`);
+								setMobileMenuOpen(false);
+							}}
+							className="relative"
+						>
+							<Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+							<Input
+								name="q"
+								placeholder="Search tools..."
+								className="bg-muted/60 border-transparent text-foreground pl-9 w-full rounded-none"
+							/>
+						</form>
+						
+						<div className="flex flex-col gap-2">
+							{categories.map((link) => (
 								<Link
 									key={link.name}
 									href={link.href}
-									className="text-lg font-medium text-muted-foreground hover:text-foreground py-2"
+									className="text-sm font-semibold uppercase tracking-widest text-muted-foreground hover:text-foreground py-2 border-b border-border/20"
 									onClick={() => setMobileMenuOpen(false)}
 								>
 									{link.name}
 								</Link>
 							))}
-							<div className="flex items-center gap-4 py-2 border-t border-border mt-2 pt-4">
+						</div>
+
+						<div className="flex items-center justify-between gap-4 py-2 border-t border-border/40 mt-2 pt-4">
+							<div className="flex items-center gap-3">
 								<ThemeToggle />
-								<a href="https://github.com/sh20raj/30tools" className="text-muted-foreground">GitHub</a>
-								<Suspense fallback={<div className="h-9 w-20 bg-muted rounded-none" />}>
-									<AuthButton />
-								</Suspense>
+								<a href="https://github.com/sh20raj/30tools" className="text-sm text-muted-foreground hover:text-foreground">GitHub</a>
 							</div>
+							<Suspense fallback={<div className="h-9 w-20 bg-muted/40 rounded-none" />}>
+								<AuthButton />
+							</Suspense>
 						</div>
 					</div>
-				)}
-			</header>
-		</TooltipProvider>
+				</div>
+			)}
+		</header>
 	);
 }
