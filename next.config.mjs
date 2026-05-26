@@ -59,7 +59,7 @@ const nextConfig = {
 
 	// Performance optimizations
 	experimental: {
-		optimizeCss: true,
+		optimizeCss: false,
 		optimizePackageImports: [
 			"lucide-react",
 			"@radix-ui/react-accordion",
