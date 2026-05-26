@@ -9,16 +9,24 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { toast } from "sonner";
 
-export default function ResizeImageCm() {
+export default function ResizeImageCm({ defaultUnit = "cm", defaultDpi = "300" } = {}) {
     const [image, setImage] = useState(null);
     const [previewUrl, setPreviewUrl] = useState("");
     const [originalInfo, setOriginalInfo] = useState(null);
     
     // Resize settings
-    const [unit, setUnit] = useState("cm"); // "cm", "mm", "inch", "px"
-    const [widthVal, setWidthVal] = useState("3.5");
-    const [heightVal, setHeightVal] = useState("4.5");
-    const [dpi, setDpi] = useState("300"); // "150", "200", "300", "600"
+    const [unit, setUnit] = useState(defaultUnit); // "cm", "mm", "inch", "px"
+    const [widthVal, setWidthVal] = useState(
+        defaultUnit === "mm" ? "35" : 
+        defaultUnit === "inch" ? "2.0" : 
+        defaultUnit === "px" ? "600" : "3.5"
+    );
+    const [heightVal, setHeightVal] = useState(
+        defaultUnit === "mm" ? "45" : 
+        defaultUnit === "inch" ? "2.0" : 
+        defaultUnit === "px" ? "600" : "4.5"
+    );
+    const [dpi, setDpi] = useState(defaultDpi); // "150", "200", "300", "600"
     const [maxKb, setMaxKb] = useState(50);
     
     // Processing state

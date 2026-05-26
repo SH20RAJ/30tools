@@ -7,10 +7,10 @@ import { Button } from "@/components/ui/button";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
 
-export default function KrutiDevConverter() {
+export default function KrutiDevConverter({ defaultMode = "kruti-to-uni" } = {}) {
     const [inputText, setInputText] = useState("");
     const [outputText, setOutputText] = useState("");
-    const [mode, setMode] = useState("kruti-to-uni"); // "kruti-to-uni", "uni-to-kruti", "hinglish-to-hindi"
+    const [mode, setMode] = useState(defaultMode); // "kruti-to-uni", "uni-to-kruti", "hinglish-to-hindi"
     
     // Core conversion algorithm (simplified Kruti Dev 010 mapping)
     // Legacy fonts like Kruti Dev replace English character positions.

@@ -366,6 +366,55 @@
             "rent-receipt-pdf",
             "hra-rent-receipt-maker"
           ]
+        },
+        {
+          "id": "simple-invoice-generator",
+          "name": "Simple Invoice Generator",
+          "description": "Create and print professional billing invoices online. Add custom line items, tax, discount details, and generate print-ready PDF layouts instantly.",
+          "route": "/simple-invoice-generator",
+          "popular": true,
+          "category": "generators",
+          "extraSlugs": [
+            "free-invoice-maker",
+            "tax-invoice-generator",
+            "gst-invoice-creator"
+          ]
+        },
+        {
+          "id": "leave-application-generator",
+          "name": "Leave Application Generator",
+          "description": "Draft professional leave applications for office, school, or college online. Customize dates, reason, and print or copy instantly.",
+          "route": "/leave-application-generator",
+          "popular": false,
+          "category": "generators",
+          "extraSlugs": [
+            "leave-letter-writer",
+            "sick-leave-application-maker"
+          ]
+        },
+        {
+          "id": "resignation-letter-generator",
+          "name": "Resignation Letter Generator",
+          "description": "Generate professional resignation letters in seconds. Choose between formal, polite, or short-notice templates and print or download instantly.",
+          "route": "/resignation-letter-generator",
+          "popular": true,
+          "category": "generators",
+          "extraSlugs": [
+            "formal-resignation-letter",
+            "polite-resignation-maker"
+          ]
+        },
+        {
+          "id": "bio-data-maker",
+          "name": "Bio Data Maker",
+          "description": "Create beautiful marriage biodata sheets or professional resumes. Upload photos, input family or job details, and print a custom layout.",
+          "route": "/bio-data-maker",
+          "popular": true,
+          "category": "generators",
+          "extraSlugs": [
+            "marriage-biodata-creator",
+            "resume-biodata-builder"
+          ]
         }
       ]
     },
@@ -435,93 +484,7 @@
               "answer": "Yes, it supports both raw Base64 strings and those prefixed with 'data:image/...;base64,'."
             }
           ],
-          "extraSlugs": [
-            "add-text-to-image",
-            "all-in-one-unit-converter",
-            "avi-file-to-mp4-online",
-            "avi-video-converter",
-            "base64-encoder-decoder",
-            "base64-image",
-            "base64-to-image",
-            "base64-to-image-converter-tool",
-            "base64-to-text",
-            "base64-tool",
-            "change-avi-to-mp4",
-            "change-flv-to-mp4",
-            "change-m4a-to-mp3",
-            "change-mkv-to-mp4",
-            "change-mov-to-mp4",
-            "change-ogg-to-mp3",
-            "change-pdf-orientation",
-            "change-wav-to-mp3",
-            "change-webm-to-mp4",
-            "click-to-chat-whatsapp",
-            "compress-files-to-zip",
-            "compress-ogg-to-mp3",
-            "compress-wav-to-mp3",
-            "convert-picture-to-string",
-            "date-to-epoch",
-            "decode-base64-image",
-            "document-converter",
-            "docx-to-pdf-converter",
-            "ebook-format-converter",
-            "encode-image-base64",
-            "epoch-converter",
-            "epoch-to-datetime",
-            "epub-converter",
-            "file-converter",
-            "fit-photo-to-instagram-story",
-            "flv-file-to-mp4-online",
-            "flv-video-converter",
-            "folder-to-zip-converter",
-            "free-base64-to-image-converter-online",
-            "image-to-base64",
-            "image-to-pdf-converter",
-            "m4a-file-to-mp3-online",
-            "m4a-to-mp3-converter",
-            "md-html-converter",
-            "md-to-txt-converter",
-            "measurement-converter",
-            "metric-imperial-converter",
-            "mkv-file-to-mp4-online",
-            "mkv-video-converter",
-            "mov-file-to-mp4-online",
-            "mov-to-mp4",
-            "mov-video-converter",
-            "movie-to-mp3-converter",
-            "mp4-audio-converter",
-            "mp4-converter-online",
-            "mp4-to-mp3",
-            "ogg-file-to-mp3-online",
-            "pdf-to-docx-converter",
-            "pdf-to-epub-converter",
-            "photos-to-pdf-converter",
-            "pptx-to-pdf-converter",
-            "quicktime-to-mp4",
-            "readme-to-html",
-            "save-snaps-to-gallery",
-            "text-fo-base64",
-            "tiktok-aspect-ratio-converter",
-            "tiktok-mp3-converter",
-            "tiktok-music-converter",
-            "tiktok-to-mp3-online",
-            "timestamp-converter",
-            "timezone-converter",
-            "unit-converter",
-            "unix-timestamp-to-date",
-            "uppercase-to-lowercase",
-            "url-string-converter",
-            "url-to-pdf-converter",
-            "usd-to-eur-converter",
-            "video-to-mp3-converter",
-            "wav-to-mp3-converter",
-            "webm-file-to-mp4-online",
-            "webm-video-converter",
-            "world-clock-converter",
-            "xlsx-to-pdf-converter",
-            "youtube-to-mp3-high-quality",
-            "youtube-to-mp4-converter"
-          ],
+          "extraSlugs": [],
           "popular": false,
           "category": "image"
         },
@@ -530,41 +493,7 @@
           "name": "Convert to ICO",
           "description": "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
           "route": "/convert-to-ico",
-          "extraSlugs": [
-            "convert-avi-to-mp4",
-            "convert-doc-to-pdf",
-            "convert-epoch-time",
-            "convert-flv-to-mp4",
-            "convert-html-to-pdf",
-            "convert-landscape-to-portrait-video",
-            "convert-m4a-to-mp3",
-            "convert-md-to-html",
-            "convert-mkv-to-mp4",
-            "convert-money-online",
-            "convert-mov-to-mp4",
-            "convert-mp4-to-gif",
-            "convert-mp4-to-mp3",
-            "convert-mp4-video-to-mp3",
-            "convert-ogg-to-mp3",
-            "convert-pdf-to-doc",
-            "convert-picture-to-string",
-            "convert-png-to-favicon",
-            "convert-ppt-to-pdf",
-            "convert-string-to-binary",
-            "convert-text-case",
-            "convert-text-to-audio",
-            "convert-tiktok-to-mp3",
-            "convert-time-across-zones",
-            "convert-time-to-timestamp",
-            "convert-to-epub-online",
-            "convert-to-ico-tool",
-            "convert-units-online",
-            "convert-video-file-to-mp3",
-            "convert-wav-to-mp3",
-            "convert-webm-to-mp4",
-            "convert-xls-to-pdf",
-            "free-convert-to-ico-online"
-          ],
+          "extraSlugs": [],
           "popular": false,
           "category": "image"
         },
@@ -1278,6 +1207,97 @@
             "resize-photo-to-cm",
             "image-cm-resizer"
           ]
+        },
+        {
+          "id": "compress-image-to-10kb",
+          "name": "Compress Image to 10KB",
+          "description": "Compress any image file (JPG, PNG, WebP) to fit strictly under 10KB while maintaining the best possible visual clarity.",
+          "route": "/compress-image-to-10kb",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "image-compressor-10kb",
+            "reduce-photo-size-to-10kb",
+            "jpg-under-10kb"
+          ]
+        },
+        {
+          "id": "compress-image-to-30kb",
+          "name": "Compress Image to 30KB",
+          "description": "Compress any image file (JPG, PNG, WebP) to fit strictly under 30KB while maintaining the best possible visual clarity.",
+          "route": "/compress-image-to-30kb",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "image-compressor-30kb",
+            "reduce-photo-size-to-30kb",
+            "jpg-under-30kb"
+          ]
+        },
+        {
+          "id": "compress-image-to-100kb",
+          "name": "Compress Image to 100KB",
+          "description": "Compress any image file (JPG, PNG, WebP) to fit strictly under 100KB while maintaining the best possible visual clarity.",
+          "route": "/compress-image-to-100kb",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "image-compressor-100kb",
+            "reduce-photo-size-to-100kb",
+            "jpg-under-100kb"
+          ]
+        },
+        {
+          "id": "compress-image-to-200kb",
+          "name": "Compress Image to 200KB",
+          "description": "Compress any image file (JPG, PNG, WebP) to fit strictly under 200KB while maintaining the best possible visual clarity.",
+          "route": "/compress-image-to-200kb",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "image-compressor-200kb",
+            "reduce-photo-size-to-200kb",
+            "jpg-under-200kb"
+          ]
+        },
+        {
+          "id": "resize-image-in-mm",
+          "name": "Resize Image in MM",
+          "description": "Resize your images by specifying width and height in millimeters (mm) for printing, exam forms, and documents.",
+          "route": "/resize-image-in-mm",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "photo-size-in-mm",
+            "resize-photo-to-mm",
+            "image-mm-resizer"
+          ]
+        },
+        {
+          "id": "resize-image-in-pixels",
+          "name": "Resize Image in Pixels",
+          "description": "Resize your images by specifying exact width and height in pixels (px) for web, social media, and digital platforms.",
+          "route": "/resize-image-in-pixels",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "photo-size-in-pixels",
+            "resize-photo-to-px",
+            "image-pixel-resizer"
+          ]
+        },
+        {
+          "id": "image-dpi-converter",
+          "name": "Image DPI Converter",
+          "description": "Change or convert your image's DPI (Dots Per Inch) to 300, 600, or custom values for official applications and printing.",
+          "route": "/image-dpi-converter",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "change-image-dpi",
+            "dpi-converter-online",
+            "convert-image-to-300-dpi"
+          ]
         }
       ]
     },
@@ -1534,10 +1554,42 @@
           "popular": true,
           "category": "text",
           "extraSlugs": [
-            "unicode-to-kruti-dev",
-            "krutidev-converter-online",
-            "hindi-typing-tool",
-            "hinglish-to-hindi"
+            "krutidev-converter-online"
+          ]
+        },
+        {
+          "id": "unicode-to-kruti-dev",
+          "name": "Unicode to Kruti Dev Converter",
+          "description": "Convert standard Unicode Devanagari Hindi text to legacy Kruti Dev 010 font layout text dynamically.",
+          "route": "/unicode-to-kruti-dev",
+          "popular": false,
+          "category": "text",
+          "extraSlugs": [
+            "unicode-to-krutidev-converter"
+          ]
+        },
+        {
+          "id": "hinglish-to-hindi",
+          "name": "Hinglish to Hindi Converter",
+          "description": "Convert phonetic Hinglish (Roman English) text into standard Unicode Hindi (Devanagari) dynamically.",
+          "route": "/hinglish-to-hindi",
+          "popular": false,
+          "category": "text",
+          "extraSlugs": [
+            "phonetic-hindi-transliteration",
+            "english-to-hindi-converter"
+          ]
+        },
+        {
+          "id": "hindi-typing-tool",
+          "name": "Hindi Typing Tool",
+          "description": "Type in English and get it transliterated to Hindi in real-time. Free online Devanagari phonetic Hindi typing utility.",
+          "route": "/hindi-typing-tool",
+          "popular": true,
+          "category": "text",
+          "extraSlugs": [
+            "online-hindi-typing",
+            "easy-hindi-typing"
           ]
         }
       ]
