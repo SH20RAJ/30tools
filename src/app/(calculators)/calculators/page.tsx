@@ -9,12 +9,12 @@ import { Calculator, ArrowRight } from "lucide-react";
 
 export const metadata = {
 	title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",
-	description: "Massive collection of free online calculators. BMI calculators, loan estimators, percentage tools, and scientific calculators. Get instant, accurate results for free.",
+	description: "Free online calculators for every need. BMI calculators, loan estimators, percentage tools, and scientific math tools. Get instant, accurate results for free.",
 	keywords: "online calculators, bmi calculator, loan calculator, math tools, free calculators, 30tools, calculators, calculators online, online calculator, free math tool, converter, number tool",
 	alternates: { canonical: "https://30tools.com/calculators" },
 	openGraph: {
 		title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",
-		description: "Massive collection of free online calculators. BMI calculators, loan estimators, percentage tools, and scientific calculators. Get instant, accurate results for free.",
+		description: "Free online calculators for every need. BMI calculators, loan estimators, percentage tools, and scientific math tools. Get instant, accurate results for free.",
 		url: "https://30tools.com/calculators",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -23,7 +23,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",
-		description: "Massive collection of free online calculators. BMI calculators, loan estimators, percentage tools, and scientific calculators.",
+		description: "Free online calculators for every need. BMI calculators, loan estimators, percentage tools, and scientific math tools.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

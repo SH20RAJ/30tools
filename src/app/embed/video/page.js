@@ -26,7 +26,7 @@ export const metadata = {
 		title: "Free Video Player Online - No Signup | 30tools",
 		description:
 			"Professional video tool. Free online processing with high-quality results. No registration required, instant results.",
-		url: "https://30tools.com/video",
+		url: "https://30tools.com/embed/video",
 		siteName: "30tools",
 		images: [
 			{
@@ -49,7 +49,7 @@ export const metadata = {
 	},
 
 	alternates: {
-		canonical: "https://30tools.com/video",
+		canonical: "https://30tools.com/embed/video",
 	},
 };
 
@@ -59,7 +59,7 @@ const jsonLd = {
 	name: "Video",
 	description:
 		"Professional video tool. Free online processing with high-quality results. No registration required, instant results.",
-	url: "https://30tools.com/video",
+	url: "https://30tools.com/embed/video",
 	applicationCategory: "UtilityApplication",
 	operatingSystem: "Any",
 	permissions: "browser",

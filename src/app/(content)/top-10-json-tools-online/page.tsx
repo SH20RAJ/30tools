@@ -3,15 +3,15 @@ import Fragment from "react";
 
 
 export const metadata = {
-	title: "Free Top 10 JSON Tools Online for Faster Developer Workflows Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Top 10 JSON Tools Online for Faster Developer Workflows online. Fast, secure browser-based utility with...",
+	title: "Top 10 Free JSON Tools Online for Developer Workflows | 30tools",
+	description: "Speed up your developer workflow with our curated list of the top 10 free JSON tools. Format, validate, convert, and minify JSON payloads in your browser.",
 	keywords: "top 10 json tools online for faster developer workflows, top 10 json tools online for faster developer workflows guide, 30tools, top-10-json-tools-online, top 10 json tools online, free top-10-json-tools-online, top 10 json tools online online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/top-10-json-tools-online",
 	},
 	openGraph: {
-		title: "Free Top 10 JSON Tools Online for Faster Developer Workflows Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Top 10 JSON Tools Online for Faster Developer Workflows online. Fast, secure browser-based utility with...",
+		title: "Top 10 Free JSON Tools Online for Developer Workflows | 30tools",
+		description: "Speed up your developer workflow with our curated list of the top 10 free JSON tools. Format, validate, convert, and minify JSON payloads in your browser.",
 		url: "https://30tools.com/top-10-json-tools-online",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Top 10 JSON Tools Online for Faster Developer Workflows Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Top 10 JSON Tools Online for Faster Developer Workflows online. Fast, secure browser-based utility with...",
+		title: "Top 10 Free JSON Tools Online for Developer Workflows | 30tools",
+		description: "Speed up your developer workflow with our curated list of the top 10 free JSON tools. Format, validate, convert, and minify JSON payloads in your browser.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

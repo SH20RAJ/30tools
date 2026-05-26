@@ -3,15 +3,15 @@ import Fragment from "react";
 
 
 export const metadata = {
-	title: "Free AI Tools Alternatives Free - Practical Picks Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free AI Tools Alternatives Free - Practical Picks online. Fast, secure browser-based utility with no registr...",
+	title: "Best Free AI Tool Alternatives (No Subscriptions) | 30tools",
+	description: "Discover the best free AI tool alternatives for content creation, voice generation, and digital writing without paying for monthly subscriptions.",
 	keywords: "ai tools alternatives free - practical picks, ai tools alternatives free - practical picks guide, 30tools, ai-tools-alternatives-free, ai tools alternatives free, free ai-tools-alternatives-free, ai tools alternatives free online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/ai-tools-alternatives-free",
 	},
 	openGraph: {
-		title: "Free AI Tools Alternatives Free - Practical Picks Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free AI Tools Alternatives Free - Practical Picks online. Fast, secure browser-based utility with no registr...",
+		title: "Best Free AI Tool Alternatives (No Subscriptions) | 30tools",
+		description: "Discover the best free AI tool alternatives for content creation, voice generation, and digital writing without paying for monthly subscriptions.",
 		url: "https://30tools.com/ai-tools-alternatives-free",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI Tools Alternatives Free - Practical Picks Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free AI Tools Alternatives Free - Practical Picks online. Fast, secure browser-based utility with no registr...",
+		title: "Best Free AI Tool Alternatives (No Subscriptions) | 30tools",
+		description: "Discover the best free AI tool alternatives for content creation, voice generation, and digital writing without paying for monthly subscriptions.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

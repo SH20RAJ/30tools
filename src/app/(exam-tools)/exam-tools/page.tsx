@@ -3,14 +3,14 @@ import ExamPillar from "@/components/pillars/ExamPillar";
 
 export const metadata = {
 	title: "Free Exam Image & Form Tools Online - No Signup | 30tools",
-	description: "Prepare photos, signatures, and PDFs for online UPSC, SSC, NEET, JEE, CUET, and RRB application forms. Crop, resize, and compress to exact KB limits securely in your browser.",
+	description: "Prepare photos, signatures, and PDFs for online UPSC, SSC, NEET, and JEE forms. Crop, resize, and compress to exact KB limits securely in your browser.",
 	keywords: "exam tools, upsc photo resizer, ssc photo resizer, neet photo resizer, jee photo resizer, signature resizer 20kb, photo compressor 50kb, exam form resizer, 30tools exam",
 	alternates: {
 		canonical: "https://30tools.com/exam-tools",
 	},
 	openGraph: {
 		title: "Free Exam Image & Form Tools Online - No Signup | 30tools",
-		description: "Prepare photos, signatures, and PDFs for online UPSC, SSC, NEET, JEE, CUET, and RRB application forms. Crop, resize, and compress to exact KB limits securely in your browser.",
+		description: "Prepare photos, signatures, and PDFs for online UPSC, SSC, NEET, and JEE forms. Crop, resize, and compress to exact KB limits securely in your browser.",
 		url: "https://30tools.com/exam-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Exam Image & Form Tools Online - No Signup | 30tools",
-		description: "Prepare photos, signatures, and PDFs for online UPSC, SSC, NEET, JEE, CUET, and RRB application forms. Crop, resize, and compress to exact KB limits securely in your browser.",
+		description: "Prepare photos, signatures, and PDFs for online UPSC, SSC, NEET, and JEE forms. Crop, resize, and compress to exact KB limits securely in your browser.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -14,16 +14,17 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!parentTool) return {};
 
     const canonicalUrl = `https://30tools.com/${slug}`;
+    const brandedTitle = `${intent.title} | 30tools`;
 
     return {
-        title: intent.title,
+        title: brandedTitle,
         description: intent.description,
         keywords: intent.keywords,
         alternates: {
             canonical: canonicalUrl,
         },
         openGraph: {
-            title: intent.title,
+            title: brandedTitle,
             description: intent.description,
             url: canonicalUrl,
             siteName: "30tools",
@@ -32,7 +33,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
         },
         twitter: {
             card: "summary_large_image",
-            title: intent.title,
+            title: brandedTitle,
             description: intent.description,
             images: ["/og-image.jpg"],
         },

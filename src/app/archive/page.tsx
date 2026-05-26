@@ -16,13 +16,16 @@ import toolsData from "@/constants/tools.json";
  * Metadata for the Archive page.
  */
 export const metadata = {
-	title: "Tools Archive | 30Tools - Complete Directory of 90+ Online Tools",
+	title: "Tools Archive | 30tools - Complete Directory of 90+ Online Tools",
 	description:
 		"Browse our complete directory of free online tools. From image editing and PDF management to SEO audit and developer utilities.",
 	keywords:
 		"tools archive, online tools directory, free online tools, image editors, PDF converters, SEO tools, developer utilities, 30tools",
+	alternates: {
+		canonical: "https://30tools.com/archive",
+	},
 	openGraph: {
-		title: "Tools Archive | 30Tools - Complete Directory of 90+ Online Tools",
+		title: "Tools Archive | 30tools - Complete Directory of 90+ Online Tools",
 		description:
 			"Browse our complete directory of free online tools. From image editing and PDF management to SEO audit and developer utilities.",
 		url: "https://30tools.com/archive",
@@ -32,7 +35,7 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Tools Archive | 30Tools - Complete Directory of 90+ Online Tools",
+		title: "Tools Archive | 30tools - Complete Directory of 90+ Online Tools",
 		description:
 			"Browse our complete directory of free online tools. From image editing and PDF management to SEO audit and developer utilities.",
 		images: ["/og-image.jpg"],

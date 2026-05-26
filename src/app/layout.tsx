@@ -60,7 +60,7 @@ const siteVerification = {
 export const metadata: Metadata = {
 	title: {
 		default: "Free Online Tools - No Signup | 30tools",
-		template: "%s | 30tools",
+		template: "%s",
 	},
 	description: `Professional online toolkit with ${TOOL_COUNT_STRING} free tools for image compression, PDF editing, video conversion, SEO analysis, developer utilities, text processing, and more. Free to use with no signup required.`,
 	keywords: [

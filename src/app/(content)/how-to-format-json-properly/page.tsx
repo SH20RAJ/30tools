@@ -3,15 +3,15 @@ import Fragment from "react";
 
 
 export const metadata = {
-	title: "Free How to Format JSON Properly (Without Breaking Data) Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free How to Format JSON Properly (Without Breaking Data) online. Fast, secure browser-based utility with no...",
+	title: "How to Format JSON Properly Without Breaking Data | 30tools",
+	description: "Learn how to format JSON correctly. Avoid syntax errors, clean up payloads, and use safe formatting practices for API requests and configuration files.",
 	keywords: "how to format json properly (without breaking data), how to format json properly (without breaking data) guide, 30tools, how-to-format-json-properly, how to format json properly, free how-to-format-json-properly, how to format json properly online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/how-to-format-json-properly",
 	},
 	openGraph: {
-		title: "Free How to Format JSON Properly (Without Breaking Data) Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free How to Format JSON Properly (Without Breaking Data) online. Fast, secure browser-based utility with no...",
+		title: "How to Format JSON Properly Without Breaking Data | 30tools",
+		description: "Learn how to format JSON correctly. Avoid syntax errors, clean up payloads, and use safe formatting practices for API requests and configuration files.",
 		url: "https://30tools.com/how-to-format-json-properly",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free How to Format JSON Properly (Without Breaking Data) Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free How to Format JSON Properly (Without Breaking Data) online. Fast, secure browser-based utility with no...",
+		title: "How to Format JSON Properly Without Breaking Data | 30tools",
+		description: "Learn how to format JSON correctly. Avoid syntax errors, clean up payloads, and use safe formatting practices for API requests and configuration files.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
