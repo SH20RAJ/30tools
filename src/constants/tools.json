@@ -353,6 +353,19 @@
           "extraSlugs": [
             "ai-poetry-generator"
           ]
+        },
+        {
+          "id": "rent-receipt-generator",
+          "name": "Rent Receipt Generator",
+          "description": "Generate HRA-compliant rent receipts online for free. Fill in tenant, landlord, and rent details, and download print-ready receipts instantly.",
+          "route": "/rent-receipt-generator",
+          "popular": true,
+          "category": "generators",
+          "extraSlugs": [
+            "free-rent-receipt-generator",
+            "rent-receipt-pdf",
+            "hra-rent-receipt-maker"
+          ]
         }
       ]
     },
@@ -1239,6 +1252,32 @@
           ],
           "popular": false,
           "category": "image"
+        },
+        {
+          "id": "compress-image-to-20kb",
+          "name": "Compress Image to 20KB",
+          "description": "Compress any image file (JPG, PNG, WebP) to fit strictly under 20KB while maintaining the best possible visual clarity.",
+          "route": "/compress-image-to-20kb",
+          "popular": true,
+          "category": "image",
+          "extraSlugs": [
+            "image-compressor-20kb",
+            "reduce-photo-size-to-20kb",
+            "jpg-under-20kb"
+          ]
+        },
+        {
+          "id": "resize-image-in-cm",
+          "name": "Resize Image in CM",
+          "description": "Resize your images by specifying width and height in centimeters (cm), millimeters (mm), or inches for printing and forms.",
+          "route": "/resize-image-in-cm",
+          "popular": false,
+          "category": "image",
+          "extraSlugs": [
+            "photo-size-in-cm",
+            "resize-photo-to-cm",
+            "image-cm-resizer"
+          ]
         }
       ]
     },
@@ -1486,6 +1525,20 @@
           ],
           "popular": false,
           "category": "text"
+        },
+        {
+          "id": "kruti-dev-to-unicode",
+          "name": "Kruti Dev to Unicode Converter",
+          "description": "Convert legacy Kruti Dev 010 font layout text to standard Unicode Devanagari Hindi text dynamically.",
+          "route": "/kruti-dev-to-unicode",
+          "popular": true,
+          "category": "text",
+          "extraSlugs": [
+            "unicode-to-kruti-dev",
+            "krutidev-converter-online",
+            "hindi-typing-tool",
+            "hinglish-to-hindi"
+          ]
         }
       ]
     },
@@ -7076,6 +7129,116 @@
       "description": "Tech blog and tool deep-dives",
       "tools": []
     },
+    "calculators": {
+      "name": "Calculators",
+      "slug": "calculators",
+      "icon": "CalculatorIcon",
+      "description": "Calculate academic grades, attendance shortage, and construction materials with ease.",
+      "tools": [
+        {
+          "id": "75-attendance-calculator",
+          "name": "75% Attendance Calculator",
+          "description": "Calculate how many classes you need to attend or can safely skip to maintain a minimum 75% attendance rate.",
+          "route": "/75-attendance-calculator",
+          "popular": true,
+          "category": "calculators",
+          "extraSlugs": [
+            "attendance-percentage-calculator",
+            "how-many-classes-to-attend",
+            "college-attendance-calculator",
+            "attendance-shortage-calculator",
+            "monthly-attendance-calculator"
+          ]
+        },
+        {
+          "id": "sgpa-calculator",
+          "name": "SGPA Calculator",
+          "description": "Compute your Semester Grade Point Average (SGPA) based on course credits and grade points earned.",
+          "route": "/sgpa-calculator",
+          "popular": false,
+          "category": "calculators",
+          "extraSlugs": [
+            "semester-grade-calculator",
+            "credit-based-sgpa-calculator"
+          ]
+        },
+        {
+          "id": "cgpa-calculator",
+          "name": "CGPA Calculator",
+          "description": "Calculate your Cumulative Grade Point Average (CGPA) from semester-wise SGPA or grade points.",
+          "route": "/cgpa-calculator",
+          "popular": false,
+          "category": "calculators",
+          "extraSlugs": [
+            "cumulative-grade-calculator",
+            "cgpa-with-credits"
+          ]
+        },
+        {
+          "id": "cgpa-to-percentage-calculator",
+          "name": "CGPA to Percentage Calculator",
+          "description": "Convert your CGPA to equivalent percentage marks using standard university formulas (like CBSE 9.5x).",
+          "route": "/cgpa-to-percentage-calculator",
+          "popular": true,
+          "category": "calculators",
+          "extraSlugs": [
+            "convert-cgpa-to-percentage",
+            "university-cgpa-percentage"
+          ]
+        },
+        {
+          "id": "required-marks-calculator",
+          "name": "Required Marks Calculator",
+          "description": "Find out exactly how many marks you need to score in your final exam to achieve your target grade or pass.",
+          "route": "/required-marks-calculator",
+          "popular": false,
+          "category": "calculators",
+          "extraSlugs": [
+            "final-exam-marks-needed",
+            "passing-marks-calculator"
+          ]
+        },
+        {
+          "id": "brick-calculator",
+          "name": "Brick Calculator",
+          "description": "Calculate the total number of bricks, cement bags, and sand volume required for building a wall.",
+          "route": "/brick-calculator",
+          "popular": false,
+          "category": "calculators",
+          "extraSlugs": [
+            "bricks-per-square-feet",
+            "brick-quantity-calculator",
+            "wall-brick-calculator"
+          ]
+        },
+        {
+          "id": "paint-calculator",
+          "name": "Paint Calculator",
+          "description": "Estimate the amount of paint in liters and estimated cost needed to cover walls, rooms, or ceilings.",
+          "route": "/paint-calculator",
+          "popular": false,
+          "category": "calculators",
+          "extraSlugs": [
+            "wall-paint-calculator",
+            "paint-quantity-calculator",
+            "paint-cost-calculator"
+          ]
+        },
+        {
+          "id": "tile-calculator",
+          "name": "Tile Calculator",
+          "description": "Calculate the total number of floor or wall tiles needed for a room, including waste margins and cost estimates.",
+          "route": "/tile-calculator",
+          "popular": false,
+          "category": "calculators",
+          "extraSlugs": [
+            "floor-tile-calculator",
+            "tiles-required-for-room",
+            "tile-cost-calculator"
+          ]
+        }
+      ]
+    },
     "exam-tools": {
       "name": "Exam Image & Form Tools",
       "slug": "exam-tools",
@@ -7226,6 +7389,44 @@
           "extraSlugs": [
             "exam-photo-validator",
             "image-dimension-checker-online"
+          ]
+        },
+        {
+          "id": "ibps-photo-resizer",
+          "name": "IBPS Photo Resizer",
+          "description": "Resize and compress your passport photo and signature to meet the exact IBPS requirements: photo 20KB-50KB (4.5x3.5 cm), signature 10KB-20KB.",
+          "route": "/ibps-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "ibps-signature-resizer",
+            "ibps-photo-compressor"
+          ]
+        },
+        {
+          "id": "pan-card-photo-resizer",
+          "name": "PAN Card Photo Resizer",
+          "description": "Resize and compress your photo and signature to the exact NSDL/UTIITSL PAN Card specifications: photo 213x213 pixels, size under 50KB.",
+          "route": "/pan-card-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "nsdl-photo-resizer",
+            "pan-signature-resizer",
+            "pan-photo-size-converter"
+          ]
+        },
+        {
+          "id": "photo-name-date-editor",
+          "name": "Photo With Name and Date Editor",
+          "description": "Add your name and the date of photo capture at the bottom of your passport size photograph, as required for official application forms.",
+          "route": "/photo-name-date-editor",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "add-name-date-on-photo",
+            "exam-photo-date-editor",
+            "photo-name-date-generator"
           ]
         }
       ]
