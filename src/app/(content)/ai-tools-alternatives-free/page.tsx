@@ -3,15 +3,15 @@ import Fragment from "react";
 
 
 export const metadata = {
-	title: "AI Tools Alternatives Free - Practical Picks | 30tools Expert Guide",
-	description: "Explore free AI tool alternatives for writing, image creation, voice generation, and content ideation without subscriptions.",
+	title: "Free AI Tools Alternatives Free - Practical Picks Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free AI Tools Alternatives Free - Practical Picks online. Fast, secure browser-based utility with no registr...",
 	keywords: "ai tools alternatives free - practical picks, ai tools alternatives free - practical picks guide, 30tools, ai-tools-alternatives-free, ai tools alternatives free, free ai-tools-alternatives-free, ai tools alternatives free online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/ai-tools-alternatives-free",
 	},
 	openGraph: {
-		title: "AI Tools Alternatives Free - Practical Picks | 30tools Expert Guide",
-		description: "Explore free AI tool alternatives for writing, image creation, voice generation, and content ideation without subscriptions.",
+		title: "Free AI Tools Alternatives Free - Practical Picks Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free AI Tools Alternatives Free - Practical Picks online. Fast, secure browser-based utility with no registr...",
 		url: "https://30tools.com/ai-tools-alternatives-free",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "AI Tools Alternatives Free - Practical Picks | 30tools Expert Guide",
-		description: "Explore free AI tool alternatives for writing, image creation, voice generation, and content ideation without subscriptions.",
+		title: "Free AI Tools Alternatives Free - Practical Picks Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free AI Tools Alternatives Free - Practical Picks online. Fast, secure browser-based utility with no registr...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -4,15 +4,15 @@ import FebspotDownloader from "@/components/tools/downloaders/FebspotDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Febspot Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "Download Febspot videos in high resolution instantly. Our free online tool helps you save your favorite content for offline viewing without any signup. Fast and secure. 100% free, fast, and no signup required.",
+	title: "Free Febspot Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Febspot Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "febspot video downloader, free online tool, no signup, febspot-video-downloader, free febspot-video-downloader, Febspot Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/febspot-video-downloader",
 	},
 	openGraph: {
-		title: "Free Febspot Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download Febspot videos in high resolution instantly. Our free online tool helps you save your favorite content for offline viewing without any signup. Fast and secure. 100% free, fast, and no signup required.",
+		title: "Free Febspot Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Febspot Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		url: "https://30tools.com/febspot-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Febspot Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download Febspot videos in high resolution instantly. Our free online tool helps you save your favorite content for offline viewing without any signup. Fast and secure. 100% free, fast, and no signup required.",
+		title: "Free Febspot Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Febspot Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

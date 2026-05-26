@@ -4,15 +4,15 @@ import URLShortenerTool from "@/components/tools/utilities/URLShortenerTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free URL Shortener Online - No Signup, All-in-One | 30tools",
-	description: "Shorten long URLs for easier sharing 100% free, fast, and no signup required.",
+	title: "Free URL Shortener Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free URL Shortener online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 	keywords: "url shortener, shorten url, link shortener, short link, free url shortener, 30tools, url-shortener, free url-shortener, url shortener online, online utility, free converter, browser tool",
 	alternates: {
 		canonical: "https://30tools.com/url-shortener",
 	},
 	openGraph: {
-		title: "Free URL Shortener Online - No Signup, All-in-One | 30tools",
-		description: "Shorten long URLs for easier sharing 100% free, fast, and no signup required.",
+		title: "Free URL Shortener Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free URL Shortener online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		url: "https://30tools.com/url-shortener",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free URL Shortener Online - No Signup, All-in-One | 30tools",
-		description: "Shorten long URLs for easier sharing 100% free, fast, and no signup required.",
+		title: "Free URL Shortener Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free URL Shortener online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

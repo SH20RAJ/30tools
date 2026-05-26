@@ -2,12 +2,26 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
-	title: "Free Bio Generator - Professional Social Media Bios | 30tools",
-	description: "Generate creative, engaging bios for Instagram, Twitter, LinkedIn, and more. Our free Bio Generator creates professional and catchy bios instantly in your browser.",
+	title: "Free Bio Generator Online - No Signup | 30tools",
+	description: "Create custom content with our free Bio Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
 	keywords: "bio generator, instagram bio generator, twitter bio, free bio maker, social media bio, 30tools, bio-generator, free bio-generator, bio generator online, online generator, free creator, content generator",
-	alternates: { canonical: "https://30tools.com/bio-generator" },
-	openGraph: { title: "Free Bio Generator - Professional Social Media Bios | 30tools", description: "Generate creative, engaging bios for Instagram, Twitter, LinkedIn, and more instantly.", url: "https://30tools.com/bio-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Bio Generator - Professional Social Media Bios | 30tools", description: "Generate creative, engaging bios for Instagram, Twitter, LinkedIn, and more instantly.", images: ["/og-image.jpg"] },
+	alternates: {
+		canonical: "https://30tools.com/bio-generator",
+	},
+	openGraph: {
+		title: "Free Bio Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Bio Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		url: "https://30tools.com/bio-generator",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Bio Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Bio Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		images: ["/og-image.jpg"],
+	},
 	robots: { index: true, follow: true },
 };
 

@@ -4,15 +4,15 @@ import UniversalVideoDownloader from "@/components/tools/downloaders/UniversalVi
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Universal Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required. 100% free, fast, and no signup required.",
+	title: "Free Universal Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Universal Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 	keywords: "universal video downloader, free online tool, no signup, universal-video-downloader, free universal-video-downloader, Universal Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/universal-video-downloader",
 	},
 	openGraph: {
-		title: "Free Universal Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required. 100% free, fast, and no signup required.",
+		title: "Free Universal Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Universal Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 		url: "https://30tools.com/universal-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Universal Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download videos from TikTok, Facebook, Instagram, Twitter/X, Vimeo, Dailymotion, Reddit, Rumble and more. No watermark downloads, multiple quality options, no registration required. 100% free, fast, and no signup required.",
+		title: "Free Universal Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Universal Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

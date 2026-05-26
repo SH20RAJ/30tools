@@ -2,12 +2,26 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
-	title: "Free Excuse Generator - Funny & Creative Alibis | 30tools",
-	description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or social events.",
+	title: "Free Excuse Generator Online - No Signup | 30tools",
+	description: "Create custom content with our free Excuse Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
 	keywords: "excuse, generator, free excuse generator, online excuse generator, 30tools, excuse-generator, excuse generator, free excuse-generator, excuse generator online, online generator, free creator, content generator",
-	alternates: { canonical: "https://30tools.com/excuse-generator" },
-	openGraph: { title: "Free Excuse Generator - Funny & Creative Alibis | 30tools", description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or social events.", url: "https://30tools.com/excuse-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Excuse Generator - Funny & Creative Alibis | 30tools", description: "Generate creative, believable excuses instantly. Our free Excuse Generator creates funny and realistic excuses for any situation — work, school, or social events.", images: ["/og-image.jpg"] },
+	alternates: {
+		canonical: "https://30tools.com/excuse-generator",
+	},
+	openGraph: {
+		title: "Free Excuse Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Excuse Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		url: "https://30tools.com/excuse-generator",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Excuse Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Excuse Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		images: ["/og-image.jpg"],
+	},
 	robots: { index: true, follow: true },
 };
 

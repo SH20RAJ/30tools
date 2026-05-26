@@ -4,15 +4,15 @@ import WordCounterTool from "@/components/tools/text/WordCounterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Word Counter Online - No Signup, Instant Results | 30tools",
-	description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
+	title: "Free Word Counter Online - No Signup | 30tools",
+	description: "Format, clean, sort, and analyze text files instantly with our free Word Counter online. Fast and private browser utility with no signup. 100% free and secure.",
 	keywords: "word counter, free online tool, no signup, word-counter, free word-counter, Word Counter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/word-counter",
 	},
 	openGraph: {
-		title: "Free Word Counter Online - No Signup, Instant Results | 30tools",
-		description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
+		title: "Free Word Counter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Word Counter online. Fast and private browser utility with no signup. 100% free and secure.",
 		url: "https://30tools.com/word-counter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Word Counter Online - No Signup, Instant Results | 30tools",
-		description: "Count words, characters, sentences, and paragraphs in your text instantly. Our free online Word Counter also provides estimated reading time and text analysis. Fast and private. 100% free, fast, and no signup required.",
+		title: "Free Word Counter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Word Counter online. Fast and private browser utility with no signup. 100% free and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -2,15 +2,15 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import PDFPillar from "@/components/pillars/PDFPillar";
 
 export const metadata = {
-	title: "Free PDF Tools Online – Merge, Split, Compress & Convert | 30tools",
-	description: "The ultimate suite of 20+ free online PDF tools. Merge, split, compress, and convert PDFs to Word/Images securely in your browser. Professional-grade utilities with no signup required.",
+	title: "Free PDF Tools Online - No Signup | 30tools",
+	description: "Manage, convert, edit, and secure PDF documents with our free PDF Tools online. Safe and private browser-based tool with no registration. 100% free and secure.",
 	keywords: "pdf tools, free pdf tools online, merge pdf free, compress pdf online, split pdf online, secure pdf editor, convert pdf to word online, 30tools pdf",
 	alternates: {
 		canonical: "https://30tools.com/pdf-tools",
 	},
 	openGraph: {
-		title: "Free PDF Tools Online – Merge, Split, Compress & Convert | 30tools",
-		description: "The ultimate suite of 20+ free online PDF tools. Merge, split, compress, and convert PDFs to Word/Images securely in your browser.",
+		title: "Free PDF Tools Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free PDF Tools online. Safe and private browser-based tool with no registration. 100% free and secure.",
 		url: "https://30tools.com/pdf-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -18,8 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free PDF Tools Online – Merge, Split, Compress & Convert | 30tools",
-		description: "Professional PDF tools for free. Merge, split, compress, and convert PDFs. No signup needed. Secure browser processing.",
+		title: "Free PDF Tools Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free PDF Tools online. Safe and private browser-based tool with no registration. 100% free and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

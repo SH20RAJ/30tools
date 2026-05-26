@@ -4,15 +4,15 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Server Status Checker Online - No Signup, All-in-One | 30tools",
-	description: "Free server status checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free Server Status Checker Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Server Status Checker online. Fast, secure browser-based utility with no registration. No signup required.",
 	keywords: "server status checker, free online tool, no signup, server-status-checker, free server-status-checker, Server Status Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/server-status-checker",
 	},
 	openGraph: {
-		title: "Free Server Status Checker Online - No Signup, All-in-One | 30tools",
-		description: "Free server status checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Server Status Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Server Status Checker online. Fast, secure browser-based utility with no registration. No signup required.",
 		url: "https://30tools.com/server-status-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Server Status Checker Online - No Signup, All-in-One | 30tools",
-		description: "Free server status checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Server Status Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Server Status Checker online. Fast, secure browser-based utility with no registration. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

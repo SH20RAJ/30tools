@@ -4,15 +4,15 @@ import HtaccessGenerator from "@/components/tools/built-ins/HtaccessGenerator";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Htaccess Redirect Generator Online - No Signup, All-in-One | 30tools",
-	description: "Free htaccess redirect generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free Htaccess Redirect Generator Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Htaccess Redirect Generator online. Fast, secure browser-based utility with no registration. Easy to use.",
 	keywords: "htaccess redirect generator, free online tool, no signup, htaccess-redirect-generator, free htaccess-redirect-generator, Htaccess Redirect Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/htaccess-redirect-generator",
 	},
 	openGraph: {
-		title: "Free Htaccess Redirect Generator Online - No Signup, All-in-One | 30tools",
-		description: "Free htaccess redirect generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Htaccess Redirect Generator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Htaccess Redirect Generator online. Fast, secure browser-based utility with no registration. Easy to use.",
 		url: "https://30tools.com/htaccess-redirect-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Htaccess Redirect Generator Online - No Signup, All-in-One | 30tools",
-		description: "Free htaccess redirect generator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Htaccess Redirect Generator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Htaccess Redirect Generator online. Fast, secure browser-based utility with no registration. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

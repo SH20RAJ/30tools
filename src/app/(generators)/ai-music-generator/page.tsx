@@ -2,18 +2,15 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import AIMusicGeneratorTool from "@/components/tools/generators/AIMusicGeneratorTool";
 
 export const metadata = {
-	title: "Free AI Music Generator – MiniMax 2.6 on Cloudflare | 30tools",
-	description:
-		"Generate full-length AI songs with vocals and instrumentation for free using MiniMax Music 2.6 on Cloudflare AI. Create royalty-free music from text prompts with studio-grade quality. No signup required. Free this week!",
-	keywords:
-		"ai music generator, free ai music generator, minimax music 2.6, cloudflare ai music, text to song ai, ai song maker, royalty free ai music, free music generator online, ai vocal generator, instrumental ai music, free this week",
+	title: "Free AI Music Generator Online - No Signup | 30tools",
+	description: "Create custom content with our free AI Music Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+	keywords: "ai music generator, free ai music generator, minimax music 2.6, cloudflare ai music, text to song ai, ai song maker, royalty free ai music, free music generator online, ai vocal generator, instrumental ai music, free this week",
 	alternates: {
 		canonical: "https://30tools.com/ai-music-generator",
 	},
 	openGraph: {
-		title: "Free AI Music Generator – MiniMax 2.6 on Cloudflare | 30tools",
-		description:
-			"Generate full-length AI songs with vocals and instrumentation for free using MiniMax Music 2.6 on Cloudflare AI. Royalty-free, studio-grade quality. Free this week!",
+		title: "Free AI Music Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free AI Music Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
 		url: "https://30tools.com/ai-music-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI Music Generator – MiniMax 2.6 on Cloudflare | 30tools",
-		description:
-			"Generate full-length AI songs with vocals and instrumentation for free using MiniMax Music 2.6 on Cloudflare AI. Royalty-free, studio-grade quality. Free this week!",
+		title: "Free AI Music Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free AI Music Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

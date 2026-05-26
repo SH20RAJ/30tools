@@ -4,15 +4,15 @@ import QrGeneratorPremium from "@/components/tools/utilities/QrGeneratorPremium"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free QR Code Decoder Online - No Signup, All-in-One | 30tools",
-	description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free QR Code Decoder Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free QR Code Decoder online. Fast, secure browser-based utility with no registration. No registration needed.",
 	keywords: "qr code decoder, free online tool, no signup, qr-code-decoder, free qr-code-decoder, Qr Code Decoder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/qr-code-decoder",
 	},
 	openGraph: {
-		title: "Free QR Code Decoder Online - No Signup, All-in-One | 30tools",
-		description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free QR Code Decoder Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free QR Code Decoder online. Fast, secure browser-based utility with no registration. No registration needed.",
 		url: "https://30tools.com/qr-code-decoder",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free QR Code Decoder Online - No Signup, All-in-One | 30tools",
-		description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free QR Code Decoder Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free QR Code Decoder online. Fast, secure browser-based utility with no registration. No registration needed.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

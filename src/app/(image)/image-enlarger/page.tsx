@@ -4,15 +4,15 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Image Enlarger Online - No Signup, Browser-Based | 30tools",
-	description: "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free Image Enlarger Online - No Signup | 30tools",
+	description: "Edit, convert, and compress images with our free Image Enlarger online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
 	keywords: "image enlarger, free online tool, no signup, image-enlarger, free image-enlarger, Image Enlarger online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/image-enlarger",
 	},
 	openGraph: {
-		title: "Free Image Enlarger Online - No Signup, Browser-Based | 30tools",
-		description: "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Image Enlarger Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free Image Enlarger online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
 		url: "https://30tools.com/image-enlarger",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Enlarger Online - No Signup, Browser-Based | 30tools",
-		description: "Free image enlarger tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Image Enlarger Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free Image Enlarger online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

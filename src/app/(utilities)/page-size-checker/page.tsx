@@ -4,15 +4,15 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Page Size Checker Online - No Signup, All-in-One | 30tools",
-	description: "Free page size checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free Page Size Checker Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Page Size Checker online. Fast, secure browser-based utility with no registration. No registration needed.",
 	keywords: "page size checker, free online tool, no signup, page-size-checker, free page-size-checker, Page Size Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/page-size-checker",
 	},
 	openGraph: {
-		title: "Free Page Size Checker Online - No Signup, All-in-One | 30tools",
-		description: "Free page size checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Page Size Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Page Size Checker online. Fast, secure browser-based utility with no registration. No registration needed.",
 		url: "https://30tools.com/page-size-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Page Size Checker Online - No Signup, All-in-One | 30tools",
-		description: "Free page size checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Page Size Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Page Size Checker online. Fast, secure browser-based utility with no registration. No registration needed.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

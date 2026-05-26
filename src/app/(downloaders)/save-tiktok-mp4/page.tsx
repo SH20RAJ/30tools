@@ -4,15 +4,15 @@ import TikTokDownloader from "@/components/tools/downloaders/TikTokDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Save Tiktok Mp4 Online - No Signup, Fast Download | 30tools",
-	description: "Save TikTok videos as high-quality MP4 files instantly. Our free online downloader is fast, secure, and works on all devices without any signup or software. 100% free, fast, and no signup required.",
+	title: "Free Save Tiktok Mp4 Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Save Tiktok Mp4 online. High-speed downloading with no signup needed. 100% free and secure.",
 	keywords: "save tiktok mp4, free online tool, no signup, save-tiktok-mp4, free save-tiktok-mp4, Save Tiktok Mp4 online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/save-tiktok-mp4",
 	},
 	openGraph: {
-		title: "Free Save Tiktok Mp4 Online - No Signup, Fast Download | 30tools",
-		description: "Save TikTok videos as high-quality MP4 files instantly. Our free online downloader is fast, secure, and works on all devices without any signup or software. 100% free, fast, and no signup required.",
+		title: "Free Save Tiktok Mp4 Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Save Tiktok Mp4 online. High-speed downloading with no signup needed. 100% free and secure.",
 		url: "https://30tools.com/save-tiktok-mp4",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Save Tiktok Mp4 Online - No Signup, Fast Download | 30tools",
-		description: "Save TikTok videos as high-quality MP4 files instantly. Our free online downloader is fast, secure, and works on all devices without any signup or software. 100% free, fast, and no signup required.",
+		title: "Free Save Tiktok Mp4 Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Save Tiktok Mp4 online. High-speed downloading with no signup needed. 100% free and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

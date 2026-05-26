@@ -4,15 +4,15 @@ import YouTubeDownloader from "@/components/tools/downloaders/YouTubeDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Hashtag Extractor Online - No Signup, HD Quality | 30tools",
-	description: "Extract all hashtags from any YouTube video instantly. Our free online tool helps you analyze competitor tagging strategies and optimize your own video SEO for better reach. 100% free, fast, and no signup required.",
+	title: "Free YouTube Hashtag Extractor Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free YouTube Hashtag Extractor online. Fast, secure browser-based utility with no registration. Free & secure.",
 	keywords: "youtube hashtag extractor, free online tool, no signup, youtube-hashtag-extractor, free youtube-hashtag-extractor, Youtube Hashtag Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-hashtag-extractor",
 	},
 	openGraph: {
-		title: "Free YouTube Hashtag Extractor Online - No Signup, HD Quality | 30tools",
-		description: "Extract all hashtags from any YouTube video instantly. Our free online tool helps you analyze competitor tagging strategies and optimize your own video SEO for better reach. 100% free, fast, and no signup required.",
+		title: "Free YouTube Hashtag Extractor Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Hashtag Extractor online. Fast, secure browser-based utility with no registration. Free & secure.",
 		url: "https://30tools.com/youtube-hashtag-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Hashtag Extractor Online - No Signup, HD Quality | 30tools",
-		description: "Extract all hashtags from any YouTube video instantly. Our free online tool helps you analyze competitor tagging strategies and optimize your own video SEO for better reach. 100% free, fast, and no signup required.",
+		title: "Free YouTube Hashtag Extractor Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Hashtag Extractor online. Fast, secure browser-based utility with no registration. Free & secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

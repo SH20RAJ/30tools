@@ -2,15 +2,15 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import ImagePillar from "@/components/pillars/ImagePillar";
 
 export const metadata = {
-	title: "Free Image Tools Online – Compress, Resize, Convert & More | 30tools",
-	description: "Professional suite of free online image tools. Compress, resize, remove backgrounds, and convert images to WebP/PNG securely in your browser. No signup required.",
+	title: "Free Free Image Tools Online Online - No Signup | 30tools",
+	description: "Edit, convert, and compress images with our free Free Image Tools Online online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
 	keywords: "image tools, free image tools online, image compressor free, remove background online, resize image for instagram, photo enhancer free, convert heic to jpg, 30tools image",
 	alternates: {
 		canonical: "https://30tools.com/image-tools",
 	},
 	openGraph: {
-		title: "Free Image Tools Online – Compress, Resize, Convert & More | 30tools",
-		description: "Professional suite of free online image tools. Compress, resize, remove backgrounds, and convert images securely in your browser.",
+		title: "Free Free Image Tools Online Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free Free Image Tools Online online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
 		url: "https://30tools.com/image-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -18,8 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Image Tools Online – Compress, Resize, Convert & More | 30tools",
-		description: "Professional image tools for free. Compress, resize, background removal, and format conversion. No signup needed.",
+		title: "Free Free Image Tools Online Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free Free Image Tools Online online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

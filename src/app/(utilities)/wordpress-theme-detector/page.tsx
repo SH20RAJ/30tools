@@ -4,15 +4,15 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free WordPress Theme Detector Online - No Signup, All-in-One | 30tools",
-	description: "Free wordpress theme detector tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free WordPress Theme Detector Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free WordPress Theme Detector online. Fast, secure browser-based utility with no registration. Try it free now.",
 	keywords: "wordpress theme detector, free online tool, no signup, wordpress-theme-detector, free wordpress-theme-detector, Wordpress Theme Detector online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/wordpress-theme-detector",
 	},
 	openGraph: {
-		title: "Free WordPress Theme Detector Online - No Signup, All-in-One | 30tools",
-		description: "Free wordpress theme detector tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free WordPress Theme Detector Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free WordPress Theme Detector online. Fast, secure browser-based utility with no registration. Try it free now.",
 		url: "https://30tools.com/wordpress-theme-detector",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free WordPress Theme Detector Online - No Signup, All-in-One | 30tools",
-		description: "Free wordpress theme detector tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free WordPress Theme Detector Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free WordPress Theme Detector online. Fast, secure browser-based utility with no registration. Try it free now.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -2,12 +2,26 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import NumberGeneratorTool from "@/components/tools/generators/NumberGeneratorTool";
 
 export const metadata = {
-	title: "Free Random Number Generator - Lottery & Dice Tool | 30tools",
-	description: "Generate random numbers with configurable ranges, counts, and unique options. Our free Random Number Generator is perfect for lotteries, games, and statistics.",
+	title: "Free Number Generator Online - No Signup | 30tools",
+	description: "Create custom content with our free Number Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
 	keywords: "number, generator, free number generator, online number generator, 30tools, number-generator, number generator, free number-generator, number generator online, online generator, free creator, content generator",
-	alternates: { canonical: "https://30tools.com/number-generator" },
-	openGraph: { title: "Free Random Number Generator - Lottery & Dice Tool | 30tools", description: "Generate random numbers with configurable ranges, counts, and unique options. Our free Random Number Generator is perfect for lotteries, games, and statistics.", url: "https://30tools.com/number-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Random Number Generator - Lottery & Dice Tool | 30tools", description: "Generate random numbers with configurable ranges, counts, and unique options. Our free Random Number Generator is perfect for lotteries, games, and statistics.", images: ["/og-image.jpg"] },
+	alternates: {
+		canonical: "https://30tools.com/number-generator",
+	},
+	openGraph: {
+		title: "Free Number Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Number Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		url: "https://30tools.com/number-generator",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Number Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Number Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		images: ["/og-image.jpg"],
+	},
 	robots: { index: true, follow: true },
 };
 

@@ -4,15 +4,15 @@ import ImageConverterTool from "@/components/tools/image/ImageConverterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free WebP to PNG Converter Online - No Signup, Browser-Based | 30tools",
-	description: "Convert WebP to PNG to restore transparency and compatibility with all image editors. High-quality, free, and privacy-focused online conversion tool. 100% free, fast, and no signup required.",
+	title: "Free WebP to PNG Converter Online - No Signup | 30tools",
+	description: "Edit, convert, and compress images with our free WebP to PNG Converter online. Crop, resize, and optimize photos in your browser with no signup. Free & secure.",
 	keywords: "webp to png converter, convert webp to png, image format converter, online image converter, free tool, 30tools, webp-to-png-converter, free webp-to-png-converter, webp to png converter online, image editing, photo editor, browser image tool",
 	alternates: {
 		canonical: "https://30tools.com/webp-to-png-converter",
 	},
 	openGraph: {
-		title: "Free WebP to PNG Converter Online - No Signup, Browser-Based | 30tools",
-		description: "Convert WebP to PNG to restore transparency and compatibility with all image editors. High-quality, free, and privacy-focused online conversion tool. 100% free, fast, and no signup required.",
+		title: "Free WebP to PNG Converter Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free WebP to PNG Converter online. Crop, resize, and optimize photos in your browser with no signup. Free & secure.",
 		url: "https://30tools.com/webp-to-png-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free WebP to PNG Converter Online - No Signup, Browser-Based | 30tools",
-		description: "Convert WebP to PNG to restore transparency and compatibility with all image editors. High-quality, free, and privacy-focused online conversion tool. 100% free, fast, and no signup required.",
+		title: "Free WebP to PNG Converter Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free WebP to PNG Converter online. Crop, resize, and optimize photos in your browser with no signup. Free & secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -4,15 +4,15 @@ import IfunnyDownloader from "@/components/tools/downloaders/IfunnyDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Ifunny Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "Save your favorite iFunny videos and memes to your device easily. Our free online downloader preserves quality and works instantly in your browser. 100% free, fast, and no signup required.",
+	title: "Free Ifunny Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Ifunny Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
 	keywords: "ifunny video downloader, free online tool, no signup, ifunny-video-downloader, free ifunny-video-downloader, Ifunny Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ifunny-video-downloader",
 	},
 	openGraph: {
-		title: "Free Ifunny Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Save your favorite iFunny videos and memes to your device easily. Our free online downloader preserves quality and works instantly in your browser. 100% free, fast, and no signup required.",
+		title: "Free Ifunny Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Ifunny Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
 		url: "https://30tools.com/ifunny-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Ifunny Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Save your favorite iFunny videos and memes to your device easily. Our free online downloader preserves quality and works instantly in your browser. 100% free, fast, and no signup required.",
+		title: "Free Ifunny Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Ifunny Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

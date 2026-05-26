@@ -4,15 +4,15 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Youtube Video Title Capitalizer Online - No Signup, HD Quality | 30tools",
-	description: "Automatically capitalize your YouTube video titles for maximum professional impact and CTR. Our free online tool follows industry standards to make your titles stand out. 100% free, fast, and no signup required.",
+	title: "Free Youtube Video Title Capitalizer Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Youtube Video Title Capitalizer online. Fast, secure browser-based utility with no registration.",
 	keywords: "youtube video title capitalizer, free online tool, no signup, youtube-title-capitalizer, Youtube Title Capitalizer, free youtube-title-capitalizer, Youtube Title Capitalizer online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-capitalizer",
 	},
 	openGraph: {
-		title: "Free Youtube Video Title Capitalizer Online - No Signup, HD Quality | 30tools",
-		description: "Automatically capitalize your YouTube video titles for maximum professional impact and CTR. Our free online tool follows industry standards to make your titles stand out. 100% free, fast, and no signup required.",
+		title: "Free Youtube Video Title Capitalizer Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Youtube Video Title Capitalizer online. Fast, secure browser-based utility with no registration.",
 		url: "https://30tools.com/youtube-title-capitalizer",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Youtube Video Title Capitalizer Online - No Signup, HD Quality | 30tools",
-		description: "Automatically capitalize your YouTube video titles for maximum professional impact and CTR. Our free online tool follows industry standards to make your titles stand out. 100% free, fast, and no signup required.",
+		title: "Free Youtube Video Title Capitalizer Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Youtube Video Title Capitalizer online. Fast, secure browser-based utility with no registration.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

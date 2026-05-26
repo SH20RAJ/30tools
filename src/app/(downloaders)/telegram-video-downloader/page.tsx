@@ -4,15 +4,15 @@ import TelegramDownloader from "@/components/tools/downloaders/TelegramDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Telegram Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "The ultimate tool for downloading videos and media from Telegram channels and groups. Save high-quality content for offline viewing instantly in your browser. 100% free, fast, and no signup required.",
+	title: "Free Telegram Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Telegram Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "telegram video downloader, free online tool, no signup, telegram-video-downloader, free telegram-video-downloader, Telegram Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/telegram-video-downloader",
 	},
 	openGraph: {
-		title: "Free Telegram Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "The ultimate tool for downloading videos and media from Telegram channels and groups. Save high-quality content for offline viewing instantly in your browser. 100% free, fast, and no signup required.",
+		title: "Free Telegram Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Telegram Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		url: "https://30tools.com/telegram-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Telegram Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "The ultimate tool for downloading videos and media from Telegram channels and groups. Save high-quality content for offline viewing instantly in your browser. 100% free, fast, and no signup required.",
+		title: "Free Telegram Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Telegram Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -4,15 +4,15 @@ import VimeoDownloader from "@/components/tools/downloaders/VimeoDownloader";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Vimeo Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device. 100% free, fast, and no signup required.",
+	title: "Free Vimeo Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Vimeo Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
 	keywords: "vimeo downloader, download vimeo videos, vimeo video downloader, vimeo to mp4, free tool, 30tools, vimeo-video-downloader, free vimeo-video-downloader, vimeo video downloader online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/vimeo-video-downloader",
 	},
 	openGraph: {
-		title: "Free Vimeo Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device. 100% free, fast, and no signup required.",
+		title: "Free Vimeo Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Vimeo Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
 		url: "https://30tools.com/vimeo-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Vimeo Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Paste a Vimeo URL and instantly download the video as an MP4 file for free on any device. 100% free, fast, and no signup required.",
+		title: "Free Vimeo Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Vimeo Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

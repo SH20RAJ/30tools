@@ -2,18 +2,15 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import RedditDownloader from "@/components/tools/downloaders/RedditDownloader";
 
 export const metadata = {
-	title: "Free Reddit Video Downloader Online - Save in HD with Audio | 30tools",
-	description:
-		"Download Reddit videos with audio in HD quality 100% free, no signup required, and privacy-focused processing in your browser.",
-	keywords:
-		"reddit video downloader, free online tool, no signup, video, reddit video downloader online, 30tools",
+	title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+	description: "Download, convert, and edit video files instantly with our free Reddit Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
+	keywords: "reddit video downloader, free online tool, no signup, video, reddit video downloader online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/reddit-downloader",
 	},
 	openGraph: {
-		title: "Free Reddit Video Downloader Online - Save in HD with Audio | 30tools",
-		description:
-			"Download Reddit videos with audio in HD quality 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+		description: "Download, convert, and edit video files instantly with our free Reddit Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
 		url: "https://30tools.com/reddit-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,9 +18,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Reddit Video Downloader Online - Save in HD with Audio | 30tools",
-		description:
-			"Download Reddit videos with audio in HD quality 100% free, no signup required, and privacy-focused processing in your browser.",
+		title: "Free Reddit Video Downloader Online - No Signup | 30tools",
+		description: "Download, convert, and edit video files instantly with our free Reddit Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

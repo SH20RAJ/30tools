@@ -53,9 +53,9 @@ export default function ToolSEOLayout({
 					<div className="lg:col-span-12">
 						{/* Main Tool Area */}
 						<div className="mb-12">
-							<h1 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground">
+							<h2 className="text-4xl md:text-5xl font-extrabold mb-8 text-foreground">
 								{mergedTool.name}
-							</h1>
+							</h2>
 							{children}
 						</div>
 

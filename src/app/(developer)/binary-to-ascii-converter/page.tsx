@@ -4,15 +4,15 @@ import BaseConverter from "@/components/tools/shared/BaseConverter";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Binary to ASCII Converter Online - No Signup, Client-Side | 30tools",
-	description: "Transform binary code (0s and 1s) into readable ASCII text instantly. Our free online converter is fast, accurate, and works entirely in your browser. No signup required.",
+	title: "Free Binary to ASCII Converter Online - No Signup | 30tools",
+	description: "Format, minify, validate, and convert code snippets with our free Binary to ASCII Converter online. Secure, local developer utility with no registration.",
 	keywords: "binary to ascii converter, free online tool, no signup, binary-to-ascii-converter, free binary-to-ascii-converter, Binary To Ascii Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/binary-to-ascii-converter",
 	},
 	openGraph: {
-		title: "Free Binary to ASCII Converter Online - No Signup, Client-Side | 30tools",
-		description: "Transform binary code (0s and 1s) into readable ASCII text instantly. Our free online converter is fast, accurate, and works entirely in your browser. No signup required.",
+		title: "Free Binary to ASCII Converter Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free Binary to ASCII Converter online. Secure, local developer utility with no registration.",
 		url: "https://30tools.com/binary-to-ascii-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Binary to ASCII Converter Online - No Signup, Client-Side | 30tools",
-		description: "Transform binary code (0s and 1s) into readable ASCII text instantly. Our free online converter is fast, accurate, and works entirely in your browser. No signup required.",
+		title: "Free Binary to ASCII Converter Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free Binary to ASCII Converter online. Secure, local developer utility with no registration.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

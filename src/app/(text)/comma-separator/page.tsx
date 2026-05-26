@@ -4,15 +4,15 @@ import CommaSeparatorTool from "@/components/tools/text/CommaSeparatorTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Comma Separator Online - No Signup, Instant Results | 30tools",
-	description: "Convert lists, columns, or text into comma-separated values (CSV) instantly. Our free online Comma Separator is perfect for data cleaning and formatting tasks. Privacy-focused browser tool. 100% free, fast, and no signup required.",
+	title: "Free Comma Separator Online - No Signup | 30tools",
+	description: "Format, clean, sort, and analyze text files instantly with our free Comma Separator online. Fast and private browser utility with no signup. No signup required.",
 	keywords: "comma separator, free online tool, no signup, comma-separator, free comma-separator, Comma Separator online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/comma-separator",
 	},
 	openGraph: {
-		title: "Free Comma Separator Online - No Signup, Instant Results | 30tools",
-		description: "Convert lists, columns, or text into comma-separated values (CSV) instantly. Our free online Comma Separator is perfect for data cleaning and formatting tasks. Privacy-focused browser tool. 100% free, fast, and no signup required.",
+		title: "Free Comma Separator Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Comma Separator online. Fast and private browser utility with no signup. No signup required.",
 		url: "https://30tools.com/comma-separator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Comma Separator Online - No Signup, Instant Results | 30tools",
-		description: "Convert lists, columns, or text into comma-separated values (CSV) instantly. Our free online Comma Separator is perfect for data cleaning and formatting tasks. Privacy-focused browser tool. 100% free, fast, and no signup required.",
+		title: "Free Comma Separator Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Comma Separator online. Fast and private browser utility with no signup. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

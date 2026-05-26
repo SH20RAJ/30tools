@@ -1,4 +1,4 @@
-import { notFound, redirect } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getIntentBySlug } from "@/lib/intent-data";
 import { getToolById } from "@/lib/tools";
 
@@ -9,7 +9,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     if (!intent) return {};
 
     const parentTool = getToolById(intent.parentToolId);
-    const canonicalUrl = parentTool ? `https://30tools.com${parentTool.route}` : `https://30tools.com/${slug}`;
+    if (!parentTool) return {};
+
+    const canonicalUrl = `https://30tools.com${parentTool.route}`;
 
     return {
         title: intent.title,
@@ -49,6 +51,6 @@ export default async function IntentPage({ params }: { params: Promise<{ slug: s
         notFound();
     }
 
-    // 301 redirect to the canonical parent tool URL
-    redirect(parentTool.route);
+    // 308 permanent redirect to the canonical parent tool URL
+    permanentRedirect(parentTool.route);
 }

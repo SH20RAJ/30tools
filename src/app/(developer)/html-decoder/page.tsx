@@ -4,15 +4,15 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free HTML Decoder Online - No Signup, Client-Side | 30tools",
-	description: "Decode HTML entities back to their original characters instantly. Our free online tool converts &amp; and similar entities into readable text for easy debugging and content cleaning. 100% free, fast, and no signup required.",
+	title: "Free HTML Decoder Online - No Signup | 30tools",
+	description: "Format, minify, validate, and convert code snippets with our free HTML Decoder online. Secure, local developer utility with no registration. No signup required.",
 	keywords: "html decoder, free online tool, no signup, html-decoder, free html-decoder, Html Decoder online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/html-decoder",
 	},
 	openGraph: {
-		title: "Free HTML Decoder Online - No Signup, Client-Side | 30tools",
-		description: "Decode HTML entities back to their original characters instantly. Our free online tool converts &amp; and similar entities into readable text for easy debugging and content cleaning. 100% free, fast, and no signup required.",
+		title: "Free HTML Decoder Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free HTML Decoder online. Secure, local developer utility with no registration. No signup required.",
 		url: "https://30tools.com/html-decoder",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free HTML Decoder Online - No Signup, Client-Side | 30tools",
-		description: "Decode HTML entities back to their original characters instantly. Our free online tool converts &amp; and similar entities into readable text for easy debugging and content cleaning. 100% free, fast, and no signup required.",
+		title: "Free HTML Decoder Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free HTML Decoder online. Secure, local developer utility with no registration. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

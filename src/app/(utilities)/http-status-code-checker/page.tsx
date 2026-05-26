@@ -4,15 +4,15 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free HTTP Status Code Checker Online - No Signup, All-in-One | 30tools",
-	description: "Free http status code checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free HTTP Status Code Checker Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free HTTP Status Code Checker online. Fast, secure browser-based utility with no registration. Try it free now.",
 	keywords: "http status code checker, free online tool, no signup, http-status-code-checker, free http-status-code-checker, Http Status Code Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/http-status-code-checker",
 	},
 	openGraph: {
-		title: "Free HTTP Status Code Checker Online - No Signup, All-in-One | 30tools",
-		description: "Free http status code checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free HTTP Status Code Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free HTTP Status Code Checker online. Fast, secure browser-based utility with no registration. Try it free now.",
 		url: "https://30tools.com/http-status-code-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free HTTP Status Code Checker Online - No Signup, All-in-One | 30tools",
-		description: "Free http status code checker tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free HTTP Status Code Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free HTTP Status Code Checker online. Fast, secure browser-based utility with no registration. Try it free now.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

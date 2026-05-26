@@ -4,15 +4,15 @@ import YouTubeDownloader from "@/components/tools/downloaders/YouTubeDownloader"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Description Extractor Online - No Signup, HD Quality | 30tools",
-	description: "Extract the full description from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
+	title: "Free YouTube Description Extractor Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free YouTube Description Extractor online. Fast, secure browser-based utility with no registration. 100% free.",
 	keywords: "youtube description extractor, free online tool, no signup, youtube-description-extractor, free youtube-description-extractor, Youtube Description Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-description-extractor",
 	},
 	openGraph: {
-		title: "Free YouTube Description Extractor Online - No Signup, HD Quality | 30tools",
-		description: "Extract the full description from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
+		title: "Free YouTube Description Extractor Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Description Extractor online. Fast, secure browser-based utility with no registration. 100% free.",
 		url: "https://30tools.com/youtube-description-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Description Extractor Online - No Signup, HD Quality | 30tools",
-		description: "Extract the full description from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure online tool. 100% free, fast, and no signup required.",
+		title: "Free YouTube Description Extractor Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Description Extractor online. Fast, secure browser-based utility with no registration. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

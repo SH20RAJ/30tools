@@ -4,15 +4,15 @@ import ImageToPDFTool from "@/components/tools/pdf/ImageToPDF";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Image to PDF – Convert JPG, PNG to PDF Online for Free",
-	description: "Convert multiple images to a single PDF document 100% free. Supports JPG, PNG, WEBP and more. Privacy-first local processing with no signup required.",
-	
-	keywords: "image-to-pdf, Image To Pdf, free image-to-pdf, Image To Pdf online, PDF utility, document editor, online PDF tool, free PDF converter, 30tools",alternates: {
+	title: "Free Image to PDF Online - No Signup | 30tools",
+	description: "Manage, convert, edit, and secure PDF documents with our free Image to PDF online. Safe and private browser-based tool with no registration. No signup required.",
+	keywords: "image-to-pdf, Image To Pdf, free image-to-pdf, Image To Pdf online, PDF utility, document editor, online PDF tool, free PDF converter, 30tools",
+	alternates: {
 		canonical: "https://30tools.com/image-to-pdf",
 	},
 	openGraph: {
-		title: "Image to PDF – Free Online Image to PDF Converter",
-		description: "Combine JPG, PNG, WebP images into a single PDF. Secure, fast, and works entirely in your browser.",
+		title: "Free Image to PDF Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free Image to PDF online. Safe and private browser-based tool with no registration. No signup required.",
 		url: "https://30tools.com/image-to-pdf",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Image to PDF – Combine Photos into PDF",
-		description: "Convert images to PDF quickly and privately. No uploads required.",
+		title: "Free Image to PDF Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free Image to PDF online. Safe and private browser-based tool with no registration. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

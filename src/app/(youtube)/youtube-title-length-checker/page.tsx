@@ -4,15 +4,15 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Title Length Checker Online - No Signup, HD Quality | 30tools",
-	description: "Check if your YouTube video title is the optimal length for search and browse. Our free online checker helps you avoid truncation and ensure your full title is visible in search results. 100% free, fast, and no signup required.",
+	title: "Free YouTube Title Length Checker Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free YouTube Title Length Checker online. Fast, secure browser-based utility with no registration. Easy to use.",
 	keywords: "youtube title length checker, free online tool, no signup, youtube-title-length-checker, free youtube-title-length-checker, Youtube Title Length Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-title-length-checker",
 	},
 	openGraph: {
-		title: "Free YouTube Title Length Checker Online - No Signup, HD Quality | 30tools",
-		description: "Check if your YouTube video title is the optimal length for search and browse. Our free online checker helps you avoid truncation and ensure your full title is visible in search results. 100% free, fast, and no signup required.",
+		title: "Free YouTube Title Length Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Title Length Checker online. Fast, secure browser-based utility with no registration. Easy to use.",
 		url: "https://30tools.com/youtube-title-length-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Title Length Checker Online - No Signup, HD Quality | 30tools",
-		description: "Check if your YouTube video title is the optimal length for search and browse. Our free online checker helps you avoid truncation and ensure your full title is visible in search results. 100% free, fast, and no signup required.",
+		title: "Free YouTube Title Length Checker Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Title Length Checker online. Fast, secure browser-based utility with no registration. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

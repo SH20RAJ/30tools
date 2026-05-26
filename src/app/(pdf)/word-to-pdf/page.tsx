@@ -5,15 +5,15 @@ import { notFound } from "next/navigation";
 
 
 export const metadata = {
-	title: "Free Word to PDF Online - No Signup, Secure Local | 30tools",
-	description: "Convert Word documents (.docx) to PDF format 100% free. Fast, high-quality, and privacy-focused conversion with no signup required.",
+	title: "Free Word to PDF Online - No Signup | 30tools",
+	description: "Manage, convert, edit, and secure PDF documents with our free Word to PDF online. Safe and private browser-based tool with no registration. No signup required.",
 	keywords: "word to pdf, convert word to pdf, docx to pdf, free word converter, online pdf tool, 30tools, word-to-pdf, free word-to-pdf, word to pdf online, pdf utility, document editor, free pdf converter",
 	alternates: {
 		canonical: "https://30tools.com/word-to-pdf",
 	},
 	openGraph: {
-		title: "Free Word to PDF Online - No Signup, Secure Local | 30tools",
-		description: "Convert Word documents (.docx) to PDF format 100% free. Fast, high-quality, and privacy-focused conversion with no signup required.",
+		title: "Free Word to PDF Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free Word to PDF online. Safe and private browser-based tool with no registration. No signup required.",
 		url: "https://30tools.com/word-to-pdf",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,8 +21,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Word to PDF Online - No Signup, Secure Local | 30tools",
-		description: "Convert Word documents (.docx) to PDF format 100% free. Fast, high-quality, and privacy-focused conversion with no signup required.",
+		title: "Free Word to PDF Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free Word to PDF online. Safe and private browser-based tool with no registration. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -4,15 +4,15 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Percentage Calculator Online - No Signup, All-in-One | 30tools",
-	description: "Free percentage calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free Percentage Calculator Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Percentage Calculator online. Fast, secure browser-based utility with no registration. No signup required.",
 	keywords: "percentage calculator, calculate percentage, percent calculator, online calculator, free math tool, 30tools, percentage-calculator, free percentage-calculator, percentage calculator online, online utility, free converter, browser tool",
 	alternates: {
 		canonical: "https://30tools.com/percentage-calculator",
 	},
 	openGraph: {
-		title: "Free Percentage Calculator Online - No Signup, All-in-One | 30tools",
-		description: "Free percentage calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Percentage Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Percentage Calculator online. Fast, secure browser-based utility with no registration. No signup required.",
 		url: "https://30tools.com/percentage-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Percentage Calculator Online - No Signup, All-in-One | 30tools",
-		description: "Free percentage calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Percentage Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Percentage Calculator online. Fast, secure browser-based utility with no registration. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

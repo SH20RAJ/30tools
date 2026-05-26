@@ -4,15 +4,15 @@ import AllDownloaders from "@/components/tools/downloaders/AllDownloaders";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Downloaders Online - No Signup, Fast Download | 30tools",
-	description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
+	title: "Free Downloaders Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Downloaders online. High-speed downloading with no signup needed. 100% free and easy to use.",
 	keywords: "downloaders, free online tool, no signup, free downloaders, Downloaders online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/downloaders",
 	},
 	openGraph: {
-		title: "Free Downloaders Online - No Signup, Fast Download | 30tools",
-		description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
+		title: "Free Downloaders Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Downloaders online. High-speed downloading with no signup needed. 100% free and easy to use.",
 		url: "https://30tools.com/downloaders",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Downloaders Online - No Signup, Fast Download | 30tools",
-		description: "Explore our comprehensive collection of social media downloaders. Save videos, photos, and audio from all major platforms in high quality for free. 100% free, fast, and no signup required.",
+		title: "Free Downloaders Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Downloaders online. High-speed downloading with no signup needed. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

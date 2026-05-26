@@ -4,15 +4,15 @@ import WordToNumberTool from "@/components/tools/text/WordToNumberTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Word to Number Converter Online - No Signup, Instant Results | 30tools",
-	description: "Convert words into digits instantly with our free online Word to Number converter. Perfect for data entry, educational exercises, and technical documentation cleanup. 100% free, fast, and no signup required.",
+	title: "Free Word to Number Converter Online - No Signup | 30tools",
+	description: "Format, clean, sort, and analyze text files instantly with our free Word to Number Converter online. Fast and private browser utility with no signup. 100% free.",
 	keywords: "word to number converter, free online tool, no signup, word-to-number-converter, free word-to-number-converter, Word To Number Converter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/word-to-number-converter",
 	},
 	openGraph: {
-		title: "Free Word to Number Converter Online - No Signup, Instant Results | 30tools",
-		description: "Convert words into digits instantly with our free online Word to Number converter. Perfect for data entry, educational exercises, and technical documentation cleanup. 100% free, fast, and no signup required.",
+		title: "Free Word to Number Converter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Word to Number Converter online. Fast and private browser utility with no signup. 100% free.",
 		url: "https://30tools.com/word-to-number-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Word to Number Converter Online - No Signup, Instant Results | 30tools",
-		description: "Convert words into digits instantly with our free online Word to Number converter. Perfect for data entry, educational exercises, and technical documentation cleanup. 100% free, fast, and no signup required.",
+		title: "Free Word to Number Converter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Word to Number Converter online. Fast and private browser utility with no signup. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

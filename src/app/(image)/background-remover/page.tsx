@@ -4,15 +4,15 @@ import BackgroundRemoverTool from "@/components/tools/image/BackgroundRemoverToo
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Background Remover – Remove Solid Backgrounds from Images Online Free",
-	description: "Remove solid and white backgrounds from images automatically. Create transparent PNGs for product photos, headshots, and graphics. 100% free, browser-based processing, no signup needed.",
-	
-	keywords: "background-remover, Background Remover, free background-remover, Background Remover online, image editing, photo editor, browser image tool, free photo utility, 30tools",alternates: {
+	title: "Free Background Remover Online - No Signup | 30tools",
+	description: "Edit, convert, and compress images with our free Background Remover online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+	keywords: "background-remover, Background Remover, free background-remover, Background Remover online, image editing, photo editor, browser image tool, free photo utility, 30tools",
+	alternates: {
 		canonical: "https://30tools.com/background-remover",
 	},
 	openGraph: {
-		title: "Background Remover – Remove Solid Backgrounds Online Free",
-		description: "Remove white and solid color backgrounds from photos instantly. Export transparent PNGs for e-commerce, social media, or design projects. No signup required.",
+		title: "Free Background Remover Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free Background Remover online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
 		url: "https://30tools.com/background-remover",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Background Remover – Remove Solid Backgrounds Online Free",
-		description: "Instantly remove white and solid color backgrounds from photos. Export transparent PNGs for e-commerce, social media, or design.",
+		title: "Free Background Remover Online - No Signup | 30tools",
+		description: "Edit, convert, and compress images with our free Background Remover online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

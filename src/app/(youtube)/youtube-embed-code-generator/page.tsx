@@ -4,15 +4,15 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Embed Code Generator Online - No Signup, HD Quality | 30tools",
-	description: "Generate customizable YouTube embed codes instantly. Our free online tool helps you create responsive iframes with specific start times, player controls, and privacy settings for your website. 100% free, fast, and no signup required.",
+	title: "Free YouTube Embed Code Generator Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free YouTube Embed Code Generator online. Fast, secure browser-based utility with no registration. Easy to use.",
 	keywords: "youtube embed code generator, free online tool, no signup, youtube-embed-code-generator, free youtube-embed-code-generator, Youtube Embed Code Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-embed-code-generator",
 	},
 	openGraph: {
-		title: "Free YouTube Embed Code Generator Online - No Signup, HD Quality | 30tools",
-		description: "Generate customizable YouTube embed codes instantly. Our free online tool helps you create responsive iframes with specific start times, player controls, and privacy settings for your website. 100% free, fast, and no signup required.",
+		title: "Free YouTube Embed Code Generator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Embed Code Generator online. Fast, secure browser-based utility with no registration. Easy to use.",
 		url: "https://30tools.com/youtube-embed-code-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Embed Code Generator Online - No Signup, HD Quality | 30tools",
-		description: "Generate customizable YouTube embed codes instantly. Our free online tool helps you create responsive iframes with specific start times, player controls, and privacy settings for your website. 100% free, fast, and no signup required.",
+		title: "Free YouTube Embed Code Generator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Embed Code Generator online. Fast, secure browser-based utility with no registration. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

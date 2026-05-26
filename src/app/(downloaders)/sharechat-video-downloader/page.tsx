@@ -4,15 +4,15 @@ import SharechatDownloader from "@/components/tools/downloaders/SharechatDownloa
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free ShareChat Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "Save your favorite ShareChat videos without watermark instantly. Our free online tool helps you download viral Indian content and funny videos in high-definition quality. 100% free, fast, and no signup required.",
+	title: "Free ShareChat Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free ShareChat Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 	keywords: "sharechat video downloader, free online tool, no signup, sharechat-video-downloader, free sharechat-video-downloader, Sharechat Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/sharechat-video-downloader",
 	},
 	openGraph: {
-		title: "Free ShareChat Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Save your favorite ShareChat videos without watermark instantly. Our free online tool helps you download viral Indian content and funny videos in high-definition quality. 100% free, fast, and no signup required.",
+		title: "Free ShareChat Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free ShareChat Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 		url: "https://30tools.com/sharechat-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free ShareChat Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Save your favorite ShareChat videos without watermark instantly. Our free online tool helps you download viral Indian content and funny videos in high-definition quality. 100% free, fast, and no signup required.",
+		title: "Free ShareChat Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free ShareChat Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

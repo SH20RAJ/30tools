@@ -4,15 +4,15 @@ import UniversalUnitConverter from "@/components/tools/built-ins/UniversalUnitCo
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Torque Converter Online - No Signup, All-in-One | 30tools",
-	description: "Free torque converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free Torque Converter Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Torque Converter online. Fast, secure browser-based utility with no registration. No registration needed.",
 	keywords: "torque converter, free online tool, no signup, torque-converter, free torque-converter, Torque Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/torque-converter",
 	},
 	openGraph: {
-		title: "Free Torque Converter Online - No Signup, All-in-One | 30tools",
-		description: "Free torque converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Torque Converter Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Torque Converter online. Fast, secure browser-based utility with no registration. No registration needed.",
 		url: "https://30tools.com/torque-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Torque Converter Online - No Signup, All-in-One | 30tools",
-		description: "Free torque converter tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Torque Converter Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Torque Converter online. Fast, secure browser-based utility with no registration. No registration needed.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -2,12 +2,26 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
-	title: "Free Business Name Generator - Creative Brand Name Ideas | 30tools",
-	description: "Generate unique, creative business name ideas instantly. Our free Business Name Generator helps entrepreneurs find the perfect brand name with AI-powered suggestions.",
+	title: "Free Business Name Generator Online - No Signup | 30tools",
+	description: "Create custom content with our free Business Name Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
 	keywords: "business, name, generator, free business name generator, online business name generator, 30tools, business-name-generator, business name generator, free business-name-generator, business name generator online, online generator, free creator",
-	alternates: { canonical: "https://30tools.com/business-name-generator" },
-	openGraph: { title: "Free Business Name Generator - Creative Brand Name Ideas | 30tools", description: "Generate unique, creative business name ideas instantly. Our free Business Name Generator helps entrepreneurs find the perfect brand name with AI-powe.", url: "https://30tools.com/business-name-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Business Name Generator - Creative Brand Name Ideas | 30tools", description: "Generate unique, creative business name ideas instantly. Our free Business Name Generator helps entrepreneurs find the perfect brand name with AI-powe.", images: ["/og-image.jpg"] },
+	alternates: {
+		canonical: "https://30tools.com/business-name-generator",
+	},
+	openGraph: {
+		title: "Free Business Name Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Business Name Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+		url: "https://30tools.com/business-name-generator",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Business Name Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Business Name Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+		images: ["/og-image.jpg"],
+	},
 	robots: { index: true, follow: true },
 };
 

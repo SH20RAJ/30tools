@@ -4,15 +4,15 @@ import LoremIpsumGeneratorTool from "@/components/tools/generators/LoremIpsumGen
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Lorem Ipsum Generator Online - No Signup, Instant Results | 30tools",
-	description: "Generate custom Lorem Ipsum text for your designs. 100% free, fast, and no signup required.",
+	title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+	description: "Format, clean, sort, and analyze text files instantly with our free Lorem Ipsum Generator online. Fast and private browser utility with no signup. Easy to use.",
 	keywords: "lorem ipsum generator, free online tool, no signup, lorem-ipsum, Lorem Ipsum, free lorem-ipsum, Lorem Ipsum online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/lorem-ipsum",
 	},
 	openGraph: {
-		title: "Free Lorem Ipsum Generator Online - No Signup, Instant Results | 30tools",
-		description: "Generate custom Lorem Ipsum text for your designs. 100% free, fast, and no signup required.",
+		title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Lorem Ipsum Generator online. Fast and private browser utility with no signup. Easy to use.",
 		url: "https://30tools.com/lorem-ipsum",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Lorem Ipsum Generator Online - No Signup, Instant Results | 30tools",
-		description: "Generate custom Lorem Ipsum text for your designs. 100% free, fast, and no signup required.",
+		title: "Free Lorem Ipsum Generator Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Lorem Ipsum Generator online. Fast and private browser utility with no signup. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

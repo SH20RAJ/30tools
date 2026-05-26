@@ -3,15 +3,15 @@ import Fragment from "react";
 
 
 export const metadata = {
-	title: "Top 10 Free Online Tools for SEO (2026) | 30tools Expert Guide",
-	description: "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
+	title: "Free Top 10 Free Online Tools for SEO (2026) Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Top 10 Free Online Tools for SEO (2026) online. Fast, secure browser-based utility with no registration.",
 	keywords: "top 10 free online tools for seo (2026), top 10 free online tools for seo (2026) guide, 30tools, top-10-free-online-tools-for-seo, top 10 free online tools for seo, free top-10-free-online-tools-for-seo, top 10 free online tools for seo online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
 		canonical: "https://30tools.com/top-10-free-online-tools-for-seo",
 	},
 	openGraph: {
-		title: "Top 10 Free Online Tools for SEO (2026) | 30tools Expert Guide",
-		description: "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
+		title: "Free Top 10 Free Online Tools for SEO (2026) Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Top 10 Free Online Tools for SEO (2026) online. Fast, secure browser-based utility with no registration.",
 		url: "https://30tools.com/top-10-free-online-tools-for-seo",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,8 +19,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Top 10 Free Online Tools for SEO (2026) | 30tools Expert Guide",
-		description: "Top 10 free SEO tools for keyword research, audits, metadata, indexing checks, and sitemaps. Ranked for speed and daily SEO workflows.",
+		title: "Free Top 10 Free Online Tools for SEO (2026) Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Top 10 Free Online Tools for SEO (2026) online. Fast, secure browser-based utility with no registration.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

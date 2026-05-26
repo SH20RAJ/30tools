@@ -4,15 +4,15 @@ import JSONMinifierTool from "@/components/tools/developer/JSONMinifierTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JSON Minify Online - No Signup, Client-Side | 30tools",
-	description: "Compress and minify your JSON data to reduce its size for web transmission. Our free online tool removes all unnecessary whitespace and comments instantly. 100% free, fast, and no signup required.",
+	title: "Free JSON Minify Online - No Signup | 30tools",
+	description: "Format, minify, validate, and convert code snippets with our free JSON Minify online. Secure, local developer utility with no registration. No signup required.",
 	keywords: "json minify, free online tool, no signup, json-minify, free json-minify, Json Minify online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/json-minify",
 	},
 	openGraph: {
-		title: "Free JSON Minify Online - No Signup, Client-Side | 30tools",
-		description: "Compress and minify your JSON data to reduce its size for web transmission. Our free online tool removes all unnecessary whitespace and comments instantly. 100% free, fast, and no signup required.",
+		title: "Free JSON Minify Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free JSON Minify online. Secure, local developer utility with no registration. No signup required.",
 		url: "https://30tools.com/json-minify",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JSON Minify Online - No Signup, Client-Side | 30tools",
-		description: "Compress and minify your JSON data to reduce its size for web transmission. Our free online tool removes all unnecessary whitespace and comments instantly. 100% free, fast, and no signup required.",
+		title: "Free JSON Minify Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free JSON Minify online. Secure, local developer utility with no registration. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

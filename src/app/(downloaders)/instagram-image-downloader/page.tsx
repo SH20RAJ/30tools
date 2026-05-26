@@ -4,15 +4,15 @@ import InstagramDPDownloader from "@/components/tools/downloaders/InstagramDPDow
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Instagram Image Downloader Online - No Signup, Fast Download | 30tools",
-	description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
+	title: "Free Instagram Image Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Instagram Image Downloader online. High-speed downloading with no signup needed. 100% free.",
 	keywords: "instagram image downloader, free online tool, no signup, instagram-image-downloader, free instagram-image-downloader, Instagram Image Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/instagram-image-downloader",
 	},
 	openGraph: {
-		title: "Free Instagram Image Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
+		title: "Free Instagram Image Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Instagram Image Downloader online. High-speed downloading with no signup needed. 100% free.",
 		url: "https://30tools.com/instagram-image-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Instagram Image Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download Instagram Image online for free. The ultimate tool for downloading videos and media from Instagram directly to your device. Fast, secure, and no installation required. 100% free, fast, and no signup required.",
+		title: "Free Instagram Image Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Instagram Image Downloader online. High-speed downloading with no signup needed. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

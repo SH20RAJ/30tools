@@ -4,15 +4,15 @@ import LineSorterTool from "@/components/tools/text/LineSorterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text Sorter Online - No Signup, Instant Results | 30tools",
-	description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
+	title: "Free Text Sorter Online - No Signup | 30tools",
+	description: "Format, clean, sort, and analyze text files instantly with our free Text Sorter online. Fast and private browser utility with no signup. No registration needed.",
 	keywords: "text sorter, free online tool, no signup, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-sorter",
 	},
 	openGraph: {
-		title: "Free Text Sorter Online - No Signup, Instant Results | 30tools",
-		description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
+		title: "Free Text Sorter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Text Sorter online. Fast and private browser utility with no signup. No registration needed.",
 		url: "https://30tools.com/text-sorter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text Sorter Online - No Signup, Instant Results | 30tools",
-		description: "Organize your lists and text lines with our free online Text Sorter. Sort alphabetically, by length, or reverse order instantly. Privacy-focused tool for researchers and developers. 100% free, fast, and no signup required.",
+		title: "Free Text Sorter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Text Sorter online. Fast and private browser utility with no signup. No registration needed.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

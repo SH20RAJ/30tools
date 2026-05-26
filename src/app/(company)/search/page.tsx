@@ -3,24 +3,27 @@ import { SITE_CONFIG } from "@/constants/config";
 import toolsData from "@/constants/tools.json";
 
 export const metadata = {
-	title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
-	description: `Browse or search across our ecosystem of ${SITE_CONFIG.toolCountString} professional online tools for image, PDF, video, text, and SEO tasks.`,
+	title: "Free Search All Tools Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Search All Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
 	keywords: "search online tools, free online tools, 30tools search, image tool search, pdf tool search, seo tools directory, developer utilities, search, free search, search online, 30tools, browser tools",
+	alternates: {
+		canonical: "https://30tools.com/search",
+	},
 	openGraph: {
-		title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
-		description: `Instantly find the right free online tool from ${SITE_CONFIG.toolCountString} professional tools for image, PDF, video, SEO, and developer workflows.`,
+		title: "Free Search All Tools Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Search All Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
 		url: "https://30tools.com/search",
-		siteName: SITE_CONFIG.siteName,
+		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: `Search ${SITE_CONFIG.toolCountString} Free Online Tools | ${SITE_CONFIG.siteName}`,
-		description: `Instantly find the right free online tool from ${SITE_CONFIG.toolCountString} professional tools.`,
+		title: "Free Search All Tools Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Search All Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
 		images: ["/og-image.jpg"],
 	},
-	robots: { index: false, follow: true },
+	robots: { index: true, follow: true },
 };
 
 export default async function SearchPage() {

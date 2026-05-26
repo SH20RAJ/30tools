@@ -4,15 +4,15 @@ import LineSorterTool from "@/components/tools/text/LineSorterTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Article Rewriter Online - No Signup, Instant Results | 30tools",
-	description: "Paraphrase and rewrite articles instantly with our free online Article Rewriter. Improve readability, change tone, and create unique content variations for blogs and SEO. 100% free and secure. 100% free, fast, and no signup required.",
+	title: "Free Article Rewriter Online - No Signup | 30tools",
+	description: "Format, clean, sort, and analyze text files instantly with our free Article Rewriter online. Fast and private browser utility with no signup. Try it free now.",
 	keywords: "article rewriter, free online tool, no signup, article-rewriter, free article-rewriter, Article Rewriter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/article-rewriter",
 	},
 	openGraph: {
-		title: "Free Article Rewriter Online - No Signup, Instant Results | 30tools",
-		description: "Paraphrase and rewrite articles instantly with our free online Article Rewriter. Improve readability, change tone, and create unique content variations for blogs and SEO. 100% free and secure. 100% free, fast, and no signup required.",
+		title: "Free Article Rewriter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Article Rewriter online. Fast and private browser utility with no signup. Try it free now.",
 		url: "https://30tools.com/article-rewriter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Article Rewriter Online - No Signup, Instant Results | 30tools",
-		description: "Paraphrase and rewrite articles instantly with our free online Article Rewriter. Improve readability, change tone, and create unique content variations for blogs and SEO. 100% free and secure. 100% free, fast, and no signup required.",
+		title: "Free Article Rewriter Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Article Rewriter online. Fast and private browser utility with no signup. Try it free now.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

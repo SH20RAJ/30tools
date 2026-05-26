@@ -4,15 +4,15 @@ import BuiltInSafeHttp from "@/components/tools/built-ins/BuiltInSafeHttp";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Backlink Checker Online - No Signup, Instant Audit | 30tools",
-	description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
+	title: "Free Backlink Checker Online - No Signup | 30tools",
+	description: "Audit websites, analyze search rankings, and generate schemas with our free Backlink Checker online. Optimize search presence with no signup. Try it free now.",
 	keywords: "backlink checker, check backlinks, domain backlinks, link analysis, seo backlinks, free tool, 30tools, backlink-checker, free backlink-checker, backlink checker online, seo tool, website analyzer",
 	alternates: {
 		canonical: "https://30tools.com/backlink-checker",
 	},
 	openGraph: {
-		title: "Free Backlink Checker Online - No Signup, Instant Audit | 30tools",
-		description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
+		title: "Free Backlink Checker Online - No Signup | 30tools",
+		description: "Audit websites, analyze search rankings, and generate schemas with our free Backlink Checker online. Optimize search presence with no signup. Try it free now.",
 		url: "https://30tools.com/backlink-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Backlink Checker Online - No Signup, Instant Audit | 30tools",
-		description: "Analyze backlinks for any website with our free backlink checker. Discover referring domains, anchor texts, and link quality metrics instantly. No signup required, unlimited checks, SEO-grade data.",
+		title: "Free Backlink Checker Online - No Signup | 30tools",
+		description: "Audit websites, analyze search rankings, and generate schemas with our free Backlink Checker online. Optimize search presence with no signup. Try it free now.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

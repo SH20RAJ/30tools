@@ -8,12 +8,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Music, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata = {
-	title: "Free Audio Tools Online - No Signup, AI-Powered | 30tools",
-	description: "Compress and convert audio files between formats 100% free, fast, and no signup required.",
+	title: "Free Audio Tools Online - No Signup | 30tools",
+	description: "Process, edit, and convert audio files with our free Audio Tools online. High-quality output and private browser-based tools with no signup. No signup required.",
 	keywords: "audio tools, free online tool, no signup, audio-tools, free audio-tools, Audio Tools online, audio tool, sound editor, music utility, audio converter, 30tools",
-	alternates: { canonical: "https://30tools.com/audio-tools" },
-	openGraph: { title: "Free Audio Tools Online - No Signup, AI-Powered | 30tools", description: "Compress and convert audio files between formats 100% free, fast, and no signup required.", url: "https://30tools.com/audio-tools", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Audio Tools Online - No Signup, AI-Powered | 30tools", description: "Compress and convert audio files between formats 100% free, fast, and no signup required.", images: ["/og-image.jpg"] },
+	alternates: {
+		canonical: "https://30tools.com/audio-tools",
+	},
+	openGraph: {
+		title: "Free Audio Tools Online - No Signup | 30tools",
+		description: "Process, edit, and convert audio files with our free Audio Tools online. High-quality output and private browser-based tools with no signup. No signup required.",
+		url: "https://30tools.com/audio-tools",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Audio Tools Online - No Signup | 30tools",
+		description: "Process, edit, and convert audio files with our free Audio Tools online. High-quality output and private browser-based tools with no signup. No signup required.",
+		images: ["/og-image.jpg"],
+	},
 	robots: { index: true, follow: true },
 };
 

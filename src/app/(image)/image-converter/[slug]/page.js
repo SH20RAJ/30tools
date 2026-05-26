@@ -7,16 +7,27 @@ export async function generateMetadata({ params }) {
 		.split("-")
 		.map((w) => w.charAt(0).toUpperCase() + w.slice(1))
 		.join(" ");
+
+	let description = `Edit, convert, and compress images with our free ${name} online. Crop, resize, and optimize photos in your browser with no signup.`;
+	if (description.length < 150) {
+		description += " 100% free, fast, and privacy-first.";
+	}
+	if (description.length > 160) {
+		description = description.slice(0, 157) + "...";
+	}
+
+	const title = `Free ${name} Online - No Signup | 30tools`;
+
 	return {
-		title: `Free ${name} Online - No Signup | 30tools`,
-		description: `Free ${name} online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.`,
+		title,
+		description,
 		keywords: `${slug}, free online tool, no signup, image, ${slug} online, 30tools`,
 		alternates: {
 			canonical: `https://30tools.com/image-converter/${slug}`,
 		},
 		openGraph: {
-			title: `Free ${name} Online - No Signup | 30tools`,
-			description: `Free ${name} online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.`,
+			title,
+			description,
 			url: `https://30tools.com/image-converter/${slug}`,
 			siteName: "30tools",
 			images: [{ url: "/og-image.jpg" }],
@@ -24,8 +35,8 @@ export async function generateMetadata({ params }) {
 		},
 		twitter: {
 			card: "summary_large_image",
-			title: `Free ${name} Online - No Signup | 30tools`,
-			description: `Free ${name} online tool. Fast and secure. 100% free, no signup required, and privacy-focused processing in your browser.`,
+			title,
+			description,
 			images: ["/og-image.jpg"],
 		},
 		robots: { index: true, follow: true },

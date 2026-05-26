@@ -4,15 +4,15 @@ import { SimpleTeraboxPlayer } from "@/components/tools/video/SimpleTeraboxPlaye
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Terabox Video Downloader Online - No Signup, Browser FFmpeg | 30tools",
-	description: "Download Terabox videos with direct links and embed custom video players 100% free, fast, and no signup required.",
+	title: "Free Terabox Video Downloader Online - No Signup | 30tools",
+	description: "Download, convert, and edit video files instantly with our free Terabox Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
 	keywords: "terabox video downloader, free online tool, no signup, terabox-downloader, Terabox Downloader, free terabox-downloader, Terabox Downloader online, video tool, video editor, media converter, online video, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/terabox-downloader",
 	},
 	openGraph: {
-		title: "Free Terabox Video Downloader Online - No Signup, Browser FFmpeg | 30tools",
-		description: "Download Terabox videos with direct links and embed custom video players 100% free, fast, and no signup required.",
+		title: "Free Terabox Video Downloader Online - No Signup | 30tools",
+		description: "Download, convert, and edit video files instantly with our free Terabox Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
 		url: "https://30tools.com/terabox-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Terabox Video Downloader Online - No Signup, Browser FFmpeg | 30tools",
-		description: "Download Terabox videos with direct links and embed custom video players 100% free, fast, and no signup required.",
+		title: "Free Terabox Video Downloader Online - No Signup | 30tools",
+		description: "Download, convert, and edit video files instantly with our free Terabox Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

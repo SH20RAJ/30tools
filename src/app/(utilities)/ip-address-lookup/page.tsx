@@ -4,15 +4,15 @@ import IPLocationFinderTool from "@/components/tools/utilities/IPLocationFinderT
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free IP Address Lookup Online - No Signup, All-in-One | 30tools",
-	description: "Free ip address lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free IP Address Lookup Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free IP Address Lookup online. Fast, secure browser-based utility with no registration. No registration needed.",
 	keywords: "ip address lookup, free online tool, no signup, ip-address-lookup, free ip-address-lookup, Ip Address Lookup online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ip-address-lookup",
 	},
 	openGraph: {
-		title: "Free IP Address Lookup Online - No Signup, All-in-One | 30tools",
-		description: "Free ip address lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free IP Address Lookup Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free IP Address Lookup online. Fast, secure browser-based utility with no registration. No registration needed.",
 		url: "https://30tools.com/ip-address-lookup",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free IP Address Lookup Online - No Signup, All-in-One | 30tools",
-		description: "Free ip address lookup tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free IP Address Lookup Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free IP Address Lookup online. Fast, secure browser-based utility with no registration. No registration needed.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

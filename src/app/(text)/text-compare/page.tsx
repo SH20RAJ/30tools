@@ -4,15 +4,15 @@ import TextCompareTool from "@/components/tools/text/TextCompareTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Text Compare Online - No Signup, Instant Results | 30tools",
-	description: "Compare two text snippets side-by-side to find differences instantly. Our free online Text Compare tool highlights additions, deletions, and changes with high precision. Secure and browser-based. 100% free, fast, and no signup required.",
+	title: "Free Text Compare Online - No Signup | 30tools",
+	description: "Format, clean, sort, and analyze text files instantly with our free Text Compare online. Fast and private browser utility with no signup. 100% free and secure.",
 	keywords: "text compare, free online tool, no signup, text-compare, free text-compare, Text Compare online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/text-compare",
 	},
 	openGraph: {
-		title: "Free Text Compare Online - No Signup, Instant Results | 30tools",
-		description: "Compare two text snippets side-by-side to find differences instantly. Our free online Text Compare tool highlights additions, deletions, and changes with high precision. Secure and browser-based. 100% free, fast, and no signup required.",
+		title: "Free Text Compare Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Text Compare online. Fast and private browser utility with no signup. 100% free and secure.",
 		url: "https://30tools.com/text-compare",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text Compare Online - No Signup, Instant Results | 30tools",
-		description: "Compare two text snippets side-by-side to find differences instantly. Our free online Text Compare tool highlights additions, deletions, and changes with high precision. Secure and browser-based. 100% free, fast, and no signup required.",
+		title: "Free Text Compare Online - No Signup | 30tools",
+		description: "Format, clean, sort, and analyze text files instantly with our free Text Compare online. Fast and private browser utility with no signup. 100% free and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

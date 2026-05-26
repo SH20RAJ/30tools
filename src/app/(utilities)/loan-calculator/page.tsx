@@ -4,15 +4,15 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Loan Calculator Online - No Signup, All-in-One | 30tools",
-	description: "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free Loan Calculator Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Loan Calculator online. Fast, secure browser-based utility with no registration. No registration needed.",
 	keywords: "loan calculator, free online tool, no signup, loan-calculator, free loan-calculator, Loan Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/loan-calculator",
 	},
 	openGraph: {
-		title: "Free Loan Calculator Online - No Signup, All-in-One | 30tools",
-		description: "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Loan Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Loan Calculator online. Fast, secure browser-based utility with no registration. No registration needed.",
 		url: "https://30tools.com/loan-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Loan Calculator Online - No Signup, All-in-One | 30tools",
-		description: "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free Loan Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Loan Calculator online. Fast, secure browser-based utility with no registration. No registration needed.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -4,15 +4,15 @@ import MixcloudDownloader from "@/components/tools/downloaders/MixcloudDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Mixcloud Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "The easiest way to download Mixcloud audio and video content online. Our free tool helps you save high-quality mixes and tracks for offline listening anywhere. 100% free, fast, and no signup required.",
+	title: "Free Mixcloud Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Mixcloud Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "mixcloud video downloader, free online tool, no signup, mixcloud-video-downloader, free mixcloud-video-downloader, Mixcloud Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/mixcloud-video-downloader",
 	},
 	openGraph: {
-		title: "Free Mixcloud Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "The easiest way to download Mixcloud audio and video content online. Our free tool helps you save high-quality mixes and tracks for offline listening anywhere. 100% free, fast, and no signup required.",
+		title: "Free Mixcloud Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Mixcloud Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		url: "https://30tools.com/mixcloud-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Mixcloud Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "The easiest way to download Mixcloud audio and video content online. Our free tool helps you save high-quality mixes and tracks for offline listening anywhere. 100% free, fast, and no signup required.",
+		title: "Free Mixcloud Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Mixcloud Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

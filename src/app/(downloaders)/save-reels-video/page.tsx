@@ -4,15 +4,15 @@ import InstagramReelDownloader from "@/components/tools/downloaders/InstagramRee
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Save Reels Video Online - No Signup, Fast Download | 30tools",
-	description: "Download viral Reels from Instagram and other platforms instantly. Our free online tool provides high-speed downloads for all your favorite short-form video content. 100% free, fast, and no signup required.",
+	title: "Free Save Reels Video Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Save Reels Video online. High-speed downloading with no signup needed. 100% free and secure.",
 	keywords: "save reels video, save instagram reels, instagram reels saver, reel video downloader, free tool, 30tools, save-reels-video, free save-reels-video, save reels video online, online downloader, free media saver, video downloader",
 	alternates: {
 		canonical: "https://30tools.com/save-reels-video",
 	},
 	openGraph: {
-		title: "Free Save Reels Video Online - No Signup, Fast Download | 30tools",
-		description: "Download viral Reels from Instagram and other platforms instantly. Our free online tool provides high-speed downloads for all your favorite short-form video content. 100% free, fast, and no signup required.",
+		title: "Free Save Reels Video Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Save Reels Video online. High-speed downloading with no signup needed. 100% free and secure.",
 		url: "https://30tools.com/save-reels-video",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Save Reels Video Online - No Signup, Fast Download | 30tools",
-		description: "Download viral Reels from Instagram and other platforms instantly. Our free online tool provides high-speed downloads for all your favorite short-form video content. 100% free, fast, and no signup required.",
+		title: "Free Save Reels Video Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Save Reels Video online. High-speed downloading with no signup needed. 100% free and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

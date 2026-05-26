@@ -4,15 +4,15 @@ import PDFProtect from "@/components/tools/pdf/PDFProtect";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "PDF Password Protect – Secure PDF Files Online Free",
-	description: "Secure your PDF files with strong password encryption online for free. Privacy-first local processing ensures your sensitive documents never leave your browser.",
-	
-	keywords: "pdf-protect, Pdf Protect, free pdf-protect, Pdf Protect online, PDF utility, document editor, online PDF tool, free PDF converter, 30tools",alternates: {
+	title: "Free PDF Password Protect Online - No Signup | 30tools",
+	description: "Manage, convert, edit, and secure PDF documents with our free PDF Password Protect online. Safe and private browser-based tool with no registration. 100% free.",
+	keywords: "pdf-protect, Pdf Protect, free pdf-protect, Pdf Protect online, PDF utility, document editor, online PDF tool, free PDF converter, 30tools",
+	alternates: {
 		canonical: "https://30tools.com/pdf-protect",
 	},
 	openGraph: {
-		title: "PDF Password Protect – Encrypt PDF Files Online",
-		description: "Add password protection to PDFs instantly. Free, secure, and works in your browser.",
+		title: "Free PDF Password Protect Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free PDF Password Protect online. Safe and private browser-based tool with no registration. 100% free.",
 		url: "https://30tools.com/pdf-protect",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "PDF Password Protect – Free PDF Encryption Tool",
-		description: "Secure PDF documents with AES encryption. No uploads required.",
+		title: "Free PDF Password Protect Online - No Signup | 30tools",
+		description: "Manage, convert, edit, and secure PDF documents with our free PDF Password Protect online. Safe and private browser-based tool with no registration. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

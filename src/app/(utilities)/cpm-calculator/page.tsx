@@ -4,15 +4,15 @@ import BuiltInCalculators from "@/components/tools/built-ins/BuiltInCalculators"
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free CPM Calculator Online - No Signup, All-in-One | 30tools",
-	description: "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency. 100% free, fast, and no signup required.",
+	title: "Free CPM Calculator Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free CPM Calculator online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 	keywords: "cpm calculator, free online tool, no signup, cpm-calculator, free cpm-calculator, Cpm Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/cpm-calculator",
 	},
 	openGraph: {
-		title: "Free CPM Calculator Online - No Signup, All-in-One | 30tools",
-		description: "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency. 100% free, fast, and no signup required.",
+		title: "Free CPM Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free CPM Calculator online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		url: "https://30tools.com/cpm-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free CPM Calculator Online - No Signup, All-in-One | 30tools",
-		description: "Calculate Cost Per Mille (CPM) for your advertising campaigns instantly. Our free online tool helps marketers and creators understand their ad spend and reach efficiency. 100% free, fast, and no signup required.",
+		title: "Free CPM Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free CPM Calculator online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

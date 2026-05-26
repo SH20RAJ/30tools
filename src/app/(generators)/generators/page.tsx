@@ -8,13 +8,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Sparkles, ArrowRight } from "lucide-react";
 
 export const metadata = {
-	title: "Free AI & Fun Generators Online - No Signup, Customizable | 30tools",
-	description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities. 100% free, no signup, and instant results.",
+	title: "Free Fun Generators Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Fun Generators online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 	keywords: "ai generators, bio generator, name generator, fun tools, free online generators, 30tools, generators, free generators, generators online, online generator, free creator, content generator",
-	alternates: { canonical: "https://30tools.com/generators" },
+	alternates: {
+		canonical: "https://30tools.com/generators",
+	},
 	openGraph: {
-		title: "Free AI & Fun Generators Online - No Signup, Customizable | 30tools",
-		description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities. 100% free, no signup, and instant results.",
+		title: "Free Fun Generators Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Fun Generators online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		url: "https://30tools.com/generators",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -22,8 +24,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AI & Fun Generators Online - No Signup, Customizable | 30tools",
-		description: "Discover a massive collection of free AI image generators, bio creators, name generators, and fun online utilities.",
+		title: "Free Fun Generators Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Fun Generators online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

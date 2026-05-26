@@ -4,15 +4,15 @@ import YouTubeShortsDownloader from "@/components/tools/downloaders/YouTubeShort
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Shorts Downloader Online - No Signup, HD Quality | 30tools",
-	description: "Download YouTube Shorts videos in high quality for offline viewing 100% free, fast, and no signup required.",
+	title: "Free YouTube Shorts Downloader Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free YouTube Shorts Downloader online. Fast, secure browser-based utility with no registration. Free & secure.",
 	keywords: "youtube shorts downloader, free online tool, no signup, youtube-shorts-downloader, free youtube-shorts-downloader, Youtube Shorts Downloader online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-shorts-downloader",
 	},
 	openGraph: {
-		title: "Free YouTube Shorts Downloader Online - No Signup, HD Quality | 30tools",
-		description: "Download YouTube Shorts videos in high quality for offline viewing 100% free, fast, and no signup required.",
+		title: "Free YouTube Shorts Downloader Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Shorts Downloader online. Fast, secure browser-based utility with no registration. Free & secure.",
 		url: "https://30tools.com/youtube-shorts-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Shorts Downloader Online - No Signup, HD Quality | 30tools",
-		description: "Download YouTube Shorts videos in high quality for offline viewing 100% free, fast, and no signup required.",
+		title: "Free YouTube Shorts Downloader Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Shorts Downloader online. Fast, secure browser-based utility with no registration. Free & secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

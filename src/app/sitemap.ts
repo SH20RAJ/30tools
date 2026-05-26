@@ -73,14 +73,24 @@ export default function sitemap(): MetadataRoute.Sitemap {
 	];
 
 	try {
+		// Get all extraSlugs to make sure they are excluded
+		const extraSlugsSet = new Set(
+			allTools.flatMap((t) => (t.extraSlugs || []).map((slug) => {
+				const cleanSlug = slug.startsWith("/") ? slug : `/${slug}`;
+				return `${BASE_URL}${cleanSlug}`;
+			}))
+		);
+
 		// Deduplicate by URL to avoid duplicate sitemap entries
 		const allPages = [...staticPages, ...toolPages, ...blogPages];
 		const seen = new Set<string>();
-		return allPages.filter((page) => {
-			if (seen.has(page.url)) return false;
-			seen.add(page.url);
-			return true;
-		});
+		return allPages
+			.filter((page) => !extraSlugsSet.has(page.url))
+			.filter((page) => {
+				if (seen.has(page.url)) return false;
+				seen.add(page.url);
+				return true;
+			});
 	} catch (error) {
 		console.error("Sitemap generation error:", error);
 		return [...staticPages];

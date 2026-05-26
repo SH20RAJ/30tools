@@ -4,15 +4,15 @@ import UrlParserTool from "@/components/tools/built-ins/UrlParserTool";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free URL Opener Online - No Signup, All-in-One | 30tools",
-	description: "Free url opener tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+	title: "Free URL Opener Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free URL Opener online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 	keywords: "url opener, free online tool, no signup, url-opener, free url-opener, Url Opener online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/url-opener",
 	},
 	openGraph: {
-		title: "Free URL Opener Online - No Signup, All-in-One | 30tools",
-		description: "Free url opener tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free URL Opener Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free URL Opener online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		url: "https://30tools.com/url-opener",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free URL Opener Online - No Signup, All-in-One | 30tools",
-		description: "Free url opener tool to process your data instantly with privacy-friendly browser-based workflows. 100% free, fast, and no signup required.",
+		title: "Free URL Opener Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free URL Opener online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

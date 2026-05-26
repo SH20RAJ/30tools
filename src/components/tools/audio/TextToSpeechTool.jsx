@@ -173,9 +173,9 @@ export default function TextToSpeechTool() {
 			<div className="text-center space-y-4">
 				<div className="flex items-center justify-center gap-2 mb-4">
 					<Volume2 className="h-8 w-8 text-primary" />
-					<h1 className="text-3xl font-bold">
+					<h2 className="text-3xl font-bold">
 						AI Voice Generator & Text to Speech
-					</h1>
+					</h2>
 				</div>
 				<p className="text-lg text-muted-foreground max-w-2xl mx-auto">
 					Create realistic voiceovers for YouTube, TikTok, and Instagram Shorts.

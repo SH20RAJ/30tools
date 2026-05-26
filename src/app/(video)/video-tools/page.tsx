@@ -8,12 +8,26 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Film, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata = {
-	title: "Free Video Tools Online - No Signup, Browser FFmpeg | 30tools",
-	description: "Compress videos, convert formats, and create GIFs 100% free, fast, and no signup required.",
+	title: "Free Video Tools Online - No Signup | 30tools",
+	description: "Download, convert, and edit video files instantly with our free Video Tools online. Fast, secure, and private processing with no signup. No registration needed.",
 	keywords: "video tools, free online tool, no signup, video-tools, free video-tools, Video Tools online, video tool, video editor, media converter, online video, 30tools",
-	alternates: { canonical: "https://30tools.com/video-tools" },
-	openGraph: { title: "Free Video Tools Online - No Signup, Browser FFmpeg | 30tools", description: "Compress videos, convert formats, and create GIFs 100% free, fast, and no signup required.", url: "https://30tools.com/video-tools", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Video Tools Online - No Signup, Browser FFmpeg | 30tools", description: "Compress videos, convert formats, and create GIFs 100% free, fast, and no signup required.", images: ["/og-image.jpg"] },
+	alternates: {
+		canonical: "https://30tools.com/video-tools",
+	},
+	openGraph: {
+		title: "Free Video Tools Online - No Signup | 30tools",
+		description: "Download, convert, and edit video files instantly with our free Video Tools online. Fast, secure, and private processing with no signup. No registration needed.",
+		url: "https://30tools.com/video-tools",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Video Tools Online - No Signup | 30tools",
+		description: "Download, convert, and edit video files instantly with our free Video Tools online. Fast, secure, and private processing with no signup. No registration needed.",
+		images: ["/og-image.jpg"],
+	},
 	robots: { index: true, follow: true },
 };
 

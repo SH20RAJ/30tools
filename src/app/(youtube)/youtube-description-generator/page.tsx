@@ -4,15 +4,15 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Description Generator Online - No Signup, HD Quality | 30tools",
-	description: "Create SEO-optimized YouTube video descriptions instantly. Our free online generator helps you include keywords, links, and timestamps to boost your video visibility and engagement. 100% free, fast, and no signup required.",
+	title: "Free YouTube Description Generator Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free YouTube Description Generator online. Fast, secure browser-based utility with no registration. 100% free.",
 	keywords: "youtube description generator, free online tool, no signup, youtube-description-generator, free youtube-description-generator, Youtube Description Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-description-generator",
 	},
 	openGraph: {
-		title: "Free YouTube Description Generator Online - No Signup, HD Quality | 30tools",
-		description: "Create SEO-optimized YouTube video descriptions instantly. Our free online generator helps you include keywords, links, and timestamps to boost your video visibility and engagement. 100% free, fast, and no signup required.",
+		title: "Free YouTube Description Generator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Description Generator online. Fast, secure browser-based utility with no registration. 100% free.",
 		url: "https://30tools.com/youtube-description-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Description Generator Online - No Signup, HD Quality | 30tools",
-		description: "Create SEO-optimized YouTube video descriptions instantly. Our free online generator helps you include keywords, links, and timestamps to boost your video visibility and engagement. 100% free, fast, and no signup required.",
+		title: "Free YouTube Description Generator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Description Generator online. Fast, secure browser-based utility with no registration. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

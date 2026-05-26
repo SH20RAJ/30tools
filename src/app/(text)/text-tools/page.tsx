@@ -8,13 +8,15 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Type, ArrowRight } from "lucide-react";
 
 export const metadata = {
-	title: "Free Text Tools Online - Format & Transform | 30tools",
-	description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors. Fast, secure, and browser-based text processing.",
+	title: "Free Text Tools Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Text Tools online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 	keywords: "text tools, word counter, case converter, text cleaner, online text tools, 30tools, text-tools, free text-tools, text tools online, text tool, online text utility, free text converter",
-	alternates: { canonical: "https://30tools.com/text-tools" },
+	alternates: {
+		canonical: "https://30tools.com/text-tools",
+	},
 	openGraph: {
-		title: "Free Text Tools Online - Format & Transform | 30tools",
-		description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors. Fast, secure, and browser-based text processing.",
+		title: "Free Text Tools Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Text Tools online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		url: "https://30tools.com/text-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -22,8 +24,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Text Tools Online - Format & Transform | 30tools",
-		description: "Professional suite of free text tools. Case converters, word counters, text cleaners, and markdown editors.",
+		title: "Free Text Tools Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Text Tools online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

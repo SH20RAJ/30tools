@@ -4,15 +4,15 @@ import AkillitvDownloader from "@/components/tools/downloaders/AkillitvDownloade
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free AkilliTv Video Downloader Online - No Signup, Fast Download | 30tools",
-	description: "Download AkilliTv videos easily with our free online downloader. 100% free, fast, and no signup required.",
+	title: "Free AkilliTv Video Downloader Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free AkilliTv Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "akillitv video downloader, free online tool, no signup, akillitv-video-downloader, free akillitv-video-downloader, Akillitv Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/akillitv-video-downloader",
 	},
 	openGraph: {
-		title: "Free AkilliTv Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download AkilliTv videos easily with our free online downloader. 100% free, fast, and no signup required.",
+		title: "Free AkilliTv Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free AkilliTv Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		url: "https://30tools.com/akillitv-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free AkilliTv Video Downloader Online - No Signup, Fast Download | 30tools",
-		description: "Download AkilliTv videos easily with our free online downloader. 100% free, fast, and no signup required.",
+		title: "Free AkilliTv Video Downloader Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free AkilliTv Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

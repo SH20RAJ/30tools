@@ -4,15 +4,15 @@ import BuiltInMarkup from "@/components/tools/built-ins/BuiltInMarkup";
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free JavaScript Beautifier Online - No Signup, Client-Side | 30tools",
-	description: "Format and prettify your JavaScript code instantly. Our free online JS Beautifier improves code readability, fixes indentation, and helps you understand complex scripts easily. 100% free, fast, and no signup required.",
+	title: "Free JavaScript Beautifier Online - No Signup | 30tools",
+	description: "Format, minify, validate, and convert code snippets with our free JavaScript Beautifier online. Secure, local developer utility with no registration. 100% free.",
 	keywords: "javascript beautifier, free online tool, no signup, javascript-beautifier, free javascript-beautifier, Javascript Beautifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/javascript-beautifier",
 	},
 	openGraph: {
-		title: "Free JavaScript Beautifier Online - No Signup, Client-Side | 30tools",
-		description: "Format and prettify your JavaScript code instantly. Our free online JS Beautifier improves code readability, fixes indentation, and helps you understand complex scripts easily. 100% free, fast, and no signup required.",
+		title: "Free JavaScript Beautifier Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free JavaScript Beautifier online. Secure, local developer utility with no registration. 100% free.",
 		url: "https://30tools.com/javascript-beautifier",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free JavaScript Beautifier Online - No Signup, Client-Side | 30tools",
-		description: "Format and prettify your JavaScript code instantly. Our free online JS Beautifier improves code readability, fixes indentation, and helps you understand complex scripts easily. 100% free, fast, and no signup required.",
+		title: "Free JavaScript Beautifier Online - No Signup | 30tools",
+		description: "Format, minify, validate, and convert code snippets with our free JavaScript Beautifier online. Secure, local developer utility with no registration. 100% free.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

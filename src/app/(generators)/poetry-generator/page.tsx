@@ -2,12 +2,26 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
-	title: "Free Poetry Generator - Rhyme & Verse Maker | 30tools",
-	description: "Create beautiful poems with randomized templates and literary devices. Our free Poetry Generator crafts verse on demand for inspiration and creativity.",
+	title: "Free Poetry Generator Online - No Signup | 30tools",
+	description: "Create custom content with our free Poetry Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
 	keywords: "poetry, generator, free poetry generator, online poetry generator, 30tools, poetry-generator, poetry generator, free poetry-generator, poetry generator online, online generator, free creator, content generator",
-	alternates: { canonical: "https://30tools.com/poetry-generator" },
-	openGraph: { title: "Free Poetry Generator - Rhyme & Verse Maker | 30tools", description: "Create beautiful poems with randomized templates and literary devices. Our free Poetry Generator crafts verse on demand for inspiration and creativity.", url: "https://30tools.com/poetry-generator", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
-	twitter: { card: "summary_large_image", title: "Free Poetry Generator - Rhyme & Verse Maker | 30tools", description: "Create beautiful poems with randomized templates and literary devices. Our free Poetry Generator crafts verse on demand for inspiration and creativity.", images: ["/og-image.jpg"] },
+	alternates: {
+		canonical: "https://30tools.com/poetry-generator",
+	},
+	openGraph: {
+		title: "Free Poetry Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Poetry Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		url: "https://30tools.com/poetry-generator",
+		siteName: "30tools",
+		images: [{ url: "/og-image.jpg" }],
+		type: "website",
+	},
+	twitter: {
+		card: "summary_large_image",
+		title: "Free Poetry Generator Online - No Signup | 30tools",
+		description: "Create custom content with our free Poetry Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		images: ["/og-image.jpg"],
+	},
 	robots: { index: true, follow: true },
 };
 

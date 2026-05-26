@@ -4,15 +4,15 @@ import YouTubeChannelIDFinderTool from "@/components/tools/youtube/YouTubeChanne
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free YouTube Money Calculator Online - No Signup, HD Quality | 30tools",
-	description: "Estimate potential earnings for any YouTube video or channel with our free online Money Calculator. Understand revenue based on views, CPM, and engagement metrics. Perfect for creators. 100% free, fast, and no signup required.",
+	title: "Free YouTube Money Calculator Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free YouTube Money Calculator online. Fast, secure browser-based utility with no registration. Try it free now.",
 	keywords: "youtube money calculator, free online tool, no signup, youtube-money-calculator, free youtube-money-calculator, Youtube Money Calculator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-money-calculator",
 	},
 	openGraph: {
-		title: "Free YouTube Money Calculator Online - No Signup, HD Quality | 30tools",
-		description: "Estimate potential earnings for any YouTube video or channel with our free online Money Calculator. Understand revenue based on views, CPM, and engagement metrics. Perfect for creators. 100% free, fast, and no signup required.",
+		title: "Free YouTube Money Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Money Calculator online. Fast, secure browser-based utility with no registration. Try it free now.",
 		url: "https://30tools.com/youtube-money-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free YouTube Money Calculator Online - No Signup, HD Quality | 30tools",
-		description: "Estimate potential earnings for any YouTube video or channel with our free online Money Calculator. Understand revenue based on views, CPM, and engagement metrics. Perfect for creators. 100% free, fast, and no signup required.",
+		title: "Free YouTube Money Calculator Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free YouTube Money Calculator online. Fast, secure browser-based utility with no registration. Try it free now.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

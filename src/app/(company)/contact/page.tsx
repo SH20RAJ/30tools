@@ -4,13 +4,15 @@ import { ArrowUpRight, Github } from "lucide-react";
 import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata = {
-	title: "Contact Us - Support & Feedback | 30tools",
-	description: "Get in touch with the 30tools team. We welcome your feedback, tool requests, and bug reports. Expected response time: 24-48 hours.",
+	title: "Free Contact Online - No Signup | 30tools",
+	description: "Solve everyday digital tasks instantly using our free Contact online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 	keywords: "contact 30tools, support, feedback, help, contact, free contact, contact online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
-	alternates: { canonical: "https://30tools.com/contact" },
+	alternates: {
+		canonical: "https://30tools.com/contact",
+	},
 	openGraph: {
-		title: "Contact Us - Support & Feedback | 30tools",
-		description: "Get in touch with the 30tools team. We welcome your feedback, tool requests, and bug reports.",
+		title: "Free Contact Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Contact online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		url: "https://30tools.com/contact",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -18,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Contact Us - Support & Feedback | 30tools",
-		description: "Get in touch with the 30tools team. We welcome your feedback, tool requests, and bug reports.",
+		title: "Free Contact Online - No Signup | 30tools",
+		description: "Solve everyday digital tasks instantly using our free Contact online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

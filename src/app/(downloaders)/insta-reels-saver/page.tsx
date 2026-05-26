@@ -4,15 +4,15 @@ import InstagramReelDownloader from "@/components/tools/downloaders/InstagramRee
 import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
-	title: "Free Insta Reels Saver Online - No Signup, Fast Download | 30tools",
-	description: "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation. 100% free, fast, and no signup required.",
+	title: "Free Insta Reels Saver Online - No Signup | 30tools",
+	description: "Save and download media files from multiple platforms with our free Insta Reels Saver online. High-speed downloading with no signup needed. No signup required.",
 	keywords: "insta reels saver, free online tool, no signup, insta-reels-saver, free insta-reels-saver, Insta Reels Saver online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/insta-reels-saver",
 	},
 	openGraph: {
-		title: "Free Insta Reels Saver Online - No Signup, Fast Download | 30tools",
-		description: "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation. 100% free, fast, and no signup required.",
+		title: "Free Insta Reels Saver Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Insta Reels Saver online. High-speed downloading with no signup needed. No signup required.",
 		url: "https://30tools.com/insta-reels-saver",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,8 +20,8 @@ export const metadata = {
 	},
 	twitter: {
 		card: "summary_large_image",
-		title: "Free Insta Reels Saver Online - No Signup, Fast Download | 30tools",
-		description: "Save Instagram Reels with original audio in HD quality. Our free online downloader works instantly on mobile and desktop without any app installation. 100% free, fast, and no signup required.",
+		title: "Free Insta Reels Saver Online - No Signup | 30tools",
+		description: "Save and download media files from multiple platforms with our free Insta Reels Saver online. High-speed downloading with no signup needed. No signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
