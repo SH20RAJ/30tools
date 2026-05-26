@@ -9,32 +9,7 @@ const __dirname = path.dirname(__filename);
 const toolsPath = path.join(__dirname, "src", "constants", "tools.json");
 const toolsData = JSON.parse(fs.readFileSync(toolsPath, "utf8"));
 
-const redirectsList = [];
-const seenRedirectSources = new Set(["/:path*", "/blogs/:user/:slug"]);
-
-if (toolsData && toolsData.categories) {
-	for (const catKey of Object.keys(toolsData.categories)) {
-		const category = toolsData.categories[catKey];
-		if (category && Array.isArray(category.tools)) {
-			for (const tool of category.tools) {
-				if (tool.route && Array.isArray(tool.extraSlugs)) {
-					for (const extraSlug of tool.extraSlugs) {
-						const sourceRoute = extraSlug.startsWith("/") ? extraSlug : `/${extraSlug}`;
-						const destRoute = tool.route.startsWith("/") ? tool.route : `/${tool.route}`;
-						if (sourceRoute !== destRoute && !seenRedirectSources.has(sourceRoute)) {
-							seenRedirectSources.add(sourceRoute);
-							redirectsList.push({
-								source: sourceRoute,
-								destination: destRoute,
-								permanent: true,
-							});
-						}
-					}
-				}
-			}
-		}
-	}
-}
+// redirectsList is removed to render extraSlugs natively (no redirects)
 
 const nextConfig = {
 	// TypeScript configuration
@@ -339,7 +314,6 @@ const nextConfig = {
 				destination: "/blog/:slug",
 				permanent: true,
 			},
-			...redirectsList,
 		];
 	},
 

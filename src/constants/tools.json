@@ -1880,7 +1880,6 @@
           "extraSlugs": [
             "download-reddit-video",
             "reddit-hd-video-downloader",
-            "reddit-media-saver",
             "reddit-mp4-downloader",
             "reddit-video-saver"
           ],
@@ -4021,7 +4020,6 @@
           "extraSlugs": [
             "compress-video-online",
             "download-videos-from-any-website",
-            "facebook-video-downloader",
             "free-video-downloader",
             "instagram-video-downloader"
           ],
@@ -4100,7 +4098,6 @@
           "description": "Free online tool to download high-quality GIFs from Pinterest instantly. No registration required.",
           "route": "/pinterest-gif-downloader",
           "extraSlugs": [
-            "pinterest-clip-saver",
             "pinterest-media-downloader"
           ],
           "popular": false,
@@ -4262,8 +4259,7 @@
             "download-tiktok-sound",
             "download-tiktok-video",
             "fast-tiktok-downloader",
-            "fit-video-to-tiktok",
-            "mp3-from-tiktok"
+            "fit-video-to-tiktok"
           ],
           "popular": true,
           "category": "downloaders",
@@ -5550,7 +5546,6 @@
           "route": "/privacy-policy-generator",
           "extraSlugs": [
             "free-privacy-policy-generator-online",
-            "privacy",
             "privacy-policy-generator-tool"
           ],
           "popular": false,
@@ -5740,7 +5735,6 @@
           "route": "/terms-and-condition-generator",
           "extraSlugs": [
             "free-terms-and-condition-generator-online",
-            "terms",
             "terms-and-condition-generator-tool"
           ],
           "popular": false,

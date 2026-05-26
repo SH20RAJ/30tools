@@ -7,6 +7,15 @@ tools_file = os.path.join(os.path.dirname(__file__), '../constants/tools.json')
 with open(tools_file, 'r', encoding='utf-8') as f:
     data = json.load(f)
 
+# Construct set of all tool routes/ids to avoid conflicts
+all_tool_ids = set()
+for cat_id, cat_data in data.get('categories', {}).items():
+    for tool in cat_data.get('tools', []):
+        all_tool_ids.add(tool['id'])
+        route_slug = tool['route'].strip('/')
+        if route_slug:
+            all_tool_ids.add(route_slug)
+
 # Priority tool hand-picked extraSlugs (max 5)
 PRIORITY_SLUGS = {
     "ssc-photo-resizer": ["ssc-signature-resizer", "ssc-photo-size", "ssc-image-resizer", "ssc-signature-10kb-20kb", "resize-photo-for-ssc"],
@@ -230,7 +239,7 @@ def clean_slugs_for_tool(tool_id, category, extra_slugs):
 
     unique_filtered = []
     for s in filtered:
-        if s not in unique_filtered and s != tool_id:
+        if s not in unique_filtered and s != tool_id and s not in all_tool_ids:
             unique_filtered.append(s)
             
     return unique_filtered[:5]

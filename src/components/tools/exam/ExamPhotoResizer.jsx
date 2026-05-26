@@ -1,14 +1,15 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, Suspense } from "react";
 import { Upload, Download, RefreshCw, Sliders, Check, AlertCircle, FileImage, Trash2, Shield } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { toast } from "sonner";
+import { useSearchParams, useRouter, usePathname } from "next/navigation";
 
-export default function ExamPhotoResizer({
+function ExamPhotoResizerInner({
     examName = "UPSC",
     presetWidth = 350,
     presetHeight = 350,
@@ -18,6 +19,47 @@ export default function ExamPhotoResizer({
     showSignatureOption = true,
     disclaimer = "Always verify requirements with the official notification before submitting."
 }) {
+    const searchParams = useSearchParams();
+    const router = useRouter();
+    const pathname = usePathname();
+    const lang = searchParams?.get("lang") || "en";
+    const isHindi = lang === "hi";
+
+    const changeLanguage = (newLang) => {
+        const params = new URLSearchParams(searchParams?.toString() || "");
+        if (newLang === "en") {
+            params.delete("lang");
+        } else {
+            params.set("lang", newLang);
+        }
+        router.push(`${pathname}?${params.toString()}`);
+    };
+
+    const t = {
+        photo: isHindi ? "पासपोर्ट फोटो (Photo)" : "Passport Photo",
+        signature: isHindi ? "हस्ताक्षर (Signature)" : "Signature Spec",
+        uploadTitle: isHindi ? "यहाँ क्लिक करें या अपनी इमेज ड्रैग करें" : "Click or drag your image here",
+        uploadSub: isHindi ? "JPG, JPEG, PNG फॉर्मेट समर्थित हैं" : "Supports JPG, JPEG, PNG formats",
+        originalFile: isHindi ? "फाइल" : "File",
+        originalSize: isHindi ? "मूल साइज" : "Original Size",
+        settingsTitle: isHindi ? "रीसाइज सेटिंग्स" : "Resize Settings",
+        widthLabel: isHindi ? "चौड़ाई" : "Width",
+        heightLabel: isHindi ? "ऊंचाई" : "Height",
+        minKbLabel: isHindi ? "न्यूनतम साइज (KB)" : "Min Size (KB)",
+        maxKbLabel: isHindi ? "अधिकतम साइज (KB)" : "Max Size (KB)",
+        reprocess: isHindi ? "पुनः प्रोसेस करें" : "Reprocess",
+        privateLabel: isHindi ? "ब्राउज़र-आधारित (100% सुरक्षित और निजी)" : "Browser-based (100% private)",
+        previewTitle: isHindi ? "आउटपुट प्रीव्यू" : "Output Preview",
+        previewSub: isHindi ? "रीसाइज और कंप्रेस किया हुआ आउटपुट देखने के लिए एक इमेज अपलोड करें।" : "Upload an image to view the resized and compressed output.",
+        dimensions: isHindi ? "डाइमेंशन्स" : "Dimensions",
+        fileSize: isHindi ? "फाइल साइज" : "File Size",
+        compliant: isHindi ? "टारगेट नियमों के अनुरूप है" : "Compliant with target rules",
+        mismatch: isHindi ? "साइज बेमेल है। आयाम कम करने का प्रयास करें।" : "Size mismatch. Try reducing dimensions.",
+        download: isHindi ? "JPEG डाउनलोड करें" : "Download JPEG",
+        disclaimerLabel: isHindi ? "अस्वीकरण (Disclaimer):" : "Disclaimer:",
+        disclaimerText: isHindi ? "जमा करने से पहले हमेशा आधिकारिक अधिसूचना के साथ आवश्यकताओं की पुष्टि करें।" : disclaimer,
+    };
+
     const [image, setImage] = useState(null);
     const [previewUrl, setPreviewUrl] = useState("");
     const [originalInfo, setOriginalInfo] = useState(null);
@@ -218,10 +260,10 @@ export default function ExamPhotoResizer({
                 setResizedSize(sizeKb.toFixed(1));
                 setResizedWidth(width);
                 setResizedHeight(height);
-                toast.success("Image successfully processed!");
+                toast.success(isHindi ? "इमेज सफलतापूर्वक प्रोसेस हो गई!" : "Image successfully processed!");
             } catch (err) {
                 console.error(err);
-                toast.error("Failed to process the image.");
+                toast.error(isHindi ? "इमेज प्रोसेस करने में विफल।" : "Failed to process the image.");
             } finally {
                 setProcessing(false);
             }
@@ -258,6 +300,26 @@ export default function ExamPhotoResizer({
                     <Card className="border border-border/40 bg-card/20 backdrop-blur-sm shadow-md">
                         <CardContent className="p-6 space-y-6">
                             
+                            {/* Language selection toggle */}
+                            <div className="flex justify-end items-center gap-2 mb-2 text-xs border-b border-border/10 pb-2">
+                                <span className="text-muted-foreground">Language / भाषा:</span>
+                                <button
+                                    type="button"
+                                    onClick={() => changeLanguage("en")}
+                                    className={`px-2 py-0.5 rounded-sm transition-all text-[11px] font-bold ${!isHindi ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"}`}
+                                >
+                                    English
+                                </button>
+                                <span className="text-muted-foreground/30">|</span>
+                                <button
+                                    type="button"
+                                    onClick={() => changeLanguage("hi")}
+                                    className={`px-2 py-0.5 rounded-sm transition-all text-[11px] font-bold ${isHindi ? "bg-primary/10 text-primary" : "text-muted-foreground hover:text-foreground"}`}
+                                >
+                                    हिन्दी (Hindi)
+                                </button>
+                            </div>
+
                             {/* Mode selection (Photo vs Signature) */}
                             {showSignatureOption && (
                                 <div className="grid grid-cols-2 gap-2 p-1 bg-muted/40 border border-border/20 rounded-md">
@@ -270,7 +332,7 @@ export default function ExamPhotoResizer({
                                                 : "text-muted-foreground hover:text-foreground"
                                         }`}
                                     >
-                                        Passport Photo
+                                        {t.photo}
                                     </button>
                                     <button
                                         type="button"
@@ -281,7 +343,7 @@ export default function ExamPhotoResizer({
                                                 : "text-muted-foreground hover:text-foreground"
                                         }`}
                                     >
-                                        Signature Spec
+                                        {t.signature}
                                     </button>
                                 </div>
                             )}
@@ -303,8 +365,8 @@ export default function ExamPhotoResizer({
                                         <Upload className="h-8 w-8" />
                                     </div>
                                     <div className="space-y-2">
-                                        <p className="font-bold text-lg">Click or drag your image here</p>
-                                        <p className="text-sm text-muted-foreground">Supports JPG, JPEG, PNG formats</p>
+                                        <p className="font-bold text-lg">{t.uploadTitle}</p>
+                                        <p className="text-sm text-muted-foreground">{t.uploadSub}</p>
                                     </div>
                                 </div>
                             ) : (
@@ -320,15 +382,15 @@ export default function ExamPhotoResizer({
                                             size="icon"
                                             onClick={handleClear}
                                             className="absolute top-2 right-2 rounded-full h-8 w-8 shadow-md"
-                                            title="Remove image"
+                                            title={isHindi ? "इमेज हटाएं" : "Remove image"}
                                         >
                                             <Trash2 className="h-4 w-4" />
                                         </Button>
                                     </div>
                                     {originalInfo && (
                                         <div className="flex flex-wrap items-center justify-between text-xs text-muted-foreground bg-muted/20 px-3 py-2 border border-border/10 rounded-sm">
-                                            <span>File: <strong>{originalInfo.name}</strong></span>
-                                            <span>Original Size: <strong>{originalInfo.sizeKb} KB</strong></span>
+                                            <span>{t.originalFile}: <strong>{originalInfo.name}</strong></span>
+                                            <span>{t.originalSize}: <strong>{originalInfo.sizeKb} KB</strong></span>
                                         </div>
                                     )}
                                 </div>
@@ -338,11 +400,11 @@ export default function ExamPhotoResizer({
                             <div className="space-y-4 pt-4 border-t border-border/40">
                                 <div className="flex items-center gap-2 mb-2 text-sm font-semibold text-primary">
                                     <Sliders className="h-4 w-4" />
-                                    <span>Resize Settings</span>
+                                    <span>{t.settingsTitle}</span>
                                 </div>
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
-                                        <Label htmlFor="width">Width ({unit})</Label>
+                                        <Label htmlFor="width">{t.widthLabel} ({unit})</Label>
                                         <Input
                                             id="width"
                                             type="number"
@@ -352,7 +414,7 @@ export default function ExamPhotoResizer({
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="height">Height ({unit})</Label>
+                                        <Label htmlFor="height">{t.heightLabel} ({unit})</Label>
                                         <Input
                                             id="height"
                                             type="number"
@@ -365,7 +427,7 @@ export default function ExamPhotoResizer({
 
                                 <div className="grid grid-cols-2 gap-4">
                                     <div className="space-y-2">
-                                        <Label htmlFor="minKb">Min Size (KB)</Label>
+                                        <Label htmlFor="minKb">{t.minKbLabel}</Label>
                                         <Input
                                             id="minKb"
                                             type="number"
@@ -375,7 +437,7 @@ export default function ExamPhotoResizer({
                                         />
                                     </div>
                                     <div className="space-y-2">
-                                        <Label htmlFor="maxKb">Max Size (KB)</Label>
+                                        <Label htmlFor="maxKb">{t.maxKbLabel}</Label>
                                         <Input
                                             id="maxKb"
                                             type="number"
@@ -389,7 +451,7 @@ export default function ExamPhotoResizer({
                                 <div className="flex justify-between items-center pt-2">
                                     <span className="text-xs text-muted-foreground flex items-center gap-1">
                                         <Shield className="h-3 w-3 text-emerald-500" />
-                                        Browser-based (100% private)
+                                        {t.privateLabel}
                                     </span>
                                     {previewUrl && (
                                         <Button
@@ -400,7 +462,7 @@ export default function ExamPhotoResizer({
                                             size="sm"
                                         >
                                             {processing ? <RefreshCw className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
-                                            Reprocess
+                                            {t.reprocess}
                                         </Button>
                                     )}
                                 </div>
@@ -414,19 +476,19 @@ export default function ExamPhotoResizer({
                     <Card className="border-2 border-primary/10 bg-card/30 backdrop-blur-sm shadow-xl min-h-[300px] flex flex-col justify-between">
                         <CardContent className="p-6 flex-1 flex flex-col justify-between space-y-6">
                             <div className="space-y-4 text-center">
-                                <h3 className="text-xl font-bold border-b border-border/20 pb-2">Output Preview</h3>
+                                <h3 className="text-xl font-bold border-b border-border/20 pb-2">{t.previewTitle}</h3>
                                 
                                 {processing && (
                                     <div className="h-64 flex flex-col items-center justify-center space-y-4">
                                         <RefreshCw className="h-12 w-12 text-primary animate-spin" />
-                                        <p className="text-muted-foreground text-sm font-medium">Compressing to target size...</p>
+                                        <p className="text-muted-foreground text-sm font-medium">{t.processing}</p>
                                     </div>
                                 )}
 
                                 {!processing && !resizedUrl && (
                                     <div className="h-64 flex flex-col items-center justify-center border border-dashed border-border/40 rounded-md p-6 bg-muted/5">
                                         <FileImage className="h-12 w-12 text-muted-foreground/40 mb-3" />
-                                        <p className="text-sm text-muted-foreground">Upload an image to view the resized and compressed output.</p>
+                                        <p className="text-sm text-muted-foreground">{t.previewSub}</p>
                                     </div>
                                 )}
 
@@ -442,11 +504,11 @@ export default function ExamPhotoResizer({
                                         </div>
                                         <div className="grid grid-cols-2 gap-2 text-sm bg-primary/5 border border-primary/10 rounded-sm py-2 px-3 text-left">
                                             <div>
-                                                <span className="text-xs text-muted-foreground block">Dimensions</span>
+                                                <span className="text-xs text-muted-foreground block">{t.dimensions}</span>
                                                 <span className="font-bold font-mono">{resizedWidth} x {resizedHeight} px</span>
                                             </div>
                                             <div>
-                                                <span className="text-xs text-muted-foreground block">File Size</span>
+                                                <span className="text-xs text-muted-foreground block">{t.fileSize}</span>
                                                 <span className={`font-bold font-mono ${resizedSize > maxKb || resizedSize < minKb ? 'text-red-500' : 'text-emerald-500'}`}>
                                                     {resizedSize} KB
                                                 </span>
@@ -454,12 +516,12 @@ export default function ExamPhotoResizer({
                                         </div>
                                         {resizedSize <= maxKb && resizedSize >= minKb && (
                                             <div className="flex items-center gap-1.5 justify-center text-xs text-emerald-500 font-semibold bg-emerald-500/10 py-1.5 px-3 border border-emerald-500/20">
-                                                <Check className="h-4 w-4" /> Compliant with target rules
+                                                <Check className="h-4 w-4" /> {t.compliant}
                                             </div>
                                         )}
                                         {(resizedSize > maxKb || resizedSize < minKb) && (
                                             <div className="flex items-center gap-1.5 justify-center text-xs text-red-500 font-semibold bg-red-500/10 py-1.5 px-3 border border-red-500/20">
-                                                <AlertCircle className="h-4 w-4" /> Size mismatch. Try reducing dimensions.
+                                                <AlertCircle className="h-4 w-4" /> {t.mismatch}
                                             </div>
                                         )}
                                     </div>
@@ -474,11 +536,11 @@ export default function ExamPhotoResizer({
                                     className="w-full h-12 text-base font-bold bg-primary hover:bg-primary/90 text-primary-foreground gap-2"
                                 >
                                     <Download className="h-5 w-5" />
-                                    Download JPEG
+                                    {t.download}
                                 </Button>
                                 
                                 <p className="text-[10px] text-muted-foreground text-center leading-relaxed">
-                                    <span className="font-bold text-red-500/80">Disclaimer:</span> {disclaimer}
+                                    <span className="font-bold text-red-500/80">{t.disclaimerLabel}</span> {t.disclaimerText}
                                 </p>
                             </div>
                         </CardContent>
@@ -489,5 +551,13 @@ export default function ExamPhotoResizer({
 
             <canvas ref={canvasRef} className="hidden" />
         </div>
+    );
+}
+
+export default function ExamPhotoResizer(props) {
+    return (
+        <Suspense fallback={<div className="p-4 text-center">Loading...</div>}>
+            <ExamPhotoResizerInner {...props} />
+        </Suspense>
     );
 }
