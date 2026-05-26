@@ -33,6 +33,7 @@ templates = {
     'developer': "Format, minify, validate, and convert code snippets with our free {name} online. Secure, local developer utility with no registration.",
     'downloaders': "Save and download media files from multiple platforms with our free {name} online. High-speed downloading with no signup needed.",
     'calculators': "Compute rates, taxes, averages, and conversions with our free {name} online. Quick, accurate browser calculator with no registration.",
+    'exam-tools': "Resize and compress files with our free {name} online. Safe and private browser utility for government exam portal applications.",
 }
 
 def generate_unique_description(name, category):

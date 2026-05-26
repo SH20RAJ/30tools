@@ -30,6 +30,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ url: `${BASE_URL}/generators`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
 		{ url: `${BASE_URL}/downloaders`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.85 },
 		{ url: `${BASE_URL}/calculators`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.75 },
+		{ url: `${BASE_URL}/exam-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		// Blog
 		{ url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
 		// Content hub / SEO landing pages

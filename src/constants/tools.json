@@ -43,7 +43,7 @@
             "High-resolution output suitable for social media and print",
             "No signup or account creation required",
             "Unlimited image generations with no daily limits",
-            "100% private — images are processed in your browser",
+            "100% private \u2014 images are processed in your browser",
             "Download images in PNG format with no watermarks",
             "Simple prompt-based interface for beginners and pros"
           ],
@@ -62,7 +62,7 @@
             },
             {
               "question": "What types of images can I create?",
-              "answer": "You can create virtually any type of image — photorealistic photos, digital paintings, anime characters, illustrations, logos, landscapes, product mockups, abstract art, and more. The more detailed your prompt, the better the result."
+              "answer": "You can create virtually any type of image \u2014 photorealistic photos, digital paintings, anime characters, illustrations, logos, landscapes, product mockups, abstract art, and more. The more detailed your prompt, the better the result."
             },
             {
               "question": "How do I write a good AI image prompt?",
@@ -76,7 +76,7 @@
             },
             {
               "title": "Choose a Style",
-              "description": "Select an art style if available — such as photorealistic, anime, digital art, watercolor, or oil painting. This helps guide the AI generation."
+              "description": "Select an art style if available \u2014 such as photorealistic, anime, digital art, watercolor, or oil painting. This helps guide the AI generation."
             },
             {
               "title": "Generate the Image",
@@ -120,7 +120,7 @@
             "Download generated audio as MP3 files",
             "No signup or account creation required",
             "Unlimited text-to-speech conversions with no daily limits",
-            "Works directly in your browser — no software installation"
+            "Works directly in your browser \u2014 no software installation"
           ],
           "faqs": [
             {
@@ -199,11 +199,11 @@
           "features": [
             "Generate full-length songs with natural vocals and layered instrumentation using MiniMax Music 2.6",
             "Instrumental mode for background music, video scores, and ambient soundscapes",
-            "Lyrics Optimizer auto-writes lyrics from your style prompt — no writing needed",
+            "Lyrics Optimizer auto-writes lyrics from your style prompt \u2014 no writing needed",
             "14+ song structure tags including [Verse], [Chorus], [Bridge], [Drop], [Outro] for precise arrangement control",
             "Studio-grade audio output up to 44.1kHz sample rate and 256kbps bitrate",
             "Export in MP3 or WAV format for any professional production workflow",
-            "Completely free this week via Cloudflare Workers AI — no cost, no signup",
+            "Completely free this week via Cloudflare Workers AI \u2014 no cost, no signup",
             "All generated music is royalty-free and cleared for commercial use"
           ],
           "howTo": {
@@ -211,7 +211,7 @@
             "steps": [
               {
                 "name": "Write a Style Prompt",
-                "text": "Describe the sound you want — genre, mood, vocal style, tempo, and instruments. Example: 'Indie folk, melancholic, female vocal, fingerpicked acoustic guitar, 75 BPM.'"
+                "text": "Describe the sound you want \u2014 genre, mood, vocal style, tempo, and instruments. Example: 'Indie folk, melancholic, female vocal, fingerpicked acoustic guitar, 75 BPM.'"
               },
               {
                 "name": "Add Lyrics or Use Auto-Generate",
@@ -230,7 +230,7 @@
             },
             {
               "question": "Is the AI Music Generator really free?",
-              "answer": "Yes — MiniMax Music 2.6 is free this week on Cloudflare Workers AI. You can generate unlimited songs at no cost. No credit card or signup is required."
+              "answer": "Yes \u2014 MiniMax Music 2.6 is free this week on Cloudflare Workers AI. You can generate unlimited songs at no cost. No credit card or signup is required."
             },
             {
               "question": "Can I use the generated music commercially?",
@@ -580,7 +580,7 @@
             "Detect GPS location data embedded in photos",
             "Read IPTC and XMP metadata fields",
             "Supports JPG, JPEG, TIFF, and other image formats with EXIF data",
-            "100% browser-based processing — images never leave your device",
+            "100% browser-based processing \u2014 images never leave your device",
             "No software installation or signup required",
             "Free for personal and professional use"
           ],
@@ -969,7 +969,7 @@
             "Choose from multiple font styles and color combinations",
             "Preview logo in real-time as you design",
             "Download logos as high-resolution PNG files",
-            "No design experience required — simple text-based interface",
+            "No design experience required \u2014 simple text-based interface",
             "Free for personal and commercial use",
             "Works on any device with a browser",
             "No signup or account creation needed"
@@ -1045,7 +1045,7 @@
             "Improve sharpness, contrast, and color balance automatically",
             "Remove noise and grain from low-light photos",
             "Works with JPG, PNG, WebP, and other common formats",
-            "100% browser-based processing — your photos stay private",
+            "100% browser-based processing \u2014 your photos stay private",
             "No signup or account required",
             "Free for personal and commercial use"
           ],
@@ -1078,7 +1078,7 @@
             },
             {
               "title": "Select Enhancement Options",
-              "description": "Choose the enhancement type — auto-enhance, upscale resolution, sharpen, denoise, or adjust colors."
+              "description": "Choose the enhancement type \u2014 auto-enhance, upscale resolution, sharpen, denoise, or adjust colors."
             },
             {
               "title": "Apply Enhancement",
@@ -1936,7 +1936,7 @@
             "Save Reddit videos as MP4 files with sound",
             "Works on desktop and mobile browsers",
             "No Reddit login required for downloading",
-            "Fast processing — download in seconds",
+            "Fast processing \u2014 download in seconds",
             "Unlimited free downloads with no restrictions",
             "No watermarks added to downloaded videos"
           ],
@@ -1951,7 +1951,7 @@
             },
             {
               "question": "Can I download Reddit videos on my phone?",
-              "answer": "Yes, our Reddit video downloader works in your mobile browser on both iPhone and Android. Just copy the Reddit post link and paste it into the tool — no app installation needed."
+              "answer": "Yes, our Reddit video downloader works in your mobile browser on both iPhone and Android. Just copy the Reddit post link and paste it into the tool \u2014 no app installation needed."
             },
             {
               "question": "Is it free to download Reddit videos?",
@@ -3771,7 +3771,7 @@
         {
           "id": "blutv-video-downloader",
           "name": "BluTV Video Downloader",
-          "description": "Download publicly accessible BluTV content—trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
+          "description": "Download publicly accessible BluTV content\u2014trailers, previews, and clips from Turkish original series and movies. Free, no signup, MP4 downloads.",
           "route": "/blutv-video-downloader",
           "extraSlugs": [],
           "popular": false,
@@ -4014,7 +4014,7 @@
             "Download Instagram videos, reels, stories, and photos in original quality",
             "Save Instagram posts and carousel images as high-resolution files",
             "Download Instagram profile pictures in full size",
-            "Works on any device with a web browser — no app needed",
+            "Works on any device with a web browser \u2014 no app needed",
             "No Instagram login or account required for downloading",
             "Fast processing with instant download links",
             "Unlimited free downloads with no restrictions",
@@ -4184,7 +4184,7 @@
         {
           "id": "linkedin-video-downloader",
           "name": "Linkedin Video Downloader",
-          "description": "Download LinkedIn videos in high quality—free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps—just fast processing and a clean, simple interface that helps you save videos quickly.",
+          "description": "Download LinkedIn videos in high quality\u2014free and easy. Our LinkedIn Video Downloader works with any public post link. Just copy the LinkedIn video URL, paste it, and download in seconds. No signup, no clutter, and no confusing steps\u2014just fast processing and a clean, simple interface that helps you save videos quickly.",
           "route": "/linkedin-video-downloader",
           "extraSlugs": [
             "save-linkedin-video-online-free",
@@ -4321,7 +4321,7 @@
             "Save videos in MP4 format with HD, Full HD, and 4K quality options",
             "Extract audio and download as MP3 with one click",
             "No watermarks added to downloaded videos",
-            "Works directly in your browser — no software installation required",
+            "Works directly in your browser \u2014 no software installation required",
             "Unlimited free downloads with no daily limits",
             "Fast download speeds with optimized server-side processing",
             "Mobile-friendly interface works on phones and tablets"
@@ -4345,7 +4345,7 @@
             },
             {
               "question": "Can I download just the audio from a video?",
-              "answer": "Yes, select the MP3 audio option after pasting your video URL. This extracts the audio track and saves it as an MP3 file — perfect for music, podcasts, or lectures."
+              "answer": "Yes, select the MP3 audio option after pasting your video URL. This extracts the audio track and saves it as an MP3 file \u2014 perfect for music, podcasts, or lectures."
             }
           ],
           "howTo": [
@@ -4417,7 +4417,7 @@
         {
           "id": "pinterest-video-downloader",
           "name": "Pinterest Video Downloader",
-          "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF—on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
+          "description": "Download Pinterest videos in HD fast and free. Convert pins to MP4 or GIF\u2014on mobile or desktop. Save favorites in 720p/1080p, and 4K when available.",
           "route": "/pinterest-video-downloader",
           "extraSlugs": [
             "how-to-download-pinterest-videos-to-camera-roll",
@@ -4579,12 +4579,12 @@
           "features": [
             "Download TikTok videos without watermark in original HD quality",
             "Save TikTok videos as MP4 or extract audio as MP3",
-            "Works on all devices — iPhone, Android, PC, and tablet",
+            "Works on all devices \u2014 iPhone, Android, PC, and tablet",
             "No TikTok login or account required",
             "Fast processing with downloads completing in seconds",
             "Unlimited free downloads with no daily restrictions",
             "Preserves original video resolution and audio quality",
-            "Browser-based tool — no app installation needed"
+            "Browser-based tool \u2014 no app installation needed"
           ],
           "faqs": [
             {
@@ -4597,7 +4597,7 @@
             },
             {
               "question": "Can I download TikTok videos as MP3 audio?",
-              "answer": "Yes, select the MP3 option after pasting your TikTok link. This extracts just the audio from the video — perfect for saving TikTok sounds, music, and voice clips."
+              "answer": "Yes, select the MP3 option after pasting your TikTok link. This extracts just the audio from the video \u2014 perfect for saving TikTok sounds, music, and voice clips."
             },
             {
               "question": "Is it legal to download TikTok videos?",
@@ -4634,7 +4634,7 @@
         {
           "id": "tiktok-videos-downloader",
           "name": "Tiktok Videos Downloader",
-          "description": "Download TikTok videos without watermark—free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips.",
+          "description": "Download TikTok videos without watermark\u2014free, fast, and in HD MP4 with clear sound. Paste your link, hit download, and save clean, high-quality clips.",
           "route": "/tiktok-videos-downloader",
           "extraSlugs": [],
           "popular": false,
@@ -4682,7 +4682,7 @@
             "Save Twitter GIFs as video or image files",
             "Works on desktop, iPhone, and Android browsers",
             "No Twitter login or account required",
-            "Fast processing — download in seconds",
+            "Fast processing \u2014 download in seconds",
             "Unlimited free downloads with no restrictions",
             "No watermarks added to downloaded videos",
             "Supports Twitter and X.com video URLs"
@@ -4792,14 +4792,14 @@
             "Works with any YouTube video URL or video ID",
             "No software installation or browser extensions needed",
             "Free for personal and commercial use",
-            "Fast instant downloads — no waiting or processing",
+            "Fast instant downloads \u2014 no waiting or processing",
             "No YouTube login or account required",
             "Download thumbnails as high-resolution JPG files"
           ],
           "faqs": [
             {
               "question": "How do I download a YouTube video thumbnail?",
-              "answer": "Copy the YouTube video URL, paste it into the input field above, and click Download. You will see all available thumbnail resolutions — click the one you want to save."
+              "answer": "Copy the YouTube video URL, paste it into the input field above, and click Download. You will see all available thumbnail resolutions \u2014 click the one you want to save."
             },
             {
               "question": "What resolutions are available for YouTube thumbnails?",
@@ -4833,7 +4833,7 @@
             },
             {
               "title": "Choose Resolution",
-              "description": "Select the thumbnail resolution you want — maxresdefault for the highest quality, or smaller sizes for faster loading."
+              "description": "Select the thumbnail resolution you want \u2014 maxresdefault for the highest quality, or smaller sizes for faster loading."
             },
             {
               "title": "Save the Thumbnail",
@@ -4844,7 +4844,7 @@
         {
           "id": "youtube-video-downloader",
           "name": "YouTube Video Downloader",
-          "description": "Download YouTube videos quickly in multiple formats and resolutions—free, fast, secure, no signup, and fully browser-based.",
+          "description": "Download YouTube videos quickly in multiple formats and resolutions\u2014free, fast, secure, no signup, and fully browser-based.",
           "route": "/youtube-video-downloader",
           "extraSlugs": [
             "youtube-video-downloader-2026"
@@ -5049,7 +5049,7 @@
         {
           "id": "save-ig-content",
           "name": "Save Ig Content",
-          "description": "Download any public Instagram content—photos, videos, reels, and stories—to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
+          "description": "Download any public Instagram content\u2014photos, videos, reels, and stories\u2014to your device for free. Our all-in-one downloader provides high-quality media saves instantly.",
           "route": "/save-ig-content",
           "extraSlugs": [
             "save-ig-content",
@@ -5640,11 +5640,11 @@
           "features": [
             "Measure download speed, upload speed, and ping latency",
             "Real-time speed test with live progress visualization",
-            "Works on any device — desktop, tablet, and mobile",
+            "Works on any device \u2014 desktop, tablet, and mobile",
             "No software installation or Flash required",
             "Test results in Mbps (megabits per second)",
             "Compare your speed against typical broadband benchmarks",
-            "Fast test — results in under 30 seconds",
+            "Fast test \u2014 results in under 30 seconds",
             "Unlimited free tests with no restrictions"
           ],
           "faqs": [
@@ -5662,7 +5662,7 @@
             },
             {
               "question": "What is ping and why does it matter?",
-              "answer": "Ping (latency) measures the time it takes for data to travel to a server and back, in milliseconds. Lower ping is better — under 20ms is excellent, under 50ms is good for gaming, and under 100ms is acceptable for general use."
+              "answer": "Ping (latency) measures the time it takes for data to travel to a server and back, in milliseconds. Lower ping is better \u2014 under 20ms is excellent, under 50ms is good for gaming, and under 100ms is acceptable for general use."
             },
             {
               "question": "Is this speed test free?",
@@ -5846,7 +5846,7 @@
             "Include or exclude uppercase, lowercase, numbers, and symbols",
             "One-click copy to clipboard for easy use",
             "Password strength indicator shows security level",
-            "100% client-side generation — passwords never leave your browser",
+            "100% client-side generation \u2014 passwords never leave your browser",
             "Generate multiple passwords at once",
             "No signup or account required"
           ],
@@ -6476,7 +6476,7 @@
             },
             {
               "question": "How do I find long-tail keywords?",
-              "answer": "Enter a broad topic keyword and the tool will generate long-tail variations — longer, more specific phrases with lower competition. These are often easier to rank for and attract more targeted traffic."
+              "answer": "Enter a broad topic keyword and the tool will generate long-tail variations \u2014 longer, more specific phrases with lower competition. These are often easier to rank for and attract more targeted traffic."
             },
             {
               "question": "Can I research keywords for different countries?",
@@ -6554,7 +6554,7 @@
             "Identify missing alt text, broken links, and crawl errors",
             "Get actionable recommendations prioritized by impact",
             "Export audit results as a downloadable report",
-            "No signup required — instant analysis for any URL"
+            "No signup required \u2014 instant analysis for any URL"
           ],
           "faqs": [
             {
@@ -6589,7 +6589,7 @@
             },
             {
               "title": "Review the Results",
-              "description": "Examine the audit results organized by category — technical SEO, on-page, content, and performance."
+              "description": "Examine the audit results organized by category \u2014 technical SEO, on-page, content, and performance."
             },
             {
               "title": "Prioritize Fixes",
@@ -6636,7 +6636,7 @@
             },
             {
               "question": "What is a backlink?",
-              "answer": "A backlink is a link from one website to another. Search engines like Google use backlinks as a ranking factor — sites with more high-quality backlinks tend to rank higher in search results."
+              "answer": "A backlink is a link from one website to another. Search engines like Google use backlinks as a ranking factor \u2014 sites with more high-quality backlinks tend to rank higher in search results."
             },
             {
               "question": "What makes a good backlink?",
@@ -6703,7 +6703,7 @@
             "Monitor competitor rankings alongside your own",
             "Supports desktop and mobile SERP tracking",
             "No registration or API key required",
-            "Fast bulk processing — check up to 100 keywords at once",
+            "Fast bulk processing \u2014 check up to 100 keywords at once",
             "Accurate real-time SERP position data"
           ],
           "faqs": [
@@ -7075,6 +7075,160 @@
       "icon": "DocumentTextIcon",
       "description": "Tech blog and tool deep-dives",
       "tools": []
+    },
+    "exam-tools": {
+      "name": "Exam Image & Form Tools",
+      "slug": "exam-tools",
+      "icon": "FileImage",
+      "description": "Resize and compress photos, signatures, and PDFs to fit exact official requirements for UPSC, SSC, NEET, JEE, and other major exams.",
+      "tools": [
+        {
+          "id": "upsc-photo-resizer",
+          "name": "UPSC Photo Resizer",
+          "description": "Resize your photo and signature to meet the exact dimensions (350x350 pixels) and file size (20KB - 300KB) specified for UPSC IAS/IFS application forms.",
+          "route": "/upsc-photo-resizer",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "upsc-signature-resizer",
+            "upsc-photo-dimensions",
+            "upsc-photo-compressor"
+          ]
+        },
+        {
+          "id": "ssc-photo-resizer",
+          "name": "SSC Photo Resizer",
+          "description": "Resize and compress your photograph to fit the official SSC requirements: 3.5 cm width by 4.5 cm height (350x450 pixels), file size 20KB to 50KB.",
+          "route": "/ssc-photo-resizer",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "ssc-signature-resizer",
+            "ssc-photo-compressor"
+          ]
+        },
+        {
+          "id": "neet-photo-resizer",
+          "name": "NEET Photo Resizer",
+          "description": "Prepare your passport and postcard-sized photos for NEET according to NTA specs (4x6 inches, 10KB to 200KB for passport, 10KB to 200KB for postcard).",
+          "route": "/neet-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "neet-postcard-photo-resizer",
+            "neet-photo-compressor"
+          ]
+        },
+        {
+          "id": "jee-photo-resizer",
+          "name": "JEE Photo Resizer",
+          "description": "Resize and compress photos for JEE Main/Advanced. Dimensions 3.5cm x 4.5cm, file size 10KB to 200KB, signature 4KB to 30KB.",
+          "route": "/jee-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "jee-main-photo-compressor",
+            "jee-signature-resizer"
+          ]
+        },
+        {
+          "id": "cuet-photo-resizer",
+          "name": "CUET Photo Resizer",
+          "description": "Resize and compress your NTA CUET application photo (10KB to 200KB) and signature (4KB to 30KB) to meet official guidelines.",
+          "route": "/cuet-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "cuet-photo-compressor",
+            "cuet-signature-resizer"
+          ]
+        },
+        {
+          "id": "railway-exam-photo-resizer",
+          "name": "Railway Exam Photo Resizer",
+          "description": "Resize and compress photos and signatures for RRB Railway exams (photo 3.5cm x 4.5cm, 20KB to 50KB; signature 20KB to 50KB).",
+          "route": "/railway-exam-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "rrb-photo-resizer",
+            "railway-signature-resizer"
+          ]
+        },
+        {
+          "id": "passport-photo-maker",
+          "name": "Passport Photo Maker",
+          "description": "Generate standard passport size photos online. Crop to 2x2 inches (51x51 mm) or 3.5x4.5 cm with custom background colors and print sheets.",
+          "route": "/passport-photo-maker",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "passport-size-photo-maker",
+            "free-passport-photo-maker",
+            "passport-photo-crop"
+          ]
+        },
+        {
+          "id": "signature-resizer-under-20kb",
+          "name": "Signature Resizer Under 20KB",
+          "description": "Compress and resize your scanned signature image to fit under 20KB while maintaining absolute legibility for official exam portals.",
+          "route": "/signature-resizer-under-20kb",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "compress-signature-to-20kb",
+            "signature-compressor-under-20kb"
+          ]
+        },
+        {
+          "id": "photo-compressor-under-50kb",
+          "name": "Photo Compressor Under 50KB",
+          "description": "Compress any passport photo or document image to fit strictly under 50KB for online application forms and registrations.",
+          "route": "/photo-compressor-under-50kb",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "compress-photo-to-50kb",
+            "photo-compressor-50kb"
+          ]
+        },
+        {
+          "id": "jpg-to-pdf-exam-forms",
+          "name": "JPG to PDF for Exam Forms",
+          "description": "Convert your photo, signature, or ID proof images into a single or multi-page PDF document optimized for exam portal uploads.",
+          "route": "/jpg-to-pdf-exam-forms",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "convert-jpg-to-pdf-exam",
+            "image-to-pdf-for-exam"
+          ]
+        },
+        {
+          "id": "pdf-compressor-under-200kb",
+          "name": "PDF Compressor Under 200KB",
+          "description": "Compress official PDF documents, certificates, and ID proofs to fit under the standard 200KB limit for government forms.",
+          "route": "/pdf-compressor-under-200kb",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "compress-pdf-to-200kb",
+            "pdf-size-reducer-200kb"
+          ]
+        },
+        {
+          "id": "form-image-size-checker",
+          "name": "Form Image Size Checker",
+          "description": "Instantly check the dimensions (pixels/cm) and file size (KB) of your photos and signatures to verify if they match official guidelines.",
+          "route": "/form-image-size-checker",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "exam-photo-validator",
+            "image-dimension-checker-online"
+          ]
+        }
+      ]
     }
   }
 }

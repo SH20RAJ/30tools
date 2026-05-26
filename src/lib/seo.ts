@@ -177,6 +177,7 @@ const CATEGORY_HUB_URLS: Record<string, string> = {
 	youtube: `${BASE_URL}/youtube-tools`,
 	downloaders: `${BASE_URL}/all-downloaders`,
 	calculators: `${BASE_URL}/calculators`,
+	"exam-tools": `${BASE_URL}/exam-tools`,
 };
 
 /**
