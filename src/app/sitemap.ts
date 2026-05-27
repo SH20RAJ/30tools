@@ -73,17 +73,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		})),
 	];
 
+	// Intent money pages (safe ones)
+	const intentPages: MetadataRoute.Sitemap = [
+		{ url: `${BASE_URL}/compress-image-to-50kb`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/resize-image-for-instagram`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+		{ url: `${BASE_URL}/pdf-to-word-without-email`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
+	];
+
 	try {
-		// Get all extraSlugs to make sure they are excluded
+		// Get all extraSlugs to make sure they are excluded (except the intent pages we just added)
 		const extraSlugsSet = new Set(
 			allTools.flatMap((t) => (t.extraSlugs || []).map((slug) => {
 				const cleanSlug = slug.startsWith("/") ? slug : `/${slug}`;
 				return `${BASE_URL}${cleanSlug}`;
 			}))
 		);
+		
+		// Remove the manually added intent pages from the exclusion set
+		intentPages.forEach(page => extraSlugsSet.delete(page.url));
 
 		// Deduplicate by URL to avoid duplicate sitemap entries
-		const allPages = [...staticPages, ...toolPages, ...blogPages];
+		const allPages = [...staticPages, ...toolPages, ...blogPages, ...intentPages];
 		const seen = new Set<string>();
 		return allPages
 			.filter((page) => !extraSlugsSet.has(page.url))

@@ -14,6 +14,7 @@ import { getRelatedTools } from "@/lib/tools";
 import { Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { SITE_CONFIG } from "@/constants/config";
+import AdPlacement from "@/components/ads/AdPlacement";
 
 function ToolArticle({ content }) {
 	if (!content) return null;
@@ -175,6 +176,10 @@ export default function ToolLayout({
 					
 				</section>
 
+				<div className="max-w-4xl mx-auto">
+					<AdPlacement placement="after-hero" category={tool.category} slug={tool.id} />
+				</div>
+
 				{/* Copyright Disclaimer for Downloaders */}
 				{tool.category === "downloaders" && (
 					<DownloadDisclaimer platformName={tool.name.replace(/ downloader$/i, "").replace(/ download$/i, "")} />
@@ -189,6 +194,10 @@ export default function ToolLayout({
 
 				{!isCompanyPage && (
 					<>
+						<div className="max-w-4xl mx-auto">
+							<AdPlacement placement="after-tool" category={tool.category} slug={tool.id} />
+						</div>
+
 						{/* Downloader Legal Disclaimer - visible below tool */}
 						{tool.category === "downloaders" && (
 							<section className="max-w-4xl mx-auto space-y-4">
@@ -232,6 +241,10 @@ export default function ToolLayout({
 
 						{/* SEO Content - fully server-rendered for crawlers */}
 						<div className="space-y-32">
+							<div className="max-w-4xl mx-auto">
+								<AdPlacement placement="in-content" category={tool.category} slug={tool.id} />
+							</div>
+							
 							<ToolArticle content={enrichedTool.article} />
 
 							<div className="grid grid-cols-1 gap-32">
@@ -265,6 +278,10 @@ export default function ToolLayout({
 						{/* Internal Link Sculpting Segment - below fold */}
 						<div style={{ contentVisibility: "auto", containIntrinsicSize: "auto 400px" }}>
 							<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
+						</div>
+
+						<div className="max-w-4xl mx-auto">
+							<AdPlacement placement="footer" category={tool.category} slug={tool.id} />
 						</div>
 
 						{finalRelatedTools.length > 0 && (

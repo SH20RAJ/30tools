@@ -302,21 +302,40 @@ const nextConfig = {
 
 	// SEO Redirects and Rewrites
 	async redirects() {
-		return [
-			{
-				source: "/:path*",
-				has: [{ type: "host", value: "www.30tools.com" }],
-				destination: "https://30tools.com/:path*",
-				permanent: true,
-			},
-			{
-				source: "/blogs/:user/:slug",
-				destination: "/blog/:slug",
-				permanent: true,
-			},
-		];
-	},
+	        const intentSlugs = ["compress-image-to-50kb", "resize-image-for-instagram", "pdf-to-word-without-email", "youtube-to-mp3-320kbps"];
+	        const extraSlugRedirects = [];
 
+	        Object.values(toolsData.categories).forEach(category => {
+	                category.tools.forEach(tool => {
+	                        if (tool.extraSlugs && Array.isArray(tool.extraSlugs)) {
+	                                tool.extraSlugs.forEach(extraSlug => {
+	                                        if (!intentSlugs.includes(extraSlug)) {
+	                                                extraSlugRedirects.push({
+	                                                        source: `/${extraSlug}`,
+	                                                        destination: tool.route,
+	                                                        permanent: true,
+	                                                });
+	                                        }
+	                                });
+	                        }
+	                });
+	        });
+
+	        return [
+	                {
+	                        source: "/:path*",
+	                        has: [{ type: "host", value: "www.30tools.com" }],
+	                        destination: "https://30tools.com/:path*",
+	                        permanent: true,
+	                },
+	                {
+	                        source: "/blogs/:user/:slug",
+	                        destination: "/blog/:slug",
+	                        permanent: true,
+	                },
+	                ...extraSlugRedirects,
+	        ];
+	},
 	async rewrites() {
 		return [
 			{

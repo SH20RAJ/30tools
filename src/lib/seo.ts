@@ -133,6 +133,65 @@ export function generateFAQSchema(faqs: FAQ[]) {
 	};
 }
 
+interface HowToStep {
+	title: string;
+	description: string;
+	image?: string;
+}
+
+/**
+ * Generate HowTo JSON-LD
+ */
+export function generateHowToSchema(steps: HowToStep[], toolName: string, toolUrl: string) {
+	if (!steps || steps.length === 0) return null;
+
+	return {
+		"@context": "https://schema.org",
+		"@type": "HowTo",
+		name: `How to Use ${toolName}`,
+		description: `Step-by-step guide on how to use ${toolName} online for free.`,
+		step: steps.map((step, index) => ({
+			"@type": "HowToStep",
+			position: index + 1,
+			name: step.title,
+			text: step.description,
+			...(step.image && { image: step.image }),
+		})),
+		totalTime: "PT5M",
+		tool: {
+			"@type": "HowToTool",
+			name: toolName,
+		},
+		supply: {
+			"@type": "HowToSupply",
+			name: "Web Browser",
+		},
+	};
+}
+
+interface BreadcrumbItem {
+	name: string;
+	path: string;
+}
+
+/**
+ * Generate Breadcrumb JSON-LD
+ */
+export function generateBreadcrumbSchema(items: BreadcrumbItem[]) {
+	if (!items || items.length === 0) return null;
+
+	return {
+		"@context": "https://schema.org",
+		"@type": "BreadcrumbList",
+		itemListElement: items.map((item, index) => ({
+			"@type": "ListItem",
+			position: index + 1,
+			name: item.name,
+			item: `${BASE_URL}${item.path}`,
+		})),
+	};
+}
+
 /**
  * Generate SoftwareApplication JSON-LD for tools
  * NOTE: Do NOT add aggregateRating unless there are real, verified reviews visible on the page.

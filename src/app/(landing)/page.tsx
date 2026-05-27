@@ -9,6 +9,7 @@ import Link from "next/link";
 import { STATIC_ROUTES } from "@/lib/tools";
 import StructuredData from "@/components/shared/StructuredData";
 import { SITE_CONFIG } from "@/constants/config";
+import AdPlacement from "@/components/ads/AdPlacement";
 
 interface ToolCategory {
 	key: string;
@@ -49,15 +50,19 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 		]);
 
 	const priorityOrder = [
+		"exam-tools",
+		"calculators",
 		"image",
-		"pdf",
-		"video",
-		"downloaders",
-		"audio",
-		"utilities",
 		"developer",
-		"generators",
 		"seo",
+		"pdf",
+		"text",
+		"generators",
+		"utilities",
+		"audio",
+		"video",
+		"youtube",
+		"downloaders",
 	];
 
 	const toolCategories = isEnglish
@@ -104,6 +109,10 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 				{/* Hero Section */}
 				<PremiumHero title={heroTitle} />
 
+				<div className="py-8 max-w-4xl mx-auto">
+					<AdPlacement placement="after-hero" pageType="home" />
+				</div>
+
 				{/* Social Trust Marks */}
 				<TrustSection />
 
@@ -113,6 +122,9 @@ export default async function LandingPage({ searchParams }: LandingPageProps) {
 				</div>
 
 				{/* High-Value SEO Content Section */}
+				<div className="py-12 max-w-4xl mx-auto">
+					<AdPlacement placement="in-content" pageType="home" />
+				</div>
 				<HomeSEOContent />
 
 				{/* Conversational SEO (FAQs) */}

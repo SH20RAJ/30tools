@@ -83,7 +83,7 @@ Video URLs are processed temporarily for retrieval. We do not store or log downl
 			/>
 
 			<ToolLayout tool={tool}>
-				<RedditDownloader toolName="Reddit Video Downloader" />
+				<RedditDownloader />
 			</ToolLayout>
 		</>
 	);
