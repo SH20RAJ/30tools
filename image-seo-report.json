@@ -1,0 +1,121 @@
+{
+  "totalImages": 26,
+  "needsOptimization": [
+    {
+      "path": "images/viral-banner.png",
+      "size": 634,
+      "recommendation": "Compress to < 200KB"
+    },
+    {
+      "path": "og-images/youtube-downloader.png",
+      "size": 444,
+      "recommendation": "Compress to < 200KB"
+    }
+  ],
+  "recommendations": [
+    {
+      "path": "file.svg",
+      "suggestedAlt": "file tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "globe.svg",
+      "suggestedAlt": "globe tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/apple-touch-icon.png",
+      "suggestedAlt": "apple touch icon tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/base-icon.svg",
+      "suggestedAlt": "base icon tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/compress-96x96.png",
+      "suggestedAlt": "compress 96x96 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/favicon-16x16.png",
+      "suggestedAlt": "favicon 16x16 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/favicon-32x32.png",
+      "suggestedAlt": "favicon 32x32 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/favicon.png",
+      "suggestedAlt": "favicon tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/favicon.svg",
+      "suggestedAlt": "favicon tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-128x128.png",
+      "suggestedAlt": "icon 128x128 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-144x144.png",
+      "suggestedAlt": "icon 144x144 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-152x152.png",
+      "suggestedAlt": "icon 152x152 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-16x16.png",
+      "suggestedAlt": "icon 16x16 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-180x180.png",
+      "suggestedAlt": "icon 180x180 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-192x192.png",
+      "suggestedAlt": "icon 192x192 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-32x32.png",
+      "suggestedAlt": "icon 32x32 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-384x384.png",
+      "suggestedAlt": "icon 384x384 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-48x48.png",
+      "suggestedAlt": "icon 48x48 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-512x512.png",
+      "suggestedAlt": "icon 512x512 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-72x72.png",
+      "suggestedAlt": "icon 72x72 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/icon-96x96.png",
+      "suggestedAlt": "icon 96x96 tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "icons/safari-pinned-tab.svg",
+      "suggestedAlt": "safari pinned tab tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "images/viral-banner.png",
+      "suggestedAlt": "viral banner tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "og-image.jpg",
+      "suggestedAlt": "og image tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "og-image.png",
+      "suggestedAlt": "og image tool interface - Free online tool by 30tools"
+    },
+    {
+      "path": "og-images/youtube-downloader.png",
+      "suggestedAlt": "youtube downloader tool interface - Free online tool by 30tools"
+    }
+  ]
+}
