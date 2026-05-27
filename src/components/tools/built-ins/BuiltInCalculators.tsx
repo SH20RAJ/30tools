@@ -309,27 +309,101 @@ function CpmCalc() {
 }
 
 function AdsenseCalc() {
-	const [rpm, setRpm] = useState("4");
 	const [pv, setPv] = useState("50000");
-	const earn = useMemo(() => {
-		const r = Number(rpm);
-		const p = Number(pv);
-		if (!Number.isFinite(r) || !Number.isFinite(p)) return "";
-		return ((r * p) / 1000).toFixed(2);
-	}, [rpm, pv]);
+	const [ctr, setCtr] = useState("1.5");
+	const [cpc, setCpc] = useState("0.25");
+	const [slots, setSlots] = useState("3");
+	const [fill, setFill] = useState("90");
+
+	const { monthly, daily, yearly, rpm, p1, p5, p10, p100 } = useMemo(() => {
+		const p = Number(pv) || 0;
+		const c = Number(ctr) / 100 || 0;
+		const cp = Number(cpc) || 0;
+		const s = Number(slots) || 0;
+		const f = Number(fill) / 100 || 0;
+
+		const totalAdImpressions = p * s * f;
+		const totalClicks = totalAdImpressions * c;
+		const monthlyEarn = totalClicks * cp;
+
+		const dailyEarn = monthlyEarn / 30;
+		const yearlyEarn = monthlyEarn * 12;
+		const pageRpm = p > 0 ? (monthlyEarn / p) * 1000 : 0;
+
+		const reqPvForEarn = (targetDaily: number) => {
+			if (pageRpm === 0) return 0;
+			return Math.ceil((targetDaily * 1000) / pageRpm);
+		};
+
+		return {
+			monthly: monthlyEarn.toFixed(2),
+			daily: dailyEarn.toFixed(2),
+			yearly: yearlyEarn.toFixed(2),
+			rpm: pageRpm.toFixed(2),
+			p1: reqPvForEarn(1).toLocaleString(),
+			p5: reqPvForEarn(5).toLocaleString(),
+			p10: reqPvForEarn(10).toLocaleString(),
+			p100: reqPvForEarn(100).toLocaleString(),
+		};
+	}, [pv, ctr, cpc, slots, fill]);
+
 	return (
 		<Card className="">
 			<CardHeader className="">
-				<CardTitle className="text-lg">AdSense estimate</CardTitle>
+				<CardTitle className="text-lg">Advanced AdSense Estimator</CardTitle>
 			</CardHeader>
-			<CardContent className="grid gap-4 md:grid-cols-2">
-				<Field id="rpm" label="RPM (USD)" value={rpm} onChange={setRpm} />
-				<Field id="pv" label="Pageviews" value={pv} onChange={setPv} />
-				<div className="md:col-span-2">
-					<Field id="er" label="Estimated earnings (USD)" value={earn} onChange={() => {}} />
+			<CardContent className="space-y-6">
+				<div className="grid gap-4 md:grid-cols-3">
+					<Field id="pv" label="Monthly Pageviews" value={pv} onChange={setPv} type="number" />
+					<Field id="slots" label="Ad Slots per Page" value={slots} onChange={setSlots} type="number" />
+					<Field id="fill" label="Fill Rate (%)" value={fill} onChange={setFill} type="number" />
+					<Field id="ctr" label="Ad CTR (%)" value={ctr} onChange={setCtr} type="number" />
+					<Field id="cpc" label="Average CPC ($)" value={cpc} onChange={setCpc} type="number" />
+					<Field id="rpm_out" label="Calculated Page RPM ($)" value={rpm} onChange={() => {}} type="text" />
 				</div>
-				<p className="text-xs text-muted-foreground md:col-span-2">
-					Rough RPM × pageviews model — real AdSense revenue varies by niche, GEO, and seasonality.
+				
+				<div className="p-4 bg-primary/5 rounded-lg border border-primary/20">
+					<h3 className="text-sm font-semibold mb-3">Estimated Earnings</h3>
+					<div className="grid gap-4 grid-cols-3 text-center">
+						<div>
+							<p className="text-2xl font-bold">${daily}</p>
+							<p className="text-xs text-muted-foreground uppercase">Daily</p>
+						</div>
+						<div>
+							<p className="text-2xl font-bold text-primary">${monthly}</p>
+							<p className="text-xs text-muted-foreground uppercase">Monthly</p>
+						</div>
+						<div>
+							<p className="text-2xl font-bold">${yearly}</p>
+							<p className="text-xs text-muted-foreground uppercase">Yearly</p>
+						</div>
+					</div>
+				</div>
+
+				<div>
+					<h3 className="text-sm font-semibold mb-3">Pageviews Required to Hit Goals</h3>
+					<div className="grid gap-2 grid-cols-2 md:grid-cols-4">
+						<div className="p-2 border rounded text-center">
+							<p className="font-mono text-sm">{p1}</p>
+							<p className="text-[10px] text-muted-foreground">for $1/day</p>
+						</div>
+						<div className="p-2 border rounded text-center">
+							<p className="font-mono text-sm">{p5}</p>
+							<p className="text-[10px] text-muted-foreground">for $5/day</p>
+						</div>
+						<div className="p-2 border rounded text-center">
+							<p className="font-mono text-sm">{p10}</p>
+							<p className="text-[10px] text-muted-foreground">for $10/day</p>
+						</div>
+						<div className="p-2 border rounded text-center">
+							<p className="font-mono text-sm">{p100}</p>
+							<p className="text-[10px] text-muted-foreground">for $100/day</p>
+						</div>
+					</div>
+				</div>
+
+				<p className="text-xs text-muted-foreground">
+					Note: This calculates estimated Page RPM based on impression volume, fill rate, CTR, and CPC. Real AdSense revenue varies by niche, geography, seasonality, and ad visibility.
 				</p>
 			</CardContent>
 		</Card>
