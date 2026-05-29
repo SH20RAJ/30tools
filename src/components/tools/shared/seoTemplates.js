@@ -791,6 +791,136 @@ Upload your entire asset folder and compress them all at once. Download the resu
 				},
 			],
 		},
+		calculators: {
+			article: `
+## ${name} — Fast, Accurate Results in Your Browser
+${name} gives you precise answers instantly, with the formulas worked out for you. Enter your numbers and read the result — no spreadsheets, no signup, and nothing to install.
+
+### Built for Real Decisions
+Whether you are planning a budget, checking academic scores, or estimating materials for a project, ${name} uses standard, widely-accepted formulas so you can trust the output for everyday and professional use.
+
+### Private by Design
+Every calculation runs locally in your browser. Your inputs are never uploaded to a server, logged, or shared, so you can run sensitive numbers with confidence.
+			`,
+			features: [
+				`Instant, accurate results from ${name} as you type`,
+				"Built on standard, widely-accepted formulas",
+				"100% free with no signup and no usage limits",
+				"All math runs locally — your inputs never leave your device",
+				"Clear, step-by-step breakdown of the result",
+				"Works on desktop, tablet, and mobile",
+				"No ads cluttering the calculation area",
+				"Shareable results for quick collaboration",
+			],
+			howTo: {
+				name: `How to use ${name}`,
+				steps: [
+					{
+						name: "Enter Your Values",
+						text: `Type your numbers into the labelled fields in ${name}. Each input is clearly described so you know exactly what to enter.`,
+					},
+					{
+						name: "Adjust the Options",
+						text: `Pick the relevant settings — such as units, rates, or rounding — to match your specific situation.`,
+					},
+					{
+						name: "Read Your Result",
+						text: `${name} updates the result automatically as you change inputs, so you can compare scenarios in seconds.`,
+					},
+					{
+						name: "Copy or Share",
+						text: `Copy the result or share the page link. Nothing is stored, so your numbers stay private.`,
+					},
+				],
+			},
+			faqs: [
+				{
+					question: `Is ${name} accurate?`,
+					answer: `Yes. ${name} uses standard, established formulas and high-precision arithmetic, so the results are reliable for personal, academic, and professional use.`,
+				},
+				{
+					question: `Is ${name} free to use?`,
+					answer: `${name} is completely free with no signup, no premium tier, and no limit on how many times you can use it.`,
+				},
+				{
+					question: `Do my inputs get sent to a server?`,
+					answer: `No. ${name} runs entirely in your browser. Your numbers are never uploaded, logged, or shared, so even sensitive figures stay on your device.`,
+				},
+				{
+					question: `Can I use ${name} on my phone?`,
+					answer: `Yes. ${name} is fully responsive and works on Android, iPhone, iPad, and desktop browsers without installing an app.`,
+				},
+				{
+					question: `Why are the results different from another calculator?`,
+					answer: `Different tools sometimes use different rounding rules or formula variants. ${name} shows the method it uses so you can confirm the numbers match your requirement.`,
+				},
+			],
+		},
+		"exam-tools": {
+			article: `
+## ${name} — Meet Official Exam Photo Requirements
+Application portals reject photos and signatures that don't match the exact pixel dimensions and file-size limits. ${name} resizes and compresses your image to the precise specification the exam board requires, so your upload is accepted the first time.
+
+### Exact Dimensions and File Size
+${name} targets the official width, height, and KB range for the exam, adjusting resolution and compression together so the photo stays clear while fitting strict size caps.
+
+### Private and Instant
+Your photo is processed directly in your browser. It is never uploaded to a server, so your personal documents stay on your device while you get a ready-to-submit file in seconds.
+			`,
+			features: [
+				`Resizes photos and signatures to exact exam specifications with ${name}`,
+				"Hits official width, height, and KB file-size limits",
+				"Keeps the image clear while meeting strict size caps",
+				"100% free with no signup or watermark",
+				"Processes locally — your documents never leave your device",
+				"Download a ready-to-upload file in seconds",
+				"Works on desktop and mobile browsers",
+				"Supports common JPG and PNG application formats",
+			],
+			howTo: {
+				name: `How to use ${name}`,
+				steps: [
+					{
+						name: "Upload Your Photo",
+						text: `Select or drag your photo or signature into ${name}. The file is read directly in your browser.`,
+					},
+					{
+						name: "Apply the Exam Preset",
+						text: `${name} sets the required dimensions and file-size range for the exam automatically. Adjust the crop if needed.`,
+					},
+					{
+						name: "Resize and Compress",
+						text: `The tool resizes and compresses the image together so it meets the exact specification without looking blurry.`,
+					},
+					{
+						name: "Download and Submit",
+						text: `Download the optimized file and upload it to the application portal. Your original photo is never stored.`,
+					},
+				],
+			},
+			faqs: [
+				{
+					question: `Will the photo from ${name} be accepted by the application portal?`,
+					answer: `Yes. ${name} matches the official dimensions and file-size range specified by the exam board, which is what portals validate on upload.`,
+				},
+				{
+					question: `Does ${name} reduce the photo quality?`,
+					answer: `${name} balances resizing and compression so the photo stays clear and recognizable while still fitting the required KB limit.`,
+				},
+				{
+					question: `Is my photo uploaded to a server?`,
+					answer: `No. ${name} processes your image locally in your browser. Your personal documents are never uploaded, stored, or shared.`,
+				},
+				{
+					question: `Is ${name} free?`,
+					answer: `Yes, ${name} is completely free with no signup and no watermark on the output file.`,
+				},
+				{
+					question: `Can I resize both my photo and signature?`,
+					answer: `Yes. ${name} supports the separate photo and signature specifications that most exams require.`,
+				},
+			],
+		},
 	};
 
 	try {
