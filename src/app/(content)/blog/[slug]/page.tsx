@@ -2,6 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { blogs, getBlogArticleBySlug } from "@/constants/blog-data";
 import { getToolByRoute } from "@/lib/tools";
+import AdPlacement from "@/components/ads/AdPlacement";
 
 interface BlogArticlePageProps {
 	params: Promise<{ slug: string }>;
@@ -121,6 +122,10 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 						{article.intro || article.description}
 					</p>
 
+					<div className="mt-10 max-w-3xl mx-auto">
+						<AdPlacement placement="after-hero" pageType="blog" />
+					</div>
+
 					<div className="mt-10 space-y-10">
 						{(article.sections || []).map((section: any) => {
 							const sectionTools = (section.toolRoutes || [])
@@ -160,6 +165,9 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 
 					{(article.faqs || []).length > 0 && (
 						<section className="mt-12 rounded-2xl border border-border/60 bg-card/50 p-6 md:p-8">
+							<div className="mb-10 max-w-3xl mx-auto">
+								<AdPlacement placement="in-content" pageType="blog" />
+							</div>
 							<h2 className="text-2xl font-semibold tracking-tight">FAQ</h2>
 							<div className="mt-6 space-y-5">
 								{(article.faqs || []).map((faq: any) => (
@@ -198,6 +206,10 @@ export default async function BlogArticlePage({ params }: BlogArticlePageProps) 
 							</Link>
 						</div>
 					</section>
+
+					<div className="mt-12 max-w-3xl mx-auto">
+						<AdPlacement placement="footer" pageType="blog" />
+					</div>
 				</article>
 			</main>
 
