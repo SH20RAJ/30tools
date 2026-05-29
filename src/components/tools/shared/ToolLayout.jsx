@@ -8,7 +8,6 @@ import {
 	ToolSteps,
 	ToolTrust,
 } from "./ToolSharedComponents";
-import VariantLinks from "./VariantLinks";
 import { getDynamicSEOContent } from "./seoTemplates";
 import { getRelatedTools } from "@/lib/tools";
 import { Github } from "lucide-react";
@@ -162,8 +161,8 @@ export default function ToolLayout({
 				/>
 			</div>
 
-			<main className="container mx-auto px-4 py-24 md:py-32 max-w-6xl space-y-32">
-				<section className="text-center space-y-8 max-w-4xl mx-auto animate-in pt-8">
+			<main className="container mx-auto px-4 py-10 md:py-14 max-w-6xl space-y-16">
+				<section className="text-center space-y-6 max-w-4xl mx-auto animate-in pt-4">
 					<h1 className="text-5xl md:text-7xl font-extrabold tracking-tighter leading-tight bg-gradient-to-b from-foreground to-foreground/70">
 						{enrichedTool.name}
 					</h1>
@@ -240,14 +239,14 @@ export default function ToolLayout({
 						</div>
 
 						{/* SEO Content - fully server-rendered for crawlers */}
-						<div className="space-y-32">
+						<div className="space-y-16">
 							<div className="max-w-4xl mx-auto">
 								<AdPlacement placement="in-content" category={tool.category} slug={tool.id} />
 							</div>
 							
 							<ToolArticle content={enrichedTool.article} />
 
-							<div className="grid grid-cols-1 gap-32">
+							<div className="grid grid-cols-1 gap-16">
 								<ToolFeatures features={enrichedTool.features} />
 								<ToolSteps
 									steps={enrichedTool.howTo?.steps}
@@ -273,11 +272,6 @@ export default function ToolLayout({
 									We are Open Source
 								</a>
 							</div>
-						</div>
-
-						{/* Internal Link Sculpting Segment - below fold */}
-						<div style={{ contentVisibility: "auto", containIntrinsicSize: "auto 400px" }}>
-							<VariantLinks extraSlugs={tool.extraSlugs} toolName={tool.name} />
 						</div>
 
 						<div className="max-w-4xl mx-auto">

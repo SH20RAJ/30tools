@@ -8,7 +8,8 @@
       "Bash(curl -s \"https://30tools.com/about\")",
       "WebFetch(domain:30tools.com)",
       "Bash(NEXT_TURBOPACK=0 npm run build)",
-      "Bash(node scripts/seo-audit-local.mjs)"
+      "Bash(node scripts/seo-audit-local.mjs)",
+      "WebFetch(domain:github.com)"
     ]
   },
   "sandbox": {
