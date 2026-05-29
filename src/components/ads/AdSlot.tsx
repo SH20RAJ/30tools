@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface AdSlotProps {
   slot: string;
@@ -20,28 +20,39 @@ export default function AdSlot({
   className = "",
   label = false,
 }: AdSlotProps) {
-  const adRef = useRef<HTMLModElement>(null);
-  const isLoaded = useRef(false);
+  const insRef = useRef<HTMLModElement>(null);
+  const pushed = useRef(false);
+  const [unfilled, setUnfilled] = useState(false);
 
   // Reserve more vertical space for multiplex (autorelaxed) grids to avoid layout shift.
   const reservedHeight = format === "autorelaxed" ? 280 : 100;
 
   useEffect(() => {
-    if (!slot || isLoaded.current) return;
+    if (!slot || pushed.current) return;
+    pushed.current = true;
 
     try {
+      // Queue the ad request. The adsbygoogle script is loaded lazily, so it may
+      // not exist yet when this effect runs — pushing to the array stub queues
+      // the request and AdSense drains the queue once the script loads.
       // @ts-ignore
-      if (typeof window !== "undefined" && window.adsbygoogle) {
-        // @ts-ignore
-        window.adsbygoogle.push({});
-        isLoaded.current = true;
-      }
+      (window.adsbygoogle = window.adsbygoogle || []).push({});
     } catch (e) {
       console.error("AdSense error", e);
     }
+
+    // If the slot stays unfilled (no ad inventory for this view), collapse the
+    // reserved box so we don't show an empty bordered placeholder.
+    const timer = setTimeout(() => {
+      if (insRef.current?.getAttribute("data-ad-status") === "unfilled") {
+        setUnfilled(true);
+      }
+    }, 4000);
+
+    return () => clearTimeout(timer);
   }, [slot]);
 
-  if (!slot) return null;
+  if (!slot || unfilled) return null;
 
   return (
     <div
@@ -54,7 +65,7 @@ export default function AdSlot({
         </span>
       )}
       <ins
-        ref={adRef}
+        ref={insRef}
         className="adsbygoogle w-full block"
         style={{ display: "block", minHeight: `${reservedHeight}px` }}
         data-ad-client={ADSENSE_CLIENT}
