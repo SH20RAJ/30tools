@@ -11897,6 +11897,86 @@
             "tile-calculator-instant-online",
             "tile-calculator-privacy-focused"
           ]
+        },
+        {
+          "id": "compound-interest-calculator",
+          "name": "Compound Interest Calculator",
+          "description": "Calculate compound interest and future value with regular contributions. See how your savings or investments grow over time, free and instant.",
+          "route": "/compound-interest-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "mortgage-calculator",
+          "name": "Mortgage Calculator",
+          "description": "Estimate your monthly mortgage payment, total interest, and total cost from home price, down payment, rate, and term. Free, no signup.",
+          "route": "/mortgage-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "car-loan-calculator",
+          "name": "Car Loan Calculator",
+          "description": "Work out your monthly car payment and total interest from vehicle price, down payment, trade-in, APR, and term. Free auto loan calculator.",
+          "route": "/car-loan-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "roi-calculator",
+          "name": "ROI Calculator",
+          "description": "Calculate return on investment, net gain, and annualized ROI from your initial and final values. Free investment return calculator.",
+          "route": "/roi-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "savings-goal-calculator",
+          "name": "Savings Goal Calculator",
+          "description": "Find the monthly deposit needed to reach a savings goal by a target date, including interest. Free savings planning calculator.",
+          "route": "/savings-goal-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "tip-calculator",
+          "name": "Tip Calculator",
+          "description": "Calculate the tip, total, and amount per person for any bill. Quick gratuity and bill-splitting calculator, free and no signup.",
+          "route": "/tip-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "bmi-calculator",
+          "name": "BMI Calculator",
+          "description": "Calculate your Body Mass Index from height and weight and see your BMI category. Free, private BMI calculator that runs in your browser.",
+          "route": "/bmi-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "fuel-cost-calculator",
+          "name": "Fuel Cost Calculator",
+          "description": "Estimate the fuel needed and total cost for a trip from distance, fuel economy, and price per litre. Free trip fuel cost calculator.",
+          "route": "/fuel-cost-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "inflation-calculator",
+          "name": "Inflation Calculator",
+          "description": "See how inflation changes the value of money over time, including future buying power and the nominal amount needed to keep pace. Free tool.",
+          "route": "/inflation-calculator",
+          "popular": false,
+          "category": "calculators"
+        },
+        {
+          "id": "break-even-calculator",
+          "name": "Break-Even Calculator",
+          "description": "Calculate the break-even point in units and revenue from fixed costs, variable cost per unit, and selling price. Free business calculator.",
+          "route": "/break-even-calculator",
+          "popular": false,
+          "category": "calculators"
         }
       ]
     },

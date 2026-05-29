@@ -22,7 +22,17 @@ export type CalcKind =
 	| "paypal-fee-calculator"
 	| "probability-calculator"
 	| "confidence-interval-calculator"
-	| "currency-converter";
+	| "currency-converter"
+	| "compound-interest-calculator"
+	| "mortgage-calculator"
+	| "car-loan-calculator"
+	| "roi-calculator"
+	| "savings-goal-calculator"
+	| "tip-calculator"
+	| "bmi-calculator"
+	| "fuel-cost-calculator"
+	| "inflation-calculator"
+	| "break-even-calculator";
 
 export default function BuiltInCalculators({ kind }: { kind: CalcKind }) {
 	if (kind === "currency-converter") return <CurrencyConverter />;
@@ -39,6 +49,16 @@ export default function BuiltInCalculators({ kind }: { kind: CalcKind }) {
 	if (kind === "paypal-fee-calculator") return <PaypalCalc />;
 	if (kind === "probability-calculator") return <ProbCalc />;
 	if (kind === "confidence-interval-calculator") return <CiCalc />;
+	if (kind === "compound-interest-calculator") return <CompoundInterestCalc />;
+	if (kind === "mortgage-calculator") return <MortgageCalc />;
+	if (kind === "car-loan-calculator") return <CarLoanCalc />;
+	if (kind === "roi-calculator") return <RoiCalc />;
+	if (kind === "savings-goal-calculator") return <SavingsGoalCalc />;
+	if (kind === "tip-calculator") return <TipCalc />;
+	if (kind === "bmi-calculator") return <BmiCalc />;
+	if (kind === "fuel-cost-calculator") return <FuelCostCalc />;
+	if (kind === "inflation-calculator") return <InflationCalc />;
+	if (kind === "break-even-calculator") return <BreakEvenCalc />;
 	return null;
 }
 
@@ -558,6 +578,399 @@ function CurrencyConverter() {
 						Loaded {Object.keys(rates).length} cross-rates from {from}.
 					</p>
 				)}
+			</CardContent>
+		</Card>
+	);
+}
+
+function CompoundInterestCalc() {
+	const [principal, setPrincipal] = useState("10000");
+	const [rate, setRate] = useState("7");
+	const [years, setYears] = useState("10");
+	const [freq, setFreq] = useState("12");
+	const [contrib, setContrib] = useState("0");
+	const { future, interest, contributed } = useMemo(() => {
+		const p = Number(principal);
+		const r = Number(rate) / 100;
+		const t = Number(years);
+		const n = Number(freq);
+		const c = Number(contrib);
+		if (![p, r, t, n, c].every(Number.isFinite) || n <= 0 || t < 0) {
+			return { future: "", interest: "", contributed: "" };
+		}
+		const periodRate = r / n;
+		const periods = n * t;
+		const growth = (1 + periodRate) ** periods;
+		const fromPrincipal = p * growth;
+		const fromContrib = periodRate === 0 ? c * periods : c * ((growth - 1) / periodRate);
+		const fv = fromPrincipal + fromContrib;
+		const totalIn = p + c * periods;
+		return {
+			future: fv.toFixed(2),
+			interest: (fv - totalIn).toFixed(2),
+			contributed: totalIn.toFixed(2),
+		};
+	}, [principal, rate, years, freq, contrib]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Compound interest
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="ci-p" label="Initial amount" value={principal} onChange={setPrincipal} type="number" />
+				<Field id="ci-r" label="Annual rate (%)" value={rate} onChange={setRate} type="number" />
+				<Field id="ci-y" label="Years" value={years} onChange={setYears} type="number" />
+				<Field id="ci-n" label="Compounds / year" value={freq} onChange={setFreq} type="number" />
+				<Field id="ci-c" label="Added each period" value={contrib} onChange={setContrib} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Contributed: ${contributed}`} />
+				<Input readOnly className="bg-muted/40" value={`Interest earned: ${interest}`} />
+				<div className="md:col-span-2">
+					<Field id="ci-fv" label="Future value" value={future} onChange={() => {}} />
+				</div>
+			</CardContent>
+		</Card>
+	);
+}
+
+function amortizedPayment(principal: number, annualRatePct: number, months: number) {
+	const r = annualRatePct / 100 / 12;
+	if (!Number.isFinite(principal) || !Number.isFinite(r) || !Number.isFinite(months) || months <= 0) return null;
+	if (r === 0) return principal / months;
+	const pow = (1 + r) ** months;
+	const m = (principal * r * pow) / (pow - 1);
+	return Number.isFinite(m) ? m : null;
+}
+
+function MortgageCalc() {
+	const [price, setPrice] = useState("300000");
+	const [down, setDown] = useState("60000");
+	const [rate, setRate] = useState("6.5");
+	const [years, setYears] = useState("30");
+	const { monthly, principal, totalInterest, totalPaid } = useMemo(() => {
+		const p = Number(price) - Number(down);
+		const m = amortizedPayment(p, Number(rate), Number(years) * 12);
+		if (m == null || p < 0) return { monthly: "", principal: "", totalInterest: "", totalPaid: "" };
+		const paid = m * Number(years) * 12;
+		return {
+			monthly: m.toFixed(2),
+			principal: p.toFixed(2),
+			totalInterest: (paid - p).toFixed(2),
+			totalPaid: paid.toFixed(2),
+		};
+	}, [price, down, rate, years]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Mortgage payment
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="mg-pr" label="Home price" value={price} onChange={setPrice} type="number" />
+				<Field id="mg-dp" label="Down payment" value={down} onChange={setDown} type="number" />
+				<Field id="mg-rt" label="Interest rate (%)" value={rate} onChange={setRate} type="number" />
+				<Field id="mg-yr" label="Term (years)" value={years} onChange={setYears} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Loan amount: ${principal}`} />
+				<Input readOnly className="bg-muted/40" value={`Total interest: ${totalInterest}`} />
+				<Input readOnly className="bg-muted/40" value={`Total paid: ${totalPaid}`} />
+				<div className="md:col-span-2">
+					<Field id="mg-mo" label="Monthly payment (principal + interest)" value={monthly} onChange={() => {}} />
+				</div>
+				<p className="text-xs text-muted-foreground md:col-span-2">
+					Principal and interest only. Add property tax, insurance, and HOA for full housing cost.
+				</p>
+			</CardContent>
+		</Card>
+	);
+}
+
+function CarLoanCalc() {
+	const [price, setPrice] = useState("30000");
+	const [down, setDown] = useState("3000");
+	const [trade, setTrade] = useState("0");
+	const [rate, setRate] = useState("8");
+	const [months, setMonths] = useState("60");
+	const { monthly, financed, totalInterest } = useMemo(() => {
+		const p = Number(price) - Number(down) - Number(trade);
+		const m = amortizedPayment(p, Number(rate), Number(months));
+		if (m == null || p < 0) return { monthly: "", financed: "", totalInterest: "" };
+		const paid = m * Number(months);
+		return { monthly: m.toFixed(2), financed: p.toFixed(2), totalInterest: (paid - p).toFixed(2) };
+	}, [price, down, trade, rate, months]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Car loan
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="cl-pr" label="Vehicle price" value={price} onChange={setPrice} type="number" />
+				<Field id="cl-dp" label="Down payment" value={down} onChange={setDown} type="number" />
+				<Field id="cl-tr" label="Trade-in value" value={trade} onChange={setTrade} type="number" />
+				<Field id="cl-rt" label="APR (%)" value={rate} onChange={setRate} type="number" />
+				<Field id="cl-mo" label="Term (months)" value={months} onChange={setMonths} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Amount financed: ${financed}`} />
+				<Input readOnly className="bg-muted/40" value={`Total interest: ${totalInterest}`} />
+				<div className="md:col-span-2">
+					<Field id="cl-pay" label="Monthly payment" value={monthly} onChange={() => {}} />
+				</div>
+			</CardContent>
+		</Card>
+	);
+}
+
+function RoiCalc() {
+	const [initial, setInitial] = useState("1000");
+	const [finalV, setFinalV] = useState("1500");
+	const [years, setYears] = useState("3");
+	const { roi, gain, annualized } = useMemo(() => {
+		const i = Number(initial);
+		const f = Number(finalV);
+		const y = Number(years);
+		if (!Number.isFinite(i) || !Number.isFinite(f) || i === 0) return { roi: "", gain: "", annualized: "" };
+		const netGain = f - i;
+		const roiPct = (netGain / i) * 100;
+		let ann = "";
+		if (Number.isFinite(y) && y > 0 && f > 0) {
+			ann = `${(((f / i) ** (1 / y) - 1) * 100).toFixed(2)}%`;
+		}
+		return { roi: `${roiPct.toFixed(2)}%`, gain: netGain.toFixed(2), annualized: ann };
+	}, [initial, finalV, years]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Return on investment
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="roi-i" label="Initial investment" value={initial} onChange={setInitial} type="number" />
+				<Field id="roi-f" label="Final value" value={finalV} onChange={setFinalV} type="number" />
+				<Field id="roi-y" label="Holding period (years)" value={years} onChange={setYears} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Net gain: ${gain}`} />
+				<Field id="roi-r" label="Total ROI" value={roi} onChange={() => {}} />
+				<Field id="roi-a" label="Annualized ROI" value={annualized} onChange={() => {}} />
+			</CardContent>
+		</Card>
+	);
+}
+
+function SavingsGoalCalc() {
+	const [goal, setGoal] = useState("20000");
+	const [current, setCurrent] = useState("2000");
+	const [rate, setRate] = useState("4");
+	const [months, setMonths] = useState("24");
+	const monthly = useMemo(() => {
+		const fv = Number(goal) - Number(current) * (1 + Number(rate) / 100 / 12) ** Number(months);
+		const r = Number(rate) / 100 / 12;
+		const n = Number(months);
+		if (!Number.isFinite(fv) || !Number.isFinite(r) || !Number.isFinite(n) || n <= 0) return "";
+		if (fv <= 0) return "0.00 (goal already reached)";
+		const pmt = r === 0 ? fv / n : (fv * r) / ((1 + r) ** n - 1);
+		return Number.isFinite(pmt) ? pmt.toFixed(2) : "";
+	}, [goal, current, rate, months]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Savings goal
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="sg-g" label="Savings goal" value={goal} onChange={setGoal} type="number" />
+				<Field id="sg-c" label="Current savings" value={current} onChange={setCurrent} type="number" />
+				<Field id="sg-r" label="Annual interest (%)" value={rate} onChange={setRate} type="number" />
+				<Field id="sg-m" label="Months to goal" value={months} onChange={setMonths} type="number" />
+				<div className="md:col-span-2">
+					<Field id="sg-pmt" label="Required monthly deposit" value={monthly} onChange={() => {}} />
+				</div>
+			</CardContent>
+		</Card>
+	);
+}
+
+function TipCalc() {
+	const [bill, setBill] = useState("50");
+	const [pct, setPct] = useState("18");
+	const [people, setPeople] = useState("2");
+	const { tip, total, perPerson } = useMemo(() => {
+		const b = Number(bill);
+		const p = Number(pct) / 100;
+		const n = Number(people);
+		if (!Number.isFinite(b) || !Number.isFinite(p)) return { tip: "", total: "", perPerson: "" };
+		const t = b * p;
+		const tot = b + t;
+		const per = Number.isFinite(n) && n > 0 ? (tot / n).toFixed(2) : "";
+		return { tip: t.toFixed(2), total: tot.toFixed(2), perPerson: per };
+	}, [bill, pct, people]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Tip
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="tp-b" label="Bill amount" value={bill} onChange={setBill} type="number" />
+				<Field id="tp-p" label="Tip (%)" value={pct} onChange={setPct} type="number" />
+				<Field id="tp-n" label="Split between people" value={people} onChange={setPeople} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Tip: ${tip}`} />
+				<Input readOnly className="bg-muted/40" value={`Total: ${total}`} />
+				<div className="md:col-span-2">
+					<Field id="tp-per" label="Each person pays" value={perPerson} onChange={() => {}} />
+				</div>
+			</CardContent>
+		</Card>
+	);
+}
+
+function BmiCalc() {
+	const [weight, setWeight] = useState("70");
+	const [height, setHeight] = useState("175");
+	const { bmi, category } = useMemo(() => {
+		const w = Number(weight);
+		const hCm = Number(height);
+		if (!Number.isFinite(w) || !Number.isFinite(hCm) || hCm <= 0) return { bmi: "", category: "" };
+		const h = hCm / 100;
+		const value = w / (h * h);
+		if (!Number.isFinite(value)) return { bmi: "", category: "" };
+		let cat = "Normal weight";
+		if (value < 18.5) cat = "Underweight";
+		else if (value >= 25 && value < 30) cat = "Overweight";
+		else if (value >= 30) cat = "Obese";
+		return { bmi: value.toFixed(1), category: cat };
+	}, [weight, height]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Body Mass Index
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="bmi-w" label="Weight (kg)" value={weight} onChange={setWeight} type="number" />
+				<Field id="bmi-h" label="Height (cm)" value={height} onChange={setHeight} type="number" />
+				<Field id="bmi-v" label="BMI" value={bmi} onChange={() => {}} />
+				<Field id="bmi-c" label="Category" value={category} onChange={() => {}} />
+				<p className="text-xs text-muted-foreground md:col-span-2">
+					BMI is a general screening metric and does not account for muscle mass or body composition.
+				</p>
+			</CardContent>
+		</Card>
+	);
+}
+
+function FuelCostCalc() {
+	const [distance, setDistance] = useState("500");
+	const [economy, setEconomy] = useState("15");
+	const [price, setPrice] = useState("1.5");
+	const { fuel, cost } = useMemo(() => {
+		const d = Number(distance);
+		const e = Number(economy);
+		const p = Number(price);
+		if (!Number.isFinite(d) || !Number.isFinite(e) || !Number.isFinite(p) || e <= 0) return { fuel: "", cost: "" };
+		const used = d / e;
+		return { fuel: used.toFixed(2), cost: (used * p).toFixed(2) };
+	}, [distance, economy, price]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Trip fuel cost
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="fc-d" label="Distance (km)" value={distance} onChange={setDistance} type="number" />
+				<Field id="fc-e" label="Fuel economy (km per litre)" value={economy} onChange={setEconomy} type="number" />
+				<Field id="fc-p" label="Fuel price (per litre)" value={price} onChange={setPrice} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Fuel needed: ${fuel} L`} />
+				<div className="md:col-span-2">
+					<Field id="fc-c" label="Estimated trip cost" value={cost} onChange={() => {}} />
+				</div>
+			</CardContent>
+		</Card>
+	);
+}
+
+function InflationCalc() {
+	const [amount, setAmount] = useState("1000");
+	const [rate, setRate] = useState("3");
+	const [years, setYears] = useState("10");
+	const { future, power } = useMemo(() => {
+		const a = Number(amount);
+		const r = Number(rate) / 100;
+		const y = Number(years);
+		if (![a, r, y].every(Number.isFinite)) return { future: "", power: "" };
+		const factor = (1 + r) ** y;
+		return { future: (a * factor).toFixed(2), power: (a / factor).toFixed(2) };
+	}, [amount, rate, years]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Inflation impact
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="in-a" label="Amount today" value={amount} onChange={setAmount} type="number" />
+				<Field id="in-r" label="Annual inflation (%)" value={rate} onChange={setRate} type="number" />
+				<Field id="in-y" label="Years" value={years} onChange={setYears} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Nominal value needed: ${future}`} />
+				<div className="md:col-span-2">
+					<Field id="in-p" label="Future buying power of that amount" value={power} onChange={() => {}} />
+				</div>
+				<p className="text-xs text-muted-foreground md:col-span-2">
+					Shows both the amount you would need to keep pace, and what today's money would be worth later.
+				</p>
+			</CardContent>
+		</Card>
+	);
+}
+
+function BreakEvenCalc() {
+	const [fixed, setFixed] = useState("10000");
+	const [variable, setVariable] = useState("8");
+	const [price, setPrice] = useState("20");
+	const { units, revenue } = useMemo(() => {
+		const f = Number(fixed);
+		const v = Number(variable);
+		const p = Number(price);
+		const contribution = p - v;
+		if (![f, v, p].every(Number.isFinite) || contribution <= 0) return { units: "", revenue: "" };
+		const u = f / contribution;
+		return { units: Math.ceil(u).toString(), revenue: (u * p).toFixed(2) };
+	}, [fixed, variable, price]);
+	return (
+		<Card className="">
+			<CardHeader className="">
+				<CardTitle className="flex items-center gap-2 text-lg">
+					<Calculator className="h-5 w-5" />
+					Break-even point
+				</CardTitle>
+			</CardHeader>
+			<CardContent className="grid gap-4 md:grid-cols-2">
+				<Field id="be-f" label="Total fixed costs" value={fixed} onChange={setFixed} type="number" />
+				<Field id="be-v" label="Variable cost per unit" value={variable} onChange={setVariable} type="number" />
+				<Field id="be-p" label="Selling price per unit" value={price} onChange={setPrice} type="number" />
+				<Input readOnly className="bg-muted/40" value={`Break-even revenue: ${revenue}`} />
+				<div className="md:col-span-2">
+					<Field id="be-u" label="Units to break even" value={units} onChange={() => {}} />
+				</div>
+				<p className="text-xs text-muted-foreground md:col-span-2">
+					Requires selling price above variable cost. Each unit beyond break-even is profit.
+				</p>
 			</CardContent>
 		</Card>
 	);

@@ -10,6 +10,186 @@ export const getDynamicSEOContent = (tool) => {
 	const { name, category, id } = tool;
 
 	const toolSpecificOverrides = {
+		"compound-interest-calculator": {
+			article: `
+## Compound Interest Calculator — Watch Your Money Grow
+Compound interest is interest earned on both your original money and the interest already added. Over years, that compounding is what turns steady saving into real wealth. This calculator shows the future value of a starting amount, optional regular contributions, and the interest earned.
+
+### The Formula
+For a lump sum, Future Value = P · (1 + r/n)^(n·t), where P is the principal, r is the annual rate, n is the number of times interest compounds per year, and t is the number of years. Regular contributions are added using the future-value-of-an-annuity formula so recurring deposits are counted accurately.
+
+### Why Frequency Matters
+Compounding monthly instead of annually slightly increases your return, because interest starts earning interest sooner. The bigger lever, though, is time — starting a few years earlier often beats contributing more later.
+			`,
+			faqs: [
+				{ question: "What is compound interest?", answer: "Compound interest is interest calculated on your initial principal plus all the interest accumulated so far, so your balance grows faster over time than with simple interest." },
+				{ question: "How do regular contributions change the result?", answer: "Each recurring deposit also earns compound interest from the moment it is added, so consistent contributions can dwarf the starting amount over long periods." },
+				{ question: "Does compounding frequency make a big difference?", answer: "More frequent compounding increases returns slightly. Going from annual to monthly helps, but time invested and the contribution amount matter far more." },
+				{ question: "Is this calculator suitable for investments and savings?", answer: "Yes. It works for savings accounts, fixed deposits, and projected investment returns. Remember that investment returns vary year to year, so treat the result as an estimate." },
+			],
+		},
+		"mortgage-calculator": {
+			article: `
+## Mortgage Calculator — Your True Monthly Payment
+Before committing to a home, you need a clear picture of the monthly payment and the total interest over the life of the loan. This calculator takes the home price, down payment, interest rate, and term, and returns your principal-and-interest payment plus the total cost.
+
+### How It Is Calculated
+The loan amount is the home price minus your down payment. The monthly payment uses the standard amortization formula M = P · r · (1+r)^n / ((1+r)^n − 1), where r is the monthly rate and n is the number of monthly payments. Early payments are mostly interest; later ones are mostly principal.
+
+### What the Estimate Excludes
+This is principal and interest only. Your real monthly housing cost also includes property tax, homeowners insurance, and possibly PMI or HOA dues — add those separately for a full budget.
+			`,
+			faqs: [
+				{ question: "What does this mortgage calculator include?", answer: "It calculates principal and interest based on your loan amount, rate, and term. Property tax, insurance, PMI, and HOA fees are not included and should be added separately." },
+				{ question: "How does the down payment affect my payment?", answer: "A larger down payment reduces the loan amount, which lowers both the monthly payment and the total interest paid, and may help you avoid PMI." },
+				{ question: "Why is so much early payment interest?", answer: "With amortization, interest is charged on the remaining balance, which is highest at the start. As the balance falls, more of each payment goes to principal." },
+				{ question: "How much total interest will I pay?", answer: "The calculator shows total interest over the full term. A shorter term or lower rate reduces it substantially, even if the monthly payment is higher." },
+			],
+		},
+		"car-loan-calculator": {
+			article: `
+## Car Loan Calculator — Know the Real Cost of Driving Away
+Dealers often quote a monthly payment without showing the total interest. This calculator works out your monthly auto-loan payment and the total interest from the vehicle price, down payment, trade-in value, APR, and term.
+
+### How It Works
+The amount financed is the vehicle price minus your down payment and any trade-in. The monthly payment is then computed with standard amortization. A longer term lowers the monthly figure but increases total interest — and can leave you owing more than the car is worth.
+
+### Smart Buying
+Compare a 48-month and a 72-month term for the same car: the longer loan looks cheaper monthly but costs more overall. Use the total-interest figure, not just the monthly payment, to judge the real deal.
+			`,
+			faqs: [
+				{ question: "How is my car loan payment calculated?", answer: "The amount financed (price minus down payment and trade-in) is amortized over the loan term at your APR, giving a fixed monthly payment of principal and interest." },
+				{ question: "Should I choose a longer loan term?", answer: "A longer term lowers the monthly payment but increases total interest and the risk of negative equity. Pick the shortest term you can comfortably afford." },
+				{ question: "Does a trade-in reduce my payment?", answer: "Yes. A trade-in lowers the amount you finance, just like a down payment, which reduces both the monthly payment and total interest." },
+				{ question: "What APR should I enter?", answer: "Use the annual percentage rate offered by your lender or dealer. The calculator converts it to a monthly rate, so enter the annual figure directly." },
+			],
+		},
+		"roi-calculator": {
+			article: `
+## ROI Calculator — Measure What Your Investment Really Returned
+Return on investment (ROI) tells you how much you gained relative to what you put in. This calculator gives the total ROI, the net gain, and the annualized ROI so you can compare investments held for different lengths of time on equal footing.
+
+### The Formulas
+Total ROI = (Final Value − Initial Investment) ÷ Initial Investment × 100. Because a 50% return over one year is far better than 50% over ten, the annualized ROI uses (Final ÷ Initial)^(1/years) − 1 to express the yearly compound rate.
+
+### Why Annualized ROI Matters
+Two investments can show the same total ROI but very different annual performance. Annualizing puts them on a per-year basis, which is the fair way to compare a quick flip against a long-term hold.
+			`,
+			faqs: [
+				{ question: "How do I calculate ROI?", answer: "Subtract the initial investment from the final value, divide by the initial investment, and multiply by 100. A $1,000 investment worth $1,500 has a 50% ROI." },
+				{ question: "What is annualized ROI?", answer: "Annualized ROI expresses the return as a yearly compound rate, using (final ÷ initial) raised to the power of 1 over the number of years, minus one. It lets you compare different holding periods fairly." },
+				{ question: "Can ROI be negative?", answer: "Yes. If the final value is below the initial investment, ROI is negative, indicating a loss on the investment." },
+				{ question: "Does ROI account for fees and taxes?", answer: "This calculator uses your entered initial and final values. For a true net ROI, include fees, commissions, and taxes in those figures." },
+			],
+		},
+		"savings-goal-calculator": {
+			article: `
+## Savings Goal Calculator — Plan the Monthly Deposit to Hit Your Target
+Working toward a deposit, a holiday, or an emergency fund? This calculator tells you exactly how much to set aside each month to reach a specific goal by a target date, accounting for interest earned along the way.
+
+### How It Works
+It takes your goal amount, current savings, expected annual interest, and the number of months. Your current savings are grown forward with interest, and the remaining gap is solved as a regular monthly deposit using the future-value-of-an-annuity formula.
+
+### Make the Goal Realistic
+If the required monthly deposit is too high, extend the timeline, increase your starting amount, or seek a higher interest rate. Seeing the number makes the trade-offs concrete instead of vague.
+			`,
+			faqs: [
+				{ question: "How much should I save each month to reach my goal?", answer: "Enter your goal, current savings, expected interest, and timeline. The calculator solves for the fixed monthly deposit needed, after accounting for interest on your existing balance." },
+				{ question: "Does it include interest on my savings?", answer: "Yes. Your current savings grow with the annual rate you enter, and the required monthly deposit also earns interest, reducing how much you need to set aside." },
+				{ question: "What if the required deposit is too high?", answer: "Lengthen the timeline, raise your starting balance, or find a higher-yield account. Any of these lowers the monthly amount needed." },
+				{ question: "What interest rate should I use?", answer: "Use the realistic annual yield of where the money will sit — a savings account, fixed deposit, or conservative investment. If unsure, enter 0 to plan with deposits alone." },
+			],
+		},
+		"tip-calculator": {
+			article: `
+## Tip Calculator — Fair Tips and Easy Bill Splitting
+Quickly work out the gratuity on a bill, the new total, and how much each person owes when splitting. No mental math at the table — enter the bill, the tip percentage, and the number of people.
+
+### How It Works
+The tip is Bill × (tip% ÷ 100), the total is Bill + Tip, and the per-person amount is the total divided by the number of people. Adjust the percentage to match service quality or local custom.
+
+### Tipping Norms
+Customary tips vary by country and service. In the US, 15–20% at restaurants is typical; in many other places service is included or a smaller token is normal. Use the percentage that fits where you are.
+			`,
+			faqs: [
+				{ question: "How do I calculate a tip?", answer: "Multiply the bill by the tip percentage as a decimal. A 20% tip on a $50 bill is 50 × 0.20 = $10, for a $60 total." },
+				{ question: "How does bill splitting work?", answer: "The calculator divides the bill-plus-tip total by the number of people, so everyone pays an equal share including gratuity." },
+				{ question: "What is a standard tip percentage?", answer: "It varies by country. In the US, 15–20% is common at restaurants. Elsewhere, service may be included or a smaller amount is customary." },
+				{ question: "Should I tip on the pre-tax or post-tax amount?", answer: "Either is acceptable; tipping on the pre-tax subtotal is common. Enter whichever bill amount you prefer to base the tip on." },
+			],
+		},
+		"bmi-calculator": {
+			article: `
+## BMI Calculator — Body Mass Index in Seconds
+Body Mass Index is a quick screening number that relates your weight to your height. Enter your weight in kilograms and height in centimetres to get your BMI and the standard category it falls into.
+
+### How It Is Calculated
+BMI = weight (kg) ÷ height (m)². For example, 70 kg at 1.75 m is 70 ÷ 3.06 ≈ 22.9, which is in the normal range. The standard categories are: under 18.5 underweight, 18.5–24.9 normal, 25–29.9 overweight, and 30+ obese.
+
+### What BMI Does and Doesn't Tell You
+BMI is a useful general indicator for populations, but it does not distinguish muscle from fat or account for body composition, age, or sex. Athletes and very muscular people may read high despite low body fat. Treat it as a starting point, not a diagnosis.
+			`,
+			faqs: [
+				{ question: "How is BMI calculated?", answer: "BMI is your weight in kilograms divided by the square of your height in metres. The calculator does this automatically from the height and weight you enter." },
+				{ question: "What is a healthy BMI range?", answer: "A BMI between 18.5 and 24.9 is generally considered the normal range. Below 18.5 is underweight, 25–29.9 is overweight, and 30 or above is obese." },
+				{ question: "Is BMI accurate for everyone?", answer: "BMI is a general screening tool. It does not separate muscle from fat, so athletes may read high, and it does not account for age, sex, or body composition." },
+				{ question: "Is my health data kept private?", answer: "Yes. The BMI calculation runs entirely in your browser; your height and weight are never uploaded or stored." },
+			],
+		},
+		"fuel-cost-calculator": {
+			article: `
+## Fuel Cost Calculator — Budget Any Trip
+Planning a road trip or a daily commute? This calculator estimates how much fuel you'll use and what it will cost, from the distance, your vehicle's fuel economy, and the price per litre.
+
+### How It Works
+Fuel needed = Distance ÷ Fuel Economy (km per litre), and Cost = Fuel needed × Price per litre. A 500 km trip in a car doing 15 km/L at $1.50/L uses about 33.3 litres and costs roughly $50.
+
+### Save on Fuel
+Steady speeds, correct tyre pressure, and lighter loads all improve real-world economy. Comparing two routes or two vehicles in the calculator shows the cost difference before you set off.
+			`,
+			faqs: [
+				{ question: "How do I calculate trip fuel cost?", answer: "Divide the trip distance by your fuel economy to get litres used, then multiply by the price per litre. The calculator does both steps for you." },
+				{ question: "What if I know miles per gallon instead?", answer: "Convert to km per litre, or enter your distance and economy in consistent units. The math is the same: distance divided by economy gives the fuel used." },
+				{ question: "Does driving style affect the estimate?", answer: "Yes. Real economy depends on speed, traffic, terrain, and load. Use your vehicle's typical real-world figure rather than the optimistic sticker number." },
+				{ question: "Can I compare two routes?", answer: "Enter each route's distance separately to compare the fuel cost. A shorter route at higher speed can sometimes cost more than a longer, steadier one." },
+			],
+		},
+		"inflation-calculator": {
+			article: `
+## Inflation Calculator — What Your Money Will Really Be Worth
+Inflation quietly erodes purchasing power. This calculator shows two things: the nominal amount you'd need in the future to match today's value, and how much today's money will actually buy after years of inflation.
+
+### How It Works
+With an annual inflation rate r over t years, the inflation factor is (1 + r)^t. The amount needed to keep pace is Today × factor, while the future buying power of today's money is Today ÷ factor. At 3% for 10 years, $1,000 needs to become about $1,344 just to stand still.
+
+### Why It Matters
+Money left in a zero-interest account loses value every year. Seeing the erosion in concrete numbers is a strong argument for keeping long-term savings in something that at least matches inflation.
+			`,
+			faqs: [
+				{ question: "How does inflation affect my money?", answer: "Inflation raises prices over time, so the same amount of money buys less. The calculator shows both the future amount needed to keep pace and the reduced buying power of today's money." },
+				{ question: "What inflation rate should I use?", answer: "Use a long-term average for your country, often around 2–3%, or a higher figure if you want a more conservative projection." },
+				{ question: "What does 'future buying power' mean?", answer: "It is what today's money would be worth in real terms after inflation. At 3% for 10 years, $1,000 today would buy roughly $744 worth of goods." },
+				{ question: "How can I protect against inflation?", answer: "Keeping savings in accounts or investments that earn at least the inflation rate helps preserve purchasing power. Cash earning nothing loses value each year." },
+			],
+		},
+		"break-even-calculator": {
+			article: `
+## Break-Even Calculator — Find the Point Where You Start to Profit
+The break-even point is the number of units you must sell to cover all your costs. Below it you lose money; above it, every sale adds profit. This calculator finds the break-even units and revenue from your fixed costs, variable cost per unit, and selling price.
+
+### How It Works
+Each unit contributes Selling Price − Variable Cost toward fixed costs; this is the contribution margin. Break-even units = Fixed Costs ÷ Contribution Margin, and break-even revenue = units × Selling Price. If price doesn't exceed variable cost, you can never break even.
+
+### Use It for Pricing and Planning
+Test how a price increase, a cost cut, or lower fixed overhead changes your break-even point. A higher contribution margin means you reach profitability with fewer sales.
+			`,
+			faqs: [
+				{ question: "What is the break-even point?", answer: "It is the sales volume at which total revenue equals total costs, so profit is zero. Selling more than this produces profit; selling less produces a loss." },
+				{ question: "How do I calculate break-even units?", answer: "Divide your total fixed costs by the contribution margin per unit (selling price minus variable cost). The result is the number of units needed to cover all costs." },
+				{ question: "What is contribution margin?", answer: "It is the amount each unit contributes toward fixed costs after covering its own variable cost — the selling price minus the variable cost per unit." },
+				{ question: "What if the selling price is below the variable cost?", answer: "Then each sale loses money and you can never break even. You must raise the price or cut variable costs so the contribution margin is positive." },
+			],
+		},
 		"loan-calculator": {
 			article: `
 ## Loan Calculator — Know Your Real Monthly Payment
