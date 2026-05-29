@@ -10,6 +10,186 @@ export const getDynamicSEOContent = (tool) => {
 	const { name, category, id } = tool;
 
 	const toolSpecificOverrides = {
+		"loan-calculator": {
+			article: `
+## Loan Calculator — Know Your Real Monthly Payment
+Before you sign for a car, home, or personal loan, you need to know exactly what it costs each month and over the full term. This Loan Calculator uses the standard amortization formula so the monthly payment, total interest, and total repayment are accurate to the cent.
+
+### How the Monthly Payment Is Worked Out
+The payment is calculated as M = P · r · (1+r)^n / ((1+r)^n − 1), where P is the principal, r is the monthly interest rate (annual rate ÷ 12), and n is the number of monthly payments. A lower rate or a longer term reduces the monthly payment, but a longer term almost always increases the total interest you pay.
+
+### Use It to Compare Offers
+Enter the same principal with two different rates or terms and compare the total interest. A 0.5% rate difference on a 25-year mortgage can be tens of thousands over the life of the loan — this is where the calculator pays for itself.
+			`,
+			faqs: [
+				{ question: "Does this Loan Calculator include taxes and insurance?", answer: "No. It calculates principal and interest only. For a mortgage, add property tax, homeowners insurance, and any PMI separately to estimate your full monthly housing cost." },
+				{ question: "What interest rate should I enter?", answer: "Enter the annual percentage rate (APR) quoted by your lender. The calculator converts it to a monthly rate internally, so you do not need to divide it yourself." },
+				{ question: "Why does a longer term cost more overall?", answer: "A longer term lowers each monthly payment but means you pay interest for more months. The total interest, and therefore the total repaid, is higher even though the monthly amount is smaller." },
+				{ question: "Can I use this for car or personal loans?", answer: "Yes. The amortization math is identical for any fixed-rate installment loan — car, personal, student, or mortgage. Just enter the principal, rate, and term in months or years." },
+			],
+		},
+		"gst-calculator": {
+			article: `
+## GST Calculator — Add or Remove GST Instantly
+Whether you are pricing a product, raising an invoice, or checking a receipt, this GST Calculator handles both directions: adding GST to a base amount, and extracting GST from a GST-inclusive total.
+
+### Adding GST (Exclusive → Inclusive)
+If your base price is ₹1,000 and GST is 18%, the GST is ₹180 and the final price is ₹1,180. The calculator does this for any rate — 5%, 12%, 18%, or 28% — so you can quote accurate inclusive prices.
+
+### Removing GST (Inclusive → Exclusive)
+Given a GST-inclusive amount, the base is found with Base = Total ÷ (1 + rate). For an ₹1,180 total at 18%, the base is ₹1,000 and the GST portion is ₹180. This is essential for accounting and input-tax-credit calculations.
+			`,
+			faqs: [
+				{ question: "How do I remove GST from a total amount?", answer: "Divide the GST-inclusive total by (1 + GST rate). For 18% GST, divide by 1.18 to get the base amount, then subtract it from the total to find the GST portion." },
+				{ question: "Which GST rates does this calculator support?", answer: "Any rate you enter, including the common Indian slabs of 5%, 12%, 18%, and 28%, as well as custom rates for other regions." },
+				{ question: "Does it split GST into CGST and SGST?", answer: "The tool gives the total GST amount. For intra-state supplies you can split it equally — half CGST and half SGST — while inter-state supply uses IGST for the full amount." },
+				{ question: "Is the calculation done privately?", answer: "Yes. All GST math runs in your browser. No amounts, prices, or invoice figures are uploaded or stored." },
+			],
+		},
+		"sales-tax-calculator": {
+			article: `
+## Sales Tax Calculator — Exact Tax and Total
+Sales tax rates vary by state, county, and city, so a quick, accurate calculation matters whether you are a shopper checking a receipt or a seller pricing an item. Enter your net amount and tax rate to get the tax and the gross total instantly.
+
+### How It Works
+The tax is simply Net × (rate ÷ 100), and the gross is Net + Tax. For a $100 item at an 8.25% rate, the tax is $8.25 and the total is $108.25. Reverse the process to find a pre-tax price from a tax-inclusive total.
+
+### Why Rates Differ
+US sales tax is set at multiple levels and combined into one rate at checkout, which is why your effective rate may be 8.25% rather than a round state figure. Always use the combined rate for your exact location.
+			`,
+			faqs: [
+				{ question: "How do I calculate sales tax on a price?", answer: "Multiply the net price by the tax rate expressed as a decimal. For 8.25%, multiply by 0.0825, then add the result to the net price for the total." },
+				{ question: "How do I find the pre-tax price from a total?", answer: "Divide the tax-inclusive total by (1 + rate). For an 8.25% rate, divide the total by 1.0825 to recover the original pre-tax price." },
+				{ question: "What sales tax rate should I use?", answer: "Use the combined state, county, and city rate for the buyer's location, since US sales tax is layered across jurisdictions and charged as a single combined rate." },
+				{ question: "Is sales tax the same as VAT or GST?", answer: "They are similar consumption taxes but applied differently. Sales tax is charged once at the final sale, while VAT and GST are collected at each stage of the supply chain." },
+			],
+		},
+		"paypal-fee-calculator": {
+			article: `
+## PayPal Fee Calculator — See Your Real Take-Home
+PayPal deducts a percentage plus a fixed fee from each payment you receive, so the amount that lands in your balance is always less than the amount sent. This calculator shows your net after fees, and can also tell you what to charge so you receive an exact amount.
+
+### How PayPal Fees Work
+A typical fee is a percentage of the transaction (commonly around 2.9% for many regions) plus a small fixed fee per transaction. On a $100 payment at 2.9% + $0.30, the fee is $3.20 and you receive $96.80.
+
+### Charging So You Net a Target Amount
+To receive a specific amount after fees, gross up the price: Gross = (Target + fixed fee) ÷ (1 − percentage). This is how freelancers and sellers make sure invoices clear at the full intended value.
+			`,
+			faqs: [
+				{ question: "How much does PayPal take per transaction?", answer: "PayPal typically charges a percentage of the payment plus a fixed fee. The exact percentage and fixed amount depend on your country and transaction type, which you can enter in the calculator." },
+				{ question: "How do I charge so I receive the full amount?", answer: "Gross up the invoice: add the fixed fee to your target, then divide by (1 minus the percentage as a decimal). The calculator does this so the net after fees equals your target." },
+				{ question: "Are PayPal fees different for international payments?", answer: "Yes. Cross-border payments and currency conversion usually add to the standard fee. Enter the higher percentage that applies to international transactions for an accurate estimate." },
+				{ question: "Does the fee come out of the sender or receiver?", answer: "For standard goods-and-services payments the receiver pays the fee, which is why your net is lower than the amount sent. This calculator estimates that receiver-side deduction." },
+			],
+		},
+		"margin-calculator": {
+			article: `
+## Margin Calculator — Price for Profit, Not Guesswork
+Profit margin and markup are easy to confuse, and mixing them up can quietly erode your earnings. This Margin Calculator works out selling price, profit, and margin percentage from your cost so every product is priced deliberately.
+
+### Margin vs. Markup
+Margin is profit as a percentage of the selling price; markup is profit as a percentage of cost. A 50% markup on a $10 cost gives a $15 price — but that is only a 33.3% margin. Knowing the difference protects your bottom line.
+
+### The Formulas
+Selling price = Cost ÷ (1 − margin%). Profit = Selling price − Cost. Margin% = Profit ÷ Selling price. Enter any cost and target margin to get a price you can sell at confidently.
+			`,
+			faqs: [
+				{ question: "What is the difference between margin and markup?", answer: "Margin is profit divided by the selling price; markup is profit divided by the cost. The same dollar profit is a smaller margin percentage than markup percentage." },
+				{ question: "How do I price an item for a target margin?", answer: "Divide your cost by (1 minus the target margin as a decimal). For a 40% margin on a $30 cost, divide 30 by 0.6 to get a $50 selling price." },
+				{ question: "Can margin be over 100%?", answer: "No. Because margin is a share of the selling price, it approaches but never reaches 100%. Markup, which is based on cost, can exceed 100%." },
+				{ question: "Why does pricing for profit matter so much?", answer: "Small pricing errors compound across every unit sold. Setting price from a target margin ensures each sale contributes the profit you actually planned for." },
+			],
+		},
+		"percentage-calculator": {
+			article: `
+## Percentage Calculator — Every Percent Question, Solved
+From discounts and tips to grade scores and statistics, percentages come up constantly. This calculator handles the common cases: what is X% of Y, X is what percent of Y, and percentage increase or decrease between two numbers.
+
+### The Three Core Calculations
+X% of Y = (X ÷ 100) × Y. To find what percent A is of B, compute (A ÷ B) × 100. For change between an old and new value, use ((New − Old) ÷ Old) × 100, which is positive for an increase and negative for a decrease.
+
+### Everyday Uses
+Work out a 20% tip, a 15%-off sale price, your score as a percentage of total marks, or the percentage growth between last month and this month — all without reaching for a formula.
+			`,
+			faqs: [
+				{ question: "How do I calculate what percent one number is of another?", answer: "Divide the part by the whole and multiply by 100. For example, 30 out of 120 is (30 ÷ 120) × 100 = 25%." },
+				{ question: "How do I calculate percentage increase?", answer: "Subtract the old value from the new value, divide by the old value, and multiply by 100. A rise from 200 to 250 is ((250 − 200) ÷ 200) × 100 = 25%." },
+				{ question: "How do I find a percentage of a number?", answer: "Convert the percentage to a decimal and multiply. 18% of 250 is 0.18 × 250 = 45." },
+				{ question: "Can I use this for discounts and tips?", answer: "Yes. For a discount, find the percentage of the price and subtract it. For a tip, find the percentage of the bill and add it." },
+			],
+		},
+		"discount-calculator": {
+			article: `
+## Discount Calculator — Sale Price and Savings at a Glance
+See exactly what you pay after a discount and how much you save. Enter the original price and the discount percentage to get the final price and the amount saved instantly.
+
+### How It Works
+The saving is Original × (discount% ÷ 100), and the sale price is Original − Saving. A 25% discount on a $80 item saves $20, so you pay $60. You can also stack a second percentage to model "extra 10% off" promotions.
+
+### Smart Shopping
+Use it to compare deals that are framed differently — a "buy one get one 50% off" versus a flat 25% off the pair often work out the same. Calculating the real per-item price makes the better deal obvious.
+			`,
+			faqs: [
+				{ question: "How do I calculate a discount price?", answer: "Multiply the original price by the discount percentage as a decimal to get the saving, then subtract it from the original. A 30% discount on $50 saves $15, so you pay $35." },
+				{ question: "How do I work out two stacked discounts?", answer: "Apply them in sequence, not by adding the percentages. An extra 10% off after 20% off is 0.8 × 0.9 = 0.72 of the original, a 28% total discount, not 30%." },
+				{ question: "How do I find the original price from a sale price?", answer: "Divide the sale price by (1 minus the discount as a decimal). A $60 price after 25% off was originally 60 ÷ 0.75 = $80." },
+				{ question: "Is the discount calculation private?", answer: "Yes, everything is computed in your browser. No prices or figures are sent to a server." },
+			],
+		},
+		"cpm-calculator": {
+			article: `
+## CPM Calculator — Cost Per Thousand Impressions
+CPM (cost per mille) is the standard way to price and compare display advertising. This calculator works in all three directions: find CPM from cost and impressions, find cost from CPM and impressions, or find impressions from a budget and CPM.
+
+### The Formula
+CPM = (Total Cost ÷ Impressions) × 1,000. So $500 spent for 250,000 impressions is a $2 CPM. To plan a campaign, Impressions = (Budget ÷ CPM) × 1,000, and Cost = (CPM × Impressions) ÷ 1,000.
+
+### Why Publishers and Buyers Use It
+CPM lets you compare ad placements of very different sizes on equal footing, and lets publishers estimate revenue from expected traffic. It is the core metric behind most programmatic and direct ad deals.
+			`,
+			faqs: [
+				{ question: "What does CPM mean?", answer: "CPM stands for cost per mille, or cost per thousand impressions. It is the price an advertiser pays for one thousand views of an ad." },
+				{ question: "How do I calculate CPM?", answer: "Divide the total campaign cost by the number of impressions, then multiply by 1,000. $300 for 150,000 impressions is a $2 CPM." },
+				{ question: "How many impressions can my budget buy?", answer: "Divide your budget by the CPM and multiply by 1,000. At a $4 CPM, a $1,000 budget buys 250,000 impressions." },
+				{ question: "Is CPM the same as CPC?", answer: "No. CPM charges per thousand impressions regardless of clicks, while CPC (cost per click) charges only when someone clicks the ad." },
+			],
+		},
+		"age-calculator": {
+			article: `
+## Age Calculator — Exact Age in Years, Months, and Days
+Find an exact age from a date of birth, accounting for leap years and varying month lengths. Useful for forms, eligibility checks, and milestones where "about X years" is not precise enough.
+
+### How It Calculates
+The tool compares the date of birth to today's date and breaks the difference into completed years, months, and days, correctly handling leap years (Feb 29) and months of different lengths. The result is the age you would state on an official document.
+
+### Common Uses
+Check age for exam or job eligibility, calculate how many days until a birthday, or work out the precise gap between two dates for legal, medical, or scheduling purposes.
+			`,
+			faqs: [
+				{ question: "Does the Age Calculator account for leap years?", answer: "Yes. It correctly counts February 29 in leap years and handles months of different lengths, so the day count is exact rather than an approximation." },
+				{ question: "Can I calculate age on a future or past date?", answer: "It calculates age as of today by default. The difference is measured in completed years, months, and days from the date of birth to the current date." },
+				{ question: "Is my date of birth stored anywhere?", answer: "No. The calculation runs entirely in your browser and the date you enter is never uploaded, logged, or shared." },
+				{ question: "Why does my age in days seem high?", answer: "A single year is about 365.25 days, so even a few decades adds up to many thousands of days. The calculator shows the precise total based on actual calendar dates." },
+			],
+		},
+		"adsense-calculator": {
+			article: `
+## AdSense Revenue Calculator — Estimate Your Earnings
+Plan and project display-ad income from three inputs: monthly page views, click-through rate (CTR), and cost per click (CPC). It is a planning tool — actual AdSense earnings depend on your niche, traffic quality, and advertiser demand.
+
+### How the Estimate Is Built
+Estimated clicks = Page views × (CTR ÷ 100). Estimated revenue = Clicks × CPC. For 100,000 views at a 2% CTR and $0.30 CPC, that is 2,000 clicks and roughly $600. You can also reason in RPM (revenue per thousand views) to sanity-check the result.
+
+### Use It to Set Realistic Goals
+Work backwards from an income target to see how much traffic or what CPC you would need. This makes it clear that growing traffic and improving niche/CPC both move the needle — and why low-CPC, low-intent traffic earns little even at high volume.
+			`,
+			faqs: [
+				{ question: "How is AdSense revenue estimated?", answer: "Multiply page views by CTR to get clicks, then multiply clicks by CPC. The result is an estimate; real earnings vary with niche, season, and advertiser competition." },
+				{ question: "What is a realistic CTR and CPC?", answer: "CTR for display ads is often well under 2%, and CPC varies hugely by topic — finance and insurance pay far more than entertainment. Use figures from your own AdSense reports for the best estimate." },
+				{ question: "Why are my real earnings different from the estimate?", answer: "AdSense pays on actual advertiser bids, ad fill rate, invalid-traffic filtering, and revenue share. The calculator is a planning guide, not a guarantee." },
+				{ question: "How can I increase AdSense revenue?", answer: "Grow qualified traffic, target higher-CPC topics, improve page experience and ad viewability, and keep content within policy so ads serve reliably." },
+			],
+		},
 		"amazon-ses-api-key-tester": {
 			article: `
 ## Securely Verify Your Amazon SES Credentials
