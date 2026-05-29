@@ -5,14 +5,14 @@ import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata = {
 	title: "Free Contact Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Contact online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+	description: "Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your...",
 	keywords: "contact 30tools, support, feedback, help, contact, free contact, contact online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
 	alternates: {
 		canonical: "https://30tools.com/contact",
 	},
 	openGraph: {
 		title: "Free Contact Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Contact online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your...",
 		url: "https://30tools.com/contact",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Contact Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Contact online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

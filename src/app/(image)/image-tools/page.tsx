@@ -3,14 +3,14 @@ import ImagePillar from "@/components/pillars/ImagePillar";
 
 export const metadata = {
 	title: "Free Free Image Tools Online Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Free Image Tools Online online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
+	description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
 	keywords: "image tools, free image tools online, image compressor free, remove background online, resize image for instagram, photo enhancer free, convert heic to jpg, 30tools image",
 	alternates: {
 		canonical: "https://30tools.com/image-tools",
 	},
 	openGraph: {
 		title: "Free Free Image Tools Online Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Free Image Tools Online online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
+		description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
 		url: "https://30tools.com/image-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Free Image Tools Online Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Free Image Tools Online online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
+		description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

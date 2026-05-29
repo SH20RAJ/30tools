@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Channel Logo Downloader Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free YouTube Channel Logo Downloader online. Fast, secure browser-based utility with no registration.",
+	description: "Download high-quality YouTube channel logos and profile pictures instantly. Perfect for brand audits and design research. Free, fast, and secure online...",
 	keywords: "youtube channel logo downloader, free online tool, no signup, youtube-channel-logo-downloader, free youtube-channel-logo-downloader, Youtube Channel Logo Downloader online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-logo-downloader",
 	},
 	openGraph: {
 		title: "Free YouTube Channel Logo Downloader Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel Logo Downloader online. Fast, secure browser-based utility with no registration.",
+		description: "Download high-quality YouTube channel logos and profile pictures instantly. Perfect for brand audits and design research. Free, fast, and secure online...",
 		url: "https://30tools.com/youtube-channel-logo-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free YouTube Channel Logo Downloader Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel Logo Downloader online. Fast, secure browser-based utility with no registration.",
+		description: "Download high-quality YouTube channel logos and profile pictures instantly. Perfect for brand audits and design research. Free, fast, and secure online...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -9,14 +9,14 @@ import { Terminal, ArrowRight } from "lucide-react";
 
 export const metadata = {
 	title: "Free Developer Tools Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Developer Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
+	description: "Format JSON, generate hashes, and developer utilities",
 	keywords: "developer tools, json formatter, base64 encoder, api tester, online dev tools, 30tools, developer-tools, free developer-tools, developer tools online, developer tool, online code utility, free developer tool",
 	alternates: {
 		canonical: "https://30tools.com/developer-tools",
 	},
 	openGraph: {
 		title: "Free Developer Tools Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Developer Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
+		description: "Format JSON, generate hashes, and developer utilities",
 		url: "https://30tools.com/developer-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -25,7 +25,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Developer Tools Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Developer Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
+		description: "Format JSON, generate hashes, and developer utilities",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

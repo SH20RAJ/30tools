@@ -5,14 +5,14 @@ import ConstructionCalculator from "@/components/tools/calculators/ConstructionC
 
 export const metadata = {
 	title: "Free Tile Calculator Online - No Signup | 30tools",
-	description: "Compute rates, taxes, averages, and conversions with our free Tile Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+	description: "Calculate the total number of floor or wall tiles needed for a room, including waste margins and cost estimates.",
 	keywords: "tile-calculator, Tile Calculator, flooring tiles estimator, tiles needed for room, floor area calculator, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/tile-calculator",
 	},
 	openGraph: {
 		title: "Free Tile Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free Tile Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Calculate the total number of floor or wall tiles needed for a room, including waste margins and cost estimates.",
 		url: "https://30tools.com/tile-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Tile Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free Tile Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Calculate the total number of floor or wall tiles needed for a room, including waste margins and cost estimates.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

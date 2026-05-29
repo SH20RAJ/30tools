@@ -5,14 +5,14 @@ import AcademicGradesCalculator from "@/components/tools/calculators/AcademicGra
 
 export const metadata = {
 	title: "Free CGPA to Percentage Calculator Online - No Signup | 30tools",
-	description: "Compute rates, taxes, averages, and conversions with our free CGPA to Percentage Calculator online. Quick, accurate browser calculator with no registration.",
+	description: "Convert your CGPA to equivalent percentage marks using standard university formulas (like CBSE 9.5x).",
 	keywords: "cgpa-to-percentage-calculator, CGPA to Percentage Calculator, convert cgpa to percentage, cgpa to percent CBSE, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/cgpa-to-percentage-calculator",
 	},
 	openGraph: {
 		title: "Free CGPA to Percentage Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free CGPA to Percentage Calculator online. Quick, accurate browser calculator with no registration.",
+		description: "Convert your CGPA to equivalent percentage marks using standard university formulas (like CBSE 9.5x).",
 		url: "https://30tools.com/cgpa-to-percentage-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free CGPA to Percentage Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free CGPA to Percentage Calculator online. Quick, accurate browser calculator with no registration.",
+		description: "Convert your CGPA to equivalent percentage marks using standard university formulas (like CBSE 9.5x).",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

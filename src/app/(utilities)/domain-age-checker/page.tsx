@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Domain Age Checker Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Domain Age Checker online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+	description: "Find the exact age of any domain name instantly. Our free online tool helps with SEO research, domain appraisal, and competitive analysis.",
 	keywords: "domain age checker, free online tool, no signup, domain-age-checker, free domain-age-checker, Domain Age Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/domain-age-checker",
 	},
 	openGraph: {
 		title: "Free Domain Age Checker Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Domain Age Checker online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Find the exact age of any domain name instantly. Our free online tool helps with SEO research, domain appraisal, and competitive analysis.",
 		url: "https://30tools.com/domain-age-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Domain Age Checker Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Domain Age Checker online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Find the exact age of any domain name instantly. Our free online tool helps with SEO research, domain appraisal, and competitive analysis.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

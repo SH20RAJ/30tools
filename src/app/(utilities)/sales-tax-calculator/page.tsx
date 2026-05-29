@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Sales Tax Calculator Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Sales Tax Calculator online. Fast, secure browser-based utility with no registration. No signup required.",
+	description: "Free sales tax calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "sales tax calculator, free online tool, no signup, sales-tax-calculator, free sales-tax-calculator, Sales Tax Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/sales-tax-calculator",
 	},
 	openGraph: {
 		title: "Free Sales Tax Calculator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Sales Tax Calculator online. Fast, secure browser-based utility with no registration. No signup required.",
+		description: "Free sales tax calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 		url: "https://30tools.com/sales-tax-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Sales Tax Calculator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Sales Tax Calculator online. Fast, secure browser-based utility with no registration. No signup required.",
+		description: "Free sales tax calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

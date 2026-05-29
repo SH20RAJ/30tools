@@ -5,14 +5,14 @@ import AcademicGradesCalculator from "@/components/tools/calculators/AcademicGra
 
 export const metadata = {
 	title: "Free SGPA Calculator Online - No Signup | 30tools",
-	description: "Compute rates, taxes, averages, and conversions with our free SGPA Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+	description: "Compute your Semester Grade Point Average (SGPA) based on course credits and grade points earned.",
 	keywords: "sgpa-calculator, SGPA Calculator, calculate sgpa, credit point calculator, semester grade calculator, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/sgpa-calculator",
 	},
 	openGraph: {
 		title: "Free SGPA Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free SGPA Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Compute your Semester Grade Point Average (SGPA) based on course credits and grade points earned.",
 		url: "https://30tools.com/sgpa-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free SGPA Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free SGPA Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Compute your Semester Grade Point Average (SGPA) based on course credits and grade points earned.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

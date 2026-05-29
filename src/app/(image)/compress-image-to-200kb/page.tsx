@@ -5,14 +5,14 @@ import ExamPhotoResizer from "@/components/tools/exam/ExamPhotoResizer";
 
 export const metadata = {
 	title: "Free Compress Image to 200KB Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Compress Image to 200KB online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
+	description: "Compress any image file (JPG, PNG, WebP) to fit strictly under 200KB while maintaining the best possible visual clarity.",
 	keywords: "compress-image-to-200kb, Compress Image to 200KB",
 	alternates: {
 		canonical: "https://30tools.com/compress-image-to-200kb",
 	},
 	openGraph: {
 		title: "Free Compress Image to 200KB Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Compress Image to 200KB online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
+		description: "Compress any image file (JPG, PNG, WebP) to fit strictly under 200KB while maintaining the best possible visual clarity.",
 		url: "https://30tools.com/compress-image-to-200kb",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Compress Image to 200KB Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Compress Image to 200KB online. Crop, resize, and optimize photos in your browser with no signup. Easy to use.",
+		description: "Compress any image file (JPG, PNG, WebP) to fit strictly under 200KB while maintaining the best possible visual clarity.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

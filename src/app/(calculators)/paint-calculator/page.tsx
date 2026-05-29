@@ -5,14 +5,14 @@ import ConstructionCalculator from "@/components/tools/calculators/ConstructionC
 
 export const metadata = {
 	title: "Free Paint Calculator Online - No Signup | 30tools",
-	description: "Compute rates, taxes, averages, and conversions with our free Paint Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+	description: "Estimate the amount of paint in liters and estimated cost needed to cover walls, rooms, or ceilings.",
 	keywords: "paint-calculator, Paint Calculator, how much paint do I need, wall paint calculator, paint room estimator, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/paint-calculator",
 	},
 	openGraph: {
 		title: "Free Paint Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free Paint Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Estimate the amount of paint in liters and estimated cost needed to cover walls, rooms, or ceilings.",
 		url: "https://30tools.com/paint-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Paint Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free Paint Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Estimate the amount of paint in liters and estimated cost needed to cover walls, rooms, or ceilings.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

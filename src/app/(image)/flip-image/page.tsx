@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Flip Image Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Flip Image online. Crop, resize, and optimize photos in your browser with no signup. 100% free and easy to use.",
+	description: "Free flip image tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "flip image, free online tool, no signup, flip-image, free flip-image, Flip Image online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/flip-image",
 	},
 	openGraph: {
 		title: "Free Flip Image Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Flip Image online. Crop, resize, and optimize photos in your browser with no signup. 100% free and easy to use.",
+		description: "Free flip image tool to process your data instantly with privacy-friendly browser-based workflows.",
 		url: "https://30tools.com/flip-image",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Flip Image Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Flip Image online. Crop, resize, and optimize photos in your browser with no signup. 100% free and easy to use.",
+		description: "Free flip image tool to process your data instantly with privacy-friendly browser-based workflows.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

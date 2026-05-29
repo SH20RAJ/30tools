@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Random UUID Generator Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Random UUID Generator online. Fast, secure browser-based utility with no registration. No signup required.",
+	description: "Free random uuid generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "random uuid generator, free online tool, no signup, random-uuid-generator, free random-uuid-generator, Random Uuid Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/random-uuid-generator",
 	},
 	openGraph: {
 		title: "Free Random UUID Generator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Random UUID Generator online. Fast, secure browser-based utility with no registration. No signup required.",
+		description: "Free random uuid generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 		url: "https://30tools.com/random-uuid-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Random UUID Generator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Random UUID Generator online. Fast, secure browser-based utility with no registration. No signup required.",
+		description: "Free random uuid generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

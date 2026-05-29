@@ -4,14 +4,14 @@ import toolsData from "@/constants/tools.json";
 
 export const metadata = {
 	title: "Free Search All Tools Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Search All Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
+	description: "Search and browse our collection of 300+ free online tools. 100% free, no signup required.",
 	keywords: "search online tools, free online tools, 30tools search, image tool search, pdf tool search, seo tools directory, developer utilities, search, free search, search online, 30tools, browser tools",
 	alternates: {
 		canonical: "https://30tools.com/search",
 	},
 	openGraph: {
 		title: "Free Search All Tools Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Search All Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
+		description: "Search and browse our collection of 300+ free online tools. 100% free, no signup required.",
 		url: "https://30tools.com/search",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -20,7 +20,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Search All Tools Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Search All Tools online. Fast, secure browser-based utility with no registration. No registration needed.",
+		description: "Search and browse our collection of 300+ free online tools. 100% free, no signup required.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

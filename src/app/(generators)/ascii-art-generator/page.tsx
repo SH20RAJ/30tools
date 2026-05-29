@@ -5,14 +5,14 @@ import AsciiArtGeneratorTool from "@/components/tools/generators/AsciiArtGenerat
 
 export const metadata = {
 	title: "Free ASCII Art Generator Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free ASCII Art Generator online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+	description: "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
 	keywords: "ascii-art-generator, Ascii Art Generator, free ascii-art-generator, Ascii Art Generator online, online generator, content creator, free maker, creative tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/ascii-art-generator",
 	},
 	openGraph: {
 		title: "Free ASCII Art Generator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free ASCII Art Generator online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
 		url: "https://30tools.com/ascii-art-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free ASCII Art Generator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free ASCII Art Generator online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

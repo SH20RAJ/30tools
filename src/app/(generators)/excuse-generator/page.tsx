@@ -3,14 +3,14 @@ import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
 	title: "Free Excuse Generator Online - No Signup | 30tools",
-	description: "Create custom content with our free Excuse Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+	description: "Generate creative excuses for any situation.",
 	keywords: "excuse, generator, free excuse generator, online excuse generator, 30tools, excuse-generator, excuse generator, free excuse-generator, excuse generator online, online generator, free creator, content generator",
 	alternates: {
 		canonical: "https://30tools.com/excuse-generator",
 	},
 	openGraph: {
 		title: "Free Excuse Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Excuse Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		description: "Generate creative excuses for any situation.",
 		url: "https://30tools.com/excuse-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Excuse Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Excuse Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		description: "Generate creative excuses for any situation.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free IndexNow Submitter Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free IndexNow Submitter online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+	description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
 	keywords: "indexnow submitter, free online tool, no signup, indexnow, free indexnow, Indexnow online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/indexnow",
 	},
 	openGraph: {
 		title: "Free IndexNow Submitter Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free IndexNow Submitter online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
 		url: "https://30tools.com/indexnow",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free IndexNow Submitter Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free IndexNow Submitter online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

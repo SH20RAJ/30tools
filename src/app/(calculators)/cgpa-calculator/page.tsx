@@ -5,14 +5,14 @@ import AcademicGradesCalculator from "@/components/tools/calculators/AcademicGra
 
 export const metadata = {
 	title: "Free CGPA Calculator Online - No Signup | 30tools",
-	description: "Compute rates, taxes, averages, and conversions with our free CGPA Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+	description: "Calculate your Cumulative Grade Point Average (CGPA) from semester-wise SGPA or grade points.",
 	keywords: "cgpa-calculator, CGPA Calculator, calculate cgpa, semester cgpa calculator, cumulative grade point average, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/cgpa-calculator",
 	},
 	openGraph: {
 		title: "Free CGPA Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free CGPA Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Calculate your Cumulative Grade Point Average (CGPA) from semester-wise SGPA or grade points.",
 		url: "https://30tools.com/cgpa-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free CGPA Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free CGPA Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Calculate your Cumulative Grade Point Average (CGPA) from semester-wise SGPA or grade points.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

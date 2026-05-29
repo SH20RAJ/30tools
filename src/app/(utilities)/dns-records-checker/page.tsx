@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free DNS Records Checker Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free DNS Records Checker online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+	description: "Retrieve all DNS records (A, MX, TXT, CNAME) for any domain instantly. Our free online tool helps you troubleshoot website hosting and email configuration...",
 	keywords: "dns records checker, free online tool, no signup, dns-records-checker, free dns-records-checker, Dns Records Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/dns-records-checker",
 	},
 	openGraph: {
 		title: "Free DNS Records Checker Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free DNS Records Checker online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Retrieve all DNS records (A, MX, TXT, CNAME) for any domain instantly. Our free online tool helps you troubleshoot website hosting and email configuration...",
 		url: "https://30tools.com/dns-records-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free DNS Records Checker Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free DNS Records Checker online. Fast, secure browser-based utility with no registration. 100% free and secure.",
+		description: "Retrieve all DNS records (A, MX, TXT, CNAME) for any domain instantly. Our free online tool helps you troubleshoot website hosting and email configuration...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

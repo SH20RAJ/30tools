@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Channel Age Checker Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free YouTube Channel Age Checker online. Fast, secure browser-based utility with no registration. Easy to use.",
+	description: "Find the exact creation date of any YouTube channel with our free online Age Checker. Perfect for creator research, account verification, and competitive...",
 	keywords: "youtube channel age checker, free online tool, no signup, youtube-channel-age-checker, free youtube-channel-age-checker, Youtube Channel Age Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-age-checker",
 	},
 	openGraph: {
 		title: "Free YouTube Channel Age Checker Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel Age Checker online. Fast, secure browser-based utility with no registration. Easy to use.",
+		description: "Find the exact creation date of any YouTube channel with our free online Age Checker. Perfect for creator research, account verification, and competitive...",
 		url: "https://30tools.com/youtube-channel-age-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free YouTube Channel Age Checker Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel Age Checker online. Fast, secure browser-based utility with no registration. Easy to use.",
+		description: "Find the exact creation date of any YouTube channel with our free online Age Checker. Perfect for creator research, account verification, and competitive...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

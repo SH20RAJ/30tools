@@ -5,14 +5,14 @@ import ConstructionCalculator from "@/components/tools/calculators/ConstructionC
 
 export const metadata = {
 	title: "Free Brick Calculator Online - No Signup | 30tools",
-	description: "Compute rates, taxes, averages, and conversions with our free Brick Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+	description: "Calculate the total number of bricks, cement bags, and sand volume required for building a wall.",
 	keywords: "brick-calculator, Brick Calculator, bricks needed for wall, cement sand calculator, construction calculator, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/brick-calculator",
 	},
 	openGraph: {
 		title: "Free Brick Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free Brick Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Calculate the total number of bricks, cement bags, and sand volume required for building a wall.",
 		url: "https://30tools.com/brick-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Brick Calculator Online - No Signup | 30tools",
-		description: "Compute rates, taxes, averages, and conversions with our free Brick Calculator online. Quick, accurate browser calculator with no registration. Try it free now.",
+		description: "Calculate the total number of bricks, cement bags, and sand volume required for building a wall.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

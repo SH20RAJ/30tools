@@ -5,14 +5,14 @@ import ResizeImageCm from "@/components/tools/image/ResizeImageCm";
 
 export const metadata = {
 	title: "Free Resize Image in MM Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Resize Image in MM online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+	description: "Resize your images by specifying width and height in millimeters (mm) for printing, exam forms, and documents.",
 	keywords: "resize-image-in-mm, Resize Image in MM",
 	alternates: {
 		canonical: "https://30tools.com/resize-image-in-mm",
 	},
 	openGraph: {
 		title: "Free Resize Image in MM Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Resize Image in MM online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+		description: "Resize your images by specifying width and height in millimeters (mm) for printing, exam forms, and documents.",
 		url: "https://30tools.com/resize-image-in-mm",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Resize Image in MM Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Resize Image in MM online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+		description: "Resize your images by specifying width and height in millimeters (mm) for printing, exam forms, and documents.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

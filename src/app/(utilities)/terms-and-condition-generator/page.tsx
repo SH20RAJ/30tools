@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Terms And Condition Generator Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Terms And Condition Generator online. Fast, secure browser-based utility with no registration. 100% free.",
+	description: "Free terms and condition generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "terms and condition generator, free online tool, no signup, terms-and-condition-generator, free terms-and-condition-generator, Terms And Condition Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/terms-and-condition-generator",
 	},
 	openGraph: {
 		title: "Free Terms And Condition Generator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Terms And Condition Generator online. Fast, secure browser-based utility with no registration. 100% free.",
+		description: "Free terms and condition generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 		url: "https://30tools.com/terms-and-condition-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Terms And Condition Generator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Terms And Condition Generator online. Fast, secure browser-based utility with no registration. 100% free.",
+		description: "Free terms and condition generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Channel ID Extractor Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free YouTube Channel ID Extractor online. Fast, secure browser-based utility with no registration. Easy to use.",
+	description: "Extract the unique Channel ID from any YouTube URL instantly. Perfect for developer API calls, marketing automation, and third-party tool integrations...",
 	keywords: "youtube channel id extractor, free online tool, no signup, youtube-channel-id-extractor, free youtube-channel-id-extractor, Youtube Channel Id Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-id-extractor",
 	},
 	openGraph: {
 		title: "Free YouTube Channel ID Extractor Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel ID Extractor online. Fast, secure browser-based utility with no registration. Easy to use.",
+		description: "Extract the unique Channel ID from any YouTube URL instantly. Perfect for developer API calls, marketing automation, and third-party tool integrations...",
 		url: "https://30tools.com/youtube-channel-id-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free YouTube Channel ID Extractor Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel ID Extractor online. Fast, secure browser-based utility with no registration. Easy to use.",
+		description: "Extract the unique Channel ID from any YouTube URL instantly. Perfect for developer API calls, marketing automation, and third-party tool integrations...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

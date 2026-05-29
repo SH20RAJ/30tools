@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free What Is My User Agent Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free What Is My User Agent online. Fast, secure browser-based utility with no registration. No signup required.",
+	description: "Free what is my user agent tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "what is my user agent, free online tool, no signup, what-is-my-user-agent, free what-is-my-user-agent, What Is My User Agent online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/what-is-my-user-agent",
 	},
 	openGraph: {
 		title: "Free What Is My User Agent Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free What Is My User Agent online. Fast, secure browser-based utility with no registration. No signup required.",
+		description: "Free what is my user agent tool to process your data instantly with privacy-friendly browser-based workflows.",
 		url: "https://30tools.com/what-is-my-user-agent",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free What Is My User Agent Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free What Is My User Agent online. Fast, secure browser-based utility with no registration. No signup required.",
+		description: "Free what is my user agent tool to process your data instantly with privacy-friendly browser-based workflows.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

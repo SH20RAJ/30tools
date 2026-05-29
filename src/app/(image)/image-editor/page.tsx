@@ -3,14 +3,14 @@ import ImageResizerTool from "@/components/tools/image/ImageResizerTool";
 
 export const metadata = {
 	title: "Free Image Editor Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Image Editor online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+	description: "Edit, crop, and enhance your photos online with our free image editing tools.",
 	keywords: "image, editor, free image editor, online image editor, 30tools, image-editor, image editor, free image-editor, image editor online, image editing, photo editor, browser image tool",
 	alternates: {
 		canonical: "https://30tools.com/image-editor",
 	},
 	openGraph: {
 		title: "Free Image Editor Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Image Editor online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+		description: "Edit, crop, and enhance your photos online with our free image editing tools.",
 		url: "https://30tools.com/image-editor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Image Editor Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Image Editor online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+		description: "Edit, crop, and enhance your photos online with our free image editing tools.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

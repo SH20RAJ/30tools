@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Area Converter Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Area Converter online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+	description: "Convert between square meters, square feet, acres, and more instantly. Our free online Area Converter is perfect for real estate, construction, and design...",
 	keywords: "area converter, free online tool, no signup, area-converter, free area-converter, Area Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/area-converter",
 	},
 	openGraph: {
 		title: "Free Area Converter Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Area Converter online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Convert between square meters, square feet, acres, and more instantly. Our free online Area Converter is perfect for real estate, construction, and design...",
 		url: "https://30tools.com/area-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Area Converter Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Area Converter online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Convert between square meters, square feet, acres, and more instantly. Our free online Area Converter is perfect for real estate, construction, and design...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Image Resizer Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Image Resizer online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+	description: "Resize images with custom dimensions and aspect ratios",
 	keywords: "image resizer, resize image online, photo resizer, image dimension converter, free online tool, 30tools, image-resizer, free image-resizer, image resizer online, image editing, photo editor, browser image tool",
 	alternates: {
 		canonical: "https://30tools.com/image-resizer",
 	},
 	openGraph: {
 		title: "Free Image Resizer Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Image Resizer online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+		description: "Resize images with custom dimensions and aspect ratios",
 		url: "https://30tools.com/image-resizer",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Image Resizer Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Image Resizer online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+		description: "Resize images with custom dimensions and aspect ratios",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

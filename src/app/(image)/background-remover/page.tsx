@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Background Remover Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Background Remover online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+	description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based...",
 	keywords: "background-remover, Background Remover, free background-remover, Background Remover online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/background-remover",
 	},
 	openGraph: {
 		title: "Free Background Remover Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Background Remover online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+		description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based...",
 		url: "https://30tools.com/background-remover",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Background Remover Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Background Remover online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+		description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -3,14 +3,14 @@ import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
 	title: "Free Business Name Generator Online - No Signup | 30tools",
-	description: "Create custom content with our free Business Name Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+	description: "Generate creative and catchy names for your brand or startup.",
 	keywords: "business, name, generator, free business name generator, online business name generator, 30tools, business-name-generator, business name generator, free business-name-generator, business name generator online, online generator, free creator",
 	alternates: {
 		canonical: "https://30tools.com/business-name-generator",
 	},
 	openGraph: {
 		title: "Free Business Name Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Business Name Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+		description: "Generate creative and catchy names for your brand or startup.",
 		url: "https://30tools.com/business-name-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Business Name Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Business Name Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+		description: "Generate creative and catchy names for your brand or startup.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

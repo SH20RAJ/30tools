@@ -3,14 +3,14 @@ import TextGeneratorTool from "@/components/tools/generators/TextGeneratorTool";
 
 export const metadata = {
 	title: "Free Poetry Generator Online - No Signup | 30tools",
-	description: "Create custom content with our free Poetry Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+	description: "Professional Poetry Generator tool for free online use.",
 	keywords: "poetry, generator, free poetry generator, online poetry generator, 30tools, poetry-generator, poetry generator, free poetry-generator, poetry generator online, online generator, free creator, content generator",
 	alternates: {
 		canonical: "https://30tools.com/poetry-generator",
 	},
 	openGraph: {
 		title: "Free Poetry Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Poetry Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		description: "Professional Poetry Generator tool for free online use.",
 		url: "https://30tools.com/poetry-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Poetry Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Poetry Generator online. Generate high-quality outputs instantly with no registration required. 100% free and easy to use.",
+		description: "Professional Poetry Generator tool for free online use.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

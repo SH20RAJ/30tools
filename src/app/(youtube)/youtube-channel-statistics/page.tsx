@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Channel Statistics Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free YouTube Channel Statistics online. Fast, secure browser-based utility with no registration. Free & secure.",
+	description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online...",
 	keywords: "youtube channel statistics, youtube analytics, youtube stats checker, channel analysis, free tool, 30tools, youtube-channel-statistics, free youtube-channel-statistics, youtube channel statistics online, youtube tool, video downloader, online youtube utility",
 	alternates: {
 		canonical: "https://30tools.com/youtube-channel-statistics",
 	},
 	openGraph: {
 		title: "Free YouTube Channel Statistics Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel Statistics online. Fast, secure browser-based utility with no registration. Free & secure.",
+		description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online...",
 		url: "https://30tools.com/youtube-channel-statistics",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free YouTube Channel Statistics Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Channel Statistics online. Fast, secure browser-based utility with no registration. Free & secure.",
+		description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

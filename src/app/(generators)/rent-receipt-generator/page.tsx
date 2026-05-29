@@ -5,14 +5,14 @@ import RentReceiptGenerator from "@/components/tools/generators/RentReceiptGener
 
 export const metadata = {
 	title: "Free Rent Receipt Generator Online - No Signup | 30tools",
-	description: "Create custom content with our free Rent Receipt Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+	description: "Generate HRA-compliant rent receipts online for free. Fill in tenant, landlord, and rent details, and download print-ready receipts instantly.",
 	keywords: "rent-receipt-generator, Rent Receipt Generator, print rent receipt, hra rent receipt, rent slip maker, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/rent-receipt-generator",
 	},
 	openGraph: {
 		title: "Free Rent Receipt Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Rent Receipt Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+		description: "Generate HRA-compliant rent receipts online for free. Fill in tenant, landlord, and rent details, and download print-ready receipts instantly.",
 		url: "https://30tools.com/rent-receipt-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Rent Receipt Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Rent Receipt Generator online. Generate high-quality outputs instantly with no registration required. 100% free and secure.",
+		description: "Generate HRA-compliant rent receipts online for free. Fill in tenant, landlord, and rent details, and download print-ready receipts instantly.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

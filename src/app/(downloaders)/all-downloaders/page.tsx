@@ -3,14 +3,14 @@ import ToolLayout from "@/components/tools/shared/ToolLayout";
 
 export const metadata = {
 	title: "Free All Downloaders Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free All Downloaders online. Fast, secure browser-based utility with no registration. No registration needed.",
+	description: "All Downloaders - Coming Soon",
 	keywords: "all downloaders, free online tool, no signup, others, all downloaders online, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/all-downloaders",
 	},
 	openGraph: {
 		title: "Free All Downloaders Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free All Downloaders online. Fast, secure browser-based utility with no registration. No registration needed.",
+		description: "All Downloaders - Coming Soon",
 		url: "https://30tools.com/all-downloaders",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free All Downloaders Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free All Downloaders online. Fast, secure browser-based utility with no registration. No registration needed.",
+		description: "All Downloaders - Coming Soon",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

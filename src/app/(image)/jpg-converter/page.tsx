@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free JPG Converter Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free JPG Converter online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+	description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use...",
 	keywords: "jpg converter, free online tool, no signup, jpg-converter, free jpg-converter, Jpg Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/jpg-converter",
 	},
 	openGraph: {
 		title: "Free JPG Converter Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free JPG Converter online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+		description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use...",
 		url: "https://30tools.com/jpg-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free JPG Converter Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free JPG Converter online. Crop, resize, and optimize photos in your browser with no signup. No registration needed.",
+		description: "Convert photos and images to JPG format instantly. Our free online JPG converter maintains high visual quality while optimizing file size for web use...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

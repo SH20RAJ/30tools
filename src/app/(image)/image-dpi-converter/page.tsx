@@ -5,14 +5,14 @@ import ResizeImageCm from "@/components/tools/image/ResizeImageCm";
 
 export const metadata = {
 	title: "Free Image DPI Converter Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Image DPI Converter online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+	description: "Change or convert your image's DPI (Dots Per Inch) to 300, 600, or custom values for official applications and printing.",
 	keywords: "image-dpi-converter, Image DPI Converter",
 	alternates: {
 		canonical: "https://30tools.com/image-dpi-converter",
 	},
 	openGraph: {
 		title: "Free Image DPI Converter Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Image DPI Converter online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+		description: "Change or convert your image's DPI (Dots Per Inch) to 300, 600, or custom values for official applications and printing.",
 		url: "https://30tools.com/image-dpi-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Image DPI Converter Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Image DPI Converter online. Crop, resize, and optimize photos in your browser with no signup. Try it free now.",
+		description: "Change or convert your image's DPI (Dots Per Inch) to 300, 600, or custom values for official applications and printing.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

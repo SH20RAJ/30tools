@@ -9,14 +9,14 @@ import { Wrench, ArrowRight, Sparkles } from "lucide-react";
 
 export const metadata = {
 	title: "Free Other Tools Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free Other Tools online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+	description: "Free Other Tools online tool. Fast and secure.",
 	keywords: "utility tools, free online tool, no signup, other-tools, Other Tools, free other-tools, Other Tools online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/other-tools",
 	},
 	openGraph: {
 		title: "Free Other Tools Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Other Tools online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Free Other Tools online tool. Fast and secure.",
 		url: "https://30tools.com/other-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -25,7 +25,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Other Tools Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free Other Tools online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Free Other Tools online tool. Fast and secure.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

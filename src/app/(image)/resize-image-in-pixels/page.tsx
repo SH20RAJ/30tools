@@ -5,14 +5,14 @@ import ResizeImageCm from "@/components/tools/image/ResizeImageCm";
 
 export const metadata = {
 	title: "Free Resize Image in Pixels Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Resize Image in Pixels online. Crop, resize, and optimize photos in your browser with no signup. Free & secure.",
+	description: "Resize your images by specifying exact width and height in pixels (px) for web, social media, and digital platforms.",
 	keywords: "resize-image-in-pixels, Resize Image in Pixels",
 	alternates: {
 		canonical: "https://30tools.com/resize-image-in-pixels",
 	},
 	openGraph: {
 		title: "Free Resize Image in Pixels Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Resize Image in Pixels online. Crop, resize, and optimize photos in your browser with no signup. Free & secure.",
+		description: "Resize your images by specifying exact width and height in pixels (px) for web, social media, and digital platforms.",
 		url: "https://30tools.com/resize-image-in-pixels",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Resize Image in Pixels Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Resize Image in Pixels online. Crop, resize, and optimize photos in your browser with no signup. Free & secure.",
+		description: "Resize your images by specifying exact width and height in pixels (px) for web, social media, and digital platforms.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Icon Generator Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Icon Generator online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
+	description: "Generate app icons and favicons for Android, iOS, and web applications.",
 	keywords: "icon, generator, free icon generator, online icon generator, 30tools, icon-generator, icon generator, free icon-generator, icon generator online, image editing, photo editor, browser image tool",
 	alternates: {
 		canonical: "https://30tools.com/icon-generator",
 	},
 	openGraph: {
 		title: "Free Icon Generator Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Icon Generator online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
+		description: "Generate app icons and favicons for Android, iOS, and web applications.",
 		url: "https://30tools.com/icon-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Icon Generator Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Icon Generator online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
+		description: "Generate app icons and favicons for Android, iOS, and web applications.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

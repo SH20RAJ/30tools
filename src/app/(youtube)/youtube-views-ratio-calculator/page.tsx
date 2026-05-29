@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free YouTube Views Ratio Calculator Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free YouTube Views Ratio Calculator online. Fast, secure browser-based utility with no registration. 100% free.",
+	description: "Calculate the view-to-engagement ratio for any YouTube video instantly. Our free online tool helps you understand audience interaction and video...",
 	keywords: "youtube views ratio calculator, free online tool, no signup, youtube-views-ratio-calculator, free youtube-views-ratio-calculator, Youtube Views Ratio Calculator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/youtube-views-ratio-calculator",
 	},
 	openGraph: {
 		title: "Free YouTube Views Ratio Calculator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Views Ratio Calculator online. Fast, secure browser-based utility with no registration. 100% free.",
+		description: "Calculate the view-to-engagement ratio for any YouTube video instantly. Our free online tool helps you understand audience interaction and video...",
 		url: "https://30tools.com/youtube-views-ratio-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free YouTube Views Ratio Calculator Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free YouTube Views Ratio Calculator online. Fast, secure browser-based utility with no registration. 100% free.",
+		description: "Calculate the view-to-engagement ratio for any YouTube video instantly. Our free online tool helps you understand audience interaction and video...",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

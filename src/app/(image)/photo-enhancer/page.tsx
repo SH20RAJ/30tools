@@ -5,14 +5,14 @@ import { getToolByRoute } from "@/lib/tools";
 
 export const metadata = {
 	title: "Free Photo Enhancer Online - No Signup | 30tools",
-	description: "Edit, convert, and compress images with our free Photo Enhancer online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
+	description: "Enhance photo quality with AI-powered image enhancement",
 	keywords: "photo enhancer, free online tool, no signup, photo-enhancer, free photo-enhancer, Photo Enhancer online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
 		canonical: "https://30tools.com/photo-enhancer",
 	},
 	openGraph: {
 		title: "Free Photo Enhancer Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Photo Enhancer online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
+		description: "Enhance photo quality with AI-powered image enhancement",
 		url: "https://30tools.com/photo-enhancer",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Photo Enhancer Online - No Signup | 30tools",
-		description: "Edit, convert, and compress images with our free Photo Enhancer online. Crop, resize, and optimize photos in your browser with no signup. 100% free and secure.",
+		description: "Enhance photo quality with AI-powered image enhancement",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

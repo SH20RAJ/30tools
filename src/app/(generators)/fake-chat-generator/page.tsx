@@ -3,14 +3,14 @@ import FakeChatGeneratorTool from "@/components/tools/generators/FakeChatGenerat
 
 export const metadata = {
 	title: "Free Fake Chat Generator Online - No Signup | 30tools",
-	description: "Create custom content with our free Fake Chat Generator online. Generate high-quality outputs instantly with no registration required. No registration needed.",
+	description: "Create realistic-looking fake chat screenshots for WhatsApp, Discord, and iMessage.",
 	keywords: "fake, chat, generator, free fake chat generator, online fake chat generator, 30tools, fake-chat-generator, fake chat generator, free fake-chat-generator, fake chat generator online, online generator, free creator",
 	alternates: {
 		canonical: "https://30tools.com/fake-chat-generator",
 	},
 	openGraph: {
 		title: "Free Fake Chat Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Fake Chat Generator online. Generate high-quality outputs instantly with no registration required. No registration needed.",
+		description: "Create realistic-looking fake chat screenshots for WhatsApp, Discord, and iMessage.",
 		url: "https://30tools.com/fake-chat-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -19,7 +19,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Fake Chat Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Fake Chat Generator online. Generate high-quality outputs instantly with no registration required. No registration needed.",
+		description: "Create realistic-looking fake chat screenshots for WhatsApp, Discord, and iMessage.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

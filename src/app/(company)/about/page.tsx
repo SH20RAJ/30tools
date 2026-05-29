@@ -6,14 +6,14 @@ import { SITE_CONFIG } from "@/constants/config";
 
 export const metadata = {
 	title: "Free About Online - No Signup | 30tools",
-	description: "Solve everyday digital tasks instantly using our free About online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+	description: "Free About online. About allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 	keywords: "about 30tools, free online tools, browser-based tools, privacy-conscious tools, about, free about, about online, 30tools, browser tools, no signup tools, privacy tools",
 	alternates: {
 		canonical: "https://30tools.com/about",
 	},
 	openGraph: {
 		title: "Free About Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free About online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Free About online. About allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		url: "https://30tools.com/about",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -22,7 +22,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free About Online - No Signup | 30tools",
-		description: "Solve everyday digital tasks instantly using our free About online. Fast, secure browser-based utility with no registration. 100% free and easy to use.",
+		description: "Free About online. About allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },

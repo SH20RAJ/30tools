@@ -5,14 +5,14 @@ import LeaveLetterGenerator from "@/components/tools/generators/LeaveLetterGener
 
 export const metadata = {
 	title: "Free Leave Application Generator Online - No Signup | 30tools",
-	description: "Create custom content with our free Leave Application Generator online. Generate high-quality outputs instantly with no registration required. Try it free now.",
+	description: "Draft professional leave applications for office, school, or college online. Customize dates, reason, and print or copy instantly.",
 	keywords: "leave-application-generator, Leave Application Generator",
 	alternates: {
 		canonical: "https://30tools.com/leave-application-generator",
 	},
 	openGraph: {
 		title: "Free Leave Application Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Leave Application Generator online. Generate high-quality outputs instantly with no registration required. Try it free now.",
+		description: "Draft professional leave applications for office, school, or college online. Customize dates, reason, and print or copy instantly.",
 		url: "https://30tools.com/leave-application-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
@@ -21,7 +21,7 @@ export const metadata = {
 	twitter: {
 		card: "summary_large_image",
 		title: "Free Leave Application Generator Online - No Signup | 30tools",
-		description: "Create custom content with our free Leave Application Generator online. Generate high-quality outputs instantly with no registration required. Try it free now.",
+		description: "Draft professional leave applications for office, school, or college online. Customize dates, reason, and print or copy instantly.",
 		images: ["/og-image.jpg"],
 	},
 	robots: { index: true, follow: true },
