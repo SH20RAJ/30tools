@@ -12014,7 +12014,7 @@
 {
   "id": "ssc-photo-resizer",
   "name": "SSC Photo Resizer",
-  "description": "Resize and compress your photograph to fit the official SSC requirements: 3.5 cm by 4.5 cm (350x450 pixels), file size 20KB to 50KB. Also resize SSC signature to 10KB-20KB. No signup.",
+  "description": "Resize and compress SSC photos to 350x450 pixels and 20KB-50KB, plus resize signature to 10KB-20KB. No signup required.",
   "route": "/ssc-photo-resizer",
   "popular": true,
   "category": "exam-tools",
@@ -12048,24 +12048,72 @@
     "steps": [
       {
         "name": "Upload photo or signature",
-        "text": "Click the upload area or drag and drop a JPG or PNG. The tool automatically detects whether it is a photo or signature based on the selected mode.",
-        "url": "#upload"
+        "text": "Click the upload area or drag and drop a JPG or PNG. The tool automatically detects whether it is a photo or signature based on the selected mode."
       },
       {
         "name": "Confirm dimensions and size limits",
-        "text": "The default SSC settings are 350x450 pixels and 20KB-50KB for photos. For signature, use 350x200 pixels with 10KB-20KB. Adjust only if your notification says otherwise.",
-        "url": "#settings"
+        "text": "The default SSC settings are 350x450 pixels and 20KB-50KB for photos. For signature, use 350x200 pixels with 10KB-20KB. Adjust only if your notification says otherwise."
       },
       {
         "name": "Preview and adjust quality",
-        "text": "Use the quality slider to balance file size and clarity. White background on a passport photo often compresses better than dark backgrounds.",
-        "url": "#preview"
+        "text": "Use the quality slider to balance file size and clarity. White background on a passport photo often compresses better than dark backgrounds."
       },
       {
         "name": "Download as JPEG",
-        "text": "When the file size is inside the target band and the preview looks clear, click Download JPEG.",
-        "url": "#download"
+        "text": "When the file size is inside the target band and the preview looks clear, click Download JPEG."
       }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What is the SSC photo size and format?",
+      "answer": "SSC usually requires a passport-size photo between 20KB and 50KB, with a resolution of 350x450 pixels or 3.5cm x 4.5cm. Use JPG or JPEG for best compression. PNG works too but often produces larger files."
+    },
+    {
+      "question": "Do I need to resize my signature for SSC?",
+      "answer": "Yes. SSC forms often ask for a separate signature image, commonly 10KB-20KB and around 350x200 pixels. Use the Signature option in this tool to set those limits before you download."
+    },
+    {
+      "question": "Why was my SSC photo rejected from the form?",
+      "answer": "Common causes are wrong dimensions, file size below 20KB or above 50KB, blurry face, dark background instead of white or light background, and name/date stamp on the photo. Crop tightly to the face and avoid heavy compression that hides details."
+    },
+    {
+      "question": "Will my photo be uploaded to a server?",
+      "answer": "No. Photo resizing and compression happen directly in your browser. The original and processed files stay on your device unless you choose to upload them to the SSC portal yourself."
+    },
+    {
+      "question": "Can I use this tool on mobile?",
+      "answer": "Yes. The tool is responsive and works on phones and tablets. You can shoot or select a photo, resize it, and download the result without a desktop."
+    }
+  ],
+  "article": "\n## SSC Photo Resizer — Prepare Photos and Signatures for SSC Forms\n\nMany SSC candidates get rejected at the upload stage not because of their marks, but because their photo or signature does not match the specification. This tool fixes that by resizing and compressing your images directly in the browser so they land inside the required size band without losing clarity.\n\n## What makes this different from a generic image resizer?\nA generic resizer changes width and height, but SSC forms care about an exact pixel range and KB limit. This tool targets the actual SSC constraints: 350x450 pixels and 20KB-50KB for photos, and a signature mode sized for the 10KB-20KB range. You see the output file size instantly, so you can adjust quality before downloading.\n\n## What file should I upload?\nUse a recent passport-style photograph with a plain white or light background. Remove name banners, date stamps, or heavy borders. For the signature, use dark ink on white paper, crop to the signature only, and avoid extra margins.\n\n## How can I reduce file size without making the photo blurry?\nFirst crop the image to the face and shoulders. Then reduce the pixel dimensions to 350x450. If the file is still above 50KB, lower the JPEG quality from 0.9 toward 0.75 in small steps. If the file is below 20KB, raise the quality or switch to PNG briefly to see if a lossless save helps. Each time, check that facial features remain readable.\n"
+}
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What is the SSC photo size and format?",
+      "answer": "SSC usually requires a passport-size photo between 20KB and 50KB, with a resolution of 350x450 pixels or 3.5cm x 4.5cm. Use JPG or JPEG for best compression. PNG works too but often produces larger files."
+    },
+    {
+      "question": "Do I need to resize my signature for SSC?",
+      "answer": "Yes. SSC forms often ask for a separate signature image, commonly 10KB-20KB and around 350x200 pixels. Use the Signature option in this tool to set those limits before you download."
+    },
+    {
+      "question": "Why was my SSC photo rejected from the form?",
+      "answer": "Common causes are wrong dimensions, file size below 20KB or above 50KB, blurry face, dark background instead of white or light background, and name/date stamp on the photo. Crop tightly to the face and avoid heavy compression that hides details."
+    },
+    {
+      "question": "Will my photo be uploaded to a server?",
+      "answer": "No. Photo resizing and compression happen directly in your browser. The original and processed files stay on your device unless you choose to upload them to the SSC portal yourself."
+    },
+    {
+      "question": "Can I use this tool on mobile?",
+      "answer": "Yes. The tool is responsive and works on phones and tablets. You can shoot or select a photo, resize it, and download the result without a desktop."
+    }
+  ],
+  "article": "\n## SSC Photo Resizer — Prepare Photos and Signatures for SSC Forms\n\nMany SSC candidates get rejected at the upload stage not because of their marks, but because their photo or signature does not match the specification. This tool fixes that by resizing and compressing your images directly in the browser so they land inside the required size band without losing clarity.\n\n## What makes this different from a generic image resizer?\nA generic resizer changes width and height, but SSC forms care about an exact pixel range and KB limit. This tool targets the actual SSC constraints: 350x450 pixels and 20KB-50KB for photos, and a signature mode sized for the 10KB-20KB range. You see the output file size instantly, so you can adjust quality before downloading.\n\n## What file should I upload?\nUse a recent passport-style photograph with a plain white or light background. Remove name banners, date stamps, or heavy borders. For the signature, use dark ink on white paper, crop to the signature only, and avoid extra margins.\n\n## How can I reduce file size without making the photo blurry?\nFirst crop the image to the face and shoulders. Then reduce the pixel dimensions to 350x450. If the file is still above 50KB, lower the JPEG quality from 0.9 toward 0.75 in small steps. If the file is below 20KB, raise the quality or switch to PNG briefly to see if a lossless save helps. Each time, check that facial features remain readable.\n"
+}
     ]
   },
   "faqs": [
