@@ -12011,356 +12011,87 @@
             "upsc-photo-resizer-privacy-focused"
           ]
         },
-        {
-          "id": "ssc-photo-resizer",
-          "name": "SSC Photo Resizer",
-          "description": "Resize and compress your photograph to fit the official SSC requirements: 3.5 cm width by 4.5 cm height (350x450 pixels), file size 20KB to 50KB.",
-          "route": "/ssc-photo-resizer",
-          "popular": true,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "ssc-signature-resizer",
-            "ssc-photo-size",
-            "ssc-image-resizer",
-            "ssc-signature-10kb-20kb",
-            "resize-photo-for-ssc",
-            "ssc-photo-resizer-online-free",
-            "free-ssc-photo-resizer-no-signup",
-            "ssc-photo-resizer-tool-online",
-            "best-free-ssc-photo-resizer",
-            "ssc-photo-resizer-without-registration",
-            "online-ssc-photo-resizer-free",
-            "ssc-photo-resizer-browser-based",
-            "ssc-photo-resizer-no-download",
-            "ssc-photo-resizer-instant-online",
-            "ssc-photo-resizer-privacy-focused"
-          ]
-        },
-        {
-          "id": "neet-photo-resizer",
-          "name": "NEET Photo Resizer",
-          "description": "Prepare your passport and postcard-sized photos for NEET according to NTA specs (4x6 inches, 10KB to 200KB for passport, 10KB to 200KB for postcard).",
-          "route": "/neet-photo-resizer",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "neet-postcard-photo-resizer",
-            "neet-photo-compressor",
-            "neet-photo-size",
-            "neet-form-photo-resize",
-            "resize-image-for-neet",
-            "neet-photo-resizer-online-free",
-            "free-neet-photo-resizer-no-signup",
-            "neet-photo-resizer-tool-online",
-            "best-free-neet-photo-resizer",
-            "neet-photo-resizer-without-registration",
-            "online-neet-photo-resizer-free",
-            "neet-photo-resizer-browser-based",
-            "neet-photo-resizer-no-download",
-            "neet-photo-resizer-instant-online",
-            "neet-photo-resizer-privacy-focused"
-          ]
-        },
-        {
-          "id": "jee-photo-resizer",
-          "name": "JEE Photo Resizer",
-          "description": "Resize and compress photos for JEE Main/Advanced. Dimensions 3.5cm x 4.5cm, file size 10KB to 200KB, signature 4KB to 30KB.",
-          "route": "/jee-photo-resizer",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "jee-main-photo-compressor",
-            "jee-signature-resizer",
-            "jee-main-photo-size",
-            "resize-photo-for-jee-form",
-            "jee-image-compressor",
-            "jee-photo-resizer-online-free",
-            "free-jee-photo-resizer-no-signup",
-            "jee-photo-resizer-tool-online",
-            "best-free-jee-photo-resizer",
-            "jee-photo-resizer-without-registration",
-            "online-jee-photo-resizer-free",
-            "jee-photo-resizer-browser-based",
-            "jee-photo-resizer-no-download",
-            "jee-photo-resizer-instant-online",
-            "jee-photo-resizer-privacy-focused"
-          ]
-        },
-        {
-          "id": "cuet-photo-resizer",
-          "name": "CUET Photo Resizer",
-          "description": "Resize and compress your NTA CUET application photo (10KB to 200KB) and signature (4KB to 30KB) to meet official guidelines.",
-          "route": "/cuet-photo-resizer",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "cuet-photo-compressor",
-            "cuet-signature-resizer",
-            "cuet-photo-size",
-            "resize-photo-for-cuet-form",
-            "cuet-image-compressor",
-            "cuet-photo-resizer-online-free",
-            "free-cuet-photo-resizer-no-signup",
-            "cuet-photo-resizer-tool-online",
-            "best-free-cuet-photo-resizer",
-            "cuet-photo-resizer-without-registration",
-            "online-cuet-photo-resizer-free",
-            "cuet-photo-resizer-browser-based",
-            "cuet-photo-resizer-no-download",
-            "cuet-photo-resizer-instant-online",
-            "cuet-photo-resizer-privacy-focused"
-          ]
-        },
-        {
-          "id": "railway-exam-photo-resizer",
-          "name": "Railway Exam Photo Resizer",
-          "description": "Resize and compress photos and signatures for RRB Railway exams (photo 3.5cm x 4.5cm, 20KB to 50KB; signature 20KB to 50KB).",
-          "route": "/railway-exam-photo-resizer",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "rrb-photo-resizer",
-            "rrb-signature-resizer",
-            "railway-photo-resizer",
-            "rrb-ntpc-photo-size",
-            "resize-image-for-railway-form",
-            "railway-exam-photo-resizer-online-free",
-            "free-railway-exam-photo-resizer-no-signup",
-            "railway-exam-photo-resizer-tool-online",
-            "best-free-railway-exam-photo-resizer",
-            "railway-exam-photo-resizer-without-registration",
-            "online-railway-exam-photo-resizer-free",
-            "railway-exam-photo-resizer-browser-based",
-            "railway-exam-photo-resizer-no-download",
-            "railway-exam-photo-resizer-instant-online",
-            "railway-exam-photo-resizer-privacy-focused"
-          ]
-        },
-        {
-          "id": "passport-photo-maker",
-          "name": "Passport Photo Maker",
-          "description": "Generate standard passport size photos online. Crop to 2x2 inches (51x51 mm) or 3.5x4.5 cm with custom background colors and print sheets.",
-          "route": "/passport-photo-maker",
-          "popular": true,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "passport-size-photo-maker",
-            "free-passport-photo-maker",
-            "passport-photo-crop",
-            "online-passport-photo-editor",
-            "passport-photo-4x6-sheet",
-            "passport-photo-maker-online-free",
-            "free-passport-photo-maker-no-signup",
-            "passport-photo-maker-tool-online",
-            "best-free-passport-photo-maker",
-            "passport-photo-maker-without-registration",
-            "online-passport-photo-maker-free",
-            "passport-photo-maker-browser-based",
-            "passport-photo-maker-no-download",
-            "passport-photo-maker-instant-online",
-            "passport-photo-maker-privacy-focused"
-          ]
-        },
-        {
-          "id": "signature-resizer-under-20kb",
-          "name": "Signature Resizer Under 20KB",
-          "description": "Compress and resize your scanned signature image to fit under 20KB while maintaining absolute legibility for official exam portals.",
-          "route": "/signature-resizer-under-20kb",
-          "popular": true,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "compress-signature-to-20kb",
-            "signature-compressor-under-20kb",
-            "signature-resizer-under-20kb-online-free",
-            "free-signature-resizer-under-20kb-no-signup",
-            "signature-resizer-under-20kb-tool-online",
-            "best-free-signature-resizer-under-20kb",
-            "signature-resizer-under-20kb-without-registration",
-            "online-signature-resizer-under-20kb-free",
-            "signature-resizer-under-20kb-browser-based",
-            "signature-resizer-under-20kb-no-download",
-            "signature-resizer-under-20kb-instant-online",
-            "signature-resizer-under-20kb-privacy-focused",
-            "signature-resizer-under-20kb-web-based",
-            "signature-resizer-under-20kb-no-install",
-            "free-online-signature-resizer-under-20kb"
-          ]
-        },
-        {
-          "id": "photo-compressor-under-50kb",
-          "name": "Photo Compressor Under 50KB",
-          "description": "Compress any passport photo or document image to fit strictly under 50KB for online application forms and registrations.",
-          "route": "/photo-compressor-under-50kb",
-          "popular": true,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "compress-photo-to-50kb",
-            "photo-compressor-50kb",
-            "photo-compressor-under-50kb-online-free",
-            "free-photo-compressor-under-50kb-no-signup",
-            "photo-compressor-under-50kb-tool-online",
-            "best-free-photo-compressor-under-50kb",
-            "photo-compressor-under-50kb-without-registration",
-            "online-photo-compressor-under-50kb-free",
-            "photo-compressor-under-50kb-browser-based",
-            "photo-compressor-under-50kb-no-download",
-            "photo-compressor-under-50kb-instant-online",
-            "photo-compressor-under-50kb-privacy-focused",
-            "photo-compressor-under-50kb-web-based",
-            "photo-compressor-under-50kb-no-install",
-            "free-online-photo-compressor-under-50kb"
-          ]
-        },
-        {
-          "id": "jpg-to-pdf-exam-forms",
-          "name": "JPG to PDF for Exam Forms",
-          "description": "Convert your photo, signature, or ID proof images into a single or multi-page PDF document optimized for exam portal uploads.",
-          "route": "/jpg-to-pdf-exam-forms",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "convert-jpg-to-pdf-exam",
-            "image-to-pdf-for-exam",
-            "jpg-to-pdf-for-exam-forms-online-free",
-            "free-jpg-to-pdf-for-exam-forms-no-signup",
-            "jpg-to-pdf-for-exam-forms-tool-online",
-            "best-free-jpg-to-pdf-for-exam-forms",
-            "jpg-to-pdf-for-exam-forms-without-registration",
-            "online-jpg-to-pdf-for-exam-forms-free",
-            "jpg-to-pdf-for-exam-forms-browser-based",
-            "jpg-to-pdf-for-exam-forms-no-download",
-            "jpg-to-pdf-for-exam-forms-instant-online",
-            "jpg-to-pdf-for-exam-forms-privacy-focused",
-            "jpg-to-pdf-for-exam-forms-web-based",
-            "jpg-to-pdf-for-exam-forms-no-install",
-            "free-online-jpg-to-pdf-for-exam-forms"
-          ]
-        },
-        {
-          "id": "pdf-compressor-under-200kb",
-          "name": "PDF Compressor Under 200KB",
-          "description": "Compress official PDF documents, certificates, and ID proofs to fit under the standard 200KB limit for government forms.",
-          "route": "/pdf-compressor-under-200kb",
-          "popular": true,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "compress-pdf-to-200kb",
-            "pdf-size-reducer-200kb",
-            "pdf-compressor-under-200kb-online-free",
-            "free-pdf-compressor-under-200kb-no-signup",
-            "pdf-compressor-under-200kb-tool-online",
-            "best-free-pdf-compressor-under-200kb",
-            "pdf-compressor-under-200kb-without-registration",
-            "online-pdf-compressor-under-200kb-free",
-            "pdf-compressor-under-200kb-browser-based",
-            "pdf-compressor-under-200kb-no-download",
-            "pdf-compressor-under-200kb-instant-online",
-            "pdf-compressor-under-200kb-privacy-focused",
-            "pdf-compressor-under-200kb-web-based",
-            "pdf-compressor-under-200kb-no-install",
-            "free-online-pdf-compressor-under-200kb"
-          ]
-        },
-        {
-          "id": "form-image-size-checker",
-          "name": "Form Image Size Checker",
-          "description": "Instantly check the dimensions (pixels/cm) and file size (KB) of your photos and signatures to verify if they match official guidelines.",
-          "route": "/form-image-size-checker",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "exam-photo-validator",
-            "image-dimension-checker-online",
-            "form-image-size-checker-online-free",
-            "free-form-image-size-checker-no-signup",
-            "form-image-size-checker-tool-online",
-            "best-free-form-image-size-checker",
-            "form-image-size-checker-without-registration",
-            "online-form-image-size-checker-free",
-            "form-image-size-checker-browser-based",
-            "form-image-size-checker-no-download",
-            "form-image-size-checker-instant-online",
-            "form-image-size-checker-privacy-focused",
-            "form-image-size-checker-web-based",
-            "form-image-size-checker-no-install",
-            "free-online-form-image-size-checker"
-          ]
-        },
-        {
-          "id": "ibps-photo-resizer",
-          "name": "IBPS Photo Resizer",
-          "description": "Resize and compress your passport photo and signature to meet the exact IBPS requirements: photo 20KB-50KB (4.5x3.5 cm), signature 10KB-20KB.",
-          "route": "/ibps-photo-resizer",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "ibps-signature-resizer",
-            "ibps-photo-compressor",
-            "bank-exam-photo-resizer",
-            "bank-exam-signature-resizer",
-            "signature-under-20kb",
-            "ibps-photo-resizer-online-free",
-            "free-ibps-photo-resizer-no-signup",
-            "ibps-photo-resizer-tool-online",
-            "best-free-ibps-photo-resizer",
-            "ibps-photo-resizer-without-registration",
-            "online-ibps-photo-resizer-free",
-            "ibps-photo-resizer-browser-based",
-            "ibps-photo-resizer-no-download",
-            "ibps-photo-resizer-instant-online",
-            "ibps-photo-resizer-privacy-focused"
-          ]
-        },
-        {
-          "id": "pan-card-photo-resizer",
-          "name": "PAN Card Photo Resizer",
-          "description": "Resize and compress your photo and signature to the exact NSDL/UTIITSL PAN Card specifications: photo 213x213 pixels, size under 50KB.",
-          "route": "/pan-card-photo-resizer",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "nsdl-photo-resizer",
-            "pan-signature-resizer",
-            "pan-photo-size-converter",
-            "nsdl-pan-photo-resizer",
-            "pan-card-image-resize",
-            "pan-card-photo-resizer-online-free",
-            "free-pan-card-photo-resizer-no-signup",
-            "pan-card-photo-resizer-tool-online",
-            "best-free-pan-card-photo-resizer",
-            "pan-card-photo-resizer-without-registration",
-            "online-pan-card-photo-resizer-free",
-            "pan-card-photo-resizer-browser-based",
-            "pan-card-photo-resizer-no-download",
-            "pan-card-photo-resizer-instant-online",
-            "pan-card-photo-resizer-privacy-focused"
-          ]
-        },
-        {
-          "id": "photo-name-date-editor",
-          "name": "Photo With Name and Date Editor",
-          "description": "Add your name and the date of photo capture at the bottom of your passport size photograph, as required for official application forms.",
-          "route": "/photo-name-date-editor",
-          "popular": false,
-          "category": "exam-tools",
-          "extraSlugs": [
-            "add-name-date-on-photo",
-            "exam-photo-date-editor",
-            "govt-form-photo-editor",
-            "photo-name-date-editor-online",
-            "name-date-photo-creator",
-            "photo-with-name-and-date-editor-online-free",
-            "free-photo-with-name-and-date-editor-no-signup",
-            "photo-with-name-and-date-editor-tool-online",
-            "best-free-photo-with-name-and-date-editor",
-            "photo-with-name-and-date-editor-without-registration",
-            "online-photo-with-name-and-date-editor-free",
-            "photo-with-name-and-date-editor-browser-based",
-            "photo-with-name-and-date-editor-no-download",
-            "photo-with-name-and-date-editor-instant-online",
-            "photo-with-name-and-date-editor-privacy-focused"
-          ]
-        }
+{
+  "id": "ssc-photo-resizer",
+  "name": "SSC Photo Resizer",
+  "description": "Resize and compress your photograph to fit the official SSC requirements: 3.5 cm by 4.5 cm (350x450 pixels), file size 20KB to 50KB. Also resize SSC signature to 10KB-20KB. No signup.",
+  "route": "/ssc-photo-resizer",
+  "popular": true,
+  "category": "exam-tools",
+  "extraSlugs": [
+    "ssc-signature-resizer",
+    "ssc-photo-size",
+    "ssc-image-resizer",
+    "ssc-signature-10kb-20kb",
+    "resize-photo-for-ssc",
+    "ssc-photo-resizer-online-free",
+    "free-ssc-photo-resizer-no-signup",
+    "ssc-photo-resizer-tool-online",
+    "best-free-ssc-photo-resizer",
+    "ssc-photo-resizer-without-registration",
+    "online-ssc-photo-resizer-free",
+    "ssc-photo-resizer-browser-based",
+    "ssc-photo-resizer-no-download",
+    "ssc-photo-resizer-instant-online",
+    "ssc-photo-resizer-privacy-focused"
+  ],
+  "features": [
+    "Resize photos to 350x450 pixels for SSC CGL, CHSL, MTS and other SSC forms",
+    "One-click signature resize for SSC forms with 10KB-20KB target",
+    "Preview the output before downloading",
+    "Works in your browser; photos are never uploaded to a server",
+    "No signup or installation required",
+    "Free to use with no usage limits"
+  ],
+  "howTo": {
+    "name": "How to resize and compress a photo for SSC",
+    "steps": [
+      {
+        "name": "Upload photo or signature",
+        "text": "Click the upload area or drag and drop a JPG or PNG. The tool automatically detects whether it is a photo or signature based on the selected mode.",
+        "url": "#upload"
+      },
+      {
+        "name": "Confirm dimensions and size limits",
+        "text": "The default SSC settings are 350x450 pixels and 20KB-50KB for photos. For signature, use 350x200 pixels with 10KB-20KB. Adjust only if your notification says otherwise.",
+        "url": "#settings"
+      },
+      {
+        "name": "Preview and adjust quality",
+        "text": "Use the quality slider to balance file size and clarity. White background on a passport photo often compresses better than dark backgrounds.",
+        "url": "#preview"
+      },
+      {
+        "name": "Download as JPEG",
+        "text": "When the file size is inside the target band and the preview looks clear, click Download JPEG.",
+        "url": "#download"
+      }
+    ]
+  },
+  "faqs": [
+    {
+      "question": "What is the SSC photo size and format?",
+      "answer": "SSC usually requires a passport-size photo between 20KB and 50KB, with a resolution of 350x450 pixels or 3.5cm x 4.5cm. Use JPG or JPEG for best compression. PNG works too but often produces larger files."
+    },
+    {
+      "question": "Do I need to resize my signature for SSC?",
+      "answer": "Yes. SSC forms often ask for a separate signature image, commonly 10KB-20KB and around 350x200 pixels. Use the Signature option in this tool to set those limits before you download."
+    },
+    {
+      "question": "Why was my SSC photo rejected from the form?",
+      "answer": "Common causes are wrong dimensions, file size below 20KB or above 50KB, blurry face, dark background instead of white or light background, and name/date stamp on the photo. Crop tightly to the face and avoid heavy compression that hides details."
+    },
+    {
+      "question": "Will my photo be uploaded to a server?",
+      "answer": "No. Photo resizing and compression happen directly in your browser. The original and processed files stay on your device unless you choose to upload them to the SSC portal yourself."
+    },
+    {
+      "question": "Can I use this tool on mobile?",
+      "answer": "Yes. The tool is responsive and works on phones and tablets. You can shoot or select a photo, resize it, and download the result without a desktop."
+    }
+  ],
+  "article": "\n## SSC Photo Resizer — Prepare Photos and Signatures for SSC Forms\n\nMany SSC candidates get rejected at the upload stage not because of their marks, but because their photo or signature does not match the specification. This tool fixes that by resizing and compressing your images directly in the browser so they land inside the required size band without losing clarity.\n\n## What makes this different from a generic image resizer?\nA generic resizer changes width and height, but SSC forms care about an exact pixel range and KB limit. This tool targets the actual SSC constraints: 350x450 pixels and 20KB-50KB for photos, and a signature mode sized for the 10KB-20KB range. You see the output file size instantly, so you can adjust quality before downloading.\n\n## What file should I upload?\nUse a recent passport-style photograph with a plain white or light background. Remove name banners, date stamps, or heavy borders. For the signature, use dark ink on white paper, crop to the signature only, and avoid extra margins.\n\n## How can I reduce file size without making the photo blurry?\nFirst crop the image to the face and shoulders. Then reduce the pixel dimensions to 350x450. If the file is still above 50KB, lower the JPEG quality from 0.9 toward 0.75 in small steps. If the file is below 20KB, raise the quality or switch to PNG briefly to see if a lossless save helps. Each time, check that facial features remain readable.\n"
+}
       ]
     }
   }
