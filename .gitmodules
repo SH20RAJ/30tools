@@ -1,0 +1,3 @@
+[submodule ".agents/ecc"]
+	path = .agents/ecc
+	url = https://github.com/affaan-m/ECC.git

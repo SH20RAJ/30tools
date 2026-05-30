@@ -9,7 +9,9 @@
       "WebFetch(domain:30tools.com)",
       "Bash(NEXT_TURBOPACK=0 npm run build)",
       "Bash(node scripts/seo-audit-local.mjs)",
-      "WebFetch(domain:github.com)"
+      "WebFetch(domain:github.com)",
+      "WebFetch(domain:*.com)",
+      "WebFetch(domain:*)"
     ]
   },
   "sandbox": {
