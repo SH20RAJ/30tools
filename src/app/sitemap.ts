@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 import { getAllTools } from "@/lib/tools";
 import { blogs } from "@/constants/blog-data";
 import { SITE_CONFIG } from "@/constants/config";
+import { getStandaloneSeoOpportunities } from "@/data/seo-opportunities";
 
 const BASE_URL = SITE_CONFIG.siteUrl;
 
@@ -18,18 +19,28 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		{ url: `${BASE_URL}/privacy`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/terms`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
 		{ url: `${BASE_URL}/dmca`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.6 },
+		{ url: `${BASE_URL}/pro`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.8 },
+		{ url: `${BASE_URL}/api`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.8 },
+		{ url: `${BASE_URL}/advertise`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.7 },
+		{ url: `${BASE_URL}/services`, lastModified: siteUpdated, changeFrequency: "monthly", priority: 0.75 },
 		// Category hub pages (priority 0.8-0.9)
 		{ url: `${BASE_URL}/image-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/exam-image-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.92 },
 		{ url: `${BASE_URL}/pdf-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		{ url: `${BASE_URL}/video-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		{ url: `${BASE_URL}/audio-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
 		{ url: `${BASE_URL}/text-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
 		{ url: `${BASE_URL}/seo-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.85 },
 		{ url: `${BASE_URL}/developer-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
+		{ url: `${BASE_URL}/api-key-testers`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/qr-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.88 },
+		{ url: `${BASE_URL}/small-business-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.86 },
 		{ url: `${BASE_URL}/other-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.75 },
 		{ url: `${BASE_URL}/generators`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.8 },
 		{ url: `${BASE_URL}/downloaders`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.85 },
 		{ url: `${BASE_URL}/calculators`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.75 },
+		{ url: `${BASE_URL}/student-calculators`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
+		{ url: `${BASE_URL}/student-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.84 },
 		{ url: `${BASE_URL}/exam-tools`, lastModified: siteUpdated, changeFrequency: "weekly", priority: 0.9 },
 		// Blog
 		{ url: `${BASE_URL}/blog`, lastModified: now, changeFrequency: "daily", priority: 0.8 },
@@ -73,12 +84,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
 		})),
 	];
 
-	// Intent money pages (safe ones)
-	const intentPages: MetadataRoute.Sitemap = [
-		{ url: `${BASE_URL}/compress-image-to-50kb`, lastModified: now, changeFrequency: "weekly", priority: 0.9 },
-		{ url: `${BASE_URL}/resize-image-for-instagram`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
-		{ url: `${BASE_URL}/pdf-to-word-without-email`, lastModified: now, changeFrequency: "weekly", priority: 0.85 },
-	];
+	const seoOpportunityPages: MetadataRoute.Sitemap = getStandaloneSeoOpportunities().map((opportunity) => ({
+		url: `${BASE_URL}${opportunity.route}`,
+		lastModified: now,
+		changeFrequency: "weekly" as const,
+		priority: opportunity.priority === 1 ? 0.9 : opportunity.priority === 2 ? 0.86 : 0.84,
+	}));
 
 	try {
 		// Get all extraSlugs to make sure they are excluded (except the intent pages we just added)
@@ -89,11 +100,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
 			}))
 		);
 		
-		// Remove the manually added intent pages from the exclusion set
-		intentPages.forEach(page => extraSlugsSet.delete(page.url));
+		// Standalone SEO opportunities intentionally turn selected extra slugs into real pages.
+		seoOpportunityPages.forEach(page => extraSlugsSet.delete(page.url));
 
 		// Deduplicate by URL to avoid duplicate sitemap entries
-		const allPages = [...staticPages, ...toolPages, ...blogPages, ...intentPages];
+		const allPages = [...staticPages, ...toolPages, ...blogPages, ...seoOpportunityPages];
 		const seen = new Set<string>();
 		return allPages
 			.filter((page) => !extraSlugsSet.has(page.url))

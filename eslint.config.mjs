@@ -1,18 +1,30 @@
-import { dirname } from "node:path";
-import { fileURLToPath } from "node:url";
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const compat = new FlatCompat({
-	baseDirectory: __dirname,
-});
+import nextVitals from "eslint-config-next/core-web-vitals";
+import unusedImports from "eslint-plugin-unused-imports";
 
 const eslintConfig = [
-	...compat.extends("next/core-web-vitals"),
-	...compat.plugins("unused-imports"),
+	...nextVitals,
 	{
+		ignores: [
+			"node_modules/**",
+			".next/**",
+			".open-next/**",
+			".wrangler/**",
+			"out/**",
+			"build/**",
+			"next-env.d.ts",
+			"ecc/**",
+			"public/sw.js",
+			"public/workbox-*.js",
+			"scripts/**",
+			"src/scripts/**",
+			"seo-implementation/**",
+			"analyze_tools.cjs",
+		],
+	},
+	{
+		plugins: {
+			"unused-imports": unusedImports,
+		},
 		rules: {
 			"no-unused-vars": "off",
 			"unused-imports/no-unused-imports": "error",

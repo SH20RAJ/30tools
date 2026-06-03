@@ -1,5 +1,6 @@
 import BreadcrumbsEnhanced from "@/components/seo/BreadcrumbsEnhanced";
 import { RelatedTools } from "@/components/seo/SocialEngagement";
+import SeoOpportunityContent from "@/components/seo/SeoOpportunityContent";
 import StructuredData from "@/components/shared/StructuredData";
 import DownloadDisclaimer from "@/components/shared/DownloadDisclaimer";
 import {
@@ -15,6 +16,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { SITE_CONFIG } from "@/constants/config";
 import AdPlacement from "@/components/ads/AdPlacement";
+import { getSeoOpportunityByRoute } from "@/data/seo-opportunities";
 
 function ToolArticle({ content }) {
 	if (!content) return null;
@@ -98,6 +100,8 @@ export default function ToolLayout({
   relatedTools = [],
   showHireMe = false,
 }) {
+	const opportunity = getSeoOpportunityByRoute(tool.route);
+
 	// Dynamically enrich tool data if SEO content is missing
 	const enrichedTool = { ...tool };
 	if (
@@ -111,6 +115,19 @@ export default function ToolLayout({
 		if (!enrichedTool.howTo) enrichedTool.howTo = dynamicContent.howTo;
 		if (!enrichedTool.faqs) enrichedTool.faqs = dynamicContent.faqs;
 		if (!enrichedTool.article) enrichedTool.article = dynamicContent.article;
+	}
+
+	if (opportunity) {
+		enrichedTool.name = opportunity.h1;
+		enrichedTool.description = opportunity.intro;
+		enrichedTool.faqs = opportunity.faqs;
+		enrichedTool.howTo = {
+			name: `How to use ${opportunity.h1}`,
+			steps: opportunity.steps.map((text, index) => ({
+				name: `Step ${index + 1}`,
+				text,
+			})),
+		};
 	}
 
 	// Replace ${name} placeholders in the enriched data
@@ -207,8 +224,8 @@ export default function ToolLayout({
 									This tool is intended for downloading non-copyrighted, personal, or openly licensed content only.
 									30tools does not host, store, or distribute copyrighted media. Users are solely responsible for
 									ensuring they have the legal right to download any content. By using this tool, you agree to our{" "}
-									<a href="/terms" className="text-primary underline">Terms of Use</a> and{" "}
-									<a href="/dmca" className="text-primary underline">DMCA Policy</a>.
+									<Link href="/terms" className="text-primary underline">Terms of Use</Link> and{" "}
+									<Link href="/dmca" className="text-primary underline">DMCA Policy</Link>.
 								</p>
 							</section>
 						)}
@@ -247,6 +264,10 @@ export default function ToolLayout({
 							</div>
 							
 							<ToolArticle content={enrichedTool.article} />
+
+							{opportunity && (
+								<SeoOpportunityContent opportunity={opportunity} />
+							)}
 
 							<div className="grid grid-cols-1 gap-16">
 								<ToolFeatures features={enrichedTool.features} />

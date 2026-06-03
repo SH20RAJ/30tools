@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -9,8 +9,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { toast } from "sonner";
 import { QrCode, Download, Settings, Palette, Type, Image as ImageIcon, Loader2 } from "lucide-react";
 
-export default function QrGeneratorPremium() {
-    const [text, setText] = useState("https://30tools.com");
+export default function QrGeneratorPremium({
+    initialText = "https://30tools.com",
+}: {
+    initialText?: string;
+}) {
+    const [text, setText] = useState(initialText);
     const [fgColor, setFgColor] = useState("#000000");
     const [bgColor, setBgColor] = useState("#ffffff");
     const [margin, setMargin] = useState(4);
@@ -19,28 +23,7 @@ export default function QrGeneratorPremium() {
     const [qrcodeReady, setQrcodeReady] = useState(false);
     const canvasRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (typeof window !== "undefined" && !(window as any).QRCode) {
-            const script = document.createElement("script");
-            script.src = "https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";
-            script.onload = () => setQrcodeReady(true);
-            script.onerror = () => {
-                toast.error("Failed to load QR code library. Please refresh the page.");
-                setQrcodeReady(false);
-            };
-            document.head.appendChild(script);
-        } else {
-            setQrcodeReady(true);
-        }
-    }, []);
-
-    useEffect(() => {
-        if (qrcodeReady && text) {
-            generateQR();
-        }
-    }, [qrcodeReady, text, fgColor, bgColor, margin, size]);
-
-    const generateQR = async () => {
+    const generateQR = useCallback(async () => {
         if (!(window as any).QRCode) return;
         
         setIsGenerating(true);
@@ -67,7 +50,30 @@ export default function QrGeneratorPremium() {
         } finally {
             setIsGenerating(false);
         }
-    };
+    }, [bgColor, fgColor, margin, size, text]);
+
+    useEffect(() => {
+        if (typeof window !== "undefined" && !(window as any).QRCode) {
+            const script = document.createElement("script");
+            script.src = "https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js";
+            script.onload = () => setQrcodeReady(true);
+            script.onerror = () => {
+                toast.error("Failed to load QR code library. Please refresh the page.");
+                setQrcodeReady(false);
+            };
+            document.head.appendChild(script);
+        } else {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            setQrcodeReady(true);
+        }
+    }, []);
+
+    useEffect(() => {
+        if (qrcodeReady && text) {
+            // eslint-disable-next-line react-hooks/set-state-in-effect
+            generateQR();
+        }
+    }, [generateQR, qrcodeReady, text]);
 
     const downloadQR = (format: "png" | "svg") => {
         const canvas = canvasRef.current?.querySelector("canvas");
@@ -182,6 +188,7 @@ export default function QrGeneratorPremium() {
                     <div className="flex flex-wrap gap-3">
                         <Button
                             onClick={() => downloadQR("png")}
+                            disabled={isGenerating}
                             variant="secondary"
                             className="flex-1 gap-2"
                         >
@@ -189,6 +196,7 @@ export default function QrGeneratorPremium() {
                         </Button>
                         <Button
                             onClick={() => downloadQR("png")} // Using PNG as proxy for this simple version
+                            disabled={isGenerating}
                             variant="outline"
                             className="flex-1 gap-2 border-primary/20 hover:bg-primary/5"
                         >

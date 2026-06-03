@@ -1,5 +1,3 @@
-import { getToolByExtraSlug } from "@/lib/tools";
-
 export const intentData: Record<string, any> = {
     "compress-image-to-50kb": {
         parentToolId: "image-compressor",

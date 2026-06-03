@@ -12011,135 +12011,177 @@
             "upsc-photo-resizer-privacy-focused"
           ]
         },
-{
-  "id": "ssc-photo-resizer",
-  "name": "SSC Photo Resizer",
-  "description": "Resize and compress SSC photos to 350x450 pixels and 20KB-50KB, plus resize signature to 10KB-20KB. No signup required.",
-  "route": "/ssc-photo-resizer",
-  "popular": true,
-  "category": "exam-tools",
-  "extraSlugs": [
-    "ssc-signature-resizer",
-    "ssc-photo-size",
-    "ssc-image-resizer",
-    "ssc-signature-10kb-20kb",
-    "resize-photo-for-ssc",
-    "ssc-photo-resizer-online-free",
-    "free-ssc-photo-resizer-no-signup",
-    "ssc-photo-resizer-tool-online",
-    "best-free-ssc-photo-resizer",
-    "ssc-photo-resizer-without-registration",
-    "online-ssc-photo-resizer-free",
-    "ssc-photo-resizer-browser-based",
-    "ssc-photo-resizer-no-download",
-    "ssc-photo-resizer-instant-online",
-    "ssc-photo-resizer-privacy-focused"
-  ],
-  "features": [
-    "Resize photos to 350x450 pixels for SSC CGL, CHSL, MTS and other SSC forms",
-    "One-click signature resize for SSC forms with 10KB-20KB target",
-    "Preview the output before downloading",
-    "Works in your browser; photos are never uploaded to a server",
-    "No signup or installation required",
-    "Free to use with no usage limits"
-  ],
-  "howTo": {
-    "name": "How to resize and compress a photo for SSC",
-    "steps": [
-      {
-        "name": "Upload photo or signature",
-        "text": "Click the upload area or drag and drop a JPG or PNG. The tool automatically detects whether it is a photo or signature based on the selected mode."
-      },
-      {
-        "name": "Confirm dimensions and size limits",
-        "text": "The default SSC settings are 350x450 pixels and 20KB-50KB for photos. For signature, use 350x200 pixels with 10KB-20KB. Adjust only if your notification says otherwise."
-      },
-      {
-        "name": "Preview and adjust quality",
-        "text": "Use the quality slider to balance file size and clarity. White background on a passport photo often compresses better than dark backgrounds."
-      },
-      {
-        "name": "Download as JPEG",
-        "text": "When the file size is inside the target band and the preview looks clear, click Download JPEG."
-      }
-    ]
-  },
-  "faqs": [
-    {
-      "question": "What is the SSC photo size and format?",
-      "answer": "SSC usually requires a passport-size photo between 20KB and 50KB, with a resolution of 350x450 pixels or 3.5cm x 4.5cm. Use JPG or JPEG for best compression. PNG works too but often produces larger files."
-    },
-    {
-      "question": "Do I need to resize my signature for SSC?",
-      "answer": "Yes. SSC forms often ask for a separate signature image, commonly 10KB-20KB and around 350x200 pixels. Use the Signature option in this tool to set those limits before you download."
-    },
-    {
-      "question": "Why was my SSC photo rejected from the form?",
-      "answer": "Common causes are wrong dimensions, file size below 20KB or above 50KB, blurry face, dark background instead of white or light background, and name/date stamp on the photo. Crop tightly to the face and avoid heavy compression that hides details."
-    },
-    {
-      "question": "Will my photo be uploaded to a server?",
-      "answer": "No. Photo resizing and compression happen directly in your browser. The original and processed files stay on your device unless you choose to upload them to the SSC portal yourself."
-    },
-    {
-      "question": "Can I use this tool on mobile?",
-      "answer": "Yes. The tool is responsive and works on phones and tablets. You can shoot or select a photo, resize it, and download the result without a desktop."
-    }
-  ],
-  "article": "\n## SSC Photo Resizer — Prepare Photos and Signatures for SSC Forms\n\nMany SSC candidates get rejected at the upload stage not because of their marks, but because their photo or signature does not match the specification. This tool fixes that by resizing and compressing your images directly in the browser so they land inside the required size band without losing clarity.\n\n## What makes this different from a generic image resizer?\nA generic resizer changes width and height, but SSC forms care about an exact pixel range and KB limit. This tool targets the actual SSC constraints: 350x450 pixels and 20KB-50KB for photos, and a signature mode sized for the 10KB-20KB range. You see the output file size instantly, so you can adjust quality before downloading.\n\n## What file should I upload?\nUse a recent passport-style photograph with a plain white or light background. Remove name banners, date stamps, or heavy borders. For the signature, use dark ink on white paper, crop to the signature only, and avoid extra margins.\n\n## How can I reduce file size without making the photo blurry?\nFirst crop the image to the face and shoulders. Then reduce the pixel dimensions to 350x450. If the file is still above 50KB, lower the JPEG quality from 0.9 toward 0.75 in small steps. If the file is below 20KB, raise the quality or switch to PNG briefly to see if a lossless save helps. Each time, check that facial features remain readable.\n"
-}
-    ]
-  },
-  "faqs": [
-    {
-      "question": "What is the SSC photo size and format?",
-      "answer": "SSC usually requires a passport-size photo between 20KB and 50KB, with a resolution of 350x450 pixels or 3.5cm x 4.5cm. Use JPG or JPEG for best compression. PNG works too but often produces larger files."
-    },
-    {
-      "question": "Do I need to resize my signature for SSC?",
-      "answer": "Yes. SSC forms often ask for a separate signature image, commonly 10KB-20KB and around 350x200 pixels. Use the Signature option in this tool to set those limits before you download."
-    },
-    {
-      "question": "Why was my SSC photo rejected from the form?",
-      "answer": "Common causes are wrong dimensions, file size below 20KB or above 50KB, blurry face, dark background instead of white or light background, and name/date stamp on the photo. Crop tightly to the face and avoid heavy compression that hides details."
-    },
-    {
-      "question": "Will my photo be uploaded to a server?",
-      "answer": "No. Photo resizing and compression happen directly in your browser. The original and processed files stay on your device unless you choose to upload them to the SSC portal yourself."
-    },
-    {
-      "question": "Can I use this tool on mobile?",
-      "answer": "Yes. The tool is responsive and works on phones and tablets. You can shoot or select a photo, resize it, and download the result without a desktop."
-    }
-  ],
-  "article": "\n## SSC Photo Resizer — Prepare Photos and Signatures for SSC Forms\n\nMany SSC candidates get rejected at the upload stage not because of their marks, but because their photo or signature does not match the specification. This tool fixes that by resizing and compressing your images directly in the browser so they land inside the required size band without losing clarity.\n\n## What makes this different from a generic image resizer?\nA generic resizer changes width and height, but SSC forms care about an exact pixel range and KB limit. This tool targets the actual SSC constraints: 350x450 pixels and 20KB-50KB for photos, and a signature mode sized for the 10KB-20KB range. You see the output file size instantly, so you can adjust quality before downloading.\n\n## What file should I upload?\nUse a recent passport-style photograph with a plain white or light background. Remove name banners, date stamps, or heavy borders. For the signature, use dark ink on white paper, crop to the signature only, and avoid extra margins.\n\n## How can I reduce file size without making the photo blurry?\nFirst crop the image to the face and shoulders. Then reduce the pixel dimensions to 350x450. If the file is still above 50KB, lower the JPEG quality from 0.9 toward 0.75 in small steps. If the file is below 20KB, raise the quality or switch to PNG briefly to see if a lossless save helps. Each time, check that facial features remain readable.\n"
-}
-    ]
-  },
-  "faqs": [
-    {
-      "question": "What is the SSC photo size and format?",
-      "answer": "SSC usually requires a passport-size photo between 20KB and 50KB, with a resolution of 350x450 pixels or 3.5cm x 4.5cm. Use JPG or JPEG for best compression. PNG works too but often produces larger files."
-    },
-    {
-      "question": "Do I need to resize my signature for SSC?",
-      "answer": "Yes. SSC forms often ask for a separate signature image, commonly 10KB-20KB and around 350x200 pixels. Use the Signature option in this tool to set those limits before you download."
-    },
-    {
-      "question": "Why was my SSC photo rejected from the form?",
-      "answer": "Common causes are wrong dimensions, file size below 20KB or above 50KB, blurry face, dark background instead of white or light background, and name/date stamp on the photo. Crop tightly to the face and avoid heavy compression that hides details."
-    },
-    {
-      "question": "Will my photo be uploaded to a server?",
-      "answer": "No. Photo resizing and compression happen directly in your browser. The original and processed files stay on your device unless you choose to upload them to the SSC portal yourself."
-    },
-    {
-      "question": "Can I use this tool on mobile?",
-      "answer": "Yes. The tool is responsive and works on phones and tablets. You can shoot or select a photo, resize it, and download the result without a desktop."
-    }
-  ],
-  "article": "\n## SSC Photo Resizer — Prepare Photos and Signatures for SSC Forms\n\nMany SSC candidates get rejected at the upload stage not because of their marks, but because their photo or signature does not match the specification. This tool fixes that by resizing and compressing your images directly in the browser so they land inside the required size band without losing clarity.\n\n## What makes this different from a generic image resizer?\nA generic resizer changes width and height, but SSC forms care about an exact pixel range and KB limit. This tool targets the actual SSC constraints: 350x450 pixels and 20KB-50KB for photos, and a signature mode sized for the 10KB-20KB range. You see the output file size instantly, so you can adjust quality before downloading.\n\n## What file should I upload?\nUse a recent passport-style photograph with a plain white or light background. Remove name banners, date stamps, or heavy borders. For the signature, use dark ink on white paper, crop to the signature only, and avoid extra margins.\n\n## How can I reduce file size without making the photo blurry?\nFirst crop the image to the face and shoulders. Then reduce the pixel dimensions to 350x450. If the file is still above 50KB, lower the JPEG quality from 0.9 toward 0.75 in small steps. If the file is below 20KB, raise the quality or switch to PNG briefly to see if a lossless save helps. Each time, check that facial features remain readable.\n"
-}
+        {
+          "id": "ssc-photo-resizer",
+          "name": "SSC Photo Resizer",
+          "description": "Resize and compress SSC photos to 350x450 pixels and 20KB-50KB, plus resize signatures to 10KB-20KB. No signup required.",
+          "route": "/ssc-photo-resizer",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": [
+            "ssc-signature-resizer",
+            "ssc-photo-size",
+            "ssc-image-resizer",
+            "ssc-signature-10kb-20kb",
+            "resize-photo-for-ssc"
+          ],
+          "features": [
+            "Resize photos to 350x450 pixels for SSC CGL, CHSL, MTS and other SSC forms",
+            "Use a signature target for the common 10KB-20KB SSC upload band",
+            "Preview the output before downloading",
+            "Works in your browser; photos are never uploaded to a server",
+            "No signup or installation required"
+          ],
+          "howTo": {
+            "name": "How to resize and compress a photo for SSC",
+            "steps": [
+              {
+                "name": "Upload photo or signature",
+                "text": "Choose a JPG or PNG photo from your device."
+              },
+              {
+                "name": "Use SSC dimensions",
+                "text": "Keep the default 350x450 photo setting or switch to signature mode if your form asks for a signature file."
+              },
+              {
+                "name": "Compress into the upload band",
+                "text": "Adjust quality until the file is inside the accepted KB range and still clear."
+              },
+              {
+                "name": "Download and upload",
+                "text": "Download the processed image and upload it to the official SSC form."
+              }
+            ]
+          },
+          "faqs": [
+            {
+              "question": "What is the SSC photo size and format?",
+              "answer": "SSC forms commonly ask for a passport-style JPG or JPEG photo around 350x450 pixels and 20KB-50KB. Always check the latest notification for your exact exam."
+            },
+            {
+              "question": "Can I resize an SSC signature here?",
+              "answer": "Yes. Use the signature option for a 10KB-20KB target and crop out extra white space before compressing."
+            },
+            {
+              "question": "Will my photo be uploaded to a server?",
+              "answer": "No. The resizing and compression step runs in your browser, so your original and output files stay on your device."
+            }
+          ],
+          "article": "\n## SSC Photo Resizer for Online Forms\n\nSSC upload portals are strict about photo dimensions and file size. This page targets the common SSC photo and signature upload bands so candidates can prepare images without opening heavy editing software.\n\n## Best input photo\nUse a recent passport-style photo with a plain light background. Crop to the face and shoulders first, then compress. For signatures, use dark ink on white paper and crop close to the signature.\n"
+        },
+        {
+          "id": "signature-resizer-under-20kb",
+          "name": "Signature Resizer Under 20KB",
+          "description": "Resize and compress signatures under 20KB for exam forms, job applications, and government portals. Free browser-based signature compressor.",
+          "route": "/signature-resizer-under-20kb",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": ["compress-signature-to-10kb", "compress-signature-to-20kb", "signature-compressor"]
+        },
+        {
+          "id": "neet-photo-resizer",
+          "name": "NEET Photo Resizer",
+          "description": "Resize and compress NEET application photos and signatures for online form uploads. Free, private, and no signup required.",
+          "route": "/neet-photo-resizer",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": ["neet-signature-resizer", "neet-photo-size", "resize-photo-for-neet"]
+        },
+        {
+          "id": "jee-photo-resizer",
+          "name": "JEE Photo Resizer",
+          "description": "Prepare JEE Main photo and signature images for online application forms with browser-based resize and compression.",
+          "route": "/jee-photo-resizer",
+          "popular": true,
+          "category": "exam-tools",
+          "extraSlugs": ["jee-signature-resizer", "jee-main-photo-size", "resize-photo-for-jee"]
+        },
+        {
+          "id": "cuet-photo-resizer",
+          "name": "CUET Photo Resizer",
+          "description": "Resize CUET photos and signatures for application forms using a free browser-based image resizer and compressor.",
+          "route": "/cuet-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": ["cuet-signature-resizer", "resize-photo-for-cuet"]
+        },
+        {
+          "id": "railway-exam-photo-resizer",
+          "name": "Railway Exam Photo Resizer",
+          "description": "Resize photos and signatures for railway exam forms, including RRB and recruitment portal uploads.",
+          "route": "/railway-exam-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": ["rrb-photo-resizer", "railway-signature-resizer"]
+        },
+        {
+          "id": "ibps-photo-resizer",
+          "name": "Bank Exam Photo Resizer",
+          "description": "Resize and compress photos and signatures for IBPS, SBI, and bank exam application forms.",
+          "route": "/ibps-photo-resizer",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": ["bank-exam-photo-resizer", "ibps-signature-resizer", "sbi-photo-resizer"]
+        },
+        {
+          "id": "pan-card-photo-resizer",
+          "name": "PAN Card Photo Resizer",
+          "description": "Resize PAN card photos and signatures for online application forms with safe browser processing.",
+          "route": "/pan-card-photo-resizer",
+          "popular": false,
+          "category": "exam-tools"
+        },
+        {
+          "id": "passport-photo-maker",
+          "name": "Passport Photo Maker India",
+          "description": "Create passport-style photos for Indian forms and documents with crop, resize, and compression controls.",
+          "route": "/passport-photo-maker",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": ["passport-photo-resizer-india", "passport-size-photo-maker"]
+        },
+        {
+          "id": "photo-compressor-under-50kb",
+          "name": "Photo Compressor Under 50KB",
+          "description": "Compress exam photos under 50KB for application forms while keeping face details readable.",
+          "route": "/photo-compressor-under-50kb",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": ["compress-photo-under-50kb", "photo-50kb-compressor"]
+        },
+        {
+          "id": "form-image-size-checker",
+          "name": "Form Image Size Checker",
+          "description": "Check image dimensions, file size, format, and DPI before uploading photos or signatures to online forms.",
+          "route": "/form-image-size-checker",
+          "popular": false,
+          "category": "exam-tools"
+        },
+        {
+          "id": "photo-name-date-editor",
+          "name": "Photo Name Date Editor",
+          "description": "Add name and date text to exam photos when an application form requires it.",
+          "route": "/photo-name-date-editor",
+          "popular": false,
+          "category": "exam-tools"
+        },
+        {
+          "id": "jpg-to-pdf-exam-forms",
+          "name": "JPG to PDF for Exam Forms",
+          "description": "Convert photos and documents to PDF for online exam forms with file-size friendly output.",
+          "route": "/jpg-to-pdf-exam-forms",
+          "popular": false,
+          "category": "exam-tools"
+        },
+        {
+          "id": "pdf-compressor-under-200kb",
+          "name": "PDF Compressor Under 200KB",
+          "description": "Compress PDF files under 200KB for exam, job, and government form uploads.",
+          "route": "/pdf-compressor-under-200kb",
+          "popular": false,
+          "category": "exam-tools",
+          "extraSlugs": ["compress-pdf-to-200kb", "pdf-200kb-compressor"]
+        }
       ]
     }
   }
