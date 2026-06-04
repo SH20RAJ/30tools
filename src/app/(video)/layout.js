@@ -10,7 +10,7 @@ export const metadata = {
 		title: "Free Video Tools Online - No Signup | 30tools",
 		description:
 			"Play Terabox videos, compress, convert, and trim video files for free. Browser-based, no signup, no watermarks.",
-		url: "https://30tools.com/video-tools",
+		url: "https://sopkit.github.io/video-tools",
 		siteName: "30tools",
 		images: [
 			{

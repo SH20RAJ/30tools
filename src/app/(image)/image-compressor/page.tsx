@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Compress images online for free without losing quality. Reduce file size of JPG, PNG, and WebP images instantly. Secure, browser-based processing.",
 	keywords: "image-compressor, Image Compressor, free image-compressor, Image Compressor online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/image-compressor",
+		canonical: "https://sopkit.github.io/image-compressor",
 	},
 	openGraph: {
 		title: "Free Image Compressor Online - No Signup | 30tools",
 		description: "Compress images online for free without losing quality. Reduce file size of JPG, PNG, and WebP images instantly. Secure, browser-based processing.",
-		url: "https://30tools.com/image-compressor",
+		url: "https://sopkit.github.io/image-compressor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

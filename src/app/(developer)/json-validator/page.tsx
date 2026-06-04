@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free JSON Validator online. Secure, local developer utility with no registration. Try it free now.",
 	keywords: "json validator, validate json, json syntax checker, json lint, online json validator, free tool, 30tools, json-validator, free json-validator, json validator online, developer tool, online code utility",
 	alternates: {
-		canonical: "https://30tools.com/json-validator",
+		canonical: "https://sopkit.github.io/json-validator",
 	},
 	openGraph: {
 		title: "Free JSON Validator Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free JSON Validator online. Secure, local developer utility with no registration. Try it free now.",
-		url: "https://30tools.com/json-validator",
+		url: "https://sopkit.github.io/json-validator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

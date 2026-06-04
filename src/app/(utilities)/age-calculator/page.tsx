@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "age calculator, calculate age, birthdate calculator, age from date, how old am i, free tool, 30tools, age-calculator, free age-calculator, age calculator online, online utility, free converter",
 	alternates: {
-		canonical: "https://30tools.com/age-calculator",
+		canonical: "https://sopkit.github.io/age-calculator",
 	},
 	openGraph: {
 		title: "Free Age Calculator Online - No Signup | 30tools",
 		description: "Free age calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/age-calculator",
+		url: "https://sopkit.github.io/age-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

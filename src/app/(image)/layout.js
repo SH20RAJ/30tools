@@ -10,7 +10,7 @@ export const metadata = {
 		title: "Free Image Tools Online - No Signup | 30tools",
 		description:
 			"Remove backgrounds, compress, resize, and convert images with free AI-powered tools. Batch processing, no watermarks, no signup.",
-		url: "https://30tools.com/image-tools",
+		url: "https://sopkit.github.io/image-tools",
 		siteName: "30tools",
 		images: [
 			{

@@ -6,12 +6,12 @@ export const metadata = {
 	description: "Generate full-length AI songs with vocals and instrumentation from text prompts using MiniMax Music 2.6 on Cloudflare AI. Royalty-free music generation...",
 	keywords: "ai music generator, free ai music generator, minimax music 2.6, cloudflare ai music, text to song ai, ai song maker, royalty free ai music, free music generator online, ai vocal generator, instrumental ai music, free this week",
 	alternates: {
-		canonical: "https://30tools.com/ai-music-generator",
+		canonical: "https://sopkit.github.io/ai-music-generator",
 	},
 	openGraph: {
 		title: "Free AI Music Generator Online - No Signup | 30tools",
 		description: "Generate full-length AI songs with vocals and instrumentation from text prompts using MiniMax Music 2.6 on Cloudflare AI. Royalty-free music generation...",
-		url: "https://30tools.com/ai-music-generator",
+		url: "https://sopkit.github.io/ai-music-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -117,7 +117,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: "https://30tools.com/ai-music-generator",
+						url: "https://sopkit.github.io/ai-music-generator",
 						applicationCategory: "MultimediaApplication",
 						operatingSystem: "Any",
 						offers: {

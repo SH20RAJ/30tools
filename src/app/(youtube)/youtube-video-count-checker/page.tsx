@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel...",
 	keywords: "youtube video count checker, free online tool, no signup, youtube-video-count-checker, free youtube-video-count-checker, Youtube Video Count Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-video-count-checker",
+		canonical: "https://sopkit.github.io/youtube-video-count-checker",
 	},
 	openGraph: {
 		title: "Free YouTube Video Count Checker Online - No Signup | 30tools",
 		description: "Get the exact video count for any YouTube channel instantly. Our free online checker provides up-to-date information for competitive research and channel...",
-		url: "https://30tools.com/youtube-video-count-checker",
+		url: "https://sopkit.github.io/youtube-video-count-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

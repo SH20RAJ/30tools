@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free JSON Minify online. Secure, local developer utility with no registration. No signup required.",
 	keywords: "json minify, free online tool, no signup, json-minify, free json-minify, Json Minify online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/json-minify",
+		canonical: "https://sopkit.github.io/json-minify",
 	},
 	openGraph: {
 		title: "Free JSON Minify Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free JSON Minify online. Secure, local developer utility with no registration. No signup required.",
-		url: "https://30tools.com/json-minify",
+		url: "https://sopkit.github.io/json-minify",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

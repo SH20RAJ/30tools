@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free paypal fee calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "paypal fee calculator, free online tool, no signup, paypal-fee-calculator, free paypal-fee-calculator, Paypal Fee Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/paypal-fee-calculator",
+		canonical: "https://sopkit.github.io/paypal-fee-calculator",
 	},
 	openGraph: {
 		title: "Free Paypal Fee Calculator Online - No Signup | 30tools",
 		description: "Free paypal fee calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/paypal-fee-calculator",
+		url: "https://sopkit.github.io/paypal-fee-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

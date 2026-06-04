@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Convert between degrees, radians, gradians, and more instantly. Our free online Angle Converter is perfect for students, engineers, and mathematicians...",
 	keywords: "angle converter, free online tool, no signup, angle-converter, free angle-converter, Angle Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/angle-converter",
+		canonical: "https://sopkit.github.io/angle-converter",
 	},
 	openGraph: {
 		title: "Free Angle Converter Online - No Signup | 30tools",
 		description: "Convert between degrees, radians, gradians, and more instantly. Our free online Angle Converter is perfect for students, engineers, and mathematicians...",
-		url: "https://30tools.com/angle-converter",
+		url: "https://sopkit.github.io/angle-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Octal to Binary Converter online. Secure, local developer utility with no registration.",
 	keywords: "octal to binary converter, free online tool, no signup, octal-to-binary-converter, free octal-to-binary-converter, Octal To Binary Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/octal-to-binary-converter",
+		canonical: "https://sopkit.github.io/octal-to-binary-converter",
 	},
 	openGraph: {
 		title: "Free Octal to Binary Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Octal to Binary Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/octal-to-binary-converter",
+		url: "https://sopkit.github.io/octal-to-binary-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

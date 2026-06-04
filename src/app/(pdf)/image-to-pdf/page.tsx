@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Manage, convert, edit, and secure PDF documents with our free Image to PDF online. Safe and private browser-based tool with no registration. No signup required.",
 	keywords: "image-to-pdf, Image To Pdf, free image-to-pdf, Image To Pdf online, PDF utility, document editor, online PDF tool, free PDF converter, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/image-to-pdf",
+		canonical: "https://sopkit.github.io/image-to-pdf",
 	},
 	openGraph: {
 		title: "Free Image to PDF Online - No Signup | 30tools",
 		description: "Manage, convert, edit, and secure PDF documents with our free Image to PDF online. Safe and private browser-based tool with no registration. No signup required.",
-		url: "https://30tools.com/image-to-pdf",
+		url: "https://sopkit.github.io/image-to-pdf",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

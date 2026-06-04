@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Mixcloud Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "mixcloud video downloader, free online tool, no signup, mixcloud-video-downloader, free mixcloud-video-downloader, Mixcloud Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/mixcloud-video-downloader",
+		canonical: "https://sopkit.github.io/mixcloud-video-downloader",
 	},
 	openGraph: {
 		title: "Free Mixcloud Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Mixcloud Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
-		url: "https://30tools.com/mixcloud-video-downloader",
+		url: "https://sopkit.github.io/mixcloud-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

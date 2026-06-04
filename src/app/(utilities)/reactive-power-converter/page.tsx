@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free reactive power converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "reactive power converter, free online tool, no signup, reactive-power-converter, free reactive-power-converter, Reactive Power Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/reactive-power-converter",
+		canonical: "https://sopkit.github.io/reactive-power-converter",
 	},
 	openGraph: {
 		title: "Free Reactive Power Converter Online - No Signup | 30tools",
 		description: "Free reactive power converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/reactive-power-converter",
+		url: "https://sopkit.github.io/reactive-power-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

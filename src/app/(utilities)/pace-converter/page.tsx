@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "pace converter, free online tool, no signup, pace-converter, free pace-converter, Pace Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/pace-converter",
+		canonical: "https://sopkit.github.io/pace-converter",
 	},
 	openGraph: {
 		title: "Free Pace Converter Online - No Signup | 30tools",
 		description: "Free pace converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/pace-converter",
+		url: "https://sopkit.github.io/pace-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

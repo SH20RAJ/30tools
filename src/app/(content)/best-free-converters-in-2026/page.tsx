@@ -7,12 +7,12 @@ export const metadata = {
 	description: "Convert any file, media format, or data payload instantly. Explore our ranked list of the best free online converter tools for 2026. No registration needed.",
 	keywords: "best free converters in 2026 (file, data, and media), and media) guide, 30tools, best-free-converters-in-2026, best free converters in 2026, free best-free-converters-in-2026, best free converters in 2026 online, 30tools guide, online tool guide, free tool category",
 	alternates: {
-		canonical: "https://30tools.com/best-free-converters-in-2026",
+		canonical: "https://sopkit.github.io/best-free-converters-in-2026",
 	},
 	openGraph: {
 		title: "Best Free File, Data, and Media Converters in 2026 | 30tools",
 		description: "Convert any file, media format, or data payload instantly. Explore our ranked list of the best free online converter tools for 2026. No registration needed.",
-		url: "https://30tools.com/best-free-converters-in-2026",
+		url: "https://sopkit.github.io/best-free-converters-in-2026",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -47,7 +47,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: "https://30tools.com/best-free-converters-in-2026",
+						url: "https://sopkit.github.io/best-free-converters-in-2026",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

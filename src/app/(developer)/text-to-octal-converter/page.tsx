@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Text to Octal Converter online. Secure, local developer utility with no registration.",
 	keywords: "text to octal converter, free online tool, no signup, text-to-octal-converter, free text-to-octal-converter, Text To Octal Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/text-to-octal-converter",
+		canonical: "https://sopkit.github.io/text-to-octal-converter",
 	},
 	openGraph: {
 		title: "Free Text to Octal Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Text to Octal Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/text-to-octal-converter",
+		url: "https://sopkit.github.io/text-to-octal-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

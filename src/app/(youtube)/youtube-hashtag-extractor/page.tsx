@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Extract all hashtags from any YouTube video instantly. Our free online tool helps you analyze competitor tagging strategies and optimize your own video...",
 	keywords: "youtube hashtag extractor, free online tool, no signup, youtube-hashtag-extractor, free youtube-hashtag-extractor, Youtube Hashtag Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-hashtag-extractor",
+		canonical: "https://sopkit.github.io/youtube-hashtag-extractor",
 	},
 	openGraph: {
 		title: "Free YouTube Hashtag Extractor Online - No Signup | 30tools",
 		description: "Extract all hashtags from any YouTube video instantly. Our free online tool helps you analyze competitor tagging strategies and optimize your own video...",
-		url: "https://30tools.com/youtube-hashtag-extractor",
+		url: "https://sopkit.github.io/youtube-hashtag-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

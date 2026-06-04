@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free what is my screen resolution tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "what is my screen resolution, free online tool, no signup, what-is-my-screen-resolution, free what-is-my-screen-resolution, What Is My Screen Resolution online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/what-is-my-screen-resolution",
+		canonical: "https://sopkit.github.io/what-is-my-screen-resolution",
 	},
 	openGraph: {
 		title: "Free What Is My Screen Resolution Online - No Signup | 30tools",
 		description: "Free what is my screen resolution tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/what-is-my-screen-resolution",
+		url: "https://sopkit.github.io/what-is-my-screen-resolution",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

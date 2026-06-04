@@ -6,12 +6,12 @@ export const metadata = {
 	description: "All Downloaders - Coming Soon",
 	keywords: "all downloaders, free online tool, no signup, others, all downloaders online, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/all-downloaders",
+		canonical: "https://sopkit.github.io/all-downloaders",
 	},
 	openGraph: {
 		title: "Free All Downloaders Online - No Signup | 30tools",
 		description: "All Downloaders - Coming Soon",
-		url: "https://30tools.com/all-downloaders",
+		url: "https://sopkit.github.io/all-downloaders",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -93,7 +93,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: "All Downloaders",
 						description: "All Downloaders",
-						url: "https://30tools.com/all-downloaders",
+						url: "https://sopkit.github.io/all-downloaders",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

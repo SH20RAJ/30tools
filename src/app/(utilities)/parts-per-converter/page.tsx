@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free parts per converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "parts per converter, free online tool, no signup, parts-per-converter, free parts-per-converter, Parts Per Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/parts-per-converter",
+		canonical: "https://sopkit.github.io/parts-per-converter",
 	},
 	openGraph: {
 		title: "Free Parts Per Converter Online - No Signup | 30tools",
 		description: "Free parts per converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/parts-per-converter",
+		url: "https://sopkit.github.io/parts-per-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

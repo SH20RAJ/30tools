@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Rotate images clockwise, counter-clockwise, or flip them instantly. Our free online image rotator works in your browser, keeping your photos private and...",
 	keywords: "rotate image, free online tool, no signup, rotate-image, free rotate-image, Rotate Image online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/rotate-image",
+		canonical: "https://sopkit.github.io/rotate-image",
 	},
 	openGraph: {
 		title: "Free Rotate Image Online - No Signup | 30tools",
 		description: "Rotate images clockwise, counter-clockwise, or flip them instantly. Our free online image rotator works in your browser, keeping your photos private and...",
-		url: "https://30tools.com/rotate-image",
+		url: "https://sopkit.github.io/rotate-image",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

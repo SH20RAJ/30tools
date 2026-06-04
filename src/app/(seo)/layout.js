@@ -12,7 +12,7 @@ export const metadata = {
 		title: "Free SEO Tools Online - No Signup | 30tools",
 		description:
 			"17+ free SEO tools for site audits, keyword research, schema markup, and meta tag optimization. No signup required.",
-		url: "https://30tools.com/seo-tools",
+		url: "https://sopkit.github.io/seo-tools",
 		siteName: "30tools",
 		images: [
 			{

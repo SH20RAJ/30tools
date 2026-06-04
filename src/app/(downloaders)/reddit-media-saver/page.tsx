@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Reddit Media Saver online. High-speed downloading with no signup needed. No signup required.",
 	keywords: "reddit media saver, free online tool, no signup, reddit-media-saver, free reddit-media-saver, Reddit Media Saver online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/reddit-media-saver",
+		canonical: "https://sopkit.github.io/reddit-media-saver",
 	},
 	openGraph: {
 		title: "Free Reddit Media Saver Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Reddit Media Saver online. High-speed downloading with no signup needed. No signup required.",
-		url: "https://30tools.com/reddit-media-saver",
+		url: "https://sopkit.github.io/reddit-media-saver",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

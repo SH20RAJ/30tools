@@ -43,7 +43,7 @@ import { Textarea } from "@/components/ui/textarea";
 
 export default function QRCodeGeneratorTool() {
 	const [qrType, setQrType] = useState("url");
-	const [qrData, setQrData] = useState("https://30tools.com");
+	const [qrData, setQrData] = useState("https://sopkit.github.io");
 	const [qrSize, setQrSize] = useState([256]);
 	const [foregroundColor, setForegroundColor] = useState("#000000");
 	const [backgroundColor, setBackgroundColor] = useState("#ffffff");
@@ -729,7 +729,7 @@ export default function QRCodeGeneratorTool() {
 										className="h-auto p-4 flex flex-col items-start gap-2"
 										onClick={() => {
 											setQrType("url");
-											setQrData("https://30tools.com");
+											setQrData("https://sopkit.github.io");
 										}}
 									>
 										<div className="flex items-center gap-2 text-primary">

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for...",
 	keywords: "youtube subscribe link generator, free online tool, no signup, youtube-subscribe-link-generator, free youtube-subscribe-link-generator, Youtube Subscribe Link Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-subscribe-link-generator",
+		canonical: "https://sopkit.github.io/youtube-subscribe-link-generator",
 	},
 	openGraph: {
 		title: "Free YouTube Subscribe Link Generator Online - No Signup | 30tools",
 		description: "Create a direct YouTube subscribe link for your channel instantly. Our free online tool helps you boost your subscriber count with one-click links for...",
-		url: "https://30tools.com/youtube-subscribe-link-generator",
+		url: "https://sopkit.github.io/youtube-subscribe-link-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

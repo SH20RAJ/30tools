@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free ShareChat Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 	keywords: "sharechat video downloader, free online tool, no signup, sharechat-video-downloader, free sharechat-video-downloader, Sharechat Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/sharechat-video-downloader",
+		canonical: "https://sopkit.github.io/sharechat-video-downloader",
 	},
 	openGraph: {
 		title: "Free ShareChat Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free ShareChat Video Downloader online. High-speed downloading with no signup needed. 100% free.",
-		url: "https://30tools.com/sharechat-video-downloader",
+		url: "https://sopkit.github.io/sharechat-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

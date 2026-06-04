@@ -11,11 +11,11 @@ export const metadata = {
 	title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",
 	description: "Free online calculators for every need. BMI calculators, loan estimators, percentage tools, and scientific math tools. Get instant, accurate results for free.",
 	keywords: "online calculators, bmi calculator, loan calculator, math tools, free calculators, 30tools, calculators, calculators online, online calculator, free math tool, converter, number tool",
-	alternates: { canonical: "https://30tools.com/calculators" },
+	alternates: { canonical: "https://sopkit.github.io/calculators" },
 	openGraph: {
 		title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",
 		description: "Free online calculators for every need. BMI calculators, loan estimators, percentage tools, and scientific math tools. Get instant, accurate results for free.",
-		url: "https://30tools.com/calculators",
+		url: "https://sopkit.github.io/calculators",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Resize and compress files with our free PDF Compressor Under 200KB online. Safe and private browser utility for government exam portal applications. 100% free.",
 	keywords: "pdf-compressor-under-200kb, PDF Compressor Under 200KB, compress pdf to 200kb, reduce pdf size to 200kb online, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/pdf-compressor-under-200kb",
+		canonical: "https://sopkit.github.io/pdf-compressor-under-200kb",
 	},
 	openGraph: {
 		title: "Free PDF Compressor Under 200KB Online - No Signup | 30tools",
 		description: "Resize and compress files with our free PDF Compressor Under 200KB online. Safe and private browser utility for government exam portal applications. 100% free.",
-		url: "https://30tools.com/pdf-compressor-under-200kb",
+		url: "https://sopkit.github.io/pdf-compressor-under-200kb",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

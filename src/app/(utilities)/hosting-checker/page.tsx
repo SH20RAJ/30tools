@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free hosting checker tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "hosting checker, free online tool, no signup, hosting-checker, free hosting-checker, Hosting Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/hosting-checker",
+		canonical: "https://sopkit.github.io/hosting-checker",
 	},
 	openGraph: {
 		title: "Free Hosting Checker Online - No Signup | 30tools",
 		description: "Free hosting checker tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/hosting-checker",
+		url: "https://sopkit.github.io/hosting-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

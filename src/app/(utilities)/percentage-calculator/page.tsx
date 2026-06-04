@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free percentage calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "percentage calculator, calculate percentage, percent calculator, online calculator, free math tool, 30tools, percentage-calculator, free percentage-calculator, percentage calculator online, online utility, free converter, browser tool",
 	alternates: {
-		canonical: "https://30tools.com/percentage-calculator",
+		canonical: "https://sopkit.github.io/percentage-calculator",
 	},
 	openGraph: {
 		title: "Free Percentage Calculator Online - No Signup | 30tools",
 		description: "Free percentage calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/percentage-calculator",
+		url: "https://sopkit.github.io/percentage-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

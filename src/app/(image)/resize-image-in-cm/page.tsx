@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Resize your images by specifying width and height in centimeters (cm), millimeters (mm), or inches for printing and forms.",
 	keywords: "resize-image-in-cm, Resize Image in CM, resize image cm, resize image mm, resize image inches, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/resize-image-in-cm",
+		canonical: "https://sopkit.github.io/resize-image-in-cm",
 	},
 	openGraph: {
 		title: "Free Resize Image in CM Online - No Signup | 30tools",
 		description: "Resize your images by specifying width and height in centimeters (cm), millimeters (mm), or inches for printing and forms.",
-		url: "https://30tools.com/resize-image-in-cm",
+		url: "https://sopkit.github.io/resize-image-in-cm",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

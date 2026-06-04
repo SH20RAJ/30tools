@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
 	title: "30tools Pro - Batch Tools, No Ads and API Access",
 	description: "30tools Pro is a planned upgrade for batch image compression, batch PDF tools, no ads, larger files, saved history, team features, and API access.",
-	alternates: { canonical: "https://30tools.com/pro" },
+	alternates: { canonical: "https://sopkit.github.io/pro" },
 };
 
 const plans = [

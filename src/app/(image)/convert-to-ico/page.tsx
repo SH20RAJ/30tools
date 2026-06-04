@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "convert to ico, free online tool, no signup, convert-to-ico, free convert-to-ico, Convert To Ico online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/convert-to-ico",
+		canonical: "https://sopkit.github.io/convert-to-ico",
 	},
 	openGraph: {
 		title: "Free Convert to ICO Online - No Signup | 30tools",
 		description: "Free convert to ico tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/convert-to-ico",
+		url: "https://sopkit.github.io/convert-to-ico",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

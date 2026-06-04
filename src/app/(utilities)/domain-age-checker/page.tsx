@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Find the exact age of any domain name instantly. Our free online tool helps with SEO research, domain appraisal, and competitive analysis.",
 	keywords: "domain age checker, free online tool, no signup, domain-age-checker, free domain-age-checker, Domain Age Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/domain-age-checker",
+		canonical: "https://sopkit.github.io/domain-age-checker",
 	},
 	openGraph: {
 		title: "Free Domain Age Checker Online - No Signup | 30tools",
 		description: "Find the exact age of any domain name instantly. Our free online tool helps with SEO research, domain appraisal, and competitive analysis.",
-		url: "https://30tools.com/domain-age-checker",
+		url: "https://sopkit.github.io/domain-age-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

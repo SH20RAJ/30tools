@@ -20,12 +20,12 @@ export const metadata = {
   title: "SSC Photo Resizer - Resize Photo and Signature for SSC Forms | 30tools",
   description:
     "Resize and compress SSC photos to 350x450 pixels and 20KB-50KB, plus resize signature to 10KB-20KB directly in your browser. Free, private, no signup.",
-  alternates: { canonical: "https://30tools.com/ssc-photo-resizer" },
+  alternates: { canonical: "https://sopkit.github.io/ssc-photo-resizer" },
   openGraph: {
     title: "SSC Photo Resizer - Resize Photo and Signature for SSC Forms | 30tools",
     description:
       "Resize SSC photos to 350x450 pixels and 20KB-50KB, and signatures to the required 10KB-20KB band for SSC CGL, CHSL, MTS and other SSC online forms.",
-    url: "https://30tools.com/ssc-photo-resizer",
+    url: "https://sopkit.github.io/ssc-photo-resizer",
     siteName: "30tools",
     images: [{ url: "/og-image.jpg" }],
     type: "website",

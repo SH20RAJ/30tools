@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free each converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "each converter, free online tool, no signup, each-converter, free each-converter, Each Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/each-converter",
+		canonical: "https://sopkit.github.io/each-converter",
 	},
 	openGraph: {
 		title: "Free Each Converter Online - No Signup | 30tools",
 		description: "Free each converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/each-converter",
+		url: "https://sopkit.github.io/each-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

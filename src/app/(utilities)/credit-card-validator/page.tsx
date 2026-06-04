@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Check if a credit card number is valid using the Luhn algorithm instantly. Our free online tool helps you verify card formats and identify card types for...",
 	keywords: "credit card validator, free online tool, no signup, credit-card-validator, free credit-card-validator, Credit Card Validator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/credit-card-validator",
+		canonical: "https://sopkit.github.io/credit-card-validator",
 	},
 	openGraph: {
 		title: "Free Credit Card Validator Online - No Signup | 30tools",
 		description: "Check if a credit card number is valid using the Luhn algorithm instantly. Our free online tool helps you verify card formats and identify card types for...",
-		url: "https://30tools.com/credit-card-validator",
+		url: "https://sopkit.github.io/credit-card-validator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

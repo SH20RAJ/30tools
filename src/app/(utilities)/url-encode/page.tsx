@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free url encode tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "url encode, free online tool, no signup, url-encode, free url-encode, Url Encode online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/url-encode",
+		canonical: "https://sopkit.github.io/url-encode",
 	},
 	openGraph: {
 		title: "Free URL Encode Online - No Signup | 30tools",
 		description: "Free url encode tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/url-encode",
+		url: "https://sopkit.github.io/url-encode",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

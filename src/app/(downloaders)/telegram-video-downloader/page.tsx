@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Telegram Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "telegram video downloader, free online tool, no signup, telegram-video-downloader, free telegram-video-downloader, Telegram Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/telegram-video-downloader",
+		canonical: "https://sopkit.github.io/telegram-video-downloader",
 	},
 	openGraph: {
 		title: "Free Telegram Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Telegram Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
-		url: "https://30tools.com/telegram-video-downloader",
+		url: "https://sopkit.github.io/telegram-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

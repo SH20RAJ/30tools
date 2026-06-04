@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Text to ASCII Converter online. Secure, local developer utility with no registration.",
 	keywords: "text to ascii converter, free online tool, no signup, text-to-ascii-converter, free text-to-ascii-converter, Text To Ascii Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/text-to-ascii-converter",
+		canonical: "https://sopkit.github.io/text-to-ascii-converter",
 	},
 	openGraph: {
 		title: "Free Text to ASCII Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Text to ASCII Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/text-to-ascii-converter",
+		url: "https://sopkit.github.io/text-to-ascii-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

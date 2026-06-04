@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Resize and compress files with our free JPG to PDF for Exam Forms online. Safe and private browser utility for government exam portal applications. Easy to use.",
 	keywords: "jpg-to-pdf-exam-forms, JPG to PDF for Exam Forms, convert jpg to pdf for exam, image to pdf exam forms, pdf creator, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/jpg-to-pdf-exam-forms",
+		canonical: "https://sopkit.github.io/jpg-to-pdf-exam-forms",
 	},
 	openGraph: {
 		title: "Free JPG to PDF for Exam Forms Online - No Signup | 30tools",
 		description: "Resize and compress files with our free JPG to PDF for Exam Forms online. Safe and private browser utility for government exam portal applications. Easy to use.",
-		url: "https://30tools.com/jpg-to-pdf-exam-forms",
+		url: "https://sopkit.github.io/jpg-to-pdf-exam-forms",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

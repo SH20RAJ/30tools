@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Binary to HEX Converter online. Secure, local developer utility with no registration.",
 	keywords: "binary to hex converter, free online tool, no signup, binary-to-hex-converter, free binary-to-hex-converter, Binary To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/binary-to-hex-converter",
+		canonical: "https://sopkit.github.io/binary-to-hex-converter",
 	},
 	openGraph: {
 		title: "Free Binary to HEX Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Binary to HEX Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/binary-to-hex-converter",
+		url: "https://sopkit.github.io/binary-to-hex-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

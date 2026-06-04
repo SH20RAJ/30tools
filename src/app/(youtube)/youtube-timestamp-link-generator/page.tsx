@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Create direct links to specific parts of any YouTube video instantly. Our free online tool helps you share precise moments with friends, students, or your...",
 	keywords: "youtube timestamp link generator, free online tool, no signup, youtube-timestamp-link-generator, free youtube-timestamp-link-generator, Youtube Timestamp Link Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-timestamp-link-generator",
+		canonical: "https://sopkit.github.io/youtube-timestamp-link-generator",
 	},
 	openGraph: {
 		title: "Free YouTube Timestamp Link Generator Online - No Signup | 30tools",
 		description: "Create direct links to specific parts of any YouTube video instantly. Our free online tool helps you share precise moments with friends, students, or your...",
-		url: "https://30tools.com/youtube-timestamp-link-generator",
+		url: "https://sopkit.github.io/youtube-timestamp-link-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

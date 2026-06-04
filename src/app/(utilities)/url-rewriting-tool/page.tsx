@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free url rewriting tool tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "url rewriting tool, free online tool, no signup, url-rewriting-tool, free url-rewriting-tool, Url Rewriting Tool online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/url-rewriting-tool",
+		canonical: "https://sopkit.github.io/url-rewriting-tool",
 	},
 	openGraph: {
 		title: "Free URL Rewriting Tool Online - No Signup | 30tools",
 		description: "Free url rewriting tool tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/url-rewriting-tool",
+		url: "https://sopkit.github.io/url-rewriting-tool",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

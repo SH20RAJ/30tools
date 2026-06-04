@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Calculate the break-even point in units and revenue from fixed costs, variable cost per unit, and selling price. Free business calculator.",
 	keywords: "break even calculator, break even point, break even analysis, break even units, cost volume profit calculator",
 	alternates: {
-		canonical: "https://30tools.com/break-even-calculator",
+		canonical: "https://sopkit.github.io/break-even-calculator",
 	},
 	openGraph: {
 		title: "Break-Even Calculator - Units & Revenue | 30tools",
 		description: "Calculate the break-even point in units and revenue from fixed costs, variable cost per unit, and selling price. Free business calculator.",
-		url: "https://30tools.com/break-even-calculator",
+		url: "https://sopkit.github.io/break-even-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

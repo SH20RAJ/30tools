@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free url parser tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "url parser, free online tool, no signup, url-parser, free url-parser, Url Parser online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/url-parser",
+		canonical: "https://sopkit.github.io/url-parser",
 	},
 	openGraph: {
 		title: "Free URL Parser Online - No Signup | 30tools",
 		description: "Free url parser tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/url-parser",
+		url: "https://sopkit.github.io/url-parser",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

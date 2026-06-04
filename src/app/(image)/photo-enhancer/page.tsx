@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Enhance photo quality with AI-powered image enhancement",
 	keywords: "photo enhancer, free online tool, no signup, photo-enhancer, free photo-enhancer, Photo Enhancer online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/photo-enhancer",
+		canonical: "https://sopkit.github.io/photo-enhancer",
 	},
 	openGraph: {
 		title: "Free Photo Enhancer Online - No Signup | 30tools",
 		description: "Enhance photo quality with AI-powered image enhancement",
-		url: "https://30tools.com/photo-enhancer",
+		url: "https://sopkit.github.io/photo-enhancer",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

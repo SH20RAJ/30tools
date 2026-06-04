@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Decimal to HEX Converter online. Secure, local developer utility with no registration.",
 	keywords: "decimal to hex converter, free online tool, no signup, decimal-to-hex-converter, free decimal-to-hex-converter, Decimal To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/decimal-to-hex-converter",
+		canonical: "https://sopkit.github.io/decimal-to-hex-converter",
 	},
 	openGraph: {
 		title: "Free Decimal to HEX Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Decimal to HEX Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/decimal-to-hex-converter",
+		url: "https://sopkit.github.io/decimal-to-hex-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

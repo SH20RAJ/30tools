@@ -15,7 +15,7 @@ export function SeoNetworkPolicyTools({ toolId }: { toolId: string }) {
 	const [text, setText] = useState("");
 	const [title, setTitle] = useState("My page");
 	const [desc, setDesc] = useState("Description");
-	const [img, setImg] = useState("https://30tools.com/og-image.jpg");
+	const [img, setImg] = useState("https://sopkit.github.io/og-image.jpg");
 	const [kw, setKw] = useState("seo");
 	const [hex, setHex] = useState("#3b82f6");
 	const [r, setR] = useState("59");

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, clean, sort, and analyze text files instantly with our free Text Sorter online. Fast and private browser utility with no signup. No registration needed.",
 	keywords: "text sorter, free online tool, no signup, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/text-sorter",
+		canonical: "https://sopkit.github.io/text-sorter",
 	},
 	openGraph: {
 		title: "Free Text Sorter Online - No Signup | 30tools",
 		description: "Format, clean, sort, and analyze text files instantly with our free Text Sorter online. Fast and private browser utility with no signup. No registration needed.",
-		url: "https://30tools.com/text-sorter",
+		url: "https://sopkit.github.io/text-sorter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

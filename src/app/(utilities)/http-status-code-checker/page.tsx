@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free http status code checker tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "http status code checker, free online tool, no signup, http-status-code-checker, free http-status-code-checker, Http Status Code Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/http-status-code-checker",
+		canonical: "https://sopkit.github.io/http-status-code-checker",
 	},
 	openGraph: {
 		title: "Free HTTP Status Code Checker Online - No Signup | 30tools",
 		description: "Free http status code checker tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/http-status-code-checker",
+		url: "https://sopkit.github.io/http-status-code-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

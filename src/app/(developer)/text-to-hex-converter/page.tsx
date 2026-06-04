@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Text to HEX Converter online. Secure, local developer utility with no registration. 100% free.",
 	keywords: "text to hex converter, free online tool, no signup, text-to-hex-converter, free text-to-hex-converter, Text To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/text-to-hex-converter",
+		canonical: "https://sopkit.github.io/text-to-hex-converter",
 	},
 	openGraph: {
 		title: "Free Text to HEX Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Text to HEX Converter online. Secure, local developer utility with no registration. 100% free.",
-		url: "https://30tools.com/text-to-hex-converter",
+		url: "https://sopkit.github.io/text-to-hex-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

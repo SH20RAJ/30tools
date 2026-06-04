@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based...",
 	keywords: "background-remover, Background Remover, free background-remover, Background Remover online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/background-remover",
+		canonical: "https://sopkit.github.io/background-remover",
 	},
 	openGraph: {
 		title: "Free Background Remover Online - No Signup | 30tools",
 		description: "Remove image backgrounds automatically with AI. Create transparent PNGs for product photos, headshots, or graphics instantly. 100% free, browser-based...",
-		url: "https://30tools.com/background-remover",
+		url: "https://sopkit.github.io/background-remover",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

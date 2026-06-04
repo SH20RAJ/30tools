@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Kickstarter Video Downloader online. High-speed downloading with no signup needed.",
 	keywords: "kickstarter video downloader, free online tool, no signup, kickstarter-video-downloader, free kickstarter-video-downloader, Kickstarter Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/kickstarter-video-downloader",
+		canonical: "https://sopkit.github.io/kickstarter-video-downloader",
 	},
 	openGraph: {
 		title: "Free Kickstarter Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Kickstarter Video Downloader online. High-speed downloading with no signup needed.",
-		url: "https://30tools.com/kickstarter-video-downloader",
+		url: "https://sopkit.github.io/kickstarter-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

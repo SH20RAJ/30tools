@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free torque converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "torque converter, free online tool, no signup, torque-converter, free torque-converter, Torque Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/torque-converter",
+		canonical: "https://sopkit.github.io/torque-converter",
 	},
 	openGraph: {
 		title: "Free Torque Converter Online - No Signup | 30tools",
 		description: "Free torque converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/torque-converter",
+		url: "https://sopkit.github.io/torque-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

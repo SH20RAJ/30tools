@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Keywords Suggestion Tool online. Optimize search presence with no signup. 100% free.",
 	keywords: "keywords suggestion tool, free online tool, no signup, keywords-suggestion-tool, free keywords-suggestion-tool, Keywords Suggestion Tool online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/keywords-suggestion-tool",
+		canonical: "https://sopkit.github.io/keywords-suggestion-tool",
 	},
 	openGraph: {
 		title: "Free Keywords Suggestion Tool Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Keywords Suggestion Tool online. Optimize search presence with no signup. 100% free.",
-		url: "https://30tools.com/keywords-suggestion-tool",
+		url: "https://sopkit.github.io/keywords-suggestion-tool",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

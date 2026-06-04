@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Resize and compress files with our free Photo With Name and Date Editor online. Safe and private browser utility for government exam portal applications.",
 	keywords: "photo-name-date-editor, Photo Name Date Editor, photo with name and date, name date photo maker, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/photo-name-date-editor",
+		canonical: "https://sopkit.github.io/photo-name-date-editor",
 	},
 	openGraph: {
 		title: "Free Photo With Name and Date Editor Online - No Signup | 30tools",
 		description: "Resize and compress files with our free Photo With Name and Date Editor online. Safe and private browser utility for government exam portal applications.",
-		url: "https://30tools.com/photo-name-date-editor",
+		url: "https://sopkit.github.io/photo-name-date-editor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

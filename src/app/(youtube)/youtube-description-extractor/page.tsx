@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Extract the full description from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure...",
 	keywords: "youtube description extractor, free online tool, no signup, youtube-description-extractor, free youtube-description-extractor, Youtube Description Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-description-extractor",
+		canonical: "https://sopkit.github.io/youtube-description-extractor",
 	},
 	openGraph: {
 		title: "Free YouTube Description Extractor Online - No Signup | 30tools",
 		description: "Extract the full description from any YouTube video instantly. Perfect for competitor research, SEO analysis, and content archiving. Free and secure...",
-		url: "https://30tools.com/youtube-description-extractor",
+		url: "https://sopkit.github.io/youtube-description-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

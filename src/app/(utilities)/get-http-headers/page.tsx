@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free get http headers tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "get http headers, free online tool, no signup, get-http-headers, free get-http-headers, Get Http Headers online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/get-http-headers",
+		canonical: "https://sopkit.github.io/get-http-headers",
 	},
 	openGraph: {
 		title: "Free Get HTTP Headers Online - No Signup | 30tools",
 		description: "Free get http headers tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/get-http-headers",
+		url: "https://sopkit.github.io/get-http-headers",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

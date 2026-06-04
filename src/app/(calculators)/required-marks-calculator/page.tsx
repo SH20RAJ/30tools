@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Find out exactly how many marks you need to score in your final exam to achieve your target grade or pass.",
 	keywords: "required-marks-calculator, Required Marks Calculator, target grade calculator, marks needed in final, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/required-marks-calculator",
+		canonical: "https://sopkit.github.io/required-marks-calculator",
 	},
 	openGraph: {
 		title: "Free Required Marks Calculator Online - No Signup | 30tools",
 		description: "Find out exactly how many marks you need to score in your final exam to achieve your target grade or pass.",
-		url: "https://30tools.com/required-marks-calculator",
+		url: "https://sopkit.github.io/required-marks-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

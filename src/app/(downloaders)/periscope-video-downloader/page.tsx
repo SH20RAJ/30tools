@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Periscope Video Downloader online. High-speed downloading with no signup needed. 100% free.",
 	keywords: "periscope video downloader, free online tool, no signup, periscope-video-downloader, free periscope-video-downloader, Periscope Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/periscope-video-downloader",
+		canonical: "https://sopkit.github.io/periscope-video-downloader",
 	},
 	openGraph: {
 		title: "Free Periscope Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Periscope Video Downloader online. High-speed downloading with no signup needed. 100% free.",
-		url: "https://30tools.com/periscope-video-downloader",
+		url: "https://sopkit.github.io/periscope-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

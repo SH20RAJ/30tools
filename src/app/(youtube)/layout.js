@@ -10,7 +10,7 @@ export const metadata = {
 		title: "Free YouTube Tools Online - No Signup | 30tools",
 		description:
 			"Download YouTube videos & Shorts, extract thumbnails, generate transcripts and scripts — all free with no signup.",
-		url: "https://30tools.com/youtube-tools",
+		url: "https://sopkit.github.io/youtube-tools",
 		siteName: "30tools",
 		images: [
 			{

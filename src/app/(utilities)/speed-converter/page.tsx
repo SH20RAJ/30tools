@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free speed converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "speed converter, free online tool, no signup, speed-converter, free speed-converter, Speed Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/speed-converter",
+		canonical: "https://sopkit.github.io/speed-converter",
 	},
 	openGraph: {
 		title: "Free Speed Converter Online - No Signup | 30tools",
 		description: "Free speed converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/speed-converter",
+		url: "https://sopkit.github.io/speed-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

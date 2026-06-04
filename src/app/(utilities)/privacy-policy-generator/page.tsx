@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free privacy policy generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "privacy policy generator, free online tool, no signup, privacy-policy-generator, free privacy-policy-generator, Privacy Policy Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/privacy-policy-generator",
+		canonical: "https://sopkit.github.io/privacy-policy-generator",
 	},
 	openGraph: {
 		title: "Free Privacy Policy Generator Online - No Signup | 30tools",
 		description: "Free privacy policy generator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/privacy-policy-generator",
+		url: "https://sopkit.github.io/privacy-policy-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

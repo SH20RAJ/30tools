@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Resize and compress files with our free Railway Exam Photo Resizer online. Safe and private browser utility for government exam portal applications. 100% free.",
 	keywords: "railway-exam-photo-resizer, Railway Exam Photo Resizer, rrb photo resizer, railway signature resizer, rrb photo size, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/railway-exam-photo-resizer",
+		canonical: "https://sopkit.github.io/railway-exam-photo-resizer",
 	},
 	openGraph: {
 		title: "Free Railway Exam Photo Resizer Online - No Signup | 30tools",
 		description: "Resize and compress files with our free Railway Exam Photo Resizer online. Safe and private browser utility for government exam portal applications. 100% free.",
-		url: "https://30tools.com/railway-exam-photo-resizer",
+		url: "https://sopkit.github.io/railway-exam-photo-resizer",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

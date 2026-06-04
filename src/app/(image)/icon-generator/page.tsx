@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Generate app icons and favicons for Android, iOS, and web applications.",
 	keywords: "icon, generator, free icon generator, online icon generator, 30tools, icon-generator, icon generator, free icon-generator, icon generator online, image editing, photo editor, browser image tool",
 	alternates: {
-		canonical: "https://30tools.com/icon-generator",
+		canonical: "https://sopkit.github.io/icon-generator",
 	},
 	openGraph: {
 		title: "Free Icon Generator Online - No Signup | 30tools",
 		description: "Generate app icons and favicons for Android, iOS, and web applications.",
-		url: "https://30tools.com/icon-generator",
+		url: "https://sopkit.github.io/icon-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "md5 generator, free online tool, no signup, md5-generator, free md5-generator, Md5 Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/md5-generator",
+		canonical: "https://sopkit.github.io/md5-generator",
 	},
 	openGraph: {
 		title: "Free MD5 Generator Online - No Signup | 30tools",
 		description: "Free md5 generator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/md5-generator",
+		url: "https://sopkit.github.io/md5-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

@@ -10,7 +10,7 @@ export const metadata = {
 		title: "Free Audio Tools Online - No Signup | 30tools",
 		description:
 			"Free AI text-to-speech, audio conversion, and compression tools. Generate voiceovers and process audio files instantly in your browser.",
-		url: "https://30tools.com/audio-tools",
+		url: "https://sopkit.github.io/audio-tools",
 		siteName: "30tools",
 		images: [
 			{

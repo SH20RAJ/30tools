@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Online Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
 	keywords: "online video downloader, free online tool, no signup, online-video-downloader, free online-video-downloader, Online Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/online-video-downloader",
+		canonical: "https://sopkit.github.io/online-video-downloader",
 	},
 	openGraph: {
 		title: "Free Online Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Online Video Downloader online. High-speed downloading with no signup needed. Free & secure.",
-		url: "https://30tools.com/online-video-downloader",
+		url: "https://sopkit.github.io/online-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

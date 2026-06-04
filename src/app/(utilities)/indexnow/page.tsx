@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
 	keywords: "indexnow submitter, free online tool, no signup, indexnow, free indexnow, Indexnow online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/indexnow",
+		canonical: "https://sopkit.github.io/indexnow",
 	},
 	openGraph: {
 		title: "Free IndexNow Submitter Online - No Signup | 30tools",
 		description: "Submit URLs to Bing, Yandex, and other search engines instantly using the IndexNow protocol.",
-		url: "https://30tools.com/indexnow",
+		url: "https://sopkit.github.io/indexnow",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

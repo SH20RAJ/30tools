@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free margin calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "margin calculator, free online tool, no signup, margin-calculator, free margin-calculator, Margin Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/margin-calculator",
+		canonical: "https://sopkit.github.io/margin-calculator",
 	},
 	openGraph: {
 		title: "Free Margin Calculator Online - No Signup | 30tools",
 		description: "Free margin calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/margin-calculator",
+		url: "https://sopkit.github.io/margin-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

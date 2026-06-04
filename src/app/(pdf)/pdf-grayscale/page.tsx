@@ -6,12 +6,12 @@ export const metadata = {
 	description: "Manage, convert, edit, and secure PDF documents with our free PDF Grayscale online. Safe and private browser-based tool with no registration. Try it free now.",
 	keywords: "pdf to grayscale, convert pdf to black and white, color to grayscale pdf, free pdf tool, 30tools, pdf-grayscale, pdf grayscale, free pdf-grayscale, pdf grayscale online, pdf utility, document editor, online pdf tool",
 	alternates: {
-		canonical: "https://30tools.com/pdf-grayscale",
+		canonical: "https://sopkit.github.io/pdf-grayscale",
 	},
 	openGraph: {
 		title: "Free PDF Grayscale Online - No Signup | 30tools",
 		description: "Manage, convert, edit, and secure PDF documents with our free PDF Grayscale online. Safe and private browser-based tool with no registration. Try it free now.",
-		url: "https://30tools.com/pdf-grayscale",
+		url: "https://sopkit.github.io/pdf-grayscale",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -44,7 +44,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: "https://30tools.com/pdf-grayscale",
+						url: "https://sopkit.github.io/pdf-grayscale",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

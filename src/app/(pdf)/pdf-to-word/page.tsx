@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Manage, convert, edit, and secure PDF documents with our free PDF to Word online. Safe and private browser-based tool with no registration. No signup required.",
 	keywords: "pdf to word, convert pdf to word, pdf to docx, free pdf converter, online pdf tool, 30tools, pdf-to-word, free pdf-to-word, pdf to word online, pdf utility, document editor, secure document processing",
 	alternates: {
-		canonical: "https://30tools.com/pdf-to-word",
+		canonical: "https://sopkit.github.io/pdf-to-word",
 	},
 	openGraph: {
 		title: "Free PDF to Word Online - No Signup | 30tools",
 		description: "Manage, convert, edit, and secure PDF documents with our free PDF to Word online. Safe and private browser-based tool with no registration. No signup required.",
-		url: "https://30tools.com/pdf-to-word",
+		url: "https://sopkit.github.io/pdf-to-word",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

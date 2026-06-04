@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Snapchat Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "snapchat video downloader, download snapchat videos, snap video saver, snapchat stories downloader, free tool, 30tools, snapchat-video-downloader, free snapchat-video-downloader, snapchat video downloader online, online downloader, free media saver, video downloader",
 	alternates: {
-		canonical: "https://30tools.com/snapchat-video-downloader",
+		canonical: "https://sopkit.github.io/snapchat-video-downloader",
 	},
 	openGraph: {
 		title: "Free Snapchat Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Snapchat Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
-		url: "https://30tools.com/snapchat-video-downloader",
+		url: "https://sopkit.github.io/snapchat-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

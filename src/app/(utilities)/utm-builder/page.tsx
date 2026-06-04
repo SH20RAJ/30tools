@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Easily build campaign URLs with UTM parameters for Google Analytics tracking.",
 	keywords: "utm builder, free online tool, no signup, utm-builder, free utm-builder, Utm Builder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/utm-builder",
+		canonical: "https://sopkit.github.io/utm-builder",
 	},
 	openGraph: {
 		title: "Free UTM Builder Online - No Signup | 30tools",
 		description: "Easily build campaign URLs with UTM parameters for Google Analytics tracking.",
-		url: "https://30tools.com/utm-builder",
+		url: "https://sopkit.github.io/utm-builder",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

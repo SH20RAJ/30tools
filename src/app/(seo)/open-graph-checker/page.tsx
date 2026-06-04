@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Open Graph Checker online. Optimize search presence with no signup. Try it free now.",
 	keywords: "open graph checker, free online tool, no signup, open-graph-checker, free open-graph-checker, Open Graph Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/open-graph-checker",
+		canonical: "https://sopkit.github.io/open-graph-checker",
 	},
 	openGraph: {
 		title: "Free Open Graph Checker Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Open Graph Checker online. Optimize search presence with no signup. Try it free now.",
-		url: "https://30tools.com/open-graph-checker",
+		url: "https://sopkit.github.io/open-graph-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

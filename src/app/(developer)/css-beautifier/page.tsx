@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free CSS Beautifier online. Secure, local developer utility with no registration. Try it free now.",
 	keywords: "css beautifier, free online tool, no signup, css-beautifier, free css-beautifier, Css Beautifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/css-beautifier",
+		canonical: "https://sopkit.github.io/css-beautifier",
 	},
 	openGraph: {
 		title: "Free CSS Beautifier Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free CSS Beautifier online. Secure, local developer utility with no registration. Try it free now.",
-		url: "https://30tools.com/css-beautifier",
+		url: "https://sopkit.github.io/css-beautifier",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

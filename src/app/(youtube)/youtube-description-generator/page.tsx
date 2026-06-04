@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Create SEO-optimized YouTube video descriptions instantly. Our free online generator helps you include keywords, links, and timestamps to boost your video...",
 	keywords: "youtube description generator, free online tool, no signup, youtube-description-generator, free youtube-description-generator, Youtube Description Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-description-generator",
+		canonical: "https://sopkit.github.io/youtube-description-generator",
 	},
 	openGraph: {
 		title: "Free YouTube Description Generator Online - No Signup | 30tools",
 		description: "Create SEO-optimized YouTube video descriptions instantly. Our free online generator helps you include keywords, links, and timestamps to boost your video...",
-		url: "https://30tools.com/youtube-description-generator",
+		url: "https://sopkit.github.io/youtube-description-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

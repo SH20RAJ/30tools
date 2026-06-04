@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Compress any image file (JPG, PNG, WebP) to fit strictly under 20KB while maintaining the best possible visual clarity.",
 	keywords: "compress-image-to-20kb, Compress Image to 20KB, compress image 20kb, photo size under 20kb, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/compress-image-to-20kb",
+		canonical: "https://sopkit.github.io/compress-image-to-20kb",
 	},
 	openGraph: {
 		title: "Free Compress Image to 20KB Online - No Signup | 30tools",
 		description: "Compress any image file (JPG, PNG, WebP) to fit strictly under 20KB while maintaining the best possible visual clarity.",
-		url: "https://30tools.com/compress-image-to-20kb",
+		url: "https://sopkit.github.io/compress-image-to-20kb",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

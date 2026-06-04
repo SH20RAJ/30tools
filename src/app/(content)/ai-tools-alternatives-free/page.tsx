@@ -7,12 +7,12 @@ export const metadata = {
 	description: "Discover the best free AI tool alternatives for content creation, voice generation, and digital writing without paying for monthly subscriptions.",
 	keywords: "ai tools alternatives free - practical picks, ai tools alternatives free - practical picks guide, 30tools, ai-tools-alternatives-free, ai tools alternatives free, free ai-tools-alternatives-free, ai tools alternatives free online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
-		canonical: "https://30tools.com/ai-tools-alternatives-free",
+		canonical: "https://sopkit.github.io/ai-tools-alternatives-free",
 	},
 	openGraph: {
 		title: "Best Free AI Tool Alternatives (No Subscriptions) | 30tools",
 		description: "Discover the best free AI tool alternatives for content creation, voice generation, and digital writing without paying for monthly subscriptions.",
-		url: "https://30tools.com/ai-tools-alternatives-free",
+		url: "https://sopkit.github.io/ai-tools-alternatives-free",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -47,7 +47,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: "https://30tools.com/ai-tools-alternatives-free",
+						url: "https://sopkit.github.io/ai-tools-alternatives-free",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

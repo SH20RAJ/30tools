@@ -12,12 +12,12 @@ export const metadata = {
 	description: "Free Other Tools online tool. Fast and secure.",
 	keywords: "utility tools, free online tool, no signup, other-tools, Other Tools, free other-tools, Other Tools online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/other-tools",
+		canonical: "https://sopkit.github.io/other-tools",
 	},
 	openGraph: {
 		title: "Free Other Tools Online - No Signup | 30tools",
 		description: "Free Other Tools online tool. Fast and secure.",
-		url: "https://30tools.com/other-tools",
+		url: "https://sopkit.github.io/other-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

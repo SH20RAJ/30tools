@@ -13,7 +13,7 @@ const generateBreadcrumbSchema = (breadcrumbs) => {
 			"@type": "ListItem",
 			position: index + 1,
 			name: crumb.name,
-			item: `https://30tools.com${crumb.url}`,
+			item: `https://sopkit.github.io${crumb.url}`,
 		})),
 	};
 };

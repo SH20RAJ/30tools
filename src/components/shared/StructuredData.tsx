@@ -1,6 +1,6 @@
 import { getAllCategories, getAllTools, type Tool, type Category } from "@/lib/tools";
 
-const BASE_URL = "https://30tools.com";
+const BASE_URL = "https://sopkit.github.io";
 const allCategories = getAllCategories();
 const allTools = getAllTools();
 const TOOL_COUNT = allTools.length;

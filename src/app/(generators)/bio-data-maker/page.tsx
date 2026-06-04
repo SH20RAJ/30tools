@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Create beautiful marriage biodata sheets or professional resumes. Upload photos, input family or job details, and print a custom layout.",
 	keywords: "bio-data-maker, Bio Data Maker",
 	alternates: {
-		canonical: "https://30tools.com/bio-data-maker",
+		canonical: "https://sopkit.github.io/bio-data-maker",
 	},
 	openGraph: {
 		title: "Free Bio Data Maker Online - No Signup | 30tools",
 		description: "Create beautiful marriage biodata sheets or professional resumes. Upload photos, input family or job details, and print a custom layout.",
-		url: "https://30tools.com/bio-data-maker",
+		url: "https://sopkit.github.io/bio-data-maker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

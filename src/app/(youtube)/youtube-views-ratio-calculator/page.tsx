@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Calculate the view-to-engagement ratio for any YouTube video instantly. Our free online tool helps you understand audience interaction and video...",
 	keywords: "youtube views ratio calculator, free online tool, no signup, youtube-views-ratio-calculator, free youtube-views-ratio-calculator, Youtube Views Ratio Calculator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-views-ratio-calculator",
+		canonical: "https://sopkit.github.io/youtube-views-ratio-calculator",
 	},
 	openGraph: {
 		title: "Free YouTube Views Ratio Calculator Online - No Signup | 30tools",
 		description: "Calculate the view-to-engagement ratio for any YouTube video instantly. Our free online tool helps you understand audience interaction and video...",
-		url: "https://30tools.com/youtube-views-ratio-calculator",
+		url: "https://sopkit.github.io/youtube-views-ratio-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

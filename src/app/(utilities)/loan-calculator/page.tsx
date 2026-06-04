@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "loan calculator, free online tool, no signup, loan-calculator, free loan-calculator, Loan Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/loan-calculator",
+		canonical: "https://sopkit.github.io/loan-calculator",
 	},
 	openGraph: {
 		title: "Free Loan Calculator Online - No Signup | 30tools",
 		description: "Free loan calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/loan-calculator",
+		url: "https://sopkit.github.io/loan-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

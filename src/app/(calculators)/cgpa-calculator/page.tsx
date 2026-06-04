@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Calculate your Cumulative Grade Point Average (CGPA) from semester-wise SGPA or grade points.",
 	keywords: "cgpa-calculator, CGPA Calculator, calculate cgpa, semester cgpa calculator, cumulative grade point average, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/cgpa-calculator",
+		canonical: "https://sopkit.github.io/cgpa-calculator",
 	},
 	openGraph: {
 		title: "Free CGPA Calculator Online - No Signup | 30tools",
 		description: "Calculate your Cumulative Grade Point Average (CGPA) from semester-wise SGPA or grade points.",
-		url: "https://30tools.com/cgpa-calculator",
+		url: "https://sopkit.github.io/cgpa-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

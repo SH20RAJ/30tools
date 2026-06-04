@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free hex to rgb converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "hex to rgb converter, free online tool, no signup, hex-to-rgb-converter, free hex-to-rgb-converter, Hex To Rgb Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/hex-to-rgb-converter",
+		canonical: "https://sopkit.github.io/hex-to-rgb-converter",
 	},
 	openGraph: {
 		title: "Free HEX to RGB Converter Online - No Signup | 30tools",
 		description: "Free hex to rgb converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/hex-to-rgb-converter",
+		url: "https://sopkit.github.io/hex-to-rgb-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

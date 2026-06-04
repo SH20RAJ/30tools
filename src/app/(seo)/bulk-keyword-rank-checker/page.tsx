@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Bulk Keyword Rank Checker online. Optimize search presence with no signup.",
 	keywords: "bulk keyword rank checker, free online tool, no signup, bulk-keyword-rank-checker, free bulk-keyword-rank-checker, Bulk Keyword Rank Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/bulk-keyword-rank-checker",
+		canonical: "https://sopkit.github.io/bulk-keyword-rank-checker",
 	},
 	openGraph: {
 		title: "Free Bulk Keyword Rank Checker Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Bulk Keyword Rank Checker online. Optimize search presence with no signup.",
-		url: "https://30tools.com/bulk-keyword-rank-checker",
+		url: "https://sopkit.github.io/bulk-keyword-rank-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

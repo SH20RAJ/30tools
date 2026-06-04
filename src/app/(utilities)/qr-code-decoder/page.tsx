@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "qr code decoder, free online tool, no signup, qr-code-decoder, free qr-code-decoder, Qr Code Decoder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/qr-code-decoder",
+		canonical: "https://sopkit.github.io/qr-code-decoder",
 	},
 	openGraph: {
 		title: "Free QR Code Decoder Online - No Signup | 30tools",
 		description: "Free qr code decoder tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/qr-code-decoder",
+		url: "https://sopkit.github.io/qr-code-decoder",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

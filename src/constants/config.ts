@@ -1,7 +1,7 @@
 import toolsData from "@/constants/tools.json";
 
 export const SITE_NAME = "30tools";
-export const SITE_URL = "https://30tools.com";
+export const SITE_URL = "https://sopkit.github.io";
 export const CONTACT_EMAIL = "mail@30tools.com";
 export const COMPANY_OR_OWNER_NAME = "30tools";
 export const LAST_UPDATED = "2026-05-09";

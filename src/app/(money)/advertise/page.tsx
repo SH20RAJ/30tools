@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
 	title: "Advertise on 30tools - Sponsor Tools and Categories",
 	description: "Sponsor a 30tools category, tool page, newsletter placement, or contextual sponsored slot for software, education, design, and developer audiences.",
-	alternates: { canonical: "https://30tools.com/advertise" },
+	alternates: { canonical: "https://sopkit.github.io/advertise" },
 };
 
 const placements = [

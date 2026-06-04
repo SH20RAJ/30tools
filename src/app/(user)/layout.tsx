@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: "User Area | 30tools",
 		description: "Manage your 30tools account, preferences, and dashboard.",
-		url: "https://30tools.com/account",
+		url: "https://sopkit.github.io/account",
 		siteName: "30tools",
 		type: "website",
 	},

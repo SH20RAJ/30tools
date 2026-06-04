@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Generate favicons from text, images, or emojis for websites",
 	keywords: "favicon generator, free online tool, no signup, favicon-generator, free favicon-generator, Favicon Generator online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/favicon-generator",
+		canonical: "https://sopkit.github.io/favicon-generator",
 	},
 	openGraph: {
 		title: "Free Favicon Generator Online - No Signup | 30tools",
 		description: "Generate favicons from text, images, or emojis for websites",
-		url: "https://30tools.com/favicon-generator",
+		url: "https://sopkit.github.io/favicon-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

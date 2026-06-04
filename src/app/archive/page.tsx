@@ -22,13 +22,13 @@ export const metadata = {
 	keywords:
 		"tools archive, online tools directory, free online tools, image editors, PDF converters, SEO tools, developer utilities, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/archive",
+		canonical: "https://sopkit.github.io/archive",
 	},
 	openGraph: {
 		title: "Tools Archive | 30tools - Complete Directory of 90+ Online Tools",
 		description:
 			"Browse our complete directory of free online tools. From image editing and PDF management to SEO audit and developer utilities.",
-		url: "https://30tools.com/archive",
+		url: "https://sopkit.github.io/archive",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

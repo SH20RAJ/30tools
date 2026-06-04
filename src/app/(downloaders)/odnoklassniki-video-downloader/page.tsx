@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Odnoklassniki Video Downloader online. High-speed downloading with no signup needed.",
 	keywords: "odnoklassniki video downloader, free online tool, no signup, odnoklassniki-video-downloader, free odnoklassniki-video-downloader, Odnoklassniki Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/odnoklassniki-video-downloader",
+		canonical: "https://sopkit.github.io/odnoklassniki-video-downloader",
 	},
 	openGraph: {
 		title: "Free Odnoklassniki Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Odnoklassniki Video Downloader online. High-speed downloading with no signup needed.",
-		url: "https://30tools.com/odnoklassniki-video-downloader",
+		url: "https://sopkit.github.io/odnoklassniki-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

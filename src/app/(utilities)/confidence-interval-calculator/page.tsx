@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Calculate the confidence interval for your statistical data instantly. Our free online tool helps you understand data precision and margin of error in...",
 	keywords: "confidence interval calculator, free online tool, no signup, confidence-interval-calculator, free confidence-interval-calculator, Confidence Interval Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/confidence-interval-calculator",
+		canonical: "https://sopkit.github.io/confidence-interval-calculator",
 	},
 	openGraph: {
 		title: "Free Confidence Interval Calculator Online - No Signup | 30tools",
 		description: "Calculate the confidence interval for your statistical data instantly. Our free online tool helps you understand data precision and margin of error in...",
-		url: "https://30tools.com/confidence-interval-calculator",
+		url: "https://sopkit.github.io/confidence-interval-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Blogger Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "blogger video downloader, free online tool, no signup, blogger-video-downloader, free blogger-video-downloader, Blogger Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/blogger-video-downloader",
+		canonical: "https://sopkit.github.io/blogger-video-downloader",
 	},
 	openGraph: {
 		title: "Free Blogger Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Blogger Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
-		url: "https://30tools.com/blogger-video-downloader",
+		url: "https://sopkit.github.io/blogger-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

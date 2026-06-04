@@ -601,7 +601,7 @@ export default function PasswordGeneratorTool() {
 				<SocialShareButtons
 					toolName="Password Generator"
 					toolDescription="Generate secure, random passwords with customizable options and strength analysis. Cryptographically secure password generator"
-					toolUrl="https://30tools.com/password-generator"
+					toolUrl="https://sopkit.github.io/password-generator"
 					category="security"
 				/>
 			</div>

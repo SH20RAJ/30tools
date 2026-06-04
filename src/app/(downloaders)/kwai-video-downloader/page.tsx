@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Kwai Video Downloader online. High-speed downloading with no signup needed. Try it free now.",
 	keywords: "kwai video downloader, free online tool, no signup, kwai-video-downloader, free kwai-video-downloader, Kwai Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/kwai-video-downloader",
+		canonical: "https://sopkit.github.io/kwai-video-downloader",
 	},
 	openGraph: {
 		title: "Free Kwai Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Kwai Video Downloader online. High-speed downloading with no signup needed. Try it free now.",
-		url: "https://30tools.com/kwai-video-downloader",
+		url: "https://sopkit.github.io/kwai-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

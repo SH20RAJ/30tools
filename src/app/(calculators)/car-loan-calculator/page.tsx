@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Work out your monthly car payment and total interest from vehicle price, down payment, trade-in, APR, and term. Free auto loan calculator.",
 	keywords: "car loan calculator, auto loan calculator, car payment calculator, vehicle finance calculator, monthly car payment",
 	alternates: {
-		canonical: "https://30tools.com/car-loan-calculator",
+		canonical: "https://sopkit.github.io/car-loan-calculator",
 	},
 	openGraph: {
 		title: "Car Loan Calculator - Auto Payment Estimator | 30tools",
 		description: "Work out your monthly car payment and total interest from vehicle price, down payment, trade-in, APR, and term. Free auto loan calculator.",
-		url: "https://30tools.com/car-loan-calculator",
+		url: "https://sopkit.github.io/car-loan-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

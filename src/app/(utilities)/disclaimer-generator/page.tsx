@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal...",
 	keywords: "disclaimer generator, free online tool, no signup, disclaimer-generator, free disclaimer-generator, Disclaimer Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/disclaimer-generator",
+		canonical: "https://sopkit.github.io/disclaimer-generator",
 	},
 	openGraph: {
 		title: "Free Disclaimer Generator Online - No Signup | 30tools",
 		description: "Create professional disclaimers for your website or app instantly. Our free online generator helps you protect your business and comply with legal...",
-		url: "https://30tools.com/disclaimer-generator",
+		url: "https://sopkit.github.io/disclaimer-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

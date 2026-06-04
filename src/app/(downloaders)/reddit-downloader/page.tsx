@@ -6,12 +6,12 @@ export const metadata = {
 	description: "Download, convert, and edit video files instantly with our free Reddit Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
 	keywords: "reddit video downloader, free online tool, no signup, video, reddit video downloader online, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/reddit-downloader",
+		canonical: "https://sopkit.github.io/reddit-downloader",
 	},
 	openGraph: {
 		title: "Free Reddit Video Downloader Online - No Signup | 30tools",
 		description: "Download, convert, and edit video files instantly with our free Reddit Video Downloader online. Fast, secure, and private processing with no signup. 100% free.",
-		url: "https://30tools.com/reddit-downloader",
+		url: "https://sopkit.github.io/reddit-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -74,7 +74,7 @@ Video URLs are processed temporarily for retrieval. We do not store or log downl
 						name: "Reddit Video Downloader",
 						description:
 							"Download Reddit videos with audio in HD quality",
-						url: "https://30tools.com/reddit-downloader",
+						url: "https://sopkit.github.io/reddit-downloader",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

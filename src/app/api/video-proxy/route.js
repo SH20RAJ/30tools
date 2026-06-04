@@ -24,7 +24,7 @@ export async function GET(request) {
 				"Accept-Language": "en-US,en;q=0.5",
 				"Accept-Encoding": "identity",
 				Range: request.headers.get("range") || "bytes=0-",
-				Referer: "https://30tools.com/",
+				Referer: "https://sopkit.github.io/",
 			},
 		});
 

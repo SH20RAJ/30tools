@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, clean, sort, and analyze text files instantly with our free Remove Line Breaks online. Fast and private browser utility with no signup. Try it free now.",
 	keywords: "remove line breaks, free online tool, no signup, remove-line-breaks, free remove-line-breaks, Remove Line Breaks online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/remove-line-breaks",
+		canonical: "https://sopkit.github.io/remove-line-breaks",
 	},
 	openGraph: {
 		title: "Free Remove Line Breaks Online - No Signup | 30tools",
 		description: "Format, clean, sort, and analyze text files instantly with our free Remove Line Breaks online. Fast and private browser utility with no signup. Try it free now.",
-		url: "https://30tools.com/remove-line-breaks",
+		url: "https://sopkit.github.io/remove-line-breaks",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

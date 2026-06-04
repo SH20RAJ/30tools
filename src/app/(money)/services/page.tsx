@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 export const metadata: Metadata = {
 	title: "Hire 30tools - SEO Fixes, Landing Pages and Custom Tools",
 	description: "Hire the team behind 30tools for SEO fixes, landing pages, restaurant QR menu websites, speed optimization, custom tools, and API integrations.",
-	alternates: { canonical: "https://30tools.com/services" },
+	alternates: { canonical: "https://sopkit.github.io/services" },
 };
 
 const services = [

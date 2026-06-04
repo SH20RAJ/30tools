@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Octal to Decimal Converter online. Secure, local developer utility with no registration.",
 	keywords: "octal to decimal converter, free online tool, no signup, octal-to-decimal-converter, free octal-to-decimal-converter, Octal To Decimal Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/octal-to-decimal-converter",
+		canonical: "https://sopkit.github.io/octal-to-decimal-converter",
 	},
 	openGraph: {
 		title: "Free Octal to Decimal Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Octal to Decimal Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/octal-to-decimal-converter",
+		url: "https://sopkit.github.io/octal-to-decimal-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

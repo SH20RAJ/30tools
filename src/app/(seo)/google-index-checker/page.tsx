@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Google Index Checker online. Optimize search presence with no signup. Free & secure.",
 	keywords: "google index checker, free online tool, no signup, google-index-checker, free google-index-checker, Google Index Checker online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/google-index-checker",
+		canonical: "https://sopkit.github.io/google-index-checker",
 	},
 	openGraph: {
 		title: "Free Google Index Checker Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Google Index Checker online. Optimize search presence with no signup. Free & secure.",
-		url: "https://30tools.com/google-index-checker",
+		url: "https://sopkit.github.io/google-index-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

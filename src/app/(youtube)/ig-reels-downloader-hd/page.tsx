@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Download Instagram Reels in high-definition quality instantly. Our free online downloader is optimized for speed and works on all devices. Save your...",
 	keywords: "ig reels downloader hd, free online tool, no signup, ig-reels-downloader-hd, free ig-reels-downloader-hd, Ig Reels Downloader Hd online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/ig-reels-downloader-hd",
+		canonical: "https://sopkit.github.io/ig-reels-downloader-hd",
 	},
 	openGraph: {
 		title: "Free Ig Reels Downloader Hd Online - No Signup | 30tools",
 		description: "Download Instagram Reels in high-definition quality instantly. Our free online downloader is optimized for speed and works on all devices. Save your...",
-		url: "https://30tools.com/ig-reels-downloader-hd",
+		url: "https://sopkit.github.io/ig-reels-downloader-hd",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

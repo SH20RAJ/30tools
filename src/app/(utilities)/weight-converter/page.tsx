@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free weight converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "weight converter, free online tool, no signup, weight-converter, free weight-converter, Weight Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/weight-converter",
+		canonical: "https://sopkit.github.io/weight-converter",
 	},
 	openGraph: {
 		title: "Free Weight Converter Online - No Signup | 30tools",
 		description: "Free weight converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/weight-converter",
+		url: "https://sopkit.github.io/weight-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

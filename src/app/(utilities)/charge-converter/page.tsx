@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Convert between coulombs, millicoulombs, and other electrical charge units instantly. Our free online tool provides quick and accurate physics base...",
 	keywords: "charge converter, free online tool, no signup, charge-converter, free charge-converter, Charge Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/charge-converter",
+		canonical: "https://sopkit.github.io/charge-converter",
 	},
 	openGraph: {
 		title: "Free Charge Converter Online - No Signup | 30tools",
 		description: "Convert between coulombs, millicoulombs, and other electrical charge units instantly. Our free online tool provides quick and accurate physics base...",
-		url: "https://30tools.com/charge-converter",
+		url: "https://sopkit.github.io/charge-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

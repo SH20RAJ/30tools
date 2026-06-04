@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online...",
 	keywords: "youtube channel statistics, youtube analytics, youtube stats checker, channel analysis, free tool, 30tools, youtube-channel-statistics, free youtube-channel-statistics, youtube channel statistics online, youtube tool, video downloader, online youtube utility",
 	alternates: {
-		canonical: "https://30tools.com/youtube-channel-statistics",
+		canonical: "https://sopkit.github.io/youtube-channel-statistics",
 	},
 	openGraph: {
 		title: "Free YouTube Channel Statistics Online - No Signup | 30tools",
 		description: "Get detailed insights and statistics for any YouTube channel instantly. View subscriber counts, video totals, and engagement metrics with our free online...",
-		url: "https://30tools.com/youtube-channel-statistics",
+		url: "https://sopkit.github.io/youtube-channel-statistics",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

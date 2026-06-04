@@ -6,12 +6,12 @@ export const metadata = {
 	description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
 	keywords: "image tools, free image tools online, image compressor free, remove background online, resize image for instagram, photo enhancer free, convert heic to jpg, 30tools image",
 	alternates: {
-		canonical: "https://30tools.com/image-tools",
+		canonical: "https://sopkit.github.io/image-tools",
 	},
 	openGraph: {
 		title: "Free Free Image Tools Online Online - No Signup | 30tools",
 		description: "Browse our collection of free online image tools. 100% free, no signup required, and privacy-focused.",
-		url: "https://30tools.com/image-tools",
+		url: "https://sopkit.github.io/image-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

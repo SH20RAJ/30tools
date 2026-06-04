@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free JSON to XML Converter online. Secure, local developer utility with no registration. 100% free.",
 	keywords: "json to xml converter, free online tool, no signup, json-to-xml-converter, free json-to-xml-converter, Json To Xml Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/json-to-xml-converter",
+		canonical: "https://sopkit.github.io/json-to-xml-converter",
 	},
 	openGraph: {
 		title: "Free JSON to XML Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free JSON to XML Converter online. Secure, local developer utility with no registration. 100% free.",
-		url: "https://30tools.com/json-to-xml-converter",
+		url: "https://sopkit.github.io/json-to-xml-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

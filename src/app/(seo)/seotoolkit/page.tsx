@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free SEO Toolkit online. Optimize search presence with no signup. No registration needed.",
 	keywords: "seo toolkit, free online tool, no signup, seotoolkit, free seotoolkit, Seotoolkit online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/seotoolkit",
+		canonical: "https://sopkit.github.io/seotoolkit",
 	},
 	openGraph: {
 		title: "Free SEO Toolkit Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free SEO Toolkit online. Optimize search presence with no signup. No registration needed.",
-		url: "https://30tools.com/seotoolkit",
+		url: "https://sopkit.github.io/seotoolkit",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

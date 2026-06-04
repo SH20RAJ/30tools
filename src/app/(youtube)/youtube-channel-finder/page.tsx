@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Discover YouTube channels by keyword, category, or topic instantly. Our free online Channel Finder helps you research competitors and find inspiration for...",
 	keywords: "youtube channel finder, free online tool, no signup, youtube-channel-finder, free youtube-channel-finder, Youtube Channel Finder online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-channel-finder",
+		canonical: "https://sopkit.github.io/youtube-channel-finder",
 	},
 	openGraph: {
 		title: "Free YouTube Channel Finder Online - No Signup | 30tools",
 		description: "Discover YouTube channels by keyword, category, or topic instantly. Our free online Channel Finder helps you research competitors and find inspiration for...",
-		url: "https://30tools.com/youtube-channel-finder",
+		url: "https://sopkit.github.io/youtube-channel-finder",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

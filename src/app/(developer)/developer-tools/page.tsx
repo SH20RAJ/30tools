@@ -12,12 +12,12 @@ export const metadata = {
 	description: "Format JSON, generate hashes, and developer utilities",
 	keywords: "developer tools, json formatter, base64 encoder, api tester, online dev tools, 30tools, developer-tools, free developer-tools, developer tools online, developer tool, online code utility, free developer tool",
 	alternates: {
-		canonical: "https://30tools.com/developer-tools",
+		canonical: "https://sopkit.github.io/developer-tools",
 	},
 	openGraph: {
 		title: "Free Developer Tools Online - No Signup | 30tools",
 		description: "Format JSON, generate hashes, and developer utilities",
-		url: "https://30tools.com/developer-tools",
+		url: "https://sopkit.github.io/developer-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

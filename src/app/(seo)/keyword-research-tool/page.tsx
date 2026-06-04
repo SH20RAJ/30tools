@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Advanced Keyword Research online. Optimize search presence with no signup.",
 	keywords: "keyword research tool, seo keyword finder, search keywords, keyword analysis, free seo tool, 30tools, keyword-research-tool, free keyword-research-tool, keyword research tool online, seo tool, website analyzer, online seo checker",
 	alternates: {
-		canonical: "https://30tools.com/keyword-research-tool",
+		canonical: "https://sopkit.github.io/keyword-research-tool",
 	},
 	openGraph: {
 		title: "Free Advanced Keyword Research Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Advanced Keyword Research online. Optimize search presence with no signup.",
-		url: "https://30tools.com/keyword-research-tool",
+		url: "https://sopkit.github.io/keyword-research-tool",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

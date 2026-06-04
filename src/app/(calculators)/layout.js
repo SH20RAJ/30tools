@@ -8,7 +8,7 @@ export const metadata = {
 		title: "Free Online Calculators - Smart Financial & Math Tools | 30tools",
 		description:
 			"Free online calculators for finance, health, math, and daily life. BMI calculator, loan calculator, percentage calculator, and more. No signup, instant results.",
-		url: "https://30tools.com/calculators",
+		url: "https://sopkit.github.io/calculators",
 		siteName: "30tools",
 		images: [
 			{
@@ -37,38 +37,38 @@ const jsonLdSchemas = {
 		name: "Free Online Calculators Collection",
 		description:
 			"A comprehensive collection of free online calculators for finance, health, math, and everyday needs.",
-		url: "https://30tools.com/calculators",
+		url: "https://sopkit.github.io/calculators",
 		mainEntity: {
 			"@type": "ItemList",
 			itemListElement: [
 				{
 					"@type": "ListItem",
 					position: 1,
-					url: "https://30tools.com/percentage-calculator",
+					url: "https://sopkit.github.io/percentage-calculator",
 					name: "Percentage Calculator",
 				},
 				{
 					"@type": "ListItem",
 					position: 2,
-					url: "https://30tools.com/loan-calculator",
+					url: "https://sopkit.github.io/loan-calculator",
 					name: "Loan Calculator",
 				},
 				{
 					"@type": "ListItem",
 					position: 3,
-					url: "https://30tools.com/age-calculator",
+					url: "https://sopkit.github.io/age-calculator",
 					name: "Age Calculator",
 				},
 				{
 					"@type": "ListItem",
 					position: 4,
-					url: "https://30tools.com/discount-calculator",
+					url: "https://sopkit.github.io/discount-calculator",
 					name: "Discount Calculator",
 				},
 				{
 					"@type": "ListItem",
 					position: 5,
-					url: "https://30tools.com/sales-tax-calculator",
+					url: "https://sopkit.github.io/sales-tax-calculator",
 					name: "Sales Tax Calculator",
 				},
 			],

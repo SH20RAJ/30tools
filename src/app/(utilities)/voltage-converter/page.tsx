@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free voltage converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "voltage converter, free online tool, no signup, voltage-converter, free voltage-converter, Voltage Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/voltage-converter",
+		canonical: "https://sopkit.github.io/voltage-converter",
 	},
 	openGraph: {
 		title: "Free Voltage Converter Online - No Signup | 30tools",
 		description: "Free voltage converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/voltage-converter",
+		url: "https://sopkit.github.io/voltage-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

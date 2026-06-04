@@ -6,12 +6,12 @@ export const metadata = {
 	description: "Manage, convert, edit, and secure PDF documents with our free PDF Repair online. Safe and private browser-based tool with no registration. 100% free and secure.",
 	keywords: "pdf repair, fix corrupted pdf, repair broken pdf, online pdf fixer, free pdf repair, 30tools, pdf-repair, free pdf-repair, pdf repair online, pdf utility, document editor, online pdf tool",
 	alternates: {
-		canonical: "https://30tools.com/pdf-repair",
+		canonical: "https://sopkit.github.io/pdf-repair",
 	},
 	openGraph: {
 		title: "Free PDF Repair Online - No Signup | 30tools",
 		description: "Manage, convert, edit, and secure PDF documents with our free PDF Repair online. Safe and private browser-based tool with no registration. 100% free and secure.",
-		url: "https://30tools.com/pdf-repair",
+		url: "https://sopkit.github.io/pdf-repair",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -44,7 +44,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: "https://30tools.com/pdf-repair",
+						url: "https://sopkit.github.io/pdf-repair",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

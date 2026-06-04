@@ -6,13 +6,13 @@ import { blogs } from "@/constants/blog-data";	export const metadata = {
 		keywords:
 			"30tools blog, free online tools guides, seo tutorials, json guides, converter tutorials, no signup tools",
 		alternates: {
-			canonical: "https://30tools.com/blog",
+			canonical: "https://sopkit.github.io/blog",
 		},
 		openGraph: {
 			title: "Blog & Guides for Free Online Tools | 30tools",
 			description:
 				"Read practical guides that link directly to free tools you can use instantly.",
-			url: "https://30tools.com/blog",
+			url: "https://sopkit.github.io/blog",
 			type: "website",
 			images: [{ url: "/og-image.jpg" }],
 		},
@@ -43,14 +43,14 @@ export default function BlogPage() {
 		"@type": "CollectionPage",
 		name: "Blog & Guides for Free Online Tools",
 		description: "Actionable guides, tool lists, and tutorials for SEO, developer workflows, and everyday online conversion tasks.",
-		url: "https://30tools.com/blog",
+		url: "https://sopkit.github.io/blog",
 		mainEntity: {
 			"@type": "ItemList",
 			itemListElement: sortedArticles.slice(0, 10).map((article, i) => ({
 				"@type": "ListItem",
 				position: i + 1,
 				name: article.title,
-				url: `https://30tools.com/blog/${article.slug}`,
+				url: `https://sopkit.github.io/blog/${article.slug}`,
 			})),
 		},
 	};
@@ -63,13 +63,13 @@ export default function BlogPage() {
 				"@type": "ListItem",
 				position: 1,
 				name: "Home",
-				item: "https://30tools.com",
+				item: "https://sopkit.github.io",
 			},
 			{
 				"@type": "ListItem",
 				position: 2,
 				name: "Blog",
-				item: "https://30tools.com/blog",
+				item: "https://sopkit.github.io/blog",
 			},
 		],
 	};

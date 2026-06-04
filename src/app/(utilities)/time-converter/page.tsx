@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free time converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "time converter, free online tool, no signup, time-converter, free time-converter, Time Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/time-converter",
+		canonical: "https://sopkit.github.io/time-converter",
 	},
 	openGraph: {
 		title: "Free Time Converter Online - No Signup | 30tools",
 		description: "Free time converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/time-converter",
+		url: "https://sopkit.github.io/time-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

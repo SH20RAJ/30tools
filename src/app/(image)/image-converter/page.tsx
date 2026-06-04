@@ -9,12 +9,12 @@ export const metadata = {
 	description: "Convert images between any format (PNG, JPG, WEBP, BMP, GIF, SVG) online for free. Fast, high-quality conversion with batch support and 100% privacy.",
 	keywords: "image converter, convert image format online, jpg png webp converter, free online tool, 30tools, image-converter, free image-converter, image converter online, image editing, photo editor, browser image tool, free photo utility",
 	alternates: {
-		canonical: "https://30tools.com/image-converter",
+		canonical: "https://sopkit.github.io/image-converter",
 	},
 	openGraph: {
 		title: "Free Image Converter Online - No Signup | 30tools",
 		description: "Convert images between any format (PNG, JPG, WEBP, BMP, GIF, SVG) online for free. Fast, high-quality conversion with batch support and 100% privacy.",
-		url: "https://30tools.com/image-converter",
+		url: "https://sopkit.github.io/image-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

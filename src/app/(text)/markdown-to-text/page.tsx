@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, clean, sort, and analyze text files instantly with our free Markdown to Text online. Fast and private browser utility with no signup. Try it free now.",
 	keywords: "markdown to text, free online tool, no signup, markdown-to-text, free markdown-to-text, Markdown To Text online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/markdown-to-text",
+		canonical: "https://sopkit.github.io/markdown-to-text",
 	},
 	openGraph: {
 		title: "Free Markdown to Text Online - No Signup | 30tools",
 		description: "Format, clean, sort, and analyze text files instantly with our free Markdown to Text online. Fast and private browser utility with no signup. Try it free now.",
-		url: "https://30tools.com/markdown-to-text",
+		url: "https://sopkit.github.io/markdown-to-text",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

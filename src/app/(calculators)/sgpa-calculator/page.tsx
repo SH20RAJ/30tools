@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Compute your Semester Grade Point Average (SGPA) based on course credits and grade points earned.",
 	keywords: "sgpa-calculator, SGPA Calculator, calculate sgpa, credit point calculator, semester grade calculator, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/sgpa-calculator",
+		canonical: "https://sopkit.github.io/sgpa-calculator",
 	},
 	openGraph: {
 		title: "Free SGPA Calculator Online - No Signup | 30tools",
 		description: "Compute your Semester Grade Point Average (SGPA) based on course credits and grade points earned.",
-		url: "https://30tools.com/sgpa-calculator",
+		url: "https://sopkit.github.io/sgpa-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

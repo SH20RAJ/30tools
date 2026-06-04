@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Sitemap Url Downloader online. Optimize search presence with no signup. Easy to use.",
 	keywords: "sitemap url downloader, free online tool, no signup, sitemap-url-downloader, free sitemap-url-downloader, Sitemap Url Downloader online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/sitemap-url-downloader",
+		canonical: "https://sopkit.github.io/sitemap-url-downloader",
 	},
 	openGraph: {
 		title: "Free Sitemap Url Downloader Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Sitemap Url Downloader online. Optimize search presence with no signup. Easy to use.",
-		url: "https://30tools.com/sitemap-url-downloader",
+		url: "https://sopkit.github.io/sitemap-url-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

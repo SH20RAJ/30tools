@@ -23,12 +23,12 @@ export async function generateMetadata({ params }) {
 		description,
 		keywords: `${slug}, free online tool, no signup, image, ${slug} online, 30tools`,
 		alternates: {
-			canonical: `https://30tools.com/image-converter/${slug}`,
+			canonical: `https://sopkit.github.io/image-converter/${slug}`,
 		},
 		openGraph: {
 			title,
 			description,
-			url: `https://30tools.com/image-converter/${slug}`,
+			url: `https://sopkit.github.io/image-converter/${slug}`,
 			siteName: "30tools",
 			images: [{ url: "/og-image.jpg" }],
 			type: "website",
@@ -267,7 +267,7 @@ export default async function ToolPage({ params }) {
 						"@type": "SoftwareApplication",
 						name: name,
 						description: `Free ${name} online tool. Fast and secure.`,
-						url: `https://30tools.com/image-converter/${slug}`,
+						url: `https://sopkit.github.io/image-converter/${slug}`,
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

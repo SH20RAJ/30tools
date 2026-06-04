@@ -7,8 +7,8 @@ export const metadata = {
 	title: "DMCA Copyright Policy - 30tools",
 	description: "30tools DMCA copyright infringement notification policy. Learn how to report copyright violations and our takedown procedures.",
 	keywords: "dmca, copyright policy, takedown notice, copyright infringement, 30tools dmca, intellectual property, free dmca, dmca online, 30tools, free online tools, browser tools, no signup tools",
-	alternates: { canonical: "https://30tools.com/dmca" },
-	openGraph: { title: "DMCA Copyright Policy - 30tools", description: "30tools DMCA copyright infringement notification policy. Learn how to report copyright violations and our takedown procedures.", url: "https://30tools.com/dmca", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
+	alternates: { canonical: "https://sopkit.github.io/dmca" },
+	openGraph: { title: "DMCA Copyright Policy - 30tools", description: "30tools DMCA copyright infringement notification policy. Learn how to report copyright violations and our takedown procedures.", url: "https://sopkit.github.io/dmca", siteName: "30tools", images: [{ url: "/og-image.jpg" }], type: "website" },
 	twitter: { card: "summary_large_image", title: "DMCA Copyright Policy - 30tools", description: "30tools DMCA copyright infringement notification policy.", images: ["/og-image.jpg"] },
 	robots: { index: true, follow: true },
 };
@@ -32,7 +32,7 @@ export default async function DMCAPage() {
 						"@type": "WebPage",
 						name: "DMCA Copyright Policy",
 						description: tool.description,
-						url: "https://30tools.com/dmca",
+						url: "https://sopkit.github.io/dmca",
 						publisher: { "@type": "Organization", name: "30tools" },
 					}),
 				}}

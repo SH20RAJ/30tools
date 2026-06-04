@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Backlink Checker online. Optimize search presence with no signup. Try it free now.",
 	keywords: "backlink checker, check backlinks, domain backlinks, link analysis, seo backlinks, free tool, 30tools, backlink-checker, free backlink-checker, backlink checker online, seo tool, website analyzer",
 	alternates: {
-		canonical: "https://30tools.com/backlink-checker",
+		canonical: "https://sopkit.github.io/backlink-checker",
 	},
 	openGraph: {
 		title: "Free Backlink Checker Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Backlink Checker online. Optimize search presence with no signup. Try it free now.",
-		url: "https://30tools.com/backlink-checker",
+		url: "https://sopkit.github.io/backlink-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

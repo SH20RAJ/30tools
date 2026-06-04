@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free JavaScript Obfuscator online. Secure, local developer utility with no registration. 100% free.",
 	keywords: "javascript obfuscator, free online tool, no signup, javascript-obfuscator, free javascript-obfuscator, Javascript Obfuscator online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/javascript-obfuscator",
+		canonical: "https://sopkit.github.io/javascript-obfuscator",
 	},
 	openGraph: {
 		title: "Free JavaScript Obfuscator Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free JavaScript Obfuscator online. Secure, local developer utility with no registration. 100% free.",
-		url: "https://30tools.com/javascript-obfuscator",
+		url: "https://sopkit.github.io/javascript-obfuscator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

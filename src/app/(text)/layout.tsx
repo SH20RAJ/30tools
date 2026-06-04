@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 		title: "Text Tools - Free Online Text Utilities | 30tools",
 		description:
 			"Count words, convert case, sort lines, and clean text instantly with free browser-based tools. No signup required.",
-		url: "https://30tools.com/text-tools",
+		url: "https://sopkit.github.io/text-tools",
 		siteName: "30tools",
 		type: "website",
 	},

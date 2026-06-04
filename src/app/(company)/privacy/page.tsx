@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.",
 	keywords: "privacy policy, 30tools privacy, data protection, privacy policy 30tools, privacy, free privacy, privacy online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
 	alternates: {
-		canonical: "https://30tools.com/privacy",
+		canonical: "https://sopkit.github.io/privacy",
 	},
 	openGraph: {
 		title: "Free Privacy Policy Online - 30tools",
 		description: "Read the 30tools Privacy Policy. We explain how we handle data across our browser-based and server-side tools, and your privacy protections.",
-		url: "https://30tools.com/privacy",
+		url: "https://sopkit.github.io/privacy",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -46,7 +46,7 @@ export default async function PrivacyPage() {
 						"@type": "WebPage",
 						name: "Privacy Policy",
 						description: tool.description,
-						url: "https://30tools.com/privacy",
+						url: "https://sopkit.github.io/privacy",
 						publisher: { "@type": "Organization", name: "30tools" },
 					}),
 				}}
@@ -64,7 +64,7 @@ export default async function PrivacyPage() {
 							<section className="space-y-3">
 								<h2 className="text-lg font-semibold">1. Overview</h2>
 								<p className="text-sm leading-relaxed">
-									30tools (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) operates <a href="https://30tools.com" className="text-primary underline">30tools.com</a>, a free online toolkit. This Privacy Policy explains how we handle information when you use our service.
+									30tools (&quot;we&quot;, &quot;our&quot;, &quot;us&quot;) operates <a href="https://sopkit.github.io" className="text-primary underline">30tools.com</a>, a free online toolkit. This Privacy Policy explains how we handle information when you use our service.
 								</p>
 							</section>
 

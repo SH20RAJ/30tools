@@ -5,7 +5,7 @@ import { getAllTools, getAllCategories } from "./tools";
  * Centralized SEO utility for 30tools
  */
 
-const BASE_URL = "https://30tools.com";
+const BASE_URL = "https://sopkit.github.io";
 
 interface MetadataProps {
 	title: string;

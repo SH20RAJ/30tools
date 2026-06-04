@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Read the 30tools Terms of Use. Our privacy-first online toolkit is free, browser-based, and available without registration.",
 	keywords: "terms of use, 30tools terms, terms of service, free online tools terms, terms, free terms, terms online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
 	alternates: {
-		canonical: "https://30tools.com/terms",
+		canonical: "https://sopkit.github.io/terms",
 	},
 	openGraph: {
 		title: "Free Terms of Use Online - 30tools",
 		description: "Read the 30tools Terms of Use. Our privacy-first online toolkit is free, browser-based, and available without registration.",
-		url: "https://30tools.com/terms",
+		url: "https://sopkit.github.io/terms",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -46,7 +46,7 @@ export default async function TermsPage() {
 						"@type": "WebPage",
 						name: "Terms of Use",
 						description: tool.description,
-						url: "https://30tools.com/terms",
+						url: "https://sopkit.github.io/terms",
 						publisher: { "@type": "Organization", name: "30tools" },
 					}),
 				}}

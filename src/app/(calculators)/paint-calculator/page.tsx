@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Estimate the amount of paint in liters and estimated cost needed to cover walls, rooms, or ceilings.",
 	keywords: "paint-calculator, Paint Calculator, how much paint do I need, wall paint calculator, paint room estimator, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/paint-calculator",
+		canonical: "https://sopkit.github.io/paint-calculator",
 	},
 	openGraph: {
 		title: "Free Paint Calculator Online - No Signup | 30tools",
 		description: "Estimate the amount of paint in liters and estimated cost needed to cover walls, rooms, or ceilings.",
-		url: "https://30tools.com/paint-calculator",
+		url: "https://sopkit.github.io/paint-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

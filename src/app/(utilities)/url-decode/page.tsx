@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free url decode tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "url decode, free online tool, no signup, url-decode, free url-decode, Url Decode online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/url-decode",
+		canonical: "https://sopkit.github.io/url-decode",
 	},
 	openGraph: {
 		title: "Free URL Decode Online - No Signup | 30tools",
 		description: "Free url decode tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/url-decode",
+		url: "https://sopkit.github.io/url-decode",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

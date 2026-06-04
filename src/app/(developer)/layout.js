@@ -10,7 +10,7 @@ export const metadata = {
 		title: "Free Developer Tools Online - No Signup | 30tools",
 		description:
 			"Essential developer tools for JSON, JWT, Base64, hashing, and more. Secure client-side processing with no signup.",
-		url: "https://30tools.com/developer-tools",
+		url: "https://sopkit.github.io/developer-tools",
 		siteName: "30tools",
 		images: [
 			{

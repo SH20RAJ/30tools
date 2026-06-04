@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free HTML Minifier online. Secure, local developer utility with no registration. Try it free now.",
 	keywords: "html minifier, free online tool, no signup, html-minifier, free html-minifier, Html Minifier online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/html-minifier",
+		canonical: "https://sopkit.github.io/html-minifier",
 	},
 	openGraph: {
 		title: "Free HTML Minifier Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free HTML Minifier online. Secure, local developer utility with no registration. Try it free now.",
-		url: "https://30tools.com/html-minifier",
+		url: "https://sopkit.github.io/html-minifier",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

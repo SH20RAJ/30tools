@@ -12,12 +12,12 @@ export const metadata = {
 	description: "Create viral content with AI-powered fun generators",
 	keywords: "ai generators, bio generator, name generator, fun tools, free online generators, 30tools, generators, free generators, generators online, online generator, free creator, content generator",
 	alternates: {
-		canonical: "https://30tools.com/generators",
+		canonical: "https://sopkit.github.io/generators",
 	},
 	openGraph: {
 		title: "Free Fun Generators Online - No Signup | 30tools",
 		description: "Create viral content with AI-powered fun generators",
-		url: "https://30tools.com/generators",
+		url: "https://sopkit.github.io/generators",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

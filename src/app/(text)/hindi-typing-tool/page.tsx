@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, clean, sort, and analyze text files instantly with our free Hindi Typing Tool online. Fast and private browser utility with no signup. Try it free now.",
 	keywords: "hindi-typing-tool, Hindi Typing Tool",
 	alternates: {
-		canonical: "https://30tools.com/hindi-typing-tool",
+		canonical: "https://sopkit.github.io/hindi-typing-tool",
 	},
 	openGraph: {
 		title: "Free Hindi Typing Tool Online - No Signup | 30tools",
 		description: "Format, clean, sort, and analyze text files instantly with our free Hindi Typing Tool online. Fast and private browser utility with no signup. Try it free now.",
-		url: "https://30tools.com/hindi-typing-tool",
+		url: "https://sopkit.github.io/hindi-typing-tool",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

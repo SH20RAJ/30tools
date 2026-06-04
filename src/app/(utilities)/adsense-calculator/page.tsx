@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "adsense calculator, free online tool, no signup, adsense-calculator, free adsense-calculator, Adsense Calculator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/adsense-calculator",
+		canonical: "https://sopkit.github.io/adsense-calculator",
 	},
 	openGraph: {
 		title: "Free Adsense Calculator Online - No Signup | 30tools",
 		description: "Free adsense calculator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/adsense-calculator",
+		url: "https://sopkit.github.io/adsense-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

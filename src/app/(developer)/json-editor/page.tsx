@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free JSON Editor online. Secure, local developer utility with no registration. No signup required.",
 	keywords: "json editor, free online tool, no signup, json-editor, free json-editor, Json Editor online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/json-editor",
+		canonical: "https://sopkit.github.io/json-editor",
 	},
 	openGraph: {
 		title: "Free JSON Editor Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free JSON Editor online. Secure, local developer utility with no registration. No signup required.",
-		url: "https://30tools.com/json-editor",
+		url: "https://sopkit.github.io/json-editor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

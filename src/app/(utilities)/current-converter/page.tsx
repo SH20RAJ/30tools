@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Convert between amperes, milliamperes, and other electrical current units instantly. Our free online tool is perfect for electronics and electrical...",
 	keywords: "current converter, free online tool, no signup, current-converter, free current-converter, Current Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/current-converter",
+		canonical: "https://sopkit.github.io/current-converter",
 	},
 	openGraph: {
 		title: "Free Current Converter Online - No Signup | 30tools",
 		description: "Convert between amperes, milliamperes, and other electrical current units instantly. Our free online tool is perfect for electronics and electrical...",
-		url: "https://30tools.com/current-converter",
+		url: "https://sopkit.github.io/current-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

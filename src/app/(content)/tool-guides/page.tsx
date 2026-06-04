@@ -6,13 +6,13 @@ import { getAllCategories } from "@/lib/tools";	export const metadata = {
 		keywords:
 			"free tool guides, online tool categories, 30tools guide, best online tools, tool category pages",
 		alternates: {
-			canonical: "https://30tools.com/tool-guides",
+			canonical: "https://sopkit.github.io/tool-guides",
 		},
 		openGraph: {
 			title: "Free Tool Guides by Category | 30tools",
 			description:
 				"Browse free tool guides for every category on 30tools. Find the best image, PDF, SEO, developer, downloader, and utility tools online.",
-			url: "https://30tools.com/tool-guides",
+			url: "https://sopkit.github.io/tool-guides",
 			type: "website",
 			images: [{ url: "/og-image.jpg" }],
 		},

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free volume converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "volume converter, free online tool, no signup, volume-converter, free volume-converter, Volume Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/volume-converter",
+		canonical: "https://sopkit.github.io/volume-converter",
 	},
 	openGraph: {
 		title: "Free Volume Converter Online - No Signup | 30tools",
 		description: "Free volume converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/volume-converter",
+		url: "https://sopkit.github.io/volume-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

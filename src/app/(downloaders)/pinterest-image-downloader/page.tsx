@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Pinterest Image Downloader online. High-speed downloading with no signup needed. 100% free.",
 	keywords: "pinterest image downloader, free online tool, no signup, pinterest-image-downloader, free pinterest-image-downloader, Pinterest Image Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/pinterest-image-downloader",
+		canonical: "https://sopkit.github.io/pinterest-image-downloader",
 	},
 	openGraph: {
 		title: "Free Pinterest Image Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Pinterest Image Downloader online. High-speed downloading with no signup needed. 100% free.",
-		url: "https://30tools.com/pinterest-image-downloader",
+		url: "https://sopkit.github.io/pinterest-image-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

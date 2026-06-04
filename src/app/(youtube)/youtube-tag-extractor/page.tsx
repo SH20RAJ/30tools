@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Extract hidden tags from any YouTube video instantly. Our free online tool helps you discover the keywords used by top-performing creators to boost your...",
 	keywords: "youtube tag extractor, youtube tags, youtube keywords, youtube seo tags, video tags generator, free tool, 30tools, youtube-tag-extractor, free youtube-tag-extractor, youtube tag extractor online, youtube tool, video downloader",
 	alternates: {
-		canonical: "https://30tools.com/youtube-tag-extractor",
+		canonical: "https://sopkit.github.io/youtube-tag-extractor",
 	},
 	openGraph: {
 		title: "Free YouTube Tag Extractor Online - No Signup | 30tools",
 		description: "Extract hidden tags from any YouTube video instantly. Our free online tool helps you discover the keywords used by top-performing creators to boost your...",
-		url: "https://30tools.com/youtube-tag-extractor",
+		url: "https://sopkit.github.io/youtube-tag-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

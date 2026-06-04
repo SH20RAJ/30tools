@@ -575,7 +575,7 @@ module.exports = {
 				<SocialShareButtons
 					toolName="CSS Gradient Generator"
 					toolDescription="Create beautiful CSS gradients with live preview and export options. Free online gradient tool for web designers"
-					toolUrl="https://30tools.com/css-gradient-generator"
+					toolUrl="https://sopkit.github.io/css-gradient-generator"
 					category="web design"
 				/>
 			</div>

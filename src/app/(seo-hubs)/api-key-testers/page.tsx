@@ -4,7 +4,7 @@ import SeoHubPage from "@/components/seo/SeoHubPage";
 export const metadata: Metadata = {
 	title: "API Key Testers - OpenAI, Claude, Gemini, Stripe and More | 30tools",
 	description: "Safe API key tester pages for OpenAI, Claude, Gemini, Groq, DeepSeek, Resend, SendGrid, Stripe, Twilio, and developer credentials.",
-	alternates: { canonical: "https://30tools.com/api-key-testers" },
+	alternates: { canonical: "https://sopkit.github.io/api-key-testers" },
 };
 
 export default function ApiKeyTestersHub() {

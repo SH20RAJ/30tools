@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Twitter Card Generator online. Optimize search presence with no signup. Easy to use.",
 	keywords: "twitter card generator, free online tool, no signup, twitter-card-generator, free twitter-card-generator, Twitter Card Generator online, SEO tool, search optimizer, website analyzer, free SEO utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/twitter-card-generator",
+		canonical: "https://sopkit.github.io/twitter-card-generator",
 	},
 	openGraph: {
 		title: "Free Twitter Card Generator Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Twitter Card Generator online. Optimize search presence with no signup. Easy to use.",
-		url: "https://30tools.com/twitter-card-generator",
+		url: "https://sopkit.github.io/twitter-card-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

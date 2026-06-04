@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Meta Tag Generator online. Optimize search presence with no signup. Try it free now.",
 	keywords: "meta tag generator, seo meta tags, html meta tags, meta description, title tag generator, free tool, 30tools, meta-tag-generator, free meta-tag-generator, meta tag generator online, seo tool, website analyzer",
 	alternates: {
-		canonical: "https://30tools.com/meta-tag-generator",
+		canonical: "https://sopkit.github.io/meta-tag-generator",
 	},
 	openGraph: {
 		title: "Free Meta Tag Generator Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Meta Tag Generator online. Optimize search presence with no signup. Try it free now.",
-		url: "https://30tools.com/meta-tag-generator",
+		url: "https://sopkit.github.io/meta-tag-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

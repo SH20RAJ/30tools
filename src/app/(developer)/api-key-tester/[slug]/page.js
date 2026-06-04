@@ -15,12 +15,12 @@ export async function generateMetadata({ params }) {
 		description: tool.seoDescription || tool.description,
 		keywords: `api tester, ${tool.name.toLowerCase()}, validate api key, debug api, 30tools`,
 		alternates: {
-			canonical: `https://30tools.com/api-key-tester/${slug}`,
+			canonical: `https://sopkit.github.io/api-key-tester/${slug}`,
 		},
 		openGraph: {
 			title: `${tool.name} - API Test Utility | 30tools`,
 			description: tool.description,
-			url: `https://30tools.com/api-key-tester/${slug}`,
+			url: `https://sopkit.github.io/api-key-tester/${slug}`,
 			siteName: "30tools",
 			images: [{ url: "/og-image.jpg" }],
 			type: "website",
@@ -67,7 +67,7 @@ export default async function ApiKeyTesterPage({ params }) {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: `https://30tools.com/api-key-tester/${slug}`,
+						url: `https://sopkit.github.io/api-key-tester/${slug}`,
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

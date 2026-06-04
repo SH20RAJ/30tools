@@ -424,7 +424,7 @@ const TechBroQuoteGeneratorTool = () => {
 					<SocialShareButtons
 						toolName="Tech Bro Quote Generator"
 						toolDescription="Generate hilarious satirical tech bro quotes and startup buzzwords! Perfect for LinkedIn memes and social media content. 🚀"
-						toolUrl="https://30tools.com/tech-bro-quote-generator"
+						toolUrl="https://sopkit.github.io/tech-bro-quote-generator"
 						category="generators"
 					/>
 				</div>

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Encode plain text into Base64 format instantly. Our free online tool is perfect for developers, data transmission, and secure character representation in...",
 	keywords: "base64 encode, free online tool, no signup, base64-encode, free base64-encode, Base64 Encode online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/base64-encode",
+		canonical: "https://sopkit.github.io/base64-encode",
 	},
 	openGraph: {
 		title: "Free Base64 Encode Online - No Signup | 30tools",
 		description: "Encode plain text into Base64 format instantly. Our free online tool is perfect for developers, data transmission, and secure character representation in...",
-		url: "https://30tools.com/base64-encode",
+		url: "https://sopkit.github.io/base64-encode",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

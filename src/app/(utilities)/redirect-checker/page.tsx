@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free redirect checker tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "redirect checker, free online tool, no signup, redirect-checker, free redirect-checker, Redirect Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/redirect-checker",
+		canonical: "https://sopkit.github.io/redirect-checker",
 	},
 	openGraph: {
 		title: "Free Redirect Checker Online - No Signup | 30tools",
 		description: "Free redirect checker tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/redirect-checker",
+		url: "https://sopkit.github.io/redirect-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

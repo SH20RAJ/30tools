@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Instagram Image Downloader online. High-speed downloading with no signup needed. 100% free.",
 	keywords: "instagram image downloader, free online tool, no signup, instagram-image-downloader, free instagram-image-downloader, Instagram Image Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/instagram-image-downloader",
+		canonical: "https://sopkit.github.io/instagram-image-downloader",
 	},
 	openGraph: {
 		title: "Free Instagram Image Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Instagram Image Downloader online. High-speed downloading with no signup needed. 100% free.",
-		url: "https://30tools.com/instagram-image-downloader",
+		url: "https://sopkit.github.io/instagram-image-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

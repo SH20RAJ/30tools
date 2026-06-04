@@ -7,12 +7,12 @@ export const metadata = {
 	description: "Optimize your search ranking with the best free SEO tools online. Audit, generate metadata, plan keywords, and track indexing with zero signup required.",
 	keywords: "seo tools free online - ranked picks (2026), seo tools free online - ranked picks (2026) guide, 30tools, seo-tools-free-online, seo tools free online, free seo-tools-free-online, seo tools free online online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
-		canonical: "https://30tools.com/seo-tools-free-online",
+		canonical: "https://sopkit.github.io/seo-tools-free-online",
 	},
 	openGraph: {
 		title: "Best Free SEO Tools Online - Top Ranked Picks (2026) | 30tools",
 		description: "Optimize your search ranking with the best free SEO tools online. Audit, generate metadata, plan keywords, and track indexing with zero signup required.",
-		url: "https://30tools.com/seo-tools-free-online",
+		url: "https://sopkit.github.io/seo-tools-free-online",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -47,7 +47,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: "https://30tools.com/seo-tools-free-online",
+						url: "https://sopkit.github.io/seo-tools-free-online",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

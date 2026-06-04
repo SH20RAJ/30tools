@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Resize your images by specifying width and height in millimeters (mm) for printing, exam forms, and documents.",
 	keywords: "resize-image-in-mm, Resize Image in MM",
 	alternates: {
-		canonical: "https://30tools.com/resize-image-in-mm",
+		canonical: "https://sopkit.github.io/resize-image-in-mm",
 	},
 	openGraph: {
 		title: "Free Resize Image in MM Online - No Signup | 30tools",
 		description: "Resize your images by specifying width and height in millimeters (mm) for printing, exam forms, and documents.",
-		url: "https://30tools.com/resize-image-in-mm",
+		url: "https://sopkit.github.io/resize-image-in-mm",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

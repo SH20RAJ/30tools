@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Check if your YouTube video title is the optimal length for search and browse. Our free online checker helps you avoid truncation and ensure your full...",
 	keywords: "youtube title length checker, free online tool, no signup, youtube-title-length-checker, free youtube-title-length-checker, Youtube Title Length Checker online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-title-length-checker",
+		canonical: "https://sopkit.github.io/youtube-title-length-checker",
 	},
 	openGraph: {
 		title: "Free YouTube Title Length Checker Online - No Signup | 30tools",
 		description: "Check if your YouTube video title is the optimal length for search and browse. Our free online checker helps you avoid truncation and ensure your full...",
-		url: "https://30tools.com/youtube-title-length-checker",
+		url: "https://sopkit.github.io/youtube-title-length-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

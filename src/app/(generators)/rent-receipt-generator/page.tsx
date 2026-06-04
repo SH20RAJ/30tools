@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Generate HRA-compliant rent receipts online for free. Fill in tenant, landlord, and rent details, and download print-ready receipts instantly.",
 	keywords: "rent-receipt-generator, Rent Receipt Generator, print rent receipt, hra rent receipt, rent slip maker, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/rent-receipt-generator",
+		canonical: "https://sopkit.github.io/rent-receipt-generator",
 	},
 	openGraph: {
 		title: "Free Rent Receipt Generator Online - No Signup | 30tools",
 		description: "Generate HRA-compliant rent receipts online for free. Fill in tenant, landlord, and rent details, and download print-ready receipts instantly.",
-		url: "https://30tools.com/rent-receipt-generator",
+		url: "https://sopkit.github.io/rent-receipt-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

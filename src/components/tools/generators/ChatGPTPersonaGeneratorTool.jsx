@@ -393,7 +393,7 @@ Format as a clear persona prompt that someone can copy-paste into ChatGPT. Make 
 
 											<SocialShareButtons
 												text={shareText}
-												toolUrl="https://30tools.com/chatgpt-persona-generator"
+												toolUrl="https://sopkit.github.io/chatgpt-persona-generator"
 											/>
 										</>
 									) : (

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Octal to HEX Converter online. Secure, local developer utility with no registration.",
 	keywords: "octal to hex converter, free online tool, no signup, octal-to-hex-converter, free octal-to-hex-converter, Octal To Hex Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/octal-to-hex-converter",
+		canonical: "https://sopkit.github.io/octal-to-hex-converter",
 	},
 	openGraph: {
 		title: "Free Octal to HEX Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Octal to HEX Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/octal-to-hex-converter",
+		url: "https://sopkit.github.io/octal-to-hex-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

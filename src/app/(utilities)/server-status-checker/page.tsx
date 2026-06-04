@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free server status checker tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "server status checker, free online tool, no signup, server-status-checker, free server-status-checker, Server Status Checker online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/server-status-checker",
+		canonical: "https://sopkit.github.io/server-status-checker",
 	},
 	openGraph: {
 		title: "Free Server Status Checker Online - No Signup | 30tools",
 		description: "Free server status checker tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/server-status-checker",
+		url: "https://sopkit.github.io/server-status-checker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

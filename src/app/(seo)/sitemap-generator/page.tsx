@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Audit websites, analyze search rankings, and generate schemas with our free Advanced Sitemap Generator online. Optimize search presence with no signup.",
 	keywords: "sitemap generator, xml sitemap, create sitemap, seo sitemap, website crawler, free tool, 30tools, sitemap-generator, free sitemap-generator, sitemap generator online, seo tool, website analyzer",
 	alternates: {
-		canonical: "https://30tools.com/sitemap-generator",
+		canonical: "https://sopkit.github.io/sitemap-generator",
 	},
 	openGraph: {
 		title: "Free Advanced Sitemap Generator Online - No Signup | 30tools",
 		description: "Audit websites, analyze search rankings, and generate schemas with our free Advanced Sitemap Generator online. Optimize search presence with no signup.",
-		url: "https://30tools.com/sitemap-generator",
+		url: "https://sopkit.github.io/sitemap-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

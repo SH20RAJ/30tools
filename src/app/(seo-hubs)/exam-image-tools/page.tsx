@@ -4,7 +4,7 @@ import SeoHubPage from "@/components/seo/SeoHubPage";
 export const metadata: Metadata = {
 	title: "Exam Image Tools - Photo and Signature Resizers | 30tools",
 	description: "Resize and compress photos, signatures, PDFs, and form images for SSC, UPSC, NEET, JEE, CUET, railway, and bank exam uploads.",
-	alternates: { canonical: "https://30tools.com/exam-image-tools" },
+	alternates: { canonical: "https://sopkit.github.io/exam-image-tools" },
 };
 
 export default function ExamImageToolsHub() {

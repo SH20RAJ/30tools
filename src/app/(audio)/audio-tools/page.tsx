@@ -12,12 +12,12 @@ export const metadata = {
 	description: "Process, edit, and convert audio files with our free Audio Tools online. High-quality output and private browser-based tools with no signup. No signup required.",
 	keywords: "audio tools, free online tool, no signup, audio-tools, free audio-tools, Audio Tools online, audio tool, sound editor, music utility, audio converter, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/audio-tools",
+		canonical: "https://sopkit.github.io/audio-tools",
 	},
 	openGraph: {
 		title: "Free Audio Tools Online - No Signup | 30tools",
 		description: "Process, edit, and convert audio files with our free Audio Tools online. High-quality output and private browser-based tools with no signup. No signup required.",
-		url: "https://30tools.com/audio-tools",
+		url: "https://sopkit.github.io/audio-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

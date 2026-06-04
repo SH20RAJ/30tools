@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "image cropper, free online tool, no signup, image-cropper, free image-cropper, Image Cropper online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/image-cropper",
+		canonical: "https://sopkit.github.io/image-cropper",
 	},
 	openGraph: {
 		title: "Free Image Cropper Online - No Signup | 30tools",
 		description: "Free image cropper tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/image-cropper",
+		url: "https://sopkit.github.io/image-cropper",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

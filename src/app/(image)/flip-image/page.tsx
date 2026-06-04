@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free flip image tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "flip image, free online tool, no signup, flip-image, free flip-image, Flip Image online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/flip-image",
+		canonical: "https://sopkit.github.io/flip-image",
 	},
 	openGraph: {
 		title: "Free Flip Image Online - No Signup | 30tools",
 		description: "Free flip image tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/flip-image",
+		url: "https://sopkit.github.io/flip-image",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

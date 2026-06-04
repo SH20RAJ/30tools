@@ -12,12 +12,12 @@ export const metadata = {
 	description: "Format, convert, and manipulate text content",
 	keywords: "text tools, word counter, case converter, text cleaner, online text tools, 30tools, text-tools, free text-tools, text tools online, text tool, online text utility, free text converter",
 	alternates: {
-		canonical: "https://30tools.com/text-tools",
+		canonical: "https://sopkit.github.io/text-tools",
 	},
 	openGraph: {
 		title: "Free Text Tools Online - No Signup | 30tools",
 		description: "Format, convert, and manipulate text content",
-		url: "https://30tools.com/text-tools",
+		url: "https://sopkit.github.io/text-tools",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

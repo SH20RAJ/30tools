@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free what is my browser tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "what is my browser, free online tool, no signup, what-is-my-browser, free what-is-my-browser, What Is My Browser online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/what-is-my-browser",
+		canonical: "https://sopkit.github.io/what-is-my-browser",
 	},
 	openGraph: {
 		title: "Free What Is My Browser Online - No Signup | 30tools",
 		description: "Free what is my browser tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/what-is-my-browser",
+		url: "https://sopkit.github.io/what-is-my-browser",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

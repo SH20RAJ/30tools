@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 
 const INDEXNOW_KEY = "634a2c77198a45429967eb9dc1252278";
-const SITE_URL = "https://30tools.com";
+const SITE_URL = "https://sopkit.github.io";
 
 // All downloader URLs
 const DOWNLOADER_URLS = [

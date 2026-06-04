@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your...",
 	keywords: "contact 30tools, support, feedback, help, contact, free contact, contact online, 30tools, free online tools, browser tools, no signup tools, privacy tools",
 	alternates: {
-		canonical: "https://30tools.com/contact",
+		canonical: "https://sopkit.github.io/contact",
 	},
 	openGraph: {
 		title: "Free Contact Online - No Signup | 30tools",
 		description: "Free Contact online. Contact allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your...",
-		url: "https://30tools.com/contact",
+		url: "https://sopkit.github.io/contact",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -46,7 +46,7 @@ export default async function ToolPage() {
 						"@type": "ContactPage",
 						name: "Contact 30tools",
 						description: tool.description,
-						url: "https://30tools.com/contact",
+						url: "https://sopkit.github.io/contact",
 						mainEntity: {
 							"@type": "ContactPoint",
 							email: SITE_CONFIG.contactEmail,

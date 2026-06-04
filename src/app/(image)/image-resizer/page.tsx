@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Resize images with custom dimensions and aspect ratios",
 	keywords: "image resizer, resize image online, photo resizer, image dimension converter, free online tool, 30tools, image-resizer, free image-resizer, image resizer online, image editing, photo editor, browser image tool",
 	alternates: {
-		canonical: "https://30tools.com/image-resizer",
+		canonical: "https://sopkit.github.io/image-resizer",
 	},
 	openGraph: {
 		title: "Free Image Resizer Online - No Signup | 30tools",
 		description: "Resize images with custom dimensions and aspect ratios",
-		url: "https://30tools.com/image-resizer",
+		url: "https://sopkit.github.io/image-resizer",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

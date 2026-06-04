@@ -7,12 +7,12 @@ export const metadata = {
 	description: "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
 	keywords: "tools for developers - free online stack, tools for developers - free online stack guide, 30tools, tools-for-developers, tools for developers, free tools-for-developers, tools for developers online, 30tools guide, online tool guide, free tool category, tool directory, tool overview",
 	alternates: {
-		canonical: "https://30tools.com/tools-for-developers",
+		canonical: "https://sopkit.github.io/tools-for-developers",
 	},
 	openGraph: {
 		title: "Free Tools for Developers - Free Online Stack Online - No Signup | 30tools",
 		description: "A practical collection of free tools for developers: JSON utilities, encoding, text transformers, validators, and conversion helpers.",
-		url: "https://30tools.com/tools-for-developers",
+		url: "https://sopkit.github.io/tools-for-developers",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -47,7 +47,7 @@ export default async function ToolPage() {
 						"@type": "SoftwareApplication",
 						name: tool.name,
 						description: tool.description,
-						url: "https://30tools.com/tools-for-developers",
+						url: "https://sopkit.github.io/tools-for-developers",
 						applicationCategory: "UtilitiesApplication",
 						operatingSystem: "Any",
 						offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },

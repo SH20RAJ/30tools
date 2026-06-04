@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
 	keywords: "ascii-art-generator, Ascii Art Generator, free ascii-art-generator, Ascii Art Generator online, online generator, content creator, free maker, creative tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/ascii-art-generator",
+		canonical: "https://sopkit.github.io/ascii-art-generator",
 	},
 	openGraph: {
 		title: "Free ASCII Art Generator Online - No Signup | 30tools",
 		description: "Convert images into text-based ASCII art online. Customize resolution and contrast for the perfect text-based representation.",
-		url: "https://30tools.com/ascii-art-generator",
+		url: "https://sopkit.github.io/ascii-art-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

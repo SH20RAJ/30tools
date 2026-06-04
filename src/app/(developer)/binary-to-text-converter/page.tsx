@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Binary to Text Converter online. Secure, local developer utility with no registration.",
 	keywords: "binary to text converter, free online tool, no signup, binary-to-text-converter, free binary-to-text-converter, Binary To Text Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/binary-to-text-converter",
+		canonical: "https://sopkit.github.io/binary-to-text-converter",
 	},
 	openGraph: {
 		title: "Free Binary to Text Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Binary to Text Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/binary-to-text-converter",
+		url: "https://sopkit.github.io/binary-to-text-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

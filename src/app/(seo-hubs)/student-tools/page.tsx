@@ -4,7 +4,7 @@ import SeoHubPage from "@/components/seo/SeoHubPage";
 export const metadata: Metadata = {
 	title: "Student Tools - Attendance, Grades and Study Utilities | 30tools",
 	description: "Free student tools for attendance planning, SGPA, CGPA, CGPA to percentage, required marks, and exam image uploads.",
-	alternates: { canonical: "https://30tools.com/student-tools" },
+	alternates: { canonical: "https://sopkit.github.io/student-tools" },
 };
 
 export default function StudentToolsHub() {

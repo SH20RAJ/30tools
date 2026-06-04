@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Fb Video Saver online. High-speed downloading with no signup needed. No registration needed.",
 	keywords: "fb video saver, facebook video saver, save facebook videos, fb video downloader, free tool, 30tools, fb-video-saver, free fb-video-saver, fb video saver online, online downloader, free media saver, video downloader",
 	alternates: {
-		canonical: "https://30tools.com/fb-video-saver",
+		canonical: "https://sopkit.github.io/fb-video-saver",
 	},
 	openGraph: {
 		title: "Free Fb Video Saver Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Fb Video Saver online. High-speed downloading with no signup needed. No registration needed.",
-		url: "https://30tools.com/fb-video-saver",
+		url: "https://sopkit.github.io/fb-video-saver",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

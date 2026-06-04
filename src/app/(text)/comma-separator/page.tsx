@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, clean, sort, and analyze text files instantly with our free Comma Separator online. Fast and private browser utility with no signup. No signup required.",
 	keywords: "comma separator, free online tool, no signup, comma-separator, free comma-separator, Comma Separator online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/comma-separator",
+		canonical: "https://sopkit.github.io/comma-separator",
 	},
 	openGraph: {
 		title: "Free Comma Separator Online - No Signup | 30tools",
 		description: "Format, clean, sort, and analyze text files instantly with our free Comma Separator online. Fast and private browser utility with no signup. No signup required.",
-		url: "https://30tools.com/comma-separator",
+		url: "https://sopkit.github.io/comma-separator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

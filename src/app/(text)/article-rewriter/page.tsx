@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, clean, sort, and analyze text files instantly with our free Article Rewriter online. Fast and private browser utility with no signup. Try it free now.",
 	keywords: "article rewriter, free online tool, no signup, article-rewriter, free article-rewriter, Article Rewriter online, text tool, text editor online, content formatter, writing utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/article-rewriter",
+		canonical: "https://sopkit.github.io/article-rewriter",
 	},
 	openGraph: {
 		title: "Free Article Rewriter Online - No Signup | 30tools",
 		description: "Format, clean, sort, and analyze text files instantly with our free Article Rewriter online. Fast and private browser utility with no signup. Try it free now.",
-		url: "https://30tools.com/article-rewriter",
+		url: "https://sopkit.github.io/article-rewriter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

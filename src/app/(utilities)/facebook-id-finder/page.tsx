@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "facebook id finder, free online tool, no signup, facebook-id-finder, free facebook-id-finder, Facebook Id Finder online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/facebook-id-finder",
+		canonical: "https://sopkit.github.io/facebook-id-finder",
 	},
 	openGraph: {
 		title: "Free Facebook ID Finder Online - No Signup | 30tools",
 		description: "Free facebook id finder tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/facebook-id-finder",
+		url: "https://sopkit.github.io/facebook-id-finder",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

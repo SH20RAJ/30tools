@@ -4,7 +4,7 @@ import SeoHubPage from "@/components/seo/SeoHubPage";
 export const metadata: Metadata = {
 	title: "Small Business Tools - QR, SEO and Website Utilities | 30tools",
 	description: "Free small business tools for QR menus, Google Form QR codes, WiFi QR codes, UPI payment QR codes, Open Graph previews, and meta descriptions.",
-	alternates: { canonical: "https://30tools.com/small-business-tools" },
+	alternates: { canonical: "https://sopkit.github.io/small-business-tools" },
 };
 
 export default function SmallBusinessToolsHub() {

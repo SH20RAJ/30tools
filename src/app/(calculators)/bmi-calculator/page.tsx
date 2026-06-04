@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Calculate your Body Mass Index from height and weight and see your BMI category. Free, private BMI calculator that runs in your browser.",
 	keywords: "bmi calculator, body mass index calculator, bmi chart, healthy weight calculator, calculate bmi",
 	alternates: {
-		canonical: "https://30tools.com/bmi-calculator",
+		canonical: "https://sopkit.github.io/bmi-calculator",
 	},
 	openGraph: {
 		title: "BMI Calculator - Body Mass Index | 30tools",
 		description: "Calculate your Body Mass Index from height and weight and see your BMI category. Free, private BMI calculator that runs in your browser.",
-		url: "https://30tools.com/bmi-calculator",
+		url: "https://sopkit.github.io/bmi-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

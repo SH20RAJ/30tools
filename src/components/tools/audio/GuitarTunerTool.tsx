@@ -391,7 +391,7 @@ export default function GuitarTunerTool() {
 				<SocialShareButtons
 					toolName="Guitar Tuner"
 					toolDescription="Free online guitar tuner. Works directly in your browser using your microphone for accurate standard and drop tunings! 🎸"
-					toolUrl="https://30tools.com/guitar-tuner"
+					toolUrl="https://sopkit.github.io/guitar-tuner"
 					category="audio"
 				/>
 			</div>

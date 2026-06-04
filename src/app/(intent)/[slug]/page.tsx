@@ -69,7 +69,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const opportunity = getSeoOpportunityBySlug(slug);
 
     if (opportunity?.standalone) {
-        const canonicalUrl = `https://30tools.com${opportunity.route}`;
+        const canonicalUrl = `https://sopkit.github.io${opportunity.route}`;
 
         return {
             title: opportunity.title,
@@ -102,7 +102,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     const parentTool = getToolById(intent.parentToolId);
     if (!parentTool) return {};
 
-    const canonicalUrl = `https://30tools.com/${slug}`;
+    const canonicalUrl = `https://sopkit.github.io/${slug}`;
     const brandedTitle = `${intent.title} | 30tools`;
 
     return {

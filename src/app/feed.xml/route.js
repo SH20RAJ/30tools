@@ -1,7 +1,7 @@
 import { getAllTools } from "@/lib/tools";
 
 export async function GET() {
-	const baseUrl = "https://30tools.com";
+	const baseUrl = "https://sopkit.github.io";
 	const currentDate = new Date().toUTCString();
 	const currentYear = new Date().getFullYear();
 	const allTools = getAllTools();

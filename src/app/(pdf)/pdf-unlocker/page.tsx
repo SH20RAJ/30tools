@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Manage, convert, edit, and secure PDF documents with our free PDF Unlocker online. Safe and private browser-based tool with no registration. No signup required.",
 	keywords: "pdf unlocker, unlock pdf, remove pdf password, free pdf tool, online pdf unlock, 30tools, pdf-unlocker, free pdf-unlocker, pdf unlocker online, pdf utility, document editor, online pdf tool",
 	alternates: {
-		canonical: "https://30tools.com/pdf-unlocker",
+		canonical: "https://sopkit.github.io/pdf-unlocker",
 	},
 	openGraph: {
 		title: "Free PDF Unlocker Online - No Signup | 30tools",
 		description: "Manage, convert, edit, and secure PDF documents with our free PDF Unlocker online. Safe and private browser-based tool with no registration. No signup required.",
-		url: "https://30tools.com/pdf-unlocker",
+		url: "https://sopkit.github.io/pdf-unlocker",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

@@ -10,7 +10,7 @@ export const metadata = {
 		title: "Free PDF Tools Online - No Signup | 30tools",
 		description:
 			"Merge, split, compress, and convert PDFs for free. No signup, no watermarks, zero-storage security policy.",
-		url: "https://30tools.com/pdf-tools",
+		url: "https://sopkit.github.io/pdf-tools",
 		siteName: "30tools",
 		images: [
 			{

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Estimate potential earnings for any YouTube video or channel with our free online Money Calculator. Understand revenue based on views, CPM, and engagement...",
 	keywords: "youtube money calculator, free online tool, no signup, youtube-money-calculator, free youtube-money-calculator, Youtube Money Calculator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-money-calculator",
+		canonical: "https://sopkit.github.io/youtube-money-calculator",
 	},
 	openGraph: {
 		title: "Free YouTube Money Calculator Online - No Signup | 30tools",
 		description: "Estimate potential earnings for any YouTube video or channel with our free online Money Calculator. Understand revenue based on views, CPM, and engagement...",
-		url: "https://30tools.com/youtube-money-calculator",
+		url: "https://sopkit.github.io/youtube-money-calculator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

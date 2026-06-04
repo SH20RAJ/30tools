@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 		title: "Blog & Guides | 30tools",
 		description:
 			"Practical guides, tutorials, and tool comparisons for free online productivity tools.",
-		url: "https://30tools.com/blog",
+		url: "https://sopkit.github.io/blog",
 		siteName: "30tools",
 		type: "website",
 	},

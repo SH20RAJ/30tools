@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Convert between volt-amperes (VA), millivolt-amperes, and more instantly. Our free online tool is perfect for electrical engineers and technicians.",
 	keywords: "apparent power converter, free online tool, no signup, apparent-power-converter, free apparent-power-converter, Apparent Power Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/apparent-power-converter",
+		canonical: "https://sopkit.github.io/apparent-power-converter",
 	},
 	openGraph: {
 		title: "Free Apparent Power Converter Online - No Signup | 30tools",
 		description: "Convert between volt-amperes (VA), millivolt-amperes, and more instantly. Our free online tool is perfect for electrical engineers and technicians.",
-		url: "https://30tools.com/apparent-power-converter",
+		url: "https://sopkit.github.io/apparent-power-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

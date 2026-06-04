@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required...",
 	keywords: "ai image generator, free online tool, no signup, ai-image-generator, free ai-image-generator, Ai Image Generator online, online generator, content creator, free maker, creative tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/ai-image-generator",
+		canonical: "https://sopkit.github.io/ai-image-generator",
 	},
 	openGraph: {
 		title: "Free AI Image Generator Online - No Signup | 30tools",
 		description: "Generate stunning AI images from text prompts instantly. Create photorealistic photos, digital art, anime, and illustrations for free. No signup required...",
-		url: "https://30tools.com/ai-image-generator",
+		url: "https://sopkit.github.io/ai-image-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

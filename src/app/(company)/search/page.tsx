@@ -7,12 +7,12 @@ export const metadata = {
 	description: "Search and browse our collection of 300+ free online tools. 100% free, no signup required.",
 	keywords: "search online tools, free online tools, 30tools search, image tool search, pdf tool search, seo tools directory, developer utilities, search, free search, search online, 30tools, browser tools",
 	alternates: {
-		canonical: "https://30tools.com/search",
+		canonical: "https://sopkit.github.io/search",
 	},
 	openGraph: {
 		title: "Free Search All Tools Online - No Signup | 30tools",
 		description: "Search and browse our collection of 300+ free online tools. 100% free, no signup required.",
-		url: "https://30tools.com/search",
+		url: "https://sopkit.github.io/search",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

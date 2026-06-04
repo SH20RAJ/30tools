@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free what is my user agent tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "what is my user agent, free online tool, no signup, what-is-my-user-agent, free what-is-my-user-agent, What Is My User Agent online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/what-is-my-user-agent",
+		canonical: "https://sopkit.github.io/what-is-my-user-agent",
 	},
 	openGraph: {
 		title: "Free What Is My User Agent Online - No Signup | 30tools",
 		description: "Free what is my user agent tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/what-is-my-user-agent",
+		url: "https://sopkit.github.io/what-is-my-user-agent",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

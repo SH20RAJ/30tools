@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Format, minify, validate, and convert code snippets with our free Binary to ASCII Converter online. Secure, local developer utility with no registration.",
 	keywords: "binary to ascii converter, free online tool, no signup, binary-to-ascii-converter, free binary-to-ascii-converter, Binary To Ascii Converter online, developer tool, web dev utility, code formatter, online developer, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/binary-to-ascii-converter",
+		canonical: "https://sopkit.github.io/binary-to-ascii-converter",
 	},
 	openGraph: {
 		title: "Free Binary to ASCII Converter Online - No Signup | 30tools",
 		description: "Format, minify, validate, and convert code snippets with our free Binary to ASCII Converter online. Secure, local developer utility with no registration.",
-		url: "https://30tools.com/binary-to-ascii-converter",
+		url: "https://sopkit.github.io/binary-to-ascii-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

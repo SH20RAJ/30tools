@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Create professional logos with text, fonts, and custom colors",
 	keywords: "logo generator, free online tool, no signup, logo-generator, free logo-generator, Logo Generator online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/logo-generator",
+		canonical: "https://sopkit.github.io/logo-generator",
 	},
 	openGraph: {
 		title: "Free Logo Generator Online - No Signup | 30tools",
 		description: "Create professional logos with text, fonts, and custom colors",
-		url: "https://30tools.com/logo-generator",
+		url: "https://sopkit.github.io/logo-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

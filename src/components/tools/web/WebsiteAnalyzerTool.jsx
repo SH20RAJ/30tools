@@ -599,7 +599,7 @@ export default function WebsiteAnalyzerTool() {
 				<SocialShareButtons
 					toolName="Website Performance Analyzer"
 					toolDescription="Get comprehensive analysis of your website's performance, SEO, accessibility, and security"
-					toolUrl="https://30tools.com/website-analyzer"
+					toolUrl="https://sopkit.github.io/website-analyzer"
 					category="web development"
 				/>
 			</div>

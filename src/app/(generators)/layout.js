@@ -10,7 +10,7 @@ export const metadata = {
 		title: "Free AI Generator Tools Online - No Signup | 30tools",
 		description:
 			"Generate AI images, voiceovers, QR codes, and passwords for free. Customizable, no watermarks, instant download.",
-		url: "https://30tools.com/generator-tools",
+		url: "https://sopkit.github.io/generator-tools",
 		siteName: "30tools",
 		images: [
 			{

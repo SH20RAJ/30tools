@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Extract the unique Channel ID from any YouTube URL instantly. Perfect for developer API calls, marketing automation, and third-party tool integrations...",
 	keywords: "youtube channel id extractor, free online tool, no signup, youtube-channel-id-extractor, free youtube-channel-id-extractor, Youtube Channel Id Extractor online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-channel-id-extractor",
+		canonical: "https://sopkit.github.io/youtube-channel-id-extractor",
 	},
 	openGraph: {
 		title: "Free YouTube Channel ID Extractor Online - No Signup | 30tools",
 		description: "Extract the unique Channel ID from any YouTube URL instantly. Perfect for developer API calls, marketing automation, and third-party tool integrations...",
-		url: "https://30tools.com/youtube-channel-id-extractor",
+		url: "https://sopkit.github.io/youtube-channel-id-extractor",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Snapchat Saver Online online. High-speed downloading with no signup needed. Try it free now.",
 	keywords: "snapchat saver online, free online tool, no signup, snapchat-saver-online, free snapchat-saver-online, Snapchat Saver Online online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/snapchat-saver-online",
+		canonical: "https://sopkit.github.io/snapchat-saver-online",
 	},
 	openGraph: {
 		title: "Free Snapchat Saver Online Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Snapchat Saver Online online. High-speed downloading with no signup needed. Try it free now.",
-		url: "https://30tools.com/snapchat-saver-online",
+		url: "https://sopkit.github.io/snapchat-saver-online",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

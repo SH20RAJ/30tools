@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Convert PNG to WebP to optimize your website speed. Significantly reduce file sizes while maintaining image transparency and quality. Free, fast, and...",
 	keywords: "png to webp converter, convert png to webp, image optimizer, webp converter, free online tool, 30tools, png-to-webp-converter, free png-to-webp-converter, png to webp converter online, image editing, photo editor, browser image tool",
 	alternates: {
-		canonical: "https://30tools.com/png-to-webp-converter",
+		canonical: "https://sopkit.github.io/png-to-webp-converter",
 	},
 	openGraph: {
 		title: "Free PNG to WebP Converter Online - No Signup | 30tools",
 		description: "Convert PNG to WebP to optimize your website speed. Significantly reduce file sizes while maintaining image transparency and quality. Free, fast, and...",
-		url: "https://30tools.com/png-to-webp-converter",
+		url: "https://sopkit.github.io/png-to-webp-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

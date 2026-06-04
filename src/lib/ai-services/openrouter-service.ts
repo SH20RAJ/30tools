@@ -46,7 +46,7 @@ async function createOpenRouterCompletion(
 			headers: {
 				Authorization: `Bearer ${apiKey}`,
 				"Content-Type": "application/json",
-				"HTTP-Referer": "https://30tools.com",
+				"HTTP-Referer": "https://sopkit.github.io",
 				"X-Title": "30tools - Free Online Tools",
 			},
 			body: JSON.stringify({

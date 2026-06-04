@@ -26,12 +26,12 @@ export async function generateMetadata({ params }: ToolCategoryPageProps): Promi
 		description: category.description,
 		keywords: [`${category.name} tools`, "free online tools", "30tools"].join(", "),
 		alternates: {
-			canonical: `https://30tools.com/tool-guides/${category.slug}`,
+			canonical: `https://sopkit.github.io/tool-guides/${category.slug}`,
 		},
 		openGraph: {
 			title: `Best Free ${category.name} Tools Online | 30tools`,
 			description: category.description,
-			url: `https://30tools.com/tool-guides/${category.slug}`,
+			url: `https://sopkit.github.io/tool-guides/${category.slug}`,
 			type: "website",
 			images: [{ url: "/og-image.jpg" }],
 		},

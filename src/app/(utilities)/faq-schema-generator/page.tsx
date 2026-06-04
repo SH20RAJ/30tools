@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free faq schema generator tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "faq schema generator, free online tool, no signup, faq-schema-generator, free faq-schema-generator, Faq Schema Generator online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/faq-schema-generator",
+		canonical: "https://sopkit.github.io/faq-schema-generator",
 	},
 	openGraph: {
 		title: "Free FAQ Schema Generator Online - No Signup | 30tools",
 		description: "Free faq schema generator tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/faq-schema-generator",
+		url: "https://sopkit.github.io/faq-schema-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

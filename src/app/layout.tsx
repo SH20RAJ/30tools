@@ -7,6 +7,7 @@ import Script from "next/script";
 import dynamic from "next/dynamic";
 import { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
+import { TransferBanner } from "@/components/shared/TransferBanner";
 
 // Dynamic import for Stack Auth - heavy client bundle, only loaded when configured
 const StackAuthProvider = dynamic(
@@ -107,7 +108,7 @@ export const metadata: Metadata = {
 		"professional web tools",
 		"instant online tools",
 	].join(", "),
-	authors: [{ name: "30tools Team", url: "https://30tools.com" }],
+	authors: [{ name: "30tools Team", url: "https://sopkit.github.io" }],
 	creator: "30tools",
 	publisher: "30tools",
 	category: "Technology",
@@ -374,6 +375,7 @@ export default function RootLayout({
 				<StackAuthProvider>
 					<ThemeProvider attribute="class" defaultTheme="system" enableSystem>
 						<AppleNavbar />
+						<TransferBanner />
 						{children}
 						<AppleFooter categories={categories} />
 						<Toaster />

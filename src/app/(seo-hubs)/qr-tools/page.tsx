@@ -4,7 +4,7 @@ import SeoHubPage from "@/components/seo/SeoHubPage";
 export const metadata: Metadata = {
 	title: "QR Tools - Restaurant Menu, Google Form, WiFi and UPI QR | 30tools",
 	description: "Create QR codes for restaurant menus, Google Forms, WiFi passwords, UPI payments, business cards, and small business workflows.",
-	alternates: { canonical: "https://30tools.com/qr-tools" },
+	alternates: { canonical: "https://sopkit.github.io/qr-tools" },
 };
 
 export default function QrToolsHub() {

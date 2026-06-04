@@ -9,12 +9,12 @@ export const metadata = {
 	description: "Free About online. About allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
 	keywords: "about 30tools, free online tools, browser-based tools, privacy-conscious tools, about, free about, about online, 30tools, browser tools, no signup tools, privacy tools",
 	alternates: {
-		canonical: "https://30tools.com/about",
+		canonical: "https://sopkit.github.io/about",
 	},
 	openGraph: {
 		title: "Free About Online - No Signup | 30tools",
 		description: "Free About online. About allows you to perform online tasks quickly and easily. 100% free, no signup required, and privacy-focused processing in your browser.",
-		url: "https://30tools.com/about",
+		url: "https://sopkit.github.io/about",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
@@ -46,7 +46,7 @@ export default async function AboutPage() {
 						"@context": "https://schema.org",
 						"@type": "Organization",
 						name: "30tools",
-						url: "https://30tools.com",
+						url: "https://sopkit.github.io",
 						description: tool.description,
 						sameAs: ["https://github.com/SH20RAJ/30tools"],
 					}),

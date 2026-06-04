@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Free energy converter tool to process your data instantly with privacy-friendly browser-based workflows.",
 	keywords: "energy converter, free online tool, no signup, energy-converter, free energy-converter, Energy Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/energy-converter",
+		canonical: "https://sopkit.github.io/energy-converter",
 	},
 	openGraph: {
 		title: "Free Energy Converter Online - No Signup | 30tools",
 		description: "Free energy converter tool to process your data instantly with privacy-friendly browser-based workflows.",
-		url: "https://30tools.com/energy-converter",
+		url: "https://sopkit.github.io/energy-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

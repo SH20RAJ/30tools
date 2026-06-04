@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Convert JPG images to BMP (Bitmap) format for legacy system compatibility. Fast, free, and secure online converter that works in your browser without...",
 	keywords: "jpg to bmp converter, free online tool, no signup, jpg-to-bmp-converter, free jpg-to-bmp-converter, Jpg To Bmp Converter online, image editing, photo editor, browser image tool, free photo utility, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/jpg-to-bmp-converter",
+		canonical: "https://sopkit.github.io/jpg-to-bmp-converter",
 	},
 	openGraph: {
 		title: "Free JPG to BMP Converter Online - No Signup | 30tools",
 		description: "Convert JPG images to BMP (Bitmap) format for legacy system compatibility. Fast, free, and secure online converter that works in your browser without...",
-		url: "https://30tools.com/jpg-to-bmp-converter",
+		url: "https://sopkit.github.io/jpg-to-bmp-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

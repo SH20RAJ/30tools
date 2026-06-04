@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Bitchute Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "bitchute video downloader, free online tool, no signup, bitchute-video-downloader, free bitchute-video-downloader, Bitchute Video Downloader online, video downloader, free download tool, online media saver, no signup download, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/bitchute-video-downloader",
+		canonical: "https://sopkit.github.io/bitchute-video-downloader",
 	},
 	openGraph: {
 		title: "Free Bitchute Video Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Bitchute Video Downloader online. High-speed downloading with no signup needed. Easy to use.",
-		url: "https://30tools.com/bitchute-video-downloader",
+		url: "https://sopkit.github.io/bitchute-video-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

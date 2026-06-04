@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Save and download media files from multiple platforms with our free Facebook Story Downloader online. High-speed downloading with no signup needed. Easy to use.",
 	keywords: "facebook story downloader, save facebook stories, fb story saver, facebook story saver, free tool, 30tools, facebook-story-downloader, free facebook-story-downloader, facebook story downloader online, online downloader, free media saver, video downloader",
 	alternates: {
-		canonical: "https://30tools.com/facebook-story-downloader",
+		canonical: "https://sopkit.github.io/facebook-story-downloader",
 	},
 	openGraph: {
 		title: "Free Facebook Story Downloader Online - No Signup | 30tools",
 		description: "Save and download media files from multiple platforms with our free Facebook Story Downloader online. High-speed downloading with no signup needed. Easy to use.",
-		url: "https://30tools.com/facebook-story-downloader",
+		url: "https://sopkit.github.io/facebook-story-downloader",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

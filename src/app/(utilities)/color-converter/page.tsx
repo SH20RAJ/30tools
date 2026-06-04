@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with...",
 	keywords: "color converter, free online tool, no signup, color-converter, free color-converter, Color Converter online, online utility, web calculator, free converter, browser tool, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/color-converter",
+		canonical: "https://sopkit.github.io/color-converter",
 	},
 	openGraph: {
 		title: "Free Color Converter Online - No Signup | 30tools",
 		description: "Transform color codes between HEX, RGB, HSL, and CMYK formats instantly. Our free online tool helps designers and developers manage color schemes with...",
-		url: "https://30tools.com/color-converter",
+		url: "https://sopkit.github.io/color-converter",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

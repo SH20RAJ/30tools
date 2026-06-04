@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Generate SEO-friendly tags for your YouTube videos instantly. Our free online tool suggests relevant keywords based on your video topic to help you rank...",
 	keywords: "youtube tag generator, free online tool, no signup, youtube-tag-generator, free youtube-tag-generator, Youtube Tag Generator online, YouTube tool, free YouTube utility, YouTube optimizer, video analytics, 30tools",
 	alternates: {
-		canonical: "https://30tools.com/youtube-tag-generator",
+		canonical: "https://sopkit.github.io/youtube-tag-generator",
 	},
 	openGraph: {
 		title: "Free YouTube Tag Generator Online - No Signup | 30tools",
 		description: "Generate SEO-friendly tags for your YouTube videos instantly. Our free online tool suggests relevant keywords based on your video topic to help you rank...",
-		url: "https://30tools.com/youtube-tag-generator",
+		url: "https://sopkit.github.io/youtube-tag-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

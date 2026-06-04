@@ -423,7 +423,7 @@ export default function PasswordCheckerTool() {
 				<SocialShareButtons
 					toolName="Password Strength Checker"
 					toolDescription="Check how secure your passwords are and get improvement tips with this free online tool"
-					toolUrl="https://30tools.com/password-strength-checker"
+					toolUrl="https://sopkit.github.io/password-strength-checker"
 					category="security"
 				/>
 			</div>

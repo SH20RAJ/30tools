@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Shorten long URLs for easier sharing",
 	keywords: "url shortener, shorten url, link shortener, short link, free url shortener, 30tools, url-shortener, free url-shortener, url shortener online, online utility, free converter, browser tool",
 	alternates: {
-		canonical: "https://30tools.com/url-shortener",
+		canonical: "https://sopkit.github.io/url-shortener",
 	},
 	openGraph: {
 		title: "Free URL Shortener Online - No Signup | 30tools",
 		description: "Shorten long URLs for easier sharing",
-		url: "https://30tools.com/url-shortener",
+		url: "https://sopkit.github.io/url-shortener",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",

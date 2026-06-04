@@ -8,12 +8,12 @@ export const metadata = {
 	description: "Create strong, secure passwords instantly with customizable settings.",
 	keywords: "password generator, strong password maker, secure password generator, random password, free tool, 30tools, password-generator, free password-generator, password generator online, online utility, free converter, browser tool",
 	alternates: {
-		canonical: "https://30tools.com/password-generator",
+		canonical: "https://sopkit.github.io/password-generator",
 	},
 	openGraph: {
 		title: "Free Password Generator Online - No Signup | 30tools",
 		description: "Create strong, secure passwords instantly with customizable settings.",
-		url: "https://30tools.com/password-generator",
+		url: "https://sopkit.github.io/password-generator",
 		siteName: "30tools",
 		images: [{ url: "/og-image.jpg" }],
 		type: "website",
