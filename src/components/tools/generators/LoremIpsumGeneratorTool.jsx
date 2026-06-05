@@ -261,7 +261,18 @@ const DEFAULT_OPTIONS = {
 	startWithLorem: true,
 };
 
-const buildLoremIpsum = ({ count, type, variation, startWithLorem }) => {
+const createSeededRandom = (initialSeed = 1) => {
+	let seed = initialSeed;
+	return () => {
+		seed = (seed * 1664525 + 1013904223) % 4294967296;
+		return seed / 4294967296;
+	};
+};
+
+const buildLoremIpsum = (
+	{ count, type, variation, startWithLorem },
+	random = Math.random,
+) => {
 	const selectedWords =
 		WORD_VARIATIONS[variation]?.words ?? WORD_VARIATIONS.classic.words;
 	const shouldStartWithLorem = variation === "classic" && startWithLorem;
@@ -283,11 +294,10 @@ const buildLoremIpsum = ({ count, type, variation, startWithLorem }) => {
 
 	const sentences = [];
 	for (let i = 0; i < numSentences; i++) {
-		const sentenceLength = Math.floor(Math.random() * 10) + 5;
+		const sentenceLength = Math.floor(random() * 10) + 5;
 		const sentenceWords = [];
 		for (let j = 0; j < sentenceLength; j++) {
-			const word =
-				selectedWords[Math.floor(Math.random() * selectedWords.length)];
+			const word = selectedWords[Math.floor(random() * selectedWords.length)];
 			sentenceWords.push(word);
 		}
 		const sentenceStr = `${capitalize(sentenceWords.join(" "))}.`;
@@ -317,7 +327,7 @@ const buildLoremIpsum = ({ count, type, variation, startWithLorem }) => {
 export default function LoremIpsumGeneratorTool() {
 	const [options, setOptions] = useState(DEFAULT_OPTIONS);
 	const [generatedText, setGeneratedText] = useState(() =>
-		buildLoremIpsum(DEFAULT_OPTIONS),
+		buildLoremIpsum(DEFAULT_OPTIONS, createSeededRandom()),
 	);
 
 	const { count, type, variation, startWithLorem } = options;
