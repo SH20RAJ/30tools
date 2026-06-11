@@ -3,9 +3,5 @@
 # https://developers.cloudflare.com/pages/configuration/redirects/
 # =============================================================================
 
-# Force www to non-www (301 permanent redirect) - handled via Next.js redirects config or Cloudflare Dashboard Rules
-# https://www.30tools.com/*  https://30tools.com/:splat  301!
-
-# Trailing slash removal (avoid duplicate content)
-# Note: Next.js trailingSlash: false handles this, but this is a fallback
-# for direct Cloudflare edge handling
+# Redirect all traffic to sopkit.github.io (307 temporary redirect)
+/* https://sopkit.github.io/:splat 307
