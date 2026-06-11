@@ -63,6 +63,7 @@
         "tailwindcss": "^4",
         "typescript": "^5.9.3",
         "wrangler": "^4.45.3",
+        "zod": "^4.4.3",
       },
     },
   },
